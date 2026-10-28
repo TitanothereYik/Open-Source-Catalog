@@ -307,6 +307,23 @@ def save_json(path: Path, payload) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
 
 
+def hk_day(value: str) -> str:
+    """Calendar date in Hong Kong for a GitHub timestamp."""
+    text = (value or "").strip()
+    if not text:
+        return ""
+    if len(text) == 10 and text[4] == "-" and "T" not in text:
+        return text
+    normalized = text.replace("Z", "+00:00")
+    try:
+        moment = datetime.fromisoformat(normalized)
+    except ValueError:
+        return text[:10]
+    if moment.tzinfo is None:
+        moment = moment.replace(tzinfo=ZoneInfo("UTC"))
+    return moment.astimezone(HK).date().isoformat()
+
+
 def token() -> str:
     return os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN") or ""
 
@@ -405,7 +422,7 @@ def project_from_repo(repo: dict, category: str, summary: str, locked: bool, add
         "license": license_of(repo),
         "topics": list(repo.get("topics") or [])[:8],
         "archived": bool(repo.get("archived")),
-        "pushed_at": (repo.get("pushed_at") or "")[:10],
+        "pushed_at": hk_day(repo.get("pushed_at") or ""),
         "paper_title": paper.get("title", ""),
         "paper_url": paper.get("url", ""),
         "added_at": added_at,
@@ -708,8 +725,7 @@ def card_html(project: dict, rank: int, category_href: str = "", category_title:
         bits.append(project["language"])
     if project.get("license"):
         bits.append(project["license"])
-    if project.get("pushed_at"):
-        bits.append("最近推送 " + project["pushed_at"])
+    pushed = project.get("pushed_at") or ""
     search = " ".join(
         [
             project.get("name", ""),
@@ -732,13 +748,16 @@ def card_html(project: dict, rank: int, category_href: str = "", category_title:
         badges = '<span class="badge arch">已封存</span>'
     topics = "".join(f"<span>#{esc(topic)}</span>" for topic in (project.get("topics") or [])[:3])
     topic_html = f'<div class="topics">{topics}</div>' if topics else ""
+    meta_parts = [esc(bit) for bit in bits]
+    label = esc(pushed) if pushed else "…"
+    meta_parts.append(f'<time class="pushed" datetime="{esc(pushed)}">最近推送 {label}</time>')
     return f"""
-<article class="card" id="{esc(project_anchor(project))}" data-search="{esc(search)}">
+<article class="card" id="{esc(project_anchor(project))}" data-repo="{esc(project["full_name"])}" data-search="{esc(search)}">
   <header>
     <h3><span class="rank">{rank:02d}</span><a href="{esc(project["url"])}">{esc(project["name"])}</a></h3>
     <div class="stars">★ {fmt_stars(project.get("stars") or 0)}</div>
   </header>
-  <p class="meta">{esc(" · ".join(bits))}</p>
+  <p class="meta">{" · ".join(meta_parts)}</p>
   <p class="summary">{esc(project.get("summary"))}</p>
   <div class="links">{''.join(links)}{badges}</div>
   {topic_html}
@@ -910,7 +929,7 @@ def render_document(catalog: dict, active: str | None) -> str:
     <p id="empty">沒有符合呢個搜尋嘅項目。</p>
     {body}
   </main>
-  <footer class="site">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 排序以 stars 為準 · 重複項目只保留一次</footer>
+  <footer class="site">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 排序以 stars 為準 · 重複項目只保留一次 · 最近推送會喺你睇到嗰張卡時向 GitHub 更新</footer>
 </div>
 <script>
 (function () {{
@@ -929,6 +948,7 @@ def render_document(catalog: dict, active: str | None) -> str:
       if (browsing) {{
         empty.hidden = true;
         empty.style.display = "none";
+        refreshPushed();
         return;
       }}
     }}
@@ -943,8 +963,116 @@ def render_document(catalog: dict, active: str | None) -> str:
     }});
     empty.hidden = shown !== 0;
     empty.style.display = shown === 0 ? "block" : "none";
+    refreshPushed();
   }}
+  const cacheKey = "osc-pushed-v1";
+  const pending = new Set();
+  const failed = new Set();
+  const queue = [];
+  let active = 0;
+  let blocked = false;
+  function readCache() {{
+    try {{ return JSON.parse(localStorage.getItem(cacheKey) || "{{}}"); }}
+    catch (error) {{ return {{}}; }}
+  }}
+  function writeCache(cache) {{
+    try {{ localStorage.setItem(cacheKey, JSON.stringify(cache)); }}
+    catch (error) {{}}
+  }}
+  function hkDay(iso) {{
+    const moment = new Date(iso);
+    if (Number.isNaN(moment.getTime())) return String(iso || "").slice(0, 10);
+    return new Intl.DateTimeFormat("en-CA", {{
+      timeZone: "Asia/Hong_Kong",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    }}).format(moment);
+  }}
+  function paint(name, day) {{
+    document.querySelectorAll("article.card[data-repo]").forEach((card) => {{
+      if (card.dataset.repo !== name) return;
+      const node = card.querySelector("time.pushed");
+      if (!node) return;
+      node.dateTime = day;
+      node.textContent = "最近推送 " + day;
+    }});
+  }}
+  function cachedDay(name) {{
+    const hit = readCache()[name];
+    if (!hit || !hit.day || Date.now() - hit.at > 6 * 60 * 60 * 1000) return "";
+    return hit.day;
+  }}
+  function pump() {{
+    if (blocked) return;
+    while (active < 4 && queue.length) {{
+      const name = queue.shift();
+      active += 1;
+      fetch("https://api.github.com/repos/" + name, {{
+        headers: {{ Accept: "application/vnd.github+json" }}
+      }}).then((response) => {{
+        if (response.status === 403 || response.status === 429) {{
+          blocked = true;
+          queue.length = 0;
+          return null;
+        }}
+        if (!response.ok) {{
+          failed.add(name);
+          return null;
+        }}
+        return response.json();
+      }}).then((data) => {{
+        if (!data || !data.pushed_at) return;
+        const day = hkDay(data.pushed_at);
+        const cache = readCache();
+        cache[name] = {{ day: day, at: Date.now() }};
+        writeCache(cache);
+        paint(name, day);
+      }}).catch(() => {{
+        failed.add(name);
+      }}).finally(() => {{
+        active -= 1;
+        pending.delete(name);
+        pump();
+      }});
+    }}
+  }}
+  function enqueue(name) {{
+    if (!name || blocked || pending.has(name) || failed.has(name)) return;
+    const day = cachedDay(name);
+    if (day) {{
+      paint(name, day);
+      return;
+    }}
+    pending.add(name);
+    queue.push(name);
+    pump();
+  }}
+  function refreshPushed() {{
+    document.querySelectorAll("article.card[data-repo]").forEach((card) => {{
+      if (card.hidden || card.closest("[hidden]")) return;
+      const rect = card.getBoundingClientRect();
+      if (rect.bottom < -240 || rect.top > window.innerHeight + 240) return;
+      enqueue(card.dataset.repo);
+    }});
+  }}
+  document.querySelectorAll("article.card[data-repo]").forEach((card) => {{
+    const day = cachedDay(card.dataset.repo);
+    if (day) paint(card.dataset.repo, day);
+  }});
+  let ticking = false;
+  function schedulePushed() {{
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {{
+      ticking = false;
+      refreshPushed();
+    }});
+  }}
+  window.addEventListener("scroll", schedulePushed, {{ passive: true }});
+  window.addEventListener("resize", schedulePushed);
   input.addEventListener("input", apply);
+  refreshPushed();
   document.addEventListener("keydown", (event) => {{
     if (event.key === "/" && document.activeElement !== input) {{
       event.preventDefault();
@@ -1259,7 +1387,7 @@ def refresh_stars(catalog: dict) -> int:
                 changed += 1
             project["stars"] = stars
             project["archived"] = bool(repo.get("isArchived"))
-            project["pushed_at"] = (repo.get("pushedAt") or "")[:10]
+            project["pushed_at"] = hk_day(repo.get("pushedAt") or "")
             language = (repo.get("primaryLanguage") or {}) or {}
             if language.get("name"):
                 project["language"] = language["name"]
