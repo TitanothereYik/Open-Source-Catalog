@@ -2,8 +2,8 @@ name: Update catalog
 
 on:
   schedule:
-    # 00:00, 06:00, 12:00, 18:00 UTC = 08:00, 14:00, 20:00, 02:00 香港時間
-    - cron: "0 */6 * * *"
+    # Every hour at minute 0 UTC, which is also xx:00 in Hong Kong (UTC+8).
+    - cron: "0 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -17,6 +17,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 50
     steps:
       - uses: actions/checkout@v4
         with:

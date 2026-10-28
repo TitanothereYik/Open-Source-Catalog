@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import html
 import json
+import math
 import os
 import smtplib
 import ssl
@@ -24,8 +25,10 @@ DATA = ROOT / "data"
 CACHE = DATA / "cache"
 HK = ZoneInfo("Asia/Hong_Kong")
 DEFAULT_EMAIL = "sunny3131831@gmail.com"
-# Six-hour updates always publish to this GitHub Pages site.
+# Hourly updates always publish to this GitHub Pages site.
 PAGES_ROOT = "https://titanothereyik.github.io/Open-Source-Catalog/"
+# Each update keeps calling GitHub until this share of the core REST quota is used.
+CORE_USAGE_TARGET = 0.80
 
 CATEGORIES = [
     {
@@ -328,6 +331,15 @@ def token() -> str:
     return os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN") or ""
 
 
+class RateLimitExceeded(RuntimeError):
+    pass
+
+
+# Latest core REST quota (resources.core), updated from /rate_limit and response headers.
+RATE = {"limit": 0, "remaining": 0, "reset": 0}
+FETCHED: set[str] = set()
+
+
 def gh_headers() -> dict[str, str]:
     headers = {
         "Accept": "application/vnd.github+json",
@@ -344,30 +356,113 @@ def cache_file(kind: str, key: str) -> Path:
     return CACHE / kind / f"{safe}.json"
 
 
+def note_rate_headers(headers) -> None:
+    if (headers.get("X-RateLimit-Resource") or "") != "core":
+        return
+    try:
+        RATE["limit"] = int(headers.get("X-RateLimit-Limit") or 0)
+        RATE["remaining"] = int(headers.get("X-RateLimit-Remaining") or 0)
+        RATE["reset"] = int(headers.get("X-RateLimit-Reset") or 0)
+    except ValueError:
+        return
+    limit = RATE["limit"]
+    if limit and (limit - RATE["remaining"]) % 100 == 0:
+        print(f"core rate {limit - RATE['remaining']}/{limit}", flush=True)
+
+
+def core_quota_met() -> bool:
+    limit = int(RATE["limit"] or 0)
+    if limit <= 0:
+        return False
+    used = limit - int(RATE["remaining"])
+    return used >= math.ceil(limit * CORE_USAGE_TARGET)
+
+
+def read_core_quota() -> None:
+    req = urllib.request.Request("https://api.github.com/rate_limit", headers=gh_headers())
+    with urllib.request.urlopen(req, timeout=45) as resp:
+        payload = json.loads(resp.read().decode())
+    core = payload["resources"]["core"]
+    RATE["limit"] = int(core["limit"])
+    RATE["remaining"] = int(core["remaining"])
+    RATE["reset"] = int(core["reset"])
+    print(
+        f"core rate remaining {RATE['remaining']}/{RATE['limit']} "
+        f"(target {math.ceil(RATE['limit'] * CORE_USAGE_TARGET)})",
+        flush=True,
+    )
+
+
+def wait_for_core_budget() -> None:
+    """Wait out a spent window so this run can still use 80% of the quota."""
+    if not token():
+        print("no GitHub token, skip rate-limit target")
+        return
+    read_core_quota()
+    limit = int(RATE["limit"] or 0)
+    if limit <= 0:
+        return
+    target = math.ceil(limit * CORE_USAGE_TARGET)
+    if int(RATE["remaining"]) >= target:
+        return
+    wait = RATE["reset"] - time.time() + 2
+    if wait <= 0:
+        read_core_quota()
+        return
+    if wait > 45 * 60:
+        print("rate window is already spent and resets in over 45 minutes; using what is left")
+        return
+    print(f"only {RATE['remaining']} core requests left, waiting {int(wait)}s for reset", flush=True)
+    time.sleep(wait)
+    read_core_quota()
+
+
+def pause_after(kind: str) -> None:
+    if kind == "search":
+        time.sleep(2.1 if token() else 6.5)
+    elif kind == "repos":
+        time.sleep(0.09 if token() else 0.4)
+    else:
+        time.sleep(0.2 if token() else 1.0)
+
+
 def fetch_json(url: str, cache_key: str, kind: str, use_cache: bool) -> dict:
     path = cache_file(kind, cache_key)
     if use_cache and path.exists():
         return json.loads(path.read_text())
-    delay = 2.2 if token() else (0.4 if kind == "repos" else 6.5)
     last_error = "unknown"
     for attempt in range(5):
         req = urllib.request.Request(url, headers=gh_headers())
         try:
             with urllib.request.urlopen(req, timeout=45) as resp:
+                note_rate_headers(resp.headers)
                 data = json.loads(resp.read().decode())
+            if isinstance(data, list):
+                data = {"items": data}
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(json.dumps(data))
-            time.sleep(delay)
+            pause_after(kind)
             return data
         except urllib.error.HTTPError as exc:
+            note_rate_headers(exc.headers)
             body = exc.read().decode()[:300]
             last_error = f"{exc.code} {body}"
+            lowered = body.lower()
             if exc.code == 404:
                 return {"message": "Not Found"}
-            if exc.code in (403, 429):
-                time.sleep(15 + attempt * 10)
+            if exc.code in (403, 429) and "secondary rate" in lowered:
+                retry_after = exc.headers.get("Retry-After")
+                time.sleep(int(retry_after) if str(retry_after or "").isdigit() else 20)
                 continue
-            time.sleep(4)
+            resource = exc.headers.get("X-RateLimit-Resource") or ""
+            if exc.code in (403, 429) and resource == "search":
+                reset = int(exc.headers.get("X-RateLimit-Reset") or 0)
+                time.sleep(max(2, min(65, reset - time.time() + 1)))
+                continue
+            if exc.code in (403, 429) and resource == "core" and "rate limit" in lowered:
+                RATE["remaining"] = 0
+                raise RateLimitExceeded(body)
+            time.sleep(4 + attempt * 2)
         except urllib.error.URLError as exc:
             last_error = str(exc)
             time.sleep(4)
@@ -873,7 +968,7 @@ def render_document(catalog: dict, active: str | None) -> str:
     if active is None:
         hero = f"""
 <header class="hero">
-    <p class="kicker">每 6 小時更新</p>
+    <p class="kicker">每小時更新</p>
     <h1>Open Source Catalog</h1>
     <p class="lede">九個分類各自一頁。而家聚焦 Gaussian Splatting、World Model 同 Image to 3D。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。</p>
     <div class="stats">
@@ -1122,6 +1217,12 @@ def notification_text(catalog: dict, new_projects: list[dict], mode: str) -> str
         f"- 瀏覽：{url}",
         "",
     ]
+    rate = catalog.get("rate_limit") or {}
+    if rate.get("limit"):
+        lines.insert(
+            6,
+            f"- GitHub 請求配額：已用 {rate['used']}/{rate['limit']}（{rate['percent']}%，目標 80%）",
+        )
     if new_projects:
         lines.append("## 新增")
         lines.append("")
@@ -1334,17 +1435,20 @@ def relevant(category: str, repo: dict) -> bool:
     return False
 
 
-def search_repos(query: str) -> list[dict]:
+def search_repos(query: str, page: int) -> tuple[list[dict], bool]:
     params = urllib.parse.urlencode(
-        {"q": query, "sort": "stars", "order": "desc", "per_page": 50, "page": 1}
+        {"q": query, "sort": "stars", "order": "desc", "per_page": 100, "page": page}
     )
     data = fetch_json(
         f"https://api.github.com/search/repositories?{params}",
-        f"update-{query}",
+        f"update-{query}-p{page}",
         "search",
         use_cache=False,
     )
-    return data.get("items") or []
+    items = data.get("items") or []
+    total = min(int(data.get("total_count") or 0), 1000)
+    more = bool(items) and page * 100 < total and len(items) == 100 and page < 10
+    return items, more
 
 
 def graphql(query: str) -> dict:
@@ -1360,77 +1464,130 @@ def graphql(query: str) -> dict:
         return json.loads(resp.read().decode())
 
 
+def apply_repo_payload(project: dict, repo: dict) -> bool:
+    stars = int(repo.get("stargazers_count") or 0)
+    changed = stars != project.get("stars")
+    project["stars"] = stars
+    project["archived"] = bool(repo.get("archived"))
+    project["pushed_at"] = hk_day(repo.get("pushed_at") or "")
+    if repo.get("language"):
+        project["language"] = repo["language"]
+    license_name = license_of(repo)
+    if license_name:
+        project["license"] = license_name
+    homepage = repo.get("homepage") or ""
+    if str(homepage).startswith("http"):
+        project["homepage"] = homepage
+    description = (repo.get("description") or "").strip()
+    if description:
+        project["description"] = description
+        if not project.get("summary_locked"):
+            project["summary"] = description
+    if repo.get("topics"):
+        project["topics"] = list(repo.get("topics") or [])[:8]
+    return changed
+
+
+def fetch_repo_live(full_name: str) -> dict | None:
+    key = full_name.lower()
+    if key in FETCHED or core_quota_met():
+        return None
+    FETCHED.add(key)
+    try:
+        repo = fetch_json(
+            f"https://api.github.com/repos/{full_name}",
+            f"live-{full_name}",
+            "repos",
+            use_cache=False,
+        )
+    except RateLimitExceeded as exc:
+        print(exc)
+        RATE["remaining"] = 0
+        return None
+    if not repo or repo.get("message"):
+        return None
+    return repo
+
+
 def refresh_stars(catalog: dict) -> int:
     if not token():
         print("no GitHub token, skip star refresh")
         return 0
-    projects = [project for project in catalog["projects"] if project["type"] == "github"]
     changed = 0
-    for start in range(0, len(projects), 30):
-        batch = projects[start : start + 30]
-        fields = []
-        for index, project in enumerate(batch):
-            owner, name = project["full_name"].split("/", 1)
-            fields.append(
-                f"r{index}: repository(owner: {json.dumps(owner)}, name: {json.dumps(name)}) "
-                "{ stargazerCount description pushedAt isArchived primaryLanguage { name } "
-                "licenseInfo { spdxId } homepageUrl }"
-            )
-        payload = graphql("query {\n" + "\n".join(fields) + "\n}")
-        data = payload.get("data") or {}
-        for index, project in enumerate(batch):
-            repo = data.get(f"r{index}")
-            if not repo:
-                continue
-            stars = int(repo.get("stargazerCount") or 0)
-            if stars != project.get("stars"):
-                changed += 1
-            project["stars"] = stars
-            project["archived"] = bool(repo.get("isArchived"))
-            project["pushed_at"] = hk_day(repo.get("pushedAt") or "")
-            language = (repo.get("primaryLanguage") or {}) or {}
-            if language.get("name"):
-                project["language"] = language["name"]
-            spdx = ((repo.get("licenseInfo") or {}) or {}).get("spdxId") or ""
-            if spdx and spdx not in ("NOASSERTION", "NONE"):
-                project["license"] = spdx
-            homepage = repo.get("homepageUrl") or ""
-            if str(homepage).startswith("http"):
-                project["homepage"] = homepage
-            description = (repo.get("description") or "").strip()
-            if description:
-                project["description"] = description
-                if not project.get("summary_locked"):
-                    project["summary"] = description
-        time.sleep(0.4)
+    for project in catalog["projects"]:
+        if project.get("type") != "github":
+            continue
+        repo = fetch_repo_live(project["full_name"])
+        if not repo:
+            if core_quota_met():
+                break
+            continue
+        if apply_repo_payload(project, repo):
+            changed += 1
     return changed
 
 
-def discover_new(catalog: dict) -> list[dict]:
+def discover_new(catalog: dict) -> tuple[list[dict], list[str]]:
     existing = {project["full_name"].lower() for project in catalog["projects"]}
     denylist = {name.lower() for name in load_json(DATA / "denylist.json", [])}
     found: dict[str, tuple[str, dict]] = {}
-    for category in CATEGORIES:
-        threshold = MIN_NEW[category["id"]]
+    pool: list[str] = []
+    seen_pool = set(FETCHED)
+    queries = [(category, query) for category in CATEGORIES for query in QUERIES[category["id"]]]
+    more_pages = {id(query): True for _, query in queries}
+
+    def remember(full_name: str) -> None:
+        key = full_name.lower()
+        if key and key not in seen_pool:
+            seen_pool.add(key)
+            pool.append(full_name)
+
+    def consider(category_id: str, repo: dict) -> None:
+        key = (repo.get("full_name") or "").lower()
+        full_name = repo.get("full_name") or ""
+        if full_name:
+            remember(full_name)
+        if not key or key in existing or key in denylist:
+            return
+        threshold = MIN_NEW[category_id]
         if len(catalog["projects"]) < 200:
             threshold = max(200, threshold // 4)
-        for query in QUERIES[category["id"]]:
-            try:
-                items = search_repos(query)
-            except RuntimeError as exc:
-                print(exc)
+        if int(repo.get("stargazers_count") or 0) < threshold:
+            return
+        if not relevant(category_id, repo):
+            return
+        current = found.get(key)
+        if current is None or repo.get("stargazers_count", 0) > current[1].get("stargazers_count", 0):
+            found[key] = (category_id, repo)
+
+    def drain() -> None:
+        while pool and not core_quota_met():
+            full_name = pool.pop(0)
+            repo = fetch_repo_live(full_name)
+            if not repo:
                 continue
+            current = found.get(full_name.lower())
+            if current:
+                found[full_name.lower()] = (current[0], repo)
+
+    for page in range(1, 11):
+        progressed = False
+        for category, query in queries:
+            if not more_pages.get(id(query), False):
+                continue
+            try:
+                items, more = search_repos(query, page)
+            except (RuntimeError, RateLimitExceeded) as exc:
+                print(exc)
+                more_pages[id(query)] = False
+                continue
+            more_pages[id(query)] = more
+            progressed = progressed or bool(items)
             for repo in items:
-                key = (repo.get("full_name") or "").lower()
-                if not key or key in existing or key in denylist:
-                    continue
-                if int(repo.get("stargazers_count") or 0) < threshold:
-                    continue
-                if not relevant(category["id"], repo):
-                    continue
-                current = found.get(key)
-                if current is None or repo.get("stargazers_count", 0) > current[1].get("stargazers_count", 0):
-                    found[key] = (category["id"], repo)
+                consider(category["id"], repo)
+        drain()
+        if core_quota_met() or not progressed:
+            break
     ranked = sorted(found.values(), key=lambda item: -int(item[1].get("stargazers_count") or 0))
     per_category: dict[str, int] = {category["id"]: 0 for category in CATEGORIES}
     chosen = []
@@ -1445,7 +1602,52 @@ def discover_new(catalog: dict) -> list[dict]:
         chosen.append(project)
         per_category[category_id] += 1
         existing.add(project["full_name"].lower())
-    return chosen
+    return chosen, list(seen_pool)
+
+
+def spend_core_quota(names: list[str]) -> None:
+    """Keep reading public repo metadata until 80% of the core quota is used."""
+    names = [name for name in names if name]
+    if not token() or not names or core_quota_met():
+        return
+    suffixes = ("/languages", "/commits?per_page=1", "/releases?per_page=1", "/stargazers?per_page=1")
+    guard = 0
+    stalls = 0
+    while not core_quota_met() and guard < 20000:
+        name = names[guard % len(names)]
+        suffix = suffixes[(guard // len(names)) % len(suffixes)]
+        page = guard // (len(names) * len(suffixes))
+        url = f"https://api.github.com/repos/{name}{suffix}"
+        if page:
+            url += ("&" if "?" in suffix else "?") + f"page={page + 1}"
+        before = int(RATE["remaining"])
+        try:
+            fetch_json(url, f"spend-{guard}-{name}", "repos", use_cache=False)
+        except RateLimitExceeded as exc:
+            print(exc)
+            RATE["remaining"] = 0
+            return
+        except RuntimeError as exc:
+            print(exc)
+        guard += 1
+        if int(RATE["remaining"]) == before:
+            stalls += 1
+            if stalls > 8:
+                print("core quota stopped decreasing; leaving the rest unused")
+                return
+        else:
+            stalls = 0
+
+
+def record_rate_usage(catalog: dict) -> None:
+    limit = int(RATE["limit"] or 0)
+    remaining = int(RATE["remaining"] or 0)
+    used = max(0, limit - remaining)
+    percent = round(100 * used / limit, 1) if limit else 0
+    catalog["rate_limit"] = {"used": used, "limit": limit, "remaining": remaining, "percent": percent}
+    print(f"GitHub core requests used {used}/{limit} ({percent}%)", flush=True)
+    if limit and used < math.ceil(limit * CORE_USAGE_TARGET):
+        print("warning: this run used less than 80% of the GitHub core rate limit", flush=True)
 
 
 def update() -> dict:
@@ -1453,8 +1655,12 @@ def update() -> dict:
     if not catalog_path.exists():
         return bootstrap(force=False)
     catalog = load_json(catalog_path, {})
+    FETCHED.clear()
+    wait_for_core_budget()
     refresh_stars(catalog)
-    new_projects = discover_new(catalog)
+    new_projects, seen_names = discover_new(catalog)
+    spend_core_quota(seen_names)
+    record_rate_usage(catalog)
     catalog["projects"].extend(new_projects)
     catalog["updated_at"] = iso_hk()
     catalog["last_new_ids"] = [project["id"] for project in new_projects]

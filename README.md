@@ -14,7 +14,7 @@
 8. Stock Trading
 9. Crypto Trading
 
-第一版收錄 200 個開源項目，之後再加入 Gaussian Splatting、World Model 同 Image to 3D。每個項目有大約一百字嘅中文說明。已經收錄嘅 repo 唔會再加入。之後每 6 小時檢查一次，只加入未見過、而且符合分類嘅新項目，同時更新 stars。
+第一版收錄 200 個開源項目，之後再加入 Gaussian Splatting、World Model 同 Image to 3D。每個項目有大約一百字嘅中文說明。已經收錄嘅 repo 唔會再加入。之後每小時檢查一次，只加入未見過、而且符合分類嘅新項目，同時更新 stars 同最近推送。
 
 ## 本地瀏覽
 
@@ -42,7 +42,7 @@ python3 scripts/catalog_tool.py validate
 
 ## GitHub
 
-公開網站同每 6 小時更新都放喺 [TitanothereYik/Open-Source-Catalog](https://github.com/TitanothereYik/Open-Source-Catalog)，唔係 Cursor 嘅 codebase。頁面標題係 **Open Source Catalog**。Repo 要公開，免費 GitHub Pages 先用到。
+公開網站同每小時更新都放喺 [TitanothereYik/Open-Source-Catalog](https://github.com/TitanothereYik/Open-Source-Catalog)，唔係 Cursor 嘅 codebase。頁面標題係 **Open Source Catalog**。Repo 要公開，免費 GitHub Pages 先用到。
 
 網站網址：
 
@@ -50,11 +50,11 @@ python3 scripts/catalog_tool.py validate
 https://titanothereyik.github.io/Open-Source-Catalog/
 ```
 
-根目錄 `index.html` 就係 Pages 嘅內容。推上 GitHub `main` 之後，`.github/workflows/pages.yml` 會部署。每 6 小時嘅更新根網址固定係上面呢個 GitHub Pages 網址，寫入目錄、canonical 同電郵連結，然後 push 去呢個 repo 嘅 `main`。
+根目錄 `index.html` 就係 Pages 嘅內容。推上 GitHub `main` 之後，`.github/workflows/pages.yml` 會部署。每小時嘅更新根網址固定係上面呢個 GitHub Pages 網址，寫入目錄、canonical 同電郵連結，然後 push 去呢個 repo 嘅 `main`。
 
-## 每 6 小時
+## 每小時
 
-`.github/workflows/update.yml` 喺 UTC 00:00、06:00、12:00、18:00 運行，即香港時間 08:00、14:00、20:00、02:00。
+`.github/workflows/update.yml` 喺每小時整點運行（UTC 同香港時間都係 xx:00）。每次會讀取 workflow token 嘅 GitHub REST core 配額，並繼續查公開 repo，直到用咗最少 80%。搜尋配額係另一個每分鐘上限，程式會自己放慢，避免搜尋被截斷。
 
 每次完成會：
 
