@@ -37,19 +37,17 @@ python3 scripts/catalog_tool.py update
 python3 scripts/catalog_tool.py validate
 ```
 
-## GitHub Pages
+## GitHub
 
-網站檔案放喺 repo 根目錄。推上 `main` 之後，`.github/workflows/pages.yml` 會部署 GitHub Pages。
+公開網站同每 6 小時更新都放喺 [TitanothereYik/Open-Source-Catalog](https://github.com/TitanothereYik/Open-Source-Catalog)，唔係 Cursor 嘅 codebase。頁面標題係 **Open Source Catalog**。Repo 要公開，免費 GitHub Pages 先用到。
 
-建議 repository 名稱用 `Open-Source-Catalog`，頁面標題會顯示 **Open Source Catalog**。公開 repo 先可以用免費 GitHub Pages。
-
-網站網址會係：
+網站網址：
 
 ```text
-https://<github-user>.github.io/<repository>/
+https://titanothereyik.github.io/Open-Source-Catalog/
 ```
 
-更新 workflow 會把呢個網址寫入目錄同電郵入面嘅連結。
+根目錄 `index.html` 就係 Pages 嘅內容。推上 GitHub `main` 之後，`.github/workflows/pages.yml` 會部署。更新 workflow 會把上面呢個網址寫入目錄同電郵入面嘅連結。
 
 ## 每 6 小時
 
