@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0c0d11">
+<meta name="description" content="Open Source Catalog：AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。">
+<title>Gaussian Splatting · Open Source Catalog</title>
+<link rel="canonical" href="https://titanothereyik.github.io/Open-Source-Catalog/gaussian-splatting/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=Outfit:wght@400;520;650&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect fill='%230c0d11' width='64' height='64' rx='14'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23e4b15a' stroke-width='4'/%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #0c0d11;
+  --bg-raise: #15171e;
+  --line: rgba(244, 236, 224, 0.12);
+  --text: #f6f1e8;
+  --muted: #b7b0a4;
+  --faint: #8d867c;
+  --gold: #e4b15a;
+  --ink: #1c140c;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(228, 177, 90, 0.14), transparent 55%),
+    radial-gradient(900px 420px at 100% 0%, rgba(143, 208, 196, 0.08), transparent 50%),
+    var(--bg);
+  color: var(--text);
+  font-family: Outfit, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+a { color: inherit; }
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -40px;
+  background: var(--gold);
+  color: var(--ink);
+  padding: 8px 12px;
+  z-index: 5;
+}
+.skip:focus { top: 12px; }
+.wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+header.hero { padding: 36px 0 18px; }
+.kicker {
+  margin: 0 0 8px;
+  color: var(--gold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+h1 {
+  margin: 0;
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 560;
+  font-size: clamp(40px, 6vw, 68px);
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+.lede { max-width: 680px; color: var(--muted); font-size: 18px; margin: 14px 0 0; }
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.stat {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 14px;
+  min-width: 120px;
+}
+.stat b { display: block; font-family: Fraunces, Georgia, serif; font-size: 22px; font-weight: 560; }
+.stat span { color: var(--faint); font-size: 13px; }
+.stickybar {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  padding: 8px 0 12px;
+  background: linear-gradient(var(--bg) 72%, rgba(12, 13, 17, 0.94) 88%, transparent);
+}
+nav.pages {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+nav.pages a {
+  text-decoration: none;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  background: rgba(21, 23, 30, 0.92);
+  border-radius: 999px;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  white-space: nowrap;
+}
+nav.pages a:hover { color: var(--text); border-color: var(--gold); }
+nav.pages a[aria-current="page"] {
+  background: var(--gold);
+  color: var(--ink);
+  border-color: var(--gold);
+}
+nav.pages .count { color: var(--faint); font-variant-numeric: tabular-nums; }
+nav.pages a[aria-current="page"] .count { color: var(--ink); }
+.search { padding: 0; }
+.hub { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.hub[hidden], #results[hidden] { display: none !important; }
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 196px;
+  text-decoration: none;
+  background: rgba(21, 23, 30, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+}
+.tile:hover { border-color: var(--gold); }
+.tile-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.tile h2 {
+  margin: 0;
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 560;
+  letter-spacing: -0.04em;
+}
+.tile .count { color: var(--gold); font-family: Fraunces, Georgia, serif; font-size: 28px; line-height: 1; }
+.tile p { margin: 0; color: var(--muted); }
+.tile .top { color: var(--text); }
+.tile .go { margin-top: auto; color: var(--gold); }
+.hero-sub { padding-top: 22px; }
+.hero-sub h1 { font-size: clamp(36px, 5vw, 56px); }
+.kicker a { text-decoration: none; }
+main.page { padding-bottom: 72px; }
+.search input {
+  width: 100%;
+  background: var(--bg-raise);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font: inherit;
+  outline: none;
+}
+.search input:focus { border-color: var(--gold); }
+.section { margin: 8px 0 36px; scroll-margin-top: 72px; }
+.section h2 {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 34px;
+  font-weight: 560;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+.section .blurb { color: var(--muted); margin: 6px 0 16px; }
+.grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.card {
+  background: rgba(21, 23, 30, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  box-shadow: var(--shadow);
+  min-width: 0;
+}
+.card header { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.rank { color: var(--faint); font-variant-numeric: tabular-nums; font-size: 13px; margin-right: 8px; }
+.card h3 { margin: 0; font-size: 18px; letter-spacing: -0.02em; }
+.card h3 a { text-decoration: none; }
+.card h3 a:hover { color: var(--gold); }
+.stars { color: var(--gold); font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 650; }
+.meta { color: var(--faint); font-size: 13px; margin: 6px 0 8px; overflow-wrap: anywhere; }
+.summary { margin: 0; color: #ebe4d8; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.links a, .badge {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.links a:hover { color: var(--text); border-color: var(--gold); }
+.badge.arch { color: #e7b8a4; }
+.topics { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.topics span { color: var(--faint); font-size: 12px; }
+.papers { margin-top: 16px; }
+.papers h3 { margin: 0 0 10px; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+#empty { display: none; color: var(--muted); padding: 12px 0 24px; }
+footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
+@media (min-width: 800px) {
+  .hub { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 980px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">跳到項目</a>
+<div class="wrap">
+  
+<header class="hero hero-sub">
+    <p class="kicker"><a href="../">Open Source Catalog</a></p>
+    <h1>Gaussian Splatting</h1>
+    <p class="lede">用三維高斯重建場景、即時渲染、編輯同 SLAM，包括 3DGS、4D 動態場景同瀏覽器檢視器。 開源項目按 GitHub stars 由多至少。</p>
+    <div class="stats">
+      <div class="stat"><b>48</b><span>開源項目</span></div>
+      <div class="stat"><b>0</b><span>相關論文</span></div>
+      <div class="stat"><b>2026年10月28日</b><span>22:19（香港時間）</span></div>
+    </div>
+  </header>
+
+  <div class="stickybar">
+    <nav class="pages" aria-label="分類"><a href="../">目錄</a><a href="./" aria-current="page">Gaussian Splatting<span class="count">48</span></a><a href="../world-model/">World Model<span class="count">34</span></a><a href="../image-to-3d/">Image to 3D<span class="count">39</span></a><a href="../ai-agent/">AI Agent<span class="count">42</span></a><a href="../image/">圖像<span class="count">37</span></a><a href="../video/">影片<span class="count">32</span></a><a href="../vfx-cg-blender/">VFX / CG / Blender<span class="count">28</span></a><a href="../stock-trading/">Stock Trading<span class="count">30</span></a><a href="../crypto-trading/">Crypto Trading<span class="count">27</span></a></nav>
+    <form class="search" role="search" onsubmit="return false">
+      <label class="sr" for="q" style="position:absolute;left:-999px">搜尋</label>
+      <input id="q" type="search" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
+    </form>
+  </div>
+  <main class="page" id="content">
+    <p id="empty">沒有符合呢個搜尋嘅項目。</p>
+    <section class="section" id="gaussian-splatting" data-section>
+  <div class="grid"><article class="card" id="p-graphdeco-inria-gaussian-splatting" data-search="gaussian-splatting graphdeco-inria/gaussian-splatting 3d gaussian splatting 嘅原始實作，用大量三維高斯表示場景，可以由相片即時渲染新視角。後來嘅動態場景、壓縮同瀏覽器檢視器，好多都係由呢套程式出發。 original reference implementation of &quot;3d gaussian splatting for real-time radiance field rendering&quot; python computer-graphics computer-vision radiance-field">
+  <header>
+    <h3><span class="rank">01</span><a href="https://github.com/graphdeco-inria/gaussian-splatting">gaussian-splatting</a></h3>
+    <div class="stars">★ 24,357</div>
+  </header>
+  <p class="meta">graphdeco-inria/gaussian-splatting · Python · 最近推送 2025-10-17</p>
+  <p class="summary">3D Gaussian Splatting 嘅原始實作，用大量三維高斯表示場景，可以由相片即時渲染新視角。後來嘅動態場景、壓縮同瀏覽器檢視器，好多都係由呢套程式出發。</p>
+  <div class="links"><a href="https://github.com/graphdeco-inria/gaussian-splatting">GitHub</a><a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">主頁</a><a href="https://arxiv.org/abs/2308.04079">論文</a></div>
+  <div class="topics"><span>#computer-graphics</span><span>#computer-vision</span><span>#radiance-field</span></div>
+</article><article class="card" id="p-nerfstudio-project-nerfstudio" data-search="nerfstudio nerfstudio-project/nerfstudio 研究新視角合成嘅工作台，nerf 同 3d gaussian splatting（splatfacto）可以共用同一套資料、訓練同檢視工具。換方法時唔使重寫成套腳本，適合試高斯重建。 a collaboration friendly studio for nerfs python 3d 3d-graphics 3d-reconstruction computer-vision deep-learning gaussian-splatting machine-learning nerf">
+  <header>
+    <h3><span class="rank">02</span><a href="https://github.com/nerfstudio-project/nerfstudio">nerfstudio</a></h3>
+    <div class="stars">★ 12,125</div>
+  </header>
+  <p class="meta">nerfstudio-project/nerfstudio · Python · Apache-2.0 · 最近推送 2025-07-29</p>
+  <p class="summary">研究新視角合成嘅工作台，NeRF 同 3D Gaussian Splatting（splatfacto）可以共用同一套資料、訓練同檢視工具。換方法時唔使重寫成套腳本，適合試高斯重建。</p>
+  <div class="links"><a href="https://github.com/nerfstudio-project/nerfstudio">GitHub</a><a href="https://docs.nerf.studio">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-graphics</span><span>#3d-reconstruction</span></div>
+</article><article class="card" id="p-playcanvas-supersplat" data-search="supersplat playcanvas/supersplat 喺瀏覽器入面編輯 3d gaussian splat 嘅工具。你可以檢視、修剪同整理掃描得到嘅高斯場景，再匯出，而唔使先裝一套桌面研究程式。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 3d gaussian splat editor typescript 3d-gaussian-splatting 3dgs gaussian-splatting pcui playcanvas typescript webgl webgpu">
+  <header>
+    <h3><span class="rank">03</span><a href="https://github.com/playcanvas/supersplat">supersplat</a></h3>
+    <div class="stars">★ 10,481</div>
+  </header>
+  <p class="meta">playcanvas/supersplat · TypeScript · MIT · 最近推送 2026-10-26</p>
+  <p class="summary">喺瀏覽器入面編輯 3D Gaussian Splat 嘅工具。你可以檢視、修剪同整理掃描得到嘅高斯場景，再匯出，而唔使先裝一套桌面研究程式。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/playcanvas/supersplat">GitHub</a><a href="https://superspl.at/editor">主頁</a></div>
+  <div class="topics"><span>#3d-gaussian-splatting</span><span>#3dgs</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-nerfstudio-project-gsplat" data-search="gsplat nerfstudio-project/gsplat 用 cuda 加速嘅 gaussian splatting 光柵化庫，方便研究同整合。其他專案可以呼叫佢做高斯場景嘅渲染核心，而唔使自己寫顯示卡光柵化。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 cuda accelerated rasterization of gaussian splatting python gaussian-splatting">
+  <header>
+    <h3><span class="rank">04</span><a href="https://github.com/nerfstudio-project/gsplat">gsplat</a></h3>
+    <div class="stars">★ 5,845</div>
+  </header>
+  <p class="meta">nerfstudio-project/gsplat · Python · Apache-2.0 · 最近推送 2026-09-19</p>
+  <p class="summary">用 CUDA 加速嘅 Gaussian Splatting 光柵化庫，方便研究同整合。其他專案可以呼叫佢做高斯場景嘅渲染核心，而唔使自己寫顯示卡光柵化。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/nerfstudio-project/gsplat">GitHub</a><a href="https://docs.gsplat.studio/">主頁</a></div>
+  <div class="topics"><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-arthurbrussee-brush" data-search="brush arthurbrussee/brush 用 rust 寫嘅三維重建程式，可以由相片或影片訓練 3d gaussian splatting。介面偏實用，想喺自己部機由畫面變成可轉視角嘅場景，可以由此入手。 3d reconstruction for all rust gaussian-splatting graphics reconstruction">
+  <header>
+    <h3><span class="rank">05</span><a href="https://github.com/ArthurBrussee/brush">brush</a></h3>
+    <div class="stars">★ 5,224</div>
+  </header>
+  <p class="meta">ArthurBrussee/brush · Rust · Apache-2.0 · 最近推送 2026-10-03</p>
+  <p class="summary">用 Rust 寫嘅三維重建程式，可以由相片或影片訓練 3D Gaussian Splatting。介面偏實用，想喺自己部機由畫面變成可轉視角嘅場景，可以由此入手。</p>
+  <div class="links"><a href="https://github.com/ArthurBrussee/brush">GitHub</a></div>
+  <div class="topics"><span>#gaussian-splatting</span><span>#graphics</span><span>#reconstruction</span></div>
+</article><article class="card" id="p-hustvl-4dgaussians" data-search="4dgaussians hustvl/4dgaussians 把靜態三維高斯擴展到動態場景，用變形場隨時間移動高斯，做到即時渲染會郁嘅畫面。適合由一段影片重建可以換視角嘅四維場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [cvpr 2024] 4d gaussian splatting for real-time dynamic scene rendering jupyter notebook 3d computer-vision cvpr2024 dynamic-scene gaussian-splatting graphics neural-network neural-rendering">
+  <header>
+    <h3><span class="rank">06</span><a href="https://github.com/hustvl/4DGaussians">4DGaussians</a></h3>
+    <div class="stars">★ 3,995</div>
+  </header>
+  <p class="meta">hustvl/4DGaussians · Jupyter Notebook · Apache-2.0 · 最近推送 2024-10-27</p>
+  <p class="summary">把靜態三維高斯擴展到動態場景，用變形場隨時間移動高斯，做到即時渲染會郁嘅畫面。適合由一段影片重建可以換視角嘅四維場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/hustvl/4DGaussians">GitHub</a><a href="https://guanjunwu.github.io/4dgs/">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#computer-vision</span><span>#cvpr2024</span></div>
+</article><article class="card" id="p-mrnerf-lichtfeld-studio" data-search="lichtfeld-studio mrnerf/lichtfeld-studio 一套原生桌面程式，用嚟訓練、檢查、編輯同匯出 3d gaussian splatting 場景。想唔使自己砌研究腳本，就可以喺同一個介面完成由資料到場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 train, inspect, edit, automate, and export 3d gaussian splatting scenes from a single native application. c++ computer-graphics computer-vision cuda gaussian-splatting optimization">
+  <header>
+    <h3><span class="rank">07</span><a href="https://github.com/MrNeRF/LichtFeld-Studio">LichtFeld-Studio</a></h3>
+    <div class="stars">★ 3,926</div>
+  </header>
+  <p class="meta">MrNeRF/LichtFeld-Studio · C++ · GPL-3.0 · 最近推送 2026-10-28</p>
+  <p class="summary">一套原生桌面程式，用嚟訓練、檢查、編輯同匯出 3D Gaussian Splatting 場景。想唔使自己砌研究腳本，就可以喺同一個介面完成由資料到場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/MrNeRF/LichtFeld-Studio">GitHub</a><a href="https://lichtfeld.io">主頁</a></div>
+  <div class="topics"><span>#computer-graphics</span><span>#computer-vision</span><span>#cuda</span></div>
+</article><article class="card" id="p-sparkjsdev-spark" data-search="spark sparkjsdev/spark 畀 three.js 用嘅進階 3d gaussian splatting 渲染器。網頁同互動場景可以直接載入高斯點雲，喺瀏覽器入面即時睇新視角，而唔使另開研究檢視器。 :sparkles:  an advanced 3d gaussian splatting renderer for three.js typescript ">
+  <header>
+    <h3><span class="rank">08</span><a href="https://github.com/sparkjsdev/spark">spark</a></h3>
+    <div class="stars">★ 3,815</div>
+  </header>
+  <p class="meta">sparkjsdev/spark · TypeScript · MIT · 最近推送 2026-10-20</p>
+  <p class="summary">畀 Three.js 用嘅進階 3D Gaussian Splatting 渲染器。網頁同互動場景可以直接載入高斯點雲，喺瀏覽器入面即時睇新視角，而唔使另開研究檢視器。</p>
+  <div class="links"><a href="https://github.com/sparkjsdev/spark">GitHub</a></div>
+  
+</article><article class="card" id="p-anttwo-sugar" data-search="sugar anttwo/sugar 把高斯貼住物體表面嚟重建網格，再保留高質素渲染。想由 3d gaussian splatting 場景抽出可以用喺傳統流程嘅 mesh，呢個就係對應嘅實作。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [cvpr 2024] official pytorch implementation of sugar: surface-aligned gaussian splatting for efficient 3d mesh reconstruction and high-quality mesh rendering c++ 3d-gaussian-splatting 3dgs cvpr2024 gaussian-splatting mesh mesh-generation nerf neural-rendering">
+  <header>
+    <h3><span class="rank">09</span><a href="https://github.com/Anttwo/SuGaR">SuGaR</a></h3>
+    <div class="stars">★ 3,547</div>
+  </header>
+  <p class="meta">Anttwo/SuGaR · C++ · 最近推送 2024-09-24</p>
+  <p class="summary">把高斯貼住物體表面嚟重建網格，再保留高質素渲染。想由 3D Gaussian Splatting 場景抽出可以用喺傳統流程嘅 mesh，呢個就係對應嘅實作。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/Anttwo/SuGaR">GitHub</a><a href="https://anttwo.github.io/sugar/">主頁</a></div>
+  <div class="topics"><span>#3d-gaussian-splatting</span><span>#3dgs</span><span>#cvpr2024</span></div>
+</article><article class="card" id="p-aras-p-unitygaussiansplatting" data-search="unitygaussiansplatting aras-p/unitygaussiansplatting 喺 unity 入面顯示 gaussian splatting 嘅實驗專案。遊戲同互動場景可以載入高斯點雲嚟即時渲染，方便試下研究結果點樣放進引擎。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 toy gaussian splatting visualization in unity c# gaussian-splatting unity">
+  <header>
+    <h3><span class="rank">10</span><a href="https://github.com/aras-p/UnityGaussianSplatting">UnityGaussianSplatting</a></h3>
+    <div class="stars">★ 3,450</div>
+  </header>
+  <p class="meta">aras-p/UnityGaussianSplatting · C# · MIT · 最近推送 2026-10-27</p>
+  <p class="summary">喺 Unity 入面顯示 Gaussian Splatting 嘅實驗專案。遊戲同互動場景可以載入高斯點雲嚟即時渲染，方便試下研究結果點樣放進引擎。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/aras-p/UnityGaussianSplatting">GitHub</a></div>
+  <div class="topics"><span>#gaussian-splatting</span><span>#unity</span></div>
+</article><article class="card" id="p-hbb1-2d-gaussian-splatting" data-search="2d-gaussian-splatting hbb1/2d-gaussian-splatting 用二維高斯平面代替三維高斯球，令輻射場嘅幾何更準。渲染仍然即時，同時表面位置更穩，適合之後要抽取網格或者量度場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [siggraph&#x27;24] 2d gaussian splatting for geometrically accurate radiance fields python gaussian-splatting novel-view-synthesis surface-reconstruction">
+  <header>
+    <h3><span class="rank">11</span><a href="https://github.com/hbb1/2d-gaussian-splatting">2d-gaussian-splatting</a></h3>
+    <div class="stars">★ 3,323</div>
+  </header>
+  <p class="meta">hbb1/2d-gaussian-splatting · Python · 最近推送 2026-08-25</p>
+  <p class="summary">用二維高斯平面代替三維高斯球，令輻射場嘅幾何更準。渲染仍然即時，同時表面位置更穩，適合之後要抽取網格或者量度場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/hbb1/2d-gaussian-splatting">GitHub</a><a href="https://surfsplatting.github.io">主頁</a></div>
+  <div class="topics"><span>#gaussian-splatting</span><span>#novel-view-synthesis</span><span>#surface-reconstruction</span></div>
+</article><article class="card" id="p-antimatter15-splat" data-search="splat antimatter15/splat 一個輕量 webgl 檢視器，喺瀏覽器直接打開 3d gaussian splat。掃描或訓練好嘅場景可以分享條連結畀人轉視角睇，而唔使安裝桌面程式。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 webgl 3d gaussian splat viewer javascript ">
+  <header>
+    <h3><span class="rank">12</span><a href="https://github.com/antimatter15/splat">splat</a></h3>
+    <div class="stars">★ 3,082</div>
+  </header>
+  <p class="meta">antimatter15/splat · JavaScript · MIT · 最近推送 2025-11-16</p>
+  <p class="summary">一個輕量 WebGL 檢視器，喺瀏覽器直接打開 3D Gaussian Splat。掃描或訓練好嘅場景可以分享條連結畀人轉視角睇，而唔使安裝桌面程式。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/antimatter15/splat">GitHub</a><a href="https://antimatter15.com/splat/">主頁</a></div>
+  
+</article><article class="card" id="p-mkkellogg-gaussiansplats3d" data-search="gaussiansplats3d mkkellogg/gaussiansplats3d 用 three.js 實作嘅 3d gaussian splatting 檢視器。網頁可以載入常見嘅 splat 檔，做即時新視角渲染，方便嵌進自己嘅三維頁面。 three.js-based implementation of 3d gaussian splatting javascript 3d-gaussian-splatting gaussian-splatting javascript three-js threejs webgl">
+  <header>
+    <h3><span class="rank">13</span><a href="https://github.com/mkkellogg/GaussianSplats3D">GaussianSplats3D</a></h3>
+    <div class="stars">★ 2,929</div>
+  </header>
+  <p class="meta">mkkellogg/GaussianSplats3D · JavaScript · MIT · 最近推送 2025-10-19</p>
+  <p class="summary">用 Three.js 實作嘅 3D Gaussian Splatting 檢視器。網頁可以載入常見嘅 splat 檔，做即時新視角渲染，方便嵌進自己嘅三維頁面。</p>
+  <div class="links"><a href="https://github.com/mkkellogg/GaussianSplats3D">GitHub</a></div>
+  <div class="topics"><span>#3d-gaussian-splatting</span><span>#gaussian-splatting</span><span>#javascript</span></div>
+</article><article class="card" id="p-nv-tlabs-3dgrut" data-search="3dgrut nv-tlabs/3dgrut nvidia 嘅高斯粒子渲染研究，同時提供光線追蹤同混合光柵化。想比較傳統 splat 光柵同光追喺反射、深度同畫面質素上嘅分別，可以睇呢套程式。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 ray tracing and hybrid rasterization of gaussian particles python 3d-reconstruction computer-vision gaussian-splatting ray-tracing">
+  <header>
+    <h3><span class="rank">14</span><a href="https://github.com/nv-tlabs/3dgrut">3dgrut</a></h3>
+    <div class="stars">★ 2,476</div>
+  </header>
+  <p class="meta">nv-tlabs/3dgrut · Python · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">NVIDIA 嘅高斯粒子渲染研究，同時提供光線追蹤同混合光柵化。想比較傳統 splat 光柵同光追喺反射、深度同畫面質素上嘅分別，可以睇呢套程式。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/nv-tlabs/3dgrut">GitHub</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#computer-vision</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-jonathonluiten-dynamic3dgaussians" data-search="dynamic3dgaussians jonathonluiten/dynamic3dgaussians 用動態三維高斯追蹤會郁嘅場景，同時保留新視角渲染。物體隨時間移動時，高斯可以跟住佢，適合多相機嘅動態捕捉。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 用動態三維高斯追蹤會郁嘅場景，同時保留新視角渲染。物體隨時間移動時，高斯可以跟住佢，適合多相機嘅動態捕捉。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 python ">
+  <header>
+    <h3><span class="rank">15</span><a href="https://github.com/JonathonLuiten/Dynamic3DGaussians">Dynamic3DGaussians</a></h3>
+    <div class="stars">★ 2,305</div>
+  </header>
+  <p class="meta">JonathonLuiten/Dynamic3DGaussians · Python · 最近推送 2023-12-22</p>
+  <p class="summary">用動態三維高斯追蹤會郁嘅場景，同時保留新視角渲染。物體隨時間移動時，高斯可以跟住佢，適合多相機嘅動態捕捉。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/JonathonLuiten/Dynamic3DGaussians">GitHub</a></div>
+  
+</article><article class="card" id="p-webodm-opensplat" data-search="opensplat webodm/opensplat 面向實際生產嘅 3d gaussian splatting 工具，支援 cpu 同 gpu，可以喺 windows、mac 同 linux 跑。適合由航拍或相片集重建可即時瀏覽嘅場景。 production-grade 3d gaussian splatting with cpu/gpu support for windows, mac and linux 💦 c++ 3d drones gaussian radiance-field splats splatting">
+  <header>
+    <h3><span class="rank">16</span><a href="https://github.com/WebODM/OpenSplat">OpenSplat</a></h3>
+    <div class="stars">★ 2,242</div>
+  </header>
+  <p class="meta">WebODM/OpenSplat · C++ · AGPL-3.0 · 最近推送 2026-10-02</p>
+  <p class="summary">面向實際生產嘅 3D Gaussian Splatting 工具，支援 CPU 同 GPU，可以喺 Windows、Mac 同 Linux 跑。適合由航拍或相片集重建可即時瀏覽嘅場景。</p>
+  <div class="links"><a href="https://github.com/WebODM/OpenSplat">GitHub</a></div>
+  <div class="topics"><span>#3d</span><span>#drones</span><span>#gaussian</span></div>
+</article><article class="card" id="p-spla-tam-splatam" data-search="splatam spla-tam/splatam 用 3d gaussian 做稠密 rgb-d slam，邊行邊建圖同追蹤相機。鏡頭郁嘅時候持續更新高斯地圖，適合機械人或者手持相機嘅即時重建。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 splatam: splat, track &amp; map 3d gaussians for dense rgb-d slam (cvpr 2024) python computer-vision cvpr2024 gaussian-splatting robotics slam">
+  <header>
+    <h3><span class="rank">17</span><a href="https://github.com/spla-tam/SplaTAM">SplaTAM</a></h3>
+    <div class="stars">★ 2,216</div>
+  </header>
+  <p class="meta">spla-tam/SplaTAM · Python · BSD-3-Clause · 最近推送 2024-06-19</p>
+  <p class="summary">用 3D Gaussian 做稠密 RGB-D SLAM，邊行邊建圖同追蹤相機。鏡頭郁嘅時候持續更新高斯地圖，適合機械人或者手持相機嘅即時重建。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/spla-tam/SplaTAM">GitHub</a><a href="https://spla-tam.github.io/">主頁</a></div>
+  <div class="topics"><span>#computer-vision</span><span>#cvpr2024</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-muskie82-monogs" data-search="monogs muskie82/monogs 只用單一彩色相機做 gaussian splatting slam，唔使深度鏡頭都可以追蹤同建圖。相機一邊郁，場景一邊用高斯更新，方便實時新視角查看。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [cvpr&#x27;24 highlight &amp; best demo award] gaussian splatting slam python computer-vision cvpr2024 gaussian-splatting robotics slam">
+  <header>
+    <h3><span class="rank">18</span><a href="https://github.com/muskie82/MonoGS">MonoGS</a></h3>
+    <div class="stars">★ 2,189</div>
+  </header>
+  <p class="meta">muskie82/MonoGS · Python · 最近推送 2024-08-07</p>
+  <p class="summary">只用單一彩色相機做 Gaussian Splatting SLAM，唔使深度鏡頭都可以追蹤同建圖。相機一邊郁，場景一邊用高斯更新，方便實時新視角查看。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/muskie82/MonoGS">GitHub</a><a href="https://rmurai.co.uk/projects/GaussianSplattingSLAM/">主頁</a></div>
+  <div class="topics"><span>#computer-vision</span><span>#cvpr2024</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-ooolabdev-ooosplat" data-search="ooosplat ooolabdev/ooosplat 本地桌面程式，用一段影片或一組圖片一鍵變成 3d gaussian splat。想少啲自己調研究參數，先快速睇到一個可轉視角嘅場景，可以用佢試。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 a local desktop app that turns videos and images into 3d gaussian splats in one click. rust 3d gaussian-splatting">
+  <header>
+    <h3><span class="rank">19</span><a href="https://github.com/ooolabdev/ooosplat">ooosplat</a></h3>
+    <div class="stars">★ 2,151</div>
+  </header>
+  <p class="meta">ooolabdev/ooosplat · Rust · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">本地桌面程式，用一段影片或一組圖片一鍵變成 3D Gaussian Splat。想少啲自己調研究參數，先快速睇到一個可轉視角嘅場景，可以用佢試。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/ooolabdev/ooosplat">GitHub</a></div>
+  <div class="topics"><span>#3d</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-harry7557558-spirula-studio" data-search="spirula-studio harry7557558/spirula-studio 跨顯示卡嘅 3d gaussian splatting 訓練器，支援 vulkan 或 cuda，可以由影片訓練 splat 再轉成網格。想喺唔同硬件上跑重建，呢套係一個選擇。 cross-vendor 3d gaussian splatting trainer - video to splat to mesh, vulkan or cuda. c++ 360-camera 3d-gaussian-splatting 3d-reconstruction 3dgs 3dgs-acceleration computer-vision cross-vendor cuda">
+  <header>
+    <h3><span class="rank">20</span><a href="https://github.com/harry7557558/spirula-studio">spirula-studio</a></h3>
+    <div class="stars">★ 1,984</div>
+  </header>
+  <p class="meta">harry7557558/spirula-studio · C++ · GPL-3.0 · 最近推送 2026-10-28</p>
+  <p class="summary">跨顯示卡嘅 3D Gaussian Splatting 訓練器，支援 Vulkan 或 CUDA，可以由影片訓練 splat 再轉成網格。想喺唔同硬件上跑重建，呢套係一個選擇。</p>
+  <div class="links"><a href="https://github.com/harry7557558/spirula-studio">GitHub</a></div>
+  <div class="topics"><span>#360-camera</span><span>#3d-gaussian-splatting</span><span>#3d-reconstruction</span></div>
+</article><article class="card" id="p-gap-lab-cuhk-sz-gaustudio" data-search="gaustudio gap-lab-cuhk-sz/gaustudio 模組化嘅 3d gaussian splatting 框架，把資料、訓練同衍生方法拆開。研究新嘅高斯重建時，可以重用現成組件，而唔使每次由空白專案開始。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 a modular framework for 3d gaussian splatting and beyond jupyter notebook 3d-reconstruction 3dgs gaussian-splatting multi-view-reconstruction nerf pytorch surface-reconstruction">
+  <header>
+    <h3><span class="rank">21</span><a href="https://github.com/GAP-LAB-CUHK-SZ/gaustudio">gaustudio</a></h3>
+    <div class="stars">★ 1,767</div>
+  </header>
+  <p class="meta">GAP-LAB-CUHK-SZ/gaustudio · Jupyter Notebook · MIT · 最近推送 2025-11-05</p>
+  <p class="summary">模組化嘅 3D Gaussian Splatting 框架，把資料、訓練同衍生方法拆開。研究新嘅高斯重建時，可以重用現成組件，而唔使每次由空白專案開始。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/GAP-LAB-CUHK-SZ/gaustudio">GitHub</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#3dgs</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-nvlabs-instantsplat" data-search="instantsplat nvlabs/instantsplat 唔使先做傳統 sfm，幾秒內就可以由稀疏視角訓練 gaussian splatting。相片少嘅時候仍然可以快速得到可渲染場景，適合即時預覽。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 instantsplat: sparse-view sfm-free gaussian splatting in seconds python ">
+  <header>
+    <h3><span class="rank">22</span><a href="https://github.com/NVlabs/InstantSplat">InstantSplat</a></h3>
+    <div class="stars">★ 1,712</div>
+  </header>
+  <p class="meta">NVlabs/InstantSplat · Python · 最近推送 2025-05-05</p>
+  <p class="summary">唔使先做傳統 SfM，幾秒內就可以由稀疏視角訓練 Gaussian Splatting。相片少嘅時候仍然可以快速得到可渲染場景，適合即時預覽。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/NVlabs/InstantSplat">GitHub</a><a href="https://instantsplat.github.io/">主頁</a></div>
+  
+</article><article class="card" id="p-huggingface-gsplat-js" data-search="gsplat.js huggingface/gsplat.js 用 javascript 寫嘅 gaussian splatting 庫，方便喺網頁端載入同顯示高斯場景。想把研究結果嵌進自己嘅前端，而唔使靠 python 檢視器，可以用佢。 javascript gaussian splatting library. typescript ">
+  <header>
+    <h3><span class="rank">23</span><a href="https://github.com/huggingface/gsplat.js">gsplat.js</a></h3>
+    <div class="stars">★ 1,674</div>
+  </header>
+  <p class="meta">huggingface/gsplat.js · TypeScript · MIT · 最近推送 2026-09-24</p>
+  <p class="summary">用 JavaScript 寫嘅 Gaussian Splatting 庫，方便喺網頁端載入同顯示高斯場景。想把研究結果嵌進自己嘅前端，而唔使靠 Python 檢視器，可以用佢。</p>
+  <div class="links"><a href="https://github.com/huggingface/gsplat.js">GitHub</a></div>
+  
+</article><article class="card" id="p-florian-barthel-splatviz" data-search="splatviz florian-barthel/splatviz 用 python 寫嘅互動 3d gaussian splatting 檢視器，可以即時編輯同分析場景。訓練中途或者訓練完，都可以直接喺視窗入面檢查高斯點。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 full python interactive 3d gaussian splatting viewer for real-time editing and analyzing. python 3d-gaussian-splatting 3dgs analyzing imgui interactive python real-time-editing viewer">
+  <header>
+    <h3><span class="rank">24</span><a href="https://github.com/Florian-Barthel/splatviz">splatviz</a></h3>
+    <div class="stars">★ 1,555</div>
+  </header>
+  <p class="meta">Florian-Barthel/splatviz · Python · MIT · 最近推送 2026-05-20</p>
+  <p class="summary">用 Python 寫嘅互動 3D Gaussian Splatting 檢視器，可以即時編輯同分析場景。訓練中途或者訓練完，都可以直接喺視窗入面檢查高斯點。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/Florian-Barthel/splatviz">GitHub</a></div>
+  <div class="topics"><span>#3d-gaussian-splatting</span><span>#3dgs</span><span>#analyzing</span></div>
+</article><article class="card" id="p-luciddreamer-cvlab-luciddreamer" data-search="luciddreamer luciddreamer-cvlab/luciddreamer 由文字或圖像生成 3d gaussian splatting 場景，而唔使先影一套實景相片。生成之後可以轉視角睇，適合做可遊走嘅想像空間。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 official code for the paper &quot;luciddreamer: domain-free generation of 3d gaussian splatting scenes&quot;. python ">
+  <header>
+    <h3><span class="rank">25</span><a href="https://github.com/luciddreamer-cvlab/LucidDreamer">LucidDreamer</a></h3>
+    <div class="stars">★ 1,528</div>
+  </header>
+  <p class="meta">luciddreamer-cvlab/LucidDreamer · Python · 最近推送 2026-07-23</p>
+  <p class="summary">由文字或圖像生成 3D Gaussian Splatting 場景，而唔使先影一套實景相片。生成之後可以轉視角睇，適合做可遊走嘅想像空間。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/luciddreamer-cvlab/LucidDreamer">GitHub</a></div>
+  
+</article><article class="card" id="p-graphdeco-inria-diff-gaussian-rasterization" data-search="diff-gaussian-rasterization graphdeco-inria/diff-gaussian-rasterization 官方 3d gaussian splatting 用嘅可微光柵化核心，用 cuda 把高斯投影到畫面並反向傳播。自己寫訓練程式時，通常會直接呼叫呢個渲染器。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 官方 3d gaussian splatting 用嘅可微光柵化核心，用 cuda 把高斯投影到畫面並反向傳播。自己寫訓練程式時，通常會直接呼叫呢個渲染器。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 cuda ">
+  <header>
+    <h3><span class="rank">26</span><a href="https://github.com/graphdeco-inria/diff-gaussian-rasterization">diff-gaussian-rasterization</a></h3>
+    <div class="stars">★ 1,507</div>
+  </header>
+  <p class="meta">graphdeco-inria/diff-gaussian-rasterization · Cuda · 最近推送 2024-10-21</p>
+  <p class="summary">官方 3D Gaussian Splatting 用嘅可微光柵化核心，用 CUDA 把高斯投影到畫面並反向傳播。自己寫訓練程式時，通常會直接呼叫呢個渲染器。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/graphdeco-inria/diff-gaussian-rasterization">GitHub</a></div>
+  
+</article><article class="card" id="p-autonomousvision-mip-splatting" data-search="mip-splatting autonomousvision/mip-splatting 處理 gaussian splatting 放大縮小時出現嘅鋸齒同走樣。用類似 mipmap 嘅做法，令遠近唔同尺度都保持清楚，係呢個方向嘅代表實作。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [cvpr&#x27;24 best student paper] mip-splatting: alias-free 3d gaussian splatting python 3d-reconstruction anti-aliasing guassian-splatting nerf novel-view-synthesis">
+  <header>
+    <h3><span class="rank">27</span><a href="https://github.com/autonomousvision/mip-splatting">mip-splatting</a></h3>
+    <div class="stars">★ 1,483</div>
+  </header>
+  <p class="meta">autonomousvision/mip-splatting · Python · 最近推送 2024-12-17</p>
+  <p class="summary">處理 Gaussian Splatting 放大縮小時出現嘅鋸齒同走樣。用類似 mipmap 嘅做法，令遠近唔同尺度都保持清楚，係呢個方向嘅代表實作。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/autonomousvision/mip-splatting">GitHub</a><a href="https://niujinshuchong.github.io/mip-splatting/">主頁</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#anti-aliasing</span><span>#guassian-splatting</span></div>
+</article><article class="card" id="p-graphdeco-inria-hierarchical-3d-gaussians" data-search="hierarchical-3d-gaussians graphdeco-inria/hierarchical-3d-gaussians 用分層三維高斯表示超大場景，做到即時渲染城市級資料。遠景同近景用唔同層級，避免一次載入全部高斯而拖慢畫面。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 official implementation of the siggraph 2024 paper &quot;a hierarchical 3d gaussian representation for real-time rendering of very large datasets&quot; python ">
+  <header>
+    <h3><span class="rank">28</span><a href="https://github.com/graphdeco-inria/hierarchical-3d-gaussians">hierarchical-3d-gaussians</a></h3>
+    <div class="stars">★ 1,476</div>
+  </header>
+  <p class="meta">graphdeco-inria/hierarchical-3d-gaussians · Python · 最近推送 2025-06-10</p>
+  <p class="summary">用分層三維高斯表示超大場景，做到即時渲染城市級資料。遠景同近景用唔同層級，避免一次載入全部高斯而拖慢畫面。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/graphdeco-inria/hierarchical-3d-gaussians">GitHub</a></div>
+  
+</article><article class="card" id="p-buaacyw-gaussianeditor" data-search="gaussianeditor buaacyw/gaussianeditor 用文字或者圖像指示，快速編輯已經重建好嘅 gaussian splatting 場景。可以改物件外觀同局部內容，而唔使成個場景重新訓練。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [cvpr 2024] gaussianeditor: swift and controllable 3d editing with gaussian splatting c++ 3d cvpr2024 generative-ai">
+  <header>
+    <h3><span class="rank">29</span><a href="https://github.com/buaacyw/GaussianEditor">GaussianEditor</a></h3>
+    <div class="stars">★ 1,462</div>
+  </header>
+  <p class="meta">buaacyw/GaussianEditor · C++ · 最近推送 2024-02-27</p>
+  <p class="summary">用文字或者圖像指示，快速編輯已經重建好嘅 Gaussian Splatting 場景。可以改物件外觀同局部內容，而唔使成個場景重新訓練。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/buaacyw/GaussianEditor">GitHub</a><a href="https://buaacyw.github.io/gaussian-editor/">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#cvpr2024</span><span>#generative-ai</span></div>
+</article><article class="card" id="p-zju3dv-street-gaussians" data-search="street_gaussians zju3dv/street_gaussians 用 gaussian splatting 重建會郁嘅街道同城市，把車同行人等動態物體同靜態背景分開。適合自動駕駛場景嘅新視角同模擬畫面。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [eccv 2024] street gaussians: modeling dynamic urban scenes with gaussian splatting python ">
+  <header>
+    <h3><span class="rank">30</span><a href="https://github.com/zju3dv/street_gaussians">street_gaussians</a></h3>
+    <div class="stars">★ 1,408</div>
+  </header>
+  <p class="meta">zju3dv/street_gaussians · Python · 最近推送 2026-09-15</p>
+  <p class="summary">用 Gaussian Splatting 重建會郁嘅街道同城市，把車同行人等動態物體同靜態背景分開。適合自動駕駛場景嘅新視角同模擬畫面。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/zju3dv/street_gaussians">GitHub</a></div>
+  
+</article><article class="card" id="p-playcanvas-splat-transform" data-search="splat-transform playcanvas/splat-transform 命令列同程式庫，用嚟轉換、壓縮同處理 3d gaussian splat 檔。不同工具之間嘅格式可以互轉，方便之後放進網頁或引擎。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 cli tool and library for 3d gaussian splat processing and conversion typescript 3d-gaussian-splatting 3dgs cli gaussian-splatting playcanvas supersplat typescript">
+  <header>
+    <h3><span class="rank">31</span><a href="https://github.com/playcanvas/splat-transform">splat-transform</a></h3>
+    <div class="stars">★ 1,400</div>
+  </header>
+  <p class="meta">playcanvas/splat-transform · TypeScript · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">命令列同程式庫，用嚟轉換、壓縮同處理 3D Gaussian Splat 檔。不同工具之間嘅格式可以互轉，方便之後放進網頁或引擎。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/playcanvas/splat-transform">GitHub</a><a href="https://playcanvas.com">主頁</a></div>
+  <div class="topics"><span>#3d-gaussian-splatting</span><span>#3dgs</span><span>#cli</span></div>
+</article><article class="card" id="p-donydchen-mvsplat" data-search="mvsplat donydchen/mvsplat 由少量多視角相片直接預測 3d gaussian，而唔使每個場景慢慢優化。前饋式重建速度快，適合要一次處理好多組相片嘅情況。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 🌊 [eccv&#x27;24 oral] mvsplat: efficient 3d gaussian splatting from sparse multi-view images python cost-volume eccv2024 feed-forward-gaussian-splatting gaussian-splatting novel-view-synthesis">
+  <header>
+    <h3><span class="rank">32</span><a href="https://github.com/donydchen/mvsplat">mvsplat</a></h3>
+    <div class="stars">★ 1,319</div>
+  </header>
+  <p class="meta">donydchen/mvsplat · Python · MIT · 最近推送 2026-05-06</p>
+  <p class="summary">由少量多視角相片直接預測 3D Gaussian，而唔使每個場景慢慢優化。前饋式重建速度快，適合要一次處理好多組相片嘅情況。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/donydchen/mvsplat">GitHub</a><a href="https://donydchen.github.io/mvsplat">主頁</a></div>
+  <div class="topics"><span>#cost-volume</span><span>#eccv2024</span><span>#feed-forward-gaussian-splatting</span></div>
+</article><article class="card" id="p-city-super-scaffold-gs" data-search="scaffold-gs city-super/scaffold-gs 用錨點同視角自適應嘅結構嚟組織三維高斯，令渲染更穩、更慳記憶體。大型場景可以按觀看方向調整高斯，而唔使全部一視同仁。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [cvpr 2024 highlight] scaffold-gs: structured 3d gaussians for view-adaptive rendering c++ 3d cvpr2024 gaussian-splatting reconstruction rendering">
+  <header>
+    <h3><span class="rank">33</span><a href="https://github.com/city-super/Scaffold-GS">Scaffold-GS</a></h3>
+    <div class="stars">★ 1,288</div>
+  </header>
+  <p class="meta">city-super/Scaffold-GS · C++ · 最近推送 2024-09-26</p>
+  <p class="summary">用錨點同視角自適應嘅結構嚟組織三維高斯，令渲染更穩、更慳記憶體。大型場景可以按觀看方向調整高斯，而唔使全部一視同仁。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/city-super/Scaffold-GS">GitHub</a><a href="https://city-super.github.io/scaffold-gs">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#cvpr2024</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-dcharatan-pixelsplat" data-search="pixelsplat dcharatan/pixelsplat 由一對圖片前饋生成 3d gaussian splat，用嚟做可泛化嘅新視角重建。模型見過唔同場景之後，新嘅相片對都可以快速出場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [cvpr 2024 oral, best paper runner-up] code for &quot;pixelsplat: 3d gaussian splats from image pairs for scalable generalizable 3d reconstruction&quot; by david charatan, sizhe lester li, andrea tagliasacchi, and vincent sitzmann python ">
+  <header>
+    <h3><span class="rank">34</span><a href="https://github.com/dcharatan/pixelsplat">pixelsplat</a></h3>
+    <div class="stars">★ 1,285</div>
+  </header>
+  <p class="meta">dcharatan/pixelsplat · Python · MIT · 最近推送 2025-01-13</p>
+  <p class="summary">由一對圖片前饋生成 3D Gaussian Splat，用嚟做可泛化嘅新視角重建。模型見過唔同場景之後，新嘅相片對都可以快速出場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/dcharatan/pixelsplat">GitHub</a><a href="http://davidcharatan.com/pixelsplat/">主頁</a></div>
+  
+</article><article class="card" id="p-linketic-citygaussian" data-search="citygaussian linketic/citygaussian 面向城市級大場景嘅 gaussian splatting 系列，強調高質素同可以擴展嘅重建。大範圍街景可以分成區塊處理，再合成可即時瀏覽嘅結果。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [eccv`24&amp;iclr`25] citygaussian series for high-quality large-scale scene reconstruction with gaussians jupyter notebook 3d computer-vision eccv2024 gaussian-splatting graphics iclr2025 large-scale level-of-details">
+  <header>
+    <h3><span class="rank">35</span><a href="https://github.com/Linketic/CityGaussian">CityGaussian</a></h3>
+    <div class="stars">★ 1,279</div>
+  </header>
+  <p class="meta">Linketic/CityGaussian · Jupyter Notebook · 最近推送 2026-08-16</p>
+  <p class="summary">面向城市級大場景嘅 Gaussian Splatting 系列，強調高質素同可以擴展嘅重建。大範圍街景可以分成區塊處理，再合成可即時瀏覽嘅結果。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/Linketic/CityGaussian">GitHub</a><a href="https://dekuliutesla.github.io/CityGaussianV2">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#computer-vision</span><span>#eccv2024</span></div>
+</article><article class="card" id="p-cvg-depthsplat" data-search="depthsplat cvg/depthsplat 把深度估計同 gaussian splatting 接埋，用深度引導高斯點放喺邊。稀疏視角重建時幾何更穩，適合相片之間重疊唔多嘅情況。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [cvpr&#x27;25] depthsplat: connecting gaussian splatting and depth python feed-forward-gaussian-splatting monocular-depth multi-view-stereo view-synthesis">
+  <header>
+    <h3><span class="rank">36</span><a href="https://github.com/cvg/depthsplat">depthsplat</a></h3>
+    <div class="stars">★ 1,271</div>
+  </header>
+  <p class="meta">cvg/depthsplat · Python · MIT · 最近推送 2026-04-01</p>
+  <p class="summary">把深度估計同 Gaussian Splatting 接埋，用深度引導高斯點放喺邊。稀疏視角重建時幾何更穩，適合相片之間重疊唔多嘅情況。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/cvg/depthsplat">GitHub</a><a href="https://haofeixu.github.io/depthsplat/">主頁</a></div>
+  <div class="topics"><span>#feed-forward-gaussian-splatting</span><span>#monocular-depth</span><span>#multi-view-stereo</span></div>
+</article><article class="card" id="p-yzslab-gaussian-splatting-lightning" data-search="gaussian-splatting-lightning yzslab/gaussian-splatting-lightning 用 pytorch lightning 整理嘅 3d gaussian splatting 框架，收錄多種衍生算法，並附互動網頁檢視器。想喺同一套程式比較唔同高斯方法，可以用佢。 a 3d gaussian splatting framework with various derived algorithms and an interactive web viewer jupyter notebook ">
+  <header>
+    <h3><span class="rank">37</span><a href="https://github.com/yzslab/gaussian-splatting-lightning">gaussian-splatting-lightning</a></h3>
+    <div class="stars">★ 1,115</div>
+  </header>
+  <p class="meta">yzslab/gaussian-splatting-lightning · Jupyter Notebook · 最近推送 2026-05-25</p>
+  <p class="summary">用 PyTorch Lightning 整理嘅 3D Gaussian Splatting 框架，收錄多種衍生算法，並附互動網頁檢視器。想喺同一套程式比較唔同高斯方法，可以用佢。</p>
+  <div class="links"><a href="https://github.com/yzslab/gaussian-splatting-lightning">GitHub</a></div>
+  
+</article><article class="card" id="p-minghanqin-langsplat" data-search="langsplat minghanqin/langsplat 喺三維高斯上面附帶語言特徵，令你可以用語句喺場景入面搵物件。重建完唔單止可以轉視角，仲可以按文字定位到對應嘅高斯區域。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 official implementation of the paper &quot;langsplat: 3d language gaussian splatting&quot; [cvpr2024 highlight] python 3d 3d-gaussian-splatting 3d-reconstruction language">
+  <header>
+    <h3><span class="rank">38</span><a href="https://github.com/minghanqin/LangSplat">LangSplat</a></h3>
+    <div class="stars">★ 1,096</div>
+  </header>
+  <p class="meta">minghanqin/LangSplat · Python · 最近推送 2025-10-10</p>
+  <p class="summary">喺三維高斯上面附帶語言特徵，令你可以用語句喺場景入面搵物件。重建完唔單止可以轉視角，仲可以按文字定位到對應嘅高斯區域。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/minghanqin/LangSplat">GitHub</a><a href="https://langsplat.github.io/">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-gaussian-splatting</span><span>#3d-reconstruction</span></div>
+</article><article class="card" id="p-logosintelligencelab-4d-gaussian-splatting" data-search="4d-gaussian-splatting logosintelligencelab/4d-gaussian-splatting 用四維高斯同時表示空間同時間，即時渲染會郁嘅場景。同用變形場嘅做法唔同，動態直接寫喺高斯本身，適合光真實嘅影片新視角。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [iclr 2024] real-time photorealistic dynamic scene representation and rendering with 4d gaussian splatting python ">
+  <header>
+    <h3><span class="rank">39</span><a href="https://github.com/LogosIntelligenceLab/4d-gaussian-splatting">4d-gaussian-splatting</a></h3>
+    <div class="stars">★ 1,049</div>
+  </header>
+  <p class="meta">LogosIntelligenceLab/4d-gaussian-splatting · Python · MIT · 最近推送 2026-10-24</p>
+  <p class="summary">用四維高斯同時表示空間同時間，即時渲染會郁嘅場景。同用變形場嘅做法唔同，動態直接寫喺高斯本身，適合光真實嘅影片新視角。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/LogosIntelligenceLab/4d-gaussian-splatting">GitHub</a><a href="https://logosintelligencelab.github.io/4d-gaussian-splatting/">主頁</a></div>
+  
+</article><article class="card" id="p-autonomousvision-gaussian-opacity-fields" data-search="gaussian-opacity-fields autonomousvision/gaussian-opacity-fields 由三維高斯建立不透明度場，喺無邊界場景入面做自適應表面重建。渲染同抽表面可以一齊用，適合要網格又要新視角嘅資料。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [siggraph asia&#x27;24 &amp; tog] gaussian opacity fields: efficient adaptive surface reconstruction in unbounded scenes python 3d-reconstruction gaussian-splatting novel-view-synthesis surface-reconstruction tetrahedral-meshing">
+  <header>
+    <h3><span class="rank">40</span><a href="https://github.com/autonomousvision/gaussian-opacity-fields">gaussian-opacity-fields</a></h3>
+    <div class="stars">★ 1,025</div>
+  </header>
+  <p class="meta">autonomousvision/gaussian-opacity-fields · Python · 最近推送 2024-11-15</p>
+  <p class="summary">由三維高斯建立不透明度場，喺無邊界場景入面做自適應表面重建。渲染同抽表面可以一齊用，適合要網格又要新視角嘅資料。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/autonomousvision/gaussian-opacity-fields">GitHub</a><a href="https://niujinshuchong.github.io/gaussian-opacity-fields/">主頁</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#gaussian-splatting</span><span>#novel-view-synthesis</span></div>
+</article><article class="card" id="p-jumpat-seganygaussians" data-search="seganygaussians jumpat/seganygaussians 喺 3d gaussian 場景入面做分割，可以用提示拎出個別物件。重建完嘅場景可以按物件拆開編輯或刪除，而唔使成幅畫面一齊處理。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 the official implementation of segment any 3d gaussians (aaai-25) jupyter notebook 3d-segmentation computer-vision gaussian-splatting segment-anything">
+  <header>
+    <h3><span class="rank">41</span><a href="https://github.com/Jumpat/SegAnyGAussians">SegAnyGAussians</a></h3>
+    <div class="stars">★ 1,006</div>
+  </header>
+  <p class="meta">Jumpat/SegAnyGAussians · Jupyter Notebook · Apache-2.0 · 最近推送 2026-08-02</p>
+  <p class="summary">喺 3D Gaussian 場景入面做分割，可以用提示拎出個別物件。重建完嘅場景可以按物件拆開編輯或刪除，而唔使成幅畫面一齊處理。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/Jumpat/SegAnyGAussians">GitHub</a></div>
+  <div class="topics"><span>#3d-segmentation</span><span>#computer-vision</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-cvg-noposplat" data-search="noposplat cvg/noposplat 相片未有相機姿態都可以預測 3d gaussian。稀疏、未對齊嘅圖片直接出場景，省卻先做位姿估計呢一步，適合隨便影低嘅相片集。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [iclr&#x27;25 oral] no pose, no problem: surprisingly simple 3d gaussian splats from sparse unposed images python ">
+  <header>
+    <h3><span class="rank">42</span><a href="https://github.com/cvg/NoPoSplat">NoPoSplat</a></h3>
+    <div class="stars">★ 1,004</div>
+  </header>
+  <p class="meta">cvg/NoPoSplat · Python · MIT · 最近推送 2026-02-25</p>
+  <p class="summary">相片未有相機姿態都可以預測 3D Gaussian。稀疏、未對齊嘅圖片直接出場景，省卻先做位姿估計呢一步，適合隨便影低嘅相片集。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/cvg/NoPoSplat">GitHub</a></div>
+  
+</article><article class="card" id="p-internrobotics-anysplat" data-search="anysplat internrobotics/anysplat 由隨意視角嘅圖片前饋生成 3d gaussian splatting，唔使逐個場景長時間優化。相機唔受控嘅相片都可以快速變成可渲染場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [siggraph asia 2025 (acm tog)] anysplat: feed-forward 3d gaussian splatting from unconstrained views python ">
+  <header>
+    <h3><span class="rank">43</span><a href="https://github.com/InternRobotics/AnySplat">AnySplat</a></h3>
+    <div class="stars">★ 961</div>
+  </header>
+  <p class="meta">InternRobotics/AnySplat · Python · MIT · 最近推送 2025-12-22</p>
+  <p class="summary">由隨意視角嘅圖片前饋生成 3D Gaussian Splatting，唔使逐個場景長時間優化。相機唔受控嘅相片都可以快速變成可渲染場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/InternRobotics/AnySplat">GitHub</a></div>
+  
+</article><article class="card" id="p-electronicarts-mesh2splat" data-search="mesh2splat electronicarts/mesh2splat 把現有三角網格快速轉成 3d gaussian splat。已經有模型嘅遊戲或影片資產，可以變成高斯表示嚟做即時渲染，而唔使重新掃描。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 fast mesh to 3d gaussian splat conversion c++ ">
+  <header>
+    <h3><span class="rank">44</span><a href="https://github.com/electronicarts/mesh2splat">mesh2splat</a></h3>
+    <div class="stars">★ 956</div>
+  </header>
+  <p class="meta">electronicarts/mesh2splat · C++ · 最近推送 2026-04-22</p>
+  <p class="summary">把現有三角網格快速轉成 3D Gaussian Splat。已經有模型嘅遊戲或影片資產，可以變成高斯表示嚟做即時渲染，而唔使重新掃描。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/electronicarts/mesh2splat">GitHub</a><a href="https://seed.ea.com">主頁</a></div>
+  
+</article><article class="card" id="p-nianticlabs-spz" data-search="spz nianticlabs/spz niantic 提出嘅 3d gaussian splat 壓縮格式，體積大約係 ply 嘅十分之一，畫面損失好細。適合把場景放上網頁或者流動裝置傳輸。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 file format for 3d gaussian splats. about 10x smaller than the ply equivalent with virtually no perceptible loss in visual quality. offered as open source by niantic labs. more details at https://scaniverse.com/spz #3dgaussiansplats #gaussiansplatting c++ 3dgs compression gaussian-splatting splat">
+  <header>
+    <h3><span class="rank">45</span><a href="https://github.com/nianticlabs/spz">spz</a></h3>
+    <div class="stars">★ 940</div>
+  </header>
+  <p class="meta">nianticlabs/spz · C++ · MIT · 最近推送 2026-09-01</p>
+  <p class="summary">Niantic 提出嘅 3D Gaussian Splat 壓縮格式，體積大約係 PLY 嘅十分之一，畫面損失好細。適合把場景放上網頁或者流動裝置傳輸。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/nianticlabs/spz">GitHub</a><a href="https://scaniverse.com">主頁</a></div>
+  <div class="topics"><span>#3dgs</span><span>#compression</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-city-super-octree-gs" data-search="octree-gs city-super/octree-gs 用八叉樹同 lod 組織三維高斯，令大場景可以按距離切換細節，做到較穩定嘅即時渲染。遠景用粗層，近景先載入細高斯。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [tpami 2025] octree-gs: towards consistent real-time rendering with lod-structured 3d gaussians c++ ">
+  <header>
+    <h3><span class="rank">46</span><a href="https://github.com/city-super/Octree-GS">Octree-GS</a></h3>
+    <div class="stars">★ 862</div>
+  </header>
+  <p class="meta">city-super/Octree-GS · C++ · 最近推送 2025-08-19</p>
+  <p class="summary">用八叉樹同 LOD 組織三維高斯，令大場景可以按距離切換細節，做到較穩定嘅即時渲染。遠景用粗層，近景先載入細高斯。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/city-super/Octree-GS">GitHub</a><a href="https://city-super.github.io/octree-gs/">主頁</a></div>
+  
+</article><article class="card" id="p-kcheng1021-gaussianpro" data-search="gaussianpro kcheng1021/gaussianpro 用漸進式傳播改善 3d gaussian splatting 嘅幾何同覆蓋。訓練時逐步補齊表面，減少空洞同漂浮點，令重建更完整。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [icml2024] official code for gaussianpro: 3d gaussian splatting with progressive propagation python ">
+  <header>
+    <h3><span class="rank">47</span><a href="https://github.com/kcheng1021/GaussianPro">GaussianPro</a></h3>
+    <div class="stars">★ 848</div>
+  </header>
+  <p class="meta">kcheng1021/GaussianPro · Python · MIT · 最近推送 2025-08-24</p>
+  <p class="summary">用漸進式傳播改善 3D Gaussian Splatting 嘅幾何同覆蓋。訓練時逐步補齊表面，減少空洞同漂浮點，令重建更完整。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/kcheng1021/GaussianPro">GitHub</a><a href="https://kcheng1021.github.io/gaussianpro.github.io/">主頁</a></div>
+  
+</article><article class="card" id="p-vita-group-lightgaussian" data-search="lightgaussian vita-group/lightgaussian 壓縮無邊界 3d gaussian 場景，目標係大幅減少高斯數量同儲存，同時保持超過二百幀嘅渲染。適合要把大場景放到即時應用。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [neurips 2024 spotlight]&quot;lightgaussian: unbounded 3d gaussian compression with 15x reduction and 200+ fps&quot;, zhiwen fan, kevin wang, kairun wen, zehao zhu, dejia xu, zhangyang wang python 3d-reconstruction efficient-inference gaussian-splatting neurips-2024 nurips">
+  <header>
+    <h3><span class="rank">48</span><a href="https://github.com/VITA-Group/LightGaussian">LightGaussian</a></h3>
+    <div class="stars">★ 826</div>
+  </header>
+  <p class="meta">VITA-Group/LightGaussian · Python · 最近推送 2024-12-30</p>
+  <p class="summary">壓縮無邊界 3D Gaussian 場景，目標係大幅減少高斯數量同儲存，同時保持超過二百幀嘅渲染。適合要把大場景放到即時應用。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/VITA-Group/LightGaussian">GitHub</a><a href="https://lightgaussian.github.io/">主頁</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#efficient-inference</span><span>#gaussian-splatting</span></div>
+</article></div>
+  
+</section>
+  </main>
+  <footer class="site">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 排序以 stars 為準 · 重複項目只保留一次</footer>
+</div>
+<script>
+(function () {
+  const input = document.querySelector("#q");
+  const hub = document.querySelector("#hub");
+  const results = document.querySelector("#results");
+  const cards = Array.from(document.querySelectorAll("#results [data-search], section [data-search]"));
+  const sections = Array.from(document.querySelectorAll("[data-section]"));
+  const empty = document.querySelector("#empty");
+  function apply() {
+    const q = input.value.trim().toLowerCase();
+    if (hub && results) {
+      const browsing = q.length === 0;
+      hub.hidden = !browsing;
+      results.hidden = browsing;
+      if (browsing) {
+        empty.hidden = true;
+        empty.style.display = "none";
+        return;
+      }
+    }
+    let shown = 0;
+    cards.forEach((card) => {
+      const ok = !q || card.dataset.search.includes(q);
+      card.hidden = !ok;
+      if (ok) shown += 1;
+    });
+    sections.forEach((section) => {
+      section.hidden = !Array.from(section.querySelectorAll("[data-search]")).some((card) => !card.hidden);
+    });
+    empty.hidden = shown !== 0;
+    empty.style.display = shown === 0 ? "block" : "none";
+  }
+  input.addEventListener("input", apply);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "/" && document.activeElement !== input) {
+      event.preventDefault();
+      input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

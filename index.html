@@ -211,16 +211,16 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
 <header class="hero">
     <p class="kicker">每 6 小時更新</p>
     <h1>Open Source Catalog</h1>
-    <p class="lede">六個分類各自一頁。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。</p>
+    <p class="lede">九個分類各自一頁。而家聚焦 Gaussian Splatting、World Model 同 Image to 3D。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。</p>
     <div class="stats">
-      <div class="stat"><b>200</b><span>開源項目</span></div>
+      <div class="stat"><b>317</b><span>開源項目</span></div>
       <div class="stat"><b>7</b><span>未另列 repo 嘅論文</span></div>
-      <div class="stat"><b>2026年10月28日</b><span>20:06（香港時間）</span></div>
+      <div class="stat"><b>2026年10月28日</b><span>22:19（香港時間）</span></div>
     </div>
   </header>
 
   <div class="stickybar">
-    <nav class="pages" aria-label="分類"><a href="./" aria-current="page">目錄</a><a href="ai-agent/">AI Agent<span class="count">42</span></a><a href="image/">圖像<span class="count">37</span></a><a href="video/">影片<span class="count">32</span></a><a href="vfx-cg-blender/">VFX / CG / Blender<span class="count">32</span></a><a href="stock-trading/">Stock Trading<span class="count">30</span></a><a href="crypto-trading/">Crypto Trading<span class="count">27</span></a></nav>
+    <nav class="pages" aria-label="分類"><a href="./" aria-current="page">目錄</a><a href="gaussian-splatting/">Gaussian Splatting<span class="count">48</span></a><a href="world-model/">World Model<span class="count">34</span></a><a href="image-to-3d/">Image to 3D<span class="count">39</span></a><a href="ai-agent/">AI Agent<span class="count">42</span></a><a href="image/">圖像<span class="count">37</span></a><a href="video/">影片<span class="count">32</span></a><a href="vfx-cg-blender/">VFX / CG / Blender<span class="count">28</span></a><a href="stock-trading/">Stock Trading<span class="count">30</span></a><a href="crypto-trading/">Crypto Trading<span class="count">27</span></a></nav>
     <form class="search" role="search" onsubmit="return false">
       <label class="sr" for="q" style="position:absolute;left:-999px">搜尋</label>
       <input id="q" type="search" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
@@ -228,7 +228,22 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   </div>
   <main class="page" id="content">
     <p id="empty">沒有符合呢個搜尋嘅項目。</p>
-    <div class="hub" id="hub"><a class="tile" href="ai-agent/">
+    <div class="hub" id="hub"><a class="tile" href="gaussian-splatting/">
+  <div class="tile-top"><h2>Gaussian Splatting</h2><span class="count">48</span></div>
+  <p>用三維高斯重建場景、即時渲染、編輯同 SLAM，包括 3DGS、4D 動態場景同瀏覽器檢視器。</p>
+  <p class="top">星數最高 · gaussian-splatting ★ 24,357</p>
+  <span class="go">打開呢一頁</span>
+</a><a class="tile" href="world-model/">
+  <div class="tile-top"><h2>World Model</h2><span class="count">34</span></div>
+  <p>學識預測下一個畫面或狀態嘅世界模型，用喺影片、自動駕駛、機械人同可探索嘅三維世界。</p>
+  <p class="top">星數最高 · genesis-world ★ 30,134</p>
+  <span class="go">打開呢一頁</span>
+</a><a class="tile" href="image-to-3d/">
+  <div class="tile-top"><h2>Image to 3D</h2><span class="count">39</span></div>
+  <p>由一張圖或一段文字生成三維模型，包括網格、高斯同多視角幾何重建。</p>
+  <p class="top">星數最高 · Hunyuan3D-2 ★ 15,229</p>
+  <span class="go">打開呢一頁</span>
+</a><a class="tile" href="ai-agent/">
   <div class="tile-top"><h2>AI Agent</h2><span class="count">42</span></div>
   <p>會規劃、調用工具、同其他 agent 一齊做嘢嘅開源框架同程式。</p>
   <p class="top">星數最高 · AutoGPT ★ 187,801</p>
@@ -244,7 +259,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   <p class="top">星數最高 · yt-dlp ★ 203,226</p>
   <span class="go">打開呢一頁</span>
 </a><a class="tile" href="vfx-cg-blender/">
-  <div class="tile-top"><h2>VFX / CG / Blender</h2><span class="count">32</span></div>
+  <div class="tile-top"><h2>VFX / CG / Blender</h2><span class="count">28</span></div>
   <p>三維、合成、渲染、材質同 Blender 生態。</p>
   <p class="top">星數最高 · godot ★ 119,194</p>
   <span class="go">打開呢一頁</span>
@@ -260,7 +275,1096 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   <span class="go">打開呢一頁</span>
 </a></div>
 <div id="results" hidden>
-  <div class="grid"><article class="card" id="p-significant-gravitas-autogpt" data-search="autogpt significant-gravitas/autogpt 開放嘅 ai agent 平台，用嚟由一個目標自動拆解任務。佢可以自己揀工具、跑步驟同整理結果，等你專注喺想完成嘅事，而唔使由零砌晒成條工具鏈。你畀一個目標就得，執行過程可以自己托管。 autogpt is the vision of accessible ai for everyone, to use and to build on. our mission is to provide the tools, so that you can focus on what matters. python agentic-ai agents ai artificial-intelligence autonomous-agents claude gpt llama-api">
+  <div class="grid"><article class="card" id="p-graphdeco-inria-gaussian-splatting" data-search="gaussian-splatting graphdeco-inria/gaussian-splatting 3d gaussian splatting 嘅原始實作，用大量三維高斯表示場景，可以由相片即時渲染新視角。後來嘅動態場景、壓縮同瀏覽器檢視器，好多都係由呢套程式出發。 original reference implementation of &quot;3d gaussian splatting for real-time radiance field rendering&quot; python computer-graphics computer-vision radiance-field">
+  <header>
+    <h3><span class="rank">01</span><a href="https://github.com/graphdeco-inria/gaussian-splatting">gaussian-splatting</a></h3>
+    <div class="stars">★ 24,357</div>
+  </header>
+  <p class="meta">graphdeco-inria/gaussian-splatting · Python · 最近推送 2025-10-17</p>
+  <p class="summary">3D Gaussian Splatting 嘅原始實作，用大量三維高斯表示場景，可以由相片即時渲染新視角。後來嘅動態場景、壓縮同瀏覽器檢視器，好多都係由呢套程式出發。</p>
+  <div class="links"><a href="https://github.com/graphdeco-inria/gaussian-splatting">GitHub</a><a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">主頁</a><a href="https://arxiv.org/abs/2308.04079">論文</a><a href="gaussian-splatting/#p-graphdeco-inria-gaussian-splatting">Gaussian Splatting</a></div>
+  <div class="topics"><span>#computer-graphics</span><span>#computer-vision</span><span>#radiance-field</span></div>
+</article><article class="card" id="p-nerfstudio-project-nerfstudio" data-search="nerfstudio nerfstudio-project/nerfstudio 研究新視角合成嘅工作台，nerf 同 3d gaussian splatting（splatfacto）可以共用同一套資料、訓練同檢視工具。換方法時唔使重寫成套腳本，適合試高斯重建。 a collaboration friendly studio for nerfs python 3d 3d-graphics 3d-reconstruction computer-vision deep-learning gaussian-splatting machine-learning nerf">
+  <header>
+    <h3><span class="rank">02</span><a href="https://github.com/nerfstudio-project/nerfstudio">nerfstudio</a></h3>
+    <div class="stars">★ 12,125</div>
+  </header>
+  <p class="meta">nerfstudio-project/nerfstudio · Python · Apache-2.0 · 最近推送 2025-07-29</p>
+  <p class="summary">研究新視角合成嘅工作台，NeRF 同 3D Gaussian Splatting（splatfacto）可以共用同一套資料、訓練同檢視工具。換方法時唔使重寫成套腳本，適合試高斯重建。</p>
+  <div class="links"><a href="https://github.com/nerfstudio-project/nerfstudio">GitHub</a><a href="https://docs.nerf.studio">主頁</a><a href="gaussian-splatting/#p-nerfstudio-project-nerfstudio">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-graphics</span><span>#3d-reconstruction</span></div>
+</article><article class="card" id="p-playcanvas-supersplat" data-search="supersplat playcanvas/supersplat 喺瀏覽器入面編輯 3d gaussian splat 嘅工具。你可以檢視、修剪同整理掃描得到嘅高斯場景，再匯出，而唔使先裝一套桌面研究程式。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 3d gaussian splat editor typescript 3d-gaussian-splatting 3dgs gaussian-splatting pcui playcanvas typescript webgl webgpu">
+  <header>
+    <h3><span class="rank">03</span><a href="https://github.com/playcanvas/supersplat">supersplat</a></h3>
+    <div class="stars">★ 10,481</div>
+  </header>
+  <p class="meta">playcanvas/supersplat · TypeScript · MIT · 最近推送 2026-10-26</p>
+  <p class="summary">喺瀏覽器入面編輯 3D Gaussian Splat 嘅工具。你可以檢視、修剪同整理掃描得到嘅高斯場景，再匯出，而唔使先裝一套桌面研究程式。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/playcanvas/supersplat">GitHub</a><a href="https://superspl.at/editor">主頁</a><a href="gaussian-splatting/#p-playcanvas-supersplat">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d-gaussian-splatting</span><span>#3dgs</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-nerfstudio-project-gsplat" data-search="gsplat nerfstudio-project/gsplat 用 cuda 加速嘅 gaussian splatting 光柵化庫，方便研究同整合。其他專案可以呼叫佢做高斯場景嘅渲染核心，而唔使自己寫顯示卡光柵化。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 cuda accelerated rasterization of gaussian splatting python gaussian-splatting">
+  <header>
+    <h3><span class="rank">04</span><a href="https://github.com/nerfstudio-project/gsplat">gsplat</a></h3>
+    <div class="stars">★ 5,845</div>
+  </header>
+  <p class="meta">nerfstudio-project/gsplat · Python · Apache-2.0 · 最近推送 2026-09-19</p>
+  <p class="summary">用 CUDA 加速嘅 Gaussian Splatting 光柵化庫，方便研究同整合。其他專案可以呼叫佢做高斯場景嘅渲染核心，而唔使自己寫顯示卡光柵化。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/nerfstudio-project/gsplat">GitHub</a><a href="https://docs.gsplat.studio/">主頁</a><a href="gaussian-splatting/#p-nerfstudio-project-gsplat">Gaussian Splatting</a></div>
+  <div class="topics"><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-arthurbrussee-brush" data-search="brush arthurbrussee/brush 用 rust 寫嘅三維重建程式，可以由相片或影片訓練 3d gaussian splatting。介面偏實用，想喺自己部機由畫面變成可轉視角嘅場景，可以由此入手。 3d reconstruction for all rust gaussian-splatting graphics reconstruction">
+  <header>
+    <h3><span class="rank">05</span><a href="https://github.com/ArthurBrussee/brush">brush</a></h3>
+    <div class="stars">★ 5,224</div>
+  </header>
+  <p class="meta">ArthurBrussee/brush · Rust · Apache-2.0 · 最近推送 2026-10-03</p>
+  <p class="summary">用 Rust 寫嘅三維重建程式，可以由相片或影片訓練 3D Gaussian Splatting。介面偏實用，想喺自己部機由畫面變成可轉視角嘅場景，可以由此入手。</p>
+  <div class="links"><a href="https://github.com/ArthurBrussee/brush">GitHub</a><a href="gaussian-splatting/#p-arthurbrussee-brush">Gaussian Splatting</a></div>
+  <div class="topics"><span>#gaussian-splatting</span><span>#graphics</span><span>#reconstruction</span></div>
+</article><article class="card" id="p-hustvl-4dgaussians" data-search="4dgaussians hustvl/4dgaussians 把靜態三維高斯擴展到動態場景，用變形場隨時間移動高斯，做到即時渲染會郁嘅畫面。適合由一段影片重建可以換視角嘅四維場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [cvpr 2024] 4d gaussian splatting for real-time dynamic scene rendering jupyter notebook 3d computer-vision cvpr2024 dynamic-scene gaussian-splatting graphics neural-network neural-rendering">
+  <header>
+    <h3><span class="rank">06</span><a href="https://github.com/hustvl/4DGaussians">4DGaussians</a></h3>
+    <div class="stars">★ 3,995</div>
+  </header>
+  <p class="meta">hustvl/4DGaussians · Jupyter Notebook · Apache-2.0 · 最近推送 2024-10-27</p>
+  <p class="summary">把靜態三維高斯擴展到動態場景，用變形場隨時間移動高斯，做到即時渲染會郁嘅畫面。適合由一段影片重建可以換視角嘅四維場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/hustvl/4DGaussians">GitHub</a><a href="https://guanjunwu.github.io/4dgs/">主頁</a><a href="gaussian-splatting/#p-hustvl-4dgaussians">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d</span><span>#computer-vision</span><span>#cvpr2024</span></div>
+</article><article class="card" id="p-mrnerf-lichtfeld-studio" data-search="lichtfeld-studio mrnerf/lichtfeld-studio 一套原生桌面程式，用嚟訓練、檢查、編輯同匯出 3d gaussian splatting 場景。想唔使自己砌研究腳本，就可以喺同一個介面完成由資料到場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 train, inspect, edit, automate, and export 3d gaussian splatting scenes from a single native application. c++ computer-graphics computer-vision cuda gaussian-splatting optimization">
+  <header>
+    <h3><span class="rank">07</span><a href="https://github.com/MrNeRF/LichtFeld-Studio">LichtFeld-Studio</a></h3>
+    <div class="stars">★ 3,926</div>
+  </header>
+  <p class="meta">MrNeRF/LichtFeld-Studio · C++ · GPL-3.0 · 最近推送 2026-10-28</p>
+  <p class="summary">一套原生桌面程式，用嚟訓練、檢查、編輯同匯出 3D Gaussian Splatting 場景。想唔使自己砌研究腳本，就可以喺同一個介面完成由資料到場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/MrNeRF/LichtFeld-Studio">GitHub</a><a href="https://lichtfeld.io">主頁</a><a href="gaussian-splatting/#p-mrnerf-lichtfeld-studio">Gaussian Splatting</a></div>
+  <div class="topics"><span>#computer-graphics</span><span>#computer-vision</span><span>#cuda</span></div>
+</article><article class="card" id="p-sparkjsdev-spark" data-search="spark sparkjsdev/spark 畀 three.js 用嘅進階 3d gaussian splatting 渲染器。網頁同互動場景可以直接載入高斯點雲，喺瀏覽器入面即時睇新視角，而唔使另開研究檢視器。 :sparkles:  an advanced 3d gaussian splatting renderer for three.js typescript ">
+  <header>
+    <h3><span class="rank">08</span><a href="https://github.com/sparkjsdev/spark">spark</a></h3>
+    <div class="stars">★ 3,815</div>
+  </header>
+  <p class="meta">sparkjsdev/spark · TypeScript · MIT · 最近推送 2026-10-20</p>
+  <p class="summary">畀 Three.js 用嘅進階 3D Gaussian Splatting 渲染器。網頁同互動場景可以直接載入高斯點雲，喺瀏覽器入面即時睇新視角，而唔使另開研究檢視器。</p>
+  <div class="links"><a href="https://github.com/sparkjsdev/spark">GitHub</a><a href="gaussian-splatting/#p-sparkjsdev-spark">Gaussian Splatting</a></div>
+  
+</article><article class="card" id="p-anttwo-sugar" data-search="sugar anttwo/sugar 把高斯貼住物體表面嚟重建網格，再保留高質素渲染。想由 3d gaussian splatting 場景抽出可以用喺傳統流程嘅 mesh，呢個就係對應嘅實作。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [cvpr 2024] official pytorch implementation of sugar: surface-aligned gaussian splatting for efficient 3d mesh reconstruction and high-quality mesh rendering c++ 3d-gaussian-splatting 3dgs cvpr2024 gaussian-splatting mesh mesh-generation nerf neural-rendering">
+  <header>
+    <h3><span class="rank">09</span><a href="https://github.com/Anttwo/SuGaR">SuGaR</a></h3>
+    <div class="stars">★ 3,547</div>
+  </header>
+  <p class="meta">Anttwo/SuGaR · C++ · 最近推送 2024-09-24</p>
+  <p class="summary">把高斯貼住物體表面嚟重建網格，再保留高質素渲染。想由 3D Gaussian Splatting 場景抽出可以用喺傳統流程嘅 mesh，呢個就係對應嘅實作。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/Anttwo/SuGaR">GitHub</a><a href="https://anttwo.github.io/sugar/">主頁</a><a href="gaussian-splatting/#p-anttwo-sugar">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d-gaussian-splatting</span><span>#3dgs</span><span>#cvpr2024</span></div>
+</article><article class="card" id="p-aras-p-unitygaussiansplatting" data-search="unitygaussiansplatting aras-p/unitygaussiansplatting 喺 unity 入面顯示 gaussian splatting 嘅實驗專案。遊戲同互動場景可以載入高斯點雲嚟即時渲染，方便試下研究結果點樣放進引擎。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 toy gaussian splatting visualization in unity c# gaussian-splatting unity">
+  <header>
+    <h3><span class="rank">10</span><a href="https://github.com/aras-p/UnityGaussianSplatting">UnityGaussianSplatting</a></h3>
+    <div class="stars">★ 3,450</div>
+  </header>
+  <p class="meta">aras-p/UnityGaussianSplatting · C# · MIT · 最近推送 2026-10-27</p>
+  <p class="summary">喺 Unity 入面顯示 Gaussian Splatting 嘅實驗專案。遊戲同互動場景可以載入高斯點雲嚟即時渲染，方便試下研究結果點樣放進引擎。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/aras-p/UnityGaussianSplatting">GitHub</a><a href="gaussian-splatting/#p-aras-p-unitygaussiansplatting">Gaussian Splatting</a></div>
+  <div class="topics"><span>#gaussian-splatting</span><span>#unity</span></div>
+</article><article class="card" id="p-hbb1-2d-gaussian-splatting" data-search="2d-gaussian-splatting hbb1/2d-gaussian-splatting 用二維高斯平面代替三維高斯球，令輻射場嘅幾何更準。渲染仍然即時，同時表面位置更穩，適合之後要抽取網格或者量度場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [siggraph&#x27;24] 2d gaussian splatting for geometrically accurate radiance fields python gaussian-splatting novel-view-synthesis surface-reconstruction">
+  <header>
+    <h3><span class="rank">11</span><a href="https://github.com/hbb1/2d-gaussian-splatting">2d-gaussian-splatting</a></h3>
+    <div class="stars">★ 3,323</div>
+  </header>
+  <p class="meta">hbb1/2d-gaussian-splatting · Python · 最近推送 2026-08-25</p>
+  <p class="summary">用二維高斯平面代替三維高斯球，令輻射場嘅幾何更準。渲染仍然即時，同時表面位置更穩，適合之後要抽取網格或者量度場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/hbb1/2d-gaussian-splatting">GitHub</a><a href="https://surfsplatting.github.io">主頁</a><a href="gaussian-splatting/#p-hbb1-2d-gaussian-splatting">Gaussian Splatting</a></div>
+  <div class="topics"><span>#gaussian-splatting</span><span>#novel-view-synthesis</span><span>#surface-reconstruction</span></div>
+</article><article class="card" id="p-antimatter15-splat" data-search="splat antimatter15/splat 一個輕量 webgl 檢視器，喺瀏覽器直接打開 3d gaussian splat。掃描或訓練好嘅場景可以分享條連結畀人轉視角睇，而唔使安裝桌面程式。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 webgl 3d gaussian splat viewer javascript ">
+  <header>
+    <h3><span class="rank">12</span><a href="https://github.com/antimatter15/splat">splat</a></h3>
+    <div class="stars">★ 3,082</div>
+  </header>
+  <p class="meta">antimatter15/splat · JavaScript · MIT · 最近推送 2025-11-16</p>
+  <p class="summary">一個輕量 WebGL 檢視器，喺瀏覽器直接打開 3D Gaussian Splat。掃描或訓練好嘅場景可以分享條連結畀人轉視角睇，而唔使安裝桌面程式。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/antimatter15/splat">GitHub</a><a href="https://antimatter15.com/splat/">主頁</a><a href="gaussian-splatting/#p-antimatter15-splat">Gaussian Splatting</a></div>
+  
+</article><article class="card" id="p-mkkellogg-gaussiansplats3d" data-search="gaussiansplats3d mkkellogg/gaussiansplats3d 用 three.js 實作嘅 3d gaussian splatting 檢視器。網頁可以載入常見嘅 splat 檔，做即時新視角渲染，方便嵌進自己嘅三維頁面。 three.js-based implementation of 3d gaussian splatting javascript 3d-gaussian-splatting gaussian-splatting javascript three-js threejs webgl">
+  <header>
+    <h3><span class="rank">13</span><a href="https://github.com/mkkellogg/GaussianSplats3D">GaussianSplats3D</a></h3>
+    <div class="stars">★ 2,929</div>
+  </header>
+  <p class="meta">mkkellogg/GaussianSplats3D · JavaScript · MIT · 最近推送 2025-10-19</p>
+  <p class="summary">用 Three.js 實作嘅 3D Gaussian Splatting 檢視器。網頁可以載入常見嘅 splat 檔，做即時新視角渲染，方便嵌進自己嘅三維頁面。</p>
+  <div class="links"><a href="https://github.com/mkkellogg/GaussianSplats3D">GitHub</a><a href="gaussian-splatting/#p-mkkellogg-gaussiansplats3d">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d-gaussian-splatting</span><span>#gaussian-splatting</span><span>#javascript</span></div>
+</article><article class="card" id="p-nv-tlabs-3dgrut" data-search="3dgrut nv-tlabs/3dgrut nvidia 嘅高斯粒子渲染研究，同時提供光線追蹤同混合光柵化。想比較傳統 splat 光柵同光追喺反射、深度同畫面質素上嘅分別，可以睇呢套程式。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 ray tracing and hybrid rasterization of gaussian particles python 3d-reconstruction computer-vision gaussian-splatting ray-tracing">
+  <header>
+    <h3><span class="rank">14</span><a href="https://github.com/nv-tlabs/3dgrut">3dgrut</a></h3>
+    <div class="stars">★ 2,476</div>
+  </header>
+  <p class="meta">nv-tlabs/3dgrut · Python · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">NVIDIA 嘅高斯粒子渲染研究，同時提供光線追蹤同混合光柵化。想比較傳統 splat 光柵同光追喺反射、深度同畫面質素上嘅分別，可以睇呢套程式。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/nv-tlabs/3dgrut">GitHub</a><a href="gaussian-splatting/#p-nv-tlabs-3dgrut">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#computer-vision</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-jonathonluiten-dynamic3dgaussians" data-search="dynamic3dgaussians jonathonluiten/dynamic3dgaussians 用動態三維高斯追蹤會郁嘅場景，同時保留新視角渲染。物體隨時間移動時，高斯可以跟住佢，適合多相機嘅動態捕捉。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 用動態三維高斯追蹤會郁嘅場景，同時保留新視角渲染。物體隨時間移動時，高斯可以跟住佢，適合多相機嘅動態捕捉。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 python ">
+  <header>
+    <h3><span class="rank">15</span><a href="https://github.com/JonathonLuiten/Dynamic3DGaussians">Dynamic3DGaussians</a></h3>
+    <div class="stars">★ 2,305</div>
+  </header>
+  <p class="meta">JonathonLuiten/Dynamic3DGaussians · Python · 最近推送 2023-12-22</p>
+  <p class="summary">用動態三維高斯追蹤會郁嘅場景，同時保留新視角渲染。物體隨時間移動時，高斯可以跟住佢，適合多相機嘅動態捕捉。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/JonathonLuiten/Dynamic3DGaussians">GitHub</a><a href="gaussian-splatting/#p-jonathonluiten-dynamic3dgaussians">Gaussian Splatting</a></div>
+  
+</article><article class="card" id="p-webodm-opensplat" data-search="opensplat webodm/opensplat 面向實際生產嘅 3d gaussian splatting 工具，支援 cpu 同 gpu，可以喺 windows、mac 同 linux 跑。適合由航拍或相片集重建可即時瀏覽嘅場景。 production-grade 3d gaussian splatting with cpu/gpu support for windows, mac and linux 💦 c++ 3d drones gaussian radiance-field splats splatting">
+  <header>
+    <h3><span class="rank">16</span><a href="https://github.com/WebODM/OpenSplat">OpenSplat</a></h3>
+    <div class="stars">★ 2,242</div>
+  </header>
+  <p class="meta">WebODM/OpenSplat · C++ · AGPL-3.0 · 最近推送 2026-10-02</p>
+  <p class="summary">面向實際生產嘅 3D Gaussian Splatting 工具，支援 CPU 同 GPU，可以喺 Windows、Mac 同 Linux 跑。適合由航拍或相片集重建可即時瀏覽嘅場景。</p>
+  <div class="links"><a href="https://github.com/WebODM/OpenSplat">GitHub</a><a href="gaussian-splatting/#p-webodm-opensplat">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d</span><span>#drones</span><span>#gaussian</span></div>
+</article><article class="card" id="p-spla-tam-splatam" data-search="splatam spla-tam/splatam 用 3d gaussian 做稠密 rgb-d slam，邊行邊建圖同追蹤相機。鏡頭郁嘅時候持續更新高斯地圖，適合機械人或者手持相機嘅即時重建。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 splatam: splat, track &amp; map 3d gaussians for dense rgb-d slam (cvpr 2024) python computer-vision cvpr2024 gaussian-splatting robotics slam">
+  <header>
+    <h3><span class="rank">17</span><a href="https://github.com/spla-tam/SplaTAM">SplaTAM</a></h3>
+    <div class="stars">★ 2,216</div>
+  </header>
+  <p class="meta">spla-tam/SplaTAM · Python · BSD-3-Clause · 最近推送 2024-06-19</p>
+  <p class="summary">用 3D Gaussian 做稠密 RGB-D SLAM，邊行邊建圖同追蹤相機。鏡頭郁嘅時候持續更新高斯地圖，適合機械人或者手持相機嘅即時重建。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/spla-tam/SplaTAM">GitHub</a><a href="https://spla-tam.github.io/">主頁</a><a href="gaussian-splatting/#p-spla-tam-splatam">Gaussian Splatting</a></div>
+  <div class="topics"><span>#computer-vision</span><span>#cvpr2024</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-muskie82-monogs" data-search="monogs muskie82/monogs 只用單一彩色相機做 gaussian splatting slam，唔使深度鏡頭都可以追蹤同建圖。相機一邊郁，場景一邊用高斯更新，方便實時新視角查看。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [cvpr&#x27;24 highlight &amp; best demo award] gaussian splatting slam python computer-vision cvpr2024 gaussian-splatting robotics slam">
+  <header>
+    <h3><span class="rank">18</span><a href="https://github.com/muskie82/MonoGS">MonoGS</a></h3>
+    <div class="stars">★ 2,189</div>
+  </header>
+  <p class="meta">muskie82/MonoGS · Python · 最近推送 2024-08-07</p>
+  <p class="summary">只用單一彩色相機做 Gaussian Splatting SLAM，唔使深度鏡頭都可以追蹤同建圖。相機一邊郁，場景一邊用高斯更新，方便實時新視角查看。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/muskie82/MonoGS">GitHub</a><a href="https://rmurai.co.uk/projects/GaussianSplattingSLAM/">主頁</a><a href="gaussian-splatting/#p-muskie82-monogs">Gaussian Splatting</a></div>
+  <div class="topics"><span>#computer-vision</span><span>#cvpr2024</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-ooolabdev-ooosplat" data-search="ooosplat ooolabdev/ooosplat 本地桌面程式，用一段影片或一組圖片一鍵變成 3d gaussian splat。想少啲自己調研究參數，先快速睇到一個可轉視角嘅場景，可以用佢試。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 a local desktop app that turns videos and images into 3d gaussian splats in one click. rust 3d gaussian-splatting">
+  <header>
+    <h3><span class="rank">19</span><a href="https://github.com/ooolabdev/ooosplat">ooosplat</a></h3>
+    <div class="stars">★ 2,151</div>
+  </header>
+  <p class="meta">ooolabdev/ooosplat · Rust · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">本地桌面程式，用一段影片或一組圖片一鍵變成 3D Gaussian Splat。想少啲自己調研究參數，先快速睇到一個可轉視角嘅場景，可以用佢試。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/ooolabdev/ooosplat">GitHub</a><a href="gaussian-splatting/#p-ooolabdev-ooosplat">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-harry7557558-spirula-studio" data-search="spirula-studio harry7557558/spirula-studio 跨顯示卡嘅 3d gaussian splatting 訓練器，支援 vulkan 或 cuda，可以由影片訓練 splat 再轉成網格。想喺唔同硬件上跑重建，呢套係一個選擇。 cross-vendor 3d gaussian splatting trainer - video to splat to mesh, vulkan or cuda. c++ 360-camera 3d-gaussian-splatting 3d-reconstruction 3dgs 3dgs-acceleration computer-vision cross-vendor cuda">
+  <header>
+    <h3><span class="rank">20</span><a href="https://github.com/harry7557558/spirula-studio">spirula-studio</a></h3>
+    <div class="stars">★ 1,984</div>
+  </header>
+  <p class="meta">harry7557558/spirula-studio · C++ · GPL-3.0 · 最近推送 2026-10-28</p>
+  <p class="summary">跨顯示卡嘅 3D Gaussian Splatting 訓練器，支援 Vulkan 或 CUDA，可以由影片訓練 splat 再轉成網格。想喺唔同硬件上跑重建，呢套係一個選擇。</p>
+  <div class="links"><a href="https://github.com/harry7557558/spirula-studio">GitHub</a><a href="gaussian-splatting/#p-harry7557558-spirula-studio">Gaussian Splatting</a></div>
+  <div class="topics"><span>#360-camera</span><span>#3d-gaussian-splatting</span><span>#3d-reconstruction</span></div>
+</article><article class="card" id="p-gap-lab-cuhk-sz-gaustudio" data-search="gaustudio gap-lab-cuhk-sz/gaustudio 模組化嘅 3d gaussian splatting 框架，把資料、訓練同衍生方法拆開。研究新嘅高斯重建時，可以重用現成組件，而唔使每次由空白專案開始。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 a modular framework for 3d gaussian splatting and beyond jupyter notebook 3d-reconstruction 3dgs gaussian-splatting multi-view-reconstruction nerf pytorch surface-reconstruction">
+  <header>
+    <h3><span class="rank">21</span><a href="https://github.com/GAP-LAB-CUHK-SZ/gaustudio">gaustudio</a></h3>
+    <div class="stars">★ 1,767</div>
+  </header>
+  <p class="meta">GAP-LAB-CUHK-SZ/gaustudio · Jupyter Notebook · MIT · 最近推送 2025-11-05</p>
+  <p class="summary">模組化嘅 3D Gaussian Splatting 框架，把資料、訓練同衍生方法拆開。研究新嘅高斯重建時，可以重用現成組件，而唔使每次由空白專案開始。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/GAP-LAB-CUHK-SZ/gaustudio">GitHub</a><a href="gaussian-splatting/#p-gap-lab-cuhk-sz-gaustudio">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#3dgs</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-nvlabs-instantsplat" data-search="instantsplat nvlabs/instantsplat 唔使先做傳統 sfm，幾秒內就可以由稀疏視角訓練 gaussian splatting。相片少嘅時候仍然可以快速得到可渲染場景，適合即時預覽。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 instantsplat: sparse-view sfm-free gaussian splatting in seconds python ">
+  <header>
+    <h3><span class="rank">22</span><a href="https://github.com/NVlabs/InstantSplat">InstantSplat</a></h3>
+    <div class="stars">★ 1,712</div>
+  </header>
+  <p class="meta">NVlabs/InstantSplat · Python · 最近推送 2025-05-05</p>
+  <p class="summary">唔使先做傳統 SfM，幾秒內就可以由稀疏視角訓練 Gaussian Splatting。相片少嘅時候仍然可以快速得到可渲染場景，適合即時預覽。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/NVlabs/InstantSplat">GitHub</a><a href="https://instantsplat.github.io/">主頁</a><a href="gaussian-splatting/#p-nvlabs-instantsplat">Gaussian Splatting</a></div>
+  
+</article><article class="card" id="p-huggingface-gsplat-js" data-search="gsplat.js huggingface/gsplat.js 用 javascript 寫嘅 gaussian splatting 庫，方便喺網頁端載入同顯示高斯場景。想把研究結果嵌進自己嘅前端，而唔使靠 python 檢視器，可以用佢。 javascript gaussian splatting library. typescript ">
+  <header>
+    <h3><span class="rank">23</span><a href="https://github.com/huggingface/gsplat.js">gsplat.js</a></h3>
+    <div class="stars">★ 1,674</div>
+  </header>
+  <p class="meta">huggingface/gsplat.js · TypeScript · MIT · 最近推送 2026-09-24</p>
+  <p class="summary">用 JavaScript 寫嘅 Gaussian Splatting 庫，方便喺網頁端載入同顯示高斯場景。想把研究結果嵌進自己嘅前端，而唔使靠 Python 檢視器，可以用佢。</p>
+  <div class="links"><a href="https://github.com/huggingface/gsplat.js">GitHub</a><a href="gaussian-splatting/#p-huggingface-gsplat-js">Gaussian Splatting</a></div>
+  
+</article><article class="card" id="p-florian-barthel-splatviz" data-search="splatviz florian-barthel/splatviz 用 python 寫嘅互動 3d gaussian splatting 檢視器，可以即時編輯同分析場景。訓練中途或者訓練完，都可以直接喺視窗入面檢查高斯點。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 full python interactive 3d gaussian splatting viewer for real-time editing and analyzing. python 3d-gaussian-splatting 3dgs analyzing imgui interactive python real-time-editing viewer">
+  <header>
+    <h3><span class="rank">24</span><a href="https://github.com/Florian-Barthel/splatviz">splatviz</a></h3>
+    <div class="stars">★ 1,555</div>
+  </header>
+  <p class="meta">Florian-Barthel/splatviz · Python · MIT · 最近推送 2026-05-20</p>
+  <p class="summary">用 Python 寫嘅互動 3D Gaussian Splatting 檢視器，可以即時編輯同分析場景。訓練中途或者訓練完，都可以直接喺視窗入面檢查高斯點。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/Florian-Barthel/splatviz">GitHub</a><a href="gaussian-splatting/#p-florian-barthel-splatviz">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d-gaussian-splatting</span><span>#3dgs</span><span>#analyzing</span></div>
+</article><article class="card" id="p-luciddreamer-cvlab-luciddreamer" data-search="luciddreamer luciddreamer-cvlab/luciddreamer 由文字或圖像生成 3d gaussian splatting 場景，而唔使先影一套實景相片。生成之後可以轉視角睇，適合做可遊走嘅想像空間。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 official code for the paper &quot;luciddreamer: domain-free generation of 3d gaussian splatting scenes&quot;. python ">
+  <header>
+    <h3><span class="rank">25</span><a href="https://github.com/luciddreamer-cvlab/LucidDreamer">LucidDreamer</a></h3>
+    <div class="stars">★ 1,528</div>
+  </header>
+  <p class="meta">luciddreamer-cvlab/LucidDreamer · Python · 最近推送 2026-07-23</p>
+  <p class="summary">由文字或圖像生成 3D Gaussian Splatting 場景，而唔使先影一套實景相片。生成之後可以轉視角睇，適合做可遊走嘅想像空間。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/luciddreamer-cvlab/LucidDreamer">GitHub</a><a href="gaussian-splatting/#p-luciddreamer-cvlab-luciddreamer">Gaussian Splatting</a></div>
+  
+</article><article class="card" id="p-graphdeco-inria-diff-gaussian-rasterization" data-search="diff-gaussian-rasterization graphdeco-inria/diff-gaussian-rasterization 官方 3d gaussian splatting 用嘅可微光柵化核心，用 cuda 把高斯投影到畫面並反向傳播。自己寫訓練程式時，通常會直接呼叫呢個渲染器。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 官方 3d gaussian splatting 用嘅可微光柵化核心，用 cuda 把高斯投影到畫面並反向傳播。自己寫訓練程式時，通常會直接呼叫呢個渲染器。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 cuda ">
+  <header>
+    <h3><span class="rank">26</span><a href="https://github.com/graphdeco-inria/diff-gaussian-rasterization">diff-gaussian-rasterization</a></h3>
+    <div class="stars">★ 1,507</div>
+  </header>
+  <p class="meta">graphdeco-inria/diff-gaussian-rasterization · Cuda · 最近推送 2024-10-21</p>
+  <p class="summary">官方 3D Gaussian Splatting 用嘅可微光柵化核心，用 CUDA 把高斯投影到畫面並反向傳播。自己寫訓練程式時，通常會直接呼叫呢個渲染器。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/graphdeco-inria/diff-gaussian-rasterization">GitHub</a><a href="gaussian-splatting/#p-graphdeco-inria-diff-gaussian-rasterization">Gaussian Splatting</a></div>
+  
+</article><article class="card" id="p-autonomousvision-mip-splatting" data-search="mip-splatting autonomousvision/mip-splatting 處理 gaussian splatting 放大縮小時出現嘅鋸齒同走樣。用類似 mipmap 嘅做法，令遠近唔同尺度都保持清楚，係呢個方向嘅代表實作。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [cvpr&#x27;24 best student paper] mip-splatting: alias-free 3d gaussian splatting python 3d-reconstruction anti-aliasing guassian-splatting nerf novel-view-synthesis">
+  <header>
+    <h3><span class="rank">27</span><a href="https://github.com/autonomousvision/mip-splatting">mip-splatting</a></h3>
+    <div class="stars">★ 1,483</div>
+  </header>
+  <p class="meta">autonomousvision/mip-splatting · Python · 最近推送 2024-12-17</p>
+  <p class="summary">處理 Gaussian Splatting 放大縮小時出現嘅鋸齒同走樣。用類似 mipmap 嘅做法，令遠近唔同尺度都保持清楚，係呢個方向嘅代表實作。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/autonomousvision/mip-splatting">GitHub</a><a href="https://niujinshuchong.github.io/mip-splatting/">主頁</a><a href="gaussian-splatting/#p-autonomousvision-mip-splatting">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#anti-aliasing</span><span>#guassian-splatting</span></div>
+</article><article class="card" id="p-graphdeco-inria-hierarchical-3d-gaussians" data-search="hierarchical-3d-gaussians graphdeco-inria/hierarchical-3d-gaussians 用分層三維高斯表示超大場景，做到即時渲染城市級資料。遠景同近景用唔同層級，避免一次載入全部高斯而拖慢畫面。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 official implementation of the siggraph 2024 paper &quot;a hierarchical 3d gaussian representation for real-time rendering of very large datasets&quot; python ">
+  <header>
+    <h3><span class="rank">28</span><a href="https://github.com/graphdeco-inria/hierarchical-3d-gaussians">hierarchical-3d-gaussians</a></h3>
+    <div class="stars">★ 1,476</div>
+  </header>
+  <p class="meta">graphdeco-inria/hierarchical-3d-gaussians · Python · 最近推送 2025-06-10</p>
+  <p class="summary">用分層三維高斯表示超大場景，做到即時渲染城市級資料。遠景同近景用唔同層級，避免一次載入全部高斯而拖慢畫面。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/graphdeco-inria/hierarchical-3d-gaussians">GitHub</a><a href="gaussian-splatting/#p-graphdeco-inria-hierarchical-3d-gaussians">Gaussian Splatting</a></div>
+  
+</article><article class="card" id="p-buaacyw-gaussianeditor" data-search="gaussianeditor buaacyw/gaussianeditor 用文字或者圖像指示，快速編輯已經重建好嘅 gaussian splatting 場景。可以改物件外觀同局部內容，而唔使成個場景重新訓練。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [cvpr 2024] gaussianeditor: swift and controllable 3d editing with gaussian splatting c++ 3d cvpr2024 generative-ai">
+  <header>
+    <h3><span class="rank">29</span><a href="https://github.com/buaacyw/GaussianEditor">GaussianEditor</a></h3>
+    <div class="stars">★ 1,462</div>
+  </header>
+  <p class="meta">buaacyw/GaussianEditor · C++ · 最近推送 2024-02-27</p>
+  <p class="summary">用文字或者圖像指示，快速編輯已經重建好嘅 Gaussian Splatting 場景。可以改物件外觀同局部內容，而唔使成個場景重新訓練。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/buaacyw/GaussianEditor">GitHub</a><a href="https://buaacyw.github.io/gaussian-editor/">主頁</a><a href="gaussian-splatting/#p-buaacyw-gaussianeditor">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d</span><span>#cvpr2024</span><span>#generative-ai</span></div>
+</article><article class="card" id="p-zju3dv-street-gaussians" data-search="street_gaussians zju3dv/street_gaussians 用 gaussian splatting 重建會郁嘅街道同城市，把車同行人等動態物體同靜態背景分開。適合自動駕駛場景嘅新視角同模擬畫面。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [eccv 2024] street gaussians: modeling dynamic urban scenes with gaussian splatting python ">
+  <header>
+    <h3><span class="rank">30</span><a href="https://github.com/zju3dv/street_gaussians">street_gaussians</a></h3>
+    <div class="stars">★ 1,408</div>
+  </header>
+  <p class="meta">zju3dv/street_gaussians · Python · 最近推送 2026-09-15</p>
+  <p class="summary">用 Gaussian Splatting 重建會郁嘅街道同城市，把車同行人等動態物體同靜態背景分開。適合自動駕駛場景嘅新視角同模擬畫面。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/zju3dv/street_gaussians">GitHub</a><a href="gaussian-splatting/#p-zju3dv-street-gaussians">Gaussian Splatting</a></div>
+  
+</article><article class="card" id="p-playcanvas-splat-transform" data-search="splat-transform playcanvas/splat-transform 命令列同程式庫，用嚟轉換、壓縮同處理 3d gaussian splat 檔。不同工具之間嘅格式可以互轉，方便之後放進網頁或引擎。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 cli tool and library for 3d gaussian splat processing and conversion typescript 3d-gaussian-splatting 3dgs cli gaussian-splatting playcanvas supersplat typescript">
+  <header>
+    <h3><span class="rank">31</span><a href="https://github.com/playcanvas/splat-transform">splat-transform</a></h3>
+    <div class="stars">★ 1,400</div>
+  </header>
+  <p class="meta">playcanvas/splat-transform · TypeScript · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">命令列同程式庫，用嚟轉換、壓縮同處理 3D Gaussian Splat 檔。不同工具之間嘅格式可以互轉，方便之後放進網頁或引擎。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/playcanvas/splat-transform">GitHub</a><a href="https://playcanvas.com">主頁</a><a href="gaussian-splatting/#p-playcanvas-splat-transform">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d-gaussian-splatting</span><span>#3dgs</span><span>#cli</span></div>
+</article><article class="card" id="p-donydchen-mvsplat" data-search="mvsplat donydchen/mvsplat 由少量多視角相片直接預測 3d gaussian，而唔使每個場景慢慢優化。前饋式重建速度快，適合要一次處理好多組相片嘅情況。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 🌊 [eccv&#x27;24 oral] mvsplat: efficient 3d gaussian splatting from sparse multi-view images python cost-volume eccv2024 feed-forward-gaussian-splatting gaussian-splatting novel-view-synthesis">
+  <header>
+    <h3><span class="rank">32</span><a href="https://github.com/donydchen/mvsplat">mvsplat</a></h3>
+    <div class="stars">★ 1,319</div>
+  </header>
+  <p class="meta">donydchen/mvsplat · Python · MIT · 最近推送 2026-05-06</p>
+  <p class="summary">由少量多視角相片直接預測 3D Gaussian，而唔使每個場景慢慢優化。前饋式重建速度快，適合要一次處理好多組相片嘅情況。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/donydchen/mvsplat">GitHub</a><a href="https://donydchen.github.io/mvsplat">主頁</a><a href="gaussian-splatting/#p-donydchen-mvsplat">Gaussian Splatting</a></div>
+  <div class="topics"><span>#cost-volume</span><span>#eccv2024</span><span>#feed-forward-gaussian-splatting</span></div>
+</article><article class="card" id="p-city-super-scaffold-gs" data-search="scaffold-gs city-super/scaffold-gs 用錨點同視角自適應嘅結構嚟組織三維高斯，令渲染更穩、更慳記憶體。大型場景可以按觀看方向調整高斯，而唔使全部一視同仁。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [cvpr 2024 highlight] scaffold-gs: structured 3d gaussians for view-adaptive rendering c++ 3d cvpr2024 gaussian-splatting reconstruction rendering">
+  <header>
+    <h3><span class="rank">33</span><a href="https://github.com/city-super/Scaffold-GS">Scaffold-GS</a></h3>
+    <div class="stars">★ 1,288</div>
+  </header>
+  <p class="meta">city-super/Scaffold-GS · C++ · 最近推送 2024-09-26</p>
+  <p class="summary">用錨點同視角自適應嘅結構嚟組織三維高斯，令渲染更穩、更慳記憶體。大型場景可以按觀看方向調整高斯，而唔使全部一視同仁。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/city-super/Scaffold-GS">GitHub</a><a href="https://city-super.github.io/scaffold-gs">主頁</a><a href="gaussian-splatting/#p-city-super-scaffold-gs">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d</span><span>#cvpr2024</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-dcharatan-pixelsplat" data-search="pixelsplat dcharatan/pixelsplat 由一對圖片前饋生成 3d gaussian splat，用嚟做可泛化嘅新視角重建。模型見過唔同場景之後，新嘅相片對都可以快速出場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [cvpr 2024 oral, best paper runner-up] code for &quot;pixelsplat: 3d gaussian splats from image pairs for scalable generalizable 3d reconstruction&quot; by david charatan, sizhe lester li, andrea tagliasacchi, and vincent sitzmann python ">
+  <header>
+    <h3><span class="rank">34</span><a href="https://github.com/dcharatan/pixelsplat">pixelsplat</a></h3>
+    <div class="stars">★ 1,285</div>
+  </header>
+  <p class="meta">dcharatan/pixelsplat · Python · MIT · 最近推送 2025-01-13</p>
+  <p class="summary">由一對圖片前饋生成 3D Gaussian Splat，用嚟做可泛化嘅新視角重建。模型見過唔同場景之後，新嘅相片對都可以快速出場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/dcharatan/pixelsplat">GitHub</a><a href="http://davidcharatan.com/pixelsplat/">主頁</a><a href="gaussian-splatting/#p-dcharatan-pixelsplat">Gaussian Splatting</a></div>
+  
+</article><article class="card" id="p-linketic-citygaussian" data-search="citygaussian linketic/citygaussian 面向城市級大場景嘅 gaussian splatting 系列，強調高質素同可以擴展嘅重建。大範圍街景可以分成區塊處理，再合成可即時瀏覽嘅結果。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [eccv`24&amp;iclr`25] citygaussian series for high-quality large-scale scene reconstruction with gaussians jupyter notebook 3d computer-vision eccv2024 gaussian-splatting graphics iclr2025 large-scale level-of-details">
+  <header>
+    <h3><span class="rank">35</span><a href="https://github.com/Linketic/CityGaussian">CityGaussian</a></h3>
+    <div class="stars">★ 1,279</div>
+  </header>
+  <p class="meta">Linketic/CityGaussian · Jupyter Notebook · 最近推送 2026-08-16</p>
+  <p class="summary">面向城市級大場景嘅 Gaussian Splatting 系列，強調高質素同可以擴展嘅重建。大範圍街景可以分成區塊處理，再合成可即時瀏覽嘅結果。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/Linketic/CityGaussian">GitHub</a><a href="https://dekuliutesla.github.io/CityGaussianV2">主頁</a><a href="gaussian-splatting/#p-linketic-citygaussian">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d</span><span>#computer-vision</span><span>#eccv2024</span></div>
+</article><article class="card" id="p-cvg-depthsplat" data-search="depthsplat cvg/depthsplat 把深度估計同 gaussian splatting 接埋，用深度引導高斯點放喺邊。稀疏視角重建時幾何更穩，適合相片之間重疊唔多嘅情況。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [cvpr&#x27;25] depthsplat: connecting gaussian splatting and depth python feed-forward-gaussian-splatting monocular-depth multi-view-stereo view-synthesis">
+  <header>
+    <h3><span class="rank">36</span><a href="https://github.com/cvg/depthsplat">depthsplat</a></h3>
+    <div class="stars">★ 1,271</div>
+  </header>
+  <p class="meta">cvg/depthsplat · Python · MIT · 最近推送 2026-04-01</p>
+  <p class="summary">把深度估計同 Gaussian Splatting 接埋，用深度引導高斯點放喺邊。稀疏視角重建時幾何更穩，適合相片之間重疊唔多嘅情況。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/cvg/depthsplat">GitHub</a><a href="https://haofeixu.github.io/depthsplat/">主頁</a><a href="gaussian-splatting/#p-cvg-depthsplat">Gaussian Splatting</a></div>
+  <div class="topics"><span>#feed-forward-gaussian-splatting</span><span>#monocular-depth</span><span>#multi-view-stereo</span></div>
+</article><article class="card" id="p-yzslab-gaussian-splatting-lightning" data-search="gaussian-splatting-lightning yzslab/gaussian-splatting-lightning 用 pytorch lightning 整理嘅 3d gaussian splatting 框架，收錄多種衍生算法，並附互動網頁檢視器。想喺同一套程式比較唔同高斯方法，可以用佢。 a 3d gaussian splatting framework with various derived algorithms and an interactive web viewer jupyter notebook ">
+  <header>
+    <h3><span class="rank">37</span><a href="https://github.com/yzslab/gaussian-splatting-lightning">gaussian-splatting-lightning</a></h3>
+    <div class="stars">★ 1,115</div>
+  </header>
+  <p class="meta">yzslab/gaussian-splatting-lightning · Jupyter Notebook · 最近推送 2026-05-25</p>
+  <p class="summary">用 PyTorch Lightning 整理嘅 3D Gaussian Splatting 框架，收錄多種衍生算法，並附互動網頁檢視器。想喺同一套程式比較唔同高斯方法，可以用佢。</p>
+  <div class="links"><a href="https://github.com/yzslab/gaussian-splatting-lightning">GitHub</a><a href="gaussian-splatting/#p-yzslab-gaussian-splatting-lightning">Gaussian Splatting</a></div>
+  
+</article><article class="card" id="p-minghanqin-langsplat" data-search="langsplat minghanqin/langsplat 喺三維高斯上面附帶語言特徵，令你可以用語句喺場景入面搵物件。重建完唔單止可以轉視角，仲可以按文字定位到對應嘅高斯區域。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 official implementation of the paper &quot;langsplat: 3d language gaussian splatting&quot; [cvpr2024 highlight] python 3d 3d-gaussian-splatting 3d-reconstruction language">
+  <header>
+    <h3><span class="rank">38</span><a href="https://github.com/minghanqin/LangSplat">LangSplat</a></h3>
+    <div class="stars">★ 1,096</div>
+  </header>
+  <p class="meta">minghanqin/LangSplat · Python · 最近推送 2025-10-10</p>
+  <p class="summary">喺三維高斯上面附帶語言特徵，令你可以用語句喺場景入面搵物件。重建完唔單止可以轉視角，仲可以按文字定位到對應嘅高斯區域。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/minghanqin/LangSplat">GitHub</a><a href="https://langsplat.github.io/">主頁</a><a href="gaussian-splatting/#p-minghanqin-langsplat">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-gaussian-splatting</span><span>#3d-reconstruction</span></div>
+</article><article class="card" id="p-logosintelligencelab-4d-gaussian-splatting" data-search="4d-gaussian-splatting logosintelligencelab/4d-gaussian-splatting 用四維高斯同時表示空間同時間，即時渲染會郁嘅場景。同用變形場嘅做法唔同，動態直接寫喺高斯本身，適合光真實嘅影片新視角。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [iclr 2024] real-time photorealistic dynamic scene representation and rendering with 4d gaussian splatting python ">
+  <header>
+    <h3><span class="rank">39</span><a href="https://github.com/LogosIntelligenceLab/4d-gaussian-splatting">4d-gaussian-splatting</a></h3>
+    <div class="stars">★ 1,049</div>
+  </header>
+  <p class="meta">LogosIntelligenceLab/4d-gaussian-splatting · Python · MIT · 最近推送 2026-10-24</p>
+  <p class="summary">用四維高斯同時表示空間同時間，即時渲染會郁嘅場景。同用變形場嘅做法唔同，動態直接寫喺高斯本身，適合光真實嘅影片新視角。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/LogosIntelligenceLab/4d-gaussian-splatting">GitHub</a><a href="https://logosintelligencelab.github.io/4d-gaussian-splatting/">主頁</a><a href="gaussian-splatting/#p-logosintelligencelab-4d-gaussian-splatting">Gaussian Splatting</a></div>
+  
+</article><article class="card" id="p-autonomousvision-gaussian-opacity-fields" data-search="gaussian-opacity-fields autonomousvision/gaussian-opacity-fields 由三維高斯建立不透明度場，喺無邊界場景入面做自適應表面重建。渲染同抽表面可以一齊用，適合要網格又要新視角嘅資料。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [siggraph asia&#x27;24 &amp; tog] gaussian opacity fields: efficient adaptive surface reconstruction in unbounded scenes python 3d-reconstruction gaussian-splatting novel-view-synthesis surface-reconstruction tetrahedral-meshing">
+  <header>
+    <h3><span class="rank">40</span><a href="https://github.com/autonomousvision/gaussian-opacity-fields">gaussian-opacity-fields</a></h3>
+    <div class="stars">★ 1,025</div>
+  </header>
+  <p class="meta">autonomousvision/gaussian-opacity-fields · Python · 最近推送 2024-11-15</p>
+  <p class="summary">由三維高斯建立不透明度場，喺無邊界場景入面做自適應表面重建。渲染同抽表面可以一齊用，適合要網格又要新視角嘅資料。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/autonomousvision/gaussian-opacity-fields">GitHub</a><a href="https://niujinshuchong.github.io/gaussian-opacity-fields/">主頁</a><a href="gaussian-splatting/#p-autonomousvision-gaussian-opacity-fields">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#gaussian-splatting</span><span>#novel-view-synthesis</span></div>
+</article><article class="card" id="p-jumpat-seganygaussians" data-search="seganygaussians jumpat/seganygaussians 喺 3d gaussian 場景入面做分割，可以用提示拎出個別物件。重建完嘅場景可以按物件拆開編輯或刪除，而唔使成幅畫面一齊處理。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 the official implementation of segment any 3d gaussians (aaai-25) jupyter notebook 3d-segmentation computer-vision gaussian-splatting segment-anything">
+  <header>
+    <h3><span class="rank">41</span><a href="https://github.com/Jumpat/SegAnyGAussians">SegAnyGAussians</a></h3>
+    <div class="stars">★ 1,006</div>
+  </header>
+  <p class="meta">Jumpat/SegAnyGAussians · Jupyter Notebook · Apache-2.0 · 最近推送 2026-08-02</p>
+  <p class="summary">喺 3D Gaussian 場景入面做分割，可以用提示拎出個別物件。重建完嘅場景可以按物件拆開編輯或刪除，而唔使成幅畫面一齊處理。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/Jumpat/SegAnyGAussians">GitHub</a><a href="gaussian-splatting/#p-jumpat-seganygaussians">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d-segmentation</span><span>#computer-vision</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-cvg-noposplat" data-search="noposplat cvg/noposplat 相片未有相機姿態都可以預測 3d gaussian。稀疏、未對齊嘅圖片直接出場景，省卻先做位姿估計呢一步，適合隨便影低嘅相片集。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [iclr&#x27;25 oral] no pose, no problem: surprisingly simple 3d gaussian splats from sparse unposed images python ">
+  <header>
+    <h3><span class="rank">42</span><a href="https://github.com/cvg/NoPoSplat">NoPoSplat</a></h3>
+    <div class="stars">★ 1,004</div>
+  </header>
+  <p class="meta">cvg/NoPoSplat · Python · MIT · 最近推送 2026-02-25</p>
+  <p class="summary">相片未有相機姿態都可以預測 3D Gaussian。稀疏、未對齊嘅圖片直接出場景，省卻先做位姿估計呢一步，適合隨便影低嘅相片集。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/cvg/NoPoSplat">GitHub</a><a href="gaussian-splatting/#p-cvg-noposplat">Gaussian Splatting</a></div>
+  
+</article><article class="card" id="p-internrobotics-anysplat" data-search="anysplat internrobotics/anysplat 由隨意視角嘅圖片前饋生成 3d gaussian splatting，唔使逐個場景長時間優化。相機唔受控嘅相片都可以快速變成可渲染場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [siggraph asia 2025 (acm tog)] anysplat: feed-forward 3d gaussian splatting from unconstrained views python ">
+  <header>
+    <h3><span class="rank">43</span><a href="https://github.com/InternRobotics/AnySplat">AnySplat</a></h3>
+    <div class="stars">★ 961</div>
+  </header>
+  <p class="meta">InternRobotics/AnySplat · Python · MIT · 最近推送 2025-12-22</p>
+  <p class="summary">由隨意視角嘅圖片前饋生成 3D Gaussian Splatting，唔使逐個場景長時間優化。相機唔受控嘅相片都可以快速變成可渲染場景。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/InternRobotics/AnySplat">GitHub</a><a href="gaussian-splatting/#p-internrobotics-anysplat">Gaussian Splatting</a></div>
+  
+</article><article class="card" id="p-electronicarts-mesh2splat" data-search="mesh2splat electronicarts/mesh2splat 把現有三角網格快速轉成 3d gaussian splat。已經有模型嘅遊戲或影片資產，可以變成高斯表示嚟做即時渲染，而唔使重新掃描。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 fast mesh to 3d gaussian splat conversion c++ ">
+  <header>
+    <h3><span class="rank">44</span><a href="https://github.com/electronicarts/mesh2splat">mesh2splat</a></h3>
+    <div class="stars">★ 956</div>
+  </header>
+  <p class="meta">electronicarts/mesh2splat · C++ · 最近推送 2026-04-22</p>
+  <p class="summary">把現有三角網格快速轉成 3D Gaussian Splat。已經有模型嘅遊戲或影片資產，可以變成高斯表示嚟做即時渲染，而唔使重新掃描。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/electronicarts/mesh2splat">GitHub</a><a href="https://seed.ea.com">主頁</a><a href="gaussian-splatting/#p-electronicarts-mesh2splat">Gaussian Splatting</a></div>
+  
+</article><article class="card" id="p-nianticlabs-spz" data-search="spz nianticlabs/spz niantic 提出嘅 3d gaussian splat 壓縮格式，體積大約係 ply 嘅十分之一，畫面損失好細。適合把場景放上網頁或者流動裝置傳輸。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 file format for 3d gaussian splats. about 10x smaller than the ply equivalent with virtually no perceptible loss in visual quality. offered as open source by niantic labs. more details at https://scaniverse.com/spz #3dgaussiansplats #gaussiansplatting c++ 3dgs compression gaussian-splatting splat">
+  <header>
+    <h3><span class="rank">45</span><a href="https://github.com/nianticlabs/spz">spz</a></h3>
+    <div class="stars">★ 940</div>
+  </header>
+  <p class="meta">nianticlabs/spz · C++ · MIT · 最近推送 2026-09-01</p>
+  <p class="summary">Niantic 提出嘅 3D Gaussian Splat 壓縮格式，體積大約係 PLY 嘅十分之一，畫面損失好細。適合把場景放上網頁或者流動裝置傳輸。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/nianticlabs/spz">GitHub</a><a href="https://scaniverse.com">主頁</a><a href="gaussian-splatting/#p-nianticlabs-spz">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3dgs</span><span>#compression</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-city-super-octree-gs" data-search="octree-gs city-super/octree-gs 用八叉樹同 lod 組織三維高斯，令大場景可以按距離切換細節，做到較穩定嘅即時渲染。遠景用粗層，近景先載入細高斯。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [tpami 2025] octree-gs: towards consistent real-time rendering with lod-structured 3d gaussians c++ ">
+  <header>
+    <h3><span class="rank">46</span><a href="https://github.com/city-super/Octree-GS">Octree-GS</a></h3>
+    <div class="stars">★ 862</div>
+  </header>
+  <p class="meta">city-super/Octree-GS · C++ · 最近推送 2025-08-19</p>
+  <p class="summary">用八叉樹同 LOD 組織三維高斯，令大場景可以按距離切換細節，做到較穩定嘅即時渲染。遠景用粗層，近景先載入細高斯。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/city-super/Octree-GS">GitHub</a><a href="https://city-super.github.io/octree-gs/">主頁</a><a href="gaussian-splatting/#p-city-super-octree-gs">Gaussian Splatting</a></div>
+  
+</article><article class="card" id="p-kcheng1021-gaussianpro" data-search="gaussianpro kcheng1021/gaussianpro 用漸進式傳播改善 3d gaussian splatting 嘅幾何同覆蓋。訓練時逐步補齊表面，減少空洞同漂浮點，令重建更完整。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [icml2024] official code for gaussianpro: 3d gaussian splatting with progressive propagation python ">
+  <header>
+    <h3><span class="rank">47</span><a href="https://github.com/kcheng1021/GaussianPro">GaussianPro</a></h3>
+    <div class="stars">★ 848</div>
+  </header>
+  <p class="meta">kcheng1021/GaussianPro · Python · MIT · 最近推送 2025-08-24</p>
+  <p class="summary">用漸進式傳播改善 3D Gaussian Splatting 嘅幾何同覆蓋。訓練時逐步補齊表面，減少空洞同漂浮點，令重建更完整。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/kcheng1021/GaussianPro">GitHub</a><a href="https://kcheng1021.github.io/gaussianpro.github.io/">主頁</a><a href="gaussian-splatting/#p-kcheng1021-gaussianpro">Gaussian Splatting</a></div>
+  
+</article><article class="card" id="p-vita-group-lightgaussian" data-search="lightgaussian vita-group/lightgaussian 壓縮無邊界 3d gaussian 場景，目標係大幅減少高斯數量同儲存，同時保持超過二百幀嘅渲染。適合要把大場景放到即時應用。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。 [neurips 2024 spotlight]&quot;lightgaussian: unbounded 3d gaussian compression with 15x reduction and 200+ fps&quot;, zhiwen fan, kevin wang, kairun wen, zehao zhu, dejia xu, zhangyang wang python 3d-reconstruction efficient-inference gaussian-splatting neurips-2024 nurips">
+  <header>
+    <h3><span class="rank">48</span><a href="https://github.com/VITA-Group/LightGaussian">LightGaussian</a></h3>
+    <div class="stars">★ 826</div>
+  </header>
+  <p class="meta">VITA-Group/LightGaussian · Python · 最近推送 2024-12-30</p>
+  <p class="summary">壓縮無邊界 3D Gaussian 場景，目標係大幅減少高斯數量同儲存，同時保持超過二百幀嘅渲染。適合要把大場景放到即時應用。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。</p>
+  <div class="links"><a href="https://github.com/VITA-Group/LightGaussian">GitHub</a><a href="https://lightgaussian.github.io/">主頁</a><a href="gaussian-splatting/#p-vita-group-lightgaussian">Gaussian Splatting</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#efficient-inference</span><span>#gaussian-splatting</span></div>
+</article><article class="card" id="p-genesis-embodied-ai-genesis-world" data-search="genesis-world genesis-embodied-ai/genesis-world 通用機械人同具身智能嘅物理模擬平台，可以生成可互動嘅世界嚟訓練同測試策略。場景有物理，而唔止係影片預測，適合當世界模擬器。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 simulation platform for general-purpose robotics &amp; embodied ai learning. python ">
+  <header>
+    <h3><span class="rank">01</span><a href="https://github.com/Genesis-Embodied-AI/genesis-world">genesis-world</a></h3>
+    <div class="stars">★ 30,134</div>
+  </header>
+  <p class="meta">Genesis-Embodied-AI/genesis-world · Python · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">通用機械人同具身智能嘅物理模擬平台，可以生成可互動嘅世界嚟訓練同測試策略。場景有物理，而唔止係影片預測，適合當世界模擬器。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/Genesis-Embodied-AI/genesis-world">GitHub</a><a href="https://genesis-world.readthedocs.io">主頁</a><a href="world-model/#p-genesis-embodied-ai-genesis-world">World Model</a></div>
+  
+</article><article class="card" id="p-nvidia-cosmos" data-search="cosmos nvidia/cosmos nvidia 嘅世界模型平台，提供模型、數據同工具，用嚟做機械人、自動駕駛同實體智能。可以生成同模擬之後會發生嘅畫面，再訓練下游策略。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 nvidia cosmos is an open platform of world models, datasets, and tools that enables developers to build physical ai for robots, autonomous vehicles, smart infrastructure, and more.  ">
+  <header>
+    <h3><span class="rank">02</span><a href="https://github.com/NVIDIA/cosmos">cosmos</a></h3>
+    <div class="stars">★ 12,187</div>
+  </header>
+  <p class="meta">NVIDIA/cosmos · 最近推送 2026-10-28</p>
+  <p class="summary">NVIDIA 嘅世界模型平台，提供模型、數據同工具，用嚟做機械人、自動駕駛同實體智能。可以生成同模擬之後會發生嘅畫面，再訓練下游策略。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/NVIDIA/cosmos">GitHub</a><a href="https://www.nvidia.com/en-us/ai/cosmos/">主頁</a><a href="world-model/#p-nvidia-cosmos">World Model</a></div>
+  
+</article><article class="card" id="p-largeworldmodel-lwm" data-search="lwm largeworldmodel/lwm 用超長上下文同時建模文字同影片嘅大型世界模型。模型可以讀好長嘅影像序列，再預測後續內容，係影片世界模型呢條線嘅代表程式。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 large world model -- modeling text and video with millions context python ">
+  <header>
+    <h3><span class="rank">03</span><a href="https://github.com/LargeWorldModel/LWM">LWM</a></h3>
+    <div class="stars">★ 7,424</div>
+  </header>
+  <p class="meta">LargeWorldModel/LWM · Python · Apache-2.0 · 最近推送 2024-10-19</p>
+  <p class="summary">用超長上下文同時建模文字同影片嘅大型世界模型。模型可以讀好長嘅影像序列，再預測後續內容，係影片世界模型呢條線嘅代表程式。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/LargeWorldModel/LWM">GitHub</a><a href="https://largeworldmodel.github.io/">主頁</a><a href="world-model/#p-largeworldmodel-lwm">World Model</a></div>
+  
+</article><article class="card" id="p-robbyant-lingbot-world" data-search="lingbot-world robbyant/lingbot-world 開源世界模型項目，用嚟生成同延續可互動嘅視覺世界。畀定目前畫面同動作之後，模型預測接下來嘅觀察，方便研究具身同影片模擬。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 advancing open-source world models python aigc image-to-video lingbot-world video-generation world-models">
+  <header>
+    <h3><span class="rank">04</span><a href="https://github.com/Robbyant/lingbot-world">lingbot-world</a></h3>
+    <div class="stars">★ 4,554</div>
+  </header>
+  <p class="meta">Robbyant/lingbot-world · Python · Apache-2.0 · 最近推送 2026-07-09</p>
+  <p class="summary">開源世界模型項目，用嚟生成同延續可互動嘅視覺世界。畀定目前畫面同動作之後，模型預測接下來嘅觀察，方便研究具身同影片模擬。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/Robbyant/lingbot-world">GitHub</a><a href="https://technology.robbyant.com/lingbot-world">主頁</a><a href="world-model/#p-robbyant-lingbot-world">World Model</a></div>
+  <div class="topics"><span>#aigc</span><span>#image-to-video</span><span>#lingbot-world</span></div>
+</article><article class="card" id="p-danijar-dreamerv3" data-search="dreamerv3 danijar/dreamerv3 dreamerv3 嘅官方實作，用世界模型喺唔同領域學習控制。智能體喺想像出嚟嘅環境入面練習，再放回真實或模擬任務，涵蓋遊戲同控制。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 mastering diverse domains through world models python artificial-intelligence general jax minecraft reinforcement-learning world-models">
+  <header>
+    <h3><span class="rank">05</span><a href="https://github.com/danijar/dreamerv3">dreamerv3</a></h3>
+    <div class="stars">★ 3,913</div>
+  </header>
+  <p class="meta">danijar/dreamerv3 · Python · MIT · 最近推送 2026-10-04</p>
+  <p class="summary">DreamerV3 嘅官方實作，用世界模型喺唔同領域學習控制。智能體喺想像出嚟嘅環境入面練習，再放回真實或模擬任務，涵蓋遊戲同控制。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/danijar/dreamerv3">GitHub</a><a href="https://danijar.com/dreamerv3">主頁</a><a href="https://arxiv.org/abs/2301.04104">論文</a><a href="world-model/#p-danijar-dreamerv3">World Model</a></div>
+  <div class="topics"><span>#artificial-intelligence</span><span>#general</span><span>#jax</span></div>
+</article><article class="card" id="p-daxiaorobotics-kairos" data-search="kairos daxiaorobotics/kairos 機械人方向嘅世界模型 kairos 官方程式。模型學習環境點樣隨動作改變，用嚟預測未來觀察同支援操作，而唔使每次都喺真機上試錯。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 official code for world model kairos python ">
+  <header>
+    <h3><span class="rank">06</span><a href="https://github.com/DAXIAORobotics/kairos">kairos</a></h3>
+    <div class="stars">★ 3,111</div>
+  </header>
+  <p class="meta">DAXIAORobotics/kairos · Python · Apache-2.0 · 最近推送 2026-09-15</p>
+  <p class="summary">機械人方向嘅世界模型 Kairos 官方程式。模型學習環境點樣隨動作改變，用嚟預測未來觀察同支援操作，而唔使每次都喺真機上試錯。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/DAXIAORobotics/kairos">GitHub</a><a href="world-model/#p-daxiaorobotics-kairos">World Model</a></div>
+  
+</article><article class="card" id="p-tencent-hunyuan-hunyuanworld-1-0" data-search="hunyuanworld-1.0 tencent-hunyuan/hunyuanworld-1.0 由文字或圖片生成可以漫遊、探索同互動嘅三維世界。場景唔止一張靜態圖，可以行入去睇，係混元三維世界模型嘅第一個公開版本。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 generating immersive, explorable, and interactive 3d worlds from words or pixels with hunyuan3d world model python 3d 3d-generation aigc hunyuan3d image-to-3d scene-generation text-to-3d world-model">
+  <header>
+    <h3><span class="rank">07</span><a href="https://github.com/Tencent-Hunyuan/HunyuanWorld-1.0">HunyuanWorld-1.0</a></h3>
+    <div class="stars">★ 2,959</div>
+  </header>
+  <p class="meta">Tencent-Hunyuan/HunyuanWorld-1.0 · Python · 最近推送 2026-04-15</p>
+  <p class="summary">由文字或圖片生成可以漫遊、探索同互動嘅三維世界。場景唔止一張靜態圖，可以行入去睇，係混元三維世界模型嘅第一個公開版本。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/Tencent-Hunyuan/HunyuanWorld-1.0">GitHub</a><a href="https://3d.hunyuan.tencent.com/sceneTo3D">主頁</a><a href="world-model/#p-tencent-hunyuan-hunyuanworld-1-0">World Model</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-generation</span><span>#aigc</span></div>
+</article><article class="card" id="p-nvlabs-longlive" data-search="longlive nvlabs/longlive 面向長影片、世界模型同帶動作嘅具身生成嘅基建。用嚟研究模型點樣維持長時間一致嘅世界，並按動作繼續演下去，而唔使每段片重新開始。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 long video gen / world model / world action model (embodied) infrastructure python infra long nvfp4 parallel real-time robotics video-generation world-action-models">
+  <header>
+    <h3><span class="rank">08</span><a href="https://github.com/NVlabs/LongLive">LongLive</a></h3>
+    <div class="stars">★ 2,843</div>
+  </header>
+  <p class="meta">NVlabs/LongLive · Python · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">面向長影片、世界模型同帶動作嘅具身生成嘅基建。用嚟研究模型點樣維持長時間一致嘅世界，並按動作繼續演下去，而唔使每段片重新開始。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/NVlabs/LongLive">GitHub</a><a href="https://nvlabs.github.io/LongLive">主頁</a><a href="world-model/#p-nvlabs-longlive">World Model</a></div>
+  <div class="topics"><span>#infra</span><span>#long</span><span>#nvfp4</span></div>
+</article><article class="card" id="p-nv-tlabs-lyra" data-search="lyra nv-tlabs/lyra nvidia 嘅生成式三維世界模型 lyra，可以由條件生成可探索嘅立體場景。重點係世界本身可以漫遊，而唔止輸出一段平面影片。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 project lyra: open generative 3d world models python 3d diffusion gaussians video world-model">
+  <header>
+    <h3><span class="rank">09</span><a href="https://github.com/nv-tlabs/lyra">lyra</a></h3>
+    <div class="stars">★ 2,797</div>
+  </header>
+  <p class="meta">nv-tlabs/lyra · Python · Apache-2.0 · 最近推送 2026-07-20</p>
+  <p class="summary">NVIDIA 嘅生成式三維世界模型 Lyra，可以由條件生成可探索嘅立體場景。重點係世界本身可以漫遊，而唔止輸出一段平面影片。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/nv-tlabs/lyra">GitHub</a><a href="https://research.nvidia.com/labs/sil/projects/lyra2/">主頁</a><a href="world-model/#p-nv-tlabs-lyra">World Model</a></div>
+  <div class="topics"><span>#3d</span><span>#diffusion</span><span>#gaussians</span></div>
+</article><article class="card" id="p-tencent-hunyuan-hy-world-2-0" data-search="hy-world-2.0 tencent-hunyuan/hy-world-2.0 混元嘅多模態世界模型，可以重建、生成同模擬三維世界。輸入文字或圖像之後，模型維持場景幾何同外觀，用嚟做可互動嘅環境。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 hy-world 2.0: a multi-modal world model for reconstructing, generating, and simulating 3d worlds python 3d ai worldmodel">
+  <header>
+    <h3><span class="rank">10</span><a href="https://github.com/Tencent-Hunyuan/HY-World-2.0">HY-World-2.0</a></h3>
+    <div class="stars">★ 2,796</div>
+  </header>
+  <p class="meta">Tencent-Hunyuan/HY-World-2.0 · Python · 最近推送 2026-08-12</p>
+  <p class="summary">混元嘅多模態世界模型，可以重建、生成同模擬三維世界。輸入文字或圖像之後，模型維持場景幾何同外觀，用嚟做可互動嘅環境。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/Tencent-Hunyuan/HY-World-2.0">GitHub</a><a href="https://3d-models.hunyuan.tencent.com/world/">主頁</a><a href="world-model/#p-tencent-hunyuan-hy-world-2-0">World Model</a></div>
+  <div class="topics"><span>#3d</span><span>#ai</span><span>#worldmodel</span></div>
+</article><article class="card" id="p-galilai-group-stable-worldmodel" data-search="stable-worldmodel galilai-group/stable-worldmodel 用嚟重複實驗同評估世界模型嘅平台。唔同模型可以喺同一套任務、數據同指標下比較，方便知道預測未來狀態嘅能力係咪真係進步。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 a platform for reproducible world model research and evaluation python deep-learning jepa model-predictive-control pytorch world-model">
+  <header>
+    <h3><span class="rank">11</span><a href="https://github.com/galilai-group/stable-worldmodel">stable-worldmodel</a></h3>
+    <div class="stars">★ 2,283</div>
+  </header>
+  <p class="meta">galilai-group/stable-worldmodel · Python · MIT · 最近推送 2026-10-02</p>
+  <p class="summary">用嚟重複實驗同評估世界模型嘅平台。唔同模型可以喺同一套任務、數據同指標下比較，方便知道預測未來狀態嘅能力係咪真係進步。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/galilai-group/stable-worldmodel">GitHub</a><a href="https://galilai-group.github.io/stable-worldmodel/">主頁</a><a href="world-model/#p-galilai-group-stable-worldmodel">World Model</a></div>
+  <div class="topics"><span>#deep-learning</span><span>#jepa</span><span>#model-predictive-control</span></div>
+</article><article class="card" id="p-ziyang-xie-worldgen" data-search="worldgen ziyang-xie/worldgen 由描述快速生成任意三維場景。幾秒內可以得到一個可睇嘅立體空間，適合做世界草稿，再交畀其他工具繼續渲染或編輯。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 🌍 worldgen - generate any 3d scene in seconds python 3d-generation 3d-reconstruction generative-ai graphics image-to-3d scene-generation text-to-3d worldgen">
+  <header>
+    <h3><span class="rank">12</span><a href="https://github.com/ZiYang-xie/WorldGen">WorldGen</a></h3>
+    <div class="stars">★ 2,176</div>
+  </header>
+  <p class="meta">ZiYang-xie/WorldGen · Python · Apache-2.0 · 最近推送 2026-04-12</p>
+  <p class="summary">由描述快速生成任意三維場景。幾秒內可以得到一個可睇嘅立體空間，適合做世界草稿，再交畀其他工具繼續渲染或編輯。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/ZiYang-xie/WorldGen">GitHub</a><a href="world-model/#p-ziyang-xie-worldgen">World Model</a></div>
+  <div class="topics"><span>#3d-generation</span><span>#3d-reconstruction</span><span>#generative-ai</span></div>
+</article><article class="card" id="p-eloialonso-diamond" data-search="diamond eloialonso/diamond 喺擴散世界模型入面訓練嘅強化學習智能體。環境嘅下一步畫面由擴散模型想像出嚟，智能體喺呢個夢境入面學習，再回到遊戲任務。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 diamond (diffusion as a model of environment dreams) is a reinforcement learning agent trained in a diffusion world model. neurips 2024 spotlight. python artificial-intelligence atari deep-learning diffusion-models machine-learning reinforcement-learning research world-models">
+  <header>
+    <h3><span class="rank">13</span><a href="https://github.com/eloialonso/diamond">diamond</a></h3>
+    <div class="stars">★ 2,123</div>
+  </header>
+  <p class="meta">eloialonso/diamond · Python · MIT · 最近推送 2024-12-06</p>
+  <p class="summary">喺擴散世界模型入面訓練嘅強化學習智能體。環境嘅下一步畫面由擴散模型想像出嚟，智能體喺呢個夢境入面學習，再回到遊戲任務。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/eloialonso/diamond">GitHub</a><a href="https://diamond-wm.github.io">主頁</a><a href="world-model/#p-eloialonso-diamond">World Model</a></div>
+  <div class="topics"><span>#artificial-intelligence</span><span>#atari</span><span>#deep-learning</span></div>
+</article><article class="card" id="p-robbyant-lingbot-va" data-search="lingbot-va robbyant/lingbot-va 因果嘅影片加動作世界模型，用嚟做通用機械人控制。模型按目前畫面同動作預測之後嘅觀察，令策略可以喺想像嘅世界入面計劃。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 [rss 2026] causal video-action world model for generalist robot control python ">
+  <header>
+    <h3><span class="rank">14</span><a href="https://github.com/Robbyant/lingbot-va">lingbot-va</a></h3>
+    <div class="stars">★ 1,957</div>
+  </header>
+  <p class="meta">Robbyant/lingbot-va · Python · Apache-2.0 · 最近推送 2026-07-09</p>
+  <p class="summary">因果嘅影片加動作世界模型，用嚟做通用機械人控制。模型按目前畫面同動作預測之後嘅觀察，令策略可以喺想像嘅世界入面計劃。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/Robbyant/lingbot-va">GitHub</a><a href="https://technology.robbyant.com/lingbot-va">主頁</a><a href="world-model/#p-robbyant-lingbot-va">World Model</a></div>
+  
+</article><article class="card" id="p-boundless-large-model-boundless-world-model" data-search="boundless-world-model boundless-large-model/boundless-world-model 面向通用具身智能嘅高保真世界模型，可以當數據引擎同世界模擬器。用嚟大量生成機械人會遇到嘅未來畫面，減少只靠真實採集。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 high-fidelity world models for general embodied intelligence, such as data engines and world  simulators. python ">
+  <header>
+    <h3><span class="rank">15</span><a href="https://github.com/boundless-large-model/boundless-world-model">boundless-world-model</a></h3>
+    <div class="stars">★ 1,837</div>
+  </header>
+  <p class="meta">boundless-large-model/boundless-world-model · Python · Apache-2.0 · 最近推送 2026-09-09</p>
+  <p class="summary">面向通用具身智能嘅高保真世界模型，可以當數據引擎同世界模擬器。用嚟大量生成機械人會遇到嘅未來畫面，減少只靠真實採集。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/boundless-large-model/boundless-world-model">GitHub</a><a href="world-model/#p-boundless-large-model-boundless-world-model">World Model</a></div>
+  
+</article><article class="card" id="p-tencent-hunyuan-hy-worldplay" data-search="hy-worldplay tencent-hunyuan/hy-worldplay 混元嘅互動世界建模框架，強調即時延遲同幾何一致。玩家或智能體郁動時，畫面要快，而且場景結構唔好前後矛盾。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 hy-world 1.5: a systematic framework for interactive world modeling with real-time latency and geometric consistency python 3d hunyuan hunyuan-world hunyuan3d image-to-3d world-model world-models">
+  <header>
+    <h3><span class="rank">16</span><a href="https://github.com/Tencent-Hunyuan/HY-WorldPlay">HY-WorldPlay</a></h3>
+    <div class="stars">★ 1,623</div>
+  </header>
+  <p class="meta">Tencent-Hunyuan/HY-WorldPlay · Python · 最近推送 2026-06-10</p>
+  <p class="summary">混元嘅互動世界建模框架，強調即時延遲同幾何一致。玩家或智能體郁動時，畫面要快，而且場景結構唔好前後矛盾。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/Tencent-Hunyuan/HY-WorldPlay">GitHub</a><a href="https://3d-models.hunyuan.tencent.com/world/">主頁</a><a href="world-model/#p-tencent-hunyuan-hy-worldplay">World Model</a></div>
+  <div class="topics"><span>#3d</span><span>#hunyuan</span><span>#hunyuan-world</span></div>
+</article><article class="card" id="p-open-gigaai-giga-world-0" data-search="giga-world-0 open-gigaai/giga-world-0 把世界模型當成具身智能嘅數據引擎。模型生成機械人訓練用嘅未來場景同互動數據，用嚟補真實採集唔夠嘅情況。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 gigaworld-0: world models as data engine to empower embodied ai python ">
+  <header>
+    <h3><span class="rank">17</span><a href="https://github.com/open-gigaai/giga-world-0">giga-world-0</a></h3>
+    <div class="stars">★ 1,618</div>
+  </header>
+  <p class="meta">open-gigaai/giga-world-0 · Python · Apache-2.0 · 最近推送 2025-12-03</p>
+  <p class="summary">把世界模型當成具身智能嘅數據引擎。模型生成機械人訓練用嘅未來場景同互動數據，用嚟補真實採集唔夠嘅情況。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/open-gigaai/giga-world-0">GitHub</a><a href="world-model/#p-open-gigaai-giga-world-0">World Model</a></div>
+  
+</article><article class="card" id="p-tencent-hunyuan-hunyuanworld-voyager" data-search="hunyuanworld-voyager tencent-hunyuan/hunyuanworld-voyager 按相機運動生成互動式 rgbd 影片，並支援即時三維重建。你移動視角，模型就延續深度同畫面，方便做成可探索嘅場景。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 voyager is an interactive rgbd video generation model conditioned on camera input, and supports real-time 3d reconstruction. python 3d 3d-generation aigc hunyuan3d image-to-3d image-to-video scene-generation world-model">
+  <header>
+    <h3><span class="rank">18</span><a href="https://github.com/Tencent-Hunyuan/HunyuanWorld-Voyager">HunyuanWorld-Voyager</a></h3>
+    <div class="stars">★ 1,605</div>
+  </header>
+  <p class="meta">Tencent-Hunyuan/HunyuanWorld-Voyager · Python · 最近推送 2026-04-15</p>
+  <p class="summary">按相機運動生成互動式 RGBD 影片，並支援即時三維重建。你移動視角，模型就延續深度同畫面，方便做成可探索嘅場景。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/Tencent-Hunyuan/HunyuanWorld-Voyager">GitHub</a><a href="https://3d-models.hunyuan.tencent.com/world/">主頁</a><a href="world-model/#p-tencent-hunyuan-hunyuanworld-voyager">World Model</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-generation</span><span>#aigc</span></div>
+</article><article class="card" id="p-tencent-hunyuan-hunyuan3d-worldclaw" data-search="hunyuan3d-worldclaw tencent-hunyuan/hunyuan3d-worldclaw 用智能體流程大規模生成三維開放世界。系統可以分步規劃場景、物件同佈局，而唔係只輸出單一模型，適合做可遊走嘅地圖。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 worldclaw: agentic 3d open-world generation at scale  ">
+  <header>
+    <h3><span class="rank">19</span><a href="https://github.com/Tencent-Hunyuan/Hunyuan3D-WorldClaw">Hunyuan3D-WorldClaw</a></h3>
+    <div class="stars">★ 1,420</div>
+  </header>
+  <p class="meta">Tencent-Hunyuan/Hunyuan3D-WorldClaw · 最近推送 2026-08-13</p>
+  <p class="summary">用智能體流程大規模生成三維開放世界。系統可以分步規劃場景、物件同佈局，而唔係只輸出單一模型，適合做可遊走嘅地圖。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/Tencent-Hunyuan/Hunyuan3D-WorldClaw">GitHub</a><a href="https://tencent-hunyuan.github.io/Hunyuan3D-WorldClaw/">主頁</a><a href="world-model/#p-tencent-hunyuan-hunyuan3d-worldclaw">World Model</a></div>
+  
+</article><article class="card" id="p-almondgod-tinyworlds" data-search="tinyworlds almondgod/tinyworlds deepmind genie 世界模型嘅精簡實作。用少量程式示範點樣由影片學一個可以按動作推進嘅互動世界，適合想讀懂呢類模型嘅人。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 a minimal implementation of deepmind&#x27;s genie world model python ">
+  <header>
+    <h3><span class="rank">20</span><a href="https://github.com/AlmondGod/tinyworlds">tinyworlds</a></h3>
+    <div class="stars">★ 1,390</div>
+  </header>
+  <p class="meta">AlmondGod/tinyworlds · Python · MIT · 最近推送 2026-04-15</p>
+  <p class="summary">DeepMind Genie 世界模型嘅精簡實作。用少量程式示範點樣由影片學一個可以按動作推進嘅互動世界，適合想讀懂呢類模型嘅人。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/AlmondGod/tinyworlds">GitHub</a><a href="https://x.com/Almondgodd/status/1971314283184259336">主頁</a><a href="world-model/#p-almondgod-tinyworlds">World Model</a></div>
+  
+</article><article class="card" id="p-thu-ml-motus" data-search="motus thu-ml/motus 統一潛在動作嘅世界模型，把動作同未來觀察放喺同一個潛在空間。機械人控制同視覺預測可以一齊訓練，而唔使分開兩套系統。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 official code of motus: a unified latent action world model python diffusion-model robotic-manipulation robotics unidiffuser video-generation vision-language-action-model world-model">
+  <header>
+    <h3><span class="rank">21</span><a href="https://github.com/thu-ml/Motus">Motus</a></h3>
+    <div class="stars">★ 1,316</div>
+  </header>
+  <p class="meta">thu-ml/Motus · Python · Apache-2.0 · 最近推送 2026-10-09</p>
+  <p class="summary">統一潛在動作嘅世界模型，把動作同未來觀察放喺同一個潛在空間。機械人控制同視覺預測可以一齊訓練，而唔使分開兩套系統。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/thu-ml/Motus">GitHub</a><a href="https://motus-robotics.github.io/motus">主頁</a><a href="world-model/#p-thu-ml-motus">World Model</a></div>
+  <div class="topics"><span>#diffusion-model</span><span>#robotic-manipulation</span><span>#robotics</span></div>
+</article><article class="card" id="p-nvidia-dreamdojo" data-search="dreamdojo nvidia/dreamdojo 由大規模人類影片訓練嘅通用機械人世界模型。模型學人點樣同環境互動，再預測機械人動作之後嘅畫面，用嚟做跨任務嘅模擬。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 official codebase for &quot;dreamdojo: a generalist robot world model from large-scale human videos&quot; (icml 2026) python ">
+  <header>
+    <h3><span class="rank">22</span><a href="https://github.com/NVIDIA/DreamDojo">DreamDojo</a></h3>
+    <div class="stars">★ 1,124</div>
+  </header>
+  <p class="meta">NVIDIA/DreamDojo · Python · Apache-2.0 · 最近推送 2026-03-21</p>
+  <p class="summary">由大規模人類影片訓練嘅通用機械人世界模型。模型學人點樣同環境互動，再預測機械人動作之後嘅畫面，用嚟做跨任務嘅模擬。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/NVIDIA/DreamDojo">GitHub</a><a href="https://dreamdojo-world.github.io">主頁</a><a href="world-model/#p-nvidia-dreamdojo">World Model</a></div>
+  
+</article><article class="card" id="p-danijar-dreamerv2" data-search="dreamerv2 danijar/dreamerv2 dreamerv2，用離散世界模型玩 atari。智能體喺模型想像嘅未來入面規劃，而唔使每一步都真係同遊戲互動，係後來 dreamerv3 嘅前作。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 mastering atari with discrete world models python artificial-intelligence atari deep-learning machine-learning reinforcement-learning research robotics video-prediction">
+  <header>
+    <h3><span class="rank">23</span><a href="https://github.com/danijar/dreamerv2">dreamerv2</a></h3>
+    <div class="stars">★ 1,061</div>
+  </header>
+  <p class="meta">danijar/dreamerv2 · Python · MIT · 最近推送 2023-01-21</p>
+  <p class="summary">DreamerV2，用離散世界模型玩 Atari。智能體喺模型想像嘅未來入面規劃，而唔使每一步都真係同遊戲互動，係後來 DreamerV3 嘅前作。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/danijar/dreamerv2">GitHub</a><a href="https://danijar.com/dreamerv2">主頁</a><a href="world-model/#p-danijar-dreamerv2">World Model</a></div>
+  <div class="topics"><span>#artificial-intelligence</span><span>#atari</span><span>#deep-learning</span></div>
+</article><article class="card" id="p-nicklashansen-tdmpc2" data-search="tdmpc2 nicklashansen/tdmpc2 用可擴展嘅世界模型做連續控制。td-mpc2 喺潛在空間預測狀態同回報，再規劃動作，適合機械臂呢類連續動作任務。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 code for &quot;td-mpc2: scalable, robust world models for continuous control&quot; python reinforcement-learning robotics world-model">
+  <header>
+    <h3><span class="rank">24</span><a href="https://github.com/nicklashansen/tdmpc2">tdmpc2</a></h3>
+    <div class="stars">★ 992</div>
+  </header>
+  <p class="meta">nicklashansen/tdmpc2 · Python · MIT · 最近推送 2026-10-20</p>
+  <p class="summary">用可擴展嘅世界模型做連續控制。TD-MPC2 喺潛在空間預測狀態同回報，再規劃動作，適合機械臂呢類連續動作任務。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/nicklashansen/tdmpc2">GitHub</a><a href="https://www.tdmpc2.com">主頁</a><a href="world-model/#p-nicklashansen-tdmpc2">World Model</a></div>
+  <div class="topics"><span>#reinforcement-learning</span><span>#robotics</span><span>#world-model</span></div>
+</article><article class="card" id="p-dexmal-opendw" data-search="opendw dexmal/opendw 開源嘅動作條件世界模型，面向具身智能。畀定動作之後預測環境點變，用嚟做數據生成同策略研究，而唔使每次都靠真實機械人。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 an open-source world model for action-conditioned embodied intelligence. python embodied-ai robotics world-action-model worldmodel">
+  <header>
+    <h3><span class="rank">25</span><a href="https://github.com/dexmal/opendw">opendw</a></h3>
+    <div class="stars">★ 975</div>
+  </header>
+  <p class="meta">dexmal/opendw · Python · Apache-2.0 · 最近推送 2026-07-09</p>
+  <p class="summary">開源嘅動作條件世界模型，面向具身智能。畀定動作之後預測環境點變，用嚟做數據生成同策略研究，而唔使每次都靠真實機械人。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/dexmal/opendw">GitHub</a><a href="world-model/#p-dexmal-opendw">World Model</a></div>
+  <div class="topics"><span>#embodied-ai</span><span>#robotics</span><span>#world-action-model</span></div>
+</article><article class="card" id="p-opendrivelab-vista" data-search="vista opendrivelab/vista 面向自動駕駛、可以泛化嘅世界模型。畀定目前行車畫面同未來動作，模型預測之後嘅路況，用嚟模擬駕駛而唔使每次都出真車。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 [neurips 2024] a generalizable world model for autonomous driving python autonomous-driving video-generation world-model">
+  <header>
+    <h3><span class="rank">26</span><a href="https://github.com/OpenDriveLab/Vista">Vista</a></h3>
+    <div class="stars">★ 910</div>
+  </header>
+  <p class="meta">OpenDriveLab/Vista · Python · Apache-2.0 · 最近推送 2025-07-02</p>
+  <p class="summary">面向自動駕駛、可以泛化嘅世界模型。畀定目前行車畫面同未來動作，模型預測之後嘅路況，用嚟模擬駕駛而唔使每次都出真車。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/OpenDriveLab/Vista">GitHub</a><a href="https://opendrivelab.com/Vista">主頁</a><a href="world-model/#p-opendrivelab-vista">World Model</a></div>
+  <div class="topics"><span>#autonomous-driving</span><span>#video-generation</span><span>#world-model</span></div>
+</article><article class="card" id="p-eloialonso-iris" data-search="iris eloialonso/iris 用 transformer 做樣本效率高嘅世界模型。智能體喺模型入面想像未來，再用少量真實互動學會遊戲控制，係 iclr 2023 嘅代表實作。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 transformers are sample-efficient world models. iclr 2023, notable top 5%. python artificial-intelligence atari deep-learning machine-learning reinforcement-learning research transformers world-models">
+  <header>
+    <h3><span class="rank">27</span><a href="https://github.com/eloialonso/iris">iris</a></h3>
+    <div class="stars">★ 903</div>
+  </header>
+  <p class="meta">eloialonso/iris · Python · GPL-3.0 · 最近推送 2024-10-14</p>
+  <p class="summary">用 Transformer 做樣本效率高嘅世界模型。智能體喺模型入面想像未來，再用少量真實互動學會遊戲控制，係 ICLR 2023 嘅代表實作。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/eloialonso/iris">GitHub</a><a href="https://openreview.net/forum?id=vhFu1Acb0xb">主頁</a><a href="world-model/#p-eloialonso-iris">World Model</a></div>
+  <div class="topics"><span>#artificial-intelligence</span><span>#atari</span><span>#deep-learning</span></div>
+</article><article class="card" id="p-shengshu-ai-minwm" data-search="minwm shengshu-ai/minwm 即時互動世界模型嘅精簡框架同教學程式。重點係結構清楚，可以睇到模型點樣按動作即時更新畫面，方便自己改同試驗。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 a minimal and elegant framework &amp; tutorial for real-time interactive world models python ">
+  <header>
+    <h3><span class="rank">28</span><a href="https://github.com/shengshu-ai/minWM">minWM</a></h3>
+    <div class="stars">★ 864</div>
+  </header>
+  <p class="meta">shengshu-ai/minWM · Python · Apache-2.0 · 最近推送 2026-09-10</p>
+  <p class="summary">即時互動世界模型嘅精簡框架同教學程式。重點係結構清楚，可以睇到模型點樣按動作即時更新畫面，方便自己改同試驗。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/shengshu-ai/minWM">GitHub</a><a href="world-model/#p-shengshu-ai-minwm">World Model</a></div>
+  
+</article><article class="card" id="p-skyworkai-matrix-3d" data-search="matrix-3d skyworkai/matrix-3d 由一張圖或一段文字生成可探索嘅大型三維場景，並配高質素全景影片。重點係可以行入場景，而唔止得到一個孤立物件。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 generate large-scale explorable 3d scenes with high-quality panorama videos from a single image or text prompt. python 3d-generation 3d-reconstruction 3d-scene-generation aigc aigc3d genie genie3 graphics">
+  <header>
+    <h3><span class="rank">29</span><a href="https://github.com/SkyworkAI/Matrix-3D">Matrix-3D</a></h3>
+    <div class="stars">★ 848</div>
+  </header>
+  <p class="meta">SkyworkAI/Matrix-3D · Python · MIT · 最近推送 2025-11-25</p>
+  <p class="summary">由一張圖或一段文字生成可探索嘅大型三維場景，並配高質素全景影片。重點係可以行入場景，而唔止得到一個孤立物件。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/SkyworkAI/Matrix-3D">GitHub</a><a href="https://matrix-3d.github.io/">主頁</a><a href="world-model/#p-skyworkai-matrix-3d">World Model</a></div>
+  <div class="topics"><span>#3d-generation</span><span>#3d-reconstruction</span><span>#3d-scene-generation</span></div>
+</article><article class="card" id="p-alayalab-alayaworld" data-search="alayaworld alayalab/alayaworld 全端開源嘅長時程互動世界模型。場景要維持好耐都一致，並按使用者動作繼續演化，適合研究長篇互動而唔係短片生成。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 full-stack open-source interactive long-horizon world model. python ">
+  <header>
+    <h3><span class="rank">30</span><a href="https://github.com/AlayaLab/AlayaWorld">AlayaWorld</a></h3>
+    <div class="stars">★ 801</div>
+  </header>
+  <p class="meta">AlayaLab/AlayaWorld · Python · 最近推送 2026-10-28</p>
+  <p class="summary">全端開源嘅長時程互動世界模型。場景要維持好耐都一致，並按使用者動作繼續演化，適合研究長篇互動而唔係短片生成。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/AlayaLab/AlayaWorld">GitHub</a><a href="world-model/#p-alayalab-alayaworld">World Model</a></div>
+  
+</article><article class="card" id="p-amap-ml-dreamx-world" data-search="dreamx-world amap-ml/dreamx-world 通用互動世界模型，用嚟按動作預測之後嘅環境。可以當研究基線，試下模型喺唔同互動任務入面點樣保持畫面同物理合理。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 dreamx-world: a general-purpose interactive world model python ">
+  <header>
+    <h3><span class="rank">31</span><a href="https://github.com/AMAP-ML/DreamX-World">DreamX-World</a></h3>
+    <div class="stars">★ 785</div>
+  </header>
+  <p class="meta">AMAP-ML/DreamX-World · Python · Apache-2.0 · 最近推送 2026-07-23</p>
+  <p class="summary">通用互動世界模型，用嚟按動作預測之後嘅環境。可以當研究基線，試下模型喺唔同互動任務入面點樣保持畫面同物理合理。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/AMAP-ML/DreamX-World">GitHub</a><a href="https://amap-ml.github.io/DreamX_World">主頁</a><a href="world-model/#p-amap-ml-dreamx-world">World Model</a></div>
+  
+</article><article class="card" id="p-simchowitzlabpublic-nano-world-model" data-search="nano-world-model simchowitzlabpublic/nano-world-model 盡量細、但組件齊全嘅世界模型研究庫。用嚟試新想法同時保持程式可讀，適合想改模型本身，而唔係只呼叫一個大型黑盒。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 a minimalist, batteries-included repository for advancing world model science. python diffusion-forcing diffusion-models model-predictive-control nano planning robot-manipulation streaming-video video-generation">
+  <header>
+    <h3><span class="rank">32</span><a href="https://github.com/simchowitzlabpublic/nano-world-model">nano-world-model</a></h3>
+    <div class="stars">★ 768</div>
+  </header>
+  <p class="meta">simchowitzlabpublic/nano-world-model · Python · MIT · 最近推送 2026-09-14</p>
+  <p class="summary">盡量細、但組件齊全嘅世界模型研究庫。用嚟試新想法同時保持程式可讀，適合想改模型本身，而唔係只呼叫一個大型黑盒。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/simchowitzlabpublic/nano-world-model">GitHub</a><a href="https://simchowitzlabpublic.github.io/nano-world-model/">主頁</a><a href="world-model/#p-simchowitzlabpublic-nano-world-model">World Model</a></div>
+  <div class="topics"><span>#diffusion-forcing</span><span>#diffusion-models</span><span>#model-predictive-control</span></div>
+</article><article class="card" id="p-hardmaru-worldmodelsexperiments" data-search="worldmodelsexperiments hardmaru/worldmodelsexperiments ha 同 schmidhuber 2018 世界模型論文嘅實驗程式。用視覺編碼、記憶模型同小控制器喺遊戲入面示範，係呢個方向經常被引用嘅起點。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 world models experiments jupyter notebook ">
+  <header>
+    <h3><span class="rank">33</span><a href="https://github.com/hardmaru/WorldModelsExperiments">WorldModelsExperiments</a></h3>
+    <div class="stars">★ 749</div>
+  </header>
+  <p class="meta">hardmaru/WorldModelsExperiments · Jupyter Notebook · 最近推送 2022-09-15</p>
+  <p class="summary">Ha 同 Schmidhuber 2018 世界模型論文嘅實驗程式。用視覺編碼、記憶模型同小控制器喺遊戲入面示範，係呢個方向經常被引用嘅起點。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/hardmaru/WorldModelsExperiments">GitHub</a><a href="world-model/#p-hardmaru-worldmodelsexperiments">World Model</a></div>
+  
+</article><article class="card" id="p-ctallec-world-models" data-search="world-models ctallec/world-models 用 pytorch 重寫 2018 年 world models。程式把視覺模型、時序模型同控制器拆開，方便對照論文，理解點樣喺想像環境入面學習控制。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。 reimplementation of world-models (ha and schmidhuber 2018) in pytorch python model-based-rl pytorch reinforcement-learning">
+  <header>
+    <h3><span class="rank">34</span><a href="https://github.com/ctallec/world-models">world-models</a></h3>
+    <div class="stars">★ 716</div>
+  </header>
+  <p class="meta">ctallec/world-models · Python · MIT · 最近推送 2022-07-19</p>
+  <p class="summary">用 PyTorch 重寫 2018 年 World Models。程式把視覺模型、時序模型同控制器拆開，方便對照論文，理解點樣喺想像環境入面學習控制。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。</p>
+  <div class="links"><a href="https://github.com/ctallec/world-models">GitHub</a><a href="world-model/#p-ctallec-world-models">World Model</a></div>
+  <div class="topics"><span>#model-based-rl</span><span>#pytorch</span><span>#reinforcement-learning</span></div>
+</article><article class="card" id="p-tencent-hunyuan-hunyuan3d-2" data-search="hunyuan3d-2 tencent-hunyuan/hunyuan3d-2 混元三維大模型嘅第二代，用大規模擴散模型由圖像生成高解像三維資產。單張圖可以出帶結構嘅模型，係而家公開圖像轉三維入面星數最高嘅一批。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 high-resolution 3d assets generation with large scale hunyuan3d diffusion models. python 3d 3d-aigc 3d-generation diffusion-models hunyuan3d image-to-3d shape shape-generation">
+  <header>
+    <h3><span class="rank">01</span><a href="https://github.com/Tencent-Hunyuan/Hunyuan3D-2">Hunyuan3D-2</a></h3>
+    <div class="stars">★ 15,229</div>
+  </header>
+  <p class="meta">Tencent-Hunyuan/Hunyuan3D-2 · Python · 最近推送 2025-10-28</p>
+  <p class="summary">混元三維大模型嘅第二代，用大規模擴散模型由圖像生成高解像三維資產。單張圖可以出帶結構嘅模型，係而家公開圖像轉三維入面星數最高嘅一批。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/Tencent-Hunyuan/Hunyuan3D-2">GitHub</a><a href="https://3d.hunyuan.tencent.com/">主頁</a><a href="image-to-3d/#p-tencent-hunyuan-hunyuan3d-2">Image to 3D</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-aigc</span><span>#3d-generation</span></div>
+</article><article class="card" id="p-facebookresearch-vggt" data-search="vggt facebookresearch/vggt 視覺幾何 transformer，由圖片直接估計相機、深度同三維點。多張相片唔使傳統逐步配對，都可以一次過重建場景幾何，係 cvpr 2025 最佳論文。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [cvpr 2025 best paper award] vggt: visual geometry grounded transformer python ">
+  <header>
+    <h3><span class="rank">02</span><a href="https://github.com/facebookresearch/vggt">vggt</a></h3>
+    <div class="stars">★ 14,578</div>
+  </header>
+  <p class="meta">facebookresearch/vggt · Python · 最近推送 2026-05-19</p>
+  <p class="summary">視覺幾何 Transformer，由圖片直接估計相機、深度同三維點。多張相片唔使傳統逐步配對，都可以一次過重建場景幾何，係 CVPR 2025 最佳論文。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/facebookresearch/vggt">GitHub</a><a href="https://arxiv.org/abs/2503.11651">論文</a><a href="image-to-3d/#p-facebookresearch-vggt">Image to 3D</a></div>
+  
+</article><article class="card" id="p-microsoft-trellis" data-search="trellis microsoft/trellis 用結構化三維潛在空間做可擴展嘅三維生成，可以由圖像或文字得到模型。潛在表示同時照顧形狀同外觀，係 cvpr 2025 嘅代表程式。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 official repo for paper &quot;structured 3d latents for scalable and versatile 3d generation&quot; (cvpr&#x27;25 spotlight). python 3d 3d-aigc 3d-generation image-to-3d text-to-3d">
+  <header>
+    <h3><span class="rank">03</span><a href="https://github.com/microsoft/TRELLIS">TRELLIS</a></h3>
+    <div class="stars">★ 14,130</div>
+  </header>
+  <p class="meta">microsoft/TRELLIS · Python · MIT · 最近推送 2026-10-27</p>
+  <p class="summary">用結構化三維潛在空間做可擴展嘅三維生成，可以由圖像或文字得到模型。潛在表示同時照顧形狀同外觀，係 CVPR 2025 嘅代表程式。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/microsoft/TRELLIS">GitHub</a><a href="https://trellis3d.github.io">主頁</a><a href="https://arxiv.org/abs/2412.01506">論文</a><a href="image-to-3d/#p-microsoft-trellis">Image to 3D</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-aigc</span><span>#3d-generation</span></div>
+</article><article class="card" id="p-microsoft-trellis-2" data-search="trellis.2 microsoft/trellis.2 trellis 嘅下一代，用更原生同更緊湊嘅結構化潛在空間做三維生成。同樣面向由圖像或文字得到高質素資產，而且表示更慳。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 native and compact structured latents for 3d generation python ">
+  <header>
+    <h3><span class="rank">04</span><a href="https://github.com/microsoft/TRELLIS.2">TRELLIS.2</a></h3>
+    <div class="stars">★ 12,518</div>
+  </header>
+  <p class="meta">microsoft/TRELLIS.2 · Python · MIT · 最近推送 2026-07-10</p>
+  <p class="summary">TRELLIS 嘅下一代，用更原生同更緊湊嘅結構化潛在空間做三維生成。同樣面向由圖像或文字得到高質素資產，而且表示更慳。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/microsoft/TRELLIS.2">GitHub</a><a href="image-to-3d/#p-microsoft-trellis-2">Image to 3D</a></div>
+  
+</article><article class="card" id="p-openai-shap-e" data-search="shap-e openai/shap-e openai 嘅三維生成模型，可以按文字或圖片產生三維物件。輸出係隱式表示，再轉成網格，適合快速由概念得到一個可旋轉嘅模型。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 generate 3d objects conditioned on text or images python ">
+  <header>
+    <h3><span class="rank">05</span><a href="https://github.com/openai/shap-e">shap-e</a></h3>
+    <div class="stars">★ 12,267</div>
+  </header>
+  <p class="meta">openai/shap-e · Python · MIT · 最近推送 2024-06-22</p>
+  <p class="summary">OpenAI 嘅三維生成模型，可以按文字或圖片產生三維物件。輸出係隱式表示，再轉成網格，適合快速由概念得到一個可旋轉嘅模型。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/openai/shap-e">GitHub</a><a href="image-to-3d/#p-openai-shap-e">Image to 3D</a></div>
+  
+</article><article class="card" id="p-facebookresearch-pifuhd" data-search="pifuhd facebookresearch/pifuhd 由單張人像做高解像三維人體數字化。像素對齊嘅隱式函數可以保留頭髮同衣服細節，係單圖人體重建經常被引用嘅程式。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 high-resolution 3d human digitization from a single image. python ">
+  <header>
+    <h3><span class="rank">06</span><a href="https://github.com/facebookresearch/pifuhd">pifuhd</a></h3>
+    <div class="stars">★ 9,722</div>
+  </header>
+  <p class="meta">facebookresearch/pifuhd · Python · 最近推送 2024-08-19</p>
+  <p class="summary">由單張人像做高解像三維人體數字化。像素對齊嘅隱式函數可以保留頭髮同衣服細節，係單圖人體重建經常被引用嘅程式。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/facebookresearch/pifuhd">GitHub</a><a href="image-to-3d/#p-facebookresearch-pifuhd">Image to 3D</a><span class="badge arch">已封存</span></div>
+  
+</article><article class="card" id="p-ashawkey-stable-dreamfusion" data-search="stable-dreamfusion ashawkey/stable-dreamfusion 用擴散模型引導 nerf，做文字轉三維同圖像轉三維，並可以匯出網格。一個場景優化一段時間之後，就可以由新角度睇生成嘅物件。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 text-to-3d &amp; image-to-3d &amp; mesh exportation with nerf + diffusion. python dreamfusion gui image-to-3d nerf stable-diffusion text-to-3d">
+  <header>
+    <h3><span class="rank">07</span><a href="https://github.com/ashawkey/stable-dreamfusion">stable-dreamfusion</a></h3>
+    <div class="stars">★ 8,872</div>
+  </header>
+  <p class="meta">ashawkey/stable-dreamfusion · Python · Apache-2.0 · 最近推送 2023-12-10</p>
+  <p class="summary">用擴散模型引導 NeRF，做文字轉三維同圖像轉三維，並可以匯出網格。一個場景優化一段時間之後，就可以由新角度睇生成嘅物件。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/ashawkey/stable-dreamfusion">GitHub</a><a href="image-to-3d/#p-ashawkey-stable-dreamfusion">Image to 3D</a></div>
+  <div class="topics"><span>#dreamfusion</span><span>#gui</span><span>#image-to-3d</span></div>
+</article><article class="card" id="p-naver-dust3r" data-search="dust3r naver/dust3r 由一對圖片直接預測三維點圖，令幾何視覺少咗傳統逐步重建。相片之間嘅形狀同相機關係可以一次估計，係後來好多多視角方法嘅基礎。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 dust3r: geometric 3d vision made easy python ">
+  <header>
+    <h3><span class="rank">08</span><a href="https://github.com/naver/dust3r">dust3r</a></h3>
+    <div class="stars">★ 7,362</div>
+  </header>
+  <p class="meta">naver/dust3r · Python · 最近推送 2025-09-24</p>
+  <p class="summary">由一對圖片直接預測三維點圖，令幾何視覺少咗傳統逐步重建。相片之間嘅形狀同相機關係可以一次估計，係後來好多多視角方法嘅基礎。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/naver/dust3r">GitHub</a><a href="https://dust3r.europe.naverlabs.com/">主頁</a><a href="https://arxiv.org/abs/2312.14132">論文</a><a href="image-to-3d/#p-naver-dust3r">Image to 3D</a></div>
+  
+</article><article class="card" id="p-vast-ai-research-triposr" data-search="triposr vast-ai-research/triposr 由單張圖片快速重建三維物件嘅大型重建模型。前饋推論，唔使每個物件優化幾十分鐘，適合要即時由產品圖或概念圖出模型。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 triposr: fast 3d object reconstruction from a single image python ">
+  <header>
+    <h3><span class="rank">09</span><a href="https://github.com/VAST-AI-Research/TripoSR">TripoSR</a></h3>
+    <div class="stars">★ 7,247</div>
+  </header>
+  <p class="meta">VAST-AI-Research/TripoSR · Python · MIT · 最近推送 2026-06-04</p>
+  <p class="summary">由單張圖片快速重建三維物件嘅大型重建模型。前饋推論，唔使每個物件優化幾十分鐘，適合要即時由產品圖或概念圖出模型。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/VAST-AI-Research/TripoSR">GitHub</a><a href="https://arxiv.org/abs/2403.02151">論文</a><a href="image-to-3d/#p-vast-ai-research-triposr">Image to 3D</a></div>
+  
+</article><article class="card" id="p-threestudio-project-threestudio" data-search="threestudio threestudio-project/threestudio 統一嘅三維內容生成框架，把多種文字轉三維同圖像轉三維方法放喺同一套訓練程式。想比較 dreamfusion 一類算法，可以喺度換模組。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 a unified framework for 3d content generation. jupyter notebook ">
+  <header>
+    <h3><span class="rank">10</span><a href="https://github.com/threestudio-project/threestudio">threestudio</a></h3>
+    <div class="stars">★ 7,071</div>
+  </header>
+  <p class="meta">threestudio-project/threestudio · Jupyter Notebook · Apache-2.0 · 最近推送 2024-12-16</p>
+  <p class="summary">統一嘅三維內容生成框架，把多種文字轉三維同圖像轉三維方法放喺同一套訓練程式。想比較 DreamFusion 一類算法，可以喺度換模組。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/threestudio-project/threestudio">GitHub</a><a href="image-to-3d/#p-threestudio-project-threestudio">Image to 3D</a></div>
+  
+</article><article class="card" id="p-openai-point-e" data-search="point-e openai/point-e 用擴散模型生成三維點雲，可以再轉成網格。條件可以係文字或圖像，速度快過由零優化一個 nerf，適合做三維草稿。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 point cloud diffusion for 3d model synthesis python ">
+  <header>
+    <h3><span class="rank">11</span><a href="https://github.com/openai/point-e">point-e</a></h3>
+    <div class="stars">★ 6,899</div>
+  </header>
+  <p class="meta">openai/point-e · Python · MIT · 最近推送 2024-07-04</p>
+  <p class="summary">用擴散模型生成三維點雲，可以再轉成網格。條件可以係文字或圖像，速度快過由零優化一個 NeRF，適合做三維草稿。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/openai/point-e">GitHub</a><a href="image-to-3d/#p-openai-point-e">Image to 3D</a></div>
+  
+</article><article class="card" id="p-xxlong0-wonder3d" data-search="wonder3d xxlong0/wonder3d 由單張圖生成多視角一致嘅法線同色彩，再重建三維。跨域擴散令背面同側面唔會各自矛盾，適合物件級圖像轉三維。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 single image to 3d using cross-domain diffusion for 3d generation python 3d-aigc 3d-generation 3dgeneration single-image-to-3d">
+  <header>
+    <h3><span class="rank">12</span><a href="https://github.com/xxlong0/Wonder3D">Wonder3D</a></h3>
+    <div class="stars">★ 5,450</div>
+  </header>
+  <p class="meta">xxlong0/Wonder3D · Python · MIT · 最近推送 2025-03-14</p>
+  <p class="summary">由單張圖生成多視角一致嘅法線同色彩，再重建三維。跨域擴散令背面同側面唔會各自矛盾，適合物件級圖像轉三維。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/xxlong0/Wonder3D">GitHub</a><a href="https://www.xxlong.site/Wonder3D/">主頁</a><a href="image-to-3d/#p-xxlong0-wonder3d">Image to 3D</a></div>
+  <div class="topics"><span>#3d-aigc</span><span>#3d-generation</span><span>#3dgeneration</span></div>
+</article><article class="card" id="p-facebookresearch-vggt-omega" data-search="vggt-omega facebookresearch/vggt-omega vggt 嘅後續模型，繼續用 transformer 由圖像做前饋三維幾何。重點係更強嘅視覺幾何估計，用喺多圖重建同場景理解。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [cvpr 2026 oral] vggt omega python ">
+  <header>
+    <h3><span class="rank">13</span><a href="https://github.com/facebookresearch/vggt-omega">vggt-omega</a></h3>
+    <div class="stars">★ 4,704</div>
+  </header>
+  <p class="meta">facebookresearch/vggt-omega · Python · 最近推送 2026-09-22</p>
+  <p class="summary">VGGT 嘅後續模型，繼續用 Transformer 由圖像做前饋三維幾何。重點係更強嘅視覺幾何估計，用喺多圖重建同場景理解。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/facebookresearch/vggt-omega">GitHub</a><a href="image-to-3d/#p-facebookresearch-vggt-omega">Image to 3D</a></div>
+  
+</article><article class="card" id="p-tencentarc-instantmesh" data-search="instantmesh tencentarc/instantmesh 用稀疏視角大型重建模型，由單張圖高效生成三維網格。先想像其他角度，再一次重建，速度快過逐個形狀長時間優化。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 instantmesh: efficient 3d mesh generation from a single image with sparse-view large reconstruction models python ">
+  <header>
+    <h3><span class="rank">14</span><a href="https://github.com/TencentARC/InstantMesh">InstantMesh</a></h3>
+    <div class="stars">★ 4,580</div>
+  </header>
+  <p class="meta">TencentARC/InstantMesh · Python · Apache-2.0 · 最近推送 2025-01-03</p>
+  <p class="summary">用稀疏視角大型重建模型，由單張圖高效生成三維網格。先想像其他角度，再一次重建，速度快過逐個形狀長時間優化。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/TencentARC/InstantMesh">GitHub</a><a href="image-to-3d/#p-tencentarc-instantmesh">Image to 3D</a></div>
+  
+</article><article class="card" id="p-dreamgaussian-dreamgaussian" data-search="dreamgaussian dreamgaussian/dreamgaussian 用生成式 gaussian splatting 做三維內容，可以由圖像或文字快速得到物件，再抽出網格。優化時間短，適合要效率嘅三維生成。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [iclr 2024 oral] generative gaussian splatting for efficient 3d content creation python image-to-3d text-to-3d">
+  <header>
+    <h3><span class="rank">15</span><a href="https://github.com/dreamgaussian/dreamgaussian">dreamgaussian</a></h3>
+    <div class="stars">★ 4,360</div>
+  </header>
+  <p class="meta">dreamgaussian/dreamgaussian · Python · MIT · 最近推送 2024-01-02</p>
+  <p class="summary">用生成式 Gaussian Splatting 做三維內容，可以由圖像或文字快速得到物件，再抽出網格。優化時間短，適合要效率嘅三維生成。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/dreamgaussian/dreamgaussian">GitHub</a><a href="https://dreamgaussian.github.io/">主頁</a><a href="https://arxiv.org/abs/2309.16653">論文</a><a href="image-to-3d/#p-dreamgaussian-dreamgaussian">Image to 3D</a></div>
+  <div class="topics"><span>#image-to-3d</span><span>#text-to-3d</span></div>
+</article><article class="card" id="p-tencent-hunyuan-hunyuan3d-2-1" data-search="hunyuan3d-2.1 tencent-hunyuan/hunyuan3d-2.1 混元三維 2.1，由圖像生成高保真三維資產，並帶可用於製作嘅 pbr 材質。除咗形狀，材質都可以直接交畀渲染或遊戲流程。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 from images to high-fidelity 3d assets with production-ready pbr material python 3d 3d-aigc 3d-generation hunyuan3d image-to-3d shape shape-generation text-to-3d">
+  <header>
+    <h3><span class="rank">16</span><a href="https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1">Hunyuan3D-2.1</a></h3>
+    <div class="stars">★ 4,295</div>
+  </header>
+  <p class="meta">Tencent-Hunyuan/Hunyuan3D-2.1 · Python · 最近推送 2025-10-17</p>
+  <p class="summary">混元三維 2.1，由圖像生成高保真三維資產，並帶可用於製作嘅 PBR 材質。除咗形狀，材質都可以直接交畀渲染或遊戲流程。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1">GitHub</a><a href="https://3d.hunyuan.tencent.com/">主頁</a><a href="image-to-3d/#p-tencent-hunyuan-hunyuan3d-2-1">Image to 3D</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-aigc</span><span>#3d-generation</span></div>
+</article><article class="card" id="p-facebookresearch-map-anything" data-search="map-anything facebookresearch/map-anything 通用前饋度量三維重建，由圖像估計帶真實尺度嘅幾何同相機。唔同場景可以共用一個模型，而唔使每個場景重新優化。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 mapanything: universal feed-forward metric 3d reconstruction python 3d-reconstruction ai calibration depth-completion depth-estimation image-to-3d multi-view-stereo robotics">
+  <header>
+    <h3><span class="rank">17</span><a href="https://github.com/facebookresearch/map-anything">map-anything</a></h3>
+    <div class="stars">★ 3,858</div>
+  </header>
+  <p class="meta">facebookresearch/map-anything · Python · Apache-2.0 · 最近推送 2026-08-07</p>
+  <p class="summary">通用前饋度量三維重建，由圖像估計帶真實尺度嘅幾何同相機。唔同場景可以共用一個模型，而唔使每個場景重新優化。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/facebookresearch/map-anything">GitHub</a><a href="image-to-3d/#p-facebookresearch-map-anything">Image to 3D</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#ai</span><span>#calibration</span></div>
+</article><article class="card" id="p-aiuniai-unique3d" data-search="unique3d aiuniai/unique3d 由單張圖高效生成高質素三維網格。模型同時照顧多視角一致性同表面細節，適合要一個可以立刻打開嘅物件，而唔係只有點雲。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [neurips 2024] unique3d: high-quality and efficient 3d mesh generation from a single image python 3d-aigc aigc image-to-3d">
+  <header>
+    <h3><span class="rank">18</span><a href="https://github.com/AiuniAI/Unique3D">Unique3D</a></h3>
+    <div class="stars">★ 3,595</div>
+  </header>
+  <p class="meta">AiuniAI/Unique3D · Python · MIT · 最近推送 2025-07-17</p>
+  <p class="summary">由單張圖高效生成高質素三維網格。模型同時照顧多視角一致性同表面細節，適合要一個可以立刻打開嘅物件，而唔係只有點雲。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/AiuniAI/Unique3D">GitHub</a><a href="https://wukailu.github.io/Unique3D/">主頁</a><a href="image-to-3d/#p-aiuniai-unique3d">Image to 3D</a></div>
+  <div class="topics"><span>#3d-aigc</span><span>#aigc</span><span>#image-to-3d</span></div>
+</article><article class="card" id="p-tencent-hunyuan-hunyuan3d-1" data-search="hunyuan3d-1 tencent-hunyuan/hunyuan3d-1 混元三維第一代，把文字轉三維同圖像轉三維放喺同一個框架。可以由描述或參考圖生成資產，係後代 hunyuan3d 系列嘅起點。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 tencent hunyuan3d-1.0: a unified framework for text-to-3d and image-to-3d generation python 3d 3dgen generation text">
+  <header>
+    <h3><span class="rank">19</span><a href="https://github.com/Tencent-Hunyuan/Hunyuan3D-1">Hunyuan3D-1</a></h3>
+    <div class="stars">★ 3,500</div>
+  </header>
+  <p class="meta">Tencent-Hunyuan/Hunyuan3D-1 · Python · 最近推送 2025-11-19</p>
+  <p class="summary">混元三維第一代，把文字轉三維同圖像轉三維放喺同一個框架。可以由描述或參考圖生成資產，係後代 Hunyuan3D 系列嘅起點。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/Tencent-Hunyuan/Hunyuan3D-1">GitHub</a><a href="https://3d.hunyuan.tencent.com/">主頁</a><a href="image-to-3d/#p-tencent-hunyuan-hunyuan3d-1">Image to 3D</a></div>
+  <div class="topics"><span>#3d</span><span>#3dgen</span><span>#generation</span></div>
+</article><article class="card" id="p-naver-mast3r" data-search="mast3r naver/mast3r 喺 dust3r 之上做三維圖像匹配，令對應點有幾何根據。多張圖對齊同重建會更穩，適合相片集要準確拼成一個場景。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 grounding image matching in 3d with mast3r python ">
+  <header>
+    <h3><span class="rank">20</span><a href="https://github.com/naver/mast3r">mast3r</a></h3>
+    <div class="stars">★ 3,145</div>
+  </header>
+  <p class="meta">naver/mast3r · Python · 最近推送 2025-06-30</p>
+  <p class="summary">喺 DUSt3R 之上做三維圖像匹配，令對應點有幾何根據。多張圖對齊同重建會更穩，適合相片集要準確拼成一個場景。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/naver/mast3r">GitHub</a><a href="image-to-3d/#p-naver-mast3r">Image to 3D</a></div>
+  
+</article><article class="card" id="p-cvlab-columbia-zero123" data-search="zero123 cvlab-columbia/zero123 由一張圖零樣本想像物件喺新視角嘅樣。新角度圖像可以再交畀重建程式，變成三維，係單圖轉三維經常被引用嘅擴散模型。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 zero-1-to-3: zero-shot one image to 3d object (iccv 2023) python image-to-3d novel-view-synthesis single-view-reconstruction stable-diffusion zero-shot">
+  <header>
+    <h3><span class="rank">21</span><a href="https://github.com/cvlab-columbia/zero123">zero123</a></h3>
+    <div class="stars">★ 3,067</div>
+  </header>
+  <p class="meta">cvlab-columbia/zero123 · Python · MIT · 最近推送 2023-12-05</p>
+  <p class="summary">由一張圖零樣本想像物件喺新視角嘅樣。新角度圖像可以再交畀重建程式，變成三維，係單圖轉三維經常被引用嘅擴散模型。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/cvlab-columbia/zero123">GitHub</a><a href="https://zero123.cs.columbia.edu/">主頁</a><a href="image-to-3d/#p-cvlab-columbia-zero123">Image to 3D</a></div>
+  <div class="topics"><span>#image-to-3d</span><span>#novel-view-synthesis</span><span>#single-view-reconstruction</span></div>
+</article><article class="card" id="p-deepseek-ai-dreamcraft3d" data-search="dreamcraft3d deepseek-ai/dreamcraft3d 分層生成三維：先用擴散先驗定大形，再提高質素同細節。可以由文字或圖像得到較完整嘅物件，而唔係只得一個粗糙形狀。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [iclr 2024] official implementation of dreamcraft3d: hierarchical 3d generation with bootstrapped diffusion prior python 3d-creation 3d-generation aigc diffusion-models generative-model image-to-3d">
+  <header>
+    <h3><span class="rank">22</span><a href="https://github.com/deepseek-ai/DreamCraft3D">DreamCraft3D</a></h3>
+    <div class="stars">★ 3,037</div>
+  </header>
+  <p class="meta">deepseek-ai/DreamCraft3D · Python · MIT · 最近推送 2025-04-22</p>
+  <p class="summary">分層生成三維：先用擴散先驗定大形，再提高質素同細節。可以由文字或圖像得到較完整嘅物件，而唔係只得一個粗糙形狀。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/deepseek-ai/DreamCraft3D">GitHub</a><a href="https://mrtornado24.github.io/DreamCraft3D/">主頁</a><a href="image-to-3d/#p-deepseek-ai-dreamcraft3d">Image to 3D</a></div>
+  <div class="topics"><span>#3d-creation</span><span>#3d-generation</span><span>#aigc</span></div>
+</article><article class="card" id="p-wgsxm-partcrafter" data-search="partcrafter wgsxm/partcrafter 按部件生成結構化三維網格。物件會拆成可分開嘅部分，而唔係一整塊糊埋嘅表面，方便之後改裝、上材質或者做關節。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [neurips 2025] partcrafter: structured 3d mesh generation via compositional latent diffusion transformers python 3d 3d-generation 3d-object-generation 3d-object-reconstruction 3d-reconstruction 3d-scene-generation 3d-scene-reconstruction image-to-3d">
+  <header>
+    <h3><span class="rank">23</span><a href="https://github.com/wgsxm/PartCrafter">PartCrafter</a></h3>
+    <div class="stars">★ 2,500</div>
+  </header>
+  <p class="meta">wgsxm/PartCrafter · Python · MIT · 最近推送 2026-04-16</p>
+  <p class="summary">按部件生成結構化三維網格。物件會拆成可分開嘅部分，而唔係一整塊糊埋嘅表面，方便之後改裝、上材質或者做關節。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/wgsxm/PartCrafter">GitHub</a><a href="https://wgsxm.github.io/projects/partcrafter/">主頁</a><a href="image-to-3d/#p-wgsxm-partcrafter">Image to 3D</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-generation</span><span>#3d-object-generation</span></div>
+</article><article class="card" id="p-3dtopia-lgm" data-search="lgm 3dtopia/lgm 大型多視角高斯模型，由圖像快速生成高解像三維內容。先得到多個一致視角，再用高斯融合成可以轉睇嘅物件。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [eccv 2024 oral] lgm: large multi-view gaussian model for high-resolution 3d content creation. python gaussian-splatting image-to-3d text-to-3d">
+  <header>
+    <h3><span class="rank">24</span><a href="https://github.com/3DTopia/LGM">LGM</a></h3>
+    <div class="stars">★ 2,122</div>
+  </header>
+  <p class="meta">3DTopia/LGM · Python · MIT · 最近推送 2024-08-20</p>
+  <p class="summary">大型多視角高斯模型，由圖像快速生成高解像三維內容。先得到多個一致視角，再用高斯融合成可以轉睇嘅物件。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/3DTopia/LGM">GitHub</a><a href="https://me.kiui.moe/lgm/">主頁</a><a href="image-to-3d/#p-3dtopia-lgm">Image to 3D</a></div>
+  <div class="topics"><span>#gaussian-splatting</span><span>#image-to-3d</span><span>#text-to-3d</span></div>
+</article><article class="card" id="p-sudo-ai-3d-zero123plus" data-search="zero123plus sudo-ai-3d/zero123plus 由單張圖生成一致多視角嘅擴散底模。新角度之間風格同形狀較齊，之後可以接重建程式，變成網格或高斯場景。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 code repository for zero123++: a single image to consistent multi-view diffusion base model. python 3d 3d-graphics aigc diffusers diffusion-models image-to-3d research-project text-to-3d">
+  <header>
+    <h3><span class="rank">25</span><a href="https://github.com/SUDO-AI-3D/zero123plus">zero123plus</a></h3>
+    <div class="stars">★ 2,098</div>
+  </header>
+  <p class="meta">SUDO-AI-3D/zero123plus · Python · Apache-2.0 · 最近推送 2024-02-23</p>
+  <p class="summary">由單張圖生成一致多視角嘅擴散底模。新角度之間風格同形狀較齊，之後可以接重建程式，變成網格或高斯場景。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/SUDO-AI-3D/zero123plus">GitHub</a><a href="image-to-3d/#p-sudo-ai-3d-zero123plus">Image to 3D</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-graphics</span><span>#aigc</span></div>
+</article><article class="card" id="p-stability-ai-stable-fast-3d" data-search="stable-fast-3d stability-ai/stable-fast-3d 由單張圖快速重建三維網格，同時做 uv 展開同光照分離。模型表面可以直接貼圖，適合要交去 dcc 或遊戲嘅資產。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 sf3d: stable fast 3d mesh reconstruction with uv-unwrapping and illumination disentanglement python ">
+  <header>
+    <h3><span class="rank">26</span><a href="https://github.com/Stability-AI/stable-fast-3d">stable-fast-3d</a></h3>
+    <div class="stars">★ 1,908</div>
+  </header>
+  <p class="meta">Stability-AI/stable-fast-3d · Python · 最近推送 2025-01-22</p>
+  <p class="summary">由單張圖快速重建三維網格，同時做 UV 展開同光照分離。模型表面可以直接貼圖，適合要交去 DCC 或遊戲嘅資產。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/Stability-AI/stable-fast-3d">GitHub</a><a href="https://stable-fast-3d.github.io">主頁</a><a href="image-to-3d/#p-stability-ai-stable-fast-3d">Image to 3D</a></div>
+  
+</article><article class="card" id="p-vast-ai-research-triposg" data-search="triposg vast-ai-research/triposg 用大規模 rectified flow 做高保真三維形狀合成。可以由圖像得到較乾淨嘅幾何，重點放喺形狀質素，而唔止係快。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 triposg: high-fidelity 3d shape synthesis using large-scale rectified flow models python 3d-genai 3d-generation 3d-reconstruction image-to-3d">
+  <header>
+    <h3><span class="rank">27</span><a href="https://github.com/VAST-AI-Research/TripoSG">TripoSG</a></h3>
+    <div class="stars">★ 1,865</div>
+  </header>
+  <p class="meta">VAST-AI-Research/TripoSG · Python · MIT · 最近推送 2025-04-18</p>
+  <p class="summary">用大規模 rectified flow 做高保真三維形狀合成。可以由圖像得到較乾淨嘅幾何，重點放喺形狀質素，而唔止係快。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/VAST-AI-Research/TripoSG">GitHub</a><a href="image-to-3d/#p-vast-ai-research-triposg">Image to 3D</a></div>
+  <div class="topics"><span>#3d-genai</span><span>#3d-generation</span><span>#3d-reconstruction</span></div>
+</article><article class="card" id="p-totoro97-neus" data-search="neus totoro97/neus 用神經隱式表面重建物件，把體渲染同表面約束放埋一齊。多視角相片可以抽出較準嘅網格，係後來好多表面重建程式嘅參考。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 code release for neus python ">
+  <header>
+    <h3><span class="rank">28</span><a href="https://github.com/Totoro97/NeuS">NeuS</a></h3>
+    <div class="stars">★ 1,775</div>
+  </header>
+  <p class="meta">Totoro97/NeuS · Python · MIT · 最近推送 2024-02-28</p>
+  <p class="summary">用神經隱式表面重建物件，把體渲染同表面約束放埋一齊。多視角相片可以抽出較準嘅網格，係後來好多表面重建程式嘅參考。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/Totoro97/NeuS">GitHub</a><a href="image-to-3d/#p-totoro97-neus">Image to 3D</a></div>
+  
+</article><article class="card" id="p-one-2-3-45-one-2-3-45" data-search="one-2-3-45 one-2-3-45/one-2-3-45 任何單張圖大約四十五秒變成三維網格，而且唔使每個形狀再長時間優化。先生成多視角，再重建，係早期實用嘅單圖轉 mesh 流程。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [neurips 2023] official code of &quot;one-2-3-45: any single image to 3d mesh in 45 seconds without per-shape optimization&quot; python 3d 3d-generation 3d-shape-generation aigc generalizable-nerf mesh-generation multi-view-reconstruction nerf">
+  <header>
+    <h3><span class="rank">29</span><a href="https://github.com/One-2-3-45/One-2-3-45">One-2-3-45</a></h3>
+    <div class="stars">★ 1,714</div>
+  </header>
+  <p class="meta">One-2-3-45/One-2-3-45 · Python · Apache-2.0 · 最近推送 2024-04-20</p>
+  <p class="summary">任何單張圖大約四十五秒變成三維網格，而且唔使每個形狀再長時間優化。先生成多視角，再重建，係早期實用嘅單圖轉 mesh 流程。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/One-2-3-45/One-2-3-45">GitHub</a><a href="http://one-2-3-45.com">主頁</a><a href="image-to-3d/#p-one-2-3-45-one-2-3-45">Image to 3D</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-generation</span><span>#3d-shape-generation</span></div>
+</article><article class="card" id="p-yuliangxiu-icon" data-search="icon yuliangxiu/icon 由單張圖同法線重建穿着衣服嘅人體。隱式表面會跟住衣服輪廓，而唔係硬套標準體型，係呢類人體數字化嘅常用程式。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [cvpr&#x27;22] icon: implicit clothed humans obtained from normals python 3d-reconstruction animation avatar-generator cloth-simulation computer-graphics computer-vision human-pose-estimation implicit-functions">
+  <header>
+    <h3><span class="rank">30</span><a href="https://github.com/YuliangXiu/ICON">ICON</a></h3>
+    <div class="stars">★ 1,679</div>
+  </header>
+  <p class="meta">YuliangXiu/ICON · Python · 最近推送 2023-11-23</p>
+  <p class="summary">由單張圖同法線重建穿着衣服嘅人體。隱式表面會跟住衣服輪廓，而唔係硬套標準體型，係呢類人體數字化嘅常用程式。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/YuliangXiu/ICON">GitHub</a><a href="https://icon.is.tue.mpg.de">主頁</a><a href="image-to-3d/#p-yuliangxiu-icon">Image to 3D</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#animation</span><span>#avatar-generator</span></div>
+</article><article class="card" id="p-guochengqian-magic123" data-search="magic123 guochengqian/magic123 同時用二維同三維擴散先驗，由一張圖生成高質素三維物件。二維模型補外觀，三維先驗拉住幾何，減少背面亂估。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [iclr&#x27;24] official pytorch implementation of magic123: one image to high-quality 3d object generation using both 2d and 3d diffusion priors jupyter notebook 3d-generation diffusion-models image-to-3d">
+  <header>
+    <h3><span class="rank">31</span><a href="https://github.com/guochengqian/Magic123">Magic123</a></h3>
+    <div class="stars">★ 1,623</div>
+  </header>
+  <p class="meta">guochengqian/Magic123 · Jupyter Notebook · Apache-2.0 · 最近推送 2026-07-06</p>
+  <p class="summary">同時用二維同三維擴散先驗，由一張圖生成高質素三維物件。二維模型補外觀，三維先驗拉住幾何，減少背面亂估。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/guochengqian/Magic123">GitHub</a><a href="https://guochengqian.github.io/project/magic123">主頁</a><a href="image-to-3d/#p-guochengqian-magic123">Image to 3D</a></div>
+  <div class="topics"><span>#3d-generation</span><span>#diffusion-models</span><span>#image-to-3d</span></div>
+</article><article class="card" id="p-thu-ml-prolificdreamer" data-search="prolificdreamer thu-ml/prolificdreamer 用變分分數蒸餾由文字生成高保真同多樣嘅三維。同一個描述可以出唔止一個樣，質素亦高過早期 dreamfusion 一類方法。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 prolificdreamer: high-fidelity and diverse text-to-3d generation with variational score distillation (neurips 2023 spotlight) python diffusion-model dreamfusion nerf prolificdreamer stablediffusion text-to-3d">
+  <header>
+    <h3><span class="rank">32</span><a href="https://github.com/thu-ml/prolificdreamer">prolificdreamer</a></h3>
+    <div class="stars">★ 1,562</div>
+  </header>
+  <p class="meta">thu-ml/prolificdreamer · Python · Apache-2.0 · 最近推送 2023-11-22</p>
+  <p class="summary">用變分分數蒸餾由文字生成高保真同多樣嘅三維。同一個描述可以出唔止一個樣，質素亦高過早期 DreamFusion 一類方法。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/thu-ml/prolificdreamer">GitHub</a><a href="https://ml.cs.tsinghua.edu.cn/prolificdreamer/">主頁</a><a href="image-to-3d/#p-thu-ml-prolificdreamer">Image to 3D</a></div>
+  <div class="topics"><span>#diffusion-model</span><span>#dreamfusion</span><span>#nerf</span></div>
+</article><article class="card" id="p-roblox-cube" data-search="cube roblox/cube roblox 面向三維智能嘅基礎模型，用嚟理解同生成三維內容。可以協助由圖像或描述得到場景同資產，服務遊戲製作呢類流程。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 roblox foundation model for 3d intelligence jupyter notebook 3d 3d-aigc 3d-generation shape-generation text-to-3d">
+  <header>
+    <h3><span class="rank">33</span><a href="https://github.com/Roblox/cube">cube</a></h3>
+    <div class="stars">★ 1,301</div>
+  </header>
+  <p class="meta">Roblox/cube · Jupyter Notebook · 最近推送 2026-05-28</p>
+  <p class="summary">Roblox 面向三維智能嘅基礎模型，用嚟理解同生成三維內容。可以協助由圖像或描述得到場景同資產，服務遊戲製作呢類流程。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/Roblox/cube">GitHub</a><a href="image-to-3d/#p-roblox-cube">Image to 3D</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-aigc</span><span>#3d-generation</span></div>
+</article><article class="card" id="p-dreamtechai-direct3d-s2" data-search="direct3d-s2 dreamtechai/direct3d-s2 用空間稀疏注意力做大規模三維生成，令高解像生成更容易。可以由條件直接出三維，而唔使把成個立方體密密麻麻計一次。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [neurips 2025] direct3d‑s2: gigascale 3d generation made easy with spatial sparse attention python 3d-aigc 3d-generation 3d-models 3d-reconstruction 3d-representation genai-3d image-to-3d">
+  <header>
+    <h3><span class="rank">34</span><a href="https://github.com/DreamTechAI/Direct3D-S2">Direct3D-S2</a></h3>
+    <div class="stars">★ 1,294</div>
+  </header>
+  <p class="meta">DreamTechAI/Direct3D-S2 · Python · MIT · 最近推送 2025-09-26</p>
+  <p class="summary">用空間稀疏注意力做大規模三維生成，令高解像生成更容易。可以由條件直接出三維，而唔使把成個立方體密密麻麻計一次。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/DreamTechAI/Direct3D-S2">GitHub</a><a href="https://neural4d.com/research/direct3d-s2">主頁</a><a href="image-to-3d/#p-dreamtechai-direct3d-s2">Image to 3D</a></div>
+  <div class="topics"><span>#3d-aigc</span><span>#3d-generation</span><span>#3d-models</span></div>
+</article><article class="card" id="p-3dtopia-openlrm" data-search="openlrm 3dtopia/openlrm 大型重建模型嘅開源實作，由單張或少量圖像前饋得到三維。推論快，適合要批量把產品圖或角色圖轉成可旋轉資產。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 an open-source impl. of large reconstruction models python 3d aigc computer-vision generation">
+  <header>
+    <h3><span class="rank">35</span><a href="https://github.com/3DTopia/OpenLRM">OpenLRM</a></h3>
+    <div class="stars">★ 1,257</div>
+  </header>
+  <p class="meta">3DTopia/OpenLRM · Python · Apache-2.0 · 最近推送 2024-05-06</p>
+  <p class="summary">大型重建模型嘅開源實作，由單張或少量圖像前饋得到三維。推論快，適合要批量把產品圖或角色圖轉成可旋轉資產。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/3DTopia/OpenLRM">GitHub</a><a href="image-to-3d/#p-3dtopia-openlrm">Image to 3D</a></div>
+  <div class="topics"><span>#3d</span><span>#aigc</span><span>#computer-vision</span></div>
+</article><article class="card" id="p-yuliangxiu-econ" data-search="econ yuliangxiu/econ 由單張人像重建穿着衣服嘅人體三維，並用法線整合優化表面。重點係衫嘅皺褶同身體一齊保留，而唔係只得一個裸體模板。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [cvpr&#x27;23, highlight] econ: explicit clothed humans optimized via normal integration python 3d-reconstruction avatar-generator computer-graphics computer-vision digital-twins metaverse normal-maps pifu">
+  <header>
+    <h3><span class="rank">36</span><a href="https://github.com/YuliangXiu/ECON">ECON</a></h3>
+    <div class="stars">★ 1,211</div>
+  </header>
+  <p class="meta">YuliangXiu/ECON · Python · 最近推送 2024-09-17</p>
+  <p class="summary">由單張人像重建穿着衣服嘅人體三維，並用法線整合優化表面。重點係衫嘅皺褶同身體一齊保留，而唔係只得一個裸體模板。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/YuliangXiu/ECON">GitHub</a><a href="https://xiuyuliang.cn/econ">主頁</a><a href="image-to-3d/#p-yuliangxiu-econ">Image to 3D</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#avatar-generator</span><span>#computer-graphics</span></div>
+</article><article class="card" id="p-stability-ai-stable-point-aware-3d" data-search="stable-point-aware-3d stability-ai/stable-point-aware-3d 由單張圖重建三維物件，同時利用點雲資訊穩定形狀。幾何同外觀分開處理，減少單視角常見嘅扁塌同背面缺失。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 spar3d: stable point-aware reconstruction of 3d objects from single images python ">
+  <header>
+    <h3><span class="rank">37</span><a href="https://github.com/Stability-AI/stable-point-aware-3d">stable-point-aware-3d</a></h3>
+    <div class="stars">★ 1,084</div>
+  </header>
+  <p class="meta">Stability-AI/stable-point-aware-3d · Python · 最近推送 2025-05-05</p>
+  <p class="summary">由單張圖重建三維物件，同時利用點雲資訊穩定形狀。幾何同外觀分開處理，減少單視角常見嘅扁塌同背面缺失。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/Stability-AI/stable-point-aware-3d">GitHub</a><a href="https://spar3d.github.io/">主頁</a><a href="image-to-3d/#p-stability-ai-stable-point-aware-3d">Image to 3D</a></div>
+  
+</article><article class="card" id="p-ashawkey-nerf2mesh" data-search="nerf2mesh ashawkey/nerf2mesh 由 nerf 恢復帶貼圖嘅精細網格，並自適應加密表面。新視角場景可以交回傳統渲染，用 mesh 而唔係只留神經場。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [iccv2023] delicate textured mesh recovery from nerf via adaptive surface refinement python mesh nerf real-time">
+  <header>
+    <h3><span class="rank">38</span><a href="https://github.com/ashawkey/nerf2mesh">nerf2mesh</a></h3>
+    <div class="stars">★ 966</div>
+  </header>
+  <p class="meta">ashawkey/nerf2mesh · Python · MIT · 最近推送 2024-11-11</p>
+  <p class="summary">由 NeRF 恢復帶貼圖嘅精細網格，並自適應加密表面。新視角場景可以交回傳統渲染，用 mesh 而唔係只留神經場。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/ashawkey/nerf2mesh">GitHub</a><a href="https://me.kiui.moe/nerf2mesh/">主頁</a><a href="image-to-3d/#p-ashawkey-nerf2mesh">Image to 3D</a></div>
+  <div class="topics"><span>#mesh</span><span>#nerf</span><span>#real-time</span></div>
+</article><article class="card" id="p-bennyguo-instant-nsr-pl" data-search="instant-nsr-pl bennyguo/instant-nsr-pl 基於 instant-ngp 嘅神經表面重建，可以用大約十分鐘訓練 neus 一類方法。多視角相片可以較快抽出網格，適合研究表面重建。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 neural surface reconstruction based on instant-ngp. efficient and customizable boilerplate for your research projects. train neus in 10min! python ">
+  <header>
+    <h3><span class="rank">39</span><a href="https://github.com/bennyguo/instant-nsr-pl">instant-nsr-pl</a></h3>
+    <div class="stars">★ 927</div>
+  </header>
+  <p class="meta">bennyguo/instant-nsr-pl · Python · MIT · 最近推送 2023-11-22</p>
+  <p class="summary">基於 Instant-NGP 嘅神經表面重建，可以用大約十分鐘訓練 NeuS 一類方法。多視角相片可以較快抽出網格，適合研究表面重建。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/bennyguo/instant-nsr-pl">GitHub</a><a href="image-to-3d/#p-bennyguo-instant-nsr-pl">Image to 3D</a></div>
+  
+</article><article class="card" id="p-significant-gravitas-autogpt" data-search="autogpt significant-gravitas/autogpt 開放嘅 ai agent 平台，用嚟由一個目標自動拆解任務。佢可以自己揀工具、跑步驟同整理結果，等你專注喺想完成嘅事，而唔使由零砌晒成條工具鏈。你畀一個目標就得，執行過程可以自己托管。 autogpt is the vision of accessible ai for everyone, to use and to build on. our mission is to provide the tools, so that you can focus on what matters. python agentic-ai agents ai artificial-intelligence autonomous-agents claude gpt llama-api">
   <header>
     <h3><span class="rank">01</span><a href="https://github.com/Significant-Gravitas/AutoGPT">AutoGPT</a></h3>
     <div class="stars">★ 187,801</div>
@@ -1352,18 +2456,9 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   <p class="summary">功能完整嘅網頁 3D 渲染同遊戲引擎。除咗顯示模型，亦包含物理、動畫同工具，適合想喺瀏覽器做互動場景，又想有一套較完整引擎嘅人。想要較完整嘅網頁引擎，而唔係只得一個渲染器。</p>
   <div class="links"><a href="https://github.com/BabylonJS/Babylon.js">GitHub</a><a href="http://www.babylonjs.com">主頁</a><a href="vfx-cg-blender/#p-babylonjs-babylon-js">VFX / CG / Blender</a></div>
   <div class="topics"><span>#3d</span><span>#babylon</span><span>#game-development</span></div>
-</article><article class="card" id="p-graphdeco-inria-gaussian-splatting" data-search="gaussian-splatting graphdeco-inria/gaussian-splatting 3d gaussian splatting 嘅原始實作，可以由相片即時渲染立體場景。場景用大量高斯點表示，訓練之後可以從新角度快速觀看，而唔使傳統網格重建。相片集訓練完可以即時換視角，唔使先重建傳統網格。 original reference implementation of &quot;3d gaussian splatting for real-time radiance field rendering&quot; python computer-graphics computer-vision radiance-field">
-  <header>
-    <h3><span class="rank">06</span><a href="https://github.com/graphdeco-inria/gaussian-splatting">gaussian-splatting</a></h3>
-    <div class="stars">★ 24,356</div>
-  </header>
-  <p class="meta">graphdeco-inria/gaussian-splatting · Python · 最近推送 2025-10-17</p>
-  <p class="summary">3D Gaussian Splatting 嘅原始實作，可以由相片即時渲染立體場景。場景用大量高斯點表示，訓練之後可以從新角度快速觀看，而唔使傳統網格重建。相片集訓練完可以即時換視角，唔使先重建傳統網格。</p>
-  <div class="links"><a href="https://github.com/graphdeco-inria/gaussian-splatting">GitHub</a><a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">主頁</a><a href="https://arxiv.org/abs/2308.04079">論文</a><a href="vfx-cg-blender/#p-graphdeco-inria-gaussian-splatting">VFX / CG / Blender</a></div>
-  <div class="topics"><span>#computer-graphics</span><span>#computer-vision</span><span>#radiance-field</span></div>
 </article><article class="card" id="p-blender-blender" data-search="blender blender/blender blender 官方原始碼，涵蓋建模、動畫、合成、剪接同渲染。呢個係軟件本身嘅程式庫，想改功能、寫分支或者理解 blender 點樣運作先需要佢。日常用 blender 唔使下載呢個倉庫，改程式或者自編譯先要。 official mirror of blender c++ 3d animation b3d computer-graphics modeling rendering">
   <header>
-    <h3><span class="rank">07</span><a href="https://github.com/blender/blender">blender</a></h3>
+    <h3><span class="rank">06</span><a href="https://github.com/blender/blender">blender</a></h3>
     <div class="stars">★ 21,369</div>
   </header>
   <p class="meta">blender/blender · C++ · 最近推送 2026-10-28</p>
@@ -1372,7 +2467,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   <div class="topics"><span>#3d</span><span>#animation</span><span>#b3d</span></div>
 </article><article class="card" id="p-google-filament" data-search="filament google/filament google 嘅即時物理式渲染引擎，可用喺多個平台。重點係材質同燈光比較接近真實，適合要喺應用入面嵌一個高質即時渲染器，而唔係整套 dcc 軟件。要嵌進自己嘅應用做即時畫面，而唔係取代 blender。 filament is a real-time physically based rendering engine for android, ios, windows, linux, macos, and webgl2 c++ 3d-graphics android gltf gltf-viewer graphics metal opengl opengl-es">
   <header>
-    <h3><span class="rank">08</span><a href="https://github.com/google/filament">filament</a></h3>
+    <h3><span class="rank">07</span><a href="https://github.com/google/filament">filament</a></h3>
     <div class="stars">★ 20,662</div>
   </header>
   <p class="meta">google/filament · C++ · Apache-2.0 · 最近推送 2026-10-28</p>
@@ -1381,7 +2476,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   <div class="topics"><span>#3d-graphics</span><span>#android</span><span>#gltf</span></div>
 </article><article class="card" id="p-bkaradzic-bgfx" data-search="bgfx bkaradzic/bgfx 跨圖形 api 嘅渲染庫，方便自己嘅引擎接 opengl、direct3d、vulkan 同 metal。你寫一套渲染呼叫，由佢處理不同平台嘅後端差異。自己寫引擎時用佢擋低各平台圖形 api 嘅差異。 cross-platform, graphics api agnostic, &quot;bring your own engine/framework&quot; style rendering library. c++ d3d11 d3d12 directx directx-11 directx-12 engine gamedev gles">
   <header>
-    <h3><span class="rank">09</span><a href="https://github.com/bkaradzic/bgfx">bgfx</a></h3>
+    <h3><span class="rank">08</span><a href="https://github.com/bkaradzic/bgfx">bgfx</a></h3>
     <div class="stars">★ 17,591</div>
   </header>
   <p class="meta">bkaradzic/bgfx · C++ · BSD-2-Clause · 最近推送 2026-10-28</p>
@@ -1390,7 +2485,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   <div class="topics"><span>#d3d11</span><span>#d3d12</span><span>#directx</span></div>
 </article><article class="card" id="p-nvlabs-instant-ngp" data-search="instant-ngp nvlabs/instant-ngp nvidia 嘅即時神經圖形基元，大幅加快 nerf 一類場景嘅訓練同渲染。用哈希編碼同顯示卡加速，令由相片學一個場景唔使再等好耐。nerf 訓練由幾小時縮到短很多，先令呢類場景變得實用。 instant neural graphics primitives: lightning fast nerf and more cuda 3d-reconstruction computer-graphics computer-vision cuda function-approximation machine-learning nerf neural-network">
   <header>
-    <h3><span class="rank">10</span><a href="https://github.com/NVlabs/instant-ngp">instant-ngp</a></h3>
+    <h3><span class="rank">09</span><a href="https://github.com/NVlabs/instant-ngp">instant-ngp</a></h3>
     <div class="stars">★ 17,584</div>
   </header>
   <p class="meta">NVlabs/instant-ngp · Cuda · 最近推送 2026-02-02</p>
@@ -1399,7 +2494,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   <div class="topics"><span>#3d-reconstruction</span><span>#computer-graphics</span><span>#computer-vision</span></div>
 </article><article class="card" id="p-playcanvas-engine" data-search="engine playcanvas/engine 建基於 webgl、webgpu 同 gltf 嘅網頁圖形引擎。用來喺瀏覽器載入三維場景同做互動，編輯器生態亦圍繞呢個執行核心。場景用 gltf 載入，編輯器同運行時都圍繞呢個核心。 powerful web graphics runtime built on webgl, webgpu, webxr and gltf javascript 3d-gaussian-splatting 3dgs game-development game-engine gamedev gaussian-splatting gltf hacktoberfest">
   <header>
-    <h3><span class="rank">11</span><a href="https://github.com/playcanvas/engine">engine</a></h3>
+    <h3><span class="rank">10</span><a href="https://github.com/playcanvas/engine">engine</a></h3>
     <div class="stars">★ 17,152</div>
   </header>
   <p class="meta">playcanvas/engine · JavaScript · MIT · 最近推送 2026-10-28</p>
@@ -1408,7 +2503,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   <div class="topics"><span>#3d-gaussian-splatting</span><span>#3dgs</span><span>#game-development</span></div>
 </article><article class="card" id="p-bulletphysics-bullet3" data-search="bullet3 bulletphysics/bullet3 即時碰撞偵測同物理模擬庫，常用於視覺效果、遊戲同機器人。剛體、約束同碰撞可以放進自己嘅場景，而唔使自己由零寫物理。特效、遊戲同機器人都可以共用同一套碰撞同剛體。碰撞結果可以再交俾渲染或機械人控制。 bullet physics sdk: real-time collision detection and multi-physics simulation for vr, games, visual effects, robotics, machine learning etc. c++ computer-animation game-development kinematics pybullet reinforcement-learning robotics simulation simulator">
   <header>
-    <h3><span class="rank">12</span><a href="https://github.com/bulletphysics/bullet3">bullet3</a></h3>
+    <h3><span class="rank">11</span><a href="https://github.com/bulletphysics/bullet3">bullet3</a></h3>
     <div class="stars">★ 14,822</div>
   </header>
   <p class="meta">bulletphysics/bullet3 · C++ · 最近推送 2026-10-09</p>
@@ -1417,7 +2512,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   <div class="topics"><span>#computer-animation</span><span>#game-development</span><span>#kinematics</span></div>
 </article><article class="card" id="p-isl-org-open3d" data-search="open3d isl-org/open3d 現代 3d 數據處理庫，用嚟做點雲、網格同視覺化。掃描數據可以喺度濾波、配準同重建，python 同 c++ 都可以呼叫。掃描點雲嘅清理同配準可以喺 python 入面做完再視覺化。 open3d: a modern library for 3d data processing c++ 3d 3d-perception arm computer-graphics cpp cuda gpu gui">
   <header>
-    <h3><span class="rank">13</span><a href="https://github.com/isl-org/Open3D">Open3D</a></h3>
+    <h3><span class="rank">12</span><a href="https://github.com/isl-org/Open3D">Open3D</a></h3>
     <div class="stars">★ 14,134</div>
   </header>
   <p class="meta">isl-org/Open3D · C++ · 最近推送 2026-09-30</p>
@@ -1426,7 +2521,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   <div class="topics"><span>#3d</span><span>#3d-perception</span><span>#arm</span></div>
 </article><article class="card" id="p-assimp-assimp" data-search="assimp assimp/assimp 將四十幾種 3d 檔案格式讀入同一個數據結構。遊戲同工具用佢讀 fbx、gltf、obj 等模型，再轉成自己引擎需要嘅網格同材質。上游軟件匯出咩格式都先讀入同一結構，引擎先好處理。 the official open-asset-importer-library repository. loads 40+ 3d-file-formats into one unified and clean data structure. c++ 3mf android asset-pipeline assets assimp c-plus-plus collada dae">
   <header>
-    <h3><span class="rank">14</span><a href="https://github.com/assimp/assimp">assimp</a></h3>
+    <h3><span class="rank">13</span><a href="https://github.com/assimp/assimp">assimp</a></h3>
     <div class="stars">★ 13,292</div>
   </header>
   <p class="meta">assimp/assimp · C++ · 最近推送 2026-10-27</p>
@@ -1435,34 +2530,16 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   <div class="topics"><span>#3mf</span><span>#android</span><span>#asset-pipeline</span></div>
 </article><article class="card" id="p-alicevision-meshroom" data-search="meshroom alicevision/meshroom 節點式攝影測量工具，可以由相片重建三維模型。你放入一組從不同角度拍嘅相，流程會估計相機同生成網格，適合實物掃描。實物拍一圈相就可以重建，節點可以按需要改流程。拍得越完整，重建出嚟嘅模型越穩。 node-based visual programming toolbox python 3d-reconstruction alicevision camera-tracking computer-vision hdr-imaging image-stitching meshroom multi-view-stereo">
   <header>
-    <h3><span class="rank">15</span><a href="https://github.com/alicevision/Meshroom">Meshroom</a></h3>
+    <h3><span class="rank">14</span><a href="https://github.com/alicevision/Meshroom">Meshroom</a></h3>
     <div class="stars">★ 13,045</div>
   </header>
   <p class="meta">alicevision/Meshroom · Python · 最近推送 2026-10-28</p>
   <p class="summary">節點式攝影測量工具，可以由相片重建三維模型。你放入一組從不同角度拍嘅相，流程會估計相機同生成網格，適合實物掃描。實物拍一圈相就可以重建，節點可以按需要改流程。拍得越完整，重建出嚟嘅模型越穩。</p>
   <div class="links"><a href="https://github.com/alicevision/Meshroom">GitHub</a><a href="http://meshroom.org">主頁</a><a href="vfx-cg-blender/#p-alicevision-meshroom">VFX / CG / Blender</a></div>
   <div class="topics"><span>#3d-reconstruction</span><span>#alicevision</span><span>#camera-tracking</span></div>
-</article><article class="card" id="p-nerfstudio-project-nerfstudio" data-search="nerfstudio nerfstudio-project/nerfstudio 方便實驗同協作嘅 nerf 工作台。不同神經輻射場方法可以喺同一套資料同檢視工具入面比較，適合研究新視角合成，而唔使每次重寫訓練腳本。換一種 nerf 方法時，資料同檢視工具可以留用。 a collaboration friendly studio for nerfs python 3d 3d-graphics 3d-reconstruction computer-vision deep-learning gaussian-splatting machine-learning nerf">
-  <header>
-    <h3><span class="rank">16</span><a href="https://github.com/nerfstudio-project/nerfstudio">nerfstudio</a></h3>
-    <div class="stars">★ 12,126</div>
-  </header>
-  <p class="meta">nerfstudio-project/nerfstudio · Python · Apache-2.0 · 最近推送 2025-07-29</p>
-  <p class="summary">方便實驗同協作嘅 NeRF 工作台。不同神經輻射場方法可以喺同一套資料同檢視工具入面比較，適合研究新視角合成，而唔使每次重寫訓練腳本。換一種 NeRF 方法時，資料同檢視工具可以留用。</p>
-  <div class="links"><a href="https://github.com/nerfstudio-project/nerfstudio">GitHub</a><a href="https://docs.nerf.studio">主頁</a><a href="vfx-cg-blender/#p-nerfstudio-project-nerfstudio">VFX / CG / Blender</a></div>
-  <div class="topics"><span>#3d</span><span>#3d-graphics</span><span>#3d-reconstruction</span></div>
-</article><article class="card" id="p-playcanvas-supersplat" data-search="supersplat playcanvas/supersplat 喺瀏覽器編輯 3d gaussian splat 嘅工具。你可以檢視、修剪同整理掃描得到嘅高斯場景，再匯出，而唔使先裝一套桌面研究程式。掃描完嘅高斯場景可以喺瀏覽器修剪，再匯出俾其他工具。 3d gaussian splat editor typescript 3d-gaussian-splatting 3dgs gaussian-splatting pcui playcanvas typescript webgl webgpu">
-  <header>
-    <h3><span class="rank">17</span><a href="https://github.com/playcanvas/supersplat">supersplat</a></h3>
-    <div class="stars">★ 10,481</div>
-  </header>
-  <p class="meta">playcanvas/supersplat · TypeScript · MIT · 最近推送 2026-10-26</p>
-  <p class="summary">喺瀏覽器編輯 3D Gaussian Splat 嘅工具。你可以檢視、修剪同整理掃描得到嘅高斯場景，再匯出，而唔使先裝一套桌面研究程式。掃描完嘅高斯場景可以喺瀏覽器修剪，再匯出俾其他工具。</p>
-  <div class="links"><a href="https://github.com/playcanvas/supersplat">GitHub</a><a href="https://superspl.at/editor">主頁</a><a href="vfx-cg-blender/#p-playcanvas-supersplat">VFX / CG / Blender</a></div>
-  <div class="topics"><span>#3d-gaussian-splatting</span><span>#3dgs</span><span>#gaussian-splatting</span></div>
 </article><article class="card" id="p-facebookresearch-pytorch3d" data-search="pytorch3d facebookresearch/pytorch3d 用 pytorch 做 3d 深度學習嘅組件庫。網格、相機同可微分渲染都可以放進訓練流程，適合研究三維視覺，而唔係做最終動畫軟件。研究三維網絡時用，而唔係拿嚟做最終動畫製作。 pytorch3d is fair&#x27;s library of reusable components for deep learning with 3d data python ">
   <header>
-    <h3><span class="rank">18</span><a href="https://github.com/facebookresearch/pytorch3d">pytorch3d</a></h3>
+    <h3><span class="rank">15</span><a href="https://github.com/facebookresearch/pytorch3d">pytorch3d</a></h3>
     <div class="stars">★ 9,991</div>
   </header>
   <p class="meta">facebookresearch/pytorch3d · Python · 最近推送 2026-10-19</p>
@@ -1471,7 +2548,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   
 </article><article class="card" id="p-carson-katri-dream-textures" data-search="dream-textures carson-katri/dream-textures 內置喺 blender 嘅 stable diffusion，可以直接喺場景入面生成貼圖。你留喺 blender 用提示詞出材質或圖像，再貼到模型上，少一次匯出同匯入。貼圖喺 blender 入面生成，模型唔使匯出去另一個軟件再貼返。 stable diffusion built-in to blender python ai blender blender-addon image-generation stable-diffusion">
   <header>
-    <h3><span class="rank">19</span><a href="https://github.com/carson-katri/dream-textures">dream-textures</a></h3>
+    <h3><span class="rank">16</span><a href="https://github.com/carson-katri/dream-textures">dream-textures</a></h3>
     <div class="stars">★ 8,232</div>
   </header>
   <p class="meta">carson-katri/dream-textures · Python · GPL-3.0 · 最近推送 2026-09-17</p>
@@ -1480,7 +2557,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   <div class="topics"><span>#ai</span><span>#blender</span><span>#blender-addon</span></div>
 </article><article class="card" id="p-opentoonz-opentoonz" data-search="opentoonz opentoonz/opentoonz 功能完整嘅開源 2d 動畫製作軟件。掃描、上色、時間線同特效都包含在內，係傳統手繪動畫流程可以用嘅免費工具。掃描線稿、上色同時間線可以留喺同一套 2d 動畫流程。上色同時間線不用分開兩個軟件。 opentoonz - an open-source full-featured 2d animation creation software c++ ">
   <header>
-    <h3><span class="rank">20</span><a href="https://github.com/opentoonz/opentoonz">opentoonz</a></h3>
+    <h3><span class="rank">17</span><a href="https://github.com/opentoonz/opentoonz">opentoonz</a></h3>
     <div class="stars">★ 7,874</div>
   </header>
   <p class="meta">opentoonz/opentoonz · C++ · 最近推送 2026-10-28</p>
@@ -1489,7 +2566,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   
 </article><article class="card" id="p-pixaranimationstudios-openusd" data-search="openusd pixaranimationstudios/openusd pixar 嘅通用場景描述，用嚟喺唔同軟件之間交換三維場景。模型、燈光、材質同動畫可以寫成 usd，讓 blender、渲染器同遊戲引擎讀同一套場景。燈光同動畫都寫入場景描述，唔止係交換一個靜態模型。 universal scene description c++ ">
   <header>
-    <h3><span class="rank">21</span><a href="https://github.com/PixarAnimationStudios/OpenUSD">OpenUSD</a></h3>
+    <h3><span class="rank">18</span><a href="https://github.com/PixarAnimationStudios/OpenUSD">OpenUSD</a></h3>
     <div class="stars">★ 7,594</div>
   </header>
   <p class="meta">PixarAnimationStudios/OpenUSD · C++ · 最近推送 2026-10-23</p>
@@ -1498,25 +2575,16 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   
 </article><article class="card" id="p-cnr-isti-vclab-meshlab" data-search="meshlab cnr-isti-vclab/meshlab 開源網格處理系統，用嚟清理、修復同檢視 3d 模型。掃描出來嘅網格可以喺度簡化、補洞同對齊，再送去其他軟件繼續做。掃描網格太亂時，先喺度清理再送去 blender 或引擎。 the open source mesh processing system c++ 3d 3d-models 3d-printing 3d-reconstruction 3d-scanning mesh mesh-editing mesh-generation">
   <header>
-    <h3><span class="rank">22</span><a href="https://github.com/cnr-isti-vclab/meshlab">meshlab</a></h3>
+    <h3><span class="rank">19</span><a href="https://github.com/cnr-isti-vclab/meshlab">meshlab</a></h3>
     <div class="stars">★ 5,892</div>
   </header>
   <p class="meta">cnr-isti-vclab/meshlab · C++ · GPL-3.0 · 最近推送 2026-08-25</p>
   <p class="summary">開源網格處理系統，用嚟清理、修復同檢視 3D 模型。掃描出來嘅網格可以喺度簡化、補洞同對齊，再送去其他軟件繼續做。掃描網格太亂時，先喺度清理再送去 Blender 或引擎。</p>
   <div class="links"><a href="https://github.com/cnr-isti-vclab/meshlab">GitHub</a><a href="http://www.meshlab.net">主頁</a><a href="vfx-cg-blender/#p-cnr-isti-vclab-meshlab">VFX / CG / Blender</a></div>
   <div class="topics"><span>#3d</span><span>#3d-models</span><span>#3d-printing</span></div>
-</article><article class="card" id="p-nerfstudio-project-gsplat" data-search="gsplat nerfstudio-project/gsplat gaussian splatting 嘅 cuda 光柵化實作，方便研究同整合。其他專案可以呼叫佢做高斯場景嘅渲染核心，而唔使自己寫顯示卡光柵化。自己寫高斯研究時可以當渲染核心嵌進去。 cuda accelerated rasterization of gaussian splatting python gaussian-splatting">
-  <header>
-    <h3><span class="rank">23</span><a href="https://github.com/nerfstudio-project/gsplat">gsplat</a></h3>
-    <div class="stars">★ 5,845</div>
-  </header>
-  <p class="meta">nerfstudio-project/gsplat · Python · Apache-2.0 · 最近推送 2026-09-19</p>
-  <p class="summary">Gaussian Splatting 嘅 CUDA 光柵化實作，方便研究同整合。其他專案可以呼叫佢做高斯場景嘅渲染核心，而唔使自己寫顯示卡光柵化。自己寫高斯研究時可以當渲染核心嵌進去。</p>
-  <div class="links"><a href="https://github.com/nerfstudio-project/gsplat">GitHub</a><a href="https://docs.gsplat.studio/">主頁</a><a href="vfx-cg-blender/#p-nerfstudio-project-gsplat">VFX / CG / Blender</a></div>
-  <div class="topics"><span>#gaussian-splatting</span></div>
 </article><article class="card" id="p-shader-slang-slang" data-search="slang shader-slang/slang 讓著色器更容易寫、亦更容易跨平台編譯嘅著色語言。一份著色程式可以編譯到不同圖形 api，減少為 vulkan、direct3d 同 metal 各寫一次。同一份著色碼編譯到幾個圖形 api，引擎先少維護多份。 making it easier to work with shaders c++ cuda d3d12 glsl hlsl shaders vulkan">
   <header>
-    <h3><span class="rank">24</span><a href="https://github.com/shader-slang/slang">slang</a></h3>
+    <h3><span class="rank">20</span><a href="https://github.com/shader-slang/slang">slang</a></h3>
     <div class="stars">★ 5,763</div>
   </header>
   <p class="meta">shader-slang/slang · C++ · 最近推送 2026-10-28</p>
@@ -1525,7 +2593,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   <div class="topics"><span>#cuda</span><span>#d3d12</span><span>#glsl</span></div>
 </article><article class="card" id="p-natrongithub-natron" data-search="natron natrongithub/natron 開源節點式影片合成軟件，用途接近 after effects 同 nuke。遮罩、調色同特效用節點連接，適合做鏡頭合成，而唔係時間線剪接。節點合成接近 nuke 嘅用法，時間線剪接就用其他軟件。 open-source video compositing software. node-graph based. similar in functionalities to adobe after effects and nuke by the foundry. c++ ">
   <header>
-    <h3><span class="rank">25</span><a href="https://github.com/NatronGitHub/Natron">Natron</a></h3>
+    <h3><span class="rank">21</span><a href="https://github.com/NatronGitHub/Natron">Natron</a></h3>
     <div class="stars">★ 5,600</div>
   </header>
   <p class="meta">NatronGitHub/Natron · C++ · GPL-2.0 · 最近推送 2026-07-24</p>
@@ -1534,7 +2602,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   
 </article><article class="card" id="p-mmp-pbrt-v4" data-search="pbrt-v4 mmp/pbrt-v4 《physically based rendering》第四版描述嘅物理式光線追蹤器原始碼。用來學習同實驗真實感渲染算法，係教材對應嘅參考實作，而唔係動畫廠的生產渲染器。讀教材時可以對住呢份碼做實驗，出圖速度唔係生產取向。 source code to pbrt, the ray tracer described in the forthcoming 4th edition of the &quot;physically based rendering: from theory to implementation&quot; book. c++ ">
   <header>
-    <h3><span class="rank">26</span><a href="https://github.com/mmp/pbrt-v4">pbrt-v4</a></h3>
+    <h3><span class="rank">22</span><a href="https://github.com/mmp/pbrt-v4">pbrt-v4</a></h3>
     <div class="stars">★ 3,739</div>
   </header>
   <p class="meta">mmp/pbrt-v4 · C++ · Apache-2.0 · 最近推送 2026-09-08</p>
@@ -1543,7 +2611,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   
 </article><article class="card" id="p-academysoftwarefoundation-openvdb" data-search="openvdb academysoftwarefoundation/openvdb 稀疏體積數據結構同工具，係特效入面煙、火、雲嘅常用格式。模擬結果可以存成 vdb，再喺唔同軟件入面渲染同交換。流體模擬交去渲染器時，vdb 係常見嘅中間格式。煙火模擬交去其他軟件時就用呢個格式。 openvdb - sparse volume data structure and tools c++ c-plus-plus dreamworks fx openvdb openvdb-development vfx volume-rendering voxel">
   <header>
-    <h3><span class="rank">27</span><a href="https://github.com/AcademySoftwareFoundation/openvdb">openvdb</a></h3>
+    <h3><span class="rank">23</span><a href="https://github.com/AcademySoftwareFoundation/openvdb">openvdb</a></h3>
     <div class="stars">★ 3,447</div>
   </header>
   <p class="meta">AcademySoftwareFoundation/openvdb · C++ · Apache-2.0 · 最近推送 2026-10-28</p>
@@ -1552,7 +2620,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   <div class="topics"><span>#c-plus-plus</span><span>#dreamworks</span><span>#fx</span></div>
 </article><article class="card" id="p-pixaranimationstudios-opensubdiv" data-search="opensubdiv pixaranimationstudios/opensubdiv pixar 嘅開源細分曲面庫。模型用較少控制點描述曲面，渲染或顯示時再細分到平滑，遊戲同動畫軟件都會嵌佢。模型保持低面數，顯示時先細分，遊戲同動畫都會嵌佢。曲面平滑唔使先把模型拆到很密。 an open-source subdivision surface library. c++ ">
   <header>
-    <h3><span class="rank">28</span><a href="https://github.com/PixarAnimationStudios/OpenSubdiv">OpenSubdiv</a></h3>
+    <h3><span class="rank">24</span><a href="https://github.com/PixarAnimationStudios/OpenSubdiv">OpenSubdiv</a></h3>
     <div class="stars">★ 3,085</div>
   </header>
   <p class="meta">PixarAnimationStudios/OpenSubdiv · C++ · 最近推送 2026-10-26</p>
@@ -1561,7 +2629,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   
 </article><article class="card" id="p-mitsuba-renderer-mitsuba3" data-search="mitsuba3 mitsuba-renderer/mitsuba3 可重定向嘅正向同逆向渲染器，用嚟做研究級物理渲染。除咗出圖，亦可以對場景參數求梯度，適合研究外觀、材質同反向繪製。可以對材質同燈光求梯度，用嚟做反向渲染研究。研究渲染算法多過拿嚟出動畫成片。 mitsuba 3: a retargetable forward and inverse renderer c++ ">
   <header>
-    <h3><span class="rank">29</span><a href="https://github.com/mitsuba-renderer/mitsuba3">mitsuba3</a></h3>
+    <h3><span class="rank">25</span><a href="https://github.com/mitsuba-renderer/mitsuba3">mitsuba3</a></h3>
     <div class="stars">★ 2,967</div>
   </header>
   <p class="meta">mitsuba-renderer/mitsuba3 · C++ · 最近推送 2026-10-25</p>
@@ -1570,7 +2638,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   
 </article><article class="card" id="p-academysoftwarefoundation-materialx" data-search="materialx academysoftwarefoundation/materialx 喺唔同軟件同渲染器之間交換材質同外觀描述嘅開放標準。一個材質圖可以帶到另一個軟件，減少因為各自著色器而要重做外觀。材質由一個軟件帶到另一個渲染器時，外觀描述有共同格式。外觀換渲染器時少一次重畫材質。 materialx is an open standard for the exchange of rich material and look-development content across applications and renderers. c++ 3d-graphics computer-graphics materialx physically-based-rendering real-time-rendering vfx">
   <header>
-    <h3><span class="rank">30</span><a href="https://github.com/AcademySoftwareFoundation/MaterialX">MaterialX</a></h3>
+    <h3><span class="rank">26</span><a href="https://github.com/AcademySoftwareFoundation/MaterialX">MaterialX</a></h3>
     <div class="stars">★ 2,291</div>
   </header>
   <p class="meta">AcademySoftwareFoundation/MaterialX · C++ · Apache-2.0 · 最近推送 2026-10-27</p>
@@ -1579,7 +2647,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   <div class="topics"><span>#3d-graphics</span><span>#computer-graphics</span><span>#materialx</span></div>
 </article><article class="card" id="p-academysoftwarefoundation-opencolorio" data-search="opencolorio academysoftwarefoundation/opencolorio 視覺效果同動畫用嘅色彩管理框架。佢負責喺拍攝、合成同顯示之間轉換顏色空間，令不同軟件看到嘅顏色保持一致。顯示同合成看到嘅顏色要一致時，會用佢做轉換。鏡頭之間色溫唔同，都靠佢對齊。 a color management framework for visual effects and animation. c++ opencolorio">
   <header>
-    <h3><span class="rank">31</span><a href="https://github.com/AcademySoftwareFoundation/OpenColorIO">OpenColorIO</a></h3>
+    <h3><span class="rank">27</span><a href="https://github.com/AcademySoftwareFoundation/OpenColorIO">OpenColorIO</a></h3>
     <div class="stars">★ 2,135</div>
   </header>
   <p class="meta">AcademySoftwareFoundation/OpenColorIO · C++ · BSD-3-Clause · 最近推送 2026-10-01</p>
@@ -1588,7 +2656,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   <div class="topics"><span>#opencolorio</span></div>
 </article><article class="card" id="p-academysoftwarefoundation-openexr" data-search="openexr academysoftwarefoundation/openexr 電影工業常用嘅高動態範圍 exr 圖像格式同參考實作。合成同渲染會用佢保存高於一般螢幕範圍嘅亮度同多個圖層，而唔係只存 8-bit 圖片。一張 exr 可以帶多個圖層同高光，合成時先唔會夾死亮度。 the openexr project provides the specification and reference implementation of the exr file format, the professional-grade image storage format of the motion picture industry. c academy hdr image-processing images openexr vfx">
   <header>
-    <h3><span class="rank">32</span><a href="https://github.com/AcademySoftwareFoundation/openexr">openexr</a></h3>
+    <h3><span class="rank">28</span><a href="https://github.com/AcademySoftwareFoundation/openexr">openexr</a></h3>
     <div class="stars">★ 1,874</div>
   </header>
   <p class="meta">AcademySoftwareFoundation/openexr · C · BSD-3-Clause · 最近推送 2026-10-27</p>

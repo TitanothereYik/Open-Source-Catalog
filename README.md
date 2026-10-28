@@ -1,17 +1,20 @@
 # Open Source Catalog
 
-六個方向嘅開源項目同相關論文，用深色頁面瀏覽。開源項目按 GitHub stars 由多至少排列。
+九個方向嘅開源項目同相關論文，用深色頁面瀏覽。開源項目按 GitHub stars 由多至少排列。而家最前三頁聚焦 Gaussian Splatting、World Model 同 Image to 3D。
 
 分類次序：
 
-1. AI Agent
-2. 圖像
-3. 影片
-4. VFX / CG / Blender
-5. Stock Trading
-6. Crypto Trading
+1. Gaussian Splatting
+2. World Model
+3. Image to 3D
+4. AI Agent
+5. 圖像
+6. 影片
+7. VFX / CG / Blender
+8. Stock Trading
+9. Crypto Trading
 
-第一版收錄 200 個開源項目。每個項目有大約一百字嘅中文說明。已經收錄嘅 repo 唔會再加入。之後每 6 小時檢查一次，只加入未見過、而且符合分類嘅新項目，同時更新 stars。
+第一版收錄 200 個開源項目，之後再加入 Gaussian Splatting、World Model 同 Image to 3D。每個項目有大約一百字嘅中文說明。已經收錄嘅 repo 唔會再加入。之後每 6 小時檢查一次，只加入未見過、而且符合分類嘅新項目，同時更新 stars。
 
 ## 本地瀏覽
 
@@ -21,7 +24,7 @@ python3 -m http.server 43123
 
 然後開 [http://127.0.0.1:43123](http://127.0.0.1:43123)。
 
-根目錄 `index.html` 係六個分類嘅入口，每個分類係獨立一頁，例如 `image/`、`video/`。搜尋可以喺目錄頁搵全部項目，或者喺分類頁入面篩選。
+根目錄 `index.html` 係九個分類嘅入口，每個分類係獨立一頁，例如 `gaussian-splatting/`、`world-model/`、`image-to-3d/`。搜尋可以喺目錄頁搵全部項目，或者喺分類頁入面篩選。
 
 ## 更新
 
@@ -55,7 +58,7 @@ https://titanothereyik.github.io/Open-Source-Catalog/
 
 每次完成會：
 
-- 更新 `index.html` 同六個分類子目錄
+- 更新 `index.html` 同九個分類子目錄
 - commit 並 push 去 `main`，Pages 會跟住更新
 - 喺 issue「Open Source Catalog updates」留一則通知
 - 如果設定咗 SMTP，寄出 `email/latest.html`

@@ -29,6 +29,24 @@ PAGES_ROOT = "https://titanothereyik.github.io/Open-Source-Catalog/"
 
 CATEGORIES = [
     {
+        "id": "gaussian-splatting",
+        "dir": "gaussian-splatting",
+        "title": "Gaussian Splatting",
+        "blurb": "用三維高斯重建場景、即時渲染、編輯同 SLAM，包括 3DGS、4D 動態場景同瀏覽器檢視器。",
+    },
+    {
+        "id": "world-model",
+        "dir": "world-model",
+        "title": "World Model",
+        "blurb": "學識預測下一個畫面或狀態嘅世界模型，用喺影片、自動駕駛、機械人同可探索嘅三維世界。",
+    },
+    {
+        "id": "image-to-3d",
+        "dir": "image-to-3d",
+        "title": "Image to 3D",
+        "blurb": "由一張圖或一段文字生成三維模型，包括網格、高斯同多視角幾何重建。",
+    },
+    {
         "id": "ai-agent",
         "dir": "ai-agent",
         "title": "AI Agent",
@@ -67,6 +85,19 @@ CATEGORIES = [
 ]
 
 QUERIES = {
+    "gaussian-splatting": [
+        "topic:gaussian-splatting",
+        "topic:3d-gaussian-splatting",
+        "3d gaussian splatting stars:>80",
+    ],
+    "world-model": [
+        '"world model" stars:>80',
+        '"world models" stars:>60',
+    ],
+    "image-to-3d": [
+        '"image to 3d" OR "image-to-3d" OR "text-to-3d" OR "text to 3d" stars:>40',
+        "triposr OR hunyuan3d OR trellis OR dust3r OR vggt stars:>40",
+    ],
     "ai-agent": [
         "topic:ai-agent",
         "topic:ai-agents",
@@ -88,7 +119,6 @@ QUERIES = {
     "vfx-cg-blender": [
         "topic:blender",
         "topic:computer-graphics",
-        "topic:gaussian-splatting",
         "topic:vfx",
     ],
     "stock-trading": [
@@ -106,6 +136,9 @@ QUERIES = {
 }
 
 MIN_NEW = {
+    "gaussian-splatting": 800,
+    "world-model": 600,
+    "image-to-3d": 800,
     "ai-agent": 5000,
     "image": 4000,
     "video": 3000,
@@ -146,6 +179,30 @@ PAPER_LINKS = {
     "graphdeco-inria/gaussian-splatting": {
         "title": "3D Gaussian Splatting for Real-Time Radiance Field Rendering",
         "url": "https://arxiv.org/abs/2308.04079",
+    },
+    "naver/dust3r": {
+        "title": "DUSt3R: Geometric 3D Vision Made Easy",
+        "url": "https://arxiv.org/abs/2312.14132",
+    },
+    "facebookresearch/vggt": {
+        "title": "VGGT: Visual Geometry Grounded Transformer",
+        "url": "https://arxiv.org/abs/2503.11651",
+    },
+    "VAST-AI-Research/TripoSR": {
+        "title": "TripoSR: Fast 3D Object Reconstruction from a Single Image",
+        "url": "https://arxiv.org/abs/2403.02151",
+    },
+    "microsoft/TRELLIS": {
+        "title": "Structured 3D Latents for Scalable and Versatile 3D Generation",
+        "url": "https://arxiv.org/abs/2412.01506",
+    },
+    "danijar/dreamerv3": {
+        "title": "Mastering Diverse Domains through World Models",
+        "url": "https://arxiv.org/abs/2301.04104",
+    },
+    "dreamgaussian/dreamgaussian": {
+        "title": "DreamGaussian: Generative Gaussian Splatting for Efficient 3D Content Creation",
+        "url": "https://arxiv.org/abs/2309.16653",
     },
     "NVlabs/instant-ngp": {
         "title": "Instant Neural Graphics Primitives",
@@ -799,7 +856,7 @@ def render_document(catalog: dict, active: str | None) -> str:
 <header class="hero">
     <p class="kicker">每 6 小時更新</p>
     <h1>Open Source Catalog</h1>
-    <p class="lede">六個分類各自一頁。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。</p>
+    <p class="lede">九個分類各自一頁。而家聚焦 Gaussian Splatting、World Model 同 Image to 3D。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。</p>
     <div class="stats">
       <div class="stat"><b>{project_count}</b><span>開源項目</span></div>
       <div class="stat"><b>{paper_count}</b><span>未另列 repo 嘅論文</span></div>
@@ -1022,7 +1079,7 @@ def email_html(catalog: dict, new_projects: list[dict], mode: str) -> str:
         </td></tr>
         <tr><td style="padding:8px 20px 8px;">{''.join(f'<table role="presentation" width="100%">{block}</table>' for block in blocks)}</td></tr>
         <tr><td align="center" style="padding:28px 24px 12px;">{button}</td></tr>
-        <tr><td style="padding:8px 28px 28px;color:#8d867c;font-size:12px;line-height:1.5;">分類次序：AI Agent、圖像、影片、VFX / CG / Blender、Stock Trading、Crypto Trading。開源項目按 stars 由多至少。已收錄項目唔會再加入。</td></tr>
+        <tr><td style="padding:8px 28px 28px;color:#8d867c;font-size:12px;line-height:1.5;">分類次序：Gaussian Splatting、World Model、Image to 3D、AI Agent、圖像、影片、VFX / CG / Blender、Stock Trading、Crypto Trading。開源項目按 stars 由多至少。已收錄項目唔會再加入。</td></tr>
       </table>
     </td></tr>
   </table>
@@ -1099,6 +1156,35 @@ def relevant(category: str, repo: dict) -> bool:
     if blocked(repo):
         return False
     blob = text_blob(repo)
+    name = (repo.get("name") or "").lower()
+    if category == "gaussian-splatting":
+        if any(part in name for part in ("comfyui", "awesome", "notes", "survey")):
+            return False
+        return any(key in blob for key in ("gaussian", "splat", "3dgs"))
+    if category == "world-model":
+        if any(part in name for part in ("awesome", "comfyui", "agentworld")):
+            return False
+        if "code world model" in blob or "enterprise world model" in blob:
+            return False
+        return "world model" in blob or "world models" in blob
+    if category == "image-to-3d":
+        if any(part in name for part in ("comfyui", "winportable", "awesome", "benchmark", "wrapper")):
+            return False
+        keys = (
+            "image-to-3d",
+            "image to 3d",
+            "text-to-3d",
+            "text to 3d",
+            "3d generation",
+            "3d reconstruction",
+            "single image",
+            "triposr",
+            "trellis",
+            "hunyuan3d",
+            "dust3r",
+            "vggt",
+        )
+        return any(key in blob for key in keys)
     if category == "ai-agent":
         keys = ("agent", "autogen", "langchain", "langgraph", "multi-agent", "tool call", "autonomous")
         banned = ("stable-diffusion", "comfyui", "llama.cpp")

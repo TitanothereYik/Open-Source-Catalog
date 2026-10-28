@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0c0d11">
+<meta name="description" content="Open Source Catalog：AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。">
+<title>Image to 3D · Open Source Catalog</title>
+<link rel="canonical" href="https://titanothereyik.github.io/Open-Source-Catalog/image-to-3d/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=Outfit:wght@400;520;650&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect fill='%230c0d11' width='64' height='64' rx='14'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23e4b15a' stroke-width='4'/%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #0c0d11;
+  --bg-raise: #15171e;
+  --line: rgba(244, 236, 224, 0.12);
+  --text: #f6f1e8;
+  --muted: #b7b0a4;
+  --faint: #8d867c;
+  --gold: #e4b15a;
+  --ink: #1c140c;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(228, 177, 90, 0.14), transparent 55%),
+    radial-gradient(900px 420px at 100% 0%, rgba(143, 208, 196, 0.08), transparent 50%),
+    var(--bg);
+  color: var(--text);
+  font-family: Outfit, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+a { color: inherit; }
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -40px;
+  background: var(--gold);
+  color: var(--ink);
+  padding: 8px 12px;
+  z-index: 5;
+}
+.skip:focus { top: 12px; }
+.wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+header.hero { padding: 36px 0 18px; }
+.kicker {
+  margin: 0 0 8px;
+  color: var(--gold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+h1 {
+  margin: 0;
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 560;
+  font-size: clamp(40px, 6vw, 68px);
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+.lede { max-width: 680px; color: var(--muted); font-size: 18px; margin: 14px 0 0; }
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.stat {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 14px;
+  min-width: 120px;
+}
+.stat b { display: block; font-family: Fraunces, Georgia, serif; font-size: 22px; font-weight: 560; }
+.stat span { color: var(--faint); font-size: 13px; }
+.stickybar {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  padding: 8px 0 12px;
+  background: linear-gradient(var(--bg) 72%, rgba(12, 13, 17, 0.94) 88%, transparent);
+}
+nav.pages {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+nav.pages a {
+  text-decoration: none;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  background: rgba(21, 23, 30, 0.92);
+  border-radius: 999px;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  white-space: nowrap;
+}
+nav.pages a:hover { color: var(--text); border-color: var(--gold); }
+nav.pages a[aria-current="page"] {
+  background: var(--gold);
+  color: var(--ink);
+  border-color: var(--gold);
+}
+nav.pages .count { color: var(--faint); font-variant-numeric: tabular-nums; }
+nav.pages a[aria-current="page"] .count { color: var(--ink); }
+.search { padding: 0; }
+.hub { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.hub[hidden], #results[hidden] { display: none !important; }
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 196px;
+  text-decoration: none;
+  background: rgba(21, 23, 30, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+}
+.tile:hover { border-color: var(--gold); }
+.tile-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.tile h2 {
+  margin: 0;
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 560;
+  letter-spacing: -0.04em;
+}
+.tile .count { color: var(--gold); font-family: Fraunces, Georgia, serif; font-size: 28px; line-height: 1; }
+.tile p { margin: 0; color: var(--muted); }
+.tile .top { color: var(--text); }
+.tile .go { margin-top: auto; color: var(--gold); }
+.hero-sub { padding-top: 22px; }
+.hero-sub h1 { font-size: clamp(36px, 5vw, 56px); }
+.kicker a { text-decoration: none; }
+main.page { padding-bottom: 72px; }
+.search input {
+  width: 100%;
+  background: var(--bg-raise);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font: inherit;
+  outline: none;
+}
+.search input:focus { border-color: var(--gold); }
+.section { margin: 8px 0 36px; scroll-margin-top: 72px; }
+.section h2 {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 34px;
+  font-weight: 560;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+.section .blurb { color: var(--muted); margin: 6px 0 16px; }
+.grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.card {
+  background: rgba(21, 23, 30, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  box-shadow: var(--shadow);
+  min-width: 0;
+}
+.card header { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.rank { color: var(--faint); font-variant-numeric: tabular-nums; font-size: 13px; margin-right: 8px; }
+.card h3 { margin: 0; font-size: 18px; letter-spacing: -0.02em; }
+.card h3 a { text-decoration: none; }
+.card h3 a:hover { color: var(--gold); }
+.stars { color: var(--gold); font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 650; }
+.meta { color: var(--faint); font-size: 13px; margin: 6px 0 8px; overflow-wrap: anywhere; }
+.summary { margin: 0; color: #ebe4d8; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.links a, .badge {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.links a:hover { color: var(--text); border-color: var(--gold); }
+.badge.arch { color: #e7b8a4; }
+.topics { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.topics span { color: var(--faint); font-size: 12px; }
+.papers { margin-top: 16px; }
+.papers h3 { margin: 0 0 10px; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+#empty { display: none; color: var(--muted); padding: 12px 0 24px; }
+footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
+@media (min-width: 800px) {
+  .hub { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 980px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">跳到項目</a>
+<div class="wrap">
+  
+<header class="hero hero-sub">
+    <p class="kicker"><a href="../">Open Source Catalog</a></p>
+    <h1>Image to 3D</h1>
+    <p class="lede">由一張圖或一段文字生成三維模型，包括網格、高斯同多視角幾何重建。 開源項目按 GitHub stars 由多至少。</p>
+    <div class="stats">
+      <div class="stat"><b>39</b><span>開源項目</span></div>
+      <div class="stat"><b>0</b><span>相關論文</span></div>
+      <div class="stat"><b>2026年10月28日</b><span>22:19（香港時間）</span></div>
+    </div>
+  </header>
+
+  <div class="stickybar">
+    <nav class="pages" aria-label="分類"><a href="../">目錄</a><a href="../gaussian-splatting/">Gaussian Splatting<span class="count">48</span></a><a href="../world-model/">World Model<span class="count">34</span></a><a href="./" aria-current="page">Image to 3D<span class="count">39</span></a><a href="../ai-agent/">AI Agent<span class="count">42</span></a><a href="../image/">圖像<span class="count">37</span></a><a href="../video/">影片<span class="count">32</span></a><a href="../vfx-cg-blender/">VFX / CG / Blender<span class="count">28</span></a><a href="../stock-trading/">Stock Trading<span class="count">30</span></a><a href="../crypto-trading/">Crypto Trading<span class="count">27</span></a></nav>
+    <form class="search" role="search" onsubmit="return false">
+      <label class="sr" for="q" style="position:absolute;left:-999px">搜尋</label>
+      <input id="q" type="search" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
+    </form>
+  </div>
+  <main class="page" id="content">
+    <p id="empty">沒有符合呢個搜尋嘅項目。</p>
+    <section class="section" id="image-to-3d" data-section>
+  <div class="grid"><article class="card" id="p-tencent-hunyuan-hunyuan3d-2" data-search="hunyuan3d-2 tencent-hunyuan/hunyuan3d-2 混元三維大模型嘅第二代，用大規模擴散模型由圖像生成高解像三維資產。單張圖可以出帶結構嘅模型，係而家公開圖像轉三維入面星數最高嘅一批。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 high-resolution 3d assets generation with large scale hunyuan3d diffusion models. python 3d 3d-aigc 3d-generation diffusion-models hunyuan3d image-to-3d shape shape-generation">
+  <header>
+    <h3><span class="rank">01</span><a href="https://github.com/Tencent-Hunyuan/Hunyuan3D-2">Hunyuan3D-2</a></h3>
+    <div class="stars">★ 15,229</div>
+  </header>
+  <p class="meta">Tencent-Hunyuan/Hunyuan3D-2 · Python · 最近推送 2025-10-28</p>
+  <p class="summary">混元三維大模型嘅第二代，用大規模擴散模型由圖像生成高解像三維資產。單張圖可以出帶結構嘅模型，係而家公開圖像轉三維入面星數最高嘅一批。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/Tencent-Hunyuan/Hunyuan3D-2">GitHub</a><a href="https://3d.hunyuan.tencent.com/">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-aigc</span><span>#3d-generation</span></div>
+</article><article class="card" id="p-facebookresearch-vggt" data-search="vggt facebookresearch/vggt 視覺幾何 transformer，由圖片直接估計相機、深度同三維點。多張相片唔使傳統逐步配對，都可以一次過重建場景幾何，係 cvpr 2025 最佳論文。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [cvpr 2025 best paper award] vggt: visual geometry grounded transformer python ">
+  <header>
+    <h3><span class="rank">02</span><a href="https://github.com/facebookresearch/vggt">vggt</a></h3>
+    <div class="stars">★ 14,578</div>
+  </header>
+  <p class="meta">facebookresearch/vggt · Python · 最近推送 2026-05-19</p>
+  <p class="summary">視覺幾何 Transformer，由圖片直接估計相機、深度同三維點。多張相片唔使傳統逐步配對，都可以一次過重建場景幾何，係 CVPR 2025 最佳論文。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/facebookresearch/vggt">GitHub</a><a href="https://arxiv.org/abs/2503.11651">論文</a></div>
+  
+</article><article class="card" id="p-microsoft-trellis" data-search="trellis microsoft/trellis 用結構化三維潛在空間做可擴展嘅三維生成，可以由圖像或文字得到模型。潛在表示同時照顧形狀同外觀，係 cvpr 2025 嘅代表程式。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 official repo for paper &quot;structured 3d latents for scalable and versatile 3d generation&quot; (cvpr&#x27;25 spotlight). python 3d 3d-aigc 3d-generation image-to-3d text-to-3d">
+  <header>
+    <h3><span class="rank">03</span><a href="https://github.com/microsoft/TRELLIS">TRELLIS</a></h3>
+    <div class="stars">★ 14,130</div>
+  </header>
+  <p class="meta">microsoft/TRELLIS · Python · MIT · 最近推送 2026-10-27</p>
+  <p class="summary">用結構化三維潛在空間做可擴展嘅三維生成，可以由圖像或文字得到模型。潛在表示同時照顧形狀同外觀，係 CVPR 2025 嘅代表程式。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/microsoft/TRELLIS">GitHub</a><a href="https://trellis3d.github.io">主頁</a><a href="https://arxiv.org/abs/2412.01506">論文</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-aigc</span><span>#3d-generation</span></div>
+</article><article class="card" id="p-microsoft-trellis-2" data-search="trellis.2 microsoft/trellis.2 trellis 嘅下一代，用更原生同更緊湊嘅結構化潛在空間做三維生成。同樣面向由圖像或文字得到高質素資產，而且表示更慳。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 native and compact structured latents for 3d generation python ">
+  <header>
+    <h3><span class="rank">04</span><a href="https://github.com/microsoft/TRELLIS.2">TRELLIS.2</a></h3>
+    <div class="stars">★ 12,518</div>
+  </header>
+  <p class="meta">microsoft/TRELLIS.2 · Python · MIT · 最近推送 2026-07-10</p>
+  <p class="summary">TRELLIS 嘅下一代，用更原生同更緊湊嘅結構化潛在空間做三維生成。同樣面向由圖像或文字得到高質素資產，而且表示更慳。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/microsoft/TRELLIS.2">GitHub</a></div>
+  
+</article><article class="card" id="p-openai-shap-e" data-search="shap-e openai/shap-e openai 嘅三維生成模型，可以按文字或圖片產生三維物件。輸出係隱式表示，再轉成網格，適合快速由概念得到一個可旋轉嘅模型。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 generate 3d objects conditioned on text or images python ">
+  <header>
+    <h3><span class="rank">05</span><a href="https://github.com/openai/shap-e">shap-e</a></h3>
+    <div class="stars">★ 12,267</div>
+  </header>
+  <p class="meta">openai/shap-e · Python · MIT · 最近推送 2024-06-22</p>
+  <p class="summary">OpenAI 嘅三維生成模型，可以按文字或圖片產生三維物件。輸出係隱式表示，再轉成網格，適合快速由概念得到一個可旋轉嘅模型。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/openai/shap-e">GitHub</a></div>
+  
+</article><article class="card" id="p-facebookresearch-pifuhd" data-search="pifuhd facebookresearch/pifuhd 由單張人像做高解像三維人體數字化。像素對齊嘅隱式函數可以保留頭髮同衣服細節，係單圖人體重建經常被引用嘅程式。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 high-resolution 3d human digitization from a single image. python ">
+  <header>
+    <h3><span class="rank">06</span><a href="https://github.com/facebookresearch/pifuhd">pifuhd</a></h3>
+    <div class="stars">★ 9,722</div>
+  </header>
+  <p class="meta">facebookresearch/pifuhd · Python · 最近推送 2024-08-19</p>
+  <p class="summary">由單張人像做高解像三維人體數字化。像素對齊嘅隱式函數可以保留頭髮同衣服細節，係單圖人體重建經常被引用嘅程式。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/facebookresearch/pifuhd">GitHub</a><span class="badge arch">已封存</span></div>
+  
+</article><article class="card" id="p-ashawkey-stable-dreamfusion" data-search="stable-dreamfusion ashawkey/stable-dreamfusion 用擴散模型引導 nerf，做文字轉三維同圖像轉三維，並可以匯出網格。一個場景優化一段時間之後，就可以由新角度睇生成嘅物件。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 text-to-3d &amp; image-to-3d &amp; mesh exportation with nerf + diffusion. python dreamfusion gui image-to-3d nerf stable-diffusion text-to-3d">
+  <header>
+    <h3><span class="rank">07</span><a href="https://github.com/ashawkey/stable-dreamfusion">stable-dreamfusion</a></h3>
+    <div class="stars">★ 8,872</div>
+  </header>
+  <p class="meta">ashawkey/stable-dreamfusion · Python · Apache-2.0 · 最近推送 2023-12-10</p>
+  <p class="summary">用擴散模型引導 NeRF，做文字轉三維同圖像轉三維，並可以匯出網格。一個場景優化一段時間之後，就可以由新角度睇生成嘅物件。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/ashawkey/stable-dreamfusion">GitHub</a></div>
+  <div class="topics"><span>#dreamfusion</span><span>#gui</span><span>#image-to-3d</span></div>
+</article><article class="card" id="p-naver-dust3r" data-search="dust3r naver/dust3r 由一對圖片直接預測三維點圖，令幾何視覺少咗傳統逐步重建。相片之間嘅形狀同相機關係可以一次估計，係後來好多多視角方法嘅基礎。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 dust3r: geometric 3d vision made easy python ">
+  <header>
+    <h3><span class="rank">08</span><a href="https://github.com/naver/dust3r">dust3r</a></h3>
+    <div class="stars">★ 7,362</div>
+  </header>
+  <p class="meta">naver/dust3r · Python · 最近推送 2025-09-24</p>
+  <p class="summary">由一對圖片直接預測三維點圖，令幾何視覺少咗傳統逐步重建。相片之間嘅形狀同相機關係可以一次估計，係後來好多多視角方法嘅基礎。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/naver/dust3r">GitHub</a><a href="https://dust3r.europe.naverlabs.com/">主頁</a><a href="https://arxiv.org/abs/2312.14132">論文</a></div>
+  
+</article><article class="card" id="p-vast-ai-research-triposr" data-search="triposr vast-ai-research/triposr 由單張圖片快速重建三維物件嘅大型重建模型。前饋推論，唔使每個物件優化幾十分鐘，適合要即時由產品圖或概念圖出模型。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 triposr: fast 3d object reconstruction from a single image python ">
+  <header>
+    <h3><span class="rank">09</span><a href="https://github.com/VAST-AI-Research/TripoSR">TripoSR</a></h3>
+    <div class="stars">★ 7,247</div>
+  </header>
+  <p class="meta">VAST-AI-Research/TripoSR · Python · MIT · 最近推送 2026-06-04</p>
+  <p class="summary">由單張圖片快速重建三維物件嘅大型重建模型。前饋推論，唔使每個物件優化幾十分鐘，適合要即時由產品圖或概念圖出模型。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/VAST-AI-Research/TripoSR">GitHub</a><a href="https://arxiv.org/abs/2403.02151">論文</a></div>
+  
+</article><article class="card" id="p-threestudio-project-threestudio" data-search="threestudio threestudio-project/threestudio 統一嘅三維內容生成框架，把多種文字轉三維同圖像轉三維方法放喺同一套訓練程式。想比較 dreamfusion 一類算法，可以喺度換模組。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 a unified framework for 3d content generation. jupyter notebook ">
+  <header>
+    <h3><span class="rank">10</span><a href="https://github.com/threestudio-project/threestudio">threestudio</a></h3>
+    <div class="stars">★ 7,071</div>
+  </header>
+  <p class="meta">threestudio-project/threestudio · Jupyter Notebook · Apache-2.0 · 最近推送 2024-12-16</p>
+  <p class="summary">統一嘅三維內容生成框架，把多種文字轉三維同圖像轉三維方法放喺同一套訓練程式。想比較 DreamFusion 一類算法，可以喺度換模組。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/threestudio-project/threestudio">GitHub</a></div>
+  
+</article><article class="card" id="p-openai-point-e" data-search="point-e openai/point-e 用擴散模型生成三維點雲，可以再轉成網格。條件可以係文字或圖像，速度快過由零優化一個 nerf，適合做三維草稿。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 point cloud diffusion for 3d model synthesis python ">
+  <header>
+    <h3><span class="rank">11</span><a href="https://github.com/openai/point-e">point-e</a></h3>
+    <div class="stars">★ 6,899</div>
+  </header>
+  <p class="meta">openai/point-e · Python · MIT · 最近推送 2024-07-04</p>
+  <p class="summary">用擴散模型生成三維點雲，可以再轉成網格。條件可以係文字或圖像，速度快過由零優化一個 NeRF，適合做三維草稿。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/openai/point-e">GitHub</a></div>
+  
+</article><article class="card" id="p-xxlong0-wonder3d" data-search="wonder3d xxlong0/wonder3d 由單張圖生成多視角一致嘅法線同色彩，再重建三維。跨域擴散令背面同側面唔會各自矛盾，適合物件級圖像轉三維。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 single image to 3d using cross-domain diffusion for 3d generation python 3d-aigc 3d-generation 3dgeneration single-image-to-3d">
+  <header>
+    <h3><span class="rank">12</span><a href="https://github.com/xxlong0/Wonder3D">Wonder3D</a></h3>
+    <div class="stars">★ 5,450</div>
+  </header>
+  <p class="meta">xxlong0/Wonder3D · Python · MIT · 最近推送 2025-03-14</p>
+  <p class="summary">由單張圖生成多視角一致嘅法線同色彩，再重建三維。跨域擴散令背面同側面唔會各自矛盾，適合物件級圖像轉三維。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/xxlong0/Wonder3D">GitHub</a><a href="https://www.xxlong.site/Wonder3D/">主頁</a></div>
+  <div class="topics"><span>#3d-aigc</span><span>#3d-generation</span><span>#3dgeneration</span></div>
+</article><article class="card" id="p-facebookresearch-vggt-omega" data-search="vggt-omega facebookresearch/vggt-omega vggt 嘅後續模型，繼續用 transformer 由圖像做前饋三維幾何。重點係更強嘅視覺幾何估計，用喺多圖重建同場景理解。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [cvpr 2026 oral] vggt omega python ">
+  <header>
+    <h3><span class="rank">13</span><a href="https://github.com/facebookresearch/vggt-omega">vggt-omega</a></h3>
+    <div class="stars">★ 4,704</div>
+  </header>
+  <p class="meta">facebookresearch/vggt-omega · Python · 最近推送 2026-09-22</p>
+  <p class="summary">VGGT 嘅後續模型，繼續用 Transformer 由圖像做前饋三維幾何。重點係更強嘅視覺幾何估計，用喺多圖重建同場景理解。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/facebookresearch/vggt-omega">GitHub</a></div>
+  
+</article><article class="card" id="p-tencentarc-instantmesh" data-search="instantmesh tencentarc/instantmesh 用稀疏視角大型重建模型，由單張圖高效生成三維網格。先想像其他角度，再一次重建，速度快過逐個形狀長時間優化。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 instantmesh: efficient 3d mesh generation from a single image with sparse-view large reconstruction models python ">
+  <header>
+    <h3><span class="rank">14</span><a href="https://github.com/TencentARC/InstantMesh">InstantMesh</a></h3>
+    <div class="stars">★ 4,580</div>
+  </header>
+  <p class="meta">TencentARC/InstantMesh · Python · Apache-2.0 · 最近推送 2025-01-03</p>
+  <p class="summary">用稀疏視角大型重建模型，由單張圖高效生成三維網格。先想像其他角度，再一次重建，速度快過逐個形狀長時間優化。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/TencentARC/InstantMesh">GitHub</a></div>
+  
+</article><article class="card" id="p-dreamgaussian-dreamgaussian" data-search="dreamgaussian dreamgaussian/dreamgaussian 用生成式 gaussian splatting 做三維內容，可以由圖像或文字快速得到物件，再抽出網格。優化時間短，適合要效率嘅三維生成。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [iclr 2024 oral] generative gaussian splatting for efficient 3d content creation python image-to-3d text-to-3d">
+  <header>
+    <h3><span class="rank">15</span><a href="https://github.com/dreamgaussian/dreamgaussian">dreamgaussian</a></h3>
+    <div class="stars">★ 4,360</div>
+  </header>
+  <p class="meta">dreamgaussian/dreamgaussian · Python · MIT · 最近推送 2024-01-02</p>
+  <p class="summary">用生成式 Gaussian Splatting 做三維內容，可以由圖像或文字快速得到物件，再抽出網格。優化時間短，適合要效率嘅三維生成。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/dreamgaussian/dreamgaussian">GitHub</a><a href="https://dreamgaussian.github.io/">主頁</a><a href="https://arxiv.org/abs/2309.16653">論文</a></div>
+  <div class="topics"><span>#image-to-3d</span><span>#text-to-3d</span></div>
+</article><article class="card" id="p-tencent-hunyuan-hunyuan3d-2-1" data-search="hunyuan3d-2.1 tencent-hunyuan/hunyuan3d-2.1 混元三維 2.1，由圖像生成高保真三維資產，並帶可用於製作嘅 pbr 材質。除咗形狀，材質都可以直接交畀渲染或遊戲流程。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 from images to high-fidelity 3d assets with production-ready pbr material python 3d 3d-aigc 3d-generation hunyuan3d image-to-3d shape shape-generation text-to-3d">
+  <header>
+    <h3><span class="rank">16</span><a href="https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1">Hunyuan3D-2.1</a></h3>
+    <div class="stars">★ 4,295</div>
+  </header>
+  <p class="meta">Tencent-Hunyuan/Hunyuan3D-2.1 · Python · 最近推送 2025-10-17</p>
+  <p class="summary">混元三維 2.1，由圖像生成高保真三維資產，並帶可用於製作嘅 PBR 材質。除咗形狀，材質都可以直接交畀渲染或遊戲流程。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1">GitHub</a><a href="https://3d.hunyuan.tencent.com/">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-aigc</span><span>#3d-generation</span></div>
+</article><article class="card" id="p-facebookresearch-map-anything" data-search="map-anything facebookresearch/map-anything 通用前饋度量三維重建，由圖像估計帶真實尺度嘅幾何同相機。唔同場景可以共用一個模型，而唔使每個場景重新優化。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 mapanything: universal feed-forward metric 3d reconstruction python 3d-reconstruction ai calibration depth-completion depth-estimation image-to-3d multi-view-stereo robotics">
+  <header>
+    <h3><span class="rank">17</span><a href="https://github.com/facebookresearch/map-anything">map-anything</a></h3>
+    <div class="stars">★ 3,858</div>
+  </header>
+  <p class="meta">facebookresearch/map-anything · Python · Apache-2.0 · 最近推送 2026-08-07</p>
+  <p class="summary">通用前饋度量三維重建，由圖像估計帶真實尺度嘅幾何同相機。唔同場景可以共用一個模型，而唔使每個場景重新優化。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/facebookresearch/map-anything">GitHub</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#ai</span><span>#calibration</span></div>
+</article><article class="card" id="p-aiuniai-unique3d" data-search="unique3d aiuniai/unique3d 由單張圖高效生成高質素三維網格。模型同時照顧多視角一致性同表面細節，適合要一個可以立刻打開嘅物件，而唔係只有點雲。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [neurips 2024] unique3d: high-quality and efficient 3d mesh generation from a single image python 3d-aigc aigc image-to-3d">
+  <header>
+    <h3><span class="rank">18</span><a href="https://github.com/AiuniAI/Unique3D">Unique3D</a></h3>
+    <div class="stars">★ 3,595</div>
+  </header>
+  <p class="meta">AiuniAI/Unique3D · Python · MIT · 最近推送 2025-07-17</p>
+  <p class="summary">由單張圖高效生成高質素三維網格。模型同時照顧多視角一致性同表面細節，適合要一個可以立刻打開嘅物件，而唔係只有點雲。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/AiuniAI/Unique3D">GitHub</a><a href="https://wukailu.github.io/Unique3D/">主頁</a></div>
+  <div class="topics"><span>#3d-aigc</span><span>#aigc</span><span>#image-to-3d</span></div>
+</article><article class="card" id="p-tencent-hunyuan-hunyuan3d-1" data-search="hunyuan3d-1 tencent-hunyuan/hunyuan3d-1 混元三維第一代，把文字轉三維同圖像轉三維放喺同一個框架。可以由描述或參考圖生成資產，係後代 hunyuan3d 系列嘅起點。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 tencent hunyuan3d-1.0: a unified framework for text-to-3d and image-to-3d generation python 3d 3dgen generation text">
+  <header>
+    <h3><span class="rank">19</span><a href="https://github.com/Tencent-Hunyuan/Hunyuan3D-1">Hunyuan3D-1</a></h3>
+    <div class="stars">★ 3,500</div>
+  </header>
+  <p class="meta">Tencent-Hunyuan/Hunyuan3D-1 · Python · 最近推送 2025-11-19</p>
+  <p class="summary">混元三維第一代，把文字轉三維同圖像轉三維放喺同一個框架。可以由描述或參考圖生成資產，係後代 Hunyuan3D 系列嘅起點。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/Tencent-Hunyuan/Hunyuan3D-1">GitHub</a><a href="https://3d.hunyuan.tencent.com/">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#3dgen</span><span>#generation</span></div>
+</article><article class="card" id="p-naver-mast3r" data-search="mast3r naver/mast3r 喺 dust3r 之上做三維圖像匹配，令對應點有幾何根據。多張圖對齊同重建會更穩，適合相片集要準確拼成一個場景。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 grounding image matching in 3d with mast3r python ">
+  <header>
+    <h3><span class="rank">20</span><a href="https://github.com/naver/mast3r">mast3r</a></h3>
+    <div class="stars">★ 3,145</div>
+  </header>
+  <p class="meta">naver/mast3r · Python · 最近推送 2025-06-30</p>
+  <p class="summary">喺 DUSt3R 之上做三維圖像匹配，令對應點有幾何根據。多張圖對齊同重建會更穩，適合相片集要準確拼成一個場景。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/naver/mast3r">GitHub</a></div>
+  
+</article><article class="card" id="p-cvlab-columbia-zero123" data-search="zero123 cvlab-columbia/zero123 由一張圖零樣本想像物件喺新視角嘅樣。新角度圖像可以再交畀重建程式，變成三維，係單圖轉三維經常被引用嘅擴散模型。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 zero-1-to-3: zero-shot one image to 3d object (iccv 2023) python image-to-3d novel-view-synthesis single-view-reconstruction stable-diffusion zero-shot">
+  <header>
+    <h3><span class="rank">21</span><a href="https://github.com/cvlab-columbia/zero123">zero123</a></h3>
+    <div class="stars">★ 3,067</div>
+  </header>
+  <p class="meta">cvlab-columbia/zero123 · Python · MIT · 最近推送 2023-12-05</p>
+  <p class="summary">由一張圖零樣本想像物件喺新視角嘅樣。新角度圖像可以再交畀重建程式，變成三維，係單圖轉三維經常被引用嘅擴散模型。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/cvlab-columbia/zero123">GitHub</a><a href="https://zero123.cs.columbia.edu/">主頁</a></div>
+  <div class="topics"><span>#image-to-3d</span><span>#novel-view-synthesis</span><span>#single-view-reconstruction</span></div>
+</article><article class="card" id="p-deepseek-ai-dreamcraft3d" data-search="dreamcraft3d deepseek-ai/dreamcraft3d 分層生成三維：先用擴散先驗定大形，再提高質素同細節。可以由文字或圖像得到較完整嘅物件，而唔係只得一個粗糙形狀。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [iclr 2024] official implementation of dreamcraft3d: hierarchical 3d generation with bootstrapped diffusion prior python 3d-creation 3d-generation aigc diffusion-models generative-model image-to-3d">
+  <header>
+    <h3><span class="rank">22</span><a href="https://github.com/deepseek-ai/DreamCraft3D">DreamCraft3D</a></h3>
+    <div class="stars">★ 3,037</div>
+  </header>
+  <p class="meta">deepseek-ai/DreamCraft3D · Python · MIT · 最近推送 2025-04-22</p>
+  <p class="summary">分層生成三維：先用擴散先驗定大形，再提高質素同細節。可以由文字或圖像得到較完整嘅物件，而唔係只得一個粗糙形狀。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/deepseek-ai/DreamCraft3D">GitHub</a><a href="https://mrtornado24.github.io/DreamCraft3D/">主頁</a></div>
+  <div class="topics"><span>#3d-creation</span><span>#3d-generation</span><span>#aigc</span></div>
+</article><article class="card" id="p-wgsxm-partcrafter" data-search="partcrafter wgsxm/partcrafter 按部件生成結構化三維網格。物件會拆成可分開嘅部分，而唔係一整塊糊埋嘅表面，方便之後改裝、上材質或者做關節。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [neurips 2025] partcrafter: structured 3d mesh generation via compositional latent diffusion transformers python 3d 3d-generation 3d-object-generation 3d-object-reconstruction 3d-reconstruction 3d-scene-generation 3d-scene-reconstruction image-to-3d">
+  <header>
+    <h3><span class="rank">23</span><a href="https://github.com/wgsxm/PartCrafter">PartCrafter</a></h3>
+    <div class="stars">★ 2,500</div>
+  </header>
+  <p class="meta">wgsxm/PartCrafter · Python · MIT · 最近推送 2026-04-16</p>
+  <p class="summary">按部件生成結構化三維網格。物件會拆成可分開嘅部分，而唔係一整塊糊埋嘅表面，方便之後改裝、上材質或者做關節。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/wgsxm/PartCrafter">GitHub</a><a href="https://wgsxm.github.io/projects/partcrafter/">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-generation</span><span>#3d-object-generation</span></div>
+</article><article class="card" id="p-3dtopia-lgm" data-search="lgm 3dtopia/lgm 大型多視角高斯模型，由圖像快速生成高解像三維內容。先得到多個一致視角，再用高斯融合成可以轉睇嘅物件。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [eccv 2024 oral] lgm: large multi-view gaussian model for high-resolution 3d content creation. python gaussian-splatting image-to-3d text-to-3d">
+  <header>
+    <h3><span class="rank">24</span><a href="https://github.com/3DTopia/LGM">LGM</a></h3>
+    <div class="stars">★ 2,122</div>
+  </header>
+  <p class="meta">3DTopia/LGM · Python · MIT · 最近推送 2024-08-20</p>
+  <p class="summary">大型多視角高斯模型，由圖像快速生成高解像三維內容。先得到多個一致視角，再用高斯融合成可以轉睇嘅物件。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/3DTopia/LGM">GitHub</a><a href="https://me.kiui.moe/lgm/">主頁</a></div>
+  <div class="topics"><span>#gaussian-splatting</span><span>#image-to-3d</span><span>#text-to-3d</span></div>
+</article><article class="card" id="p-sudo-ai-3d-zero123plus" data-search="zero123plus sudo-ai-3d/zero123plus 由單張圖生成一致多視角嘅擴散底模。新角度之間風格同形狀較齊，之後可以接重建程式，變成網格或高斯場景。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 code repository for zero123++: a single image to consistent multi-view diffusion base model. python 3d 3d-graphics aigc diffusers diffusion-models image-to-3d research-project text-to-3d">
+  <header>
+    <h3><span class="rank">25</span><a href="https://github.com/SUDO-AI-3D/zero123plus">zero123plus</a></h3>
+    <div class="stars">★ 2,098</div>
+  </header>
+  <p class="meta">SUDO-AI-3D/zero123plus · Python · Apache-2.0 · 最近推送 2024-02-23</p>
+  <p class="summary">由單張圖生成一致多視角嘅擴散底模。新角度之間風格同形狀較齊，之後可以接重建程式，變成網格或高斯場景。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/SUDO-AI-3D/zero123plus">GitHub</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-graphics</span><span>#aigc</span></div>
+</article><article class="card" id="p-stability-ai-stable-fast-3d" data-search="stable-fast-3d stability-ai/stable-fast-3d 由單張圖快速重建三維網格，同時做 uv 展開同光照分離。模型表面可以直接貼圖，適合要交去 dcc 或遊戲嘅資產。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 sf3d: stable fast 3d mesh reconstruction with uv-unwrapping and illumination disentanglement python ">
+  <header>
+    <h3><span class="rank">26</span><a href="https://github.com/Stability-AI/stable-fast-3d">stable-fast-3d</a></h3>
+    <div class="stars">★ 1,908</div>
+  </header>
+  <p class="meta">Stability-AI/stable-fast-3d · Python · 最近推送 2025-01-22</p>
+  <p class="summary">由單張圖快速重建三維網格，同時做 UV 展開同光照分離。模型表面可以直接貼圖，適合要交去 DCC 或遊戲嘅資產。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/Stability-AI/stable-fast-3d">GitHub</a><a href="https://stable-fast-3d.github.io">主頁</a></div>
+  
+</article><article class="card" id="p-vast-ai-research-triposg" data-search="triposg vast-ai-research/triposg 用大規模 rectified flow 做高保真三維形狀合成。可以由圖像得到較乾淨嘅幾何，重點放喺形狀質素，而唔止係快。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 triposg: high-fidelity 3d shape synthesis using large-scale rectified flow models python 3d-genai 3d-generation 3d-reconstruction image-to-3d">
+  <header>
+    <h3><span class="rank">27</span><a href="https://github.com/VAST-AI-Research/TripoSG">TripoSG</a></h3>
+    <div class="stars">★ 1,865</div>
+  </header>
+  <p class="meta">VAST-AI-Research/TripoSG · Python · MIT · 最近推送 2025-04-18</p>
+  <p class="summary">用大規模 rectified flow 做高保真三維形狀合成。可以由圖像得到較乾淨嘅幾何，重點放喺形狀質素，而唔止係快。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/VAST-AI-Research/TripoSG">GitHub</a></div>
+  <div class="topics"><span>#3d-genai</span><span>#3d-generation</span><span>#3d-reconstruction</span></div>
+</article><article class="card" id="p-totoro97-neus" data-search="neus totoro97/neus 用神經隱式表面重建物件，把體渲染同表面約束放埋一齊。多視角相片可以抽出較準嘅網格，係後來好多表面重建程式嘅參考。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 code release for neus python ">
+  <header>
+    <h3><span class="rank">28</span><a href="https://github.com/Totoro97/NeuS">NeuS</a></h3>
+    <div class="stars">★ 1,775</div>
+  </header>
+  <p class="meta">Totoro97/NeuS · Python · MIT · 最近推送 2024-02-28</p>
+  <p class="summary">用神經隱式表面重建物件，把體渲染同表面約束放埋一齊。多視角相片可以抽出較準嘅網格，係後來好多表面重建程式嘅參考。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/Totoro97/NeuS">GitHub</a></div>
+  
+</article><article class="card" id="p-one-2-3-45-one-2-3-45" data-search="one-2-3-45 one-2-3-45/one-2-3-45 任何單張圖大約四十五秒變成三維網格，而且唔使每個形狀再長時間優化。先生成多視角，再重建，係早期實用嘅單圖轉 mesh 流程。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [neurips 2023] official code of &quot;one-2-3-45: any single image to 3d mesh in 45 seconds without per-shape optimization&quot; python 3d 3d-generation 3d-shape-generation aigc generalizable-nerf mesh-generation multi-view-reconstruction nerf">
+  <header>
+    <h3><span class="rank">29</span><a href="https://github.com/One-2-3-45/One-2-3-45">One-2-3-45</a></h3>
+    <div class="stars">★ 1,714</div>
+  </header>
+  <p class="meta">One-2-3-45/One-2-3-45 · Python · Apache-2.0 · 最近推送 2024-04-20</p>
+  <p class="summary">任何單張圖大約四十五秒變成三維網格，而且唔使每個形狀再長時間優化。先生成多視角，再重建，係早期實用嘅單圖轉 mesh 流程。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/One-2-3-45/One-2-3-45">GitHub</a><a href="http://one-2-3-45.com">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-generation</span><span>#3d-shape-generation</span></div>
+</article><article class="card" id="p-yuliangxiu-icon" data-search="icon yuliangxiu/icon 由單張圖同法線重建穿着衣服嘅人體。隱式表面會跟住衣服輪廓，而唔係硬套標準體型，係呢類人體數字化嘅常用程式。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [cvpr&#x27;22] icon: implicit clothed humans obtained from normals python 3d-reconstruction animation avatar-generator cloth-simulation computer-graphics computer-vision human-pose-estimation implicit-functions">
+  <header>
+    <h3><span class="rank">30</span><a href="https://github.com/YuliangXiu/ICON">ICON</a></h3>
+    <div class="stars">★ 1,679</div>
+  </header>
+  <p class="meta">YuliangXiu/ICON · Python · 最近推送 2023-11-23</p>
+  <p class="summary">由單張圖同法線重建穿着衣服嘅人體。隱式表面會跟住衣服輪廓，而唔係硬套標準體型，係呢類人體數字化嘅常用程式。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/YuliangXiu/ICON">GitHub</a><a href="https://icon.is.tue.mpg.de">主頁</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#animation</span><span>#avatar-generator</span></div>
+</article><article class="card" id="p-guochengqian-magic123" data-search="magic123 guochengqian/magic123 同時用二維同三維擴散先驗，由一張圖生成高質素三維物件。二維模型補外觀，三維先驗拉住幾何，減少背面亂估。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [iclr&#x27;24] official pytorch implementation of magic123: one image to high-quality 3d object generation using both 2d and 3d diffusion priors jupyter notebook 3d-generation diffusion-models image-to-3d">
+  <header>
+    <h3><span class="rank">31</span><a href="https://github.com/guochengqian/Magic123">Magic123</a></h3>
+    <div class="stars">★ 1,623</div>
+  </header>
+  <p class="meta">guochengqian/Magic123 · Jupyter Notebook · Apache-2.0 · 最近推送 2026-07-06</p>
+  <p class="summary">同時用二維同三維擴散先驗，由一張圖生成高質素三維物件。二維模型補外觀，三維先驗拉住幾何，減少背面亂估。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/guochengqian/Magic123">GitHub</a><a href="https://guochengqian.github.io/project/magic123">主頁</a></div>
+  <div class="topics"><span>#3d-generation</span><span>#diffusion-models</span><span>#image-to-3d</span></div>
+</article><article class="card" id="p-thu-ml-prolificdreamer" data-search="prolificdreamer thu-ml/prolificdreamer 用變分分數蒸餾由文字生成高保真同多樣嘅三維。同一個描述可以出唔止一個樣，質素亦高過早期 dreamfusion 一類方法。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 prolificdreamer: high-fidelity and diverse text-to-3d generation with variational score distillation (neurips 2023 spotlight) python diffusion-model dreamfusion nerf prolificdreamer stablediffusion text-to-3d">
+  <header>
+    <h3><span class="rank">32</span><a href="https://github.com/thu-ml/prolificdreamer">prolificdreamer</a></h3>
+    <div class="stars">★ 1,562</div>
+  </header>
+  <p class="meta">thu-ml/prolificdreamer · Python · Apache-2.0 · 最近推送 2023-11-22</p>
+  <p class="summary">用變分分數蒸餾由文字生成高保真同多樣嘅三維。同一個描述可以出唔止一個樣，質素亦高過早期 DreamFusion 一類方法。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/thu-ml/prolificdreamer">GitHub</a><a href="https://ml.cs.tsinghua.edu.cn/prolificdreamer/">主頁</a></div>
+  <div class="topics"><span>#diffusion-model</span><span>#dreamfusion</span><span>#nerf</span></div>
+</article><article class="card" id="p-roblox-cube" data-search="cube roblox/cube roblox 面向三維智能嘅基礎模型，用嚟理解同生成三維內容。可以協助由圖像或描述得到場景同資產，服務遊戲製作呢類流程。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 roblox foundation model for 3d intelligence jupyter notebook 3d 3d-aigc 3d-generation shape-generation text-to-3d">
+  <header>
+    <h3><span class="rank">33</span><a href="https://github.com/Roblox/cube">cube</a></h3>
+    <div class="stars">★ 1,301</div>
+  </header>
+  <p class="meta">Roblox/cube · Jupyter Notebook · 最近推送 2026-05-28</p>
+  <p class="summary">Roblox 面向三維智能嘅基礎模型，用嚟理解同生成三維內容。可以協助由圖像或描述得到場景同資產，服務遊戲製作呢類流程。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/Roblox/cube">GitHub</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-aigc</span><span>#3d-generation</span></div>
+</article><article class="card" id="p-dreamtechai-direct3d-s2" data-search="direct3d-s2 dreamtechai/direct3d-s2 用空間稀疏注意力做大規模三維生成，令高解像生成更容易。可以由條件直接出三維，而唔使把成個立方體密密麻麻計一次。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [neurips 2025] direct3d‑s2: gigascale 3d generation made easy with spatial sparse attention python 3d-aigc 3d-generation 3d-models 3d-reconstruction 3d-representation genai-3d image-to-3d">
+  <header>
+    <h3><span class="rank">34</span><a href="https://github.com/DreamTechAI/Direct3D-S2">Direct3D-S2</a></h3>
+    <div class="stars">★ 1,294</div>
+  </header>
+  <p class="meta">DreamTechAI/Direct3D-S2 · Python · MIT · 最近推送 2025-09-26</p>
+  <p class="summary">用空間稀疏注意力做大規模三維生成，令高解像生成更容易。可以由條件直接出三維，而唔使把成個立方體密密麻麻計一次。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/DreamTechAI/Direct3D-S2">GitHub</a><a href="https://neural4d.com/research/direct3d-s2">主頁</a></div>
+  <div class="topics"><span>#3d-aigc</span><span>#3d-generation</span><span>#3d-models</span></div>
+</article><article class="card" id="p-3dtopia-openlrm" data-search="openlrm 3dtopia/openlrm 大型重建模型嘅開源實作，由單張或少量圖像前饋得到三維。推論快，適合要批量把產品圖或角色圖轉成可旋轉資產。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 an open-source impl. of large reconstruction models python 3d aigc computer-vision generation">
+  <header>
+    <h3><span class="rank">35</span><a href="https://github.com/3DTopia/OpenLRM">OpenLRM</a></h3>
+    <div class="stars">★ 1,257</div>
+  </header>
+  <p class="meta">3DTopia/OpenLRM · Python · Apache-2.0 · 最近推送 2024-05-06</p>
+  <p class="summary">大型重建模型嘅開源實作，由單張或少量圖像前饋得到三維。推論快，適合要批量把產品圖或角色圖轉成可旋轉資產。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/3DTopia/OpenLRM">GitHub</a></div>
+  <div class="topics"><span>#3d</span><span>#aigc</span><span>#computer-vision</span></div>
+</article><article class="card" id="p-yuliangxiu-econ" data-search="econ yuliangxiu/econ 由單張人像重建穿着衣服嘅人體三維，並用法線整合優化表面。重點係衫嘅皺褶同身體一齊保留，而唔係只得一個裸體模板。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [cvpr&#x27;23, highlight] econ: explicit clothed humans optimized via normal integration python 3d-reconstruction avatar-generator computer-graphics computer-vision digital-twins metaverse normal-maps pifu">
+  <header>
+    <h3><span class="rank">36</span><a href="https://github.com/YuliangXiu/ECON">ECON</a></h3>
+    <div class="stars">★ 1,211</div>
+  </header>
+  <p class="meta">YuliangXiu/ECON · Python · 最近推送 2024-09-17</p>
+  <p class="summary">由單張人像重建穿着衣服嘅人體三維，並用法線整合優化表面。重點係衫嘅皺褶同身體一齊保留，而唔係只得一個裸體模板。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/YuliangXiu/ECON">GitHub</a><a href="https://xiuyuliang.cn/econ">主頁</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#avatar-generator</span><span>#computer-graphics</span></div>
+</article><article class="card" id="p-stability-ai-stable-point-aware-3d" data-search="stable-point-aware-3d stability-ai/stable-point-aware-3d 由單張圖重建三維物件，同時利用點雲資訊穩定形狀。幾何同外觀分開處理，減少單視角常見嘅扁塌同背面缺失。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 spar3d: stable point-aware reconstruction of 3d objects from single images python ">
+  <header>
+    <h3><span class="rank">37</span><a href="https://github.com/Stability-AI/stable-point-aware-3d">stable-point-aware-3d</a></h3>
+    <div class="stars">★ 1,084</div>
+  </header>
+  <p class="meta">Stability-AI/stable-point-aware-3d · Python · 最近推送 2025-05-05</p>
+  <p class="summary">由單張圖重建三維物件，同時利用點雲資訊穩定形狀。幾何同外觀分開處理，減少單視角常見嘅扁塌同背面缺失。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/Stability-AI/stable-point-aware-3d">GitHub</a><a href="https://spar3d.github.io/">主頁</a></div>
+  
+</article><article class="card" id="p-ashawkey-nerf2mesh" data-search="nerf2mesh ashawkey/nerf2mesh 由 nerf 恢復帶貼圖嘅精細網格，並自適應加密表面。新視角場景可以交回傳統渲染，用 mesh 而唔係只留神經場。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 [iccv2023] delicate textured mesh recovery from nerf via adaptive surface refinement python mesh nerf real-time">
+  <header>
+    <h3><span class="rank">38</span><a href="https://github.com/ashawkey/nerf2mesh">nerf2mesh</a></h3>
+    <div class="stars">★ 966</div>
+  </header>
+  <p class="meta">ashawkey/nerf2mesh · Python · MIT · 最近推送 2024-11-11</p>
+  <p class="summary">由 NeRF 恢復帶貼圖嘅精細網格，並自適應加密表面。新視角場景可以交回傳統渲染，用 mesh 而唔係只留神經場。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/ashawkey/nerf2mesh">GitHub</a><a href="https://me.kiui.moe/nerf2mesh/">主頁</a></div>
+  <div class="topics"><span>#mesh</span><span>#nerf</span><span>#real-time</span></div>
+</article><article class="card" id="p-bennyguo-instant-nsr-pl" data-search="instant-nsr-pl bennyguo/instant-nsr-pl 基於 instant-ngp 嘅神經表面重建，可以用大約十分鐘訓練 neus 一類方法。多視角相片可以較快抽出網格，適合研究表面重建。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。 neural surface reconstruction based on instant-ngp. efficient and customizable boilerplate for your research projects. train neus in 10min! python ">
+  <header>
+    <h3><span class="rank">39</span><a href="https://github.com/bennyguo/instant-nsr-pl">instant-nsr-pl</a></h3>
+    <div class="stars">★ 927</div>
+  </header>
+  <p class="meta">bennyguo/instant-nsr-pl · Python · MIT · 最近推送 2023-11-22</p>
+  <p class="summary">基於 Instant-NGP 嘅神經表面重建，可以用大約十分鐘訓練 NeuS 一類方法。多視角相片可以較快抽出網格，適合研究表面重建。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。</p>
+  <div class="links"><a href="https://github.com/bennyguo/instant-nsr-pl">GitHub</a></div>
+  
+</article></div>
+  
+</section>
+  </main>
+  <footer class="site">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 排序以 stars 為準 · 重複項目只保留一次</footer>
+</div>
+<script>
+(function () {
+  const input = document.querySelector("#q");
+  const hub = document.querySelector("#hub");
+  const results = document.querySelector("#results");
+  const cards = Array.from(document.querySelectorAll("#results [data-search], section [data-search]"));
+  const sections = Array.from(document.querySelectorAll("[data-section]"));
+  const empty = document.querySelector("#empty");
+  function apply() {
+    const q = input.value.trim().toLowerCase();
+    if (hub && results) {
+      const browsing = q.length === 0;
+      hub.hidden = !browsing;
+      results.hidden = browsing;
+      if (browsing) {
+        empty.hidden = true;
+        empty.style.display = "none";
+        return;
+      }
+    }
+    let shown = 0;
+    cards.forEach((card) => {
+      const ok = !q || card.dataset.search.includes(q);
+      card.hidden = !ok;
+      if (ok) shown += 1;
+    });
+    sections.forEach((section) => {
+      section.hidden = !Array.from(section.querySelectorAll("[data-search]")).some((card) => !card.hidden);
+    });
+    empty.hidden = shown !== 0;
+    empty.style.display = shown === 0 ? "block" : "none";
+  }
+  input.addEventListener("input", apply);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "/" && document.activeElement !== input) {
+      event.preventDefault();
+      input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>
