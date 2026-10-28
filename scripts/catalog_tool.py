@@ -24,6 +24,8 @@ DATA = ROOT / "data"
 CACHE = DATA / "cache"
 HK = ZoneInfo("Asia/Hong_Kong")
 DEFAULT_EMAIL = "sunny3131831@gmail.com"
+# Six-hour updates always publish to this GitHub Pages site.
+PAGES_ROOT = "https://titanothereyik.github.io/Open-Source-Catalog/"
 
 CATEGORIES = [
     {
@@ -354,14 +356,14 @@ def project_from_repo(repo: dict, category: str, summary: str, locked: bool, add
 
 
 def base_url() -> str:
+    """Site root for HTML, notifications, and email. Always the GitHub Pages host."""
     env = os.environ.get("SITE_BASE_URL", "").strip()
-    if env:
-        return env if env.endswith("/") else env + "/"
-    repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
-    if repo and "/" in repo:
-        owner, name = repo.split("/", 1)
-        return f"https://{owner}.github.io/{name}/"
-    return ""
+    if not env:
+        return PAGES_ROOT
+    normalized = env if env.endswith("/") else env + "/"
+    if normalized.lower() != PAGES_ROOT.lower():
+        raise SystemExit(f"SITE_BASE_URL must be the GitHub Pages root {PAGES_ROOT}")
+    return PAGES_ROOT
 
 
 def repo_web_url() -> str:
@@ -812,7 +814,7 @@ def write_outputs(catalog: dict, new_projects: list[dict], mode: str) -> None:
 def notification_text(catalog: dict, new_projects: list[dict], mode: str) -> str:
     grouped = projects_by_category(catalog)
     counts = " · ".join(f"{category['title']} {len(grouped[category['id']])}" for category in CATEGORIES)
-    url = catalog.get("base_url") or "repo 根目錄 index.html（GitHub Pages 啟用後會變成網站）"
+    url = catalog.get("base_url") or PAGES_ROOT
     headline = "Open Source Catalog 已建立基礎目錄" if mode == "bootstrap" else "Open Source Catalog 已更新"
     lines = [
         f"# {headline}",
@@ -1164,7 +1166,11 @@ def validate(catalog: dict | None = None) -> None:
             for field in ("summary", "url", "name", "full_name"):
                 if not project.get(field):
                     raise SystemExit(f"missing {field} on {project.get('full_name')}")
+    if (catalog.get("base_url") or "").rstrip("/") + "/" != PAGES_ROOT:
+        raise SystemExit(f"base_url must be the GitHub Pages root {PAGES_ROOT}")
     html_text = (ROOT / "index.html").read_text()
+    if PAGES_ROOT not in html_text:
+        raise SystemExit("index canonical is not the GitHub Pages root")
     for project in projects:
         if project["full_name"] not in html_text:
             raise SystemExit(f"index missing {project['full_name']}")
@@ -1172,6 +1178,9 @@ def validate(catalog: dict | None = None) -> None:
         page = (ROOT / category["dir"] / "index.html").read_text()
         if category["title"] not in page:
             raise SystemExit(f"subpage missing title {category['title']}")
+        page_root = f"{PAGES_ROOT}{category['dir']}/"
+        if page_root not in page:
+            raise SystemExit(f"{category['dir']} canonical is not {page_root}")
     print(f"validated {len(projects)} projects across {len(CATEGORIES)} categories")
 
 

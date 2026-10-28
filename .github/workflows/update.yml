@@ -19,6 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
 
       - uses: actions/setup-python@v5
         with:
@@ -27,7 +30,9 @@ jobs:
       - name: Refresh catalog
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SITE_BASE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+          # Fixed Pages root. Do not derive this from the event payload:
+          # schedule runs can omit repository name and produce a bad URL.
+          SITE_BASE_URL: https://titanothereyik.github.io/Open-Source-Catalog/
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
           SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
@@ -45,7 +50,7 @@ jobs:
             exit 0
           fi
           git commit -F notifications/latest.md
-          git push
+          git push origin HEAD:main
 
       - name: Notify
         uses: actions/github-script@v7

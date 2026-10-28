@@ -47,7 +47,7 @@ python3 scripts/catalog_tool.py validate
 https://titanothereyik.github.io/Open-Source-Catalog/
 ```
 
-根目錄 `index.html` 就係 Pages 嘅內容。推上 GitHub `main` 之後，`.github/workflows/pages.yml` 會部署。更新 workflow 會把上面呢個網址寫入目錄同電郵入面嘅連結。
+根目錄 `index.html` 就係 Pages 嘅內容。推上 GitHub `main` 之後，`.github/workflows/pages.yml` 會部署。每 6 小時嘅更新根網址固定係上面呢個 GitHub Pages 網址，寫入目錄、canonical 同電郵連結，然後 push 去呢個 repo 嘅 `main`。
 
 ## 每 6 小時
 
