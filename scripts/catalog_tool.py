@@ -463,9 +463,9 @@ def fetch_json(url: str, cache_key: str, kind: str, use_cache: bool) -> dict:
                 RATE["remaining"] = 0
                 raise RateLimitExceeded(body)
             time.sleep(4 + attempt * 2)
-        except urllib.error.URLError as exc:
+        except (TimeoutError, urllib.error.URLError) as exc:
             last_error = str(exc)
-            time.sleep(4)
+            time.sleep(4 + attempt * 2)
     raise RuntimeError(f"GitHub request failed for {cache_key}: {last_error}")
 
 
