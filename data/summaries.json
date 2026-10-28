@@ -321,5 +321,11 @@
   "ahujasid/mcp-for-blender": "社群插件，用嚟喺 Blender 入面用任何語言模型控制三維操作。可以叫模型幫手建模、改場景，同官方 Blender Foundation 無關。指令會轉成 Blender 入面嘅操作。",
   "Anil-matcha/Open-Generative-AI": "可以自己架設嘅圖像同影片生成工作室，整合 Flux、Kling、Sora、Veo 等模型。用嚟喺本機出圖同出片，採 MIT 授權。模型可以換成自己已經有嘅接口。",
   "taichi-dev/taichi": "用 Python 寫高效能 GPU 程式嘅語言同編譯器。適合電腦圖像、物理模擬同可微分計算，同一套程式可以喺唔同顯示卡上跑。研究渲染同模擬時可以少寫底層顯示卡程式。",
-  "stefan-jansen/machine-learning-for-trading": "《Machine Learning for Trading》第三版嘅程式。由攞市場數據、特徵同模型，去到回測同實盤執行，用嚟學量化交易成個流程。筆記本跟住書嘅章節逐步示範。"
+  "stefan-jansen/machine-learning-for-trading": "《Machine Learning for Trading》第三版嘅程式。由攞市場數據、特徵同模型，去到回測同實盤執行，用嚟學量化交易成個流程。筆記本跟住書嘅章節逐步示範。",
+  "deepseek-ai/deepseek-harness": "DeepSeek 官方出嘅 agent harness，個架構係「樣樣都係插件」。用 Cordis 將工具同介面砌成可以換嘅部件，你可以喺本機用 npx 開網頁介面。而家仲係開發預覽，插件介面之後可能會改。",
+  "NousResearch/hermes-agent": "Nous Research 嘅自主 agent，會將用過嘅經驗寫成技能，同記住你係邊個。可以喺平價伺服器、顯示卡叢集，或者閒置幾乎唔使錢嘅環境跑。新對話會翻查舊紀錄，唔使每次由零介紹自己。",
+  "khoj-ai/khoj": "可以自己架嘅個人 AI 第二大腦。用嚟喺網頁同你嘅文件搵答案，又可以砌自訂 agent、排程自動化同做深入研究。本地或者網上嘅語言模型都接得，亦可以出圖，資料可以留喺自己部機。",
+  "ssloy/tinyrenderer": "一份簡短嘅電腦圖像課程，用 C++ 由零寫一個細渲染器。跟住課你會自己做光柵化、著色同貼圖，適合想搞清楚畫面點樣畫出嚟，而唔係只係呼叫現成引擎。程式短，方便對住每一行睇渲染點做。",
+  "questdb/questdb": "高效能開源時間序列資料庫，用嚟存同查市場數據呢類帶時間戳嘅資料。查詢快、延遲低，支援 Parquet 同資本市場常用嘅數據格式，適合作交易系統嘅行情儲存，而唔係一隻自動下單策略。",
+  "camenduru/stable-diffusion-webui-colab": "一組 Google Colab 筆記本，用嚟喺 Colab 跑 Stable Diffusion WebUI。可以試文生圖同 Dreambooth，唔使自己先砌顯示卡環境。筆記本係社群整理，模型權重同授權仍然要你自己確認。"
 }
