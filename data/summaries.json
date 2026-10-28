@@ -327,5 +327,10 @@
   "khoj-ai/khoj": "可以自己架嘅個人 AI 第二大腦。用嚟喺網頁同你嘅文件搵答案，又可以砌自訂 agent、排程自動化同做深入研究。本地或者網上嘅語言模型都接得，亦可以出圖，資料可以留喺自己部機。",
   "ssloy/tinyrenderer": "一份簡短嘅電腦圖像課程，用 C++ 由零寫一個細渲染器。跟住課你會自己做光柵化、著色同貼圖，適合想搞清楚畫面點樣畫出嚟，而唔係只係呼叫現成引擎。程式短，方便對住每一行睇渲染點做。",
   "questdb/questdb": "高效能開源時間序列資料庫，用嚟存同查市場數據呢類帶時間戳嘅資料。查詢快、延遲低，支援 Parquet 同資本市場常用嘅數據格式，適合作交易系統嘅行情儲存，而唔係一隻自動下單策略。",
-  "camenduru/stable-diffusion-webui-colab": "一組 Google Colab 筆記本，用嚟喺 Colab 跑 Stable Diffusion WebUI。可以試文生圖同 Dreambooth，唔使自己先砌顯示卡環境。筆記本係社群整理，模型權重同授權仍然要你自己確認。"
+  "camenduru/stable-diffusion-webui-colab": "一組 Google Colab 筆記本，用嚟喺 Colab 跑 Stable Diffusion WebUI。可以試文生圖同 Dreambooth，唔使自己先砌顯示卡環境。筆記本係社群整理，模型權重同授權仍然要你自己確認。",
+  "firecrawl/firecrawl": "開源爬蟲，用嚟將網頁抓成乾淨嘅 Markdown，再交俾 AI agent 用。可以爬成個站、抽取結構化資料，而唔使每個網站自己寫選擇器。適合要將網上資料帶入 agent 嘅人。",
+  "vercel/satori": "Vercel 嘅程式庫，用嚟將 HTML 同 CSS 轉成 SVG 圖。常見用途係生成 Open Graph 預覽圖，唔使開瀏覽器截圖。佢係排版出圖，而唔係擴散模型咁由文字生成畫面。",
+  "krillinai/OpenCreator": "前身係 KrillinAI 嘅開源創作工作台。用嚟下載影片、翻譯同配音，亦可以喺同一個地方用 agent 出片、出圖、做聲音同頭像。適合做 YouTube、TikTok 呢類社交內容。",
+  "OpenByteInc/QuantDinger": "可以自己架嘅量化研究平台。用嚟將交易想法寫成 Python 策略，再做回測、模擬盤同實盤，覆蓋股票、加密貨幣同外匯。重點係研究同執行策略，而唔係一個現成嘅自動揀股訊號。",
+  "HKUDS/ViMax": "港大嘅多 agent 影片生成系統。導演、編劇、監製同分鏡會分工，可以由一個想法或者劇本做到成條片。用嚟將文字推進到可睇嘅影片，而唔係只出一段提示詞。每個角色負責一段工序，方便你只改劇本或者只改畫面。"
 }
