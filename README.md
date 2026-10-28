@@ -54,7 +54,7 @@ https://titanothereyik.github.io/Open-Source-Catalog/
 
 ## 每小時
 
-`.github/workflows/update.yml` 喺每小時整點運行（UTC 同香港時間都係 xx:00）。每次會讀取 workflow token 嘅 GitHub REST core 配額，並繼續查公開 repo，直到用咗最少 80%。搜尋配額係另一個每分鐘上限，程式會自己放慢，避免搜尋被截斷。
+`.github/workflows/update.yml` 每小時跑一次。GitHub 會丟掉排喺整點（第 0 分鐘）嘅工作，所以正式時間係每小時第 7 分鐘，第 32 分鐘再試一次。如果嗰個鐘已經更新過，第二次會跳過。每次會讀取 workflow token 嘅 GitHub REST core 配額，並繼續查公開 repo，直到用咗最少 80%。搜尋配額係另一個每分鐘上限，程式會自己放慢，避免搜尋被截斷。
 
 每次完成會：
 

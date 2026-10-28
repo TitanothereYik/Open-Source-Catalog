@@ -2,8 +2,9 @@ name: Update catalog
 
 on:
   schedule:
-    # Every hour at minute 0 UTC, which is also xx:00 in Hong Kong (UTC+8).
-    - cron: "0 * * * *"
+    # GitHub drops workflows scheduled at minute 0 when the hour starts.
+    # :07 is the hourly run (Hong Kong and UTC). :32 retries if :07 never queued.
+    - cron: "7,32 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -28,7 +29,29 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Skip if this hour already updated
+        id: gate
+        if: github.event_name == 'schedule'
+        run: |
+          python3 - << 'PY'
+          import json, os
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          hk = ZoneInfo("Asia/Hong_Kong")
+          data = json.loads(open("data/catalog.json").read())
+          raw = data.get("updated_at") or ""
+          now = datetime.now(hk)
+          ran = False
+          if raw:
+              moment = datetime.fromisoformat(raw).astimezone(hk)
+              ran = moment.strftime("%Y-%m-%dT%H") == now.strftime("%Y-%m-%dT%H")
+          with open(os.environ["GITHUB_OUTPUT"], "a") as handle:
+              handle.write(f"skip={'true' if ran else 'false'}\n")
+          print(("skip" if ran else "run"), raw)
+          PY
+
       - name: Refresh catalog
+        if: github.event_name != 'schedule' || steps.gate.outputs.skip != 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Fixed Pages root. Do not derive this from the event payload:
@@ -42,6 +65,7 @@ jobs:
         run: python scripts/catalog_tool.py update
 
       - name: Commit catalog
+        if: github.event_name != 'schedule' || steps.gate.outputs.skip != 'true'
         run: |
           git config user.name "Open Source Catalog"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -54,6 +78,7 @@ jobs:
           git push origin HEAD:main
 
       - name: Notify
+        if: github.event_name != 'schedule' || steps.gate.outputs.skip != 'true'
         uses: actions/github-script@v7
         with:
           script: |
