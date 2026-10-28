@@ -165,7 +165,7 @@ STANDALONE_PAPERS = [
         "year": 2023,
         "url": "https://arxiv.org/abs/2210.03629",
         "code_url": "https://github.com/ysymyth/ReAct",
-        "summary": "提出推理同行動交替進行：語言模型先寫低思考，再調用工具，然後按觀察結果繼續推理。",
+        "summary": "呢篇論文提出推理同行動要交替進行。語言模型先寫低自己嘅思考，再決定調用邊個工具，然後讀取觀察結果，繼續下一步。後來好多 agent 框架都跟住呢個「諗、做、再諗」嘅循環。",
     },
     {
         "id": "arxiv:2304.03442",
@@ -174,7 +174,7 @@ STANDALONE_PAPERS = [
         "year": 2023,
         "url": "https://arxiv.org/abs/2304.03442",
         "code_url": "https://github.com/joonspk-research/generative_agents",
-        "summary": "用記憶、反思同計劃，模擬小鎮入面多個 AI 角色點樣自己過日常、互相影響。",
+        "summary": "用記憶、反思同計劃，模擬小鎮入面多個 AI 角色點樣自己過日常。每個角色會記住發生過嘅事、整理成較高層嘅看法，再決定同邊個傾偈、做咩活動，從而互相影響。",
     },
     {
         "id": "arxiv:2303.11366",
@@ -183,7 +183,7 @@ STANDALONE_PAPERS = [
         "year": 2023,
         "url": "https://arxiv.org/abs/2303.11366",
         "code_url": "https://github.com/noahshinn/reflexion",
-        "summary": "Agent 用自然語言總結自己嘅失敗，記住教訓再試，而唔係靠更新模型權重。",
+        "summary": "Agent 做完一次嘗試之後，用自然語言寫低自己點解失敗，將呢段教訓放入記憶，下次再試就避開同一啲錯。重點係靠文字反思改進，而唔係重新訓練模型權重。",
     },
     {
         "id": "arxiv:2305.16291",
@@ -192,7 +192,7 @@ STANDALONE_PAPERS = [
         "year": 2023,
         "url": "https://arxiv.org/abs/2305.16291",
         "code_url": "https://github.com/MineDojo/Voyager",
-        "summary": "一個喺 Minecraft 入面自己寫程式、累積技能庫，可以持續探索同完成新任務嘅 agent。",
+        "summary": "一個喺 Minecraft 入面自己寫程式、累積技能庫嘅 agent。佢會探索地圖、將成功嘅程式存低做技能，之後遇到新任務可以重用，所以可以持續學新嘢而唔使每次由零開始。",
     },
     {
         "id": "arxiv:2307.01952",
@@ -201,7 +201,7 @@ STANDALONE_PAPERS = [
         "year": 2023,
         "url": "https://arxiv.org/abs/2307.01952",
         "code_url": "https://github.com/Stability-AI/generative-models",
-        "summary": "Stable Diffusion 嘅較大版本，改善構圖、文字同整體畫質，適合高解像生成。",
+        "summary": "Stable Diffusion 嘅較大版本，針對高解像圖像生成。佢改善構圖、提示詞跟隨同整體畫質，尤其係人物同文字細節。研究同產品都常用佢做比第一代更清楚嘅出圖底子。",
     },
     {
         "id": "arxiv:2211.09800",
@@ -210,7 +210,7 @@ STANDALONE_PAPERS = [
         "year": 2023,
         "url": "https://arxiv.org/abs/2211.09800",
         "code_url": "https://github.com/timothybrooks/instruct-pix2pix",
-        "summary": "用自然語言指令直接改一張現有圖像，例如換背景、改物件或者轉風格。",
+        "summary": "用一句自然語言指令直接改一張現有圖像，例如換背景、加物件或者轉風格。模型要同時睇住原圖同指示，所以改動跟住你講嘅嘢，而唔係由文字重新生成成張新圖。",
     },
     {
         "id": "arxiv:2003.08934",
@@ -219,7 +219,7 @@ STANDALONE_PAPERS = [
         "year": 2020,
         "url": "https://arxiv.org/abs/2003.08934",
         "code_url": "https://github.com/bmild/nerf",
-        "summary": "用神經網路表示一個立體場景，由多張相片合成新視角，係後來大量新視角合成工作嘅起點。",
+        "summary": "用神經網路表示一個立體場景，由多張相片合成未拍過嘅新視角。場景被寫成連續嘅輻射場，沿光線取樣就可以渲染。後來大量新視角合成同神經渲染工作都由呢篇論文開始。",
     },
 ]
 
@@ -511,31 +511,72 @@ h1 {
 }
 .stat b { display: block; font-family: Fraunces, Georgia, serif; font-size: 22px; font-weight: 560; }
 .stat span { color: var(--faint); font-size: 13px; }
-.layout { display: grid; grid-template-columns: 220px 1fr; gap: 28px; padding-bottom: 72px; }
-nav.side {
+.stickybar {
   position: sticky;
-  top: 16px;
-  align-self: start;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding-top: 8px;
+  top: 0;
+  z-index: 3;
+  padding: 8px 0 12px;
+  background: linear-gradient(var(--bg) 72%, rgba(12, 13, 17, 0.94) 88%, transparent);
 }
-nav.side a {
+nav.pages {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+nav.pages a {
   text-decoration: none;
   color: var(--muted);
+  border: 1px solid var(--line);
+  background: rgba(21, 23, 30, 0.92);
   border-radius: 999px;
   padding: 8px 12px;
-  display: flex;
+  display: inline-flex;
+  align-items: center;
   justify-content: space-between;
   gap: 8px;
+  white-space: nowrap;
 }
-nav.side a:hover, nav.side a[aria-current="page"] {
-  background: var(--bg-raise);
-  color: var(--text);
+nav.pages a:hover { color: var(--text); border-color: var(--gold); }
+nav.pages a[aria-current="page"] {
+  background: var(--gold);
+  color: var(--ink);
+  border-color: var(--gold);
 }
-nav.side .count { color: var(--faint); font-variant-numeric: tabular-nums; }
-.search { position: sticky; top: 0; z-index: 2; background: linear-gradient(var(--bg), rgba(12,13,17,0.92) 70%, transparent); padding: 8px 0 14px; }
+nav.pages .count { color: var(--faint); font-variant-numeric: tabular-nums; }
+nav.pages a[aria-current="page"] .count { color: var(--ink); }
+.search { padding: 0; }
+.hub { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.hub[hidden], #results[hidden] { display: none !important; }
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 196px;
+  text-decoration: none;
+  background: rgba(21, 23, 30, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+}
+.tile:hover { border-color: var(--gold); }
+.tile-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.tile h2 {
+  margin: 0;
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 560;
+  letter-spacing: -0.04em;
+}
+.tile .count { color: var(--gold); font-family: Fraunces, Georgia, serif; font-size: 28px; line-height: 1; }
+.tile p { margin: 0; color: var(--muted); }
+.tile .top { color: var(--text); }
+.tile .go { margin-top: auto; color: var(--gold); }
+.hero-sub { padding-top: 22px; }
+.hero-sub h1 { font-size: clamp(36px, 5vw, 56px); }
+.kicker a { text-decoration: none; }
+main.page { padding-bottom: 72px; }
 .search input {
   width: 100%;
   background: var(--bg-raise);
@@ -572,7 +613,7 @@ nav.side .count { color: var(--faint); font-variant-numeric: tabular-nums; }
 .card h3 a:hover { color: var(--gold); }
 .stars { color: var(--gold); font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 650; }
 .meta { color: var(--faint); font-size: 13px; margin: 6px 0 8px; overflow-wrap: anywhere; }
-.summary { margin: 0; }
+.summary { margin: 0; color: #ebe4d8; }
 .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 .links a, .badge {
   text-decoration: none;
@@ -590,18 +631,21 @@ nav.side .count { color: var(--faint); font-variant-numeric: tabular-nums; }
 .papers h3 { margin: 0 0 10px; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
 #empty { display: none; color: var(--muted); padding: 12px 0 24px; }
 footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
+@media (min-width: 800px) {
+  .hub { grid-template-columns: 1fr 1fr; }
+}
 @media (min-width: 980px) {
   .grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 800px) {
-  .layout { grid-template-columns: 1fr; gap: 8px; }
-  nav.side { position: static; flex-direction: row; overflow-x: auto; padding-bottom: 8px; }
-  nav.side a { white-space: nowrap; }
 }
 """.strip()
 
 
-def card_html(project: dict, rank: int) -> str:
+def project_anchor(project: dict) -> str:
+    slug = project["full_name"].lower().replace("/", "-")
+    return "p-" + "".join(ch if ch.isalnum() or ch == "-" else "-" for ch in slug)
+
+
+def card_html(project: dict, rank: int, category_href: str = "", category_title: str = "") -> str:
     bits = [project["full_name"]]
     if project.get("language"):
         bits.append(project["language"])
@@ -624,13 +668,15 @@ def card_html(project: dict, rank: int) -> str:
         links.append(f'<a href="{esc(project["homepage"])}">主頁</a>')
     if project.get("paper_url"):
         links.append(f'<a href="{esc(project["paper_url"])}">論文</a>')
+    if category_title and category_href:
+        links.append(f'<a href="{esc(category_href)}#{project_anchor(project)}">{esc(category_title)}</a>')
     badges = ""
     if project.get("archived"):
         badges = '<span class="badge arch">已封存</span>'
     topics = "".join(f"<span>#{esc(topic)}</span>" for topic in (project.get("topics") or [])[:3])
     topic_html = f'<div class="topics">{topics}</div>' if topics else ""
     return f"""
-<article class="card" data-search="{esc(search)}">
+<article class="card" id="{esc(project_anchor(project))}" data-search="{esc(search)}">
   <header>
     <h3><span class="rank">{rank:02d}</span><a href="{esc(project["url"])}">{esc(project["name"])}</a></h3>
     <div class="stars">★ {fmt_stars(project.get("stars") or 0)}</div>
@@ -661,6 +707,49 @@ def paper_html(paper: dict) -> str:
 """.strip()
 
 
+def page_nav(grouped: dict[str, list[dict]], active: str | None) -> str:
+    if active is None:
+        links = ['<a href="./" aria-current="page">目錄</a>']
+    else:
+        links = ['<a href="../">目錄</a>']
+    for category in CATEGORIES:
+        count = len(grouped.get(category["id"], []))
+        if active == category["id"]:
+            href = "./"
+            current = ' aria-current="page"'
+        elif active is None:
+            href = f'{category["dir"]}/'
+            current = ""
+        else:
+            href = f'../{category["dir"]}/'
+            current = ""
+        links.append(
+            f'<a href="{href}"{current}>{esc(category["title"])}<span class="count">{count}</span></a>'
+        )
+    return f'<nav class="pages" aria-label="分類">{"".join(links)}</nav>'
+
+
+def hub_html(grouped: dict[str, list[dict]]) -> str:
+    tiles = []
+    for category in CATEGORIES:
+        items = grouped.get(category["id"], [])
+        top = items[0] if items else None
+        top_line = ""
+        if top:
+            top_line = f'<p class="top">星數最高 · {esc(top["name"])} ★ {fmt_stars(top.get("stars") or 0)}</p>'
+        tiles.append(
+            f"""
+<a class="tile" href="{esc(category["dir"])}/">
+  <div class="tile-top"><h2>{esc(category["title"])}</h2><span class="count">{len(items)}</span></div>
+  <p>{esc(category["blurb"])}</p>
+  {top_line}
+  <span class="go">打開呢一頁</span>
+</a>
+""".strip()
+        )
+    return f'<div class="hub" id="hub">{"".join(tiles)}</div>'
+
+
 def render_document(catalog: dict, active: str | None) -> str:
     grouped = projects_by_category(catalog)
     papers = papers_by_category(catalog)
@@ -672,47 +761,66 @@ def render_document(catalog: dict, active: str | None) -> str:
     if site:
         path = "" if active is None else category_map()[active]["dir"] + "/"
         canonical = f'<link rel="canonical" href="{esc(site + path)}">'
-    nav = []
+    nav = page_nav(grouped, active)
     if active is None:
-        nav.append(f'<a href="#content" aria-current="page">全部<span class="count">{len(catalog["projects"])}</span></a>')
+        result_cards = []
+        for category in CATEGORIES:
+            href = f'{category["dir"]}/'
+            for rank, project in enumerate(grouped.get(category["id"], []), 1):
+                result_cards.append(card_html(project, rank, href, category["title"]))
+            for paper in papers.get(category["id"], []):
+                result_cards.append(paper_html(paper))
+        body = f"""
+{hub_html(grouped)}
+<div id="results" hidden>
+  <div class="grid">{''.join(result_cards)}</div>
+</div>
+""".strip()
     else:
-        nav.append(f'<a href="../index.html">全部<span class="count">{len(catalog["projects"])}</span></a>')
-    for category in CATEGORIES:
-        count = len(grouped.get(category["id"], []))
-        if active is None:
-            href = f'#{category["id"]}'
-            current = ""
-        elif active == category["id"]:
-            href = "./"
-            current = ' aria-current="page"'
-        else:
-            href = f'../{category["dir"]}/'
-            current = ""
-        nav.append(
-            f'<a href="{href}"{current}>{esc(category["title"])}<span class="count">{count}</span></a>'
-        )
-    sections = []
-    visible = CATEGORIES if active is None else [category_map()[active]]
-    for category in visible:
-        cards = []
-        for rank, project in enumerate(grouped.get(category["id"], []), 1):
-            cards.append(card_html(project, rank))
+        category = category_map()[active]
+        cards = [
+            card_html(project, rank)
+            for rank, project in enumerate(grouped.get(category["id"], []), 1)
+        ]
         paper_cards = [paper_html(paper) for paper in papers.get(category["id"], [])]
         paper_block = ""
         if paper_cards:
             paper_block = '<div class="papers"><h3>相關論文</h3><div class="grid">' + "".join(paper_cards) + "</div></div>"
-        sections.append(
-            f"""
+        body = f"""
 <section class="section" id="{esc(category["id"])}" data-section>
-  <h2>{esc(category["title"])}</h2>
-  <p class="blurb">{esc(category["blurb"])} 開源項目按 GitHub stars 由多至少。</p>
   <div class="grid">{''.join(cards)}</div>
   {paper_block}
 </section>
 """.strip()
-        )
     project_count = len(catalog["projects"])
     paper_count = len(catalog.get("papers", []))
+    if active is None:
+        hero = f"""
+<header class="hero">
+    <p class="kicker">每 6 小時更新</p>
+    <h1>Open Source Catalog</h1>
+    <p class="lede">六個分類各自一頁。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。</p>
+    <div class="stats">
+      <div class="stat"><b>{project_count}</b><span>開源項目</span></div>
+      <div class="stat"><b>{paper_count}</b><span>未另列 repo 嘅論文</span></div>
+      <div class="stat"><b>{esc(format_hk(catalog["updated_at"]).split(" ")[0])}</b><span>{esc(format_hk(catalog["updated_at"]).split(" ", 1)[1])}</span></div>
+    </div>
+  </header>
+"""
+    else:
+        category = category_map()[active]
+        hero = f"""
+<header class="hero hero-sub">
+    <p class="kicker"><a href="../">Open Source Catalog</a></p>
+    <h1>{esc(category["title"])}</h1>
+    <p class="lede">{esc(category["blurb"])} 開源項目按 GitHub stars 由多至少。</p>
+    <div class="stats">
+      <div class="stat"><b>{len(grouped.get(active, []))}</b><span>開源項目</span></div>
+      <div class="stat"><b>{len(papers.get(active, []))}</b><span>相關論文</span></div>
+      <div class="stat"><b>{esc(format_hk(catalog["updated_at"]).split(" ")[0])}</b><span>{esc(format_hk(catalog["updated_at"]).split(" ", 1)[1])}</span></div>
+    </div>
+  </header>
+"""
     return f"""<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -733,37 +841,40 @@ def render_document(catalog: dict, active: str | None) -> str:
 <body>
 <a class="skip" href="#content">跳到項目</a>
 <div class="wrap">
-  <header class="hero">
-    <p class="kicker">每 6 小時更新</p>
-    <h1>Open Source Catalog</h1>
-    <p class="lede">AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。</p>
-    <div class="stats">
-      <div class="stat"><b>{project_count}</b><span>開源項目</span></div>
-      <div class="stat"><b>{paper_count}</b><span>未另列 repo 嘅論文</span></div>
-      <div class="stat"><b>{esc(format_hk(catalog["updated_at"]).split(" ")[0])}</b><span>{esc(format_hk(catalog["updated_at"]).split(" ", 1)[1])}</span></div>
-    </div>
-  </header>
-  <div class="layout">
-    <nav class="side" aria-label="分類">{''.join(nav)}</nav>
-    <main id="content">
-      <form class="search" role="search" onsubmit="return false">
-        <label class="sr" for="q" style="position:absolute;left:-999px">搜尋</label>
-        <input id="q" type="search" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
-      </form>
-      <p id="empty">沒有符合呢個搜尋嘅項目。</p>
-      {''.join(sections)}
-    </main>
+  {hero}
+  <div class="stickybar">
+    {nav}
+    <form class="search" role="search" onsubmit="return false">
+      <label class="sr" for="q" style="position:absolute;left:-999px">搜尋</label>
+      <input id="q" type="search" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
+    </form>
   </div>
+  <main class="page" id="content">
+    <p id="empty">沒有符合呢個搜尋嘅項目。</p>
+    {body}
+  </main>
   <footer class="site">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 排序以 stars 為準 · 重複項目只保留一次</footer>
 </div>
 <script>
 (function () {{
   const input = document.querySelector("#q");
-  const cards = Array.from(document.querySelectorAll("[data-search]"));
+  const hub = document.querySelector("#hub");
+  const results = document.querySelector("#results");
+  const cards = Array.from(document.querySelectorAll("#results [data-search], section [data-search]"));
   const sections = Array.from(document.querySelectorAll("[data-section]"));
   const empty = document.querySelector("#empty");
   function apply() {{
     const q = input.value.trim().toLowerCase();
+    if (hub && results) {{
+      const browsing = q.length === 0;
+      hub.hidden = !browsing;
+      results.hidden = browsing;
+      if (browsing) {{
+        empty.hidden = true;
+        empty.style.display = "none";
+        return;
+      }}
+    }}
     let shown = 0;
     cards.forEach((card) => {{
       const ok = !q || card.dataset.search.includes(q);
@@ -1171,16 +1282,27 @@ def validate(catalog: dict | None = None) -> None:
     html_text = (ROOT / "index.html").read_text()
     if PAGES_ROOT not in html_text:
         raise SystemExit("index canonical is not the GitHub Pages root")
+    if 'href="ai-agent/"' not in html_text or 'href="#ai-agent"' in html_text:
+        raise SystemExit("home must link to category pages instead of scrolling")
     for project in projects:
         if project["full_name"] not in html_text:
             raise SystemExit(f"index missing {project['full_name']}")
+        if project.get("summary_locked"):
+            length = len(project.get("summary") or "")
+            if length < 80 or length > 150:
+                raise SystemExit(f"summary for {project['full_name']} is {length} chars, want about 100")
     for category in CATEGORIES:
         page = (ROOT / category["dir"] / "index.html").read_text()
         if category["title"] not in page:
             raise SystemExit(f"subpage missing title {category['title']}")
+        if 'href="../"' not in page:
+            raise SystemExit(f"{category['dir']} does not link back to the catalog")
         page_root = f"{PAGES_ROOT}{category['dir']}/"
         if page_root not in page:
             raise SystemExit(f"{category['dir']} canonical is not {page_root}")
+        for project in grouped[category["id"]]:
+            if project["full_name"] not in page:
+                raise SystemExit(f"{category['dir']} missing {project['full_name']}")
     print(f"validated {len(projects)} projects across {len(CATEGORIES)} categories")
 
 

@@ -76,31 +76,72 @@ h1 {
 }
 .stat b { display: block; font-family: Fraunces, Georgia, serif; font-size: 22px; font-weight: 560; }
 .stat span { color: var(--faint); font-size: 13px; }
-.layout { display: grid; grid-template-columns: 220px 1fr; gap: 28px; padding-bottom: 72px; }
-nav.side {
+.stickybar {
   position: sticky;
-  top: 16px;
-  align-self: start;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding-top: 8px;
+  top: 0;
+  z-index: 3;
+  padding: 8px 0 12px;
+  background: linear-gradient(var(--bg) 72%, rgba(12, 13, 17, 0.94) 88%, transparent);
 }
-nav.side a {
+nav.pages {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+nav.pages a {
   text-decoration: none;
   color: var(--muted);
+  border: 1px solid var(--line);
+  background: rgba(21, 23, 30, 0.92);
   border-radius: 999px;
   padding: 8px 12px;
-  display: flex;
+  display: inline-flex;
+  align-items: center;
   justify-content: space-between;
   gap: 8px;
+  white-space: nowrap;
 }
-nav.side a:hover, nav.side a[aria-current="page"] {
-  background: var(--bg-raise);
-  color: var(--text);
+nav.pages a:hover { color: var(--text); border-color: var(--gold); }
+nav.pages a[aria-current="page"] {
+  background: var(--gold);
+  color: var(--ink);
+  border-color: var(--gold);
 }
-nav.side .count { color: var(--faint); font-variant-numeric: tabular-nums; }
-.search { position: sticky; top: 0; z-index: 2; background: linear-gradient(var(--bg), rgba(12,13,17,0.92) 70%, transparent); padding: 8px 0 14px; }
+nav.pages .count { color: var(--faint); font-variant-numeric: tabular-nums; }
+nav.pages a[aria-current="page"] .count { color: var(--ink); }
+.search { padding: 0; }
+.hub { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.hub[hidden], #results[hidden] { display: none !important; }
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 196px;
+  text-decoration: none;
+  background: rgba(21, 23, 30, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+}
+.tile:hover { border-color: var(--gold); }
+.tile-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.tile h2 {
+  margin: 0;
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 560;
+  letter-spacing: -0.04em;
+}
+.tile .count { color: var(--gold); font-family: Fraunces, Georgia, serif; font-size: 28px; line-height: 1; }
+.tile p { margin: 0; color: var(--muted); }
+.tile .top { color: var(--text); }
+.tile .go { margin-top: auto; color: var(--gold); }
+.hero-sub { padding-top: 22px; }
+.hero-sub h1 { font-size: clamp(36px, 5vw, 56px); }
+.kicker a { text-decoration: none; }
+main.page { padding-bottom: 72px; }
 .search input {
   width: 100%;
   background: var(--bg-raise);
@@ -137,7 +178,7 @@ nav.side .count { color: var(--faint); font-variant-numeric: tabular-nums; }
 .card h3 a:hover { color: var(--gold); }
 .stars { color: var(--gold); font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 650; }
 .meta { color: var(--faint); font-size: 13px; margin: 6px 0 8px; overflow-wrap: anywhere; }
-.summary { margin: 0; }
+.summary { margin: 0; color: #ebe4d8; }
 .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 .links a, .badge {
   text-decoration: none;
@@ -155,298 +196,308 @@ nav.side .count { color: var(--faint); font-variant-numeric: tabular-nums; }
 .papers h3 { margin: 0 0 10px; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
 #empty { display: none; color: var(--muted); padding: 12px 0 24px; }
 footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
+@media (min-width: 800px) {
+  .hub { grid-template-columns: 1fr 1fr; }
+}
 @media (min-width: 980px) {
   .grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 800px) {
-  .layout { grid-template-columns: 1fr; gap: 8px; }
-  nav.side { position: static; flex-direction: row; overflow-x: auto; padding-bottom: 8px; }
-  nav.side a { white-space: nowrap; }
 }
 </style>
 </head>
 <body>
 <a class="skip" href="#content">跳到項目</a>
 <div class="wrap">
-  <header class="hero">
-    <p class="kicker">每 6 小時更新</p>
-    <h1>Open Source Catalog</h1>
-    <p class="lede">AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。</p>
+  
+<header class="hero hero-sub">
+    <p class="kicker"><a href="../">Open Source Catalog</a></p>
+    <h1>Crypto Trading</h1>
+    <p class="lede">加密貨幣交易所 API、交易機械人同回測工具。 開源項目按 GitHub stars 由多至少。</p>
     <div class="stats">
-      <div class="stat"><b>200</b><span>開源項目</span></div>
-      <div class="stat"><b>7</b><span>未另列 repo 嘅論文</span></div>
+      <div class="stat"><b>27</b><span>開源項目</span></div>
+      <div class="stat"><b>0</b><span>相關論文</span></div>
       <div class="stat"><b>2026年10月28日</b><span>20:06（香港時間）</span></div>
     </div>
   </header>
-  <div class="layout">
-    <nav class="side" aria-label="分類"><a href="../index.html">全部<span class="count">200</span></a><a href="../ai-agent/">AI Agent<span class="count">42</span></a><a href="../image/">圖像<span class="count">37</span></a><a href="../video/">影片<span class="count">32</span></a><a href="../vfx-cg-blender/">VFX / CG / Blender<span class="count">32</span></a><a href="../stock-trading/">Stock Trading<span class="count">30</span></a><a href="./" aria-current="page">Crypto Trading<span class="count">27</span></a></nav>
-    <main id="content">
-      <form class="search" role="search" onsubmit="return false">
-        <label class="sr" for="q" style="position:absolute;left:-999px">搜尋</label>
-        <input id="q" type="search" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
-      </form>
-      <p id="empty">沒有符合呢個搜尋嘅項目。</p>
-      <section class="section" id="crypto-trading" data-section>
-  <h2>Crypto Trading</h2>
-  <p class="blurb">加密貨幣交易所 API、交易機械人同回測工具。 開源項目按 GitHub stars 由多至少。</p>
-  <div class="grid"><article class="card" data-search="freqtrade freqtrade/freqtrade 免費開源嘅加密貨幣交易機械人，包含策略、回測同實盤。 free, open source crypto trading bot python algorithmic-trading bitcoin cryptocurrencies cryptocurrency freqtrade python telegram-bot trade">
+
+  <div class="stickybar">
+    <nav class="pages" aria-label="分類"><a href="../">目錄</a><a href="../ai-agent/">AI Agent<span class="count">42</span></a><a href="../image/">圖像<span class="count">37</span></a><a href="../video/">影片<span class="count">32</span></a><a href="../vfx-cg-blender/">VFX / CG / Blender<span class="count">32</span></a><a href="../stock-trading/">Stock Trading<span class="count">30</span></a><a href="./" aria-current="page">Crypto Trading<span class="count">27</span></a></nav>
+    <form class="search" role="search" onsubmit="return false">
+      <label class="sr" for="q" style="position:absolute;left:-999px">搜尋</label>
+      <input id="q" type="search" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
+    </form>
+  </div>
+  <main class="page" id="content">
+    <p id="empty">沒有符合呢個搜尋嘅項目。</p>
+    <section class="section" id="crypto-trading" data-section>
+  <div class="grid"><article class="card" id="p-freqtrade-freqtrade" data-search="freqtrade freqtrade/freqtrade 免費開源嘅加密貨幣交易機械人，包含策略、回測同實盤。你用 python 寫買賣規則，可以先用歷史數據測試，再接到交易所自動落單。策略檔、歷史回測同實盤設定都喺同一套機械人入面。 free, open source crypto trading bot python algorithmic-trading bitcoin cryptocurrencies cryptocurrency freqtrade python telegram-bot trade">
   <header>
     <h3><span class="rank">01</span><a href="https://github.com/freqtrade/freqtrade">freqtrade</a></h3>
     <div class="stars">★ 56,077</div>
   </header>
   <p class="meta">freqtrade/freqtrade · Python · GPL-3.0 · 最近推送 2026-10-27</p>
-  <p class="summary">免費開源嘅加密貨幣交易機械人，包含策略、回測同實盤。</p>
+  <p class="summary">免費開源嘅加密貨幣交易機械人，包含策略、回測同實盤。你用 Python 寫買賣規則，可以先用歷史數據測試，再接到交易所自動落單。策略檔、歷史回測同實盤設定都喺同一套機械人入面。</p>
   <div class="links"><a href="https://github.com/freqtrade/freqtrade">GitHub</a><a href="https://www.freqtrade.io">主頁</a></div>
   <div class="topics"><span>#algorithmic-trading</span><span>#bitcoin</span><span>#cryptocurrencies</span></div>
-</article><article class="card" data-search="ccxt ccxt/ccxt 統一咗一百幾個加密貨幣交易所嘅交易 api，有多種程式語言。 a unified trading api with more than 100 crypto exchanges and prediction markets in javascript / typescript / python / c# / php / go / java / rust python altcoin api arbitrage bitcoin bot btc crypto cryptocurrencies">
+</article><article class="card" id="p-ccxt-ccxt" data-search="ccxt ccxt/ccxt 統一咗一百幾個加密貨幣交易所嘅交易 api，有多種程式語言。同一套方法可以查價同落單，換交易所時少改程式，係很多交易機械人嘅底層。換交易所時多數只改名稱同密鑰，買賣方法可以留低。 a unified trading api with more than 100 crypto exchanges and prediction markets in javascript / typescript / python / c# / php / go / java / rust python altcoin api arbitrage bitcoin bot btc crypto cryptocurrencies">
   <header>
     <h3><span class="rank">02</span><a href="https://github.com/ccxt/ccxt">ccxt</a></h3>
     <div class="stars">★ 44,606</div>
   </header>
   <p class="meta">ccxt/ccxt · Python · MIT · 最近推送 2026-10-28</p>
-  <p class="summary">統一咗一百幾個加密貨幣交易所嘅交易 API，有多種程式語言。</p>
+  <p class="summary">統一咗一百幾個加密貨幣交易所嘅交易 API，有多種程式語言。同一套方法可以查價同落單，換交易所時少改程式，係很多交易機械人嘅底層。換交易所時多數只改名稱同密鑰，買賣方法可以留低。</p>
   <div class="links"><a href="https://github.com/ccxt/ccxt">GitHub</a><a href="https://docs.ccxt.com">主頁</a></div>
   <div class="topics"><span>#altcoin</span><span>#api</span><span>#arbitrage</span></div>
-</article><article class="card" data-search="hummingbot hummingbot/hummingbot 用嚟建立同部署高頻加密貨幣交易機械人嘅開源軟件，常見於做市。 open source software that helps you create and deploy high-frequency crypto trading bots python ai-agents algotrading arbitrage backtesting binance bitcoin crypto cryptocurrency">
+</article><article class="card" id="p-hummingbot-hummingbot" data-search="hummingbot hummingbot/hummingbot 用嚟建立同部署高頻加密貨幣交易機械人嘅開源軟件，常見於做市。可以喺買賣價之間掛單，亦有連接不同交易所同策略嘅框架。做市掛單同庫存控制係常見用法，唔止係單向追漲。庫存偏了一邊時，做市策略要自己調。 open source software that helps you create and deploy high-frequency crypto trading bots python ai-agents algotrading arbitrage backtesting binance bitcoin crypto cryptocurrency">
   <header>
     <h3><span class="rank">03</span><a href="https://github.com/hummingbot/hummingbot">hummingbot</a></h3>
     <div class="stars">★ 20,756</div>
   </header>
   <p class="meta">hummingbot/hummingbot · Python · Apache-2.0 · 最近推送 2026-10-20</p>
-  <p class="summary">用嚟建立同部署高頻加密貨幣交易機械人嘅開源軟件，常見於做市。</p>
+  <p class="summary">用嚟建立同部署高頻加密貨幣交易機械人嘅開源軟件，常見於做市。可以喺買賣價之間掛單，亦有連接不同交易所同策略嘅框架。做市掛單同庫存控制係常見用法，唔止係單向追漲。庫存偏了一邊時，做市策略要自己調。</p>
   <div class="links"><a href="https://github.com/hummingbot/hummingbot">GitHub</a><a href="https://hummingbot.org">主頁</a></div>
   <div class="topics"><span>#ai-agents</span><span>#algotrading</span><span>#arbitrage</span></div>
-</article><article class="card" data-search="stocksharp stocksharp/stocksharp 演算法交易平台，可以開發股票、外匯同加密貨幣交易程式。 algorithmic trading and quantitative trading open source platform to develop trading robots (stock markets, forex, crypto, bitcoins, and options). c# algorithmic-trading algorithmic-trading-engine backtesting bitcoins broker brokers c-sharp crypto">
+</article><article class="card" id="p-stocksharp-stocksharp" data-search="stocksharp stocksharp/stocksharp 演算法交易平台，可以開發股票、外匯同加密貨幣交易程式。雖然放喺加密分類，同一套工具亦涵蓋傳統市場，適合寫跨資產嘅交易程式。股票同外匯都寫到，所以唔好當佢只服務加密貨幣。傳統市場同加密貨幣可以放喺同一個程式試。 algorithmic trading and quantitative trading open source platform to develop trading robots (stock markets, forex, crypto, bitcoins, and options). c# algorithmic-trading algorithmic-trading-engine backtesting bitcoins broker brokers c-sharp crypto">
   <header>
     <h3><span class="rank">04</span><a href="https://github.com/StockSharp/StockSharp">StockSharp</a></h3>
     <div class="stars">★ 11,015</div>
   </header>
   <p class="meta">StockSharp/StockSharp · C# · 最近推送 2026-10-25</p>
-  <p class="summary">演算法交易平台，可以開發股票、外匯同加密貨幣交易程式。</p>
+  <p class="summary">演算法交易平台，可以開發股票、外匯同加密貨幣交易程式。雖然放喺加密分類，同一套工具亦涵蓋傳統市場，適合寫跨資產嘅交易程式。股票同外匯都寫到，所以唔好當佢只服務加密貨幣。傳統市場同加密貨幣可以放喺同一個程式試。</p>
   <div class="links"><a href="https://github.com/StockSharp/StockSharp">GitHub</a><a href="https://stocksharp.com">主頁</a></div>
   <div class="topics"><span>#algorithmic-trading</span><span>#algorithmic-trading-engine</span><span>#backtesting</span></div>
-</article><article class="card" data-search="gekko askmike/gekko 用 node.js 寫嘅比特幣交易機械人。倉庫已封存。 a bitcoin trading bot written in node - https://gekko.wizb.it/ javascript bitcoin exchange gekko trading-bot trading-strategies">
+</article><article class="card" id="p-askmike-gekko" data-search="gekko askmike/gekko 用 node.js 寫嘅比特幣交易機械人，帶紙上交易同策略插件。倉庫已封存，新專案未必再更新，但仍然係早期 javascript 交易機械人嘅常見例子。已封存，新策略建議睇仍有人維護嘅機械人，呢個留作對照。 a bitcoin trading bot written in node - https://gekko.wizb.it/ javascript bitcoin exchange gekko trading-bot trading-strategies">
   <header>
     <h3><span class="rank">05</span><a href="https://github.com/askmike/gekko">gekko</a></h3>
     <div class="stars">★ 10,180</div>
   </header>
   <p class="meta">askmike/gekko · JavaScript · MIT · 最近推送 2020-02-16</p>
-  <p class="summary">用 Node.js 寫嘅比特幣交易機械人。倉庫已封存。</p>
+  <p class="summary">用 Node.js 寫嘅比特幣交易機械人，帶紙上交易同策略插件。倉庫已封存，新專案未必再更新，但仍然係早期 JavaScript 交易機械人嘅常見例子。已封存，新策略建議睇仍有人維護嘅機械人，呢個留作對照。</p>
   <div class="links"><a href="https://github.com/askmike/gekko">GitHub</a><span class="badge arch">已封存</span></div>
   <div class="topics"><span>#bitcoin</span><span>#exchange</span><span>#gekko</span></div>
-</article><article class="card" data-search="binance-trade-bot ccxt/binance-trade-bot 自動化加密貨幣交易機械人，用嚟按策略落單。 automated cryptocurrency trading bot python ">
+</article><article class="card" id="p-ccxt-binance-trade-bot" data-search="binance-trade-bot ccxt/binance-trade-bot 自動化加密貨幣交易機械人，用嚟按策略落單。建立喺交易所接口之上，適合想要一個現成機械人，而唔係只拿 api 庫自己寫全部流程。想少寫交易所細節、直接有一個會落單嘅程式時用。 automated cryptocurrency trading bot python ">
   <header>
     <h3><span class="rank">06</span><a href="https://github.com/ccxt/binance-trade-bot">binance-trade-bot</a></h3>
     <div class="stars">★ 8,806</div>
   </header>
   <p class="meta">ccxt/binance-trade-bot · Python · GPL-3.0 · 最近推送 2025-03-12</p>
-  <p class="summary">自動化加密貨幣交易機械人，用嚟按策略落單。</p>
+  <p class="summary">自動化加密貨幣交易機械人，用嚟按策略落單。建立喺交易所接口之上，適合想要一個現成機械人，而唔係只拿 API 庫自己寫全部流程。想少寫交易所細節、直接有一個會落單嘅程式時用。</p>
   <div class="links"><a href="https://github.com/ccxt/binance-trade-bot">GitHub</a></div>
   
-</article><article class="card" data-search="jesse jesse-ai/jesse 用 python 寫嘅進階加密貨幣交易機械人，強調研究同實盤。 an advanced crypto trading bot written in python python algo-trading algorithmic-trading bitcoin bot crypto crypto-bot crypto-bot-trading cryptocurrency">
+</article><article class="card" id="p-jesse-ai-jesse" data-search="jesse jesse-ai/jesse 用 python 寫嘅進階加密貨幣交易機械人，強調研究同實盤。策略、回測同優化放喺同一套框架，方便先驗證規則再接到市場。研究階段嘅優化同之後實盤用同一套策略定義。優化完嘅參數可以沿用到實盤設定。 an advanced crypto trading bot written in python python algo-trading algorithmic-trading bitcoin bot crypto crypto-bot crypto-bot-trading cryptocurrency">
   <header>
     <h3><span class="rank">07</span><a href="https://github.com/jesse-ai/jesse">jesse</a></h3>
     <div class="stars">★ 8,719</div>
   </header>
   <p class="meta">jesse-ai/jesse · Python · MIT · 最近推送 2026-10-26</p>
-  <p class="summary">用 Python 寫嘅進階加密貨幣交易機械人，強調研究同實盤。</p>
+  <p class="summary">用 Python 寫嘅進階加密貨幣交易機械人，強調研究同實盤。策略、回測同優化放喺同一套框架，方便先驗證規則再接到市場。研究階段嘅優化同之後實盤用同一套策略定義。優化完嘅參數可以沿用到實盤設定。</p>
   <div class="links"><a href="https://github.com/jesse-ai/jesse">GitHub</a><a href="https://jesse.trade">主頁</a></div>
   <div class="topics"><span>#algo-trading</span><span>#algorithmic-trading</span><span>#bitcoin</span></div>
-</article><article class="card" data-search="zenbot deviavir/zenbot 命令列加密貨幣交易機械人。倉庫已封存。 zenbot is a command-line cryptocurrency trading bot using node.js and mongodb. html nodejs paper-trading python strategy trade zenbot">
+</article><article class="card" id="p-deviavir-zenbot" data-search="zenbot deviavir/zenbot 命令列加密貨幣交易機械人，用策略腳本自動買賣。倉庫已封存，維護已經停低，收錄係因為佢曾經係命令列機械人嘅常見起點。已封存而且維護停低，只適合作為命令列機械人嘅舊例子。唔好期待佢再跟上交易所嘅介面改版。 zenbot is a command-line cryptocurrency trading bot using node.js and mongodb. html nodejs paper-trading python strategy trade zenbot">
   <header>
     <h3><span class="rank">08</span><a href="https://github.com/DeviaVir/zenbot">zenbot</a></h3>
     <div class="stars">★ 8,256</div>
   </header>
   <p class="meta">DeviaVir/zenbot · HTML · MIT · 最近推送 2022-02-14</p>
-  <p class="summary">命令列加密貨幣交易機械人。倉庫已封存。</p>
+  <p class="summary">命令列加密貨幣交易機械人，用策略腳本自動買賣。倉庫已封存，維護已經停低，收錄係因為佢曾經係命令列機械人嘅常見起點。已封存而且維護停低，只適合作為命令列機械人嘅舊例子。唔好期待佢再跟上交易所嘅介面改版。</p>
   <div class="links"><a href="https://github.com/DeviaVir/zenbot">GitHub</a><span class="badge arch">已封存</span></div>
   <div class="topics"><span>#nodejs</span><span>#paper-trading</span><span>#python</span></div>
-</article><article class="card" data-search="tensortrade tensortrade-org/tensortrade 用強化學習訓練、評估同部署交易 agent 嘅框架。 an open source reinforcement learning framework for training, evaluating, and deploying robust trading agents. python ">
+</article><article class="card" id="p-tensortrade-org-tensortrade" data-search="tensortrade tensortrade-org/tensortrade 用強化學習訓練、評估同部署交易 agent 嘅框架。市場被寫成環境，代理喺入面學習行動，適合研究學習型策略，而唔係手寫指標規則。想訓練一個會交易嘅代理，而唔係寫死均線規則。 an open source reinforcement learning framework for training, evaluating, and deploying robust trading agents. python ">
   <header>
     <h3><span class="rank">09</span><a href="https://github.com/tensortrade-org/tensortrade">tensortrade</a></h3>
     <div class="stars">★ 7,254</div>
   </header>
   <p class="meta">tensortrade-org/tensortrade · Python · Apache-2.0 · 最近推送 2026-02-19</p>
-  <p class="summary">用強化學習訓練、評估同部署交易 agent 嘅框架。</p>
+  <p class="summary">用強化學習訓練、評估同部署交易 agent 嘅框架。市場被寫成環境，代理喺入面學習行動，適合研究學習型策略，而唔係手寫指標規則。想訓練一個會交易嘅代理，而唔係寫死均線規則。</p>
   <div class="links"><a href="https://github.com/tensortrade-org/tensortrade">GitHub</a><a href="https://discord.gg/ZZ7BGWh">主頁</a></div>
   
-</article><article class="card" data-search="python-binance sammchardy/python-binance 幣安交易所 api 嘅 python 實作，用嚟寫自動交易。 binance exchange api python implementation for automated trading python api binance cryptocurrency python python2 python3 websockets">
+</article><article class="card" id="p-sammchardy-python-binance" data-search="python-binance sammchardy/python-binance 幣安交易所 api 嘅 python 實作，用嚟寫自動交易。行情、帳戶同下單都可以用 python 呼叫，係接幣安時常用嘅客戶端，而唔係完整策略框架。只解決幣安 api，策略同風控要你自己寫喺上面。 binance exchange api python implementation for automated trading python api binance cryptocurrency python python2 python3 websockets">
   <header>
     <h3><span class="rank">10</span><a href="https://github.com/sammchardy/python-binance">python-binance</a></h3>
     <div class="stars">★ 7,217</div>
   </header>
   <p class="meta">sammchardy/python-binance · Python · MIT · 最近推送 2026-06-08</p>
-  <p class="summary">幣安交易所 API 嘅 Python 實作，用嚟寫自動交易。</p>
+  <p class="summary">幣安交易所 API 嘅 Python 實作，用嚟寫自動交易。行情、帳戶同下單都可以用 Python 呼叫，係接幣安時常用嘅客戶端，而唔係完整策略框架。只解決幣安 API，策略同風控要你自己寫喺上面。</p>
   <div class="links"><a href="https://github.com/sammchardy/python-binance">GitHub</a><a href="https://python-binance.readthedocs.io/en/latest/">主頁</a></div>
   <div class="topics"><span>#api</span><span>#binance</span><span>#cryptocurrency</span></div>
-</article><article class="card" data-search="octobot drakkar-software/octobot 開源加密貨幣交易機械人，支援網格、定投、tradingview 同 ai 策略。 free open source crypto trading bot to automate ai, grid, dca and tradingview strategies on binance, hyperliquid and 15+ exchanges, with a simple interface. python ai-trading backtest binance-api bitcoin coinbase-bot cryptocurrencies free hyperliquid-trading-bot">
+</article><article class="card" id="p-drakkar-software-octobot" data-search="octobot drakkar-software/octobot 開源加密貨幣交易機械人，支援網格、定投、tradingview 同 ai 策略。有介面可以配置同監察，適合想用現成策略類型，而唔係由零寫交易循環。網格同定投可以先喺介面開，再先考慮自己寫策略。 free open source crypto trading bot to automate ai, grid, dca and tradingview strategies on binance, hyperliquid and 15+ exchanges, with a simple interface. python ai-trading backtest binance-api bitcoin coinbase-bot cryptocurrencies free hyperliquid-trading-bot">
   <header>
     <h3><span class="rank">11</span><a href="https://github.com/Drakkar-Software/OctoBot">OctoBot</a></h3>
     <div class="stars">★ 6,872</div>
   </header>
   <p class="meta">Drakkar-Software/OctoBot · Python · GPL-3.0 · 最近推送 2026-10-27</p>
-  <p class="summary">開源加密貨幣交易機械人，支援網格、定投、TradingView 同 AI 策略。</p>
+  <p class="summary">開源加密貨幣交易機械人，支援網格、定投、TradingView 同 AI 策略。有介面可以配置同監察，適合想用現成策略類型，而唔係由零寫交易循環。網格同定投可以先喺介面開，再先考慮自己寫策略。</p>
   <div class="links"><a href="https://github.com/Drakkar-Software/OctoBot">GitHub</a><a href="https://www.octobot.cloud">主頁</a></div>
   <div class="topics"><span>#ai-trading</span><span>#backtest</span><span>#binance-api</span></div>
-</article><article class="card" data-search="superalgos superalgos/superalgos 用視覺化方式設計加密貨幣交易機械人同策略嘅開源平台。 free, open-source crypto trading bot, automated bitcoin / cryptocurrency trading software, algorithmic trading bots. visually design your crypto trading bot, leveraging an integrated charting system, data-mining, backtesting, paper trading, and multi-server crypto bot deployments. javascript algorithmic-trading algotrading bitcoin-trading bitcoin-trading-bots crypto crypto-trading crypto-trading-bots crypto-trading-strategies">
+</article><article class="card" id="p-superalgos-superalgos" data-search="superalgos superalgos/superalgos 用視覺化方式設計加密貨幣交易機械人同策略嘅開源平台。流程同數據可以用圖形連接，適合想設計策略但又不想全部用純程式表達嘅人。策略用圖形表達，適合唔想全程只對住程式檔嘅人。圖形策略改完可以即刻睇數據點樣流過。 free, open-source crypto trading bot, automated bitcoin / cryptocurrency trading software, algorithmic trading bots. visually design your crypto trading bot, leveraging an integrated charting system, data-mining, backtesting, paper trading, and multi-server crypto bot deployments. javascript algorithmic-trading algotrading bitcoin-trading bitcoin-trading-bots crypto crypto-trading crypto-trading-bots crypto-trading-strategies">
   <header>
     <h3><span class="rank">12</span><a href="https://github.com/Superalgos/Superalgos">Superalgos</a></h3>
     <div class="stars">★ 5,738</div>
   </header>
   <p class="meta">Superalgos/Superalgos · JavaScript · Apache-2.0 · 最近推送 2026-10-27</p>
-  <p class="summary">用視覺化方式設計加密貨幣交易機械人同策略嘅開源平台。</p>
+  <p class="summary">用視覺化方式設計加密貨幣交易機械人同策略嘅開源平台。流程同數據可以用圖形連接，適合想設計策略但又不想全部用純程式表達嘅人。策略用圖形表達，適合唔想全程只對住程式檔嘅人。圖形策略改完可以即刻睇數據點樣流過。</p>
   <div class="links"><a href="https://github.com/Superalgos/Superalgos">GitHub</a><a href="https://www.superalgos.org">主頁</a></div>
   <div class="topics"><span>#algorithmic-trading</span><span>#algotrading</span><span>#bitcoin-trading</span></div>
-</article><article class="card" data-search="crypto-signal cryptosignal/crypto-signal 做技術分析同交易訊號嘅加密貨幣機械人。 github.com/cryptosignal - trading &amp; technical analysis bot - 4,100+ stars, 1,100+ forks python abenezer-mamo algorithmic-trading binance binance-api bitcoin bittrex-api coinbase coinbase-api">
+</article><article class="card" id="p-cryptosignal-crypto-signal" data-search="crypto-signal cryptosignal/crypto-signal 做技術分析同交易訊號嘅加密貨幣機械人。佢按指標發出訊號，可以用來提醒或者接落單，重點係訊號而唔係一整套研究平台。先出訊號再決定點接落單，研究平台唔係佢嘅範圍。訊號出咗先至決定落唔落單。 github.com/cryptosignal - trading &amp; technical analysis bot - 4,100+ stars, 1,100+ forks python abenezer-mamo algorithmic-trading binance binance-api bitcoin bittrex-api coinbase coinbase-api">
   <header>
     <h3><span class="rank">13</span><a href="https://github.com/CryptoSignal/Crypto-Signal">Crypto-Signal</a></h3>
     <div class="stars">★ 5,654</div>
   </header>
   <p class="meta">CryptoSignal/Crypto-Signal · Python · MIT · 最近推送 2024-07-07</p>
-  <p class="summary">做技術分析同交易訊號嘅加密貨幣機械人。</p>
+  <p class="summary">做技術分析同交易訊號嘅加密貨幣機械人。佢按指標發出訊號，可以用來提醒或者接落單，重點係訊號而唔係一整套研究平台。先出訊號再決定點接落單，研究平台唔係佢嘅範圍。訊號出咗先至決定落唔落單。</p>
   <div class="links"><a href="https://github.com/CryptoSignal/Crypto-Signal">GitHub</a><a href="https://www.linkedin.com/in/AbenezerMamo">主頁</a></div>
   <div class="topics"><span>#abenezer-mamo</span><span>#algorithmic-trading</span><span>#binance</span></div>
-</article><article class="card" data-search="binance-trading-bot chrisleekr/binance-trading-bot 可插拔策略嘅幣安交易機械人，帶歷史回測同即時看板。 automated binance trading bot with pluggable strategies, historical backtesting, and a live dashboard typescript binance binance-api binance-api-node binance-trading-bot bot cryptocurrency cryptotrading grid-trading">
+</article><article class="card" id="p-chrisleekr-binance-trading-bot" data-search="binance-trading-bot chrisleekr/binance-trading-bot 可插拔策略嘅幣安交易機械人，帶歷史回測同即時看板。策略可以替換，並喺網頁睇運行情況，適合想有介面監察幣安自動交易嘅人。策略可換，網頁看板用來睇佢有冇按預期落單。看板用來核對策略有冇偏離預期。 automated binance trading bot with pluggable strategies, historical backtesting, and a live dashboard typescript binance binance-api binance-api-node binance-trading-bot bot cryptocurrency cryptotrading grid-trading">
   <header>
     <h3><span class="rank">14</span><a href="https://github.com/chrisleekr/binance-trading-bot">binance-trading-bot</a></h3>
     <div class="stars">★ 5,594</div>
   </header>
   <p class="meta">chrisleekr/binance-trading-bot · TypeScript · Apache-2.0 · 最近推送 2026-10-28</p>
-  <p class="summary">可插拔策略嘅幣安交易機械人，帶歷史回測同即時看板。</p>
+  <p class="summary">可插拔策略嘅幣安交易機械人，帶歷史回測同即時看板。策略可以替換，並喺網頁睇運行情況，適合想有介面監察幣安自動交易嘅人。策略可換，網頁看板用來睇佢有冇按預期落單。看板用來核對策略有冇偏離預期。</p>
   <div class="links"><a href="https://github.com/chrisleekr/binance-trading-bot">GitHub</a><a href="https://chrisleekr.github.io/binance-trading-bot/">主頁</a></div>
   <div class="topics"><span>#binance</span><span>#binance-api</span><span>#binance-api-node</span></div>
-</article><article class="card" data-search="hftbacktest nkaz001/hftbacktest 高頻交易同做市回測工具，會計入限價單、排隊位置同延遲。 free, open source, a high frequency trading and market making backtesting and trading bot, which accounts for limit orders, queue positions, and latencies, utilizing full tick data for trades and order books(level-2 and level-3), with real-world crypto trading examples for binance and bybit rust algorithmic-trading algotrading backtesting backtesting-engine backtesting-trading-strategies binance crypto-bot crypto-trading">
+</article><article class="card" id="p-nkaz001-hftbacktest" data-search="hftbacktest nkaz001/hftbacktest 高頻交易同做市回測工具，會計入限價單、排隊位置同延遲。普通日線回測忽略嘅微觀結構，喺度會影響結果，適合測試做市而唔係波段策略。普通 k 線回測睇唔到排隊同延遲，做市就要用呢類工具。 free, open source, a high frequency trading and market making backtesting and trading bot, which accounts for limit orders, queue positions, and latencies, utilizing full tick data for trades and order books(level-2 and level-3), with real-world crypto trading examples for binance and bybit rust algorithmic-trading algotrading backtesting backtesting-engine backtesting-trading-strategies binance crypto-bot crypto-trading">
   <header>
     <h3><span class="rank">15</span><a href="https://github.com/nkaz001/hftbacktest">hftbacktest</a></h3>
     <div class="stars">★ 5,016</div>
   </header>
   <p class="meta">nkaz001/hftbacktest · Rust · MIT · 最近推送 2025-12-23</p>
-  <p class="summary">高頻交易同做市回測工具，會計入限價單、排隊位置同延遲。</p>
+  <p class="summary">高頻交易同做市回測工具，會計入限價單、排隊位置同延遲。普通日線回測忽略嘅微觀結構，喺度會影響結果，適合測試做市而唔係波段策略。普通 K 線回測睇唔到排隊同延遲，做市就要用呢類工具。</p>
   <div class="links"><a href="https://github.com/nkaz001/hftbacktest">GitHub</a></div>
   <div class="topics"><span>#algorithmic-trading</span><span>#algotrading</span><span>#backtesting</span></div>
-</article><article class="card" data-search="tribeca michaelgrosner/tribeca 用 node.js 寫嘅高頻加密貨幣做市平台。 a high frequency, market making cryptocurrency trading platform in node.js typescript bitcoin cryptocurrency docker exchange hft hft-trading market-maker trade">
+</article><article class="card" id="p-michaelgrosner-tribeca" data-search="tribeca michaelgrosner/tribeca 用 node.js 寫嘅高頻加密貨幣做市平台。提供做市所需嘅報價同管理介面，係早期 javascript 做市系統嘅一個完整例子。早期 node.js 做市平台，而家多用來參考報價同管理點樣分層。 a high frequency, market making cryptocurrency trading platform in node.js typescript bitcoin cryptocurrency docker exchange hft hft-trading market-maker trade">
   <header>
     <h3><span class="rank">16</span><a href="https://github.com/michaelgrosner/tribeca">tribeca</a></h3>
     <div class="stars">★ 4,115</div>
   </header>
   <p class="meta">michaelgrosner/tribeca · TypeScript · 最近推送 2021-12-08</p>
-  <p class="summary">用 Node.js 寫嘅高頻加密貨幣做市平台。</p>
+  <p class="summary">用 Node.js 寫嘅高頻加密貨幣做市平台。提供做市所需嘅報價同管理介面，係早期 JavaScript 做市系統嘅一個完整例子。早期 Node.js 做市平台，而家多用來參考報價同管理點樣分層。</p>
   <div class="links"><a href="https://github.com/michaelgrosner/tribeca">GitHub</a></div>
   <div class="topics"><span>#bitcoin</span><span>#cryptocurrency</span><span>#docker</span></div>
-</article><article class="card" data-search="rotki rotki/rotki 注重私隱嘅投資組合追蹤、會計同分析工具，常用於加密資產。 a portfolio tracking, analytics, accounting and management application that protects your privacy python accounting analytics bitcoin blockchain cryptocurrencies cryptocurrency-exchanges cryptocurrency-portfolio cryptocurrency-portfolio-tracking">
+</article><article class="card" id="p-rotki-rotki" data-search="rotki rotki/rotki 注重私隱嘅投資組合追蹤、會計同分析工具，常用於加密資產。數據可以留喺本地，用來整理持倉同稅務相關紀錄，而唔係自動落單嘅交易機械人。用嚟記持倉同會計，自動交易要另揀機械人。 a portfolio tracking, analytics, accounting and management application that protects your privacy python accounting analytics bitcoin blockchain cryptocurrencies cryptocurrency-exchanges cryptocurrency-portfolio cryptocurrency-portfolio-tracking">
   <header>
     <h3><span class="rank">17</span><a href="https://github.com/rotki/rotki">rotki</a></h3>
     <div class="stars">★ 4,064</div>
   </header>
   <p class="meta">rotki/rotki · Python · AGPL-3.0 · 最近推送 2026-10-28</p>
-  <p class="summary">注重私隱嘅投資組合追蹤、會計同分析工具，常用於加密資產。</p>
+  <p class="summary">注重私隱嘅投資組合追蹤、會計同分析工具，常用於加密資產。數據可以留喺本地，用來整理持倉同稅務相關紀錄，而唔係自動落單嘅交易機械人。用嚟記持倉同會計，自動交易要另揀機械人。</p>
   <div class="links"><a href="https://github.com/rotki/rotki">GitHub</a><a href="https://rotki.com">主頁</a></div>
   <div class="topics"><span>#accounting</span><span>#analytics</span><span>#bitcoin</span></div>
-</article><article class="card" data-search="krypto-trading-bot ctubio/krypto-trading-bot 用 c++ 寫、可自託管嘅高頻做市交易機械人。 self-hosted crypto trading bot (automated high frequency market making) written in c++ c++ binance bitcoin bitfinex bitmex bob-marley bot-platform coinbase cryptocurrency">
+</article><article class="card" id="p-ctubio-krypto-trading-bot" data-search="krypto-trading-bot ctubio/krypto-trading-bot 用 c++ 寫、可自託管嘅高頻做市交易機械人。重點係速度同自己部署，適合想跑做市、又想程式留喺自己伺服器嘅人。做市迴圈用 c++ 跑，部署同調校都喺你自己嘅機器。延遲敏感嘅做市先會考慮 c++ 呢類實作。 self-hosted crypto trading bot (automated high frequency market making) written in c++ c++ binance bitcoin bitfinex bitmex bob-marley bot-platform coinbase cryptocurrency">
   <header>
     <h3><span class="rank">18</span><a href="https://github.com/ctubio/Krypto-trading-bot">Krypto-trading-bot</a></h3>
     <div class="stars">★ 3,728</div>
   </header>
   <p class="meta">ctubio/Krypto-trading-bot · C++ · 最近推送 2024-12-15</p>
-  <p class="summary">用 C++ 寫、可自託管嘅高頻做市交易機械人。</p>
+  <p class="summary">用 C++ 寫、可自託管嘅高頻做市交易機械人。重點係速度同自己部署，適合想跑做市、又想程式留喺自己伺服器嘅人。做市迴圈用 C++ 跑，部署同調校都喺你自己嘅機器。延遲敏感嘅做市先會考慮 C++ 呢類實作。</p>
   <div class="links"><a href="https://github.com/ctubio/Krypto-trading-bot">GitHub</a><a href="https://127.0.0.1:3000">主頁</a></div>
   <div class="topics"><span>#binance</span><span>#bitcoin</span><span>#bitfinex</span></div>
-</article><article class="card" data-search="crypto-trading-bot haehnchen/crypto-trading-bot 支援 bitfinex、bitmex、幣安、bybit 等交易所嘅 javascript 交易機械人。 cryptocurrency trading bot in javascript for bitfinex, bitmex, binance, bybit ... (public edition) typescript binance bitfinex bitmex bot bybit ccxt coinbase crypto">
+</article><article class="card" id="p-haehnchen-crypto-trading-bot" data-search="crypto-trading-bot haehnchen/crypto-trading-bot 支援 bitfinex、bitmex、幣安、bybit 等交易所嘅 javascript 交易機械人。策略用程式接入多個場所，適合已經用 node.js、想自己托管機械人嘅人。已經用 node.js 又要接幾個交易所時，可以沿呢個機械人改。 cryptocurrency trading bot in javascript for bitfinex, bitmex, binance, bybit ... (public edition) typescript binance bitfinex bitmex bot bybit ccxt coinbase crypto">
   <header>
     <h3><span class="rank">19</span><a href="https://github.com/Haehnchen/crypto-trading-bot">crypto-trading-bot</a></h3>
     <div class="stars">★ 3,544</div>
   </header>
   <p class="meta">Haehnchen/crypto-trading-bot · TypeScript · MIT · 最近推送 2026-08-02</p>
-  <p class="summary">支援 Bitfinex、BitMEX、幣安、Bybit 等交易所嘅 JavaScript 交易機械人。</p>
+  <p class="summary">支援 Bitfinex、BitMEX、幣安、Bybit 等交易所嘅 JavaScript 交易機械人。策略用程式接入多個場所，適合已經用 Node.js、想自己托管機械人嘅人。已經用 Node.js 又要接幾個交易所時，可以沿呢個機械人改。</p>
   <div class="links"><a href="https://github.com/Haehnchen/crypto-trading-bot">GitHub</a></div>
   <div class="topics"><span>#binance</span><span>#bitfinex</span><span>#bitmex</span></div>
-</article><article class="card" data-search="binance-volatility-trading-bot cyberpunkmetalhead/binance-volatility-trading-bot 觀察幣安各幣波動，並交易升幅較高幣種嘅機械人。 this is a fully functioning binance trading bot that measures the volatility of every coin on binance and places trades with the highest gaining coins if you like this project consider donating though the brave browser to allow me to continuously improve the script. python ">
+</article><article class="card" id="p-cyberpunkmetalhead-binance-volatility-trading-bot" data-search="binance-volatility-trading-bot cyberpunkmetalhead/binance-volatility-trading-bot 觀察幣安各幣波動，並交易升幅較高幣種嘅機械人。策略圍繞短時間價格波動，而唔係長線持有，適合研究這類動量機械人點樣掃描市場。佢掃描短線波動，長線組合管理唔係呢個機械人嘅目標。 this is a fully functioning binance trading bot that measures the volatility of every coin on binance and places trades with the highest gaining coins if you like this project consider donating though the brave browser to allow me to continuously improve the script. python ">
   <header>
     <h3><span class="rank">20</span><a href="https://github.com/CyberPunkMetalHead/Binance-volatility-trading-bot">Binance-volatility-trading-bot</a></h3>
     <div class="stars">★ 3,495</div>
   </header>
   <p class="meta">CyberPunkMetalHead/Binance-volatility-trading-bot · Python · MIT · 最近推送 2023-08-06</p>
-  <p class="summary">觀察幣安各幣波動，並交易升幅較高幣種嘅機械人。</p>
+  <p class="summary">觀察幣安各幣波動，並交易升幅較高幣種嘅機械人。策略圍繞短時間價格波動，而唔係長線持有，適合研究這類動量機械人點樣掃描市場。佢掃描短線波動，長線組合管理唔係呢個機械人嘅目標。</p>
   <div class="links"><a href="https://github.com/CyberPunkMetalHead/Binance-volatility-trading-bot">GitHub</a></div>
   
-</article><article class="card" data-search="gocryptotrader thrasher-corp/gocryptotrader 用 go 寫、支援多個交易所嘅加密貨幣交易框架。 a cryptocurrency trading bot and framework supporting multiple exchanges written in golang. go algorithmic-trading algorithmic-trading-library cryptocurrency cryptocurrency-trading-bot exchange go golang trading-bot">
+</article><article class="card" id="p-thrasher-corp-gocryptotrader" data-search="gocryptotrader thrasher-corp/gocryptotrader 用 go 寫、支援多個交易所嘅加密貨幣交易框架。行情、訂單同交易所差異由框架處理，適合想用 go 建交易系統而唔係 python 機械人嘅人。想用 go 同時接幾個交易所時，可以由呢個框架起。 a cryptocurrency trading bot and framework supporting multiple exchanges written in golang. go algorithmic-trading algorithmic-trading-library cryptocurrency cryptocurrency-trading-bot exchange go golang trading-bot">
   <header>
     <h3><span class="rank">21</span><a href="https://github.com/thrasher-corp/gocryptotrader">gocryptotrader</a></h3>
     <div class="stars">★ 3,464</div>
   </header>
   <p class="meta">thrasher-corp/gocryptotrader · Go · MIT · 最近推送 2026-10-20</p>
-  <p class="summary">用 Go 寫、支援多個交易所嘅加密貨幣交易框架。</p>
+  <p class="summary">用 Go 寫、支援多個交易所嘅加密貨幣交易框架。行情、訂單同交易所差異由框架處理，適合想用 Go 建交易系統而唔係 Python 機械人嘅人。想用 Go 同時接幾個交易所時，可以由呢個框架起。</p>
   <div class="links"><a href="https://github.com/thrasher-corp/gocryptotrader">GitHub</a></div>
   <div class="topics"><span>#algorithmic-trading</span><span>#algorithmic-trading-library</span><span>#cryptocurrency</span></div>
-</article><article class="card" data-search="cryptofeed bmoscon/cryptofeed 處理多個交易所 websocket 行情嘅數據源。 cryptocurrency exchange websocket data feed handler python asyncio binance binance-api bitcoin btc coinbase coinbase-api crypto">
+</article><article class="card" id="p-bmoscon-cryptofeed" data-search="cryptofeed bmoscon/cryptofeed 處理多個交易所 websocket 行情嘅數據源。可以將成交同訂單簿正規化成統一事件，適合自己寫策略時先解決點樣穩定收價。策略之前先把各交易所嘅即時價收成同一種事件。收齊報價之後先至寫自己嘅訊號。 cryptocurrency exchange websocket data feed handler python asyncio binance binance-api bitcoin btc coinbase coinbase-api crypto">
   <header>
     <h3><span class="rank">22</span><a href="https://github.com/bmoscon/cryptofeed">cryptofeed</a></h3>
     <div class="stars">★ 2,934</div>
   </header>
   <p class="meta">bmoscon/cryptofeed · Python · 最近推送 2026-10-26</p>
-  <p class="summary">處理多個交易所 websocket 行情嘅數據源。</p>
+  <p class="summary">處理多個交易所 websocket 行情嘅數據源。可以將成交同訂單簿正規化成統一事件，適合自己寫策略時先解決點樣穩定收價。策略之前先把各交易所嘅即時價收成同一種事件。收齊報價之後先至寫自己嘅訊號。</p>
   <div class="links"><a href="https://github.com/bmoscon/cryptofeed">GitHub</a></div>
   <div class="topics"><span>#asyncio</span><span>#binance</span><span>#binance-api</span></div>
-</article><article class="card" data-search="opentrader open-trader/opentrader 帶介面嘅開源加密貨幣交易機械人，包含定投同網格策略。 🤖 open-source crypto trading bot | 📈 dca &amp; grid strategies | ✨ ui | ⭐ star to support the project! typescript algotrading bot crypto cryptocurrency custom-strategy dca-bot grid-bot rsi-strategy">
+</article><article class="card" id="p-open-trader-opentrader" data-search="opentrader open-trader/opentrader 帶介面嘅開源加密貨幣交易機械人，包含定投同網格策略。可以喺圖形介面配置同查看，適合想用常見策略而又希望程式開放嘅人。定投同網格有現成介面，進階規則再先改程式。想先試網格，再先改自己嘅規則。 🤖 open-source crypto trading bot | 📈 dca &amp; grid strategies | ✨ ui | ⭐ star to support the project! typescript algotrading bot crypto cryptocurrency custom-strategy dca-bot grid-bot rsi-strategy">
   <header>
     <h3><span class="rank">23</span><a href="https://github.com/Open-Trader/opentrader">opentrader</a></h3>
     <div class="stars">★ 2,912</div>
   </header>
   <p class="meta">Open-Trader/opentrader · TypeScript · Apache-2.0 · 最近推送 2025-06-29</p>
-  <p class="summary">帶介面嘅開源加密貨幣交易機械人，包含定投同網格策略。</p>
+  <p class="summary">帶介面嘅開源加密貨幣交易機械人，包含定投同網格策略。可以喺圖形介面配置同查看，適合想用常見策略而又希望程式開放嘅人。定投同網格有現成介面，進階規則再先改程式。想先試網格，再先改自己嘅規則。</p>
   <div class="links"><a href="https://github.com/Open-Trader/opentrader">GitHub</a><a href="https://opentrader.pro">主頁</a></div>
   <div class="topics"><span>#algotrading</span><span>#bot</span><span>#crypto</span></div>
-</article><article class="card" data-search="blankly blankly-finance/blankly 用少量程式碼做回測同部署，同一套程式可以交易股票、加密貨幣同外匯。 🚀 💸  easily build, backtest and deploy your algo in just a few lines of code. trade stocks, cryptos, and forex across exchanges w/ one package. python algotrading binance blankly bot bot-framework bots coinbase crypto">
+</article><article class="card" id="p-blankly-finance-blankly" data-search="blankly blankly-finance/blankly 用少量程式碼做回測同部署，同一套程式可以交易股票、加密貨幣同外匯。雖然放喺加密分類，策略介面亦覆蓋其他市場，方便一個寫法接到不同資產。同一策略檔可以換股票、加密或外匯，減少每個市場重寫一次。 🚀 💸  easily build, backtest and deploy your algo in just a few lines of code. trade stocks, cryptos, and forex across exchanges w/ one package. python algotrading binance blankly bot bot-framework bots coinbase crypto">
   <header>
     <h3><span class="rank">24</span><a href="https://github.com/blankly-finance/blankly">blankly</a></h3>
     <div class="stars">★ 2,483</div>
   </header>
   <p class="meta">blankly-finance/blankly · Python · LGPL-3.0 · 最近推送 2024-12-30</p>
-  <p class="summary">用少量程式碼做回測同部署，同一套程式可以交易股票、加密貨幣同外匯。</p>
+  <p class="summary">用少量程式碼做回測同部署，同一套程式可以交易股票、加密貨幣同外匯。雖然放喺加密分類，策略介面亦覆蓋其他市場，方便一個寫法接到不同資產。同一策略檔可以換股票、加密或外匯，減少每個市場重寫一次。</p>
   <div class="links"><a href="https://github.com/blankly-finance/blankly">GitHub</a><a href="https://package.blankly.finance">主頁</a></div>
   <div class="topics"><span>#algotrading</span><span>#binance</span><span>#blankly</span></div>
-</article><article class="card" data-search="passivbot enarjord/passivbot 喺 bybit、bitget、okx、gate、幣安等多個交易所運行嘅交易機械人。 trading bot running on bybit, bitget, okx, gateio, binance, kucoin, weex and hyperliquid python algorithmic-trading binance bitget bybit futures gateio hyperliquid okx">
+</article><article class="card" id="p-enarjord-passivbot" data-search="passivbot enarjord/passivbot 喺 bybit、bitget、okx、gate、幣安等多個交易所運行嘅交易機械人。同一個機械人可以換交易所配置，適合想喺幾個合約交易所重複部署策略嘅人。合約交易所之間換設定就得，唔使每個所各寫一個機械人。 trading bot running on bybit, bitget, okx, gateio, binance, kucoin, weex and hyperliquid python algorithmic-trading binance bitget bybit futures gateio hyperliquid okx">
   <header>
     <h3><span class="rank">25</span><a href="https://github.com/enarjord/passivbot">passivbot</a></h3>
     <div class="stars">★ 2,149</div>
   </header>
   <p class="meta">enarjord/passivbot · Python · Unlicense · 最近推送 2026-10-28</p>
-  <p class="summary">喺 Bybit、Bitget、OKX、Gate、幣安等多個交易所運行嘅交易機械人。</p>
+  <p class="summary">喺 Bybit、Bitget、OKX、Gate、幣安等多個交易所運行嘅交易機械人。同一個機械人可以換交易所配置，適合想喺幾個合約交易所重複部署策略嘅人。合約交易所之間換設定就得，唔使每個所各寫一個機械人。</p>
   <div class="links"><a href="https://github.com/enarjord/passivbot">GitHub</a><a href="https://www.passivbot.com">主頁</a></div>
   <div class="topics"><span>#algorithmic-trading</span><span>#binance</span><span>#bitget</span></div>
-</article><article class="card" data-search="pycryptobot whittlem/pycryptobot 用 python 寫嘅加密貨幣交易機械人。 python crypto bot (pycryptobot) python backtester backtesting backtesting-trading-strategies binance binance-api coinbase-pro coinbase-pro-api cryptocurrency">
+</article><article class="card" id="p-whittlem-pycryptobot" data-search="pycryptobot whittlem/pycryptobot 用 python 寫嘅加密貨幣交易機械人。用程式配置策略並自動交易，結構比較直接，適合想閱讀同修改一個完整 python 機械人嘅人。程式結構短，適合讀完再改成自己嘅進出場規則。 python crypto bot (pycryptobot) python backtester backtesting backtesting-trading-strategies binance binance-api coinbase-pro coinbase-pro-api cryptocurrency">
   <header>
     <h3><span class="rank">26</span><a href="https://github.com/whittlem/pycryptobot">pycryptobot</a></h3>
     <div class="stars">★ 2,059</div>
   </header>
   <p class="meta">whittlem/pycryptobot · Python · Apache-2.0 · 最近推送 2026-03-26</p>
-  <p class="summary">用 Python 寫嘅加密貨幣交易機械人。</p>
+  <p class="summary">用 Python 寫嘅加密貨幣交易機械人。用程式配置策略並自動交易，結構比較直接，適合想閱讀同修改一個完整 Python 機械人嘅人。程式結構短，適合讀完再改成自己嘅進出場規則。</p>
   <div class="links"><a href="https://github.com/whittlem/pycryptobot">GitHub</a></div>
   <div class="topics"><span>#backtester</span><span>#backtesting</span><span>#backtesting-trading-strategies</span></div>
-</article><article class="card" data-search="bbgo c9s/bbgo 用 go 寫嘅現代加密貨幣交易機械人框架。 the modern cryptocurrency trading bot framework written in go. go binance bitcoin crypto cryptocurrency trading trading-bot">
+</article><article class="card" id="p-c9s-bbgo" data-search="bbgo c9s/bbgo 用 go 寫嘅現代加密貨幣交易機械人框架。策略、交易所同風控可以模組化組合，適合想用 go 而唔係腳本語言來跑交易服務嘅人。風控同交易所模組拆開，服務可以長期跑而唔係一次性腳本。 the modern cryptocurrency trading bot framework written in go. go binance bitcoin crypto cryptocurrency trading trading-bot">
   <header>
     <h3><span class="rank">27</span><a href="https://github.com/c9s/bbgo">bbgo</a></h3>
     <div class="stars">★ 1,674</div>
   </header>
   <p class="meta">c9s/bbgo · Go · AGPL-3.0 · 最近推送 2026-10-28</p>
-  <p class="summary">用 Go 寫嘅現代加密貨幣交易機械人框架。</p>
+  <p class="summary">用 Go 寫嘅現代加密貨幣交易機械人框架。策略、交易所同風控可以模組化組合，適合想用 Go 而唔係腳本語言來跑交易服務嘅人。風控同交易所模組拆開，服務可以長期跑而唔係一次性腳本。</p>
   <div class="links"><a href="https://github.com/c9s/bbgo">GitHub</a><a href="https://bbgo.finance">主頁</a></div>
   <div class="topics"><span>#binance</span><span>#bitcoin</span><span>#crypto</span></div>
 </article></div>
   
 </section>
-    </main>
-  </div>
+  </main>
   <footer class="site">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 排序以 stars 為準 · 重複項目只保留一次</footer>
 </div>
 <script>
 (function () {
   const input = document.querySelector("#q");
-  const cards = Array.from(document.querySelectorAll("[data-search]"));
+  const hub = document.querySelector("#hub");
+  const results = document.querySelector("#results");
+  const cards = Array.from(document.querySelectorAll("#results [data-search], section [data-search]"));
   const sections = Array.from(document.querySelectorAll("[data-section]"));
   const empty = document.querySelector("#empty");
   function apply() {
     const q = input.value.trim().toLowerCase();
+    if (hub && results) {
+      const browsing = q.length === 0;
+      hub.hidden = !browsing;
+      results.hidden = browsing;
+      if (browsing) {
+        empty.hidden = true;
+        empty.style.display = "none";
+        return;
+      }
+    }
     let shown = 0;
     cards.forEach((card) => {
       const ok = !q || card.dataset.search.includes(q);
