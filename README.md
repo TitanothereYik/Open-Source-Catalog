@@ -42,7 +42,7 @@ python3 scripts/catalog_tool.py validate
 
 ## GitHub
 
-公開網站同每小時更新都放喺 [TitanothereYik/Open-Source-Catalog](https://github.com/TitanothereYik/Open-Source-Catalog)，唔係 Cursor 嘅 codebase。頁面標題係 **Open Source Catalog**。Repo 要公開，免費 GitHub Pages 先用到。
+公開網站放喺 [TitanothereYik/Open-Source-Catalog](https://github.com/TitanothereYik/Open-Source-Catalog)。頁面標題係 **Open Source Catalog**。Repo 要公開，免費 GitHub Pages 先用到。每小時嘅更新唔係 GitHub Actions 跑，而係喺呢個對話排程，因為新項目嘅中文說明要喺度寫。
 
 網站網址：
 
@@ -50,17 +50,16 @@ python3 scripts/catalog_tool.py validate
 https://titanothereyik.github.io/Open-Source-Catalog/
 ```
 
-根目錄 `index.html` 就係 Pages 嘅內容。推上 GitHub `main` 之後，`.github/workflows/pages.yml` 會部署。每小時嘅更新根網址固定係上面呢個 GitHub Pages 網址，寫入目錄、canonical 同電郵連結，然後 push 去呢個 repo 嘅 `main`。
+根目錄 `index.html` 就係 Pages 嘅內容。推上 GitHub `main` 之後，`.github/workflows/pages.yml` 會部署。更新根網址固定係上面呢個 GitHub Pages 網址。
 
 ## 每小時
 
-`.github/workflows/update.yml` 每小時跑一次。GitHub 會丟掉排喺整點（第 0 分鐘）嘅工作，所以正式時間係每小時第 7 分鐘，第 32 分鐘再試一次。如果嗰個鐘已經更新過，第二次會跳過。每次會讀取 workflow token 嘅 GitHub REST core 配額，並繼續查公開 repo，直到用咗最少 80%。搜尋配額係另一個每分鐘上限，程式會自己放慢，避免搜尋被截斷。
+更新由呢個對話喺每小時整點排程，唔經 GitHub Actions。`scripts/catalog_tool.py update` 會更新 stars、最近推送，並搵新 repo。已經鎖住嘅中文說明唔會被蓋過。新項目嘅 caption 會喺度寫成大約一百字嘅繁體中文，鎖住之後先推上 `main`。
 
 每次完成會：
 
 - 更新 `index.html` 同九個分類子目錄
 - commit 並 push 去 `main`，Pages 會跟住更新
-- 喺 issue「Open Source Catalog updates」留一則通知
 - 如果設定咗 SMTP，寄出 `email/latest.html`
 
 電郵收件人預設係帳號電郵。可以喺 repository secret 用 `NOTIFY_EMAIL` 覆蓋。
