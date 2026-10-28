@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0c0d11">
+<meta name="description" content="Open Source Catalog：AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。">
+<title>影片 · Open Source Catalog</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=Outfit:wght@400;520;650&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect fill='%230c0d11' width='64' height='64' rx='14'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23e4b15a' stroke-width='4'/%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #0c0d11;
+  --bg-raise: #15171e;
+  --line: rgba(244, 236, 224, 0.12);
+  --text: #f6f1e8;
+  --muted: #b7b0a4;
+  --faint: #8d867c;
+  --gold: #e4b15a;
+  --ink: #1c140c;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(228, 177, 90, 0.14), transparent 55%),
+    radial-gradient(900px 420px at 100% 0%, rgba(143, 208, 196, 0.08), transparent 50%),
+    var(--bg);
+  color: var(--text);
+  font-family: Outfit, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+a { color: inherit; }
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -40px;
+  background: var(--gold);
+  color: var(--ink);
+  padding: 8px 12px;
+  z-index: 5;
+}
+.skip:focus { top: 12px; }
+.wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+header.hero { padding: 36px 0 18px; }
+.kicker {
+  margin: 0 0 8px;
+  color: var(--gold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+h1 {
+  margin: 0;
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 560;
+  font-size: clamp(40px, 6vw, 68px);
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+.lede { max-width: 680px; color: var(--muted); font-size: 18px; margin: 14px 0 0; }
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.stat {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 14px;
+  min-width: 120px;
+}
+.stat b { display: block; font-family: Fraunces, Georgia, serif; font-size: 22px; font-weight: 560; }
+.stat span { color: var(--faint); font-size: 13px; }
+.layout { display: grid; grid-template-columns: 220px 1fr; gap: 28px; padding-bottom: 72px; }
+nav.side {
+  position: sticky;
+  top: 16px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 8px;
+}
+nav.side a {
+  text-decoration: none;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+nav.side a:hover, nav.side a[aria-current="page"] {
+  background: var(--bg-raise);
+  color: var(--text);
+}
+nav.side .count { color: var(--faint); font-variant-numeric: tabular-nums; }
+.search { position: sticky; top: 0; z-index: 2; background: linear-gradient(var(--bg), rgba(12,13,17,0.92) 70%, transparent); padding: 8px 0 14px; }
+.search input {
+  width: 100%;
+  background: var(--bg-raise);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font: inherit;
+  outline: none;
+}
+.search input:focus { border-color: var(--gold); }
+.section { margin: 8px 0 36px; scroll-margin-top: 72px; }
+.section h2 {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 34px;
+  font-weight: 560;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+.section .blurb { color: var(--muted); margin: 6px 0 16px; }
+.grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.card {
+  background: rgba(21, 23, 30, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  box-shadow: var(--shadow);
+  min-width: 0;
+}
+.card header { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.rank { color: var(--faint); font-variant-numeric: tabular-nums; font-size: 13px; margin-right: 8px; }
+.card h3 { margin: 0; font-size: 18px; letter-spacing: -0.02em; }
+.card h3 a { text-decoration: none; }
+.card h3 a:hover { color: var(--gold); }
+.stars { color: var(--gold); font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 650; }
+.meta { color: var(--faint); font-size: 13px; margin: 6px 0 8px; overflow-wrap: anywhere; }
+.summary { margin: 0; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.links a, .badge {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.links a:hover { color: var(--text); border-color: var(--gold); }
+.badge.arch { color: #e7b8a4; }
+.topics { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.topics span { color: var(--faint); font-size: 12px; }
+.papers { margin-top: 16px; }
+.papers h3 { margin: 0 0 10px; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+#empty { display: none; color: var(--muted); padding: 12px 0 24px; }
+footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
+@media (min-width: 980px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; gap: 8px; }
+  nav.side { position: static; flex-direction: row; overflow-x: auto; padding-bottom: 8px; }
+  nav.side a { white-space: nowrap; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">跳到項目</a>
+<div class="wrap">
+  <header class="hero">
+    <p class="kicker">每 6 小時更新</p>
+    <h1>Open Source Catalog</h1>
+    <p class="lede">AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。</p>
+    <div class="stats">
+      <div class="stat"><b>200</b><span>開源項目</span></div>
+      <div class="stat"><b>7</b><span>未另列 repo 嘅論文</span></div>
+      <div class="stat"><b>2026年10月28日</b><span>20:06（香港時間）</span></div>
+    </div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="分類"><a href="../index.html">全部<span class="count">200</span></a><a href="../ai-agent/">AI Agent<span class="count">42</span></a><a href="../image/">圖像<span class="count">37</span></a><a href="./" aria-current="page">影片<span class="count">32</span></a><a href="../vfx-cg-blender/">VFX / CG / Blender<span class="count">32</span></a><a href="../stock-trading/">Stock Trading<span class="count">30</span></a><a href="../crypto-trading/">Crypto Trading<span class="count">27</span></a></nav>
+    <main id="content">
+      <form class="search" role="search" onsubmit="return false">
+        <label class="sr" for="q" style="position:absolute;left:-999px">搜尋</label>
+        <input id="q" type="search" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
+      </form>
+      <p id="empty">沒有符合呢個搜尋嘅項目。</p>
+      <section class="section" id="video" data-section>
+  <h2>影片</h2>
+  <p class="blurb">影片生成、剪接、播放、轉碼同處理。 開源項目按 GitHub stars 由多至少。</p>
+  <div class="grid"><article class="card" data-search="yt-dlp yt-dlp/yt-dlp 功能完整嘅命令列影音下載器，可以從大量網站保存影片同音訊。 a feature-rich command-line audio/video downloader python cli downloader python sponsorblock youtube-dl youtube-downloader yt-dlp">
+  <header>
+    <h3><span class="rank">01</span><a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a></h3>
+    <div class="stars">★ 203,226</div>
+  </header>
+  <p class="meta">yt-dlp/yt-dlp · Python · Unlicense · 最近推送 2026-10-26</p>
+  <p class="summary">功能完整嘅命令列影音下載器，可以從大量網站保存影片同音訊。</p>
+  <div class="links"><a href="https://github.com/yt-dlp/yt-dlp">GitHub</a><a href="https://discord.gg/H5MNcFW63r">主頁</a></div>
+  <div class="topics"><span>#cli</span><span>#downloader</span><span>#python</span></div>
+</article><article class="card" data-search="obs-studio obsproject/obs-studio 免費開源嘅直播同螢幕錄製軟件。 obs studio - free and open source software for live streaming and screen recording c c c-plus-plus directshow facebook-live ffmpeg game-capture live-streaming screen-capture">
+  <header>
+    <h3><span class="rank">02</span><a href="https://github.com/obsproject/obs-studio">obs-studio</a></h3>
+    <div class="stars">★ 78,452</div>
+  </header>
+  <p class="meta">obsproject/obs-studio · C · GPL-2.0 · 最近推送 2026-10-27</p>
+  <p class="summary">免費開源嘅直播同螢幕錄製軟件。</p>
+  <div class="links"><a href="https://github.com/obsproject/obs-studio">GitHub</a><a href="https://obsproject.com">主頁</a></div>
+  <div class="topics"><span>#c</span><span>#c-plus-plus</span><span>#directshow</span></div>
+</article><article class="card" data-search="openmontage calesthio/openmontage 開源嘅 agent 影片製作系統，用多條製作流程同工具產出影片。 world&#x27;s first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. turn your ai coding assistant into a full video production studio. python agent agentic-ai ai claude copilot cursor elevenlabs ffmpeg">
+  <header>
+    <h3><span class="rank">03</span><a href="https://github.com/calesthio/OpenMontage">OpenMontage</a></h3>
+    <div class="stars">★ 72,598</div>
+  </header>
+  <p class="meta">calesthio/OpenMontage · Python · AGPL-3.0 · 最近推送 2026-10-24</p>
+  <p class="summary">開源嘅 agent 影片製作系統，用多條製作流程同工具產出影片。</p>
+  <div class="links"><a href="https://github.com/calesthio/OpenMontage">GitHub</a><a href="https://www.openmontage.video/">主頁</a></div>
+  <div class="topics"><span>#agent</span><span>#agentic-ai</span><span>#ai</span></div>
+</article><article class="card" data-search="remotion remotion-dev/remotion 用 react 以程式方式製作影片，適合可重複嘅動畫同模板。 🎥      make videos programmatically with react typescript javascript react video">
+  <header>
+    <h3><span class="rank">04</span><a href="https://github.com/remotion-dev/remotion">remotion</a></h3>
+    <div class="stars">★ 68,449</div>
+  </header>
+  <p class="meta">remotion-dev/remotion · TypeScript · 最近推送 2026-10-28</p>
+  <p class="summary">用 React 以程式方式製作影片，適合可重複嘅動畫同模板。</p>
+  <div class="links"><a href="https://github.com/remotion-dev/remotion">GitHub</a><a href="https://remotion.dev">主頁</a></div>
+  <div class="topics"><span>#javascript</span><span>#react</span><span>#video</span></div>
+</article><article class="card" data-search="ffmpeg ffmpeg/ffmpeg 處理影音嘅核心工具，負責轉碼、剪接、串流同格式轉換。 mirror of https://git.ffmpeg.org/ffmpeg.git c audio c ffmpeg fft hevc hls matroska mp4">
+  <header>
+    <h3><span class="rank">05</span><a href="https://github.com/FFmpeg/FFmpeg">FFmpeg</a></h3>
+    <div class="stars">★ 65,938</div>
+  </header>
+  <p class="meta">FFmpeg/FFmpeg · C · 最近推送 2026-10-28</p>
+  <p class="summary">處理影音嘅核心工具，負責轉碼、剪接、串流同格式轉換。</p>
+  <div class="links"><a href="https://github.com/FFmpeg/FFmpeg">GitHub</a><a href="https://ffmpeg.org/">主頁</a></div>
+  <div class="topics"><span>#audio</span><span>#c</span><span>#ffmpeg</span></div>
+</article><article class="card" data-search="jellyfin jellyfin/jellyfin 自由軟件媒體系統，可以自己架伺服器整理同播放影片。 the free software media system - server backend &amp; api c# csharp dotnet hacktoberfest jellyfin">
+  <header>
+    <h3><span class="rank">06</span><a href="https://github.com/jellyfin/jellyfin">jellyfin</a></h3>
+    <div class="stars">★ 58,732</div>
+  </header>
+  <p class="meta">jellyfin/jellyfin · C# · GPL-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">自由軟件媒體系統，可以自己架伺服器整理同播放影片。</p>
+  <div class="links"><a href="https://github.com/jellyfin/jellyfin">GitHub</a><a href="https://jellyfin.org">主頁</a></div>
+  <div class="topics"><span>#csharp</span><span>#dotnet</span><span>#hacktoberfest</span></div>
+</article><article class="card" data-search="mpv mpv-player/mpv 輕量、高質素嘅命令列媒體播放器。 🎥 command line media player c audio c ffmpeg mplayer mpv multimedia video">
+  <header>
+    <h3><span class="rank">07</span><a href="https://github.com/mpv-player/mpv">mpv</a></h3>
+    <div class="stars">★ 37,597</div>
+  </header>
+  <p class="meta">mpv-player/mpv · C · 最近推送 2026-10-27</p>
+  <p class="summary">輕量、高質素嘅命令列媒體播放器。</p>
+  <div class="links"><a href="https://github.com/mpv-player/mpv">GitHub</a><a href="https://mpv.io">主頁</a></div>
+  <div class="topics"><span>#audio</span><span>#c</span><span>#ffmpeg</span></div>
+</article><article class="card" data-search="open-sora hpcaitech/open-sora 開源影片生成項目，目標係降低高質文字到影片嘅製作門檻。 open-sora: democratizing efficient video production for all python ">
+  <header>
+    <h3><span class="rank">08</span><a href="https://github.com/hpcaitech/Open-Sora">Open-Sora</a></h3>
+    <div class="stars">★ 29,884</div>
+  </header>
+  <p class="meta">hpcaitech/Open-Sora · Python · Apache-2.0 · 最近推送 2026-04-09</p>
+  <p class="summary">開源影片生成項目，目標係降低高質文字到影片嘅製作門檻。</p>
+  <div class="links"><a href="https://github.com/hpcaitech/Open-Sora">GitHub</a><a href="https://hpcaitech.github.io/Open-Sora/">主頁</a></div>
+  
+</article><article class="card" data-search="pixelle-video ath-maas/pixelle-video ai 自動短片引擎，由內容一路做到成片。 🚀 ai 全自动短视频引擎 | ai fully automated short video engine python aigc comfyui image-generation tts video-generation">
+  <header>
+    <h3><span class="rank">09</span><a href="https://github.com/ATH-MaaS/Pixelle-Video">Pixelle-Video</a></h3>
+    <div class="stars">★ 29,489</div>
+  </header>
+  <p class="meta">ATH-MaaS/Pixelle-Video · Python · Apache-2.0 · 最近推送 2026-06-14</p>
+  <p class="summary">AI 自動短片引擎，由內容一路做到成片。</p>
+  <div class="links"><a href="https://github.com/ATH-MaaS/Pixelle-Video">GitHub</a><a href="https://aidc-ai.github.io/Pixelle-Video/zh">主頁</a></div>
+  <div class="topics"><span>#aigc</span><span>#comfyui</span><span>#image-generation</span></div>
+</article><article class="card" data-search="generative-models stability-ai/generative-models stability ai 嘅生成模型程式，包含 stable video diffusion 等圖像到影片模型。 generative models by stability ai python ">
+  <header>
+    <h3><span class="rank">10</span><a href="https://github.com/Stability-AI/generative-models">generative-models</a></h3>
+    <div class="stars">★ 27,313</div>
+  </header>
+  <p class="meta">Stability-AI/generative-models · Python · MIT · 最近推送 2025-12-16</p>
+  <p class="summary">Stability AI 嘅生成模型程式，包含 Stable Video Diffusion 等圖像到影片模型。</p>
+  <div class="links"><a href="https://github.com/Stability-AI/generative-models">GitHub</a><a href="https://arxiv.org/abs/2311.15127">論文</a></div>
+  
+</article><article class="card" data-search="handbrake handbrake/handbrake 開源影片轉檔工具，用嚟壓縮同轉換成常見格式。 handbrake&#x27;s development repository c gplv2 multi-platform video-transcoding">
+  <header>
+    <h3><span class="rank">11</span><a href="https://github.com/HandBrake/HandBrake">HandBrake</a></h3>
+    <div class="stars">★ 24,811</div>
+  </header>
+  <p class="meta">HandBrake/HandBrake · C · 最近推送 2026-10-28</p>
+  <p class="summary">開源影片轉檔工具，用嚟壓縮同轉換成常見格式。</p>
+  <div class="links"><a href="https://github.com/HandBrake/HandBrake">GitHub</a><a href="https://handbrake.fr">主頁</a></div>
+  <div class="topics"><span>#gplv2</span><span>#multi-platform</span><span>#video-transcoding</span></div>
+</article><article class="card" data-search="video2x k4yt3x/video2x 用機器學習做影片超解像同補幀。 a machine learning-based video super resolution and frame interpolation framework. est. hack the valley ii, 2018. c++ anime4k frame-interpolation machine-learning neural-networks realcugan realesrgan rife super-resoluion">
+  <header>
+    <h3><span class="rank">12</span><a href="https://github.com/k4yt3x/video2x">video2x</a></h3>
+    <div class="stars">★ 22,446</div>
+  </header>
+  <p class="meta">k4yt3x/video2x · C++ · AGPL-3.0 · 最近推送 2026-03-07</p>
+  <p class="summary">用機器學習做影片超解像同補幀。</p>
+  <div class="links"><a href="https://github.com/k4yt3x/video2x">GitHub</a><a href="https://docs.video2x.org">主頁</a></div>
+  <div class="topics"><span>#anime4k</span><span>#frame-interpolation</span><span>#machine-learning</span></div>
+</article><article class="card" data-search="anime4k bloc97/anime4k 即時動漫影片放大算法，可以喺播放時提升畫質。 a high-quality real time upscaler for anime video jupyter notebook anime anime-upscaling anime4k cnn computer-graphics convolutional-neural-networks denoising-algorithms neural-networks">
+  <header>
+    <h3><span class="rank">13</span><a href="https://github.com/bloc97/Anime4K">Anime4K</a></h3>
+    <div class="stars">★ 21,575</div>
+  </header>
+  <p class="meta">bloc97/Anime4K · Jupyter Notebook · MIT · 最近推送 2024-08-17</p>
+  <p class="summary">即時動漫影片放大算法，可以喺播放時提升畫質。</p>
+  <div class="links"><a href="https://github.com/bloc97/Anime4K">GitHub</a><a href="https://bloc97.github.io/Anime4K/">主頁</a></div>
+  <div class="topics"><span>#anime</span><span>#anime-upscaling</span><span>#anime4k</span></div>
+</article><article class="card" data-search="toonflow-app hbai-ltd/toonflow-app 開源短劇同漫劇工具，涵蓋劇本、分鏡、角色場景同圖像、影片生成。 短剧、漫剧制作工具 toonflow：开源 ai 视频创作平台，集成剧本创作、智能分镜、角色与场景资产管理、图像生成和视频生成。融合无限画布、ai agent 与可视化工作流，支持本地部署、自选模型、跨平台客户端、mcp 与插件扩展。open-source ai short drama and motion comic creation tool with an infinite canvas, ai agents, storyboarding, image and video generation. self-hosted and extensible, with a canvas-based approach similar to libtv and tapnow. typescript ai-agents ai-comic ai-content-creation ai-filmmaking ai-short-drama generative-ai image-generation image-to-video">
+  <header>
+    <h3><span class="rank">14</span><a href="https://github.com/HBAI-Ltd/Toonflow-app">Toonflow-app</a></h3>
+    <div class="stars">★ 19,716</div>
+  </header>
+  <p class="meta">HBAI-Ltd/Toonflow-app · TypeScript · MIT · 最近推送 2026-10-27</p>
+  <p class="summary">開源短劇同漫劇工具，涵蓋劇本、分鏡、角色場景同圖像、影片生成。</p>
+  <div class="links"><a href="https://github.com/HBAI-Ltd/Toonflow-app">GitHub</a><a href="https://toonflow.net">主頁</a></div>
+  <div class="topics"><span>#ai-agents</span><span>#ai-comic</span><span>#ai-content-creation</span></div>
+</article><article class="card" data-search="liveportrait klingairesearch/liveportrait 將一張人像變成會郁嘅肖像動畫。 bring portraits to life! python face-animation image-animation video-editing video-generation">
+  <header>
+    <h3><span class="rank">15</span><a href="https://github.com/KlingAIResearch/LivePortrait">LivePortrait</a></h3>
+    <div class="stars">★ 19,335</div>
+  </header>
+  <p class="meta">KlingAIResearch/LivePortrait · Python · 最近推送 2026-06-01</p>
+  <p class="summary">將一張人像變成會郁嘅肖像動畫。</p>
+  <div class="links"><a href="https://github.com/KlingAIResearch/LivePortrait">GitHub</a><a href="https://liveportrait.github.io">主頁</a></div>
+  <div class="topics"><span>#face-animation</span><span>#image-animation</span><span>#video-editing</span></div>
+</article><article class="card" data-search="wan2.2 wan-video/wan2.2 阿里 wan 系列嘅開源大型影片生成模型。 wan: open and advanced large-scale video generative models python aigc video-generation">
+  <header>
+    <h3><span class="rank">16</span><a href="https://github.com/Wan-Video/Wan2.2">Wan2.2</a></h3>
+    <div class="stars">★ 18,232</div>
+  </header>
+  <p class="meta">Wan-Video/Wan2.2 · Python · Apache-2.0 · 最近推送 2026-09-21</p>
+  <p class="summary">阿里 Wan 系列嘅開源大型影片生成模型。</p>
+  <div class="links"><a href="https://github.com/Wan-Video/Wan2.2">GitHub</a><a href="https://wan.video">主頁</a></div>
+  <div class="topics"><span>#aigc</span><span>#video-generation</span></div>
+</article><article class="card" data-search="framepack lllyasviel/framepack 令影片擴散模型嘅生成更加實際，降低長片段對記憶體嘅壓力。 lets make video diffusion practical! python ">
+  <header>
+    <h3><span class="rank">17</span><a href="https://github.com/lllyasviel/FramePack">FramePack</a></h3>
+    <div class="stars">★ 17,328</div>
+  </header>
+  <p class="meta">lllyasviel/FramePack · Python · Apache-2.0 · 最近推送 2025-10-16</p>
+  <p class="summary">令影片擴散模型嘅生成更加實際，降低長片段對記憶體嘅壓力。</p>
+  <div class="links"><a href="https://github.com/lllyasviel/FramePack">GitHub</a></div>
+  
+</article><article class="card" data-search="filmcraft storytold/filmcraft 用 rust 由零寫嘅開源非線性影片剪接軟件。 filmcraft: an open-source, nonlinear video editor written by scratch in pure rust rust art rust video video-editing video-editor video-processing">
+  <header>
+    <h3><span class="rank">18</span><a href="https://github.com/storytold/filmcraft">filmcraft</a></h3>
+    <div class="stars">★ 16,640</div>
+  </header>
+  <p class="meta">storytold/filmcraft · Rust · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">用 Rust 由零寫嘅開源非線性影片剪接軟件。</p>
+  <div class="links"><a href="https://github.com/storytold/filmcraft">GitHub</a><a href="https://getartcraft.com/apps/filmcraft">主頁</a></div>
+  <div class="topics"><span>#art</span><span>#rust</span><span>#video</span></div>
+</article><article class="card" data-search="duix-avatar duixcom/duix-avatar 可離線使用嘅開源數位人工具，用嚟生成口播影片同克隆數位人。 🚀 truly open-source ai avatar(digital human) toolkit for offline video generation and digital human cloning. c ai-avatar ai-avatars cloning cloning-tool digital-human multimodal-ai video-generation video-synthesis">
+  <header>
+    <h3><span class="rank">19</span><a href="https://github.com/duixcom/Duix-Avatar">Duix-Avatar</a></h3>
+    <div class="stars">★ 16,117</div>
+  </header>
+  <p class="meta">duixcom/Duix-Avatar · C · 最近推送 2026-04-21</p>
+  <p class="summary">可離線使用嘅開源數位人工具，用嚟生成口播影片同克隆數位人。</p>
+  <div class="links"><a href="https://github.com/duixcom/Duix-Avatar">GitHub</a><a href="https://www.duix.com/">主頁</a></div>
+  <div class="topics"><span>#ai-avatar</span><span>#ai-avatars</span><span>#cloning</span></div>
+</article><article class="card" data-search="shotcut mltframework/shotcut 跨平台開源影片剪接軟件，基於 mlt 框架。 cross-platform (qt), open-source (gplv3) video editor c++ cross-platform gplv3 mlt shotcut video-editor">
+  <header>
+    <h3><span class="rank">20</span><a href="https://github.com/mltframework/shotcut">shotcut</a></h3>
+    <div class="stars">★ 15,519</div>
+  </header>
+  <p class="meta">mltframework/shotcut · C++ · GPL-3.0 · 最近推送 2026-10-27</p>
+  <p class="summary">跨平台開源影片剪接軟件，基於 MLT 框架。</p>
+  <div class="links"><a href="https://github.com/mltframework/shotcut">GitHub</a><a href="https://www.shotcut.org">主頁</a></div>
+  <div class="topics"><span>#cross-platform</span><span>#gplv3</span><span>#mlt</span></div>
+</article><article class="card" data-search="moviepy zulko/moviepy 用 python 做影片剪接、合成同基本特效嘅庫。 video editing with python python animation gif hacktoberfest python video video-editing video-processing">
+  <header>
+    <h3><span class="rank">21</span><a href="https://github.com/Zulko/moviepy">moviepy</a></h3>
+    <div class="stars">★ 15,048</div>
+  </header>
+  <p class="meta">Zulko/moviepy · Python · MIT · 最近推送 2026-08-26</p>
+  <p class="summary">用 Python 做影片剪接、合成同基本特效嘅庫。</p>
+  <div class="links"><a href="https://github.com/Zulko/moviepy">GitHub</a><a href="https://zulko.github.io/moviepy/">主頁</a></div>
+  <div class="topics"><span>#animation</span><span>#gif</span><span>#hacktoberfest</span></div>
+</article><article class="card" data-search="animateanyone humanaigc/animateanyone 用一張人物圖生成動作一致、可控制嘅人物影片。 animate anyone: consistent and controllable image-to-video synthesis for character animation  ">
+  <header>
+    <h3><span class="rank">22</span><a href="https://github.com/HumanAIGC/AnimateAnyone">AnimateAnyone</a></h3>
+    <div class="stars">★ 14,779</div>
+  </header>
+  <p class="meta">HumanAIGC/AnimateAnyone · Apache-2.0 · 最近推送 2025-09-20</p>
+  <p class="summary">用一張人物圖生成動作一致、可控制嘅人物影片。</p>
+  <div class="links"><a href="https://github.com/HumanAIGC/AnimateAnyone">GitHub</a></div>
+  
+</article><article class="card" data-search="cogvideo zai-org/cogvideo 文字同圖像到影片嘅模型項目，包含 cogvideo 同 cogvideox。 text and image to video generation: cogvideox (2024) and cogvideo (iclr 2023) python cogvideox image-to-video llm sora text-to-video video-generation">
+  <header>
+    <h3><span class="rank">23</span><a href="https://github.com/zai-org/CogVideo">CogVideo</a></h3>
+    <div class="stars">★ 13,120</div>
+  </header>
+  <p class="meta">zai-org/CogVideo · Python · Apache-2.0 · 最近推送 2025-11-04</p>
+  <p class="summary">文字同圖像到影片嘅模型項目，包含 CogVideo 同 CogVideoX。</p>
+  <div class="links"><a href="https://github.com/zai-org/CogVideo">GitHub</a><a href="https://arxiv.org/abs/2205.15868">論文</a></div>
+  <div class="topics"><span>#cogvideox</span><span>#image-to-video</span><span>#llm</span></div>
+</article><article class="card" data-search="hunyuanvideo tencent-hunyuan/hunyuanvideo 騰訊混元嘅大型開源影片生成框架。 hunyuanvideo: a systematic framework for large video generation model python diffusion-models diffusion-transformer video-generation">
+  <header>
+    <h3><span class="rank">24</span><a href="https://github.com/Tencent-Hunyuan/HunyuanVideo">HunyuanVideo</a></h3>
+    <div class="stars">★ 12,679</div>
+  </header>
+  <p class="meta">Tencent-Hunyuan/HunyuanVideo · Python · 最近推送 2026-10-08</p>
+  <p class="summary">騰訊混元嘅大型開源影片生成框架。</p>
+  <div class="links"><a href="https://github.com/Tencent-Hunyuan/HunyuanVideo">GitHub</a><a href="https://aivideo.hunyuan.tencent.com">主頁</a><a href="https://arxiv.org/abs/2412.03603">論文</a></div>
+  <div class="topics"><span>#diffusion-models</span><span>#diffusion-transformer</span><span>#video-generation</span></div>
+</article><article class="card" data-search="animatediff guoyww/animatediff 畀文字到圖像模型加時間模組，無需逐個再訓練就可以生成短片。 official implementation of animatediff. python ">
+  <header>
+    <h3><span class="rank">25</span><a href="https://github.com/guoyww/AnimateDiff">AnimateDiff</a></h3>
+    <div class="stars">★ 12,279</div>
+  </header>
+  <p class="meta">guoyww/AnimateDiff · Python · Apache-2.0 · 最近推送 2024-07-31</p>
+  <p class="summary">畀文字到圖像模型加時間模組，無需逐個再訓練就可以生成短片。</p>
+  <div class="links"><a href="https://github.com/guoyww/AnimateDiff">GitHub</a><a href="https://animatediff.github.io">主頁</a><a href="https://arxiv.org/abs/2307.04725">論文</a></div>
+  
+</article><article class="card" data-search="ltx-video lightricks/ltx-video lightricks 嘅開源影片生成模型同官方程式。 official repository for ltx-video python diffusion-models dit image-to-video image-to-video-generation text-to-video text-to-video-generation">
+  <header>
+    <h3><span class="rank">26</span><a href="https://github.com/Lightricks/LTX-Video">LTX-Video</a></h3>
+    <div class="stars">★ 11,204</div>
+  </header>
+  <p class="meta">Lightricks/LTX-Video · Python · Apache-2.0 · 最近推送 2026-01-05</p>
+  <p class="summary">Lightricks 嘅開源影片生成模型同官方程式。</p>
+  <div class="links"><a href="https://github.com/Lightricks/LTX-Video">GitHub</a><a href="https://ltx.io/model">主頁</a></div>
+  <div class="topics"><span>#diffusion-models</span><span>#dit</span><span>#image-to-video</span></div>
+</article><article class="card" data-search="magic-animate magic-research/magic-animate 用擴散模型做時間上一致嘅人物圖像動畫。 [cvpr 2024] official repository for &quot;magicanimate: temporally consistent human image animation using diffusion model&quot; python ">
+  <header>
+    <h3><span class="rank">27</span><a href="https://github.com/magic-research/magic-animate">magic-animate</a></h3>
+    <div class="stars">★ 10,890</div>
+  </header>
+  <p class="meta">magic-research/magic-animate · Python · BSD-3-Clause · 最近推送 2025-08-29</p>
+  <p class="summary">用擴散模型做時間上一致嘅人物圖像動畫。</p>
+  <div class="links"><a href="https://github.com/magic-research/magic-animate">GitHub</a><a href="https://showlab.github.io/magicanimate/">主頁</a></div>
+  
+</article><article class="card" data-search="gyroflow gyroflow/gyroflow 用陀螺儀數據做影片防震。 video stabilization using gyroscope data rust fpv gopro gpu gpu-computing gyroscope insta360 rolling-shutter-undistortion rust">
+  <header>
+    <h3><span class="rank">28</span><a href="https://github.com/gyroflow/gyroflow">gyroflow</a></h3>
+    <div class="stars">★ 9,645</div>
+  </header>
+  <p class="meta">gyroflow/gyroflow · Rust · GPL-3.0 · 最近推送 2026-10-27</p>
+  <p class="summary">用陀螺儀數據做影片防震。</p>
+  <div class="links"><a href="https://github.com/gyroflow/gyroflow">GitHub</a><a href="https://gyroflow.xyz">主頁</a></div>
+  <div class="topics"><span>#fpv</span><span>#gopro</span><span>#gpu</span></div>
+</article><article class="card" data-search="video-retalking opentalker/video-retalking 按音訊為實拍人物影片做口型同步。 [siggraph asia 2022] videoretalking: audio-based lip synchronization for talking head video editing in the wild python lip-synchronization siggraph-asia-2022 talking-head-videos video-editing">
+  <header>
+    <h3><span class="rank">29</span><a href="https://github.com/OpenTalker/video-retalking">video-retalking</a></h3>
+    <div class="stars">★ 7,295</div>
+  </header>
+  <p class="meta">OpenTalker/video-retalking · Python · Apache-2.0 · 最近推送 2024-08-05</p>
+  <p class="summary">按音訊為實拍人物影片做口型同步。</p>
+  <div class="links"><a href="https://github.com/OpenTalker/video-retalking">GitHub</a><a href="https://opentalker.github.io/video-retalking/">主頁</a></div>
+  <div class="topics"><span>#lip-synchronization</span><span>#siggraph-asia-2022</span><span>#talking-head-videos</span></div>
+</article><article class="card" data-search="openshot-qt openshot/openshot-qt 跨平台開源影片剪接軟件，介面比較直接。 openshot video editor is an award-winning free and open-source video editor for linux, mac, and windows, and is dedicated to delivering high quality video editing and animation solutions to the world. python c-plus-plus ffmpeg gplv3 openshot python qt5 video video-editing">
+  <header>
+    <h3><span class="rank">30</span><a href="https://github.com/OpenShot/openshot-qt">openshot-qt</a></h3>
+    <div class="stars">★ 6,699</div>
+  </header>
+  <p class="meta">OpenShot/openshot-qt · Python · 最近推送 2026-10-28</p>
+  <p class="summary">跨平台開源影片剪接軟件，介面比較直接。</p>
+  <div class="links"><a href="https://github.com/OpenShot/openshot-qt">GitHub</a><a href="http://www.openshot.org">主頁</a></div>
+  <div class="topics"><span>#c-plus-plus</span><span>#ffmpeg</span><span>#gplv3</span></div>
+</article><article class="card" data-search="videocrafter ailab-cvc/videocrafter 影片擴散模型項目，用嚟喺有限數據下生成影片。 videocrafter2: overcoming data limitations for high-quality video diffusion models python image-to-video text-to-video video-generation">
+  <header>
+    <h3><span class="rank">31</span><a href="https://github.com/AILab-CVC/VideoCrafter">VideoCrafter</a></h3>
+    <div class="stars">★ 5,108</div>
+  </header>
+  <p class="meta">AILab-CVC/VideoCrafter · Python · 最近推送 2026-01-09</p>
+  <p class="summary">影片擴散模型項目，用嚟喺有限數據下生成影片。</p>
+  <div class="links"><a href="https://github.com/AILab-CVC/VideoCrafter">GitHub</a><a href="https://ailab-cvc.github.io/videocrafter2/">主頁</a></div>
+  <div class="topics"><span>#image-to-video</span><span>#text-to-video</span><span>#video-generation</span></div>
+</article><article class="card" data-search="mochi genmoai/mochi genmo 嘅開源文字到影片模型。 the best oss video generation models, created by genmo python ">
+  <header>
+    <h3><span class="rank">32</span><a href="https://github.com/genmoai/mochi">mochi</a></h3>
+    <div class="stars">★ 3,757</div>
+  </header>
+  <p class="meta">genmoai/mochi · Python · Apache-2.0 · 最近推送 2026-10-22</p>
+  <p class="summary">Genmo 嘅開源文字到影片模型。</p>
+  <div class="links"><a href="https://github.com/genmoai/mochi">GitHub</a></div>
+  
+</article></div>
+  
+</section>
+    </main>
+  </div>
+  <footer class="site">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 排序以 stars 為準 · 重複項目只保留一次</footer>
+</div>
+<script>
+(function () {
+  const input = document.querySelector("#q");
+  const cards = Array.from(document.querySelectorAll("[data-search]"));
+  const sections = Array.from(document.querySelectorAll("[data-section]"));
+  const empty = document.querySelector("#empty");
+  function apply() {
+    const q = input.value.trim().toLowerCase();
+    let shown = 0;
+    cards.forEach((card) => {
+      const ok = !q || card.dataset.search.includes(q);
+      card.hidden = !ok;
+      if (ok) shown += 1;
+    });
+    sections.forEach((section) => {
+      section.hidden = !Array.from(section.querySelectorAll("[data-search]")).some((card) => !card.hidden);
+    });
+    empty.hidden = shown !== 0;
+    empty.style.display = shown === 0 ? "block" : "none";
+  }
+  input.addEventListener("input", apply);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "/" && document.activeElement !== input) {
+      event.preventDefault();
+      input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0c0d11">
+<meta name="description" content="Open Source Catalog：AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。">
+<title>圖像 · Open Source Catalog</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=Outfit:wght@400;520;650&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect fill='%230c0d11' width='64' height='64' rx='14'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23e4b15a' stroke-width='4'/%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #0c0d11;
+  --bg-raise: #15171e;
+  --line: rgba(244, 236, 224, 0.12);
+  --text: #f6f1e8;
+  --muted: #b7b0a4;
+  --faint: #8d867c;
+  --gold: #e4b15a;
+  --ink: #1c140c;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(228, 177, 90, 0.14), transparent 55%),
+    radial-gradient(900px 420px at 100% 0%, rgba(143, 208, 196, 0.08), transparent 50%),
+    var(--bg);
+  color: var(--text);
+  font-family: Outfit, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+a { color: inherit; }
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -40px;
+  background: var(--gold);
+  color: var(--ink);
+  padding: 8px 12px;
+  z-index: 5;
+}
+.skip:focus { top: 12px; }
+.wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+header.hero { padding: 36px 0 18px; }
+.kicker {
+  margin: 0 0 8px;
+  color: var(--gold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+h1 {
+  margin: 0;
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 560;
+  font-size: clamp(40px, 6vw, 68px);
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+.lede { max-width: 680px; color: var(--muted); font-size: 18px; margin: 14px 0 0; }
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.stat {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 14px;
+  min-width: 120px;
+}
+.stat b { display: block; font-family: Fraunces, Georgia, serif; font-size: 22px; font-weight: 560; }
+.stat span { color: var(--faint); font-size: 13px; }
+.layout { display: grid; grid-template-columns: 220px 1fr; gap: 28px; padding-bottom: 72px; }
+nav.side {
+  position: sticky;
+  top: 16px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 8px;
+}
+nav.side a {
+  text-decoration: none;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+nav.side a:hover, nav.side a[aria-current="page"] {
+  background: var(--bg-raise);
+  color: var(--text);
+}
+nav.side .count { color: var(--faint); font-variant-numeric: tabular-nums; }
+.search { position: sticky; top: 0; z-index: 2; background: linear-gradient(var(--bg), rgba(12,13,17,0.92) 70%, transparent); padding: 8px 0 14px; }
+.search input {
+  width: 100%;
+  background: var(--bg-raise);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font: inherit;
+  outline: none;
+}
+.search input:focus { border-color: var(--gold); }
+.section { margin: 8px 0 36px; scroll-margin-top: 72px; }
+.section h2 {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 34px;
+  font-weight: 560;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+.section .blurb { color: var(--muted); margin: 6px 0 16px; }
+.grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.card {
+  background: rgba(21, 23, 30, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  box-shadow: var(--shadow);
+  min-width: 0;
+}
+.card header { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.rank { color: var(--faint); font-variant-numeric: tabular-nums; font-size: 13px; margin-right: 8px; }
+.card h3 { margin: 0; font-size: 18px; letter-spacing: -0.02em; }
+.card h3 a { text-decoration: none; }
+.card h3 a:hover { color: var(--gold); }
+.stars { color: var(--gold); font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 650; }
+.meta { color: var(--faint); font-size: 13px; margin: 6px 0 8px; overflow-wrap: anywhere; }
+.summary { margin: 0; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.links a, .badge {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.links a:hover { color: var(--text); border-color: var(--gold); }
+.badge.arch { color: #e7b8a4; }
+.topics { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.topics span { color: var(--faint); font-size: 12px; }
+.papers { margin-top: 16px; }
+.papers h3 { margin: 0 0 10px; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+#empty { display: none; color: var(--muted); padding: 12px 0 24px; }
+footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
+@media (min-width: 980px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; gap: 8px; }
+  nav.side { position: static; flex-direction: row; overflow-x: auto; padding-bottom: 8px; }
+  nav.side a { white-space: nowrap; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">跳到項目</a>
+<div class="wrap">
+  <header class="hero">
+    <p class="kicker">每 6 小時更新</p>
+    <h1>Open Source Catalog</h1>
+    <p class="lede">AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。</p>
+    <div class="stats">
+      <div class="stat"><b>200</b><span>開源項目</span></div>
+      <div class="stat"><b>7</b><span>未另列 repo 嘅論文</span></div>
+      <div class="stat"><b>2026年10月28日</b><span>20:06（香港時間）</span></div>
+    </div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="分類"><a href="../index.html">全部<span class="count">200</span></a><a href="../ai-agent/">AI Agent<span class="count">42</span></a><a href="./" aria-current="page">圖像<span class="count">37</span></a><a href="../video/">影片<span class="count">32</span></a><a href="../vfx-cg-blender/">VFX / CG / Blender<span class="count">32</span></a><a href="../stock-trading/">Stock Trading<span class="count">30</span></a><a href="../crypto-trading/">Crypto Trading<span class="count">27</span></a></nav>
+    <main id="content">
+      <form class="search" role="search" onsubmit="return false">
+        <label class="sr" for="q" style="position:absolute;left:-999px">搜尋</label>
+        <input id="q" type="search" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
+      </form>
+      <p id="empty">沒有符合呢個搜尋嘅項目。</p>
+      <section class="section" id="image" data-section>
+  <h2>圖像</h2>
+  <p class="blurb">圖像生成、編輯、放大、識別同影像處理。 開源項目按 GitHub stars 由多至少。</p>
+  <div class="grid"><article class="card" data-search="stable-diffusion-webui automatic1111/stable-diffusion-webui 廣泛使用嘅 stable diffusion 網頁介面，用嚟喺本機用文字生成同調整圖像。 stable diffusion web ui python ai ai-art deep-learning diffusion gradio image-generation image2image img2img">
+  <header>
+    <h3><span class="rank">01</span><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">stable-diffusion-webui</a></h3>
+    <div class="stars">★ 165,172</div>
+  </header>
+  <p class="meta">AUTOMATIC1111/stable-diffusion-webui · Python · AGPL-3.0 · 最近推送 2026-03-02</p>
+  <p class="summary">廣泛使用嘅 Stable Diffusion 網頁介面，用嚟喺本機用文字生成同調整圖像。</p>
+  <div class="links"><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">GitHub</a></div>
+  <div class="topics"><span>#ai</span><span>#ai-art</span><span>#deep-learning</span></div>
+</article><article class="card" data-search="comfyui comfy-org/comfyui 用節點圖搭建擴散模型流程嘅介面同後端，適合複雜、可重現嘅圖像生成。 the most powerful and modular diffusion model gui, api and backend with a graph/nodes interface. the fastest local inference engine in the world. python ai comfy comfyui python pytorch stable-diffusion">
+  <header>
+    <h3><span class="rank">02</span><a href="https://github.com/Comfy-Org/ComfyUI">ComfyUI</a></h3>
+    <div class="stars">★ 143,699</div>
+  </header>
+  <p class="meta">Comfy-Org/ComfyUI · Python · GPL-3.0 · 最近推送 2026-10-28</p>
+  <p class="summary">用節點圖搭建擴散模型流程嘅介面同後端，適合複雜、可重現嘅圖像生成。</p>
+  <div class="links"><a href="https://github.com/Comfy-Org/ComfyUI">GitHub</a><a href="https://www.comfy.org/">主頁</a></div>
+  <div class="topics"><span>#ai</span><span>#comfy</span><span>#comfyui</span></div>
+</article><article class="card" data-search="paddleocr paddlepaddle/paddleocr 輕量 ocr 工具，可以將圖片同 pdf 轉成結構化文字，支援大量語言。 turn any pdf or image document into structured data for your ai. a powerful, lightweight ocr toolkit that bridges the gap between images/pdfs and llms. supports 100+ languages. python ai4science chineseocr document-parsing document-translation kie ocr paddleocr-vl pdf-extractor-rag">
+  <header>
+    <h3><span class="rank">03</span><a href="https://github.com/PaddlePaddle/PaddleOCR">PaddleOCR</a></h3>
+    <div class="stars">★ 91,844</div>
+  </header>
+  <p class="meta">PaddlePaddle/PaddleOCR · Python · Apache-2.0 · 最近推送 2026-09-16</p>
+  <p class="summary">輕量 OCR 工具，可以將圖片同 PDF 轉成結構化文字，支援大量語言。</p>
+  <div class="links"><a href="https://github.com/PaddlePaddle/PaddleOCR">GitHub</a><a href="https://www.paddleocr.com">主頁</a></div>
+  <div class="topics"><span>#ai4science</span><span>#chineseocr</span><span>#document-parsing</span></div>
+</article><article class="card" data-search="opencv opencv/opencv 開源電腦視覺庫，處理圖像同影片嘅讀取、濾鏡、特徵同偵測。 open source computer vision library c++ c-plus-plus computer-vision deep-learning image-processing opencv">
+  <header>
+    <h3><span class="rank">04</span><a href="https://github.com/opencv/opencv">opencv</a></h3>
+    <div class="stars">★ 91,354</div>
+  </header>
+  <p class="meta">opencv/opencv · C++ · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">開源電腦視覺庫，處理圖像同影片嘅讀取、濾鏡、特徵同偵測。</p>
+  <div class="links"><a href="https://github.com/opencv/opencv">GitHub</a><a href="https://opencv.org">主頁</a></div>
+  <div class="topics"><span>#c-plus-plus</span><span>#computer-vision</span><span>#deep-learning</span></div>
+</article><article class="card" data-search="tesseract tesseract-ocr/tesseract 經典開源光學字元識別引擎，可以從圖片抽出文字。 tesseract open source ocr engine (main repository) c++ hacktoberfest lstm machine-learning ocr ocr-engine tesseract tesseract-ocr">
+  <header>
+    <h3><span class="rank">05</span><a href="https://github.com/tesseract-ocr/tesseract">tesseract</a></h3>
+    <div class="stars">★ 77,212</div>
+  </header>
+  <p class="meta">tesseract-ocr/tesseract · C++ · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">經典開源光學字元識別引擎，可以從圖片抽出文字。</p>
+  <div class="links"><a href="https://github.com/tesseract-ocr/tesseract">GitHub</a><a href="https://tesseract-ocr.github.io/">主頁</a></div>
+  <div class="topics"><span>#hacktoberfest</span><span>#lstm</span><span>#machine-learning</span></div>
+</article><article class="card" data-search="stable-diffusion compvis/stable-diffusion compvis 發佈嘅潛在擴散文字到圖像模型，係後來大量生成工具嘅基礎。 a latent text-to-image diffusion model jupyter notebook ">
+  <header>
+    <h3><span class="rank">06</span><a href="https://github.com/CompVis/stable-diffusion">stable-diffusion</a></h3>
+    <div class="stars">★ 73,547</div>
+  </header>
+  <p class="meta">CompVis/stable-diffusion · Jupyter Notebook · 最近推送 2024-06-18</p>
+  <p class="summary">CompVis 發佈嘅潛在擴散文字到圖像模型，係後來大量生成工具嘅基礎。</p>
+  <div class="links"><a href="https://github.com/CompVis/stable-diffusion">GitHub</a><a href="https://ommer-lab.com/research/latent-diffusion-models/">主頁</a><a href="https://arxiv.org/abs/2112.10752">論文</a></div>
+  
+</article><article class="card" data-search="fooocus lllyasviel/fooocus 將 stable diffusion 收成一個注重提示詞同出圖嘅簡化介面。 focus on prompting and generating python ">
+  <header>
+    <h3><span class="rank">07</span><a href="https://github.com/lllyasviel/Fooocus">Fooocus</a></h3>
+    <div class="stars">★ 53,713</div>
+  </header>
+  <p class="meta">lllyasviel/Fooocus · Python · GPL-3.0 · 最近推送 2025-12-01</p>
+  <p class="summary">將 Stable Diffusion 收成一個注重提示詞同出圖嘅簡化介面。</p>
+  <div class="links"><a href="https://github.com/lllyasviel/Fooocus">GitHub</a></div>
+  
+</article><article class="card" data-search="supervision roboflow/supervision 電腦視覺工具庫，用嚟處理偵測結果、標註同視覺化。 we write your reusable computer vision tools. 💜 python classification coco computer-vision deep-learning hacktoberfest image-processing instance-segmentation low-code">
+  <header>
+    <h3><span class="rank">08</span><a href="https://github.com/roboflow/supervision">supervision</a></h3>
+    <div class="stars">★ 51,404</div>
+  </header>
+  <p class="meta">roboflow/supervision · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">電腦視覺工具庫，用嚟處理偵測結果、標註同視覺化。</p>
+  <div class="links"><a href="https://github.com/roboflow/supervision">GitHub</a><a href="https://supervision.roboflow.com">主頁</a></div>
+  <div class="topics"><span>#classification</span><span>#coco</span><span>#computer-vision</span></div>
+</article><article class="card" data-search="upscayl upscayl/upscayl 桌面版免費 ai 圖像放大器，支援 linux、macos 同 windows。 🆙 upscayl - #1 free and open source ai image upscaler for linux, macos and windows. typescript ai electron esrgan gigapixel gigapixel-images image image-upscaling topaz">
+  <header>
+    <h3><span class="rank">09</span><a href="https://github.com/upscayl/upscayl">upscayl</a></h3>
+    <div class="stars">★ 51,201</div>
+  </header>
+  <p class="meta">upscayl/upscayl · TypeScript · AGPL-3.0 · 最近推送 2026-10-05</p>
+  <p class="summary">桌面版免費 AI 圖像放大器，支援 Linux、macOS 同 Windows。</p>
+  <div class="links"><a href="https://github.com/upscayl/upscayl">GitHub</a><a href="https://upscayl.org">主頁</a></div>
+  <div class="topics"><span>#ai</span><span>#electron</span><span>#esrgan</span></div>
+</article><article class="card" data-search="gfpgan tencentarc/gfpgan 針對真實相片嘅人臉修復算法，用嚟還原模糊或受損嘅臉。 gfpgan aims at developing practical algorithms for real-world face restoration. python deep-learning face-restoration gan gfpgan image-restoration pytorch super-resolution">
+  <header>
+    <h3><span class="rank">10</span><a href="https://github.com/TencentARC/GFPGAN">GFPGAN</a></h3>
+    <div class="stars">★ 37,701</div>
+  </header>
+  <p class="meta">TencentARC/GFPGAN · Python · 最近推送 2024-07-26</p>
+  <p class="summary">針對真實相片嘅人臉修復算法，用嚟還原模糊或受損嘅臉。</p>
+  <div class="links"><a href="https://github.com/TencentARC/GFPGAN">GitHub</a></div>
+  <div class="topics"><span>#deep-learning</span><span>#face-restoration</span><span>#gan</span></div>
+</article><article class="card" data-search="pytorch-image-models huggingface/pytorch-image-models 大量 pytorch 圖像骨幹模型嘅集合，包含訓練、評估同預訓練權重。 the largest collection of pytorch image encoders / backbones. including train, eval, inference, export scripts, and pretrained weights -- resnet, resnext, efficientnet, nfnet, vision transformer (vit), mobilenetv4, mobilenet-v3 &amp; v2, regnet, dpn, cspnet, swin transformer, maxvit, coatnet, convnext, and more python augmix convnext distributed-training efficientnet image-classification imagenet maxvit mixnet">
+  <header>
+    <h3><span class="rank">11</span><a href="https://github.com/huggingface/pytorch-image-models">pytorch-image-models</a></h3>
+    <div class="stars">★ 37,254</div>
+  </header>
+  <p class="meta">huggingface/pytorch-image-models · Python · Apache-2.0 · 最近推送 2026-10-27</p>
+  <p class="summary">大量 PyTorch 圖像骨幹模型嘅集合，包含訓練、評估同預訓練權重。</p>
+  <div class="links"><a href="https://github.com/huggingface/pytorch-image-models">GitHub</a><a href="https://huggingface.co/docs/timm">主頁</a></div>
+  <div class="topics"><span>#augmix</span><span>#convnext</span><span>#distributed-training</span></div>
+</article><article class="card" data-search="real-esrgan xinntao/real-esrgan 實用嘅圖像同影片修復模型，用嚟放大同改善畫質。 real-esrgan aims at developing practical algorithms for general image/video restoration. python amine denoise esrgan image-restoration jpeg-compression pytorch real-esrgan super-resolution">
+  <header>
+    <h3><span class="rank">12</span><a href="https://github.com/xinntao/Real-ESRGAN">Real-ESRGAN</a></h3>
+    <div class="stars">★ 37,253</div>
+  </header>
+  <p class="meta">xinntao/Real-ESRGAN · Python · BSD-3-Clause · 最近推送 2024-08-06</p>
+  <p class="summary">實用嘅圖像同影片修復模型，用嚟放大同改善畫質。</p>
+  <div class="links"><a href="https://github.com/xinntao/Real-ESRGAN">GitHub</a></div>
+  <div class="topics"><span>#amine</span><span>#denoise</span><span>#esrgan</span></div>
+</article><article class="card" data-search="diffusers huggingface/diffusers hugging face 嘅擴散模型庫，用 pytorch 做圖像、影片同音訊生成。 🤗 diffusers: state-of-the-art diffusion models for image, video, and audio generation in pytorch. python deep-learning diffusion flux image-generation image2image image2video latent-diffusion-models pytorch">
+  <header>
+    <h3><span class="rank">13</span><a href="https://github.com/huggingface/diffusers">diffusers</a></h3>
+    <div class="stars">★ 34,824</div>
+  </header>
+  <p class="meta">huggingface/diffusers · Python · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">Hugging Face 嘅擴散模型庫，用 PyTorch 做圖像、影片同音訊生成。</p>
+  <div class="links"><a href="https://github.com/huggingface/diffusers">GitHub</a><a href="https://huggingface.co/docs/diffusers">主頁</a></div>
+  <div class="topics"><span>#deep-learning</span><span>#diffusion</span><span>#flux</span></div>
+</article><article class="card" data-search="clip openai/clip 將圖像同文字放喺同一個空間嘅模型，可以判斷一段文字同圖片有幾匹配。 clip (contrastive language-image pretraining),  predict the most relevant text snippet given an image jupyter notebook deep-learning machine-learning">
+  <header>
+    <h3><span class="rank">14</span><a href="https://github.com/openai/CLIP">CLIP</a></h3>
+    <div class="stars">★ 34,539</div>
+  </header>
+  <p class="meta">openai/CLIP · Jupyter Notebook · MIT · 最近推送 2026-03-25</p>
+  <p class="summary">將圖像同文字放喺同一個空間嘅模型，可以判斷一段文字同圖片有幾匹配。</p>
+  <div class="links"><a href="https://github.com/openai/CLIP">GitHub</a></div>
+  <div class="topics"><span>#deep-learning</span><span>#machine-learning</span></div>
+</article><article class="card" data-search="controlnet lllyasviel/controlnet 用邊緣、姿勢、深度等條件圖控制擴散模型，令生成跟住指定結構。 let us control diffusion models! python ">
+  <header>
+    <h3><span class="rank">15</span><a href="https://github.com/lllyasviel/ControlNet">ControlNet</a></h3>
+    <div class="stars">★ 34,138</div>
+  </header>
+  <p class="meta">lllyasviel/ControlNet · Python · Apache-2.0 · 最近推送 2024-02-25</p>
+  <p class="summary">用邊緣、姿勢、深度等條件圖控制擴散模型，令生成跟住指定結構。</p>
+  <div class="links"><a href="https://github.com/lllyasviel/ControlNet">GitHub</a><a href="https://arxiv.org/abs/2302.05543">論文</a></div>
+  
+</article><article class="card" data-search="sharp lovell/sharp 高效能 node.js 圖像處理模組，用 libvips 做縮放同格式轉換。 high performance node.js image processing, the fastest module to resize jpeg, png, webp, avif and tiff images. uses the libvips library. javascript avif crop exif icc image image-processing javascript jpeg">
+  <header>
+    <h3><span class="rank">16</span><a href="https://github.com/lovell/sharp">sharp</a></h3>
+    <div class="stars">★ 32,806</div>
+  </header>
+  <p class="meta">lovell/sharp · JavaScript · Apache-2.0 · 最近推送 2026-10-23</p>
+  <p class="summary">高效能 Node.js 圖像處理模組，用 libvips 做縮放同格式轉換。</p>
+  <div class="links"><a href="https://github.com/lovell/sharp">GitHub</a><a href="https://sharp.pixelplumbing.com">主頁</a></div>
+  <div class="topics"><span>#avif</span><span>#crop</span><span>#exif</span></div>
+</article><article class="card" data-search="easyocr jaidedai/easyocr 開箱即用嘅光學字元識別，支援八十幾種語言同多種文字系統。 ready-to-use ocr with 80+ supported languages and all popular writing scripts including latin, chinese, arabic, devanagari, cyrillic and etc. python cnn crnn data-mining deep-learning easyocr image-processing information-retrieval lstm">
+  <header>
+    <h3><span class="rank">17</span><a href="https://github.com/JaidedAI/EasyOCR">EasyOCR</a></h3>
+    <div class="stars">★ 30,116</div>
+  </header>
+  <p class="meta">JaidedAI/EasyOCR · Python · Apache-2.0 · 最近推送 2025-12-05</p>
+  <p class="summary">開箱即用嘅光學字元識別，支援八十幾種語言同多種文字系統。</p>
+  <div class="links"><a href="https://github.com/JaidedAI/EasyOCR">GitHub</a><a href="https://www.jaided.ai">主頁</a></div>
+  <div class="topics"><span>#cnn</span><span>#crnn</span><span>#data-mining</span></div>
+</article><article class="card" data-search="invokeai invoke-ai/invokeai 面向創作嘅 stable diffusion 引擎，用嚟生成同編輯視覺內容。 invoke is a leading creative engine for stable diffusion models, empowering professionals, artists, and enthusiasts to generate and create visual media using the latest ai-driven technologies. the solution offers an industry leading webui, and serves as the foundation for multiple commercial products. typescript ai-art artificial-intelligence generative-art image-generation img2img inpainting latent-diffusion linux">
+  <header>
+    <h3><span class="rank">18</span><a href="https://github.com/invoke-ai/InvokeAI">InvokeAI</a></h3>
+    <div class="stars">★ 28,898</div>
+  </header>
+  <p class="meta">invoke-ai/InvokeAI · TypeScript · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">面向創作嘅 Stable Diffusion 引擎，用嚟生成同編輯視覺內容。</p>
+  <div class="links"><a href="https://github.com/invoke-ai/InvokeAI">GitHub</a><a href="https://invoke-ai.github.io/InvokeAI/">主頁</a></div>
+  <div class="topics"><span>#ai-art</span><span>#artificial-intelligence</span><span>#generative-art</span></div>
+</article><article class="card" data-search="waifu2x nagadomi/waifu2x 針對動漫風格嘅圖像超解像，用嚟放大同時減少鋸齒同雜訊。 image super-resolution for anime-style art lua super-resolution torch waifu2x">
+  <header>
+    <h3><span class="rank">19</span><a href="https://github.com/nagadomi/waifu2x">waifu2x</a></h3>
+    <div class="stars">★ 28,241</div>
+  </header>
+  <p class="meta">nagadomi/waifu2x · Lua · MIT · 最近推送 2023-05-04</p>
+  <p class="summary">針對動漫風格嘅圖像超解像，用嚟放大同時減少鋸齒同雜訊。</p>
+  <div class="links"><a href="https://github.com/nagadomi/waifu2x">GitHub</a><a href="http://waifu2x.udp.jp/ ">主頁</a></div>
+  <div class="topics"><span>#super-resolution</span><span>#torch</span><span>#waifu2x</span></div>
+</article><article class="card" data-search="graphite graphiteeditor/graphite 社群開發嘅二維創作軟件，用節點做平面設計、數碼繪圖同動態圖形。 community-built comprehensive 2d content creation appplication for graphic design, digital art, and interactive real-time motion graphics powered by a node-based procedural graphics engine rust 2d-graphics animation art creative-coding design graphic-design graphics graphics-editor">
+  <header>
+    <h3><span class="rank">20</span><a href="https://github.com/GraphiteEditor/Graphite">Graphite</a></h3>
+    <div class="stars">★ 27,755</div>
+  </header>
+  <p class="meta">GraphiteEditor/Graphite · Rust · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">社群開發嘅二維創作軟件，用節點做平面設計、數碼繪圖同動態圖形。</p>
+  <div class="links"><a href="https://github.com/GraphiteEditor/Graphite">GitHub</a><a href="https://graphite.art">主頁</a></div>
+  <div class="topics"><span>#2d-graphics</span><span>#animation</span><span>#art</span></div>
+</article><article class="card" data-search="flux black-forest-labs/flux black forest labs flux.1 圖像模型嘅官方推理程式。 official inference repo for flux.1 models python ">
+  <header>
+    <h3><span class="rank">21</span><a href="https://github.com/black-forest-labs/flux">flux</a></h3>
+    <div class="stars">★ 26,043</div>
+  </header>
+  <p class="meta">black-forest-labs/flux · Python · Apache-2.0 · 最近推送 2025-07-31</p>
+  <p class="summary">Black Forest Labs FLUX.1 圖像模型嘅官方推理程式。</p>
+  <div class="links"><a href="https://github.com/black-forest-labs/flux">GitHub</a></div>
+  
+</article><article class="card" data-search="pytorch-cyclegan-and-pix2pix junyanz/pytorch-cyclegan-and-pix2pix pytorch 實作嘅圖像到圖像轉換，例如風格轉換同配對翻譯。 image-to-image translation in pytorch python computer-graphics computer-vision cyclegan deep-learning gan gans generative-adversarial-network image-generation">
+  <header>
+    <h3><span class="rank">22</span><a href="https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix">pytorch-CycleGAN-and-pix2pix</a></h3>
+    <div class="stars">★ 25,267</div>
+  </header>
+  <p class="meta">junyanz/pytorch-CycleGAN-and-pix2pix · Python · 最近推送 2025-08-06</p>
+  <p class="summary">PyTorch 實作嘅圖像到圖像轉換，例如風格轉換同配對翻譯。</p>
+  <div class="links"><a href="https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix">GitHub</a></div>
+  <div class="topics"><span>#computer-graphics</span><span>#computer-vision</span><span>#cyclegan</span></div>
+</article><article class="card" data-search="rembg danielgatis/rembg 用 ai 自動去除圖片背景嘅工具。 rembg is a tool to remove images background python background-removal image-processing python">
+  <header>
+    <h3><span class="rank">23</span><a href="https://github.com/danielgatis/rembg">rembg</a></h3>
+    <div class="stars">★ 25,212</div>
+  </header>
+  <p class="meta">danielgatis/rembg · Python · MIT · 最近推送 2026-10-21</p>
+  <p class="summary">用 AI 自動去除圖片背景嘅工具。</p>
+  <div class="links"><a href="https://github.com/danielgatis/rembg">GitHub</a></div>
+  <div class="topics"><span>#background-removal</span><span>#image-processing</span><span>#python</span></div>
+</article><article class="card" data-search="iopaint sanster/iopaint ai 圖像修補工具，可以移除物件，或者用文字同擴散模型重畫指定區域。 image inpainting tool powered by sota ai model. remove any unwanted object, defect, people from your pictures or erase and replace(powered by stable diffusion) any thing on your pictures. python inpainting lama latent-diffusion mat pytorch stable-diffusion zits">
+  <header>
+    <h3><span class="rank">24</span><a href="https://github.com/Sanster/IOPaint">IOPaint</a></h3>
+    <div class="stars">★ 23,301</div>
+  </header>
+  <p class="meta">Sanster/IOPaint · Python · Apache-2.0 · 最近推送 2025-04-29</p>
+  <p class="summary">AI 圖像修補工具，可以移除物件，或者用文字同擴散模型重畫指定區域。</p>
+  <div class="links"><a href="https://github.com/Sanster/IOPaint">GitHub</a><a href="https://www.iopaint.com/">主頁</a><span class="badge arch">已封存</span></div>
+  <div class="topics"><span>#inpainting</span><span>#lama</span><span>#latent-diffusion</span></div>
+</article><article class="card" data-search="codeformer sczhou/codeformer 人臉修復模型，用碼本還原受損或低清嘅臉部細節。 [neurips 2022] towards robust blind face restoration with codebook lookup transformer python codebook codeformer face-enhancement face-restoration pytorch restoration super-resolution vqgan">
+  <header>
+    <h3><span class="rank">25</span><a href="https://github.com/sczhou/CodeFormer">CodeFormer</a></h3>
+    <div class="stars">★ 18,199</div>
+  </header>
+  <p class="meta">sczhou/CodeFormer · Python · 最近推送 2025-11-18</p>
+  <p class="summary">人臉修復模型，用碼本還原受損或低清嘅臉部細節。</p>
+  <div class="links"><a href="https://github.com/sczhou/CodeFormer">GitHub</a></div>
+  <div class="topics"><span>#codebook</span><span>#codeformer</span><span>#face-enhancement</span></div>
+</article><article class="card" data-search="imagemagick imagemagick/imagemagick 處理二百幾種格式嘅圖像工具套件，可以用命令列做轉換、編輯同合成。 imagemagick is a free, open-source software suite for creating, editing, converting, and displaying images. it supports 200+ formats and offers powerful command-line tools and apis for automation, scripting, and integration across platforms. c command-line-image-tool digital-image-editing image-conversion image-manipulation image-processing imagemagick mastering-digital-image-alchemy open-source-software">
+  <header>
+    <h3><span class="rank">26</span><a href="https://github.com/ImageMagick/ImageMagick">ImageMagick</a></h3>
+    <div class="stars">★ 17,756</div>
+  </header>
+  <p class="meta">ImageMagick/ImageMagick · C · 最近推送 2026-10-28</p>
+  <p class="summary">處理二百幾種格式嘅圖像工具套件，可以用命令列做轉換、編輯同合成。</p>
+  <div class="links"><a href="https://github.com/ImageMagick/ImageMagick">GitHub</a><a href="https://imagemagick.org">主頁</a></div>
+  <div class="topics"><span>#command-line-image-tool</span><span>#digital-image-editing</span><span>#image-conversion</span></div>
+</article><article class="card" data-search="latex-ocr lukas-blecher/latex-ocr 將數學公式圖片轉成 latex 程式碼。 pix2tex: using a vit to convert images of equations into latex code. python dataset deep-learning im2latex im2markup im2text image-processing image2text latex">
+  <header>
+    <h3><span class="rank">27</span><a href="https://github.com/lukas-blecher/LaTeX-OCR">LaTeX-OCR</a></h3>
+    <div class="stars">★ 16,600</div>
+  </header>
+  <p class="meta">lukas-blecher/LaTeX-OCR · Python · MIT · 最近推送 2025-01-18</p>
+  <p class="summary">將數學公式圖片轉成 LaTeX 程式碼。</p>
+  <div class="links"><a href="https://github.com/lukas-blecher/LaTeX-OCR">GitHub</a><a href="https://lukas-blecher.github.io/LaTeX-OCR/">主頁</a></div>
+  <div class="topics"><span>#dataset</span><span>#deep-learning</span><span>#im2latex</span></div>
+</article><article class="card" data-search="latent-diffusion compvis/latent-diffusion 高解像潛在擴散模型嘅研究程式，係 stable diffusion 嘅前身實作。 high-resolution image synthesis with latent diffusion models jupyter notebook ">
+  <header>
+    <h3><span class="rank">28</span><a href="https://github.com/CompVis/latent-diffusion">latent-diffusion</a></h3>
+    <div class="stars">★ 14,181</div>
+  </header>
+  <p class="meta">CompVis/latent-diffusion · Jupyter Notebook · MIT · 最近推送 2024-02-29</p>
+  <p class="summary">高解像潛在擴散模型嘅研究程式，係 Stable Diffusion 嘅前身實作。</p>
+  <div class="links"><a href="https://github.com/CompVis/latent-diffusion">GitHub</a><a href="https://arxiv.org/abs/2112.10752">論文</a></div>
+  
+</article><article class="card" data-search="pillow python-pillow/pillow python 圖像處理庫，用嚟開檔、縮放、畫圖同轉格式。 python imaging library (fork) python c cross-platform image image-processing pil pillow python python-3">
+  <header>
+    <h3><span class="rank">29</span><a href="https://github.com/python-pillow/Pillow">Pillow</a></h3>
+    <div class="stars">★ 13,935</div>
+  </header>
+  <p class="meta">python-pillow/Pillow · Python · 最近推送 2026-10-28</p>
+  <p class="summary">Python 圖像處理庫，用嚟開檔、縮放、畫圖同轉格式。</p>
+  <div class="links"><a href="https://github.com/python-pillow/Pillow">GitHub</a><a href="https://python-pillow.org">主頁</a></div>
+  <div class="topics"><span>#c</span><span>#cross-platform</span><span>#image</span></div>
+</article><article class="card" data-search="darktable darktable-org/darktable 開源相片工作流同 raw 沖曬軟件，用嚟整理同調色相片。 darktable is an open source photography workflow application and raw developer c ">
+  <header>
+    <h3><span class="rank">30</span><a href="https://github.com/darktable-org/darktable">darktable</a></h3>
+    <div class="stars">★ 13,350</div>
+  </header>
+  <p class="meta">darktable-org/darktable · C · GPL-3.0 · 最近推送 2026-10-28</p>
+  <p class="summary">開源相片工作流同 RAW 沖曬軟件，用嚟整理同調色相片。</p>
+  <div class="links"><a href="https://github.com/darktable-org/darktable">GitHub</a><a href="https://www.darktable.org">主頁</a></div>
+  
+</article><article class="card" data-search="stable-diffusion-webui-forge lllyasviel/stable-diffusion-webui-forge stable diffusion webui 嘅高效分支，針對速度同新模型做咗優化。  python ">
+  <header>
+    <h3><span class="rank">31</span><a href="https://github.com/lllyasviel/stable-diffusion-webui-forge">stable-diffusion-webui-forge</a></h3>
+    <div class="stars">★ 13,088</div>
+  </header>
+  <p class="meta">lllyasviel/stable-diffusion-webui-forge · Python · AGPL-3.0 · 最近推送 2025-07-31</p>
+  <p class="summary">Stable Diffusion WebUI 嘅高效分支，針對速度同新模型做咗優化。</p>
+  <div class="links"><a href="https://github.com/lllyasviel/stable-diffusion-webui-forge">GitHub</a></div>
+  
+</article><article class="card" data-search="kohya_ss bmaltais/kohya_ss 用嚟訓練 lora 同微調擴散模型嘅圖形介面。  python ">
+  <header>
+    <h3><span class="rank">32</span><a href="https://github.com/bmaltais/kohya_ss">kohya_ss</a></h3>
+    <div class="stars">★ 12,641</div>
+  </header>
+  <p class="meta">bmaltais/kohya_ss · Python · Apache-2.0 · 最近推送 2026-08-01</p>
+  <p class="summary">用嚟訓練 LoRA 同微調擴散模型嘅圖形介面。</p>
+  <div class="links"><a href="https://github.com/bmaltais/kohya_ss">GitHub</a></div>
+  
+</article><article class="card" data-search="instantid instantx-research/instantid 用一張參考圖做身份保持生成，喺新畫面入面保留同一個人。 instantid: zero-shot identity-preserving generation in seconds 🔥 python ">
+  <header>
+    <h3><span class="rank">33</span><a href="https://github.com/instantX-research/InstantID">InstantID</a></h3>
+    <div class="stars">★ 11,992</div>
+  </header>
+  <p class="meta">instantX-research/InstantID · Python · Apache-2.0 · 最近推送 2024-07-18</p>
+  <p class="summary">用一張參考圖做身份保持生成，喺新畫面入面保留同一個人。</p>
+  <div class="links"><a href="https://github.com/instantX-research/InstantID">GitHub</a><a href="https://instantid.github.io/">主頁</a></div>
+  
+</article><article class="card" data-search="libvips libvips/libvips 低記憶體、高速度嘅圖像處理庫。 a fast image processing library with low memory needs. c c cpp gif graphicsmagick hdr heic image-processing imagemagick">
+  <header>
+    <h3><span class="rank">34</span><a href="https://github.com/libvips/libvips">libvips</a></h3>
+    <div class="stars">★ 11,769</div>
+  </header>
+  <p class="meta">libvips/libvips · C · LGPL-2.1 · 最近推送 2026-10-28</p>
+  <p class="summary">低記憶體、高速度嘅圖像處理庫。</p>
+  <div class="links"><a href="https://github.com/libvips/libvips">GitHub</a><a href="https://libvips.org">主頁</a></div>
+  <div class="topics"><span>#c</span><span>#cpp</span><span>#gif</span></div>
+</article><article class="card" data-search="stylegan2 nvlabs/stylegan2 nvidia 嘅 stylegan2，用生成對抗網絡合成高解像圖像。 stylegan2 - official tensorflow implementation python ">
+  <header>
+    <h3><span class="rank">35</span><a href="https://github.com/NVlabs/stylegan2">stylegan2</a></h3>
+    <div class="stars">★ 11,182</div>
+  </header>
+  <p class="meta">NVlabs/stylegan2 · Python · 最近推送 2024-05-18</p>
+  <p class="summary">NVIDIA 嘅 StyleGAN2，用生成對抗網絡合成高解像圖像。</p>
+  <div class="links"><a href="https://github.com/NVlabs/stylegan2">GitHub</a><a href="http://arxiv.org/abs/1912.04958">主頁</a></div>
+  
+</article><article class="card" data-search="krita-ai-diffusion acly/krita-ai-diffusion krita 入面嘅 ai 繪圖插件，可以按選區同提示做局部重繪同擴圖。 streamlined interface for generating images with ai in krita. inpaint and outpaint with optional text prompt, no tweaking required. python generative-ai krita-plugin stable-diffusion">
+  <header>
+    <h3><span class="rank">36</span><a href="https://github.com/Acly/krita-ai-diffusion">krita-ai-diffusion</a></h3>
+    <div class="stars">★ 10,796</div>
+  </header>
+  <p class="meta">Acly/krita-ai-diffusion · Python · GPL-3.0 · 最近推送 2026-10-03</p>
+  <p class="summary">Krita 入面嘅 AI 繪圖插件，可以按選區同提示做局部重繪同擴圖。</p>
+  <div class="links"><a href="https://github.com/Acly/krita-ai-diffusion">GitHub</a><a href="https://www.interstice.cloud">主頁</a></div>
+  <div class="topics"><span>#generative-ai</span><span>#krita-plugin</span><span>#stable-diffusion</span></div>
+</article><article class="card" data-search="ic-light lllyasviel/ic-light 控制生成圖像打光嘅工具，可以改燈光方向同環境，同時盡量保留主體。 more relighting! python ">
+  <header>
+    <h3><span class="rank">37</span><a href="https://github.com/lllyasviel/IC-Light">IC-Light</a></h3>
+    <div class="stars">★ 8,565</div>
+  </header>
+  <p class="meta">lllyasviel/IC-Light · Python · Apache-2.0 · 最近推送 2025-02-20</p>
+  <p class="summary">控制生成圖像打光嘅工具，可以改燈光方向同環境，同時盡量保留主體。</p>
+  <div class="links"><a href="https://github.com/lllyasviel/IC-Light">GitHub</a></div>
+  
+</article></div>
+  <div class="papers"><h3>相關論文</h3><div class="grid"><article class="card" data-search="instructpix2pix: learning to follow image editing instructions 用自然語言指令直接改一張現有圖像，例如換背景、改物件或者轉風格。 paper arxiv">
+  <header>
+    <h3><a href="https://arxiv.org/abs/2211.09800">InstructPix2Pix: Learning to Follow Image Editing Instructions</a></h3>
+    <div class="stars">2023</div>
+  </header>
+  <p class="meta">論文 · arXiv</p>
+  <p class="summary">用自然語言指令直接改一張現有圖像，例如換背景、改物件或者轉風格。</p>
+  <div class="links"><a href="https://arxiv.org/abs/2211.09800">arXiv</a><a href="https://github.com/timothybrooks/instruct-pix2pix">程式</a><span class="badge">論文</span></div>
+</article><article class="card" data-search="sdxl: improving latent diffusion models for high-resolution image synthesis stable diffusion 嘅較大版本，改善構圖、文字同整體畫質，適合高解像生成。 paper arxiv">
+  <header>
+    <h3><a href="https://arxiv.org/abs/2307.01952">SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis</a></h3>
+    <div class="stars">2023</div>
+  </header>
+  <p class="meta">論文 · arXiv</p>
+  <p class="summary">Stable Diffusion 嘅較大版本，改善構圖、文字同整體畫質，適合高解像生成。</p>
+  <div class="links"><a href="https://arxiv.org/abs/2307.01952">arXiv</a><a href="https://github.com/Stability-AI/generative-models">程式</a><span class="badge">論文</span></div>
+</article></div></div>
+</section>
+    </main>
+  </div>
+  <footer class="site">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 排序以 stars 為準 · 重複項目只保留一次</footer>
+</div>
+<script>
+(function () {
+  const input = document.querySelector("#q");
+  const cards = Array.from(document.querySelectorAll("[data-search]"));
+  const sections = Array.from(document.querySelectorAll("[data-section]"));
+  const empty = document.querySelector("#empty");
+  function apply() {
+    const q = input.value.trim().toLowerCase();
+    let shown = 0;
+    cards.forEach((card) => {
+      const ok = !q || card.dataset.search.includes(q);
+      card.hidden = !ok;
+      if (ok) shown += 1;
+    });
+    sections.forEach((section) => {
+      section.hidden = !Array.from(section.querySelectorAll("[data-search]")).some((card) => !card.hidden);
+    });
+    empty.hidden = shown !== 0;
+    empty.style.display = shown === 0 ? "block" : "none";
+  }
+  input.addEventListener("input", apply);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "/" && document.activeElement !== input) {
+      event.preventDefault();
+      input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

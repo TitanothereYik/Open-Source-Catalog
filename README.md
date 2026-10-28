@@ -1,0 +1,77 @@
+# Open Source Catalog
+
+六個方向嘅開源項目同相關論文，用深色頁面瀏覽。開源項目按 GitHub stars 由多至少排列。
+
+分類次序：
+
+1. AI Agent
+2. 圖像
+3. 影片
+4. VFX / CG / Blender
+5. Stock Trading
+6. Crypto Trading
+
+第一版收錄 200 個開源項目。已經收錄嘅 repo 唔會再加入。之後每 6 小時檢查一次，只加入未見過、而且符合分類嘅新項目，同時更新 stars。
+
+## 本地瀏覽
+
+```bash
+python3 -m http.server 43123
+```
+
+然後開 [http://127.0.0.1:43123](http://127.0.0.1:43123)。
+
+根目錄 `index.html` 係完整目錄。每個分類亦有自己嘅子目錄，例如 `image/`、`video/`。
+
+## 更新
+
+```bash
+python3 scripts/catalog_tool.py update
+```
+
+`bootstrap` 只用嚟由 `data/allowlist.json` 同 `data/summaries.json` 重建第一版。日常更新唔好加 `--force`，否則會覆蓋而家嘅目錄。
+
+檢查：
+
+```bash
+python3 scripts/catalog_tool.py validate
+```
+
+## GitHub Pages
+
+網站檔案放喺 repo 根目錄。推上 `main` 之後，`.github/workflows/pages.yml` 會部署 GitHub Pages。
+
+建議 repository 名稱用 `Open-Source-Catalog`，頁面標題會顯示 **Open Source Catalog**。公開 repo 先可以用免費 GitHub Pages。
+
+網站網址會係：
+
+```text
+https://<github-user>.github.io/<repository>/
+```
+
+更新 workflow 會把呢個網址寫入目錄同電郵入面嘅連結。
+
+## 每 6 小時
+
+`.github/workflows/update.yml` 喺 UTC 00:00、06:00、12:00、18:00 運行，即香港時間 08:00、14:00、20:00、02:00。
+
+每次完成會：
+
+- 更新 `index.html` 同六個分類子目錄
+- commit 並 push 去 `main`，Pages 會跟住更新
+- 喺 issue「Open Source Catalog updates」留一則通知
+- 如果設定咗 SMTP，寄出 `email/latest.html`
+
+電郵收件人預設係帳號電郵。可以喺 repository secret 用 `NOTIFY_EMAIL` 覆蓋。
+
+要真係寄出精美 HTML 電郵，請喺 repository secrets 加上：
+
+| Secret | 例子 |
+| --- | --- |
+| `SMTP_HOST` | `smtp.gmail.com`（可選，預設就係呢個） |
+| `SMTP_PORT` | `587`（可選） |
+| `SMTP_USERNAME` | 你嘅電郵 |
+| `SMTP_PASSWORD` | 電郵供應商嘅 app password |
+| `NOTIFY_EMAIL` | 收件地址（可選） |
+
+Gmail 要用 app password，唔係平時登入密碼。未設定 SMTP 時，電郵 HTML 仍然會寫入 `email/latest.html`，GitHub issue 通知會照常建立。

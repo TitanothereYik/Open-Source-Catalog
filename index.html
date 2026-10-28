@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0c0d11">
+<meta name="description" content="Open Source Catalog：AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。">
+<title>Open Source Catalog</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=Outfit:wght@400;520;650&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect fill='%230c0d11' width='64' height='64' rx='14'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23e4b15a' stroke-width='4'/%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #0c0d11;
+  --bg-raise: #15171e;
+  --line: rgba(244, 236, 224, 0.12);
+  --text: #f6f1e8;
+  --muted: #b7b0a4;
+  --faint: #8d867c;
+  --gold: #e4b15a;
+  --ink: #1c140c;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(228, 177, 90, 0.14), transparent 55%),
+    radial-gradient(900px 420px at 100% 0%, rgba(143, 208, 196, 0.08), transparent 50%),
+    var(--bg);
+  color: var(--text);
+  font-family: Outfit, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+a { color: inherit; }
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -40px;
+  background: var(--gold);
+  color: var(--ink);
+  padding: 8px 12px;
+  z-index: 5;
+}
+.skip:focus { top: 12px; }
+.wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+header.hero { padding: 36px 0 18px; }
+.kicker {
+  margin: 0 0 8px;
+  color: var(--gold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+h1 {
+  margin: 0;
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 560;
+  font-size: clamp(40px, 6vw, 68px);
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+.lede { max-width: 680px; color: var(--muted); font-size: 18px; margin: 14px 0 0; }
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.stat {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 14px;
+  min-width: 120px;
+}
+.stat b { display: block; font-family: Fraunces, Georgia, serif; font-size: 22px; font-weight: 560; }
+.stat span { color: var(--faint); font-size: 13px; }
+.layout { display: grid; grid-template-columns: 220px 1fr; gap: 28px; padding-bottom: 72px; }
+nav.side {
+  position: sticky;
+  top: 16px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 8px;
+}
+nav.side a {
+  text-decoration: none;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+nav.side a:hover, nav.side a[aria-current="page"] {
+  background: var(--bg-raise);
+  color: var(--text);
+}
+nav.side .count { color: var(--faint); font-variant-numeric: tabular-nums; }
+.search { position: sticky; top: 0; z-index: 2; background: linear-gradient(var(--bg), rgba(12,13,17,0.92) 70%, transparent); padding: 8px 0 14px; }
+.search input {
+  width: 100%;
+  background: var(--bg-raise);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font: inherit;
+  outline: none;
+}
+.search input:focus { border-color: var(--gold); }
+.section { margin: 8px 0 36px; scroll-margin-top: 72px; }
+.section h2 {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 34px;
+  font-weight: 560;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+.section .blurb { color: var(--muted); margin: 6px 0 16px; }
+.grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.card {
+  background: rgba(21, 23, 30, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  box-shadow: var(--shadow);
+  min-width: 0;
+}
+.card header { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.rank { color: var(--faint); font-variant-numeric: tabular-nums; font-size: 13px; margin-right: 8px; }
+.card h3 { margin: 0; font-size: 18px; letter-spacing: -0.02em; }
+.card h3 a { text-decoration: none; }
+.card h3 a:hover { color: var(--gold); }
+.stars { color: var(--gold); font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 650; }
+.meta { color: var(--faint); font-size: 13px; margin: 6px 0 8px; overflow-wrap: anywhere; }
+.summary { margin: 0; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.links a, .badge {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.links a:hover { color: var(--text); border-color: var(--gold); }
+.badge.arch { color: #e7b8a4; }
+.topics { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.topics span { color: var(--faint); font-size: 12px; }
+.papers { margin-top: 16px; }
+.papers h3 { margin: 0 0 10px; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+#empty { display: none; color: var(--muted); padding: 12px 0 24px; }
+footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
+@media (min-width: 980px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; gap: 8px; }
+  nav.side { position: static; flex-direction: row; overflow-x: auto; padding-bottom: 8px; }
+  nav.side a { white-space: nowrap; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">跳到項目</a>
+<div class="wrap">
+  <header class="hero">
+    <p class="kicker">每 6 小時更新</p>
+    <h1>Open Source Catalog</h1>
+    <p class="lede">AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。</p>
+    <div class="stats">
+      <div class="stat"><b>200</b><span>開源項目</span></div>
+      <div class="stat"><b>7</b><span>未另列 repo 嘅論文</span></div>
+      <div class="stat"><b>2026年10月28日</b><span>20:06（香港時間）</span></div>
+    </div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="分類"><a href="#content" aria-current="page">全部<span class="count">200</span></a><a href="#ai-agent">AI Agent<span class="count">42</span></a><a href="#image">圖像<span class="count">37</span></a><a href="#video">影片<span class="count">32</span></a><a href="#vfx-cg-blender">VFX / CG / Blender<span class="count">32</span></a><a href="#stock-trading">Stock Trading<span class="count">30</span></a><a href="#crypto-trading">Crypto Trading<span class="count">27</span></a></nav>
+    <main id="content">
+      <form class="search" role="search" onsubmit="return false">
+        <label class="sr" for="q" style="position:absolute;left:-999px">搜尋</label>
+        <input id="q" type="search" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
+      </form>
+      <p id="empty">沒有符合呢個搜尋嘅項目。</p>
+      <section class="section" id="ai-agent" data-section>
+  <h2>AI Agent</h2>
+  <p class="blurb">會規劃、調用工具、同其他 agent 一齊做嘢嘅開源框架同程式。 開源項目按 GitHub stars 由多至少。</p>
+  <div class="grid"><article class="card" data-search="autogpt significant-gravitas/autogpt 開放嘅 ai agent 平台，用嚟搭建同使用自主 agent，等你專注喺目標而唔使由零處理工具鏈。 autogpt is the vision of accessible ai for everyone, to use and to build on. our mission is to provide the tools, so that you can focus on what matters. python agentic-ai agents ai artificial-intelligence autonomous-agents claude gpt llama-api">
+  <header>
+    <h3><span class="rank">01</span><a href="https://github.com/Significant-Gravitas/AutoGPT">AutoGPT</a></h3>
+    <div class="stars">★ 187,801</div>
+  </header>
+  <p class="meta">Significant-Gravitas/AutoGPT · Python · 最近推送 2026-10-28</p>
+  <p class="summary">開放嘅 AI agent 平台，用嚟搭建同使用自主 agent，等你專注喺目標而唔使由零處理工具鏈。</p>
+  <div class="links"><a href="https://github.com/Significant-Gravitas/AutoGPT">GitHub</a><a href="https://agpt.co">主頁</a></div>
+  <div class="topics"><span>#agentic-ai</span><span>#agents</span><span>#ai</span></div>
+</article><article class="card" data-search="dify langgenius/dify 用嚟搭建 agent 工作流同 rag 應用嘅平台，支援多種模型同工具，可以放喺雲端或者自己架。 build agentic workflows, rag pipelines, with rich ai model and tool support on one collaborative workspace. deploy on cloud, vpc, or self-hosted, so teams move from prototype to production without rebuilding the stack. python agent agentic-ai agentic-framework agentic-workflow ai automation claude deepseek">
+  <header>
+    <h3><span class="rank">02</span><a href="https://github.com/langgenius/dify">dify</a></h3>
+    <div class="stars">★ 159,799</div>
+  </header>
+  <p class="meta">langgenius/dify · Python · 最近推送 2026-10-28</p>
+  <p class="summary">用嚟搭建 agent 工作流同 RAG 應用嘅平台，支援多種模型同工具，可以放喺雲端或者自己架。</p>
+  <div class="links"><a href="https://github.com/langgenius/dify">GitHub</a><a href="https://dify.ai">主頁</a></div>
+  <div class="topics"><span>#agent</span><span>#agentic-ai</span><span>#agentic-framework</span></div>
+</article><article class="card" data-search="langflow langflow-ai/langflow 用視覺化流程搭建同部署 ai agent 同工作流。 langflow is a powerful tool for building and deploying ai-powered agents and workflows. python agents chatgpt generative-ai large-language-models multiagent react-flow">
+  <header>
+    <h3><span class="rank">03</span><a href="https://github.com/langflow-ai/langflow">langflow</a></h3>
+    <div class="stars">★ 156,094</div>
+  </header>
+  <p class="meta">langflow-ai/langflow · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">用視覺化流程搭建同部署 AI agent 同工作流。</p>
+  <div class="links"><a href="https://github.com/langflow-ai/langflow">GitHub</a><a href="http://www.langflow.org">主頁</a></div>
+  <div class="topics"><span>#agents</span><span>#chatgpt</span><span>#generative-ai</span></div>
+</article><article class="card" data-search="langchain langchain-ai/langchain 開發 agent 嘅工程平台，將模型、工具、記憶同流程砌成可重用嘅應用。 the agent engineering platform. python agents ai ai-agents anthropic chatgpt deepagents enterprise framework">
+  <header>
+    <h3><span class="rank">04</span><a href="https://github.com/langchain-ai/langchain">langchain</a></h3>
+    <div class="stars">★ 148,609</div>
+  </header>
+  <p class="meta">langchain-ai/langchain · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">開發 agent 嘅工程平台，將模型、工具、記憶同流程砌成可重用嘅應用。</p>
+  <div class="links"><a href="https://github.com/langchain-ai/langchain">GitHub</a><a href="https://docs.langchain.com/langchain/">主頁</a></div>
+  <div class="topics"><span>#agents</span><span>#ai</span><span>#ai-agents</span></div>
+</article><article class="card" data-search="browser-use browser-use/browser-use 畀 ai agent 操控瀏覽器嘅 python 庫，可以自己撳網頁、填表同拎資料。 open-source python library for ai browser agents, plus browser use cloud: stealth browsers and a hosted agent api. python ai-agents ai-tools browser-agent browser-automation browser-use cdp cloud-browser computer-use">
+  <header>
+    <h3><span class="rank">05</span><a href="https://github.com/browser-use/browser-use">browser-use</a></h3>
+    <div class="stars">★ 119,352</div>
+  </header>
+  <p class="meta">browser-use/browser-use · Python · MIT · 最近推送 2026-10-27</p>
+  <p class="summary">畀 AI agent 操控瀏覽器嘅 Python 庫，可以自己撳網頁、填表同拎資料。</p>
+  <div class="links"><a href="https://github.com/browser-use/browser-use">GitHub</a><a href="https://browser-use.com">主頁</a></div>
+  <div class="topics"><span>#ai-agents</span><span>#ai-tools</span><span>#browser-agent</span></div>
+</article><article class="card" data-search="gemini-cli google-gemini/gemini-cli 將 gemini 帶入終端機嘅開源 agent，可以直接喺命令列做開發工作。 an open-source ai agent that brings the power of gemini directly into your terminal. typescript ai ai-agents cli gemini gemini-api mcp-client mcp-server">
+  <header>
+    <h3><span class="rank">06</span><a href="https://github.com/google-gemini/gemini-cli">gemini-cli</a></h3>
+    <div class="stars">★ 108,591</div>
+  </header>
+  <p class="meta">google-gemini/gemini-cli · TypeScript · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">將 Gemini 帶入終端機嘅開源 agent，可以直接喺命令列做開發工作。</p>
+  <div class="links"><a href="https://github.com/google-gemini/gemini-cli">GitHub</a><a href="https://geminicli.com">主頁</a></div>
+  <div class="topics"><span>#ai</span><span>#ai-agents</span><span>#cli</span></div>
+</article><article class="card" data-search="ragflow infiniflow/ragflow 結合檢索增強生成同 agent 嘅開源引擎，用嚟為大模型提供有出處嘅上下文。 ragflow is a leading open-source retrieval-augmented generation (rag) engine that fuses cutting-edge rag with agent capabilities to create a superior context layer for llms go agent-harness agentic-ai agentic-nagive agentic-retrieval agentic-search ai ai-agents context-engine">
+  <header>
+    <h3><span class="rank">07</span><a href="https://github.com/infiniflow/ragflow">ragflow</a></h3>
+    <div class="stars">★ 93,008</div>
+  </header>
+  <p class="meta">infiniflow/ragflow · Go · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">結合檢索增強生成同 agent 嘅開源引擎，用嚟為大模型提供有出處嘅上下文。</p>
+  <div class="links"><a href="https://github.com/infiniflow/ragflow">GitHub</a><a href="https://ragflow.io">主頁</a></div>
+  <div class="topics"><span>#agent-harness</span><span>#agentic-ai</span><span>#agentic-nagive</span></div>
+</article><article class="card" data-search="openhands openhands/openhands 用 ai 做軟件開發嘅 agent，可以自己改程式、跑指令同處理開發任務。 🙌 openhands: ai-driven development typescript agent artificial-intelligence chatgpt claude-ai cli developer-tools gpt llm">
+  <header>
+    <h3><span class="rank">08</span><a href="https://github.com/OpenHands/OpenHands">OpenHands</a></h3>
+    <div class="stars">★ 92,079</div>
+  </header>
+  <p class="meta">OpenHands/OpenHands · TypeScript · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">用 AI 做軟件開發嘅 agent，可以自己改程式、跑指令同處理開發任務。</p>
+  <div class="links"><a href="https://github.com/OpenHands/OpenHands">GitHub</a><a href="https://openhands.dev">主頁</a></div>
+  <div class="topics"><span>#agent</span><span>#artificial-intelligence</span><span>#chatgpt</span></div>
+</article><article class="card" data-search="deer-flow bytedance/deer-flow 長時程 agent 框架，可以做研究、寫程式同創作，並用沙盒、記憶同子 agent 拆開複雜任務。 an open-source long-horizon superagent harness that researches, codes, and creates. with the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours. python agent agentic agentic-framework agentic-workflow ai ai-agents deep-research harness">
+  <header>
+    <h3><span class="rank">09</span><a href="https://github.com/bytedance/deer-flow">deer-flow</a></h3>
+    <div class="stars">★ 84,550</div>
+  </header>
+  <p class="meta">bytedance/deer-flow · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">長時程 agent 框架，可以做研究、寫程式同創作，並用沙盒、記憶同子 agent 拆開複雜任務。</p>
+  <div class="links"><a href="https://github.com/bytedance/deer-flow">GitHub</a><a href="https://deerflow.tech">主頁</a></div>
+  <div class="topics"><span>#agent</span><span>#agentic</span><span>#agentic-framework</span></div>
+</article><article class="card" data-search="ruflo ruvnet/ruflo 一個 agent harness，用嚟協調多個 agent、自動工作流同帶記憶嘅對話系統。 🌊 the original agent harness. deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational ai systems. features adaptive memory, self-learning intelligence, federation, vector rag integration, and native claude code / codex / hermes and many more integrated typescript agentic-ai agentic-framework agentic-workflow agents ai-agents ai-assistant ai-skills autonomous-agents">
+  <header>
+    <h3><span class="rank">10</span><a href="https://github.com/ruvnet/ruflo">ruflo</a></h3>
+    <div class="stars">★ 79,873</div>
+  </header>
+  <p class="meta">ruvnet/ruflo · TypeScript · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">一個 agent harness，用嚟協調多個 agent、自動工作流同帶記憶嘅對話系統。</p>
+  <div class="links"><a href="https://github.com/ruvnet/ruflo">GitHub</a><a href="https://Cognitum.One">主頁</a></div>
+  <div class="topics"><span>#agentic-ai</span><span>#agentic-framework</span><span>#agentic-workflow</span></div>
+</article><article class="card" data-search="metagpt foundationagents/metagpt 多 agent 框架，將產品、設計同工程角色編成一個軟件團隊，用自然語言推動開發。 🌟 the multi-agent framework: first ai software company, towards natural language programming python agent gpt llm metagpt multi-agent">
+  <header>
+    <h3><span class="rank">11</span><a href="https://github.com/FoundationAgents/MetaGPT">MetaGPT</a></h3>
+    <div class="stars">★ 71,051</div>
+  </header>
+  <p class="meta">FoundationAgents/MetaGPT · Python · MIT · 最近推送 2026-01-21</p>
+  <p class="summary">多 agent 框架，將產品、設計同工程角色編成一個軟件團隊，用自然語言推動開發。</p>
+  <div class="links"><a href="https://github.com/FoundationAgents/MetaGPT">GitHub</a><a href="https://atoms.dev/">主頁</a></div>
+  <div class="topics"><span>#agent</span><span>#gpt</span><span>#llm</span></div>
+</article><article class="card" data-search="cline cline/cline 可以獨立寫程式嘅 coding agent，有 ide 擴充、sdk 同命令列幾種用法。 autonomous coding agent as an sdk, ide extension, or cli assistant. typescript ">
+  <header>
+    <h3><span class="rank">12</span><a href="https://github.com/cline/cline">cline</a></h3>
+    <div class="stars">★ 70,967</div>
+  </header>
+  <p class="meta">cline/cline · TypeScript · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">可以獨立寫程式嘅 coding agent，有 IDE 擴充、SDK 同命令列幾種用法。</p>
+  <div class="links"><a href="https://github.com/cline/cline">GitHub</a><a href="https://cline.bot">主頁</a></div>
+  
+</article><article class="card" data-search="openinterpreter openinterpreter/openinterpreter 面向開源模型嘅 coding agent，可以喺本機寫程式同執行指令。 a coding agent for open models like kimi k3 and glm 5.3 rust acp coding-agent deepseek kimi python qwen rust">
+  <header>
+    <h3><span class="rank">13</span><a href="https://github.com/openinterpreter/openinterpreter">openinterpreter</a></h3>
+    <div class="stars">★ 68,708</div>
+  </header>
+  <p class="meta">openinterpreter/openinterpreter · Rust · Apache-2.0 · 最近推送 2026-10-11</p>
+  <p class="summary">面向開源模型嘅 coding agent，可以喺本機寫程式同執行指令。</p>
+  <div class="links"><a href="https://github.com/openinterpreter/openinterpreter">GitHub</a><a href="http://openinterpreter.com/">主頁</a></div>
+  <div class="topics"><span>#acp</span><span>#coding-agent</span><span>#deepseek</span></div>
+</article><article class="card" data-search="mem0 mem0ai/mem0 畀 ai agent 用嘅記憶層，將對話同事實保存落嚟，之後可以再搵返。 the memory layer for ai agents - drop-in memory infrastructure for ai agents and apps. context that persists. built for production. python agentic-memory agentic-memory-system agents ai ai-agents chatgpt genai llm">
+  <header>
+    <h3><span class="rank">14</span><a href="https://github.com/mem0ai/mem0">mem0</a></h3>
+    <div class="stars">★ 67,979</div>
+  </header>
+  <p class="meta">mem0ai/mem0 · Python · Apache-2.0 · 最近推送 2026-10-26</p>
+  <p class="summary">畀 AI agent 用嘅記憶層，將對話同事實保存落嚟，之後可以再搵返。</p>
+  <div class="links"><a href="https://github.com/mem0ai/mem0">GitHub</a><a href="https://mem0.ai">主頁</a></div>
+  <div class="topics"><span>#agentic-memory</span><span>#agentic-memory-system</span><span>#agents</span></div>
+</article><article class="card" data-search="anything-llm mintplex-labs/anything-llm 可以自託管嘅本地優先工作台，將文件、對話同 agent 放喺自己部機。 stop renting your intelligence. own it with anythingllm. everything you need for a powerful local-first agent experience javascript agent-computer agent-harness agent-orchestration agentic-ai agentic-workflow ai-agents computer-use hermes-agent">
+  <header>
+    <h3><span class="rank">15</span><a href="https://github.com/Mintplex-Labs/anything-llm">anything-llm</a></h3>
+    <div class="stars">★ 67,665</div>
+  </header>
+  <p class="meta">Mintplex-Labs/anything-llm · JavaScript · MIT · 最近推送 2026-10-27</p>
+  <p class="summary">可以自託管嘅本地優先工作台，將文件、對話同 agent 放喺自己部機。</p>
+  <div class="links"><a href="https://github.com/Mintplex-Labs/anything-llm">GitHub</a><a href="https://anythingllm.com">主頁</a></div>
+  <div class="topics"><span>#agent-computer</span><span>#agent-harness</span><span>#agent-orchestration</span></div>
+</article><article class="card" data-search="autogen microsoft/autogen 微軟嘅 agent 程式框架，用嚟編排多個可以對話同使用工具嘅 ai。 a programming framework for agentic ai python agentic agentic-agi agents ai autogen autogen-ecosystem chatgpt framework">
+  <header>
+    <h3><span class="rank">16</span><a href="https://github.com/microsoft/autogen">autogen</a></h3>
+    <div class="stars">★ 61,603</div>
+  </header>
+  <p class="meta">microsoft/autogen · Python · CC-BY-4.0 · 最近推送 2026-10-16</p>
+  <p class="summary">微軟嘅 agent 程式框架，用嚟編排多個可以對話同使用工具嘅 AI。</p>
+  <div class="links"><a href="https://github.com/microsoft/autogen">GitHub</a><a href="https://microsoft.github.io/autogen/">主頁</a></div>
+  <div class="topics"><span>#agentic</span><span>#agentic-agi</span><span>#agents</span></div>
+</article><article class="card" data-search="crewai crewaiinc/crewai 將唔同角色嘅自主 agent 組成團隊，一齊完成比較複雜嘅任務。 framework for orchestrating role-playing, autonomous ai agents. by fostering collaborative intelligence, crewai empowers agents to work together seamlessly, tackling complex tasks. python agents ai ai-agents aiagentframework llms">
+  <header>
+    <h3><span class="rank">17</span><a href="https://github.com/crewAIInc/crewAI">crewAI</a></h3>
+    <div class="stars">★ 60,206</div>
+  </header>
+  <p class="meta">crewAIInc/crewAI · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">將唔同角色嘅自主 agent 組成團隊，一齊完成比較複雜嘅任務。</p>
+  <div class="links"><a href="https://github.com/crewAIInc/crewAI">GitHub</a><a href="https://crewai.com">主頁</a></div>
+  <div class="topics"><span>#agents</span><span>#ai</span><span>#ai-agents</span></div>
+</article><article class="card" data-search="goose aaif-goose/goose 可擴展嘅 ai agent，唔止建議程式碼，仲可以安裝、執行、修改同測試。 an open source, extensible ai agent that goes beyond code suggestions - install, execute, edit, and test with any llm rust acp ai ai-agents mcp">
+  <header>
+    <h3><span class="rank">18</span><a href="https://github.com/aaif-goose/goose">goose</a></h3>
+    <div class="stars">★ 55,849</div>
+  </header>
+  <p class="meta">aaif-goose/goose · Rust · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">可擴展嘅 AI agent，唔止建議程式碼，仲可以安裝、執行、修改同測試。</p>
+  <div class="links"><a href="https://github.com/aaif-goose/goose">GitHub</a><a href="https://goose-docs.ai/">主頁</a></div>
+  <div class="topics"><span>#acp</span><span>#ai</span><span>#ai-agents</span></div>
+</article><article class="card" data-search="flowise flowiseai/flowise 用拖放方式搭建 ai agent 同語言模型流程。倉庫已封存，但仍然係常見嘅視覺化起點。 build ai agents, visually typescript agentic-ai agentic-workflow agents artificial-intelligence chatbot chatgpt javascript langchain">
+  <header>
+    <h3><span class="rank">19</span><a href="https://github.com/FlowiseAI/Flowise">Flowise</a></h3>
+    <div class="stars">★ 55,529</div>
+  </header>
+  <p class="meta">FlowiseAI/Flowise · TypeScript · 最近推送 2026-08-13</p>
+  <p class="summary">用拖放方式搭建 AI agent 同語言模型流程。倉庫已封存，但仍然係常見嘅視覺化起點。</p>
+  <div class="links"><a href="https://github.com/FlowiseAI/Flowise">GitHub</a><a href="https://flowiseai.com">主頁</a><span class="badge arch">已封存</span></div>
+  <div class="topics"><span>#agentic-ai</span><span>#agentic-workflow</span><span>#agents</span></div>
+</article><article class="card" data-search="cherry-studio cherryhq/cherry-studio 桌面 ai 工作台，整合聊天、自主 agent 同大量助手，可以接唔同模型。 ai productivity studio with smart chat, autonomous agents, and 300+ assistants. unified access to frontier llms typescript agent-skills ai-agent claude-code codex deepseek hermes-agent open-code-review skills">
+  <header>
+    <h3><span class="rank">20</span><a href="https://github.com/CherryHQ/cherry-studio">cherry-studio</a></h3>
+    <div class="stars">★ 53,039</div>
+  </header>
+  <p class="meta">CherryHQ/cherry-studio · TypeScript · AGPL-3.0 · 最近推送 2026-10-28</p>
+  <p class="summary">桌面 AI 工作台，整合聊天、自主 agent 同大量助手，可以接唔同模型。</p>
+  <div class="links"><a href="https://github.com/CherryHQ/cherry-studio">GitHub</a><a href="https://cherryai.com">主頁</a></div>
+  <div class="topics"><span>#agent-skills</span><span>#ai-agent</span><span>#claude-code</span></div>
+</article><article class="card" data-search="llama_index run-llama/llama_index 文件處理同檢索平台，用嚟將資料接駁到可以查詢同採取行動嘅 ai 應用。 llamaindex is the document processing platform for ai python agents application data fine-tuning framework llamaindex llm multi-agents">
+  <header>
+    <h3><span class="rank">21</span><a href="https://github.com/run-llama/llama_index">llama_index</a></h3>
+    <div class="stars">★ 52,706</div>
+  </header>
+  <p class="meta">run-llama/llama_index · Python · MIT · 最近推送 2026-10-26</p>
+  <p class="summary">文件處理同檢索平台，用嚟將資料接駁到可以查詢同採取行動嘅 AI 應用。</p>
+  <div class="links"><a href="https://github.com/run-llama/llama_index">GitHub</a><a href="https://developers.llamaindex.ai">主頁</a></div>
+  <div class="topics"><span>#agents</span><span>#application</span><span>#data</span></div>
+</article><article class="card" data-search="nanobot hkuds/nanobot 輕量、可自託管嘅個人 agent 框架，帶網頁介面、工具、記憶同多 agent 工作流。 ultra-lightweight, open-source, self-hosted personal ai agent framework in python with webui, tools, memory, mcp, multi-agent workflows, automation, and chat apps python agent-framework ai-agent ai-agents chatbot chatops discord-bot llm-agents llms">
+  <header>
+    <h3><span class="rank">22</span><a href="https://github.com/HKUDS/nanobot">nanobot</a></h3>
+    <div class="stars">★ 49,546</div>
+  </header>
+  <p class="meta">HKUDS/nanobot · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">輕量、可自託管嘅個人 agent 框架，帶網頁介面、工具、記憶同多 agent 工作流。</p>
+  <div class="links"><a href="https://github.com/HKUDS/nanobot">GitHub</a><a href="https://nanobot.wiki">主頁</a></div>
+  <div class="topics"><span>#agent-framework</span><span>#ai-agent</span><span>#ai-agents</span></div>
+</article><article class="card" data-search="cowagent zhayujie/cowagent 開源個人 ai 助手，可以計劃任務、使用工具同技能，並用記憶同知識持續改進。 open-source personal ai assistant &amp; agent harness. plans tasks, runs tools and skills, self-evolves with memory and knowledge. multi-agent, multi-model, multi-channel. lightweight, extensible, one-line install. python ai ai-agent ai-agents chatgpt-on-wechat claude claude-code codex cowagent">
+  <header>
+    <h3><span class="rank">23</span><a href="https://github.com/zhayujie/CowAgent">CowAgent</a></h3>
+    <div class="stars">★ 47,647</div>
+  </header>
+  <p class="meta">zhayujie/CowAgent · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">開源個人 AI 助手，可以計劃任務、使用工具同技能，並用記憶同知識持續改進。</p>
+  <div class="links"><a href="https://github.com/zhayujie/CowAgent">GitHub</a><a href="https://cowagent.ai">主頁</a></div>
+  <div class="topics"><span>#ai</span><span>#ai-agent</span><span>#ai-agents</span></div>
+</article><article class="card" data-search="langgraph langchain-ai/langgraph 用圖結構編排可靠嘅 agent 流程，適合有分支、循環同長任務嘅應用。 build resilient agents. python agents ai ai-agents chatgpt deepagents enterprise framework gemini">
+  <header>
+    <h3><span class="rank">24</span><a href="https://github.com/langchain-ai/langgraph">langgraph</a></h3>
+    <div class="stars">★ 44,041</div>
+  </header>
+  <p class="meta">langchain-ai/langgraph · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">用圖結構編排可靠嘅 agent 流程，適合有分支、循環同長任務嘅應用。</p>
+  <div class="links"><a href="https://github.com/langchain-ai/langgraph">GitHub</a><a href="https://docs.langchain.com/oss/python/langgraph/">主頁</a></div>
+  <div class="topics"><span>#agents</span><span>#ai</span><span>#ai-agents</span></div>
+</article><article class="card" data-search="agno agno-agi/agno 一個可以自我改進嘅 agent 平台，用嚟建立同運行 ai agent。 the self-improving agent platform python agents ai ai-agents developer-tools python">
+  <header>
+    <h3><span class="rank">25</span><a href="https://github.com/agno-agi/agno">agno</a></h3>
+    <div class="stars">★ 42,931</div>
+  </header>
+  <p class="meta">agno-agi/agno · Python · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">一個可以自我改進嘅 agent 平台，用嚟建立同運行 AI agent。</p>
+  <div class="links"><a href="https://github.com/agno-agi/agno">GitHub</a><a href="https://docs.agno.com">主頁</a></div>
+  <div class="topics"><span>#agents</span><span>#ai</span><span>#ai-agents</span></div>
+</article><article class="card" data-search="bettafish 666ghj/bettafish 多 agent 輿情分析助手，由零實現，用嚟整理公眾討論、還原事件同輔助判斷。 微舆：人人可用的多agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。 python agent-framework data-analysis deep-research deep-search llms multi-agent-system nlp public-opinion-analysis">
+  <header>
+    <h3><span class="rank">26</span><a href="https://github.com/666ghj/BettaFish">BettaFish</a></h3>
+    <div class="stars">★ 42,545</div>
+  </header>
+  <p class="meta">666ghj/BettaFish · Python · GPL-2.0 · 最近推送 2026-10-16</p>
+  <p class="summary">多 agent 輿情分析助手，由零實現，用嚟整理公眾討論、還原事件同輔助判斷。</p>
+  <div class="links"><a href="https://github.com/666ghj/BettaFish">GitHub</a><a href="https://deepwiki.com/666ghj/BettaFish">主頁</a></div>
+  <div class="topics"><span>#agent-framework</span><span>#data-analysis</span><span>#deep-research</span></div>
+</article><article class="card" data-search="dspy stanfordnlp/dspy 用程式而唔係手寫提示去組合語言模型，並可以優化每一步。 dspy: the framework for programming—not prompting—language models python ">
+  <header>
+    <h3><span class="rank">27</span><a href="https://github.com/stanfordnlp/dspy">dspy</a></h3>
+    <div class="stars">★ 38,828</div>
+  </header>
+  <p class="meta">stanfordnlp/dspy · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">用程式而唔係手寫提示去組合語言模型，並可以優化每一步。</p>
+  <div class="links"><a href="https://github.com/stanfordnlp/dspy">GitHub</a><a href="https://dspy.ai">主頁</a></div>
+  
+</article><article class="card" data-search="continue continuedev/continue 開源 coding agent，可以喺編輯器入面讀寫程式同完成開發任務。 open-source coding agent typescript agent ai cli developer-tools open-source">
+  <header>
+    <h3><span class="rank">28</span><a href="https://github.com/continuedev/continue">continue</a></h3>
+    <div class="stars">★ 36,353</div>
+  </header>
+  <p class="meta">continuedev/continue · TypeScript · Apache-2.0 · 最近推送 2026-10-27</p>
+  <p class="summary">開源 coding agent，可以喺編輯器入面讀寫程式同完成開發任務。</p>
+  <div class="links"><a href="https://github.com/continuedev/continue">GitHub</a><a href="https://continue.dev">主頁</a></div>
+  <div class="topics"><span>#agent</span><span>#ai</span><span>#cli</span></div>
+</article><article class="card" data-search="chatdev openbmb/chatdev 用多個語言模型 agent 扮演開發團隊，協作完成軟件設計同實作。 chatdev 2.0: dev all through llm-powered multi-agent collaboration python ">
+  <header>
+    <h3><span class="rank">29</span><a href="https://github.com/OpenBMB/ChatDev">ChatDev</a></h3>
+    <div class="stars">★ 34,603</div>
+  </header>
+  <p class="meta">OpenBMB/ChatDev · Python · Apache-2.0 · 最近推送 2026-10-16</p>
+  <p class="summary">用多個語言模型 agent 扮演開發團隊，協作完成軟件設計同實作。</p>
+  <div class="links"><a href="https://github.com/OpenBMB/ChatDev">GitHub</a><a href="https://arxiv.org/abs/2307.07924">主頁</a></div>
+  
+</article><article class="card" data-search="openai-agents-python openai/openai-agents-python openai 嘅輕量 python 框架，用嚟編排多 agent 工作流。 a lightweight, powerful framework for multi-agent workflows python agents ai framework harness llm openai python">
+  <header>
+    <h3><span class="rank">30</span><a href="https://github.com/openai/openai-agents-python">openai-agents-python</a></h3>
+    <div class="stars">★ 30,351</div>
+  </header>
+  <p class="meta">openai/openai-agents-python · Python · MIT · 最近推送 2026-10-27</p>
+  <p class="summary">OpenAI 嘅輕量 Python 框架，用嚟編排多 agent 工作流。</p>
+  <div class="links"><a href="https://github.com/openai/openai-agents-python">GitHub</a><a href="https://openai.github.io/openai-agents-python/">主頁</a></div>
+  <div class="topics"><span>#agents</span><span>#ai</span><span>#framework</span></div>
+</article><article class="card" data-search="gpt-researcher assafelovic/gpt-researcher 自主研究 agent，可以就一個題目搜集資料並寫成有來源嘅研究報告。 an autonomous agent that conducts deep research on any data using any llm providers python agent ai automation deepresearch llms mcp mcp-server python">
+  <header>
+    <h3><span class="rank">31</span><a href="https://github.com/assafelovic/gpt-researcher">gpt-researcher</a></h3>
+    <div class="stars">★ 30,332</div>
+  </header>
+  <p class="meta">assafelovic/gpt-researcher · Python · Apache-2.0 · 最近推送 2026-10-10</p>
+  <p class="summary">自主研究 agent，可以就一個題目搜集資料並寫成有來源嘅研究報告。</p>
+  <div class="links"><a href="https://github.com/assafelovic/gpt-researcher">GitHub</a><a href="https://gptr.dev">主頁</a></div>
+  <div class="topics"><span>#agent</span><span>#ai</span><span>#automation</span></div>
+</article><article class="card" data-search="smolagents huggingface/smolagents hugging face 嘅精簡 agent 庫，agent 主要靠寫程式碼嚟思考同行動。 🤗 smolagents: a barebones library for agents that think in code. python ">
+  <header>
+    <h3><span class="rank">32</span><a href="https://github.com/huggingface/smolagents">smolagents</a></h3>
+    <div class="stars">★ 30,117</div>
+  </header>
+  <p class="meta">huggingface/smolagents · Python · Apache-2.0 · 最近推送 2026-10-22</p>
+  <p class="summary">Hugging Face 嘅精簡 agent 庫，agent 主要靠寫程式碼嚟思考同行動。</p>
+  <div class="links"><a href="https://github.com/huggingface/smolagents">GitHub</a><a href="https://huggingface.co/docs/smolagents">主頁</a></div>
+  
+</article><article class="card" data-search="mastra mastra-ai/mastra 用 typescript 建立 ai 應用同 agent 嘅框架。 mastra is the modern typescript framework for ai-powered applications and agents. typescript agents ai chatbots evals javascript llm mcp nextjs">
+  <header>
+    <h3><span class="rank">33</span><a href="https://github.com/mastra-ai/mastra">mastra</a></h3>
+    <div class="stars">★ 29,144</div>
+  </header>
+  <p class="meta">mastra-ai/mastra · TypeScript · 最近推送 2026-10-28</p>
+  <p class="summary">用 TypeScript 建立 AI 應用同 agent 嘅框架。</p>
+  <div class="links"><a href="https://github.com/mastra-ai/mastra">GitHub</a><a href="https://mastra.ai">主頁</a></div>
+  <div class="topics"><span>#agents</span><span>#ai</span><span>#chatbots</span></div>
+</article><article class="card" data-search="semantic-kernel microsoft/semantic-kernel 微軟嘅 sdk，用嚟將大語言模型、外掛同規劃能力接進應用程式。 integrate cutting-edge llm technology quickly and easily into your apps c# ai artificial-intelligence llm openai sdk">
+  <header>
+    <h3><span class="rank">34</span><a href="https://github.com/microsoft/semantic-kernel">semantic-kernel</a></h3>
+    <div class="stars">★ 28,710</div>
+  </header>
+  <p class="meta">microsoft/semantic-kernel · C# · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">微軟嘅 SDK，用嚟將大語言模型、外掛同規劃能力接進應用程式。</p>
+  <div class="links"><a href="https://github.com/microsoft/semantic-kernel">GitHub</a><a href="https://aka.ms/semantic-kernel">主頁</a></div>
+  <div class="topics"><span>#ai</span><span>#artificial-intelligence</span><span>#llm</span></div>
+</article><article class="card" data-search="haystack deepset-ai/haystack 用模組化流程搭建可上線嘅語言模型同 agent 應用，方便控制每一步。 open-source ai orchestration framework for building context-engineered, production-ready llm applications. design modular pipelines and agent workflows with explicit control over retrieval, routing, memory, and generation. built for scalable agents, rag, multimodal applications, semantic search, and conversational systems. python agent-framework agentic-ai agentic-rag agents ai ai-agents context-engineering framework">
+  <header>
+    <h3><span class="rank">35</span><a href="https://github.com/deepset-ai/haystack">haystack</a></h3>
+    <div class="stars">★ 26,867</div>
+  </header>
+  <p class="meta">deepset-ai/haystack · Python · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">用模組化流程搭建可上線嘅語言模型同 agent 應用，方便控制每一步。</p>
+  <div class="links"><a href="https://github.com/deepset-ai/haystack">GitHub</a><a href="https://haystack.deepset.ai">主頁</a></div>
+  <div class="topics"><span>#agent-framework</span><span>#agentic-ai</span><span>#agentic-rag</span></div>
+</article><article class="card" data-search="letta letta-ai/letta 有狀態嘅 agent 平台，重點係長期記憶，令 agent 可以累積經驗。 platform for stateful agents: ai with advanced memory that can learn and self-improve over time.  ai ai-agents llm llm-agent">
+  <header>
+    <h3><span class="rank">36</span><a href="https://github.com/letta-ai/letta">letta</a></h3>
+    <div class="stars">★ 25,271</div>
+  </header>
+  <p class="meta">letta-ai/letta · Apache-2.0 · 最近推送 2026-10-18</p>
+  <p class="summary">有狀態嘅 agent 平台，重點係長期記憶，令 agent 可以累積經驗。</p>
+  <div class="links"><a href="https://github.com/letta-ai/letta">GitHub</a><a href="https://docs.letta.com/">主頁</a></div>
+  <div class="topics"><span>#ai</span><span>#ai-agents</span><span>#llm</span></div>
+</article><article class="card" data-search="python-sdk modelcontextprotocol/python-sdk model context protocol 嘅官方 python sdk，用嚟寫 agent 可以呼叫嘅工具伺服器同客戶端。 the official python sdk for model context protocol servers and clients python mcp mcp-client mcp-server python">
+  <header>
+    <h3><span class="rank">37</span><a href="https://github.com/modelcontextprotocol/python-sdk">python-sdk</a></h3>
+    <div class="stars">★ 24,695</div>
+  </header>
+  <p class="meta">modelcontextprotocol/python-sdk · Python · MIT · 最近推送 2026-10-27</p>
+  <p class="summary">Model Context Protocol 嘅官方 Python SDK，用嚟寫 agent 可以呼叫嘅工具伺服器同客戶端。</p>
+  <div class="links"><a href="https://github.com/modelcontextprotocol/python-sdk">GitHub</a><a href="https://py.sdk.modelcontextprotocol.io/">主頁</a></div>
+  <div class="topics"><span>#mcp</span><span>#mcp-client</span><span>#mcp-server</span></div>
+</article><article class="card" data-search="skyvern skyvern-ai/skyvern 用 ai 自動完成瀏覽器上嘅工作流，例如填表同跨網頁操作。 automate browser based workflows with ai python ai api automation browser browser-automation computer gpt llm">
+  <header>
+    <h3><span class="rank">38</span><a href="https://github.com/Skyvern-AI/skyvern">skyvern</a></h3>
+    <div class="stars">★ 23,291</div>
+  </header>
+  <p class="meta">Skyvern-AI/skyvern · Python · AGPL-3.0 · 最近推送 2026-10-28</p>
+  <p class="summary">用 AI 自動完成瀏覽器上嘅工作流，例如填表同跨網頁操作。</p>
+  <div class="links"><a href="https://github.com/Skyvern-AI/skyvern">GitHub</a><a href="https://www.skyvern.com">主頁</a></div>
+  <div class="topics"><span>#ai</span><span>#api</span><span>#automation</span></div>
+</article><article class="card" data-search="babyagi yoheinakajima/babyagi 早期出名嘅自主 agent 實驗：由一個目標不斷產生任務、排優先次序再執行。  python ">
+  <header>
+    <h3><span class="rank">39</span><a href="https://github.com/yoheinakajima/babyagi">babyagi</a></h3>
+    <div class="stars">★ 22,352</div>
+  </header>
+  <p class="meta">yoheinakajima/babyagi · Python · 最近推送 2026-01-31</p>
+  <p class="summary">早期出名嘅自主 agent 實驗：由一個目標不斷產生任務、排優先次序再執行。</p>
+  <div class="links"><a href="https://github.com/yoheinakajima/babyagi">GitHub</a><a href="https://babyagi.org/">主頁</a></div>
+  
+</article><article class="card" data-search="swarm openai/swarm openai 出嚟嘅輕量多 agent 教學框架，示範點樣將工作交畀唔同 agent。 educational framework exploring ergonomic, lightweight multi-agent orchestration. managed by openai solution team. python ">
+  <header>
+    <h3><span class="rank">40</span><a href="https://github.com/openai/swarm">swarm</a></h3>
+    <div class="stars">★ 22,086</div>
+  </header>
+  <p class="meta">openai/swarm · Python · MIT · 最近推送 2026-04-15</p>
+  <p class="summary">OpenAI 出嚟嘅輕量多 agent 教學框架，示範點樣將工作交畀唔同 agent。</p>
+  <div class="links"><a href="https://github.com/openai/swarm">GitHub</a></div>
+  
+</article><article class="card" data-search="pydantic-ai pydantic/pydantic-ai 用類型清楚嘅 python 方式建立 agent，可以接唔同模型同介面。 how python does ai. agents, realtime voice, image generation, embeddings. every model, every interface, typed end to end. python agent-framework genai harness harness-engineering llm pydantic python">
+  <header>
+    <h3><span class="rank">41</span><a href="https://github.com/pydantic/pydantic-ai">pydantic-ai</a></h3>
+    <div class="stars">★ 20,924</div>
+  </header>
+  <p class="meta">pydantic/pydantic-ai · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">用類型清楚嘅 Python 方式建立 agent，可以接唔同模型同介面。</p>
+  <div class="links"><a href="https://github.com/pydantic/pydantic-ai">GitHub</a><a href="https://pydantic.dev/pydantic-ai">主頁</a></div>
+  <div class="topics"><span>#agent-framework</span><span>#genai</span><span>#harness</span></div>
+</article><article class="card" data-search="camel camel-ai/camel 多 agent 框架，用角色扮演同對話令幾個 agent 協作完成任務。 🐫 camel: the first and the best multi-agent framework. finding the scaling law of agents. https://www.camel-ai.org python agent ai-societies artificial-intelligence communicative-ai cooperative-ai deep-learning large-language-models multi-agent-systems">
+  <header>
+    <h3><span class="rank">42</span><a href="https://github.com/camel-ai/camel">camel</a></h3>
+    <div class="stars">★ 17,989</div>
+  </header>
+  <p class="meta">camel-ai/camel · Python · Apache-2.0 · 最近推送 2026-10-27</p>
+  <p class="summary">多 agent 框架，用角色扮演同對話令幾個 agent 協作完成任務。</p>
+  <div class="links"><a href="https://github.com/camel-ai/camel">GitHub</a><a href="https://docs.camel-ai.org/">主頁</a></div>
+  <div class="topics"><span>#agent</span><span>#ai-societies</span><span>#artificial-intelligence</span></div>
+</article></div>
+  <div class="papers"><h3>相關論文</h3><div class="grid"><article class="card" data-search="generative agents: interactive simulacra of human behavior 用記憶、反思同計劃，模擬小鎮入面多個 ai 角色點樣自己過日常、互相影響。 paper arxiv">
+  <header>
+    <h3><a href="https://arxiv.org/abs/2304.03442">Generative Agents: Interactive Simulacra of Human Behavior</a></h3>
+    <div class="stars">2023</div>
+  </header>
+  <p class="meta">論文 · arXiv</p>
+  <p class="summary">用記憶、反思同計劃，模擬小鎮入面多個 AI 角色點樣自己過日常、互相影響。</p>
+  <div class="links"><a href="https://arxiv.org/abs/2304.03442">arXiv</a><a href="https://github.com/joonspk-research/generative_agents">程式</a><span class="badge">論文</span></div>
+</article><article class="card" data-search="react: synergizing reasoning and acting in language models 提出推理同行動交替進行：語言模型先寫低思考，再調用工具，然後按觀察結果繼續推理。 paper arxiv">
+  <header>
+    <h3><a href="https://arxiv.org/abs/2210.03629">ReAct: Synergizing Reasoning and Acting in Language Models</a></h3>
+    <div class="stars">2023</div>
+  </header>
+  <p class="meta">論文 · arXiv</p>
+  <p class="summary">提出推理同行動交替進行：語言模型先寫低思考，再調用工具，然後按觀察結果繼續推理。</p>
+  <div class="links"><a href="https://arxiv.org/abs/2210.03629">arXiv</a><a href="https://github.com/ysymyth/ReAct">程式</a><span class="badge">論文</span></div>
+</article><article class="card" data-search="reflexion: language agents with verbal reinforcement learning agent 用自然語言總結自己嘅失敗，記住教訓再試，而唔係靠更新模型權重。 paper arxiv">
+  <header>
+    <h3><a href="https://arxiv.org/abs/2303.11366">Reflexion: Language Agents with Verbal Reinforcement Learning</a></h3>
+    <div class="stars">2023</div>
+  </header>
+  <p class="meta">論文 · arXiv</p>
+  <p class="summary">Agent 用自然語言總結自己嘅失敗，記住教訓再試，而唔係靠更新模型權重。</p>
+  <div class="links"><a href="https://arxiv.org/abs/2303.11366">arXiv</a><a href="https://github.com/noahshinn/reflexion">程式</a><span class="badge">論文</span></div>
+</article><article class="card" data-search="voyager: an open-ended embodied agent with large language models 一個喺 minecraft 入面自己寫程式、累積技能庫，可以持續探索同完成新任務嘅 agent。 paper arxiv">
+  <header>
+    <h3><a href="https://arxiv.org/abs/2305.16291">Voyager: An Open-Ended Embodied Agent with Large Language Models</a></h3>
+    <div class="stars">2023</div>
+  </header>
+  <p class="meta">論文 · arXiv</p>
+  <p class="summary">一個喺 Minecraft 入面自己寫程式、累積技能庫，可以持續探索同完成新任務嘅 agent。</p>
+  <div class="links"><a href="https://arxiv.org/abs/2305.16291">arXiv</a><a href="https://github.com/MineDojo/Voyager">程式</a><span class="badge">論文</span></div>
+</article></div></div>
+</section><section class="section" id="image" data-section>
+  <h2>圖像</h2>
+  <p class="blurb">圖像生成、編輯、放大、識別同影像處理。 開源項目按 GitHub stars 由多至少。</p>
+  <div class="grid"><article class="card" data-search="stable-diffusion-webui automatic1111/stable-diffusion-webui 廣泛使用嘅 stable diffusion 網頁介面，用嚟喺本機用文字生成同調整圖像。 stable diffusion web ui python ai ai-art deep-learning diffusion gradio image-generation image2image img2img">
+  <header>
+    <h3><span class="rank">01</span><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">stable-diffusion-webui</a></h3>
+    <div class="stars">★ 165,172</div>
+  </header>
+  <p class="meta">AUTOMATIC1111/stable-diffusion-webui · Python · AGPL-3.0 · 最近推送 2026-03-02</p>
+  <p class="summary">廣泛使用嘅 Stable Diffusion 網頁介面，用嚟喺本機用文字生成同調整圖像。</p>
+  <div class="links"><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">GitHub</a></div>
+  <div class="topics"><span>#ai</span><span>#ai-art</span><span>#deep-learning</span></div>
+</article><article class="card" data-search="comfyui comfy-org/comfyui 用節點圖搭建擴散模型流程嘅介面同後端，適合複雜、可重現嘅圖像生成。 the most powerful and modular diffusion model gui, api and backend with a graph/nodes interface. the fastest local inference engine in the world. python ai comfy comfyui python pytorch stable-diffusion">
+  <header>
+    <h3><span class="rank">02</span><a href="https://github.com/Comfy-Org/ComfyUI">ComfyUI</a></h3>
+    <div class="stars">★ 143,699</div>
+  </header>
+  <p class="meta">Comfy-Org/ComfyUI · Python · GPL-3.0 · 最近推送 2026-10-28</p>
+  <p class="summary">用節點圖搭建擴散模型流程嘅介面同後端，適合複雜、可重現嘅圖像生成。</p>
+  <div class="links"><a href="https://github.com/Comfy-Org/ComfyUI">GitHub</a><a href="https://www.comfy.org/">主頁</a></div>
+  <div class="topics"><span>#ai</span><span>#comfy</span><span>#comfyui</span></div>
+</article><article class="card" data-search="paddleocr paddlepaddle/paddleocr 輕量 ocr 工具，可以將圖片同 pdf 轉成結構化文字，支援大量語言。 turn any pdf or image document into structured data for your ai. a powerful, lightweight ocr toolkit that bridges the gap between images/pdfs and llms. supports 100+ languages. python ai4science chineseocr document-parsing document-translation kie ocr paddleocr-vl pdf-extractor-rag">
+  <header>
+    <h3><span class="rank">03</span><a href="https://github.com/PaddlePaddle/PaddleOCR">PaddleOCR</a></h3>
+    <div class="stars">★ 91,844</div>
+  </header>
+  <p class="meta">PaddlePaddle/PaddleOCR · Python · Apache-2.0 · 最近推送 2026-09-16</p>
+  <p class="summary">輕量 OCR 工具，可以將圖片同 PDF 轉成結構化文字，支援大量語言。</p>
+  <div class="links"><a href="https://github.com/PaddlePaddle/PaddleOCR">GitHub</a><a href="https://www.paddleocr.com">主頁</a></div>
+  <div class="topics"><span>#ai4science</span><span>#chineseocr</span><span>#document-parsing</span></div>
+</article><article class="card" data-search="opencv opencv/opencv 開源電腦視覺庫，處理圖像同影片嘅讀取、濾鏡、特徵同偵測。 open source computer vision library c++ c-plus-plus computer-vision deep-learning image-processing opencv">
+  <header>
+    <h3><span class="rank">04</span><a href="https://github.com/opencv/opencv">opencv</a></h3>
+    <div class="stars">★ 91,354</div>
+  </header>
+  <p class="meta">opencv/opencv · C++ · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">開源電腦視覺庫，處理圖像同影片嘅讀取、濾鏡、特徵同偵測。</p>
+  <div class="links"><a href="https://github.com/opencv/opencv">GitHub</a><a href="https://opencv.org">主頁</a></div>
+  <div class="topics"><span>#c-plus-plus</span><span>#computer-vision</span><span>#deep-learning</span></div>
+</article><article class="card" data-search="tesseract tesseract-ocr/tesseract 經典開源光學字元識別引擎，可以從圖片抽出文字。 tesseract open source ocr engine (main repository) c++ hacktoberfest lstm machine-learning ocr ocr-engine tesseract tesseract-ocr">
+  <header>
+    <h3><span class="rank">05</span><a href="https://github.com/tesseract-ocr/tesseract">tesseract</a></h3>
+    <div class="stars">★ 77,212</div>
+  </header>
+  <p class="meta">tesseract-ocr/tesseract · C++ · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">經典開源光學字元識別引擎，可以從圖片抽出文字。</p>
+  <div class="links"><a href="https://github.com/tesseract-ocr/tesseract">GitHub</a><a href="https://tesseract-ocr.github.io/">主頁</a></div>
+  <div class="topics"><span>#hacktoberfest</span><span>#lstm</span><span>#machine-learning</span></div>
+</article><article class="card" data-search="stable-diffusion compvis/stable-diffusion compvis 發佈嘅潛在擴散文字到圖像模型，係後來大量生成工具嘅基礎。 a latent text-to-image diffusion model jupyter notebook ">
+  <header>
+    <h3><span class="rank">06</span><a href="https://github.com/CompVis/stable-diffusion">stable-diffusion</a></h3>
+    <div class="stars">★ 73,547</div>
+  </header>
+  <p class="meta">CompVis/stable-diffusion · Jupyter Notebook · 最近推送 2024-06-18</p>
+  <p class="summary">CompVis 發佈嘅潛在擴散文字到圖像模型，係後來大量生成工具嘅基礎。</p>
+  <div class="links"><a href="https://github.com/CompVis/stable-diffusion">GitHub</a><a href="https://ommer-lab.com/research/latent-diffusion-models/">主頁</a><a href="https://arxiv.org/abs/2112.10752">論文</a></div>
+  
+</article><article class="card" data-search="fooocus lllyasviel/fooocus 將 stable diffusion 收成一個注重提示詞同出圖嘅簡化介面。 focus on prompting and generating python ">
+  <header>
+    <h3><span class="rank">07</span><a href="https://github.com/lllyasviel/Fooocus">Fooocus</a></h3>
+    <div class="stars">★ 53,713</div>
+  </header>
+  <p class="meta">lllyasviel/Fooocus · Python · GPL-3.0 · 最近推送 2025-12-01</p>
+  <p class="summary">將 Stable Diffusion 收成一個注重提示詞同出圖嘅簡化介面。</p>
+  <div class="links"><a href="https://github.com/lllyasviel/Fooocus">GitHub</a></div>
+  
+</article><article class="card" data-search="supervision roboflow/supervision 電腦視覺工具庫，用嚟處理偵測結果、標註同視覺化。 we write your reusable computer vision tools. 💜 python classification coco computer-vision deep-learning hacktoberfest image-processing instance-segmentation low-code">
+  <header>
+    <h3><span class="rank">08</span><a href="https://github.com/roboflow/supervision">supervision</a></h3>
+    <div class="stars">★ 51,404</div>
+  </header>
+  <p class="meta">roboflow/supervision · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">電腦視覺工具庫，用嚟處理偵測結果、標註同視覺化。</p>
+  <div class="links"><a href="https://github.com/roboflow/supervision">GitHub</a><a href="https://supervision.roboflow.com">主頁</a></div>
+  <div class="topics"><span>#classification</span><span>#coco</span><span>#computer-vision</span></div>
+</article><article class="card" data-search="upscayl upscayl/upscayl 桌面版免費 ai 圖像放大器，支援 linux、macos 同 windows。 🆙 upscayl - #1 free and open source ai image upscaler for linux, macos and windows. typescript ai electron esrgan gigapixel gigapixel-images image image-upscaling topaz">
+  <header>
+    <h3><span class="rank">09</span><a href="https://github.com/upscayl/upscayl">upscayl</a></h3>
+    <div class="stars">★ 51,201</div>
+  </header>
+  <p class="meta">upscayl/upscayl · TypeScript · AGPL-3.0 · 最近推送 2026-10-05</p>
+  <p class="summary">桌面版免費 AI 圖像放大器，支援 Linux、macOS 同 Windows。</p>
+  <div class="links"><a href="https://github.com/upscayl/upscayl">GitHub</a><a href="https://upscayl.org">主頁</a></div>
+  <div class="topics"><span>#ai</span><span>#electron</span><span>#esrgan</span></div>
+</article><article class="card" data-search="gfpgan tencentarc/gfpgan 針對真實相片嘅人臉修復算法，用嚟還原模糊或受損嘅臉。 gfpgan aims at developing practical algorithms for real-world face restoration. python deep-learning face-restoration gan gfpgan image-restoration pytorch super-resolution">
+  <header>
+    <h3><span class="rank">10</span><a href="https://github.com/TencentARC/GFPGAN">GFPGAN</a></h3>
+    <div class="stars">★ 37,701</div>
+  </header>
+  <p class="meta">TencentARC/GFPGAN · Python · 最近推送 2024-07-26</p>
+  <p class="summary">針對真實相片嘅人臉修復算法，用嚟還原模糊或受損嘅臉。</p>
+  <div class="links"><a href="https://github.com/TencentARC/GFPGAN">GitHub</a></div>
+  <div class="topics"><span>#deep-learning</span><span>#face-restoration</span><span>#gan</span></div>
+</article><article class="card" data-search="pytorch-image-models huggingface/pytorch-image-models 大量 pytorch 圖像骨幹模型嘅集合，包含訓練、評估同預訓練權重。 the largest collection of pytorch image encoders / backbones. including train, eval, inference, export scripts, and pretrained weights -- resnet, resnext, efficientnet, nfnet, vision transformer (vit), mobilenetv4, mobilenet-v3 &amp; v2, regnet, dpn, cspnet, swin transformer, maxvit, coatnet, convnext, and more python augmix convnext distributed-training efficientnet image-classification imagenet maxvit mixnet">
+  <header>
+    <h3><span class="rank">11</span><a href="https://github.com/huggingface/pytorch-image-models">pytorch-image-models</a></h3>
+    <div class="stars">★ 37,254</div>
+  </header>
+  <p class="meta">huggingface/pytorch-image-models · Python · Apache-2.0 · 最近推送 2026-10-27</p>
+  <p class="summary">大量 PyTorch 圖像骨幹模型嘅集合，包含訓練、評估同預訓練權重。</p>
+  <div class="links"><a href="https://github.com/huggingface/pytorch-image-models">GitHub</a><a href="https://huggingface.co/docs/timm">主頁</a></div>
+  <div class="topics"><span>#augmix</span><span>#convnext</span><span>#distributed-training</span></div>
+</article><article class="card" data-search="real-esrgan xinntao/real-esrgan 實用嘅圖像同影片修復模型，用嚟放大同改善畫質。 real-esrgan aims at developing practical algorithms for general image/video restoration. python amine denoise esrgan image-restoration jpeg-compression pytorch real-esrgan super-resolution">
+  <header>
+    <h3><span class="rank">12</span><a href="https://github.com/xinntao/Real-ESRGAN">Real-ESRGAN</a></h3>
+    <div class="stars">★ 37,253</div>
+  </header>
+  <p class="meta">xinntao/Real-ESRGAN · Python · BSD-3-Clause · 最近推送 2024-08-06</p>
+  <p class="summary">實用嘅圖像同影片修復模型，用嚟放大同改善畫質。</p>
+  <div class="links"><a href="https://github.com/xinntao/Real-ESRGAN">GitHub</a></div>
+  <div class="topics"><span>#amine</span><span>#denoise</span><span>#esrgan</span></div>
+</article><article class="card" data-search="diffusers huggingface/diffusers hugging face 嘅擴散模型庫，用 pytorch 做圖像、影片同音訊生成。 🤗 diffusers: state-of-the-art diffusion models for image, video, and audio generation in pytorch. python deep-learning diffusion flux image-generation image2image image2video latent-diffusion-models pytorch">
+  <header>
+    <h3><span class="rank">13</span><a href="https://github.com/huggingface/diffusers">diffusers</a></h3>
+    <div class="stars">★ 34,824</div>
+  </header>
+  <p class="meta">huggingface/diffusers · Python · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">Hugging Face 嘅擴散模型庫，用 PyTorch 做圖像、影片同音訊生成。</p>
+  <div class="links"><a href="https://github.com/huggingface/diffusers">GitHub</a><a href="https://huggingface.co/docs/diffusers">主頁</a></div>
+  <div class="topics"><span>#deep-learning</span><span>#diffusion</span><span>#flux</span></div>
+</article><article class="card" data-search="clip openai/clip 將圖像同文字放喺同一個空間嘅模型，可以判斷一段文字同圖片有幾匹配。 clip (contrastive language-image pretraining),  predict the most relevant text snippet given an image jupyter notebook deep-learning machine-learning">
+  <header>
+    <h3><span class="rank">14</span><a href="https://github.com/openai/CLIP">CLIP</a></h3>
+    <div class="stars">★ 34,539</div>
+  </header>
+  <p class="meta">openai/CLIP · Jupyter Notebook · MIT · 最近推送 2026-03-25</p>
+  <p class="summary">將圖像同文字放喺同一個空間嘅模型，可以判斷一段文字同圖片有幾匹配。</p>
+  <div class="links"><a href="https://github.com/openai/CLIP">GitHub</a></div>
+  <div class="topics"><span>#deep-learning</span><span>#machine-learning</span></div>
+</article><article class="card" data-search="controlnet lllyasviel/controlnet 用邊緣、姿勢、深度等條件圖控制擴散模型，令生成跟住指定結構。 let us control diffusion models! python ">
+  <header>
+    <h3><span class="rank">15</span><a href="https://github.com/lllyasviel/ControlNet">ControlNet</a></h3>
+    <div class="stars">★ 34,138</div>
+  </header>
+  <p class="meta">lllyasviel/ControlNet · Python · Apache-2.0 · 最近推送 2024-02-25</p>
+  <p class="summary">用邊緣、姿勢、深度等條件圖控制擴散模型，令生成跟住指定結構。</p>
+  <div class="links"><a href="https://github.com/lllyasviel/ControlNet">GitHub</a><a href="https://arxiv.org/abs/2302.05543">論文</a></div>
+  
+</article><article class="card" data-search="sharp lovell/sharp 高效能 node.js 圖像處理模組，用 libvips 做縮放同格式轉換。 high performance node.js image processing, the fastest module to resize jpeg, png, webp, avif and tiff images. uses the libvips library. javascript avif crop exif icc image image-processing javascript jpeg">
+  <header>
+    <h3><span class="rank">16</span><a href="https://github.com/lovell/sharp">sharp</a></h3>
+    <div class="stars">★ 32,806</div>
+  </header>
+  <p class="meta">lovell/sharp · JavaScript · Apache-2.0 · 最近推送 2026-10-23</p>
+  <p class="summary">高效能 Node.js 圖像處理模組，用 libvips 做縮放同格式轉換。</p>
+  <div class="links"><a href="https://github.com/lovell/sharp">GitHub</a><a href="https://sharp.pixelplumbing.com">主頁</a></div>
+  <div class="topics"><span>#avif</span><span>#crop</span><span>#exif</span></div>
+</article><article class="card" data-search="easyocr jaidedai/easyocr 開箱即用嘅光學字元識別，支援八十幾種語言同多種文字系統。 ready-to-use ocr with 80+ supported languages and all popular writing scripts including latin, chinese, arabic, devanagari, cyrillic and etc. python cnn crnn data-mining deep-learning easyocr image-processing information-retrieval lstm">
+  <header>
+    <h3><span class="rank">17</span><a href="https://github.com/JaidedAI/EasyOCR">EasyOCR</a></h3>
+    <div class="stars">★ 30,116</div>
+  </header>
+  <p class="meta">JaidedAI/EasyOCR · Python · Apache-2.0 · 最近推送 2025-12-05</p>
+  <p class="summary">開箱即用嘅光學字元識別，支援八十幾種語言同多種文字系統。</p>
+  <div class="links"><a href="https://github.com/JaidedAI/EasyOCR">GitHub</a><a href="https://www.jaided.ai">主頁</a></div>
+  <div class="topics"><span>#cnn</span><span>#crnn</span><span>#data-mining</span></div>
+</article><article class="card" data-search="invokeai invoke-ai/invokeai 面向創作嘅 stable diffusion 引擎，用嚟生成同編輯視覺內容。 invoke is a leading creative engine for stable diffusion models, empowering professionals, artists, and enthusiasts to generate and create visual media using the latest ai-driven technologies. the solution offers an industry leading webui, and serves as the foundation for multiple commercial products. typescript ai-art artificial-intelligence generative-art image-generation img2img inpainting latent-diffusion linux">
+  <header>
+    <h3><span class="rank">18</span><a href="https://github.com/invoke-ai/InvokeAI">InvokeAI</a></h3>
+    <div class="stars">★ 28,898</div>
+  </header>
+  <p class="meta">invoke-ai/InvokeAI · TypeScript · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">面向創作嘅 Stable Diffusion 引擎，用嚟生成同編輯視覺內容。</p>
+  <div class="links"><a href="https://github.com/invoke-ai/InvokeAI">GitHub</a><a href="https://invoke-ai.github.io/InvokeAI/">主頁</a></div>
+  <div class="topics"><span>#ai-art</span><span>#artificial-intelligence</span><span>#generative-art</span></div>
+</article><article class="card" data-search="waifu2x nagadomi/waifu2x 針對動漫風格嘅圖像超解像，用嚟放大同時減少鋸齒同雜訊。 image super-resolution for anime-style art lua super-resolution torch waifu2x">
+  <header>
+    <h3><span class="rank">19</span><a href="https://github.com/nagadomi/waifu2x">waifu2x</a></h3>
+    <div class="stars">★ 28,241</div>
+  </header>
+  <p class="meta">nagadomi/waifu2x · Lua · MIT · 最近推送 2023-05-04</p>
+  <p class="summary">針對動漫風格嘅圖像超解像，用嚟放大同時減少鋸齒同雜訊。</p>
+  <div class="links"><a href="https://github.com/nagadomi/waifu2x">GitHub</a><a href="http://waifu2x.udp.jp/ ">主頁</a></div>
+  <div class="topics"><span>#super-resolution</span><span>#torch</span><span>#waifu2x</span></div>
+</article><article class="card" data-search="graphite graphiteeditor/graphite 社群開發嘅二維創作軟件，用節點做平面設計、數碼繪圖同動態圖形。 community-built comprehensive 2d content creation appplication for graphic design, digital art, and interactive real-time motion graphics powered by a node-based procedural graphics engine rust 2d-graphics animation art creative-coding design graphic-design graphics graphics-editor">
+  <header>
+    <h3><span class="rank">20</span><a href="https://github.com/GraphiteEditor/Graphite">Graphite</a></h3>
+    <div class="stars">★ 27,755</div>
+  </header>
+  <p class="meta">GraphiteEditor/Graphite · Rust · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">社群開發嘅二維創作軟件，用節點做平面設計、數碼繪圖同動態圖形。</p>
+  <div class="links"><a href="https://github.com/GraphiteEditor/Graphite">GitHub</a><a href="https://graphite.art">主頁</a></div>
+  <div class="topics"><span>#2d-graphics</span><span>#animation</span><span>#art</span></div>
+</article><article class="card" data-search="flux black-forest-labs/flux black forest labs flux.1 圖像模型嘅官方推理程式。 official inference repo for flux.1 models python ">
+  <header>
+    <h3><span class="rank">21</span><a href="https://github.com/black-forest-labs/flux">flux</a></h3>
+    <div class="stars">★ 26,043</div>
+  </header>
+  <p class="meta">black-forest-labs/flux · Python · Apache-2.0 · 最近推送 2025-07-31</p>
+  <p class="summary">Black Forest Labs FLUX.1 圖像模型嘅官方推理程式。</p>
+  <div class="links"><a href="https://github.com/black-forest-labs/flux">GitHub</a></div>
+  
+</article><article class="card" data-search="pytorch-cyclegan-and-pix2pix junyanz/pytorch-cyclegan-and-pix2pix pytorch 實作嘅圖像到圖像轉換，例如風格轉換同配對翻譯。 image-to-image translation in pytorch python computer-graphics computer-vision cyclegan deep-learning gan gans generative-adversarial-network image-generation">
+  <header>
+    <h3><span class="rank">22</span><a href="https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix">pytorch-CycleGAN-and-pix2pix</a></h3>
+    <div class="stars">★ 25,267</div>
+  </header>
+  <p class="meta">junyanz/pytorch-CycleGAN-and-pix2pix · Python · 最近推送 2025-08-06</p>
+  <p class="summary">PyTorch 實作嘅圖像到圖像轉換，例如風格轉換同配對翻譯。</p>
+  <div class="links"><a href="https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix">GitHub</a></div>
+  <div class="topics"><span>#computer-graphics</span><span>#computer-vision</span><span>#cyclegan</span></div>
+</article><article class="card" data-search="rembg danielgatis/rembg 用 ai 自動去除圖片背景嘅工具。 rembg is a tool to remove images background python background-removal image-processing python">
+  <header>
+    <h3><span class="rank">23</span><a href="https://github.com/danielgatis/rembg">rembg</a></h3>
+    <div class="stars">★ 25,212</div>
+  </header>
+  <p class="meta">danielgatis/rembg · Python · MIT · 最近推送 2026-10-21</p>
+  <p class="summary">用 AI 自動去除圖片背景嘅工具。</p>
+  <div class="links"><a href="https://github.com/danielgatis/rembg">GitHub</a></div>
+  <div class="topics"><span>#background-removal</span><span>#image-processing</span><span>#python</span></div>
+</article><article class="card" data-search="iopaint sanster/iopaint ai 圖像修補工具，可以移除物件，或者用文字同擴散模型重畫指定區域。 image inpainting tool powered by sota ai model. remove any unwanted object, defect, people from your pictures or erase and replace(powered by stable diffusion) any thing on your pictures. python inpainting lama latent-diffusion mat pytorch stable-diffusion zits">
+  <header>
+    <h3><span class="rank">24</span><a href="https://github.com/Sanster/IOPaint">IOPaint</a></h3>
+    <div class="stars">★ 23,301</div>
+  </header>
+  <p class="meta">Sanster/IOPaint · Python · Apache-2.0 · 最近推送 2025-04-29</p>
+  <p class="summary">AI 圖像修補工具，可以移除物件，或者用文字同擴散模型重畫指定區域。</p>
+  <div class="links"><a href="https://github.com/Sanster/IOPaint">GitHub</a><a href="https://www.iopaint.com/">主頁</a><span class="badge arch">已封存</span></div>
+  <div class="topics"><span>#inpainting</span><span>#lama</span><span>#latent-diffusion</span></div>
+</article><article class="card" data-search="codeformer sczhou/codeformer 人臉修復模型，用碼本還原受損或低清嘅臉部細節。 [neurips 2022] towards robust blind face restoration with codebook lookup transformer python codebook codeformer face-enhancement face-restoration pytorch restoration super-resolution vqgan">
+  <header>
+    <h3><span class="rank">25</span><a href="https://github.com/sczhou/CodeFormer">CodeFormer</a></h3>
+    <div class="stars">★ 18,199</div>
+  </header>
+  <p class="meta">sczhou/CodeFormer · Python · 最近推送 2025-11-18</p>
+  <p class="summary">人臉修復模型，用碼本還原受損或低清嘅臉部細節。</p>
+  <div class="links"><a href="https://github.com/sczhou/CodeFormer">GitHub</a></div>
+  <div class="topics"><span>#codebook</span><span>#codeformer</span><span>#face-enhancement</span></div>
+</article><article class="card" data-search="imagemagick imagemagick/imagemagick 處理二百幾種格式嘅圖像工具套件，可以用命令列做轉換、編輯同合成。 imagemagick is a free, open-source software suite for creating, editing, converting, and displaying images. it supports 200+ formats and offers powerful command-line tools and apis for automation, scripting, and integration across platforms. c command-line-image-tool digital-image-editing image-conversion image-manipulation image-processing imagemagick mastering-digital-image-alchemy open-source-software">
+  <header>
+    <h3><span class="rank">26</span><a href="https://github.com/ImageMagick/ImageMagick">ImageMagick</a></h3>
+    <div class="stars">★ 17,756</div>
+  </header>
+  <p class="meta">ImageMagick/ImageMagick · C · 最近推送 2026-10-28</p>
+  <p class="summary">處理二百幾種格式嘅圖像工具套件，可以用命令列做轉換、編輯同合成。</p>
+  <div class="links"><a href="https://github.com/ImageMagick/ImageMagick">GitHub</a><a href="https://imagemagick.org">主頁</a></div>
+  <div class="topics"><span>#command-line-image-tool</span><span>#digital-image-editing</span><span>#image-conversion</span></div>
+</article><article class="card" data-search="latex-ocr lukas-blecher/latex-ocr 將數學公式圖片轉成 latex 程式碼。 pix2tex: using a vit to convert images of equations into latex code. python dataset deep-learning im2latex im2markup im2text image-processing image2text latex">
+  <header>
+    <h3><span class="rank">27</span><a href="https://github.com/lukas-blecher/LaTeX-OCR">LaTeX-OCR</a></h3>
+    <div class="stars">★ 16,600</div>
+  </header>
+  <p class="meta">lukas-blecher/LaTeX-OCR · Python · MIT · 最近推送 2025-01-18</p>
+  <p class="summary">將數學公式圖片轉成 LaTeX 程式碼。</p>
+  <div class="links"><a href="https://github.com/lukas-blecher/LaTeX-OCR">GitHub</a><a href="https://lukas-blecher.github.io/LaTeX-OCR/">主頁</a></div>
+  <div class="topics"><span>#dataset</span><span>#deep-learning</span><span>#im2latex</span></div>
+</article><article class="card" data-search="latent-diffusion compvis/latent-diffusion 高解像潛在擴散模型嘅研究程式，係 stable diffusion 嘅前身實作。 high-resolution image synthesis with latent diffusion models jupyter notebook ">
+  <header>
+    <h3><span class="rank">28</span><a href="https://github.com/CompVis/latent-diffusion">latent-diffusion</a></h3>
+    <div class="stars">★ 14,181</div>
+  </header>
+  <p class="meta">CompVis/latent-diffusion · Jupyter Notebook · MIT · 最近推送 2024-02-29</p>
+  <p class="summary">高解像潛在擴散模型嘅研究程式，係 Stable Diffusion 嘅前身實作。</p>
+  <div class="links"><a href="https://github.com/CompVis/latent-diffusion">GitHub</a><a href="https://arxiv.org/abs/2112.10752">論文</a></div>
+  
+</article><article class="card" data-search="pillow python-pillow/pillow python 圖像處理庫，用嚟開檔、縮放、畫圖同轉格式。 python imaging library (fork) python c cross-platform image image-processing pil pillow python python-3">
+  <header>
+    <h3><span class="rank">29</span><a href="https://github.com/python-pillow/Pillow">Pillow</a></h3>
+    <div class="stars">★ 13,935</div>
+  </header>
+  <p class="meta">python-pillow/Pillow · Python · 最近推送 2026-10-28</p>
+  <p class="summary">Python 圖像處理庫，用嚟開檔、縮放、畫圖同轉格式。</p>
+  <div class="links"><a href="https://github.com/python-pillow/Pillow">GitHub</a><a href="https://python-pillow.org">主頁</a></div>
+  <div class="topics"><span>#c</span><span>#cross-platform</span><span>#image</span></div>
+</article><article class="card" data-search="darktable darktable-org/darktable 開源相片工作流同 raw 沖曬軟件，用嚟整理同調色相片。 darktable is an open source photography workflow application and raw developer c ">
+  <header>
+    <h3><span class="rank">30</span><a href="https://github.com/darktable-org/darktable">darktable</a></h3>
+    <div class="stars">★ 13,350</div>
+  </header>
+  <p class="meta">darktable-org/darktable · C · GPL-3.0 · 最近推送 2026-10-28</p>
+  <p class="summary">開源相片工作流同 RAW 沖曬軟件，用嚟整理同調色相片。</p>
+  <div class="links"><a href="https://github.com/darktable-org/darktable">GitHub</a><a href="https://www.darktable.org">主頁</a></div>
+  
+</article><article class="card" data-search="stable-diffusion-webui-forge lllyasviel/stable-diffusion-webui-forge stable diffusion webui 嘅高效分支，針對速度同新模型做咗優化。  python ">
+  <header>
+    <h3><span class="rank">31</span><a href="https://github.com/lllyasviel/stable-diffusion-webui-forge">stable-diffusion-webui-forge</a></h3>
+    <div class="stars">★ 13,088</div>
+  </header>
+  <p class="meta">lllyasviel/stable-diffusion-webui-forge · Python · AGPL-3.0 · 最近推送 2025-07-31</p>
+  <p class="summary">Stable Diffusion WebUI 嘅高效分支，針對速度同新模型做咗優化。</p>
+  <div class="links"><a href="https://github.com/lllyasviel/stable-diffusion-webui-forge">GitHub</a></div>
+  
+</article><article class="card" data-search="kohya_ss bmaltais/kohya_ss 用嚟訓練 lora 同微調擴散模型嘅圖形介面。  python ">
+  <header>
+    <h3><span class="rank">32</span><a href="https://github.com/bmaltais/kohya_ss">kohya_ss</a></h3>
+    <div class="stars">★ 12,641</div>
+  </header>
+  <p class="meta">bmaltais/kohya_ss · Python · Apache-2.0 · 最近推送 2026-08-01</p>
+  <p class="summary">用嚟訓練 LoRA 同微調擴散模型嘅圖形介面。</p>
+  <div class="links"><a href="https://github.com/bmaltais/kohya_ss">GitHub</a></div>
+  
+</article><article class="card" data-search="instantid instantx-research/instantid 用一張參考圖做身份保持生成，喺新畫面入面保留同一個人。 instantid: zero-shot identity-preserving generation in seconds 🔥 python ">
+  <header>
+    <h3><span class="rank">33</span><a href="https://github.com/instantX-research/InstantID">InstantID</a></h3>
+    <div class="stars">★ 11,992</div>
+  </header>
+  <p class="meta">instantX-research/InstantID · Python · Apache-2.0 · 最近推送 2024-07-18</p>
+  <p class="summary">用一張參考圖做身份保持生成，喺新畫面入面保留同一個人。</p>
+  <div class="links"><a href="https://github.com/instantX-research/InstantID">GitHub</a><a href="https://instantid.github.io/">主頁</a></div>
+  
+</article><article class="card" data-search="libvips libvips/libvips 低記憶體、高速度嘅圖像處理庫。 a fast image processing library with low memory needs. c c cpp gif graphicsmagick hdr heic image-processing imagemagick">
+  <header>
+    <h3><span class="rank">34</span><a href="https://github.com/libvips/libvips">libvips</a></h3>
+    <div class="stars">★ 11,769</div>
+  </header>
+  <p class="meta">libvips/libvips · C · LGPL-2.1 · 最近推送 2026-10-28</p>
+  <p class="summary">低記憶體、高速度嘅圖像處理庫。</p>
+  <div class="links"><a href="https://github.com/libvips/libvips">GitHub</a><a href="https://libvips.org">主頁</a></div>
+  <div class="topics"><span>#c</span><span>#cpp</span><span>#gif</span></div>
+</article><article class="card" data-search="stylegan2 nvlabs/stylegan2 nvidia 嘅 stylegan2，用生成對抗網絡合成高解像圖像。 stylegan2 - official tensorflow implementation python ">
+  <header>
+    <h3><span class="rank">35</span><a href="https://github.com/NVlabs/stylegan2">stylegan2</a></h3>
+    <div class="stars">★ 11,182</div>
+  </header>
+  <p class="meta">NVlabs/stylegan2 · Python · 最近推送 2024-05-18</p>
+  <p class="summary">NVIDIA 嘅 StyleGAN2，用生成對抗網絡合成高解像圖像。</p>
+  <div class="links"><a href="https://github.com/NVlabs/stylegan2">GitHub</a><a href="http://arxiv.org/abs/1912.04958">主頁</a></div>
+  
+</article><article class="card" data-search="krita-ai-diffusion acly/krita-ai-diffusion krita 入面嘅 ai 繪圖插件，可以按選區同提示做局部重繪同擴圖。 streamlined interface for generating images with ai in krita. inpaint and outpaint with optional text prompt, no tweaking required. python generative-ai krita-plugin stable-diffusion">
+  <header>
+    <h3><span class="rank">36</span><a href="https://github.com/Acly/krita-ai-diffusion">krita-ai-diffusion</a></h3>
+    <div class="stars">★ 10,796</div>
+  </header>
+  <p class="meta">Acly/krita-ai-diffusion · Python · GPL-3.0 · 最近推送 2026-10-03</p>
+  <p class="summary">Krita 入面嘅 AI 繪圖插件，可以按選區同提示做局部重繪同擴圖。</p>
+  <div class="links"><a href="https://github.com/Acly/krita-ai-diffusion">GitHub</a><a href="https://www.interstice.cloud">主頁</a></div>
+  <div class="topics"><span>#generative-ai</span><span>#krita-plugin</span><span>#stable-diffusion</span></div>
+</article><article class="card" data-search="ic-light lllyasviel/ic-light 控制生成圖像打光嘅工具，可以改燈光方向同環境，同時盡量保留主體。 more relighting! python ">
+  <header>
+    <h3><span class="rank">37</span><a href="https://github.com/lllyasviel/IC-Light">IC-Light</a></h3>
+    <div class="stars">★ 8,565</div>
+  </header>
+  <p class="meta">lllyasviel/IC-Light · Python · Apache-2.0 · 最近推送 2025-02-20</p>
+  <p class="summary">控制生成圖像打光嘅工具，可以改燈光方向同環境，同時盡量保留主體。</p>
+  <div class="links"><a href="https://github.com/lllyasviel/IC-Light">GitHub</a></div>
+  
+</article></div>
+  <div class="papers"><h3>相關論文</h3><div class="grid"><article class="card" data-search="instructpix2pix: learning to follow image editing instructions 用自然語言指令直接改一張現有圖像，例如換背景、改物件或者轉風格。 paper arxiv">
+  <header>
+    <h3><a href="https://arxiv.org/abs/2211.09800">InstructPix2Pix: Learning to Follow Image Editing Instructions</a></h3>
+    <div class="stars">2023</div>
+  </header>
+  <p class="meta">論文 · arXiv</p>
+  <p class="summary">用自然語言指令直接改一張現有圖像，例如換背景、改物件或者轉風格。</p>
+  <div class="links"><a href="https://arxiv.org/abs/2211.09800">arXiv</a><a href="https://github.com/timothybrooks/instruct-pix2pix">程式</a><span class="badge">論文</span></div>
+</article><article class="card" data-search="sdxl: improving latent diffusion models for high-resolution image synthesis stable diffusion 嘅較大版本，改善構圖、文字同整體畫質，適合高解像生成。 paper arxiv">
+  <header>
+    <h3><a href="https://arxiv.org/abs/2307.01952">SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis</a></h3>
+    <div class="stars">2023</div>
+  </header>
+  <p class="meta">論文 · arXiv</p>
+  <p class="summary">Stable Diffusion 嘅較大版本，改善構圖、文字同整體畫質，適合高解像生成。</p>
+  <div class="links"><a href="https://arxiv.org/abs/2307.01952">arXiv</a><a href="https://github.com/Stability-AI/generative-models">程式</a><span class="badge">論文</span></div>
+</article></div></div>
+</section><section class="section" id="video" data-section>
+  <h2>影片</h2>
+  <p class="blurb">影片生成、剪接、播放、轉碼同處理。 開源項目按 GitHub stars 由多至少。</p>
+  <div class="grid"><article class="card" data-search="yt-dlp yt-dlp/yt-dlp 功能完整嘅命令列影音下載器，可以從大量網站保存影片同音訊。 a feature-rich command-line audio/video downloader python cli downloader python sponsorblock youtube-dl youtube-downloader yt-dlp">
+  <header>
+    <h3><span class="rank">01</span><a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a></h3>
+    <div class="stars">★ 203,226</div>
+  </header>
+  <p class="meta">yt-dlp/yt-dlp · Python · Unlicense · 最近推送 2026-10-26</p>
+  <p class="summary">功能完整嘅命令列影音下載器，可以從大量網站保存影片同音訊。</p>
+  <div class="links"><a href="https://github.com/yt-dlp/yt-dlp">GitHub</a><a href="https://discord.gg/H5MNcFW63r">主頁</a></div>
+  <div class="topics"><span>#cli</span><span>#downloader</span><span>#python</span></div>
+</article><article class="card" data-search="obs-studio obsproject/obs-studio 免費開源嘅直播同螢幕錄製軟件。 obs studio - free and open source software for live streaming and screen recording c c c-plus-plus directshow facebook-live ffmpeg game-capture live-streaming screen-capture">
+  <header>
+    <h3><span class="rank">02</span><a href="https://github.com/obsproject/obs-studio">obs-studio</a></h3>
+    <div class="stars">★ 78,452</div>
+  </header>
+  <p class="meta">obsproject/obs-studio · C · GPL-2.0 · 最近推送 2026-10-27</p>
+  <p class="summary">免費開源嘅直播同螢幕錄製軟件。</p>
+  <div class="links"><a href="https://github.com/obsproject/obs-studio">GitHub</a><a href="https://obsproject.com">主頁</a></div>
+  <div class="topics"><span>#c</span><span>#c-plus-plus</span><span>#directshow</span></div>
+</article><article class="card" data-search="openmontage calesthio/openmontage 開源嘅 agent 影片製作系統，用多條製作流程同工具產出影片。 world&#x27;s first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. turn your ai coding assistant into a full video production studio. python agent agentic-ai ai claude copilot cursor elevenlabs ffmpeg">
+  <header>
+    <h3><span class="rank">03</span><a href="https://github.com/calesthio/OpenMontage">OpenMontage</a></h3>
+    <div class="stars">★ 72,598</div>
+  </header>
+  <p class="meta">calesthio/OpenMontage · Python · AGPL-3.0 · 最近推送 2026-10-24</p>
+  <p class="summary">開源嘅 agent 影片製作系統，用多條製作流程同工具產出影片。</p>
+  <div class="links"><a href="https://github.com/calesthio/OpenMontage">GitHub</a><a href="https://www.openmontage.video/">主頁</a></div>
+  <div class="topics"><span>#agent</span><span>#agentic-ai</span><span>#ai</span></div>
+</article><article class="card" data-search="remotion remotion-dev/remotion 用 react 以程式方式製作影片，適合可重複嘅動畫同模板。 🎥      make videos programmatically with react typescript javascript react video">
+  <header>
+    <h3><span class="rank">04</span><a href="https://github.com/remotion-dev/remotion">remotion</a></h3>
+    <div class="stars">★ 68,449</div>
+  </header>
+  <p class="meta">remotion-dev/remotion · TypeScript · 最近推送 2026-10-28</p>
+  <p class="summary">用 React 以程式方式製作影片，適合可重複嘅動畫同模板。</p>
+  <div class="links"><a href="https://github.com/remotion-dev/remotion">GitHub</a><a href="https://remotion.dev">主頁</a></div>
+  <div class="topics"><span>#javascript</span><span>#react</span><span>#video</span></div>
+</article><article class="card" data-search="ffmpeg ffmpeg/ffmpeg 處理影音嘅核心工具，負責轉碼、剪接、串流同格式轉換。 mirror of https://git.ffmpeg.org/ffmpeg.git c audio c ffmpeg fft hevc hls matroska mp4">
+  <header>
+    <h3><span class="rank">05</span><a href="https://github.com/FFmpeg/FFmpeg">FFmpeg</a></h3>
+    <div class="stars">★ 65,938</div>
+  </header>
+  <p class="meta">FFmpeg/FFmpeg · C · 最近推送 2026-10-28</p>
+  <p class="summary">處理影音嘅核心工具，負責轉碼、剪接、串流同格式轉換。</p>
+  <div class="links"><a href="https://github.com/FFmpeg/FFmpeg">GitHub</a><a href="https://ffmpeg.org/">主頁</a></div>
+  <div class="topics"><span>#audio</span><span>#c</span><span>#ffmpeg</span></div>
+</article><article class="card" data-search="jellyfin jellyfin/jellyfin 自由軟件媒體系統，可以自己架伺服器整理同播放影片。 the free software media system - server backend &amp; api c# csharp dotnet hacktoberfest jellyfin">
+  <header>
+    <h3><span class="rank">06</span><a href="https://github.com/jellyfin/jellyfin">jellyfin</a></h3>
+    <div class="stars">★ 58,732</div>
+  </header>
+  <p class="meta">jellyfin/jellyfin · C# · GPL-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">自由軟件媒體系統，可以自己架伺服器整理同播放影片。</p>
+  <div class="links"><a href="https://github.com/jellyfin/jellyfin">GitHub</a><a href="https://jellyfin.org">主頁</a></div>
+  <div class="topics"><span>#csharp</span><span>#dotnet</span><span>#hacktoberfest</span></div>
+</article><article class="card" data-search="mpv mpv-player/mpv 輕量、高質素嘅命令列媒體播放器。 🎥 command line media player c audio c ffmpeg mplayer mpv multimedia video">
+  <header>
+    <h3><span class="rank">07</span><a href="https://github.com/mpv-player/mpv">mpv</a></h3>
+    <div class="stars">★ 37,597</div>
+  </header>
+  <p class="meta">mpv-player/mpv · C · 最近推送 2026-10-27</p>
+  <p class="summary">輕量、高質素嘅命令列媒體播放器。</p>
+  <div class="links"><a href="https://github.com/mpv-player/mpv">GitHub</a><a href="https://mpv.io">主頁</a></div>
+  <div class="topics"><span>#audio</span><span>#c</span><span>#ffmpeg</span></div>
+</article><article class="card" data-search="open-sora hpcaitech/open-sora 開源影片生成項目，目標係降低高質文字到影片嘅製作門檻。 open-sora: democratizing efficient video production for all python ">
+  <header>
+    <h3><span class="rank">08</span><a href="https://github.com/hpcaitech/Open-Sora">Open-Sora</a></h3>
+    <div class="stars">★ 29,884</div>
+  </header>
+  <p class="meta">hpcaitech/Open-Sora · Python · Apache-2.0 · 最近推送 2026-04-09</p>
+  <p class="summary">開源影片生成項目，目標係降低高質文字到影片嘅製作門檻。</p>
+  <div class="links"><a href="https://github.com/hpcaitech/Open-Sora">GitHub</a><a href="https://hpcaitech.github.io/Open-Sora/">主頁</a></div>
+  
+</article><article class="card" data-search="pixelle-video ath-maas/pixelle-video ai 自動短片引擎，由內容一路做到成片。 🚀 ai 全自动短视频引擎 | ai fully automated short video engine python aigc comfyui image-generation tts video-generation">
+  <header>
+    <h3><span class="rank">09</span><a href="https://github.com/ATH-MaaS/Pixelle-Video">Pixelle-Video</a></h3>
+    <div class="stars">★ 29,489</div>
+  </header>
+  <p class="meta">ATH-MaaS/Pixelle-Video · Python · Apache-2.0 · 最近推送 2026-06-14</p>
+  <p class="summary">AI 自動短片引擎，由內容一路做到成片。</p>
+  <div class="links"><a href="https://github.com/ATH-MaaS/Pixelle-Video">GitHub</a><a href="https://aidc-ai.github.io/Pixelle-Video/zh">主頁</a></div>
+  <div class="topics"><span>#aigc</span><span>#comfyui</span><span>#image-generation</span></div>
+</article><article class="card" data-search="generative-models stability-ai/generative-models stability ai 嘅生成模型程式，包含 stable video diffusion 等圖像到影片模型。 generative models by stability ai python ">
+  <header>
+    <h3><span class="rank">10</span><a href="https://github.com/Stability-AI/generative-models">generative-models</a></h3>
+    <div class="stars">★ 27,313</div>
+  </header>
+  <p class="meta">Stability-AI/generative-models · Python · MIT · 最近推送 2025-12-16</p>
+  <p class="summary">Stability AI 嘅生成模型程式，包含 Stable Video Diffusion 等圖像到影片模型。</p>
+  <div class="links"><a href="https://github.com/Stability-AI/generative-models">GitHub</a><a href="https://arxiv.org/abs/2311.15127">論文</a></div>
+  
+</article><article class="card" data-search="handbrake handbrake/handbrake 開源影片轉檔工具，用嚟壓縮同轉換成常見格式。 handbrake&#x27;s development repository c gplv2 multi-platform video-transcoding">
+  <header>
+    <h3><span class="rank">11</span><a href="https://github.com/HandBrake/HandBrake">HandBrake</a></h3>
+    <div class="stars">★ 24,811</div>
+  </header>
+  <p class="meta">HandBrake/HandBrake · C · 最近推送 2026-10-28</p>
+  <p class="summary">開源影片轉檔工具，用嚟壓縮同轉換成常見格式。</p>
+  <div class="links"><a href="https://github.com/HandBrake/HandBrake">GitHub</a><a href="https://handbrake.fr">主頁</a></div>
+  <div class="topics"><span>#gplv2</span><span>#multi-platform</span><span>#video-transcoding</span></div>
+</article><article class="card" data-search="video2x k4yt3x/video2x 用機器學習做影片超解像同補幀。 a machine learning-based video super resolution and frame interpolation framework. est. hack the valley ii, 2018. c++ anime4k frame-interpolation machine-learning neural-networks realcugan realesrgan rife super-resoluion">
+  <header>
+    <h3><span class="rank">12</span><a href="https://github.com/k4yt3x/video2x">video2x</a></h3>
+    <div class="stars">★ 22,446</div>
+  </header>
+  <p class="meta">k4yt3x/video2x · C++ · AGPL-3.0 · 最近推送 2026-03-07</p>
+  <p class="summary">用機器學習做影片超解像同補幀。</p>
+  <div class="links"><a href="https://github.com/k4yt3x/video2x">GitHub</a><a href="https://docs.video2x.org">主頁</a></div>
+  <div class="topics"><span>#anime4k</span><span>#frame-interpolation</span><span>#machine-learning</span></div>
+</article><article class="card" data-search="anime4k bloc97/anime4k 即時動漫影片放大算法，可以喺播放時提升畫質。 a high-quality real time upscaler for anime video jupyter notebook anime anime-upscaling anime4k cnn computer-graphics convolutional-neural-networks denoising-algorithms neural-networks">
+  <header>
+    <h3><span class="rank">13</span><a href="https://github.com/bloc97/Anime4K">Anime4K</a></h3>
+    <div class="stars">★ 21,575</div>
+  </header>
+  <p class="meta">bloc97/Anime4K · Jupyter Notebook · MIT · 最近推送 2024-08-17</p>
+  <p class="summary">即時動漫影片放大算法，可以喺播放時提升畫質。</p>
+  <div class="links"><a href="https://github.com/bloc97/Anime4K">GitHub</a><a href="https://bloc97.github.io/Anime4K/">主頁</a></div>
+  <div class="topics"><span>#anime</span><span>#anime-upscaling</span><span>#anime4k</span></div>
+</article><article class="card" data-search="toonflow-app hbai-ltd/toonflow-app 開源短劇同漫劇工具，涵蓋劇本、分鏡、角色場景同圖像、影片生成。 短剧、漫剧制作工具 toonflow：开源 ai 视频创作平台，集成剧本创作、智能分镜、角色与场景资产管理、图像生成和视频生成。融合无限画布、ai agent 与可视化工作流，支持本地部署、自选模型、跨平台客户端、mcp 与插件扩展。open-source ai short drama and motion comic creation tool with an infinite canvas, ai agents, storyboarding, image and video generation. self-hosted and extensible, with a canvas-based approach similar to libtv and tapnow. typescript ai-agents ai-comic ai-content-creation ai-filmmaking ai-short-drama generative-ai image-generation image-to-video">
+  <header>
+    <h3><span class="rank">14</span><a href="https://github.com/HBAI-Ltd/Toonflow-app">Toonflow-app</a></h3>
+    <div class="stars">★ 19,716</div>
+  </header>
+  <p class="meta">HBAI-Ltd/Toonflow-app · TypeScript · MIT · 最近推送 2026-10-27</p>
+  <p class="summary">開源短劇同漫劇工具，涵蓋劇本、分鏡、角色場景同圖像、影片生成。</p>
+  <div class="links"><a href="https://github.com/HBAI-Ltd/Toonflow-app">GitHub</a><a href="https://toonflow.net">主頁</a></div>
+  <div class="topics"><span>#ai-agents</span><span>#ai-comic</span><span>#ai-content-creation</span></div>
+</article><article class="card" data-search="liveportrait klingairesearch/liveportrait 將一張人像變成會郁嘅肖像動畫。 bring portraits to life! python face-animation image-animation video-editing video-generation">
+  <header>
+    <h3><span class="rank">15</span><a href="https://github.com/KlingAIResearch/LivePortrait">LivePortrait</a></h3>
+    <div class="stars">★ 19,335</div>
+  </header>
+  <p class="meta">KlingAIResearch/LivePortrait · Python · 最近推送 2026-06-01</p>
+  <p class="summary">將一張人像變成會郁嘅肖像動畫。</p>
+  <div class="links"><a href="https://github.com/KlingAIResearch/LivePortrait">GitHub</a><a href="https://liveportrait.github.io">主頁</a></div>
+  <div class="topics"><span>#face-animation</span><span>#image-animation</span><span>#video-editing</span></div>
+</article><article class="card" data-search="wan2.2 wan-video/wan2.2 阿里 wan 系列嘅開源大型影片生成模型。 wan: open and advanced large-scale video generative models python aigc video-generation">
+  <header>
+    <h3><span class="rank">16</span><a href="https://github.com/Wan-Video/Wan2.2">Wan2.2</a></h3>
+    <div class="stars">★ 18,232</div>
+  </header>
+  <p class="meta">Wan-Video/Wan2.2 · Python · Apache-2.0 · 最近推送 2026-09-21</p>
+  <p class="summary">阿里 Wan 系列嘅開源大型影片生成模型。</p>
+  <div class="links"><a href="https://github.com/Wan-Video/Wan2.2">GitHub</a><a href="https://wan.video">主頁</a></div>
+  <div class="topics"><span>#aigc</span><span>#video-generation</span></div>
+</article><article class="card" data-search="framepack lllyasviel/framepack 令影片擴散模型嘅生成更加實際，降低長片段對記憶體嘅壓力。 lets make video diffusion practical! python ">
+  <header>
+    <h3><span class="rank">17</span><a href="https://github.com/lllyasviel/FramePack">FramePack</a></h3>
+    <div class="stars">★ 17,328</div>
+  </header>
+  <p class="meta">lllyasviel/FramePack · Python · Apache-2.0 · 最近推送 2025-10-16</p>
+  <p class="summary">令影片擴散模型嘅生成更加實際，降低長片段對記憶體嘅壓力。</p>
+  <div class="links"><a href="https://github.com/lllyasviel/FramePack">GitHub</a></div>
+  
+</article><article class="card" data-search="filmcraft storytold/filmcraft 用 rust 由零寫嘅開源非線性影片剪接軟件。 filmcraft: an open-source, nonlinear video editor written by scratch in pure rust rust art rust video video-editing video-editor video-processing">
+  <header>
+    <h3><span class="rank">18</span><a href="https://github.com/storytold/filmcraft">filmcraft</a></h3>
+    <div class="stars">★ 16,640</div>
+  </header>
+  <p class="meta">storytold/filmcraft · Rust · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">用 Rust 由零寫嘅開源非線性影片剪接軟件。</p>
+  <div class="links"><a href="https://github.com/storytold/filmcraft">GitHub</a><a href="https://getartcraft.com/apps/filmcraft">主頁</a></div>
+  <div class="topics"><span>#art</span><span>#rust</span><span>#video</span></div>
+</article><article class="card" data-search="duix-avatar duixcom/duix-avatar 可離線使用嘅開源數位人工具，用嚟生成口播影片同克隆數位人。 🚀 truly open-source ai avatar(digital human) toolkit for offline video generation and digital human cloning. c ai-avatar ai-avatars cloning cloning-tool digital-human multimodal-ai video-generation video-synthesis">
+  <header>
+    <h3><span class="rank">19</span><a href="https://github.com/duixcom/Duix-Avatar">Duix-Avatar</a></h3>
+    <div class="stars">★ 16,117</div>
+  </header>
+  <p class="meta">duixcom/Duix-Avatar · C · 最近推送 2026-04-21</p>
+  <p class="summary">可離線使用嘅開源數位人工具，用嚟生成口播影片同克隆數位人。</p>
+  <div class="links"><a href="https://github.com/duixcom/Duix-Avatar">GitHub</a><a href="https://www.duix.com/">主頁</a></div>
+  <div class="topics"><span>#ai-avatar</span><span>#ai-avatars</span><span>#cloning</span></div>
+</article><article class="card" data-search="shotcut mltframework/shotcut 跨平台開源影片剪接軟件，基於 mlt 框架。 cross-platform (qt), open-source (gplv3) video editor c++ cross-platform gplv3 mlt shotcut video-editor">
+  <header>
+    <h3><span class="rank">20</span><a href="https://github.com/mltframework/shotcut">shotcut</a></h3>
+    <div class="stars">★ 15,519</div>
+  </header>
+  <p class="meta">mltframework/shotcut · C++ · GPL-3.0 · 最近推送 2026-10-27</p>
+  <p class="summary">跨平台開源影片剪接軟件，基於 MLT 框架。</p>
+  <div class="links"><a href="https://github.com/mltframework/shotcut">GitHub</a><a href="https://www.shotcut.org">主頁</a></div>
+  <div class="topics"><span>#cross-platform</span><span>#gplv3</span><span>#mlt</span></div>
+</article><article class="card" data-search="moviepy zulko/moviepy 用 python 做影片剪接、合成同基本特效嘅庫。 video editing with python python animation gif hacktoberfest python video video-editing video-processing">
+  <header>
+    <h3><span class="rank">21</span><a href="https://github.com/Zulko/moviepy">moviepy</a></h3>
+    <div class="stars">★ 15,048</div>
+  </header>
+  <p class="meta">Zulko/moviepy · Python · MIT · 最近推送 2026-08-26</p>
+  <p class="summary">用 Python 做影片剪接、合成同基本特效嘅庫。</p>
+  <div class="links"><a href="https://github.com/Zulko/moviepy">GitHub</a><a href="https://zulko.github.io/moviepy/">主頁</a></div>
+  <div class="topics"><span>#animation</span><span>#gif</span><span>#hacktoberfest</span></div>
+</article><article class="card" data-search="animateanyone humanaigc/animateanyone 用一張人物圖生成動作一致、可控制嘅人物影片。 animate anyone: consistent and controllable image-to-video synthesis for character animation  ">
+  <header>
+    <h3><span class="rank">22</span><a href="https://github.com/HumanAIGC/AnimateAnyone">AnimateAnyone</a></h3>
+    <div class="stars">★ 14,779</div>
+  </header>
+  <p class="meta">HumanAIGC/AnimateAnyone · Apache-2.0 · 最近推送 2025-09-20</p>
+  <p class="summary">用一張人物圖生成動作一致、可控制嘅人物影片。</p>
+  <div class="links"><a href="https://github.com/HumanAIGC/AnimateAnyone">GitHub</a></div>
+  
+</article><article class="card" data-search="cogvideo zai-org/cogvideo 文字同圖像到影片嘅模型項目，包含 cogvideo 同 cogvideox。 text and image to video generation: cogvideox (2024) and cogvideo (iclr 2023) python cogvideox image-to-video llm sora text-to-video video-generation">
+  <header>
+    <h3><span class="rank">23</span><a href="https://github.com/zai-org/CogVideo">CogVideo</a></h3>
+    <div class="stars">★ 13,120</div>
+  </header>
+  <p class="meta">zai-org/CogVideo · Python · Apache-2.0 · 最近推送 2025-11-04</p>
+  <p class="summary">文字同圖像到影片嘅模型項目，包含 CogVideo 同 CogVideoX。</p>
+  <div class="links"><a href="https://github.com/zai-org/CogVideo">GitHub</a><a href="https://arxiv.org/abs/2205.15868">論文</a></div>
+  <div class="topics"><span>#cogvideox</span><span>#image-to-video</span><span>#llm</span></div>
+</article><article class="card" data-search="hunyuanvideo tencent-hunyuan/hunyuanvideo 騰訊混元嘅大型開源影片生成框架。 hunyuanvideo: a systematic framework for large video generation model python diffusion-models diffusion-transformer video-generation">
+  <header>
+    <h3><span class="rank">24</span><a href="https://github.com/Tencent-Hunyuan/HunyuanVideo">HunyuanVideo</a></h3>
+    <div class="stars">★ 12,679</div>
+  </header>
+  <p class="meta">Tencent-Hunyuan/HunyuanVideo · Python · 最近推送 2026-10-08</p>
+  <p class="summary">騰訊混元嘅大型開源影片生成框架。</p>
+  <div class="links"><a href="https://github.com/Tencent-Hunyuan/HunyuanVideo">GitHub</a><a href="https://aivideo.hunyuan.tencent.com">主頁</a><a href="https://arxiv.org/abs/2412.03603">論文</a></div>
+  <div class="topics"><span>#diffusion-models</span><span>#diffusion-transformer</span><span>#video-generation</span></div>
+</article><article class="card" data-search="animatediff guoyww/animatediff 畀文字到圖像模型加時間模組，無需逐個再訓練就可以生成短片。 official implementation of animatediff. python ">
+  <header>
+    <h3><span class="rank">25</span><a href="https://github.com/guoyww/AnimateDiff">AnimateDiff</a></h3>
+    <div class="stars">★ 12,279</div>
+  </header>
+  <p class="meta">guoyww/AnimateDiff · Python · Apache-2.0 · 最近推送 2024-07-31</p>
+  <p class="summary">畀文字到圖像模型加時間模組，無需逐個再訓練就可以生成短片。</p>
+  <div class="links"><a href="https://github.com/guoyww/AnimateDiff">GitHub</a><a href="https://animatediff.github.io">主頁</a><a href="https://arxiv.org/abs/2307.04725">論文</a></div>
+  
+</article><article class="card" data-search="ltx-video lightricks/ltx-video lightricks 嘅開源影片生成模型同官方程式。 official repository for ltx-video python diffusion-models dit image-to-video image-to-video-generation text-to-video text-to-video-generation">
+  <header>
+    <h3><span class="rank">26</span><a href="https://github.com/Lightricks/LTX-Video">LTX-Video</a></h3>
+    <div class="stars">★ 11,204</div>
+  </header>
+  <p class="meta">Lightricks/LTX-Video · Python · Apache-2.0 · 最近推送 2026-01-05</p>
+  <p class="summary">Lightricks 嘅開源影片生成模型同官方程式。</p>
+  <div class="links"><a href="https://github.com/Lightricks/LTX-Video">GitHub</a><a href="https://ltx.io/model">主頁</a></div>
+  <div class="topics"><span>#diffusion-models</span><span>#dit</span><span>#image-to-video</span></div>
+</article><article class="card" data-search="magic-animate magic-research/magic-animate 用擴散模型做時間上一致嘅人物圖像動畫。 [cvpr 2024] official repository for &quot;magicanimate: temporally consistent human image animation using diffusion model&quot; python ">
+  <header>
+    <h3><span class="rank">27</span><a href="https://github.com/magic-research/magic-animate">magic-animate</a></h3>
+    <div class="stars">★ 10,890</div>
+  </header>
+  <p class="meta">magic-research/magic-animate · Python · BSD-3-Clause · 最近推送 2025-08-29</p>
+  <p class="summary">用擴散模型做時間上一致嘅人物圖像動畫。</p>
+  <div class="links"><a href="https://github.com/magic-research/magic-animate">GitHub</a><a href="https://showlab.github.io/magicanimate/">主頁</a></div>
+  
+</article><article class="card" data-search="gyroflow gyroflow/gyroflow 用陀螺儀數據做影片防震。 video stabilization using gyroscope data rust fpv gopro gpu gpu-computing gyroscope insta360 rolling-shutter-undistortion rust">
+  <header>
+    <h3><span class="rank">28</span><a href="https://github.com/gyroflow/gyroflow">gyroflow</a></h3>
+    <div class="stars">★ 9,645</div>
+  </header>
+  <p class="meta">gyroflow/gyroflow · Rust · GPL-3.0 · 最近推送 2026-10-27</p>
+  <p class="summary">用陀螺儀數據做影片防震。</p>
+  <div class="links"><a href="https://github.com/gyroflow/gyroflow">GitHub</a><a href="https://gyroflow.xyz">主頁</a></div>
+  <div class="topics"><span>#fpv</span><span>#gopro</span><span>#gpu</span></div>
+</article><article class="card" data-search="video-retalking opentalker/video-retalking 按音訊為實拍人物影片做口型同步。 [siggraph asia 2022] videoretalking: audio-based lip synchronization for talking head video editing in the wild python lip-synchronization siggraph-asia-2022 talking-head-videos video-editing">
+  <header>
+    <h3><span class="rank">29</span><a href="https://github.com/OpenTalker/video-retalking">video-retalking</a></h3>
+    <div class="stars">★ 7,295</div>
+  </header>
+  <p class="meta">OpenTalker/video-retalking · Python · Apache-2.0 · 最近推送 2024-08-05</p>
+  <p class="summary">按音訊為實拍人物影片做口型同步。</p>
+  <div class="links"><a href="https://github.com/OpenTalker/video-retalking">GitHub</a><a href="https://opentalker.github.io/video-retalking/">主頁</a></div>
+  <div class="topics"><span>#lip-synchronization</span><span>#siggraph-asia-2022</span><span>#talking-head-videos</span></div>
+</article><article class="card" data-search="openshot-qt openshot/openshot-qt 跨平台開源影片剪接軟件，介面比較直接。 openshot video editor is an award-winning free and open-source video editor for linux, mac, and windows, and is dedicated to delivering high quality video editing and animation solutions to the world. python c-plus-plus ffmpeg gplv3 openshot python qt5 video video-editing">
+  <header>
+    <h3><span class="rank">30</span><a href="https://github.com/OpenShot/openshot-qt">openshot-qt</a></h3>
+    <div class="stars">★ 6,699</div>
+  </header>
+  <p class="meta">OpenShot/openshot-qt · Python · 最近推送 2026-10-28</p>
+  <p class="summary">跨平台開源影片剪接軟件，介面比較直接。</p>
+  <div class="links"><a href="https://github.com/OpenShot/openshot-qt">GitHub</a><a href="http://www.openshot.org">主頁</a></div>
+  <div class="topics"><span>#c-plus-plus</span><span>#ffmpeg</span><span>#gplv3</span></div>
+</article><article class="card" data-search="videocrafter ailab-cvc/videocrafter 影片擴散模型項目，用嚟喺有限數據下生成影片。 videocrafter2: overcoming data limitations for high-quality video diffusion models python image-to-video text-to-video video-generation">
+  <header>
+    <h3><span class="rank">31</span><a href="https://github.com/AILab-CVC/VideoCrafter">VideoCrafter</a></h3>
+    <div class="stars">★ 5,108</div>
+  </header>
+  <p class="meta">AILab-CVC/VideoCrafter · Python · 最近推送 2026-01-09</p>
+  <p class="summary">影片擴散模型項目，用嚟喺有限數據下生成影片。</p>
+  <div class="links"><a href="https://github.com/AILab-CVC/VideoCrafter">GitHub</a><a href="https://ailab-cvc.github.io/videocrafter2/">主頁</a></div>
+  <div class="topics"><span>#image-to-video</span><span>#text-to-video</span><span>#video-generation</span></div>
+</article><article class="card" data-search="mochi genmoai/mochi genmo 嘅開源文字到影片模型。 the best oss video generation models, created by genmo python ">
+  <header>
+    <h3><span class="rank">32</span><a href="https://github.com/genmoai/mochi">mochi</a></h3>
+    <div class="stars">★ 3,757</div>
+  </header>
+  <p class="meta">genmoai/mochi · Python · Apache-2.0 · 最近推送 2026-10-22</p>
+  <p class="summary">Genmo 嘅開源文字到影片模型。</p>
+  <div class="links"><a href="https://github.com/genmoai/mochi">GitHub</a></div>
+  
+</article></div>
+  
+</section><section class="section" id="vfx-cg-blender" data-section>
+  <h2>VFX / CG / Blender</h2>
+  <p class="blurb">三維、合成、渲染、材質同 Blender 生態。 開源項目按 GitHub stars 由多至少。</p>
+  <div class="grid"><article class="card" data-search="godot godotengine/godot 跨平台 2d／3d 遊戲引擎，可以用嚟做即時圖像、互動同動畫。 godot engine – multi-platform 2d and 3d game engine c++ game-development game-engine gamedev godot godotengine multi-platform open-source">
+  <header>
+    <h3><span class="rank">01</span><a href="https://github.com/godotengine/godot">godot</a></h3>
+    <div class="stars">★ 119,194</div>
+  </header>
+  <p class="meta">godotengine/godot · C++ · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">跨平台 2D／3D 遊戲引擎，可以用嚟做即時圖像、互動同動畫。</p>
+  <div class="links"><a href="https://github.com/godotengine/godot">GitHub</a><a href="https://godotengine.org">主頁</a></div>
+  <div class="topics"><span>#game-development</span><span>#game-engine</span><span>#gamedev</span></div>
+</article><article class="card" data-search="three.js mrdoob/three.js 用 javascript 喺瀏覽器建立同渲染 3d 場景。 javascript 3d library. javascript 3d augmented-reality canvas html5 javascript svg virtual-reality webaudio">
+  <header>
+    <h3><span class="rank">02</span><a href="https://github.com/mrdoob/three.js">three.js</a></h3>
+    <div class="stars">★ 117,117</div>
+  </header>
+  <p class="meta">mrdoob/three.js · JavaScript · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">用 JavaScript 喺瀏覽器建立同渲染 3D 場景。</p>
+  <div class="links"><a href="https://github.com/mrdoob/three.js">GitHub</a><a href="https://threejs.org/">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#augmented-reality</span><span>#canvas</span></div>
+</article><article class="card" data-search="pixijs pixijs/pixijs 高速 2d webgl 渲染引擎，用嚟做互動圖像同視覺效果。 the html5 creation engine: create beautiful digital content with the fastest, most flexible 2d webgl renderer. typescript canvas canvas2d data-visualization game glsl javascript pixi pixijs">
+  <header>
+    <h3><span class="rank">03</span><a href="https://github.com/pixijs/pixijs">pixijs</a></h3>
+    <div class="stars">★ 48,579</div>
+  </header>
+  <p class="meta">pixijs/pixijs · TypeScript · MIT · 最近推送 2026-10-27</p>
+  <p class="summary">高速 2D WebGL 渲染引擎，用嚟做互動圖像同視覺效果。</p>
+  <div class="links"><a href="https://github.com/pixijs/pixijs">GitHub</a><a href="http://pixijs.com">主頁</a></div>
+  <div class="topics"><span>#canvas</span><span>#canvas2d</span><span>#data-visualization</span></div>
+</article><article class="card" data-search="react-three-fiber pmndrs/react-three-fiber 用 react 方式寫 three.js 場景嘅渲染器。 🇨🇭 a react renderer for three.js typescript 3d animation fiber react renderer threejs">
+  <header>
+    <h3><span class="rank">04</span><a href="https://github.com/pmndrs/react-three-fiber">react-three-fiber</a></h3>
+    <div class="stars">★ 33,299</div>
+  </header>
+  <p class="meta">pmndrs/react-three-fiber · TypeScript · MIT · 最近推送 2026-10-21</p>
+  <p class="summary">用 React 方式寫 Three.js 場景嘅渲染器。</p>
+  <div class="links"><a href="https://github.com/pmndrs/react-three-fiber">GitHub</a><a href="https://docs.pmnd.rs/react-three-fiber">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#animation</span><span>#fiber</span></div>
+</article><article class="card" data-search="babylon.js babylonjs/babylon.js 功能完整嘅網頁 3d 渲染同遊戲引擎。 babylon.js is a powerful, beautiful, simple, and open game and rendering engine packed into a friendly javascript framework. typescript 3d babylon game-development game-engine game-engine-3d typescript webaudio webgl">
+  <header>
+    <h3><span class="rank">05</span><a href="https://github.com/BabylonJS/Babylon.js">Babylon.js</a></h3>
+    <div class="stars">★ 26,237</div>
+  </header>
+  <p class="meta">BabylonJS/Babylon.js · TypeScript · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">功能完整嘅網頁 3D 渲染同遊戲引擎。</p>
+  <div class="links"><a href="https://github.com/BabylonJS/Babylon.js">GitHub</a><a href="http://www.babylonjs.com">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#babylon</span><span>#game-development</span></div>
+</article><article class="card" data-search="gaussian-splatting graphdeco-inria/gaussian-splatting 3d gaussian splatting 嘅原始實作，可以由相片即時渲染立體場景。 original reference implementation of &quot;3d gaussian splatting for real-time radiance field rendering&quot; python computer-graphics computer-vision radiance-field">
+  <header>
+    <h3><span class="rank">06</span><a href="https://github.com/graphdeco-inria/gaussian-splatting">gaussian-splatting</a></h3>
+    <div class="stars">★ 24,356</div>
+  </header>
+  <p class="meta">graphdeco-inria/gaussian-splatting · Python · 最近推送 2025-10-17</p>
+  <p class="summary">3D Gaussian Splatting 嘅原始實作，可以由相片即時渲染立體場景。</p>
+  <div class="links"><a href="https://github.com/graphdeco-inria/gaussian-splatting">GitHub</a><a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">主頁</a><a href="https://arxiv.org/abs/2308.04079">論文</a></div>
+  <div class="topics"><span>#computer-graphics</span><span>#computer-vision</span><span>#radiance-field</span></div>
+</article><article class="card" data-search="blender blender/blender blender 官方原始碼，涵蓋建模、動畫、合成、剪接同渲染。 official mirror of blender c++ 3d animation b3d computer-graphics modeling rendering">
+  <header>
+    <h3><span class="rank">07</span><a href="https://github.com/blender/blender">blender</a></h3>
+    <div class="stars">★ 21,369</div>
+  </header>
+  <p class="meta">blender/blender · C++ · 最近推送 2026-10-28</p>
+  <p class="summary">Blender 官方原始碼，涵蓋建模、動畫、合成、剪接同渲染。</p>
+  <div class="links"><a href="https://github.com/blender/blender">GitHub</a><a href="https://developer.blender.org/docs/handbook/contributing/using_git/#github-mirror">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#animation</span><span>#b3d</span></div>
+</article><article class="card" data-search="filament google/filament google 嘅即時物理式渲染引擎，可用喺多個平台。 filament is a real-time physically based rendering engine for android, ios, windows, linux, macos, and webgl2 c++ 3d-graphics android gltf gltf-viewer graphics metal opengl opengl-es">
+  <header>
+    <h3><span class="rank">08</span><a href="https://github.com/google/filament">filament</a></h3>
+    <div class="stars">★ 20,662</div>
+  </header>
+  <p class="meta">google/filament · C++ · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">Google 嘅即時物理式渲染引擎，可用喺多個平台。</p>
+  <div class="links"><a href="https://github.com/google/filament">GitHub</a><a href="https://google.github.io/filament/">主頁</a></div>
+  <div class="topics"><span>#3d-graphics</span><span>#android</span><span>#gltf</span></div>
+</article><article class="card" data-search="bgfx bkaradzic/bgfx 跨圖形 api 嘅渲染庫，方便自己嘅引擎接 opengl、direct3d、vulkan 同 metal。 cross-platform, graphics api agnostic, &quot;bring your own engine/framework&quot; style rendering library. c++ d3d11 d3d12 directx directx-11 directx-12 engine gamedev gles">
+  <header>
+    <h3><span class="rank">09</span><a href="https://github.com/bkaradzic/bgfx">bgfx</a></h3>
+    <div class="stars">★ 17,591</div>
+  </header>
+  <p class="meta">bkaradzic/bgfx · C++ · BSD-2-Clause · 最近推送 2026-10-28</p>
+  <p class="summary">跨圖形 API 嘅渲染庫，方便自己嘅引擎接 OpenGL、Direct3D、Vulkan 同 Metal。</p>
+  <div class="links"><a href="https://github.com/bkaradzic/bgfx">GitHub</a><a href="https://bkaradzic.github.io/bgfx/overview.html">主頁</a></div>
+  <div class="topics"><span>#d3d11</span><span>#d3d12</span><span>#directx</span></div>
+</article><article class="card" data-search="instant-ngp nvlabs/instant-ngp nvidia 嘅即時神經圖形基元，大幅加快 nerf 一類場景嘅訓練同渲染。 instant neural graphics primitives: lightning fast nerf and more cuda 3d-reconstruction computer-graphics computer-vision cuda function-approximation machine-learning nerf neural-network">
+  <header>
+    <h3><span class="rank">10</span><a href="https://github.com/NVlabs/instant-ngp">instant-ngp</a></h3>
+    <div class="stars">★ 17,584</div>
+  </header>
+  <p class="meta">NVlabs/instant-ngp · Cuda · 最近推送 2026-02-02</p>
+  <p class="summary">NVIDIA 嘅即時神經圖形基元，大幅加快 NeRF 一類場景嘅訓練同渲染。</p>
+  <div class="links"><a href="https://github.com/NVlabs/instant-ngp">GitHub</a><a href="https://nvlabs.github.io/instant-ngp">主頁</a><a href="https://arxiv.org/abs/2201.05989">論文</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#computer-graphics</span><span>#computer-vision</span></div>
+</article><article class="card" data-search="engine playcanvas/engine 建基於 webgl、webgpu 同 gltf 嘅網頁圖形引擎。 powerful web graphics runtime built on webgl, webgpu, webxr and gltf javascript 3d-gaussian-splatting 3dgs game-development game-engine gamedev gaussian-splatting gltf hacktoberfest">
+  <header>
+    <h3><span class="rank">11</span><a href="https://github.com/playcanvas/engine">engine</a></h3>
+    <div class="stars">★ 17,152</div>
+  </header>
+  <p class="meta">playcanvas/engine · JavaScript · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">建基於 WebGL、WebGPU 同 glTF 嘅網頁圖形引擎。</p>
+  <div class="links"><a href="https://github.com/playcanvas/engine">GitHub</a><a href="https://playcanvas.com">主頁</a></div>
+  <div class="topics"><span>#3d-gaussian-splatting</span><span>#3dgs</span><span>#game-development</span></div>
+</article><article class="card" data-search="bullet3 bulletphysics/bullet3 即時碰撞偵測同物理模擬庫，常用於視覺效果、遊戲同機器人。 bullet physics sdk: real-time collision detection and multi-physics simulation for vr, games, visual effects, robotics, machine learning etc. c++ computer-animation game-development kinematics pybullet reinforcement-learning robotics simulation simulator">
+  <header>
+    <h3><span class="rank">12</span><a href="https://github.com/bulletphysics/bullet3">bullet3</a></h3>
+    <div class="stars">★ 14,822</div>
+  </header>
+  <p class="meta">bulletphysics/bullet3 · C++ · 最近推送 2026-10-09</p>
+  <p class="summary">即時碰撞偵測同物理模擬庫，常用於視覺效果、遊戲同機器人。</p>
+  <div class="links"><a href="https://github.com/bulletphysics/bullet3">GitHub</a><a href="http://bulletphysics.org">主頁</a></div>
+  <div class="topics"><span>#computer-animation</span><span>#game-development</span><span>#kinematics</span></div>
+</article><article class="card" data-search="open3d isl-org/open3d 現代 3d 數據處理庫，用嚟做點雲、網格同視覺化。 open3d: a modern library for 3d data processing c++ 3d 3d-perception arm computer-graphics cpp cuda gpu gui">
+  <header>
+    <h3><span class="rank">13</span><a href="https://github.com/isl-org/Open3D">Open3D</a></h3>
+    <div class="stars">★ 14,134</div>
+  </header>
+  <p class="meta">isl-org/Open3D · C++ · 最近推送 2026-09-30</p>
+  <p class="summary">現代 3D 數據處理庫，用嚟做點雲、網格同視覺化。</p>
+  <div class="links"><a href="https://github.com/isl-org/Open3D">GitHub</a><a href="http://www.open3d.org">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-perception</span><span>#arm</span></div>
+</article><article class="card" data-search="assimp assimp/assimp 將四十幾種 3d 檔案格式讀入同一個數據結構。 the official open-asset-importer-library repository. loads 40+ 3d-file-formats into one unified and clean data structure. c++ 3mf android asset-pipeline assets assimp c-plus-plus collada dae">
+  <header>
+    <h3><span class="rank">14</span><a href="https://github.com/assimp/assimp">assimp</a></h3>
+    <div class="stars">★ 13,292</div>
+  </header>
+  <p class="meta">assimp/assimp · C++ · 最近推送 2026-10-27</p>
+  <p class="summary">將四十幾種 3D 檔案格式讀入同一個數據結構。</p>
+  <div class="links"><a href="https://github.com/assimp/assimp">GitHub</a><a href="https://www.assimp.org">主頁</a></div>
+  <div class="topics"><span>#3mf</span><span>#android</span><span>#asset-pipeline</span></div>
+</article><article class="card" data-search="meshroom alicevision/meshroom 節點式攝影測量工具，可以由相片重建三維模型。 node-based visual programming toolbox python 3d-reconstruction alicevision camera-tracking computer-vision hdr-imaging image-stitching meshroom multi-view-stereo">
+  <header>
+    <h3><span class="rank">15</span><a href="https://github.com/alicevision/Meshroom">Meshroom</a></h3>
+    <div class="stars">★ 13,045</div>
+  </header>
+  <p class="meta">alicevision/Meshroom · Python · 最近推送 2026-10-28</p>
+  <p class="summary">節點式攝影測量工具，可以由相片重建三維模型。</p>
+  <div class="links"><a href="https://github.com/alicevision/Meshroom">GitHub</a><a href="http://meshroom.org">主頁</a></div>
+  <div class="topics"><span>#3d-reconstruction</span><span>#alicevision</span><span>#camera-tracking</span></div>
+</article><article class="card" data-search="nerfstudio nerfstudio-project/nerfstudio 方便實驗同協作嘅 nerf 工作台。 a collaboration friendly studio for nerfs python 3d 3d-graphics 3d-reconstruction computer-vision deep-learning gaussian-splatting machine-learning nerf">
+  <header>
+    <h3><span class="rank">16</span><a href="https://github.com/nerfstudio-project/nerfstudio">nerfstudio</a></h3>
+    <div class="stars">★ 12,126</div>
+  </header>
+  <p class="meta">nerfstudio-project/nerfstudio · Python · Apache-2.0 · 最近推送 2025-07-29</p>
+  <p class="summary">方便實驗同協作嘅 NeRF 工作台。</p>
+  <div class="links"><a href="https://github.com/nerfstudio-project/nerfstudio">GitHub</a><a href="https://docs.nerf.studio">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-graphics</span><span>#3d-reconstruction</span></div>
+</article><article class="card" data-search="supersplat playcanvas/supersplat 喺瀏覽器編輯 3d gaussian splat 嘅工具。 3d gaussian splat editor typescript 3d-gaussian-splatting 3dgs gaussian-splatting pcui playcanvas typescript webgl webgpu">
+  <header>
+    <h3><span class="rank">17</span><a href="https://github.com/playcanvas/supersplat">supersplat</a></h3>
+    <div class="stars">★ 10,481</div>
+  </header>
+  <p class="meta">playcanvas/supersplat · TypeScript · MIT · 最近推送 2026-10-26</p>
+  <p class="summary">喺瀏覽器編輯 3D Gaussian Splat 嘅工具。</p>
+  <div class="links"><a href="https://github.com/playcanvas/supersplat">GitHub</a><a href="https://superspl.at/editor">主頁</a></div>
+  <div class="topics"><span>#3d-gaussian-splatting</span><span>#3dgs</span><span>#gaussian-splatting</span></div>
+</article><article class="card" data-search="pytorch3d facebookresearch/pytorch3d 用 pytorch 做 3d 深度學習嘅組件庫。 pytorch3d is fair&#x27;s library of reusable components for deep learning with 3d data python ">
+  <header>
+    <h3><span class="rank">18</span><a href="https://github.com/facebookresearch/pytorch3d">pytorch3d</a></h3>
+    <div class="stars">★ 9,991</div>
+  </header>
+  <p class="meta">facebookresearch/pytorch3d · Python · 最近推送 2026-10-19</p>
+  <p class="summary">用 PyTorch 做 3D 深度學習嘅組件庫。</p>
+  <div class="links"><a href="https://github.com/facebookresearch/pytorch3d">GitHub</a><a href="https://pytorch3d.org/">主頁</a></div>
+  
+</article><article class="card" data-search="dream-textures carson-katri/dream-textures 內置喺 blender 嘅 stable diffusion，可以直接喺場景入面生成貼圖。 stable diffusion built-in to blender python ai blender blender-addon image-generation stable-diffusion">
+  <header>
+    <h3><span class="rank">19</span><a href="https://github.com/carson-katri/dream-textures">dream-textures</a></h3>
+    <div class="stars">★ 8,232</div>
+  </header>
+  <p class="meta">carson-katri/dream-textures · Python · GPL-3.0 · 最近推送 2026-09-17</p>
+  <p class="summary">內置喺 Blender 嘅 Stable Diffusion，可以直接喺場景入面生成貼圖。</p>
+  <div class="links"><a href="https://github.com/carson-katri/dream-textures">GitHub</a></div>
+  <div class="topics"><span>#ai</span><span>#blender</span><span>#blender-addon</span></div>
+</article><article class="card" data-search="opentoonz opentoonz/opentoonz 功能完整嘅開源 2d 動畫製作軟件。 opentoonz - an open-source full-featured 2d animation creation software c++ ">
+  <header>
+    <h3><span class="rank">20</span><a href="https://github.com/opentoonz/opentoonz">opentoonz</a></h3>
+    <div class="stars">★ 7,874</div>
+  </header>
+  <p class="meta">opentoonz/opentoonz · C++ · 最近推送 2026-10-28</p>
+  <p class="summary">功能完整嘅開源 2D 動畫製作軟件。</p>
+  <div class="links"><a href="https://github.com/opentoonz/opentoonz">GitHub</a><a href="https://opentoonz.github.io/">主頁</a></div>
+  
+</article><article class="card" data-search="openusd pixaranimationstudios/openusd pixar 嘅通用場景描述，用嚟喺唔同軟件之間交換三維場景。 universal scene description c++ ">
+  <header>
+    <h3><span class="rank">21</span><a href="https://github.com/PixarAnimationStudios/OpenUSD">OpenUSD</a></h3>
+    <div class="stars">★ 7,594</div>
+  </header>
+  <p class="meta">PixarAnimationStudios/OpenUSD · C++ · 最近推送 2026-10-23</p>
+  <p class="summary">Pixar 嘅通用場景描述，用嚟喺唔同軟件之間交換三維場景。</p>
+  <div class="links"><a href="https://github.com/PixarAnimationStudios/OpenUSD">GitHub</a><a href="http://www.openusd.org">主頁</a></div>
+  
+</article><article class="card" data-search="meshlab cnr-isti-vclab/meshlab 開源網格處理系統，用嚟清理、修復同檢視 3d 模型。 the open source mesh processing system c++ 3d 3d-models 3d-printing 3d-reconstruction 3d-scanning mesh mesh-editing mesh-generation">
+  <header>
+    <h3><span class="rank">22</span><a href="https://github.com/cnr-isti-vclab/meshlab">meshlab</a></h3>
+    <div class="stars">★ 5,892</div>
+  </header>
+  <p class="meta">cnr-isti-vclab/meshlab · C++ · GPL-3.0 · 最近推送 2026-08-25</p>
+  <p class="summary">開源網格處理系統，用嚟清理、修復同檢視 3D 模型。</p>
+  <div class="links"><a href="https://github.com/cnr-isti-vclab/meshlab">GitHub</a><a href="http://www.meshlab.net">主頁</a></div>
+  <div class="topics"><span>#3d</span><span>#3d-models</span><span>#3d-printing</span></div>
+</article><article class="card" data-search="gsplat nerfstudio-project/gsplat gaussian splatting 嘅 cuda 光柵化實作，方便研究同整合。 cuda accelerated rasterization of gaussian splatting python gaussian-splatting">
+  <header>
+    <h3><span class="rank">23</span><a href="https://github.com/nerfstudio-project/gsplat">gsplat</a></h3>
+    <div class="stars">★ 5,845</div>
+  </header>
+  <p class="meta">nerfstudio-project/gsplat · Python · Apache-2.0 · 最近推送 2026-09-19</p>
+  <p class="summary">Gaussian Splatting 嘅 CUDA 光柵化實作，方便研究同整合。</p>
+  <div class="links"><a href="https://github.com/nerfstudio-project/gsplat">GitHub</a><a href="https://docs.gsplat.studio/">主頁</a></div>
+  <div class="topics"><span>#gaussian-splatting</span></div>
+</article><article class="card" data-search="slang shader-slang/slang 讓著色器更容易寫、亦更容易跨平台編譯嘅著色語言。 making it easier to work with shaders c++ cuda d3d12 glsl hlsl shaders vulkan">
+  <header>
+    <h3><span class="rank">24</span><a href="https://github.com/shader-slang/slang">slang</a></h3>
+    <div class="stars">★ 5,763</div>
+  </header>
+  <p class="meta">shader-slang/slang · C++ · 最近推送 2026-10-28</p>
+  <p class="summary">讓著色器更容易寫、亦更容易跨平台編譯嘅著色語言。</p>
+  <div class="links"><a href="https://github.com/shader-slang/slang">GitHub</a><a href="http://shader-slang.com">主頁</a></div>
+  <div class="topics"><span>#cuda</span><span>#d3d12</span><span>#glsl</span></div>
+</article><article class="card" data-search="natron natrongithub/natron 開源節點式影片合成軟件，用途接近 after effects 同 nuke。 open-source video compositing software. node-graph based. similar in functionalities to adobe after effects and nuke by the foundry. c++ ">
+  <header>
+    <h3><span class="rank">25</span><a href="https://github.com/NatronGitHub/Natron">Natron</a></h3>
+    <div class="stars">★ 5,600</div>
+  </header>
+  <p class="meta">NatronGitHub/Natron · C++ · GPL-2.0 · 最近推送 2026-07-24</p>
+  <p class="summary">開源節點式影片合成軟件，用途接近 After Effects 同 Nuke。</p>
+  <div class="links"><a href="https://github.com/NatronGitHub/Natron">GitHub</a><a href="http://NatronGitHub.github.io">主頁</a></div>
+  
+</article><article class="card" data-search="pbrt-v4 mmp/pbrt-v4 《physically based rendering》第四版描述嘅物理式光線追蹤器原始碼。 source code to pbrt, the ray tracer described in the forthcoming 4th edition of the &quot;physically based rendering: from theory to implementation&quot; book. c++ ">
+  <header>
+    <h3><span class="rank">26</span><a href="https://github.com/mmp/pbrt-v4">pbrt-v4</a></h3>
+    <div class="stars">★ 3,739</div>
+  </header>
+  <p class="meta">mmp/pbrt-v4 · C++ · Apache-2.0 · 最近推送 2026-09-08</p>
+  <p class="summary">《Physically Based Rendering》第四版描述嘅物理式光線追蹤器原始碼。</p>
+  <div class="links"><a href="https://github.com/mmp/pbrt-v4">GitHub</a><a href="https://pbrt.org">主頁</a></div>
+  
+</article><article class="card" data-search="openvdb academysoftwarefoundation/openvdb 稀疏體積數據結構同工具，係特效入面煙、火、雲嘅常用格式。 openvdb - sparse volume data structure and tools c++ c-plus-plus dreamworks fx openvdb openvdb-development vfx volume-rendering voxel">
+  <header>
+    <h3><span class="rank">27</span><a href="https://github.com/AcademySoftwareFoundation/openvdb">openvdb</a></h3>
+    <div class="stars">★ 3,447</div>
+  </header>
+  <p class="meta">AcademySoftwareFoundation/openvdb · C++ · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">稀疏體積數據結構同工具，係特效入面煙、火、雲嘅常用格式。</p>
+  <div class="links"><a href="https://github.com/AcademySoftwareFoundation/openvdb">GitHub</a><a href="http://www.openvdb.org/">主頁</a></div>
+  <div class="topics"><span>#c-plus-plus</span><span>#dreamworks</span><span>#fx</span></div>
+</article><article class="card" data-search="opensubdiv pixaranimationstudios/opensubdiv pixar 嘅開源細分曲面庫。 an open-source subdivision surface library. c++ ">
+  <header>
+    <h3><span class="rank">28</span><a href="https://github.com/PixarAnimationStudios/OpenSubdiv">OpenSubdiv</a></h3>
+    <div class="stars">★ 3,085</div>
+  </header>
+  <p class="meta">PixarAnimationStudios/OpenSubdiv · C++ · 最近推送 2026-10-26</p>
+  <p class="summary">Pixar 嘅開源細分曲面庫。</p>
+  <div class="links"><a href="https://github.com/PixarAnimationStudios/OpenSubdiv">GitHub</a><a href="https://www.opensubdiv.org">主頁</a></div>
+  
+</article><article class="card" data-search="mitsuba3 mitsuba-renderer/mitsuba3 可重定向嘅正向同逆向渲染器，用嚟做研究級物理渲染。 mitsuba 3: a retargetable forward and inverse renderer c++ ">
+  <header>
+    <h3><span class="rank">29</span><a href="https://github.com/mitsuba-renderer/mitsuba3">mitsuba3</a></h3>
+    <div class="stars">★ 2,967</div>
+  </header>
+  <p class="meta">mitsuba-renderer/mitsuba3 · C++ · 最近推送 2026-10-25</p>
+  <p class="summary">可重定向嘅正向同逆向渲染器，用嚟做研究級物理渲染。</p>
+  <div class="links"><a href="https://github.com/mitsuba-renderer/mitsuba3">GitHub</a><a href="https://www.mitsuba-renderer.org/">主頁</a></div>
+  
+</article><article class="card" data-search="materialx academysoftwarefoundation/materialx 喺唔同軟件同渲染器之間交換材質同外觀描述嘅開放標準。 materialx is an open standard for the exchange of rich material and look-development content across applications and renderers. c++ 3d-graphics computer-graphics materialx physically-based-rendering real-time-rendering vfx">
+  <header>
+    <h3><span class="rank">30</span><a href="https://github.com/AcademySoftwareFoundation/MaterialX">MaterialX</a></h3>
+    <div class="stars">★ 2,291</div>
+  </header>
+  <p class="meta">AcademySoftwareFoundation/MaterialX · C++ · Apache-2.0 · 最近推送 2026-10-27</p>
+  <p class="summary">喺唔同軟件同渲染器之間交換材質同外觀描述嘅開放標準。</p>
+  <div class="links"><a href="https://github.com/AcademySoftwareFoundation/MaterialX">GitHub</a><a href="http://www.materialx.org/">主頁</a></div>
+  <div class="topics"><span>#3d-graphics</span><span>#computer-graphics</span><span>#materialx</span></div>
+</article><article class="card" data-search="opencolorio academysoftwarefoundation/opencolorio 視覺效果同動畫用嘅色彩管理框架。 a color management framework for visual effects and animation. c++ opencolorio">
+  <header>
+    <h3><span class="rank">31</span><a href="https://github.com/AcademySoftwareFoundation/OpenColorIO">OpenColorIO</a></h3>
+    <div class="stars">★ 2,135</div>
+  </header>
+  <p class="meta">AcademySoftwareFoundation/OpenColorIO · C++ · BSD-3-Clause · 最近推送 2026-10-01</p>
+  <p class="summary">視覺效果同動畫用嘅色彩管理框架。</p>
+  <div class="links"><a href="https://github.com/AcademySoftwareFoundation/OpenColorIO">GitHub</a><a href="https://opencolorio.org">主頁</a></div>
+  <div class="topics"><span>#opencolorio</span></div>
+</article><article class="card" data-search="openexr academysoftwarefoundation/openexr 電影工業常用嘅高動態範圍 exr 圖像格式同參考實作。 the openexr project provides the specification and reference implementation of the exr file format, the professional-grade image storage format of the motion picture industry. c academy hdr image-processing images openexr vfx">
+  <header>
+    <h3><span class="rank">32</span><a href="https://github.com/AcademySoftwareFoundation/openexr">openexr</a></h3>
+    <div class="stars">★ 1,874</div>
+  </header>
+  <p class="meta">AcademySoftwareFoundation/openexr · C · BSD-3-Clause · 最近推送 2026-10-27</p>
+  <p class="summary">電影工業常用嘅高動態範圍 EXR 圖像格式同參考實作。</p>
+  <div class="links"><a href="https://github.com/AcademySoftwareFoundation/openexr">GitHub</a><a href="http://www.openexr.com/">主頁</a></div>
+  <div class="topics"><span>#academy</span><span>#hdr</span><span>#image-processing</span></div>
+</article></div>
+  <div class="papers"><h3>相關論文</h3><div class="grid"><article class="card" data-search="nerf: representing scenes as neural radiance fields for view synthesis 用神經網路表示一個立體場景，由多張相片合成新視角，係後來大量新視角合成工作嘅起點。 paper arxiv">
+  <header>
+    <h3><a href="https://arxiv.org/abs/2003.08934">NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis</a></h3>
+    <div class="stars">2020</div>
+  </header>
+  <p class="meta">論文 · arXiv</p>
+  <p class="summary">用神經網路表示一個立體場景，由多張相片合成新視角，係後來大量新視角合成工作嘅起點。</p>
+  <div class="links"><a href="https://arxiv.org/abs/2003.08934">arXiv</a><a href="https://github.com/bmild/nerf">程式</a><span class="badge">論文</span></div>
+</article></div></div>
+</section><section class="section" id="stock-trading" data-section>
+  <h2>Stock Trading</h2>
+  <p class="blurb">股票同量化研究、回測、行情數據同交易框架。 開源項目按 GitHub stars 由多至少。</p>
+  <div class="grid"><article class="card" data-search="openbb openbq-org/openbb 畀分析師、量化研究員同 ai agent 用嘅開源金融數據平台。 open data platform for analysts, quants and ai agents. python ai crypto derivatives economics equity finance fixed-income machine-learning">
+  <header>
+    <h3><span class="rank">01</span><a href="https://github.com/openbq-org/OpenBB">OpenBB</a></h3>
+    <div class="stars">★ 74,820</div>
+  </header>
+  <p class="meta">openbq-org/OpenBB · Python · 最近推送 2026-10-24</p>
+  <p class="summary">畀分析師、量化研究員同 AI agent 用嘅開源金融數據平台。</p>
+  <div class="links"><a href="https://github.com/openbq-org/OpenBB">GitHub</a><a href="https://openbb.co">主頁</a></div>
+  <div class="topics"><span>#ai</span><span>#crypto</span><span>#derivatives</span></div>
+</article><article class="card" data-search="daily_stock_analysis zhulinsen/daily_stock_analysis 用語言模型做多市場股票分析，整合行情、新聞同決策看板，可以定時推送。 llm 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  llm-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs. python a-stock ai-agent aigc llm quant quantitative-finance quantitative-trading">
+  <header>
+    <h3><span class="rank">02</span><a href="https://github.com/ZhuLinsen/daily_stock_analysis">daily_stock_analysis</a></h3>
+    <div class="stars">★ 67,202</div>
+  </header>
+  <p class="meta">ZhuLinsen/daily_stock_analysis · Python · MIT · 最近推送 2026-10-25</p>
+  <p class="summary">用語言模型做多市場股票分析，整合行情、新聞同決策看板，可以定時推送。</p>
+  <div class="links"><a href="https://github.com/ZhuLinsen/daily_stock_analysis">GitHub</a><a href="https://dsa.zhulinsen.tech">主頁</a></div>
+  <div class="topics"><span>#a-stock</span><span>#ai-agent</span><span>#aigc</span></div>
+</article><article class="card" data-search="qlib microsoft/qlib 微軟面向 ai 嘅量化投資平台，由構思因子到研究同落地都涵蓋。 qlib is an ai-oriented quant investment platform that aims to use ai tech to empower quant research, from exploring ideas to implementing productions. qlib supports diverse ml modeling paradigms, including supervised learning, market dynamics modeling, and rl, and is now equipped with https://github.com/microsoft/rd-agent to automate r&amp;d process. python algorithmic-trading auto-quant deep-learning finance fintech investment machine-learning paper">
+  <header>
+    <h3><span class="rank">03</span><a href="https://github.com/microsoft/qlib">qlib</a></h3>
+    <div class="stars">★ 49,773</div>
+  </header>
+  <p class="meta">microsoft/qlib · Python · MIT · 最近推送 2026-10-22</p>
+  <p class="summary">微軟面向 AI 嘅量化投資平台，由構思因子到研究同落地都涵蓋。</p>
+  <div class="links"><a href="https://github.com/microsoft/qlib">GitHub</a><a href="https://qlib.readthedocs.io/en/latest/">主頁</a></div>
+  <div class="topics"><span>#algorithmic-trading</span><span>#auto-quant</span><span>#deep-learning</span></div>
+</article><article class="card" data-search="vnpy vnpy/vnpy 基於 python 嘅開源量化交易框架，覆蓋數據、策略、回測同實盤。 基于python的开源量化交易平台开发框架 python algotrading finance fintech investment python quant trading vnpy">
+  <header>
+    <h3><span class="rank">04</span><a href="https://github.com/vnpy/vnpy">vnpy</a></h3>
+    <div class="stars">★ 46,119</div>
+  </header>
+  <p class="meta">vnpy/vnpy · Python · MIT · 最近推送 2026-10-27</p>
+  <p class="summary">基於 Python 嘅開源量化交易框架，覆蓋數據、策略、回測同實盤。</p>
+  <div class="links"><a href="https://github.com/vnpy/vnpy">GitHub</a><a href="http://www.vnpy.com">主頁</a></div>
+  <div class="topics"><span>#algotrading</span><span>#finance</span><span>#fintech</span></div>
+</article><article class="card" data-search="vibe-trading hkuds/vibe-trading 個人交易 agent，用自然語言輔助做交易研究同決策。 &quot;vibe-trading: your personal trading agent&quot; python ai-agent algorithmic-trading backtesting fintech llm mcp multi-agent python">
+  <header>
+    <h3><span class="rank">05</span><a href="https://github.com/HKUDS/Vibe-Trading">Vibe-Trading</a></h3>
+    <div class="stars">★ 36,976</div>
+  </header>
+  <p class="meta">HKUDS/Vibe-Trading · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">個人交易 agent，用自然語言輔助做交易研究同決策。</p>
+  <div class="links"><a href="https://github.com/HKUDS/Vibe-Trading">GitHub</a><a href="https://vibetrading.wiki/">主頁</a></div>
+  <div class="topics"><span>#ai-agent</span><span>#algorithmic-trading</span><span>#backtesting</span></div>
+</article><article class="card" data-search="finceptterminal fincept-corporation/finceptterminal 開源金融終端，用嚟睇市場分析、投資研究同經濟數據。 finceptterminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment. c++ ai-agents algorithmic-trading bloomberg-terminal cpp finance financial-markets fintech good-first-issue">
+  <header>
+    <h3><span class="rank">06</span><a href="https://github.com/Fincept-Corporation/FinceptTerminal">FinceptTerminal</a></h3>
+    <div class="stars">★ 33,220</div>
+  </header>
+  <p class="meta">Fincept-Corporation/FinceptTerminal · C++ · 最近推送 2026-10-26</p>
+  <p class="summary">開源金融終端，用嚟睇市場分析、投資研究同經濟數據。</p>
+  <div class="links"><a href="https://github.com/Fincept-Corporation/FinceptTerminal">GitHub</a><a href="https://fincept.in">主頁</a></div>
+  <div class="topics"><span>#ai-agents</span><span>#algorithmic-trading</span><span>#bloomberg-terminal</span></div>
+</article><article class="card" data-search="nautilus_trader nautechsystems/nautilus_trader 用 rust 寫嘅實盤級交易引擎，事件驅動而且回測可重現，支援多種資產。 production-grade rust-native trading engine with deterministic event-driven architecture rust algorithmic-trading-engine artificial-intelligence crypto-trading equity-trading forex futures-trading machine-learning options-trading">
+  <header>
+    <h3><span class="rank">07</span><a href="https://github.com/nautechsystems/nautilus_trader">nautilus_trader</a></h3>
+    <div class="stars">★ 30,984</div>
+  </header>
+  <p class="meta">nautechsystems/nautilus_trader · Rust · LGPL-3.0 · 最近推送 2026-10-28</p>
+  <p class="summary">用 Rust 寫嘅實盤級交易引擎，事件驅動而且回測可重現，支援多種資產。</p>
+  <div class="links"><a href="https://github.com/nautechsystems/nautilus_trader">GitHub</a><a href="https://nautilustrader.io">主頁</a></div>
+  <div class="topics"><span>#algorithmic-trading-engine</span><span>#artificial-intelligence</span><span>#crypto-trading</span></div>
+</article><article class="card" data-search="yfinance ranaroussi/yfinance 從 yahoo finance 下載股票行情同基本資料嘅 python 庫。 download market data from yahoo! finance&#x27;s api python financial-data fix-yahoo-finance market-data pandas python stock-data yahoo-finance yahoo-finance-api">
+  <header>
+    <h3><span class="rank">08</span><a href="https://github.com/ranaroussi/yfinance">yfinance</a></h3>
+    <div class="stars">★ 25,635</div>
+  </header>
+  <p class="meta">ranaroussi/yfinance · Python · Apache-2.0 · 最近推送 2026-10-27</p>
+  <p class="summary">從 Yahoo Finance 下載股票行情同基本資料嘅 Python 庫。</p>
+  <div class="links"><a href="https://github.com/ranaroussi/yfinance">GitHub</a><a href="https://ranaroussi.github.io/yfinance">主頁</a></div>
+  <div class="topics"><span>#financial-data</span><span>#fix-yahoo-finance</span><span>#market-data</span></div>
+</article><article class="card" data-search="backtrader mementum/backtrader python 策略回測庫，用事件驅動方式測試交易策略。 python backtesting library for trading strategies python backtesting metaclass python trading">
+  <header>
+    <h3><span class="rank">09</span><a href="https://github.com/mementum/backtrader">backtrader</a></h3>
+    <div class="stars">★ 23,602</div>
+  </header>
+  <p class="meta">mementum/backtrader · Python · GPL-3.0 · 最近推送 2024-08-19</p>
+  <p class="summary">Python 策略回測庫，用事件驅動方式測試交易策略。</p>
+  <div class="links"><a href="https://github.com/mementum/backtrader">GitHub</a><a href="https://www.backtrader.com">主頁</a></div>
+  <div class="topics"><span>#backtesting</span><span>#metaclass</span><span>#python</span></div>
+</article><article class="card" data-search="akshare akfamily/akshare 開源財經數據接口，用 python 攞股票、宏觀同其他市場數據。 akshare is an elegant and simple financial data interface library for python, built for human beings! 开源财经数据接口库 python academic akshare asset-pricing bond currency data data-analysis data-science">
+  <header>
+    <h3><span class="rank">10</span><a href="https://github.com/akfamily/akshare">akshare</a></h3>
+    <div class="stars">★ 23,109</div>
+  </header>
+  <p class="meta">akfamily/akshare · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">開源財經數據接口，用 Python 攞股票、宏觀同其他市場數據。</p>
+  <div class="links"><a href="https://github.com/akfamily/akshare">GitHub</a><a href="https://akshare.akfamily.xyz">主頁</a></div>
+  <div class="topics"><span>#academic</span><span>#akshare</span><span>#asset-pricing</span></div>
+</article><article class="card" data-search="lean quantconnect/lean quantconnect 嘅演算法交易引擎，可以用 python 或 c# 做回測同實盤，亦支援加密貨幣。 lean algorithmic trading engine by quantconnect (python, c#) c# algorithm algorithmic-trading-engine c-sharp finance forex lean-engine options python">
+  <header>
+    <h3><span class="rank">11</span><a href="https://github.com/QuantConnect/Lean">Lean</a></h3>
+    <div class="stars">★ 22,281</div>
+  </header>
+  <p class="meta">QuantConnect/Lean · C# · Apache-2.0 · 最近推送 2026-10-27</p>
+  <p class="summary">QuantConnect 嘅演算法交易引擎，可以用 Python 或 C# 做回測同實盤，亦支援加密貨幣。</p>
+  <div class="links"><a href="https://github.com/QuantConnect/Lean">GitHub</a><a href="https://lean.io">主頁</a></div>
+  <div class="topics"><span>#algorithm</span><span>#algorithmic-trading-engine</span><span>#c-sharp</span></div>
+</article><article class="card" data-search="fingpt ai4finance-foundation/fingpt 開源金融大語言模型，用嚟做金融文本同市場相關嘅語言任務。 fingpt: open-source financial large language models!  revolutionize 🔥    we release the trained model on huggingface. jupyter notebook chatgpt finance fingpt fintech large-language-models machine-learning nlp prompt-engineering">
+  <header>
+    <h3><span class="rank">12</span><a href="https://github.com/AI4Finance-Foundation/FinGPT">FinGPT</a></h3>
+    <div class="stars">★ 21,482</div>
+  </header>
+  <p class="meta">AI4Finance-Foundation/FinGPT · Jupyter Notebook · MIT · 最近推送 2026-10-25</p>
+  <p class="summary">開源金融大語言模型，用嚟做金融文本同市場相關嘅語言任務。</p>
+  <div class="links"><a href="https://github.com/AI4Finance-Foundation/FinGPT">GitHub</a><a href="https://fingpt.io">主頁</a></div>
+  <div class="topics"><span>#chatgpt</span><span>#finance</span><span>#fingpt</span></div>
+</article><article class="card" data-search="openstock open-dev-society/openstock 開源行情平台，可以追蹤價格、設定提醒同查看公司資料。 openstock is an open-source alternative to expensive market platforms. track real-time prices, set personalized alerts, and explore detailed company insights — built openly, for everyone, forever free. typescript coderabbit inngest nextjs shadcn-ui stock-market tailwindcss">
+  <header>
+    <h3><span class="rank">13</span><a href="https://github.com/Open-Dev-Society/OpenStock">OpenStock</a></h3>
+    <div class="stars">★ 20,907</div>
+  </header>
+  <p class="meta">Open-Dev-Society/OpenStock · TypeScript · AGPL-3.0 · 最近推送 2026-10-25</p>
+  <p class="summary">開源行情平台，可以追蹤價格、設定提醒同查看公司資料。</p>
+  <div class="links"><a href="https://github.com/Open-Dev-Society/OpenStock">GitHub</a><a href="https://openstock-ods.vercel.app">主頁</a></div>
+  <div class="topics"><span>#coderabbit</span><span>#inngest</span><span>#nextjs</span></div>
+</article><article class="card" data-search="zipline quantopian/zipline 經典 python 演算法交易庫。官方倉庫已封存，仍然係好多回測教學嘅基礎。 zipline, a pythonic algorithmic trading library python algorithmic-trading python quant zipline">
+  <header>
+    <h3><span class="rank">14</span><a href="https://github.com/quantopian/zipline">zipline</a></h3>
+    <div class="stars">★ 20,169</div>
+  </header>
+  <p class="meta">quantopian/zipline · Python · Apache-2.0 · 最近推送 2024-02-13</p>
+  <p class="summary">經典 Python 演算法交易庫。官方倉庫已封存，仍然係好多回測教學嘅基礎。</p>
+  <div class="links"><a href="https://github.com/quantopian/zipline">GitHub</a><a href="https://www.zipline.io">主頁</a></div>
+  <div class="topics"><span>#algorithmic-trading</span><span>#python</span><span>#quant</span></div>
+</article><article class="card" data-search="abu bbfamily/abu 阿布量化系統，涵蓋股票、期權、期貨同比特幣，並結合機器學習。 阿布量化交易系统(股票，期权，期货，比特币，机器学习) 基于python的开源量化交易，量化投资架构 python algorithmic-trading bitcoin machine-learning matplotlib numpy pandas quant quantitative-trading">
+  <header>
+    <h3><span class="rank">15</span><a href="https://github.com/bbfamily/abu">abu</a></h3>
+    <div class="stars">★ 19,049</div>
+  </header>
+  <p class="meta">bbfamily/abu · Python · GPL-3.0 · 最近推送 2026-10-16</p>
+  <p class="summary">阿布量化系統，涵蓋股票、期權、期貨同比特幣，並結合機器學習。</p>
+  <div class="links"><a href="https://github.com/bbfamily/abu">GitHub</a><a href="http://www.abuquant.com/">主頁</a></div>
+  <div class="topics"><span>#algorithmic-trading</span><span>#bitcoin</span><span>#machine-learning</span></div>
+</article><article class="card" data-search="qbot ufund-me/qbot 可本地部署嘅 ai 量化研究同交易平台。 [🔥updating ...] ai 自动量化交易机器人(完全本地部署) ai-powered quantitative investment research platform. 📃 online docs: https://ufund-me.github.io/qbot   ✨ :news: qbot-mini: https://github.com/charmve/iquant jupyter notebook backtest bitcoin blockchain deep-learning fintech funds machine-learning pytrade">
+  <header>
+    <h3><span class="rank">16</span><a href="https://github.com/UFund-Me/Qbot">Qbot</a></h3>
+    <div class="stars">★ 18,745</div>
+  </header>
+  <p class="meta">UFund-Me/Qbot · Jupyter Notebook · MIT · 最近推送 2026-03-11</p>
+  <p class="summary">可本地部署嘅 AI 量化研究同交易平台。</p>
+  <div class="links"><a href="https://github.com/UFund-Me/Qbot">GitHub</a><a href="https://github.com/Charmve">主頁</a></div>
+  <div class="topics"><span>#backtest</span><span>#bitcoin</span><span>#blockchain</span></div>
+</article><article class="card" data-search="lightweight-charts tradingview/lightweight-charts tradingview 開源嘅高效能金融圖表庫。 performant financial charts built with html5 canvas typescript canvas charting charting-library charts finance financial-charting-library html5-charts javascript">
+  <header>
+    <h3><span class="rank">17</span><a href="https://github.com/tradingview/lightweight-charts">lightweight-charts</a></h3>
+    <div class="stars">★ 17,712</div>
+  </header>
+  <p class="meta">tradingview/lightweight-charts · TypeScript · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">TradingView 開源嘅高效能金融圖表庫。</p>
+  <div class="links"><a href="https://github.com/tradingview/lightweight-charts">GitHub</a><a href="https://www.tradingview.com/lightweight-charts/">主頁</a></div>
+  <div class="topics"><span>#canvas</span><span>#charting</span><span>#charting-library</span></div>
+</article><article class="card" data-search="finrl ai4finance-foundation/finrl 用深度強化學習做金融交易嘅開源庫，包含市場環境同訓練流程。 finrl®:  financial reinforcement learning. 🔥 jupyter notebook algorithmic-trading deep-reinforcement-learning drl-algorithms drl-framework drl-trading-agents finance fintech multi-agent-learning">
+  <header>
+    <h3><span class="rank">18</span><a href="https://github.com/AI4Finance-Foundation/FinRL">FinRL</a></h3>
+    <div class="stars">★ 16,846</div>
+  </header>
+  <p class="meta">AI4Finance-Foundation/FinRL · Jupyter Notebook · MIT · 最近推送 2026-10-25</p>
+  <p class="summary">用深度強化學習做金融交易嘅開源庫，包含市場環境同訓練流程。</p>
+  <div class="links"><a href="https://github.com/AI4Finance-Foundation/FinRL">GitHub</a><a href="https://finrl.ai">主頁</a><a href="https://arxiv.org/abs/2011.09607">論文</a></div>
+  <div class="topics"><span>#algorithmic-trading</span><span>#deep-reinforcement-learning</span><span>#drl-algorithms</span></div>
+</article><article class="card" data-search="tushare waditu/tushare 攞中國股票歷史數據嘅 python 工具。 tushare is a utility for crawling historical data of china stocks python finance fintech pandas python realtime-quotes-data stock-data stock-market tushare">
+  <header>
+    <h3><span class="rank">19</span><a href="https://github.com/waditu/tushare">tushare</a></h3>
+    <div class="stars">★ 15,471</div>
+  </header>
+  <p class="meta">waditu/tushare · Python · BSD-3-Clause · 最近推送 2024-03-13</p>
+  <p class="summary">攞中國股票歷史數據嘅 Python 工具。</p>
+  <div class="links"><a href="https://github.com/waditu/tushare">GitHub</a></div>
+  <div class="topics"><span>#finance</span><span>#fintech</span><span>#pandas</span></div>
+</article><article class="card" data-search="stock myhhub/stock 中文股票工具，包含行情、指標、形態、選股、回測同自動交易。 stock股票.获取股票数据,计算股票指标,筹码分布,识别股票形态,综合选股,选股策略,股票验证回测,股票自动交易,支持pc及移动设备。 python backtest backtesting broker-trading-platform cyq distribution-of-chips position-cost-distribution quantitative quantitative-finance">
+  <header>
+    <h3><span class="rank">20</span><a href="https://github.com/myhhub/stock">stock</a></h3>
+    <div class="stars">★ 14,895</div>
+  </header>
+  <p class="meta">myhhub/stock · Python · Apache-2.0 · 最近推送 2026-04-02</p>
+  <p class="summary">中文股票工具，包含行情、指標、形態、選股、回測同自動交易。</p>
+  <div class="links"><a href="https://github.com/myhhub/stock">GitHub</a></div>
+  <div class="topics"><span>#backtest</span><span>#backtesting</span><span>#broker-trading-platform</span></div>
+</article><article class="card" data-search="ta-lib-python ta-lib/ta-lib-python ta-lib 技術指標庫嘅 python 封裝。 python wrapper for ta-lib (http://ta-lib.org/). cython finance pattern-recognition python quantitative-finance ta-lib technical-analysis">
+  <header>
+    <h3><span class="rank">21</span><a href="https://github.com/TA-Lib/ta-lib-python">ta-lib-python</a></h3>
+    <div class="stars">★ 12,334</div>
+  </header>
+  <p class="meta">TA-Lib/ta-lib-python · Cython · BSD-2-Clause · 最近推送 2026-10-26</p>
+  <p class="summary">TA-Lib 技術指標庫嘅 Python 封裝。</p>
+  <div class="links"><a href="https://github.com/TA-Lib/ta-lib-python">GitHub</a><a href="http://ta-lib.github.io/ta-lib-python">主頁</a></div>
+  <div class="topics"><span>#finance</span><span>#pattern-recognition</span><span>#python</span></div>
+</article><article class="card" data-search="quantaxis yutiansut/quantaxis 本地量化方案，涵蓋股票、期貨、期權嘅數據、回測、模擬同交易。 quantaxis 支持任务调度 分布式部署的 股票/期货/期权  数据/回测/模拟/交易/可视化/多账户 纯本地量化解决方案 python quant">
+  <header>
+    <h3><span class="rank">22</span><a href="https://github.com/yutiansut/QUANTAXIS">QUANTAXIS</a></h3>
+    <div class="stars">★ 11,316</div>
+  </header>
+  <p class="meta">yutiansut/QUANTAXIS · Python · MIT · 最近推送 2026-09-18</p>
+  <p class="summary">本地量化方案，涵蓋股票、期貨、期權嘅數據、回測、模擬同交易。</p>
+  <div class="links"><a href="https://github.com/yutiansut/QUANTAXIS">GitHub</a><a href="https://yutiansut.github.io/QUANTAXIS/">主頁</a></div>
+  <div class="topics"><span>#quant</span></div>
+</article><article class="card" data-search="easytrader shidenggui/easytrader 接合同花順、miniqmt 同雪球嘅股票交易接口，亦可以跟蹤模擬組合。 提供同花顺客户端/miniqmt/雪球的股票量化交易，支持跟踪 joinquant /ricequant 模拟交易 和 实盘雪球组合 python ">
+  <header>
+    <h3><span class="rank">23</span><a href="https://github.com/shidenggui/easytrader">easytrader</a></h3>
+    <div class="stars">★ 10,268</div>
+  </header>
+  <p class="meta">shidenggui/easytrader · Python · 最近推送 2026-10-16</p>
+  <p class="summary">接合同花順、miniQMT 同雪球嘅股票交易接口，亦可以跟蹤模擬組合。</p>
+  <div class="links"><a href="https://github.com/shidenggui/easytrader">GitHub</a></div>
+  
+</article><article class="card" data-search="vectorbt polakowo/vectorbt 向量化量化研究引擎，可以一次過回測大量交易想法。 the research engine that gives you an unfair advantage. run thousands of trading ideas before others finish one. python algorithmic-trading algorithmic-traiding backtesting cryptocurrency data-science data-visualization finance machine-learning">
+  <header>
+    <h3><span class="rank">24</span><a href="https://github.com/polakowo/vectorbt">vectorbt</a></h3>
+    <div class="stars">★ 9,573</div>
+  </header>
+  <p class="meta">polakowo/vectorbt · Python · 最近推送 2026-10-23</p>
+  <p class="summary">向量化量化研究引擎，可以一次過回測大量交易想法。</p>
+  <div class="links"><a href="https://github.com/polakowo/vectorbt">GitHub</a><a href="https://vectorbt.dev">主頁</a></div>
+  <div class="topics"><span>#algorithmic-trading</span><span>#algorithmic-traiding</span><span>#backtesting</span></div>
+</article><article class="card" data-search="backtesting.py kernc/backtesting.py 用 python 簡潔地回測交易策略嘅庫。 🔎 📈 🐍 💰  backtest trading strategies in python. python algo-trading algorithmic-trading backtesting backtesting-engine backtesting-frameworks backtesting-trading-strategies finance financial-markets">
+  <header>
+    <h3><span class="rank">25</span><a href="https://github.com/kernc/backtesting.py">backtesting.py</a></h3>
+    <div class="stars">★ 9,155</div>
+  </header>
+  <p class="meta">kernc/backtesting.py · Python · AGPL-3.0 · 最近推送 2026-08-05</p>
+  <p class="summary">用 Python 簡潔地回測交易策略嘅庫。</p>
+  <div class="links"><a href="https://github.com/kernc/backtesting.py">GitHub</a><a href="https://kernc.github.io/backtesting.py/">主頁</a></div>
+  <div class="topics"><span>#algo-trading</span><span>#algorithmic-trading</span><span>#backtesting</span></div>
+</article><article class="card" data-search="quantstats ranaroussi/quantstats 用 python 做投資組合表現同風險分析。 portfolio analytics for quants, written in python python algo-trading algorithmic-trading algotrading finance plotting python quant quantitative-analysis">
+  <header>
+    <h3><span class="rank">26</span><a href="https://github.com/ranaroussi/quantstats">quantstats</a></h3>
+    <div class="stars">★ 7,761</div>
+  </header>
+  <p class="meta">ranaroussi/quantstats · Python · Apache-2.0 · 最近推送 2026-09-27</p>
+  <p class="summary">用 Python 做投資組合表現同風險分析。</p>
+  <div class="links"><a href="https://github.com/ranaroussi/quantstats">GitHub</a></div>
+  <div class="topics"><span>#algo-trading</span><span>#algorithmic-trading</span><span>#algotrading</span></div>
+</article><article class="card" data-search="quantlib lballabio/quantlib 定量金融 c++ 庫，用嚟做定價、利率曲線同風險計算。 the quantlib c++ library c++ quantitative-finance">
+  <header>
+    <h3><span class="rank">27</span><a href="https://github.com/lballabio/QuantLib">QuantLib</a></h3>
+    <div class="stars">★ 7,716</div>
+  </header>
+  <p class="meta">lballabio/QuantLib · C++ · 最近推送 2026-10-28</p>
+  <p class="summary">定量金融 C++ 庫，用嚟做定價、利率曲線同風險計算。</p>
+  <div class="links"><a href="https://github.com/lballabio/QuantLib">GitHub</a><a href="http://quantlib.org">主頁</a></div>
+  <div class="topics"><span>#quantitative-finance</span></div>
+</article><article class="card" data-search="rqalpha ricequant/rqalpha 可擴展嘅 python 回測同交易框架，支援多種證券。 a extendable, replaceable python algorithmic backtest &amp;&amp; trading framework supporting multiple securities python backtest finance futures python quant ricequant rqalpha stock">
+  <header>
+    <h3><span class="rank">28</span><a href="https://github.com/ricequant/rqalpha">rqalpha</a></h3>
+    <div class="stars">★ 6,842</div>
+  </header>
+  <p class="meta">ricequant/rqalpha · Python · 最近推送 2026-10-28</p>
+  <p class="summary">可擴展嘅 Python 回測同交易框架，支援多種證券。</p>
+  <div class="links"><a href="https://github.com/ricequant/rqalpha">GitHub</a><a href="http://rqalpha.io">主頁</a></div>
+  <div class="topics"><span>#backtest</span><span>#finance</span><span>#futures</span></div>
+</article><article class="card" data-search="wondertrader wondertrader/wondertrader 將量化研發同交易放在一起嘅一站式框架。 wondertrader——量化研发交易一站式框架 c++ algotrading cpp cta fintech hft python quant trading">
+  <header>
+    <h3><span class="rank">29</span><a href="https://github.com/wondertrader/wondertrader">wondertrader</a></h3>
+    <div class="stars">★ 6,414</div>
+  </header>
+  <p class="meta">wondertrader/wondertrader · C++ · MIT · 最近推送 2026-09-01</p>
+  <p class="summary">將量化研發同交易放在一起嘅一站式框架。</p>
+  <div class="links"><a href="https://github.com/wondertrader/wondertrader">GitHub</a></div>
+  <div class="topics"><span>#algotrading</span><span>#cpp</span><span>#cta</span></div>
+</article><article class="card" data-search="hikyuu fasiondog/hikyuu 用 c++ 同 python 寫嘅高速量化框架，重點係策略分析同回測。 an open-source, high-performance quantitative trading framework in c++/python focused on strategy analysis and backtesting trading model r&amp;d · ultra-fast engine · efficient backtesting c++ algorithms-trading backtesting finance portfolio quant stock system-trading trading">
+  <header>
+    <h3><span class="rank">30</span><a href="https://github.com/fasiondog/hikyuu">hikyuu</a></h3>
+    <div class="stars">★ 3,656</div>
+  </header>
+  <p class="meta">fasiondog/hikyuu · C++ · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">用 C++ 同 Python 寫嘅高速量化框架，重點係策略分析同回測。</p>
+  <div class="links"><a href="https://github.com/fasiondog/hikyuu">GitHub</a><a href="http://hikyuu.org/">主頁</a></div>
+  <div class="topics"><span>#algorithms-trading</span><span>#backtesting</span><span>#finance</span></div>
+</article></div>
+  
+</section><section class="section" id="crypto-trading" data-section>
+  <h2>Crypto Trading</h2>
+  <p class="blurb">加密貨幣交易所 API、交易機械人同回測工具。 開源項目按 GitHub stars 由多至少。</p>
+  <div class="grid"><article class="card" data-search="freqtrade freqtrade/freqtrade 免費開源嘅加密貨幣交易機械人，包含策略、回測同實盤。 free, open source crypto trading bot python algorithmic-trading bitcoin cryptocurrencies cryptocurrency freqtrade python telegram-bot trade">
+  <header>
+    <h3><span class="rank">01</span><a href="https://github.com/freqtrade/freqtrade">freqtrade</a></h3>
+    <div class="stars">★ 56,077</div>
+  </header>
+  <p class="meta">freqtrade/freqtrade · Python · GPL-3.0 · 最近推送 2026-10-27</p>
+  <p class="summary">免費開源嘅加密貨幣交易機械人，包含策略、回測同實盤。</p>
+  <div class="links"><a href="https://github.com/freqtrade/freqtrade">GitHub</a><a href="https://www.freqtrade.io">主頁</a></div>
+  <div class="topics"><span>#algorithmic-trading</span><span>#bitcoin</span><span>#cryptocurrencies</span></div>
+</article><article class="card" data-search="ccxt ccxt/ccxt 統一咗一百幾個加密貨幣交易所嘅交易 api，有多種程式語言。 a unified trading api with more than 100 crypto exchanges and prediction markets in javascript / typescript / python / c# / php / go / java / rust python altcoin api arbitrage bitcoin bot btc crypto cryptocurrencies">
+  <header>
+    <h3><span class="rank">02</span><a href="https://github.com/ccxt/ccxt">ccxt</a></h3>
+    <div class="stars">★ 44,606</div>
+  </header>
+  <p class="meta">ccxt/ccxt · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">統一咗一百幾個加密貨幣交易所嘅交易 API，有多種程式語言。</p>
+  <div class="links"><a href="https://github.com/ccxt/ccxt">GitHub</a><a href="https://docs.ccxt.com">主頁</a></div>
+  <div class="topics"><span>#altcoin</span><span>#api</span><span>#arbitrage</span></div>
+</article><article class="card" data-search="hummingbot hummingbot/hummingbot 用嚟建立同部署高頻加密貨幣交易機械人嘅開源軟件，常見於做市。 open source software that helps you create and deploy high-frequency crypto trading bots python ai-agents algotrading arbitrage backtesting binance bitcoin crypto cryptocurrency">
+  <header>
+    <h3><span class="rank">03</span><a href="https://github.com/hummingbot/hummingbot">hummingbot</a></h3>
+    <div class="stars">★ 20,756</div>
+  </header>
+  <p class="meta">hummingbot/hummingbot · Python · Apache-2.0 · 最近推送 2026-10-20</p>
+  <p class="summary">用嚟建立同部署高頻加密貨幣交易機械人嘅開源軟件，常見於做市。</p>
+  <div class="links"><a href="https://github.com/hummingbot/hummingbot">GitHub</a><a href="https://hummingbot.org">主頁</a></div>
+  <div class="topics"><span>#ai-agents</span><span>#algotrading</span><span>#arbitrage</span></div>
+</article><article class="card" data-search="stocksharp stocksharp/stocksharp 演算法交易平台，可以開發股票、外匯同加密貨幣交易程式。 algorithmic trading and quantitative trading open source platform to develop trading robots (stock markets, forex, crypto, bitcoins, and options). c# algorithmic-trading algorithmic-trading-engine backtesting bitcoins broker brokers c-sharp crypto">
+  <header>
+    <h3><span class="rank">04</span><a href="https://github.com/StockSharp/StockSharp">StockSharp</a></h3>
+    <div class="stars">★ 11,015</div>
+  </header>
+  <p class="meta">StockSharp/StockSharp · C# · 最近推送 2026-10-25</p>
+  <p class="summary">演算法交易平台，可以開發股票、外匯同加密貨幣交易程式。</p>
+  <div class="links"><a href="https://github.com/StockSharp/StockSharp">GitHub</a><a href="https://stocksharp.com">主頁</a></div>
+  <div class="topics"><span>#algorithmic-trading</span><span>#algorithmic-trading-engine</span><span>#backtesting</span></div>
+</article><article class="card" data-search="gekko askmike/gekko 用 node.js 寫嘅比特幣交易機械人。倉庫已封存。 a bitcoin trading bot written in node - https://gekko.wizb.it/ javascript bitcoin exchange gekko trading-bot trading-strategies">
+  <header>
+    <h3><span class="rank">05</span><a href="https://github.com/askmike/gekko">gekko</a></h3>
+    <div class="stars">★ 10,180</div>
+  </header>
+  <p class="meta">askmike/gekko · JavaScript · MIT · 最近推送 2020-02-16</p>
+  <p class="summary">用 Node.js 寫嘅比特幣交易機械人。倉庫已封存。</p>
+  <div class="links"><a href="https://github.com/askmike/gekko">GitHub</a><span class="badge arch">已封存</span></div>
+  <div class="topics"><span>#bitcoin</span><span>#exchange</span><span>#gekko</span></div>
+</article><article class="card" data-search="binance-trade-bot ccxt/binance-trade-bot 自動化加密貨幣交易機械人，用嚟按策略落單。 automated cryptocurrency trading bot python ">
+  <header>
+    <h3><span class="rank">06</span><a href="https://github.com/ccxt/binance-trade-bot">binance-trade-bot</a></h3>
+    <div class="stars">★ 8,806</div>
+  </header>
+  <p class="meta">ccxt/binance-trade-bot · Python · GPL-3.0 · 最近推送 2025-03-12</p>
+  <p class="summary">自動化加密貨幣交易機械人，用嚟按策略落單。</p>
+  <div class="links"><a href="https://github.com/ccxt/binance-trade-bot">GitHub</a></div>
+  
+</article><article class="card" data-search="jesse jesse-ai/jesse 用 python 寫嘅進階加密貨幣交易機械人，強調研究同實盤。 an advanced crypto trading bot written in python python algo-trading algorithmic-trading bitcoin bot crypto crypto-bot crypto-bot-trading cryptocurrency">
+  <header>
+    <h3><span class="rank">07</span><a href="https://github.com/jesse-ai/jesse">jesse</a></h3>
+    <div class="stars">★ 8,719</div>
+  </header>
+  <p class="meta">jesse-ai/jesse · Python · MIT · 最近推送 2026-10-26</p>
+  <p class="summary">用 Python 寫嘅進階加密貨幣交易機械人，強調研究同實盤。</p>
+  <div class="links"><a href="https://github.com/jesse-ai/jesse">GitHub</a><a href="https://jesse.trade">主頁</a></div>
+  <div class="topics"><span>#algo-trading</span><span>#algorithmic-trading</span><span>#bitcoin</span></div>
+</article><article class="card" data-search="zenbot deviavir/zenbot 命令列加密貨幣交易機械人。倉庫已封存。 zenbot is a command-line cryptocurrency trading bot using node.js and mongodb. html nodejs paper-trading python strategy trade zenbot">
+  <header>
+    <h3><span class="rank">08</span><a href="https://github.com/DeviaVir/zenbot">zenbot</a></h3>
+    <div class="stars">★ 8,256</div>
+  </header>
+  <p class="meta">DeviaVir/zenbot · HTML · MIT · 最近推送 2022-02-14</p>
+  <p class="summary">命令列加密貨幣交易機械人。倉庫已封存。</p>
+  <div class="links"><a href="https://github.com/DeviaVir/zenbot">GitHub</a><span class="badge arch">已封存</span></div>
+  <div class="topics"><span>#nodejs</span><span>#paper-trading</span><span>#python</span></div>
+</article><article class="card" data-search="tensortrade tensortrade-org/tensortrade 用強化學習訓練、評估同部署交易 agent 嘅框架。 an open source reinforcement learning framework for training, evaluating, and deploying robust trading agents. python ">
+  <header>
+    <h3><span class="rank">09</span><a href="https://github.com/tensortrade-org/tensortrade">tensortrade</a></h3>
+    <div class="stars">★ 7,254</div>
+  </header>
+  <p class="meta">tensortrade-org/tensortrade · Python · Apache-2.0 · 最近推送 2026-02-19</p>
+  <p class="summary">用強化學習訓練、評估同部署交易 agent 嘅框架。</p>
+  <div class="links"><a href="https://github.com/tensortrade-org/tensortrade">GitHub</a><a href="https://discord.gg/ZZ7BGWh">主頁</a></div>
+  
+</article><article class="card" data-search="python-binance sammchardy/python-binance 幣安交易所 api 嘅 python 實作，用嚟寫自動交易。 binance exchange api python implementation for automated trading python api binance cryptocurrency python python2 python3 websockets">
+  <header>
+    <h3><span class="rank">10</span><a href="https://github.com/sammchardy/python-binance">python-binance</a></h3>
+    <div class="stars">★ 7,217</div>
+  </header>
+  <p class="meta">sammchardy/python-binance · Python · MIT · 最近推送 2026-06-08</p>
+  <p class="summary">幣安交易所 API 嘅 Python 實作，用嚟寫自動交易。</p>
+  <div class="links"><a href="https://github.com/sammchardy/python-binance">GitHub</a><a href="https://python-binance.readthedocs.io/en/latest/">主頁</a></div>
+  <div class="topics"><span>#api</span><span>#binance</span><span>#cryptocurrency</span></div>
+</article><article class="card" data-search="octobot drakkar-software/octobot 開源加密貨幣交易機械人，支援網格、定投、tradingview 同 ai 策略。 free open source crypto trading bot to automate ai, grid, dca and tradingview strategies on binance, hyperliquid and 15+ exchanges, with a simple interface. python ai-trading backtest binance-api bitcoin coinbase-bot cryptocurrencies free hyperliquid-trading-bot">
+  <header>
+    <h3><span class="rank">11</span><a href="https://github.com/Drakkar-Software/OctoBot">OctoBot</a></h3>
+    <div class="stars">★ 6,872</div>
+  </header>
+  <p class="meta">Drakkar-Software/OctoBot · Python · GPL-3.0 · 最近推送 2026-10-27</p>
+  <p class="summary">開源加密貨幣交易機械人，支援網格、定投、TradingView 同 AI 策略。</p>
+  <div class="links"><a href="https://github.com/Drakkar-Software/OctoBot">GitHub</a><a href="https://www.octobot.cloud">主頁</a></div>
+  <div class="topics"><span>#ai-trading</span><span>#backtest</span><span>#binance-api</span></div>
+</article><article class="card" data-search="superalgos superalgos/superalgos 用視覺化方式設計加密貨幣交易機械人同策略嘅開源平台。 free, open-source crypto trading bot, automated bitcoin / cryptocurrency trading software, algorithmic trading bots. visually design your crypto trading bot, leveraging an integrated charting system, data-mining, backtesting, paper trading, and multi-server crypto bot deployments. javascript algorithmic-trading algotrading bitcoin-trading bitcoin-trading-bots crypto crypto-trading crypto-trading-bots crypto-trading-strategies">
+  <header>
+    <h3><span class="rank">12</span><a href="https://github.com/Superalgos/Superalgos">Superalgos</a></h3>
+    <div class="stars">★ 5,738</div>
+  </header>
+  <p class="meta">Superalgos/Superalgos · JavaScript · Apache-2.0 · 最近推送 2026-10-27</p>
+  <p class="summary">用視覺化方式設計加密貨幣交易機械人同策略嘅開源平台。</p>
+  <div class="links"><a href="https://github.com/Superalgos/Superalgos">GitHub</a><a href="https://www.superalgos.org">主頁</a></div>
+  <div class="topics"><span>#algorithmic-trading</span><span>#algotrading</span><span>#bitcoin-trading</span></div>
+</article><article class="card" data-search="crypto-signal cryptosignal/crypto-signal 做技術分析同交易訊號嘅加密貨幣機械人。 github.com/cryptosignal - trading &amp; technical analysis bot - 4,100+ stars, 1,100+ forks python abenezer-mamo algorithmic-trading binance binance-api bitcoin bittrex-api coinbase coinbase-api">
+  <header>
+    <h3><span class="rank">13</span><a href="https://github.com/CryptoSignal/Crypto-Signal">Crypto-Signal</a></h3>
+    <div class="stars">★ 5,654</div>
+  </header>
+  <p class="meta">CryptoSignal/Crypto-Signal · Python · MIT · 最近推送 2024-07-07</p>
+  <p class="summary">做技術分析同交易訊號嘅加密貨幣機械人。</p>
+  <div class="links"><a href="https://github.com/CryptoSignal/Crypto-Signal">GitHub</a><a href="https://www.linkedin.com/in/AbenezerMamo">主頁</a></div>
+  <div class="topics"><span>#abenezer-mamo</span><span>#algorithmic-trading</span><span>#binance</span></div>
+</article><article class="card" data-search="binance-trading-bot chrisleekr/binance-trading-bot 可插拔策略嘅幣安交易機械人，帶歷史回測同即時看板。 automated binance trading bot with pluggable strategies, historical backtesting, and a live dashboard typescript binance binance-api binance-api-node binance-trading-bot bot cryptocurrency cryptotrading grid-trading">
+  <header>
+    <h3><span class="rank">14</span><a href="https://github.com/chrisleekr/binance-trading-bot">binance-trading-bot</a></h3>
+    <div class="stars">★ 5,594</div>
+  </header>
+  <p class="meta">chrisleekr/binance-trading-bot · TypeScript · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">可插拔策略嘅幣安交易機械人，帶歷史回測同即時看板。</p>
+  <div class="links"><a href="https://github.com/chrisleekr/binance-trading-bot">GitHub</a><a href="https://chrisleekr.github.io/binance-trading-bot/">主頁</a></div>
+  <div class="topics"><span>#binance</span><span>#binance-api</span><span>#binance-api-node</span></div>
+</article><article class="card" data-search="hftbacktest nkaz001/hftbacktest 高頻交易同做市回測工具，會計入限價單、排隊位置同延遲。 free, open source, a high frequency trading and market making backtesting and trading bot, which accounts for limit orders, queue positions, and latencies, utilizing full tick data for trades and order books(level-2 and level-3), with real-world crypto trading examples for binance and bybit rust algorithmic-trading algotrading backtesting backtesting-engine backtesting-trading-strategies binance crypto-bot crypto-trading">
+  <header>
+    <h3><span class="rank">15</span><a href="https://github.com/nkaz001/hftbacktest">hftbacktest</a></h3>
+    <div class="stars">★ 5,016</div>
+  </header>
+  <p class="meta">nkaz001/hftbacktest · Rust · MIT · 最近推送 2025-12-23</p>
+  <p class="summary">高頻交易同做市回測工具，會計入限價單、排隊位置同延遲。</p>
+  <div class="links"><a href="https://github.com/nkaz001/hftbacktest">GitHub</a></div>
+  <div class="topics"><span>#algorithmic-trading</span><span>#algotrading</span><span>#backtesting</span></div>
+</article><article class="card" data-search="tribeca michaelgrosner/tribeca 用 node.js 寫嘅高頻加密貨幣做市平台。 a high frequency, market making cryptocurrency trading platform in node.js typescript bitcoin cryptocurrency docker exchange hft hft-trading market-maker trade">
+  <header>
+    <h3><span class="rank">16</span><a href="https://github.com/michaelgrosner/tribeca">tribeca</a></h3>
+    <div class="stars">★ 4,115</div>
+  </header>
+  <p class="meta">michaelgrosner/tribeca · TypeScript · 最近推送 2021-12-08</p>
+  <p class="summary">用 Node.js 寫嘅高頻加密貨幣做市平台。</p>
+  <div class="links"><a href="https://github.com/michaelgrosner/tribeca">GitHub</a></div>
+  <div class="topics"><span>#bitcoin</span><span>#cryptocurrency</span><span>#docker</span></div>
+</article><article class="card" data-search="rotki rotki/rotki 注重私隱嘅投資組合追蹤、會計同分析工具，常用於加密資產。 a portfolio tracking, analytics, accounting and management application that protects your privacy python accounting analytics bitcoin blockchain cryptocurrencies cryptocurrency-exchanges cryptocurrency-portfolio cryptocurrency-portfolio-tracking">
+  <header>
+    <h3><span class="rank">17</span><a href="https://github.com/rotki/rotki">rotki</a></h3>
+    <div class="stars">★ 4,064</div>
+  </header>
+  <p class="meta">rotki/rotki · Python · AGPL-3.0 · 最近推送 2026-10-28</p>
+  <p class="summary">注重私隱嘅投資組合追蹤、會計同分析工具，常用於加密資產。</p>
+  <div class="links"><a href="https://github.com/rotki/rotki">GitHub</a><a href="https://rotki.com">主頁</a></div>
+  <div class="topics"><span>#accounting</span><span>#analytics</span><span>#bitcoin</span></div>
+</article><article class="card" data-search="krypto-trading-bot ctubio/krypto-trading-bot 用 c++ 寫、可自託管嘅高頻做市交易機械人。 self-hosted crypto trading bot (automated high frequency market making) written in c++ c++ binance bitcoin bitfinex bitmex bob-marley bot-platform coinbase cryptocurrency">
+  <header>
+    <h3><span class="rank">18</span><a href="https://github.com/ctubio/Krypto-trading-bot">Krypto-trading-bot</a></h3>
+    <div class="stars">★ 3,728</div>
+  </header>
+  <p class="meta">ctubio/Krypto-trading-bot · C++ · 最近推送 2024-12-15</p>
+  <p class="summary">用 C++ 寫、可自託管嘅高頻做市交易機械人。</p>
+  <div class="links"><a href="https://github.com/ctubio/Krypto-trading-bot">GitHub</a><a href="https://127.0.0.1:3000">主頁</a></div>
+  <div class="topics"><span>#binance</span><span>#bitcoin</span><span>#bitfinex</span></div>
+</article><article class="card" data-search="crypto-trading-bot haehnchen/crypto-trading-bot 支援 bitfinex、bitmex、幣安、bybit 等交易所嘅 javascript 交易機械人。 cryptocurrency trading bot in javascript for bitfinex, bitmex, binance, bybit ... (public edition) typescript binance bitfinex bitmex bot bybit ccxt coinbase crypto">
+  <header>
+    <h3><span class="rank">19</span><a href="https://github.com/Haehnchen/crypto-trading-bot">crypto-trading-bot</a></h3>
+    <div class="stars">★ 3,544</div>
+  </header>
+  <p class="meta">Haehnchen/crypto-trading-bot · TypeScript · MIT · 最近推送 2026-08-02</p>
+  <p class="summary">支援 Bitfinex、BitMEX、幣安、Bybit 等交易所嘅 JavaScript 交易機械人。</p>
+  <div class="links"><a href="https://github.com/Haehnchen/crypto-trading-bot">GitHub</a></div>
+  <div class="topics"><span>#binance</span><span>#bitfinex</span><span>#bitmex</span></div>
+</article><article class="card" data-search="binance-volatility-trading-bot cyberpunkmetalhead/binance-volatility-trading-bot 觀察幣安各幣波動，並交易升幅較高幣種嘅機械人。 this is a fully functioning binance trading bot that measures the volatility of every coin on binance and places trades with the highest gaining coins if you like this project consider donating though the brave browser to allow me to continuously improve the script. python ">
+  <header>
+    <h3><span class="rank">20</span><a href="https://github.com/CyberPunkMetalHead/Binance-volatility-trading-bot">Binance-volatility-trading-bot</a></h3>
+    <div class="stars">★ 3,495</div>
+  </header>
+  <p class="meta">CyberPunkMetalHead/Binance-volatility-trading-bot · Python · MIT · 最近推送 2023-08-06</p>
+  <p class="summary">觀察幣安各幣波動，並交易升幅較高幣種嘅機械人。</p>
+  <div class="links"><a href="https://github.com/CyberPunkMetalHead/Binance-volatility-trading-bot">GitHub</a></div>
+  
+</article><article class="card" data-search="gocryptotrader thrasher-corp/gocryptotrader 用 go 寫、支援多個交易所嘅加密貨幣交易框架。 a cryptocurrency trading bot and framework supporting multiple exchanges written in golang. go algorithmic-trading algorithmic-trading-library cryptocurrency cryptocurrency-trading-bot exchange go golang trading-bot">
+  <header>
+    <h3><span class="rank">21</span><a href="https://github.com/thrasher-corp/gocryptotrader">gocryptotrader</a></h3>
+    <div class="stars">★ 3,464</div>
+  </header>
+  <p class="meta">thrasher-corp/gocryptotrader · Go · MIT · 最近推送 2026-10-20</p>
+  <p class="summary">用 Go 寫、支援多個交易所嘅加密貨幣交易框架。</p>
+  <div class="links"><a href="https://github.com/thrasher-corp/gocryptotrader">GitHub</a></div>
+  <div class="topics"><span>#algorithmic-trading</span><span>#algorithmic-trading-library</span><span>#cryptocurrency</span></div>
+</article><article class="card" data-search="cryptofeed bmoscon/cryptofeed 處理多個交易所 websocket 行情嘅數據源。 cryptocurrency exchange websocket data feed handler python asyncio binance binance-api bitcoin btc coinbase coinbase-api crypto">
+  <header>
+    <h3><span class="rank">22</span><a href="https://github.com/bmoscon/cryptofeed">cryptofeed</a></h3>
+    <div class="stars">★ 2,934</div>
+  </header>
+  <p class="meta">bmoscon/cryptofeed · Python · 最近推送 2026-10-26</p>
+  <p class="summary">處理多個交易所 websocket 行情嘅數據源。</p>
+  <div class="links"><a href="https://github.com/bmoscon/cryptofeed">GitHub</a></div>
+  <div class="topics"><span>#asyncio</span><span>#binance</span><span>#binance-api</span></div>
+</article><article class="card" data-search="opentrader open-trader/opentrader 帶介面嘅開源加密貨幣交易機械人，包含定投同網格策略。 🤖 open-source crypto trading bot | 📈 dca &amp; grid strategies | ✨ ui | ⭐ star to support the project! typescript algotrading bot crypto cryptocurrency custom-strategy dca-bot grid-bot rsi-strategy">
+  <header>
+    <h3><span class="rank">23</span><a href="https://github.com/Open-Trader/opentrader">opentrader</a></h3>
+    <div class="stars">★ 2,912</div>
+  </header>
+  <p class="meta">Open-Trader/opentrader · TypeScript · Apache-2.0 · 最近推送 2025-06-29</p>
+  <p class="summary">帶介面嘅開源加密貨幣交易機械人，包含定投同網格策略。</p>
+  <div class="links"><a href="https://github.com/Open-Trader/opentrader">GitHub</a><a href="https://opentrader.pro">主頁</a></div>
+  <div class="topics"><span>#algotrading</span><span>#bot</span><span>#crypto</span></div>
+</article><article class="card" data-search="blankly blankly-finance/blankly 用少量程式碼做回測同部署，同一套程式可以交易股票、加密貨幣同外匯。 🚀 💸  easily build, backtest and deploy your algo in just a few lines of code. trade stocks, cryptos, and forex across exchanges w/ one package. python algotrading binance blankly bot bot-framework bots coinbase crypto">
+  <header>
+    <h3><span class="rank">24</span><a href="https://github.com/blankly-finance/blankly">blankly</a></h3>
+    <div class="stars">★ 2,483</div>
+  </header>
+  <p class="meta">blankly-finance/blankly · Python · LGPL-3.0 · 最近推送 2024-12-30</p>
+  <p class="summary">用少量程式碼做回測同部署，同一套程式可以交易股票、加密貨幣同外匯。</p>
+  <div class="links"><a href="https://github.com/blankly-finance/blankly">GitHub</a><a href="https://package.blankly.finance">主頁</a></div>
+  <div class="topics"><span>#algotrading</span><span>#binance</span><span>#blankly</span></div>
+</article><article class="card" data-search="passivbot enarjord/passivbot 喺 bybit、bitget、okx、gate、幣安等多個交易所運行嘅交易機械人。 trading bot running on bybit, bitget, okx, gateio, binance, kucoin, weex and hyperliquid python algorithmic-trading binance bitget bybit futures gateio hyperliquid okx">
+  <header>
+    <h3><span class="rank">25</span><a href="https://github.com/enarjord/passivbot">passivbot</a></h3>
+    <div class="stars">★ 2,149</div>
+  </header>
+  <p class="meta">enarjord/passivbot · Python · Unlicense · 最近推送 2026-10-28</p>
+  <p class="summary">喺 Bybit、Bitget、OKX、Gate、幣安等多個交易所運行嘅交易機械人。</p>
+  <div class="links"><a href="https://github.com/enarjord/passivbot">GitHub</a><a href="https://www.passivbot.com">主頁</a></div>
+  <div class="topics"><span>#algorithmic-trading</span><span>#binance</span><span>#bitget</span></div>
+</article><article class="card" data-search="pycryptobot whittlem/pycryptobot 用 python 寫嘅加密貨幣交易機械人。 python crypto bot (pycryptobot) python backtester backtesting backtesting-trading-strategies binance binance-api coinbase-pro coinbase-pro-api cryptocurrency">
+  <header>
+    <h3><span class="rank">26</span><a href="https://github.com/whittlem/pycryptobot">pycryptobot</a></h3>
+    <div class="stars">★ 2,059</div>
+  </header>
+  <p class="meta">whittlem/pycryptobot · Python · Apache-2.0 · 最近推送 2026-03-26</p>
+  <p class="summary">用 Python 寫嘅加密貨幣交易機械人。</p>
+  <div class="links"><a href="https://github.com/whittlem/pycryptobot">GitHub</a></div>
+  <div class="topics"><span>#backtester</span><span>#backtesting</span><span>#backtesting-trading-strategies</span></div>
+</article><article class="card" data-search="bbgo c9s/bbgo 用 go 寫嘅現代加密貨幣交易機械人框架。 the modern cryptocurrency trading bot framework written in go. go binance bitcoin crypto cryptocurrency trading trading-bot">
+  <header>
+    <h3><span class="rank">27</span><a href="https://github.com/c9s/bbgo">bbgo</a></h3>
+    <div class="stars">★ 1,674</div>
+  </header>
+  <p class="meta">c9s/bbgo · Go · AGPL-3.0 · 最近推送 2026-10-28</p>
+  <p class="summary">用 Go 寫嘅現代加密貨幣交易機械人框架。</p>
+  <div class="links"><a href="https://github.com/c9s/bbgo">GitHub</a><a href="https://bbgo.finance">主頁</a></div>
+  <div class="topics"><span>#binance</span><span>#bitcoin</span><span>#crypto</span></div>
+</article></div>
+  
+</section>
+    </main>
+  </div>
+  <footer class="site">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 排序以 stars 為準 · 重複項目只保留一次</footer>
+</div>
+<script>
+(function () {
+  const input = document.querySelector("#q");
+  const cards = Array.from(document.querySelectorAll("[data-search]"));
+  const sections = Array.from(document.querySelectorAll("[data-section]"));
+  const empty = document.querySelector("#empty");
+  function apply() {
+    const q = input.value.trim().toLowerCase();
+    let shown = 0;
+    cards.forEach((card) => {
+      const ok = !q || card.dataset.search.includes(q);
+      card.hidden = !ok;
+      if (ok) shown += 1;
+    });
+    sections.forEach((section) => {
+      section.hidden = !Array.from(section.querySelectorAll("[data-search]")).some((card) => !card.hidden);
+    });
+    empty.hidden = shown !== 0;
+    empty.style.display = shown === 0 ? "block" : "none";
+  }
+  input.addEventListener("input", apply);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "/" && document.activeElement !== input) {
+      event.preventDefault();
+      input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0c0d11">
+<meta name="description" content="Open Source Catalog：AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。">
+<title>AI Agent · Open Source Catalog</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=Outfit:wght@400;520;650&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect fill='%230c0d11' width='64' height='64' rx='14'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23e4b15a' stroke-width='4'/%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #0c0d11;
+  --bg-raise: #15171e;
+  --line: rgba(244, 236, 224, 0.12);
+  --text: #f6f1e8;
+  --muted: #b7b0a4;
+  --faint: #8d867c;
+  --gold: #e4b15a;
+  --ink: #1c140c;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(228, 177, 90, 0.14), transparent 55%),
+    radial-gradient(900px 420px at 100% 0%, rgba(143, 208, 196, 0.08), transparent 50%),
+    var(--bg);
+  color: var(--text);
+  font-family: Outfit, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+a { color: inherit; }
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -40px;
+  background: var(--gold);
+  color: var(--ink);
+  padding: 8px 12px;
+  z-index: 5;
+}
+.skip:focus { top: 12px; }
+.wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+header.hero { padding: 36px 0 18px; }
+.kicker {
+  margin: 0 0 8px;
+  color: var(--gold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+h1 {
+  margin: 0;
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 560;
+  font-size: clamp(40px, 6vw, 68px);
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+.lede { max-width: 680px; color: var(--muted); font-size: 18px; margin: 14px 0 0; }
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.stat {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 14px;
+  min-width: 120px;
+}
+.stat b { display: block; font-family: Fraunces, Georgia, serif; font-size: 22px; font-weight: 560; }
+.stat span { color: var(--faint); font-size: 13px; }
+.layout { display: grid; grid-template-columns: 220px 1fr; gap: 28px; padding-bottom: 72px; }
+nav.side {
+  position: sticky;
+  top: 16px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 8px;
+}
+nav.side a {
+  text-decoration: none;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+nav.side a:hover, nav.side a[aria-current="page"] {
+  background: var(--bg-raise);
+  color: var(--text);
+}
+nav.side .count { color: var(--faint); font-variant-numeric: tabular-nums; }
+.search { position: sticky; top: 0; z-index: 2; background: linear-gradient(var(--bg), rgba(12,13,17,0.92) 70%, transparent); padding: 8px 0 14px; }
+.search input {
+  width: 100%;
+  background: var(--bg-raise);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font: inherit;
+  outline: none;
+}
+.search input:focus { border-color: var(--gold); }
+.section { margin: 8px 0 36px; scroll-margin-top: 72px; }
+.section h2 {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 34px;
+  font-weight: 560;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+.section .blurb { color: var(--muted); margin: 6px 0 16px; }
+.grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.card {
+  background: rgba(21, 23, 30, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  box-shadow: var(--shadow);
+  min-width: 0;
+}
+.card header { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.rank { color: var(--faint); font-variant-numeric: tabular-nums; font-size: 13px; margin-right: 8px; }
+.card h3 { margin: 0; font-size: 18px; letter-spacing: -0.02em; }
+.card h3 a { text-decoration: none; }
+.card h3 a:hover { color: var(--gold); }
+.stars { color: var(--gold); font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 650; }
+.meta { color: var(--faint); font-size: 13px; margin: 6px 0 8px; overflow-wrap: anywhere; }
+.summary { margin: 0; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.links a, .badge {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.links a:hover { color: var(--text); border-color: var(--gold); }
+.badge.arch { color: #e7b8a4; }
+.topics { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.topics span { color: var(--faint); font-size: 12px; }
+.papers { margin-top: 16px; }
+.papers h3 { margin: 0 0 10px; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+#empty { display: none; color: var(--muted); padding: 12px 0 24px; }
+footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
+@media (min-width: 980px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; gap: 8px; }
+  nav.side { position: static; flex-direction: row; overflow-x: auto; padding-bottom: 8px; }
+  nav.side a { white-space: nowrap; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">跳到項目</a>
+<div class="wrap">
+  <header class="hero">
+    <p class="kicker">每 6 小時更新</p>
+    <h1>Open Source Catalog</h1>
+    <p class="lede">AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。</p>
+    <div class="stats">
+      <div class="stat"><b>200</b><span>開源項目</span></div>
+      <div class="stat"><b>7</b><span>未另列 repo 嘅論文</span></div>
+      <div class="stat"><b>2026年10月28日</b><span>20:06（香港時間）</span></div>
+    </div>
+  </header>
+  <div class="layout">
+    <nav class="side" aria-label="分類"><a href="../index.html">全部<span class="count">200</span></a><a href="./" aria-current="page">AI Agent<span class="count">42</span></a><a href="../image/">圖像<span class="count">37</span></a><a href="../video/">影片<span class="count">32</span></a><a href="../vfx-cg-blender/">VFX / CG / Blender<span class="count">32</span></a><a href="../stock-trading/">Stock Trading<span class="count">30</span></a><a href="../crypto-trading/">Crypto Trading<span class="count">27</span></a></nav>
+    <main id="content">
+      <form class="search" role="search" onsubmit="return false">
+        <label class="sr" for="q" style="position:absolute;left:-999px">搜尋</label>
+        <input id="q" type="search" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
+      </form>
+      <p id="empty">沒有符合呢個搜尋嘅項目。</p>
+      <section class="section" id="ai-agent" data-section>
+  <h2>AI Agent</h2>
+  <p class="blurb">會規劃、調用工具、同其他 agent 一齊做嘢嘅開源框架同程式。 開源項目按 GitHub stars 由多至少。</p>
+  <div class="grid"><article class="card" data-search="autogpt significant-gravitas/autogpt 開放嘅 ai agent 平台，用嚟搭建同使用自主 agent，等你專注喺目標而唔使由零處理工具鏈。 autogpt is the vision of accessible ai for everyone, to use and to build on. our mission is to provide the tools, so that you can focus on what matters. python agentic-ai agents ai artificial-intelligence autonomous-agents claude gpt llama-api">
+  <header>
+    <h3><span class="rank">01</span><a href="https://github.com/Significant-Gravitas/AutoGPT">AutoGPT</a></h3>
+    <div class="stars">★ 187,801</div>
+  </header>
+  <p class="meta">Significant-Gravitas/AutoGPT · Python · 最近推送 2026-10-28</p>
+  <p class="summary">開放嘅 AI agent 平台，用嚟搭建同使用自主 agent，等你專注喺目標而唔使由零處理工具鏈。</p>
+  <div class="links"><a href="https://github.com/Significant-Gravitas/AutoGPT">GitHub</a><a href="https://agpt.co">主頁</a></div>
+  <div class="topics"><span>#agentic-ai</span><span>#agents</span><span>#ai</span></div>
+</article><article class="card" data-search="dify langgenius/dify 用嚟搭建 agent 工作流同 rag 應用嘅平台，支援多種模型同工具，可以放喺雲端或者自己架。 build agentic workflows, rag pipelines, with rich ai model and tool support on one collaborative workspace. deploy on cloud, vpc, or self-hosted, so teams move from prototype to production without rebuilding the stack. python agent agentic-ai agentic-framework agentic-workflow ai automation claude deepseek">
+  <header>
+    <h3><span class="rank">02</span><a href="https://github.com/langgenius/dify">dify</a></h3>
+    <div class="stars">★ 159,799</div>
+  </header>
+  <p class="meta">langgenius/dify · Python · 最近推送 2026-10-28</p>
+  <p class="summary">用嚟搭建 agent 工作流同 RAG 應用嘅平台，支援多種模型同工具，可以放喺雲端或者自己架。</p>
+  <div class="links"><a href="https://github.com/langgenius/dify">GitHub</a><a href="https://dify.ai">主頁</a></div>
+  <div class="topics"><span>#agent</span><span>#agentic-ai</span><span>#agentic-framework</span></div>
+</article><article class="card" data-search="langflow langflow-ai/langflow 用視覺化流程搭建同部署 ai agent 同工作流。 langflow is a powerful tool for building and deploying ai-powered agents and workflows. python agents chatgpt generative-ai large-language-models multiagent react-flow">
+  <header>
+    <h3><span class="rank">03</span><a href="https://github.com/langflow-ai/langflow">langflow</a></h3>
+    <div class="stars">★ 156,094</div>
+  </header>
+  <p class="meta">langflow-ai/langflow · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">用視覺化流程搭建同部署 AI agent 同工作流。</p>
+  <div class="links"><a href="https://github.com/langflow-ai/langflow">GitHub</a><a href="http://www.langflow.org">主頁</a></div>
+  <div class="topics"><span>#agents</span><span>#chatgpt</span><span>#generative-ai</span></div>
+</article><article class="card" data-search="langchain langchain-ai/langchain 開發 agent 嘅工程平台，將模型、工具、記憶同流程砌成可重用嘅應用。 the agent engineering platform. python agents ai ai-agents anthropic chatgpt deepagents enterprise framework">
+  <header>
+    <h3><span class="rank">04</span><a href="https://github.com/langchain-ai/langchain">langchain</a></h3>
+    <div class="stars">★ 148,609</div>
+  </header>
+  <p class="meta">langchain-ai/langchain · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">開發 agent 嘅工程平台，將模型、工具、記憶同流程砌成可重用嘅應用。</p>
+  <div class="links"><a href="https://github.com/langchain-ai/langchain">GitHub</a><a href="https://docs.langchain.com/langchain/">主頁</a></div>
+  <div class="topics"><span>#agents</span><span>#ai</span><span>#ai-agents</span></div>
+</article><article class="card" data-search="browser-use browser-use/browser-use 畀 ai agent 操控瀏覽器嘅 python 庫，可以自己撳網頁、填表同拎資料。 open-source python library for ai browser agents, plus browser use cloud: stealth browsers and a hosted agent api. python ai-agents ai-tools browser-agent browser-automation browser-use cdp cloud-browser computer-use">
+  <header>
+    <h3><span class="rank">05</span><a href="https://github.com/browser-use/browser-use">browser-use</a></h3>
+    <div class="stars">★ 119,352</div>
+  </header>
+  <p class="meta">browser-use/browser-use · Python · MIT · 最近推送 2026-10-27</p>
+  <p class="summary">畀 AI agent 操控瀏覽器嘅 Python 庫，可以自己撳網頁、填表同拎資料。</p>
+  <div class="links"><a href="https://github.com/browser-use/browser-use">GitHub</a><a href="https://browser-use.com">主頁</a></div>
+  <div class="topics"><span>#ai-agents</span><span>#ai-tools</span><span>#browser-agent</span></div>
+</article><article class="card" data-search="gemini-cli google-gemini/gemini-cli 將 gemini 帶入終端機嘅開源 agent，可以直接喺命令列做開發工作。 an open-source ai agent that brings the power of gemini directly into your terminal. typescript ai ai-agents cli gemini gemini-api mcp-client mcp-server">
+  <header>
+    <h3><span class="rank">06</span><a href="https://github.com/google-gemini/gemini-cli">gemini-cli</a></h3>
+    <div class="stars">★ 108,591</div>
+  </header>
+  <p class="meta">google-gemini/gemini-cli · TypeScript · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">將 Gemini 帶入終端機嘅開源 agent，可以直接喺命令列做開發工作。</p>
+  <div class="links"><a href="https://github.com/google-gemini/gemini-cli">GitHub</a><a href="https://geminicli.com">主頁</a></div>
+  <div class="topics"><span>#ai</span><span>#ai-agents</span><span>#cli</span></div>
+</article><article class="card" data-search="ragflow infiniflow/ragflow 結合檢索增強生成同 agent 嘅開源引擎，用嚟為大模型提供有出處嘅上下文。 ragflow is a leading open-source retrieval-augmented generation (rag) engine that fuses cutting-edge rag with agent capabilities to create a superior context layer for llms go agent-harness agentic-ai agentic-nagive agentic-retrieval agentic-search ai ai-agents context-engine">
+  <header>
+    <h3><span class="rank">07</span><a href="https://github.com/infiniflow/ragflow">ragflow</a></h3>
+    <div class="stars">★ 93,008</div>
+  </header>
+  <p class="meta">infiniflow/ragflow · Go · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">結合檢索增強生成同 agent 嘅開源引擎，用嚟為大模型提供有出處嘅上下文。</p>
+  <div class="links"><a href="https://github.com/infiniflow/ragflow">GitHub</a><a href="https://ragflow.io">主頁</a></div>
+  <div class="topics"><span>#agent-harness</span><span>#agentic-ai</span><span>#agentic-nagive</span></div>
+</article><article class="card" data-search="openhands openhands/openhands 用 ai 做軟件開發嘅 agent，可以自己改程式、跑指令同處理開發任務。 🙌 openhands: ai-driven development typescript agent artificial-intelligence chatgpt claude-ai cli developer-tools gpt llm">
+  <header>
+    <h3><span class="rank">08</span><a href="https://github.com/OpenHands/OpenHands">OpenHands</a></h3>
+    <div class="stars">★ 92,079</div>
+  </header>
+  <p class="meta">OpenHands/OpenHands · TypeScript · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">用 AI 做軟件開發嘅 agent，可以自己改程式、跑指令同處理開發任務。</p>
+  <div class="links"><a href="https://github.com/OpenHands/OpenHands">GitHub</a><a href="https://openhands.dev">主頁</a></div>
+  <div class="topics"><span>#agent</span><span>#artificial-intelligence</span><span>#chatgpt</span></div>
+</article><article class="card" data-search="deer-flow bytedance/deer-flow 長時程 agent 框架，可以做研究、寫程式同創作，並用沙盒、記憶同子 agent 拆開複雜任務。 an open-source long-horizon superagent harness that researches, codes, and creates. with the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours. python agent agentic agentic-framework agentic-workflow ai ai-agents deep-research harness">
+  <header>
+    <h3><span class="rank">09</span><a href="https://github.com/bytedance/deer-flow">deer-flow</a></h3>
+    <div class="stars">★ 84,550</div>
+  </header>
+  <p class="meta">bytedance/deer-flow · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">長時程 agent 框架，可以做研究、寫程式同創作，並用沙盒、記憶同子 agent 拆開複雜任務。</p>
+  <div class="links"><a href="https://github.com/bytedance/deer-flow">GitHub</a><a href="https://deerflow.tech">主頁</a></div>
+  <div class="topics"><span>#agent</span><span>#agentic</span><span>#agentic-framework</span></div>
+</article><article class="card" data-search="ruflo ruvnet/ruflo 一個 agent harness，用嚟協調多個 agent、自動工作流同帶記憶嘅對話系統。 🌊 the original agent harness. deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational ai systems. features adaptive memory, self-learning intelligence, federation, vector rag integration, and native claude code / codex / hermes and many more integrated typescript agentic-ai agentic-framework agentic-workflow agents ai-agents ai-assistant ai-skills autonomous-agents">
+  <header>
+    <h3><span class="rank">10</span><a href="https://github.com/ruvnet/ruflo">ruflo</a></h3>
+    <div class="stars">★ 79,873</div>
+  </header>
+  <p class="meta">ruvnet/ruflo · TypeScript · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">一個 agent harness，用嚟協調多個 agent、自動工作流同帶記憶嘅對話系統。</p>
+  <div class="links"><a href="https://github.com/ruvnet/ruflo">GitHub</a><a href="https://Cognitum.One">主頁</a></div>
+  <div class="topics"><span>#agentic-ai</span><span>#agentic-framework</span><span>#agentic-workflow</span></div>
+</article><article class="card" data-search="metagpt foundationagents/metagpt 多 agent 框架，將產品、設計同工程角色編成一個軟件團隊，用自然語言推動開發。 🌟 the multi-agent framework: first ai software company, towards natural language programming python agent gpt llm metagpt multi-agent">
+  <header>
+    <h3><span class="rank">11</span><a href="https://github.com/FoundationAgents/MetaGPT">MetaGPT</a></h3>
+    <div class="stars">★ 71,051</div>
+  </header>
+  <p class="meta">FoundationAgents/MetaGPT · Python · MIT · 最近推送 2026-01-21</p>
+  <p class="summary">多 agent 框架，將產品、設計同工程角色編成一個軟件團隊，用自然語言推動開發。</p>
+  <div class="links"><a href="https://github.com/FoundationAgents/MetaGPT">GitHub</a><a href="https://atoms.dev/">主頁</a></div>
+  <div class="topics"><span>#agent</span><span>#gpt</span><span>#llm</span></div>
+</article><article class="card" data-search="cline cline/cline 可以獨立寫程式嘅 coding agent，有 ide 擴充、sdk 同命令列幾種用法。 autonomous coding agent as an sdk, ide extension, or cli assistant. typescript ">
+  <header>
+    <h3><span class="rank">12</span><a href="https://github.com/cline/cline">cline</a></h3>
+    <div class="stars">★ 70,967</div>
+  </header>
+  <p class="meta">cline/cline · TypeScript · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">可以獨立寫程式嘅 coding agent，有 IDE 擴充、SDK 同命令列幾種用法。</p>
+  <div class="links"><a href="https://github.com/cline/cline">GitHub</a><a href="https://cline.bot">主頁</a></div>
+  
+</article><article class="card" data-search="openinterpreter openinterpreter/openinterpreter 面向開源模型嘅 coding agent，可以喺本機寫程式同執行指令。 a coding agent for open models like kimi k3 and glm 5.3 rust acp coding-agent deepseek kimi python qwen rust">
+  <header>
+    <h3><span class="rank">13</span><a href="https://github.com/openinterpreter/openinterpreter">openinterpreter</a></h3>
+    <div class="stars">★ 68,708</div>
+  </header>
+  <p class="meta">openinterpreter/openinterpreter · Rust · Apache-2.0 · 最近推送 2026-10-11</p>
+  <p class="summary">面向開源模型嘅 coding agent，可以喺本機寫程式同執行指令。</p>
+  <div class="links"><a href="https://github.com/openinterpreter/openinterpreter">GitHub</a><a href="http://openinterpreter.com/">主頁</a></div>
+  <div class="topics"><span>#acp</span><span>#coding-agent</span><span>#deepseek</span></div>
+</article><article class="card" data-search="mem0 mem0ai/mem0 畀 ai agent 用嘅記憶層，將對話同事實保存落嚟，之後可以再搵返。 the memory layer for ai agents - drop-in memory infrastructure for ai agents and apps. context that persists. built for production. python agentic-memory agentic-memory-system agents ai ai-agents chatgpt genai llm">
+  <header>
+    <h3><span class="rank">14</span><a href="https://github.com/mem0ai/mem0">mem0</a></h3>
+    <div class="stars">★ 67,979</div>
+  </header>
+  <p class="meta">mem0ai/mem0 · Python · Apache-2.0 · 最近推送 2026-10-26</p>
+  <p class="summary">畀 AI agent 用嘅記憶層，將對話同事實保存落嚟，之後可以再搵返。</p>
+  <div class="links"><a href="https://github.com/mem0ai/mem0">GitHub</a><a href="https://mem0.ai">主頁</a></div>
+  <div class="topics"><span>#agentic-memory</span><span>#agentic-memory-system</span><span>#agents</span></div>
+</article><article class="card" data-search="anything-llm mintplex-labs/anything-llm 可以自託管嘅本地優先工作台，將文件、對話同 agent 放喺自己部機。 stop renting your intelligence. own it with anythingllm. everything you need for a powerful local-first agent experience javascript agent-computer agent-harness agent-orchestration agentic-ai agentic-workflow ai-agents computer-use hermes-agent">
+  <header>
+    <h3><span class="rank">15</span><a href="https://github.com/Mintplex-Labs/anything-llm">anything-llm</a></h3>
+    <div class="stars">★ 67,665</div>
+  </header>
+  <p class="meta">Mintplex-Labs/anything-llm · JavaScript · MIT · 最近推送 2026-10-27</p>
+  <p class="summary">可以自託管嘅本地優先工作台，將文件、對話同 agent 放喺自己部機。</p>
+  <div class="links"><a href="https://github.com/Mintplex-Labs/anything-llm">GitHub</a><a href="https://anythingllm.com">主頁</a></div>
+  <div class="topics"><span>#agent-computer</span><span>#agent-harness</span><span>#agent-orchestration</span></div>
+</article><article class="card" data-search="autogen microsoft/autogen 微軟嘅 agent 程式框架，用嚟編排多個可以對話同使用工具嘅 ai。 a programming framework for agentic ai python agentic agentic-agi agents ai autogen autogen-ecosystem chatgpt framework">
+  <header>
+    <h3><span class="rank">16</span><a href="https://github.com/microsoft/autogen">autogen</a></h3>
+    <div class="stars">★ 61,603</div>
+  </header>
+  <p class="meta">microsoft/autogen · Python · CC-BY-4.0 · 最近推送 2026-10-16</p>
+  <p class="summary">微軟嘅 agent 程式框架，用嚟編排多個可以對話同使用工具嘅 AI。</p>
+  <div class="links"><a href="https://github.com/microsoft/autogen">GitHub</a><a href="https://microsoft.github.io/autogen/">主頁</a></div>
+  <div class="topics"><span>#agentic</span><span>#agentic-agi</span><span>#agents</span></div>
+</article><article class="card" data-search="crewai crewaiinc/crewai 將唔同角色嘅自主 agent 組成團隊，一齊完成比較複雜嘅任務。 framework for orchestrating role-playing, autonomous ai agents. by fostering collaborative intelligence, crewai empowers agents to work together seamlessly, tackling complex tasks. python agents ai ai-agents aiagentframework llms">
+  <header>
+    <h3><span class="rank">17</span><a href="https://github.com/crewAIInc/crewAI">crewAI</a></h3>
+    <div class="stars">★ 60,206</div>
+  </header>
+  <p class="meta">crewAIInc/crewAI · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">將唔同角色嘅自主 agent 組成團隊，一齊完成比較複雜嘅任務。</p>
+  <div class="links"><a href="https://github.com/crewAIInc/crewAI">GitHub</a><a href="https://crewai.com">主頁</a></div>
+  <div class="topics"><span>#agents</span><span>#ai</span><span>#ai-agents</span></div>
+</article><article class="card" data-search="goose aaif-goose/goose 可擴展嘅 ai agent，唔止建議程式碼，仲可以安裝、執行、修改同測試。 an open source, extensible ai agent that goes beyond code suggestions - install, execute, edit, and test with any llm rust acp ai ai-agents mcp">
+  <header>
+    <h3><span class="rank">18</span><a href="https://github.com/aaif-goose/goose">goose</a></h3>
+    <div class="stars">★ 55,849</div>
+  </header>
+  <p class="meta">aaif-goose/goose · Rust · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">可擴展嘅 AI agent，唔止建議程式碼，仲可以安裝、執行、修改同測試。</p>
+  <div class="links"><a href="https://github.com/aaif-goose/goose">GitHub</a><a href="https://goose-docs.ai/">主頁</a></div>
+  <div class="topics"><span>#acp</span><span>#ai</span><span>#ai-agents</span></div>
+</article><article class="card" data-search="flowise flowiseai/flowise 用拖放方式搭建 ai agent 同語言模型流程。倉庫已封存，但仍然係常見嘅視覺化起點。 build ai agents, visually typescript agentic-ai agentic-workflow agents artificial-intelligence chatbot chatgpt javascript langchain">
+  <header>
+    <h3><span class="rank">19</span><a href="https://github.com/FlowiseAI/Flowise">Flowise</a></h3>
+    <div class="stars">★ 55,529</div>
+  </header>
+  <p class="meta">FlowiseAI/Flowise · TypeScript · 最近推送 2026-08-13</p>
+  <p class="summary">用拖放方式搭建 AI agent 同語言模型流程。倉庫已封存，但仍然係常見嘅視覺化起點。</p>
+  <div class="links"><a href="https://github.com/FlowiseAI/Flowise">GitHub</a><a href="https://flowiseai.com">主頁</a><span class="badge arch">已封存</span></div>
+  <div class="topics"><span>#agentic-ai</span><span>#agentic-workflow</span><span>#agents</span></div>
+</article><article class="card" data-search="cherry-studio cherryhq/cherry-studio 桌面 ai 工作台，整合聊天、自主 agent 同大量助手，可以接唔同模型。 ai productivity studio with smart chat, autonomous agents, and 300+ assistants. unified access to frontier llms typescript agent-skills ai-agent claude-code codex deepseek hermes-agent open-code-review skills">
+  <header>
+    <h3><span class="rank">20</span><a href="https://github.com/CherryHQ/cherry-studio">cherry-studio</a></h3>
+    <div class="stars">★ 53,039</div>
+  </header>
+  <p class="meta">CherryHQ/cherry-studio · TypeScript · AGPL-3.0 · 最近推送 2026-10-28</p>
+  <p class="summary">桌面 AI 工作台，整合聊天、自主 agent 同大量助手，可以接唔同模型。</p>
+  <div class="links"><a href="https://github.com/CherryHQ/cherry-studio">GitHub</a><a href="https://cherryai.com">主頁</a></div>
+  <div class="topics"><span>#agent-skills</span><span>#ai-agent</span><span>#claude-code</span></div>
+</article><article class="card" data-search="llama_index run-llama/llama_index 文件處理同檢索平台，用嚟將資料接駁到可以查詢同採取行動嘅 ai 應用。 llamaindex is the document processing platform for ai python agents application data fine-tuning framework llamaindex llm multi-agents">
+  <header>
+    <h3><span class="rank">21</span><a href="https://github.com/run-llama/llama_index">llama_index</a></h3>
+    <div class="stars">★ 52,706</div>
+  </header>
+  <p class="meta">run-llama/llama_index · Python · MIT · 最近推送 2026-10-26</p>
+  <p class="summary">文件處理同檢索平台，用嚟將資料接駁到可以查詢同採取行動嘅 AI 應用。</p>
+  <div class="links"><a href="https://github.com/run-llama/llama_index">GitHub</a><a href="https://developers.llamaindex.ai">主頁</a></div>
+  <div class="topics"><span>#agents</span><span>#application</span><span>#data</span></div>
+</article><article class="card" data-search="nanobot hkuds/nanobot 輕量、可自託管嘅個人 agent 框架，帶網頁介面、工具、記憶同多 agent 工作流。 ultra-lightweight, open-source, self-hosted personal ai agent framework in python with webui, tools, memory, mcp, multi-agent workflows, automation, and chat apps python agent-framework ai-agent ai-agents chatbot chatops discord-bot llm-agents llms">
+  <header>
+    <h3><span class="rank">22</span><a href="https://github.com/HKUDS/nanobot">nanobot</a></h3>
+    <div class="stars">★ 49,546</div>
+  </header>
+  <p class="meta">HKUDS/nanobot · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">輕量、可自託管嘅個人 agent 框架，帶網頁介面、工具、記憶同多 agent 工作流。</p>
+  <div class="links"><a href="https://github.com/HKUDS/nanobot">GitHub</a><a href="https://nanobot.wiki">主頁</a></div>
+  <div class="topics"><span>#agent-framework</span><span>#ai-agent</span><span>#ai-agents</span></div>
+</article><article class="card" data-search="cowagent zhayujie/cowagent 開源個人 ai 助手，可以計劃任務、使用工具同技能，並用記憶同知識持續改進。 open-source personal ai assistant &amp; agent harness. plans tasks, runs tools and skills, self-evolves with memory and knowledge. multi-agent, multi-model, multi-channel. lightweight, extensible, one-line install. python ai ai-agent ai-agents chatgpt-on-wechat claude claude-code codex cowagent">
+  <header>
+    <h3><span class="rank">23</span><a href="https://github.com/zhayujie/CowAgent">CowAgent</a></h3>
+    <div class="stars">★ 47,647</div>
+  </header>
+  <p class="meta">zhayujie/CowAgent · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">開源個人 AI 助手，可以計劃任務、使用工具同技能，並用記憶同知識持續改進。</p>
+  <div class="links"><a href="https://github.com/zhayujie/CowAgent">GitHub</a><a href="https://cowagent.ai">主頁</a></div>
+  <div class="topics"><span>#ai</span><span>#ai-agent</span><span>#ai-agents</span></div>
+</article><article class="card" data-search="langgraph langchain-ai/langgraph 用圖結構編排可靠嘅 agent 流程，適合有分支、循環同長任務嘅應用。 build resilient agents. python agents ai ai-agents chatgpt deepagents enterprise framework gemini">
+  <header>
+    <h3><span class="rank">24</span><a href="https://github.com/langchain-ai/langgraph">langgraph</a></h3>
+    <div class="stars">★ 44,041</div>
+  </header>
+  <p class="meta">langchain-ai/langgraph · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">用圖結構編排可靠嘅 agent 流程，適合有分支、循環同長任務嘅應用。</p>
+  <div class="links"><a href="https://github.com/langchain-ai/langgraph">GitHub</a><a href="https://docs.langchain.com/oss/python/langgraph/">主頁</a></div>
+  <div class="topics"><span>#agents</span><span>#ai</span><span>#ai-agents</span></div>
+</article><article class="card" data-search="agno agno-agi/agno 一個可以自我改進嘅 agent 平台，用嚟建立同運行 ai agent。 the self-improving agent platform python agents ai ai-agents developer-tools python">
+  <header>
+    <h3><span class="rank">25</span><a href="https://github.com/agno-agi/agno">agno</a></h3>
+    <div class="stars">★ 42,931</div>
+  </header>
+  <p class="meta">agno-agi/agno · Python · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">一個可以自我改進嘅 agent 平台，用嚟建立同運行 AI agent。</p>
+  <div class="links"><a href="https://github.com/agno-agi/agno">GitHub</a><a href="https://docs.agno.com">主頁</a></div>
+  <div class="topics"><span>#agents</span><span>#ai</span><span>#ai-agents</span></div>
+</article><article class="card" data-search="bettafish 666ghj/bettafish 多 agent 輿情分析助手，由零實現，用嚟整理公眾討論、還原事件同輔助判斷。 微舆：人人可用的多agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。 python agent-framework data-analysis deep-research deep-search llms multi-agent-system nlp public-opinion-analysis">
+  <header>
+    <h3><span class="rank">26</span><a href="https://github.com/666ghj/BettaFish">BettaFish</a></h3>
+    <div class="stars">★ 42,545</div>
+  </header>
+  <p class="meta">666ghj/BettaFish · Python · GPL-2.0 · 最近推送 2026-10-16</p>
+  <p class="summary">多 agent 輿情分析助手，由零實現，用嚟整理公眾討論、還原事件同輔助判斷。</p>
+  <div class="links"><a href="https://github.com/666ghj/BettaFish">GitHub</a><a href="https://deepwiki.com/666ghj/BettaFish">主頁</a></div>
+  <div class="topics"><span>#agent-framework</span><span>#data-analysis</span><span>#deep-research</span></div>
+</article><article class="card" data-search="dspy stanfordnlp/dspy 用程式而唔係手寫提示去組合語言模型，並可以優化每一步。 dspy: the framework for programming—not prompting—language models python ">
+  <header>
+    <h3><span class="rank">27</span><a href="https://github.com/stanfordnlp/dspy">dspy</a></h3>
+    <div class="stars">★ 38,828</div>
+  </header>
+  <p class="meta">stanfordnlp/dspy · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">用程式而唔係手寫提示去組合語言模型，並可以優化每一步。</p>
+  <div class="links"><a href="https://github.com/stanfordnlp/dspy">GitHub</a><a href="https://dspy.ai">主頁</a></div>
+  
+</article><article class="card" data-search="continue continuedev/continue 開源 coding agent，可以喺編輯器入面讀寫程式同完成開發任務。 open-source coding agent typescript agent ai cli developer-tools open-source">
+  <header>
+    <h3><span class="rank">28</span><a href="https://github.com/continuedev/continue">continue</a></h3>
+    <div class="stars">★ 36,353</div>
+  </header>
+  <p class="meta">continuedev/continue · TypeScript · Apache-2.0 · 最近推送 2026-10-27</p>
+  <p class="summary">開源 coding agent，可以喺編輯器入面讀寫程式同完成開發任務。</p>
+  <div class="links"><a href="https://github.com/continuedev/continue">GitHub</a><a href="https://continue.dev">主頁</a></div>
+  <div class="topics"><span>#agent</span><span>#ai</span><span>#cli</span></div>
+</article><article class="card" data-search="chatdev openbmb/chatdev 用多個語言模型 agent 扮演開發團隊，協作完成軟件設計同實作。 chatdev 2.0: dev all through llm-powered multi-agent collaboration python ">
+  <header>
+    <h3><span class="rank">29</span><a href="https://github.com/OpenBMB/ChatDev">ChatDev</a></h3>
+    <div class="stars">★ 34,603</div>
+  </header>
+  <p class="meta">OpenBMB/ChatDev · Python · Apache-2.0 · 最近推送 2026-10-16</p>
+  <p class="summary">用多個語言模型 agent 扮演開發團隊，協作完成軟件設計同實作。</p>
+  <div class="links"><a href="https://github.com/OpenBMB/ChatDev">GitHub</a><a href="https://arxiv.org/abs/2307.07924">主頁</a></div>
+  
+</article><article class="card" data-search="openai-agents-python openai/openai-agents-python openai 嘅輕量 python 框架，用嚟編排多 agent 工作流。 a lightweight, powerful framework for multi-agent workflows python agents ai framework harness llm openai python">
+  <header>
+    <h3><span class="rank">30</span><a href="https://github.com/openai/openai-agents-python">openai-agents-python</a></h3>
+    <div class="stars">★ 30,351</div>
+  </header>
+  <p class="meta">openai/openai-agents-python · Python · MIT · 最近推送 2026-10-27</p>
+  <p class="summary">OpenAI 嘅輕量 Python 框架，用嚟編排多 agent 工作流。</p>
+  <div class="links"><a href="https://github.com/openai/openai-agents-python">GitHub</a><a href="https://openai.github.io/openai-agents-python/">主頁</a></div>
+  <div class="topics"><span>#agents</span><span>#ai</span><span>#framework</span></div>
+</article><article class="card" data-search="gpt-researcher assafelovic/gpt-researcher 自主研究 agent，可以就一個題目搜集資料並寫成有來源嘅研究報告。 an autonomous agent that conducts deep research on any data using any llm providers python agent ai automation deepresearch llms mcp mcp-server python">
+  <header>
+    <h3><span class="rank">31</span><a href="https://github.com/assafelovic/gpt-researcher">gpt-researcher</a></h3>
+    <div class="stars">★ 30,332</div>
+  </header>
+  <p class="meta">assafelovic/gpt-researcher · Python · Apache-2.0 · 最近推送 2026-10-10</p>
+  <p class="summary">自主研究 agent，可以就一個題目搜集資料並寫成有來源嘅研究報告。</p>
+  <div class="links"><a href="https://github.com/assafelovic/gpt-researcher">GitHub</a><a href="https://gptr.dev">主頁</a></div>
+  <div class="topics"><span>#agent</span><span>#ai</span><span>#automation</span></div>
+</article><article class="card" data-search="smolagents huggingface/smolagents hugging face 嘅精簡 agent 庫，agent 主要靠寫程式碼嚟思考同行動。 🤗 smolagents: a barebones library for agents that think in code. python ">
+  <header>
+    <h3><span class="rank">32</span><a href="https://github.com/huggingface/smolagents">smolagents</a></h3>
+    <div class="stars">★ 30,117</div>
+  </header>
+  <p class="meta">huggingface/smolagents · Python · Apache-2.0 · 最近推送 2026-10-22</p>
+  <p class="summary">Hugging Face 嘅精簡 agent 庫，agent 主要靠寫程式碼嚟思考同行動。</p>
+  <div class="links"><a href="https://github.com/huggingface/smolagents">GitHub</a><a href="https://huggingface.co/docs/smolagents">主頁</a></div>
+  
+</article><article class="card" data-search="mastra mastra-ai/mastra 用 typescript 建立 ai 應用同 agent 嘅框架。 mastra is the modern typescript framework for ai-powered applications and agents. typescript agents ai chatbots evals javascript llm mcp nextjs">
+  <header>
+    <h3><span class="rank">33</span><a href="https://github.com/mastra-ai/mastra">mastra</a></h3>
+    <div class="stars">★ 29,144</div>
+  </header>
+  <p class="meta">mastra-ai/mastra · TypeScript · 最近推送 2026-10-28</p>
+  <p class="summary">用 TypeScript 建立 AI 應用同 agent 嘅框架。</p>
+  <div class="links"><a href="https://github.com/mastra-ai/mastra">GitHub</a><a href="https://mastra.ai">主頁</a></div>
+  <div class="topics"><span>#agents</span><span>#ai</span><span>#chatbots</span></div>
+</article><article class="card" data-search="semantic-kernel microsoft/semantic-kernel 微軟嘅 sdk，用嚟將大語言模型、外掛同規劃能力接進應用程式。 integrate cutting-edge llm technology quickly and easily into your apps c# ai artificial-intelligence llm openai sdk">
+  <header>
+    <h3><span class="rank">34</span><a href="https://github.com/microsoft/semantic-kernel">semantic-kernel</a></h3>
+    <div class="stars">★ 28,710</div>
+  </header>
+  <p class="meta">microsoft/semantic-kernel · C# · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">微軟嘅 SDK，用嚟將大語言模型、外掛同規劃能力接進應用程式。</p>
+  <div class="links"><a href="https://github.com/microsoft/semantic-kernel">GitHub</a><a href="https://aka.ms/semantic-kernel">主頁</a></div>
+  <div class="topics"><span>#ai</span><span>#artificial-intelligence</span><span>#llm</span></div>
+</article><article class="card" data-search="haystack deepset-ai/haystack 用模組化流程搭建可上線嘅語言模型同 agent 應用，方便控制每一步。 open-source ai orchestration framework for building context-engineered, production-ready llm applications. design modular pipelines and agent workflows with explicit control over retrieval, routing, memory, and generation. built for scalable agents, rag, multimodal applications, semantic search, and conversational systems. python agent-framework agentic-ai agentic-rag agents ai ai-agents context-engineering framework">
+  <header>
+    <h3><span class="rank">35</span><a href="https://github.com/deepset-ai/haystack">haystack</a></h3>
+    <div class="stars">★ 26,867</div>
+  </header>
+  <p class="meta">deepset-ai/haystack · Python · Apache-2.0 · 最近推送 2026-10-28</p>
+  <p class="summary">用模組化流程搭建可上線嘅語言模型同 agent 應用，方便控制每一步。</p>
+  <div class="links"><a href="https://github.com/deepset-ai/haystack">GitHub</a><a href="https://haystack.deepset.ai">主頁</a></div>
+  <div class="topics"><span>#agent-framework</span><span>#agentic-ai</span><span>#agentic-rag</span></div>
+</article><article class="card" data-search="letta letta-ai/letta 有狀態嘅 agent 平台，重點係長期記憶，令 agent 可以累積經驗。 platform for stateful agents: ai with advanced memory that can learn and self-improve over time.  ai ai-agents llm llm-agent">
+  <header>
+    <h3><span class="rank">36</span><a href="https://github.com/letta-ai/letta">letta</a></h3>
+    <div class="stars">★ 25,271</div>
+  </header>
+  <p class="meta">letta-ai/letta · Apache-2.0 · 最近推送 2026-10-18</p>
+  <p class="summary">有狀態嘅 agent 平台，重點係長期記憶，令 agent 可以累積經驗。</p>
+  <div class="links"><a href="https://github.com/letta-ai/letta">GitHub</a><a href="https://docs.letta.com/">主頁</a></div>
+  <div class="topics"><span>#ai</span><span>#ai-agents</span><span>#llm</span></div>
+</article><article class="card" data-search="python-sdk modelcontextprotocol/python-sdk model context protocol 嘅官方 python sdk，用嚟寫 agent 可以呼叫嘅工具伺服器同客戶端。 the official python sdk for model context protocol servers and clients python mcp mcp-client mcp-server python">
+  <header>
+    <h3><span class="rank">37</span><a href="https://github.com/modelcontextprotocol/python-sdk">python-sdk</a></h3>
+    <div class="stars">★ 24,695</div>
+  </header>
+  <p class="meta">modelcontextprotocol/python-sdk · Python · MIT · 最近推送 2026-10-27</p>
+  <p class="summary">Model Context Protocol 嘅官方 Python SDK，用嚟寫 agent 可以呼叫嘅工具伺服器同客戶端。</p>
+  <div class="links"><a href="https://github.com/modelcontextprotocol/python-sdk">GitHub</a><a href="https://py.sdk.modelcontextprotocol.io/">主頁</a></div>
+  <div class="topics"><span>#mcp</span><span>#mcp-client</span><span>#mcp-server</span></div>
+</article><article class="card" data-search="skyvern skyvern-ai/skyvern 用 ai 自動完成瀏覽器上嘅工作流，例如填表同跨網頁操作。 automate browser based workflows with ai python ai api automation browser browser-automation computer gpt llm">
+  <header>
+    <h3><span class="rank">38</span><a href="https://github.com/Skyvern-AI/skyvern">skyvern</a></h3>
+    <div class="stars">★ 23,291</div>
+  </header>
+  <p class="meta">Skyvern-AI/skyvern · Python · AGPL-3.0 · 最近推送 2026-10-28</p>
+  <p class="summary">用 AI 自動完成瀏覽器上嘅工作流，例如填表同跨網頁操作。</p>
+  <div class="links"><a href="https://github.com/Skyvern-AI/skyvern">GitHub</a><a href="https://www.skyvern.com">主頁</a></div>
+  <div class="topics"><span>#ai</span><span>#api</span><span>#automation</span></div>
+</article><article class="card" data-search="babyagi yoheinakajima/babyagi 早期出名嘅自主 agent 實驗：由一個目標不斷產生任務、排優先次序再執行。  python ">
+  <header>
+    <h3><span class="rank">39</span><a href="https://github.com/yoheinakajima/babyagi">babyagi</a></h3>
+    <div class="stars">★ 22,352</div>
+  </header>
+  <p class="meta">yoheinakajima/babyagi · Python · 最近推送 2026-01-31</p>
+  <p class="summary">早期出名嘅自主 agent 實驗：由一個目標不斷產生任務、排優先次序再執行。</p>
+  <div class="links"><a href="https://github.com/yoheinakajima/babyagi">GitHub</a><a href="https://babyagi.org/">主頁</a></div>
+  
+</article><article class="card" data-search="swarm openai/swarm openai 出嚟嘅輕量多 agent 教學框架，示範點樣將工作交畀唔同 agent。 educational framework exploring ergonomic, lightweight multi-agent orchestration. managed by openai solution team. python ">
+  <header>
+    <h3><span class="rank">40</span><a href="https://github.com/openai/swarm">swarm</a></h3>
+    <div class="stars">★ 22,086</div>
+  </header>
+  <p class="meta">openai/swarm · Python · MIT · 最近推送 2026-04-15</p>
+  <p class="summary">OpenAI 出嚟嘅輕量多 agent 教學框架，示範點樣將工作交畀唔同 agent。</p>
+  <div class="links"><a href="https://github.com/openai/swarm">GitHub</a></div>
+  
+</article><article class="card" data-search="pydantic-ai pydantic/pydantic-ai 用類型清楚嘅 python 方式建立 agent，可以接唔同模型同介面。 how python does ai. agents, realtime voice, image generation, embeddings. every model, every interface, typed end to end. python agent-framework genai harness harness-engineering llm pydantic python">
+  <header>
+    <h3><span class="rank">41</span><a href="https://github.com/pydantic/pydantic-ai">pydantic-ai</a></h3>
+    <div class="stars">★ 20,924</div>
+  </header>
+  <p class="meta">pydantic/pydantic-ai · Python · MIT · 最近推送 2026-10-28</p>
+  <p class="summary">用類型清楚嘅 Python 方式建立 agent，可以接唔同模型同介面。</p>
+  <div class="links"><a href="https://github.com/pydantic/pydantic-ai">GitHub</a><a href="https://pydantic.dev/pydantic-ai">主頁</a></div>
+  <div class="topics"><span>#agent-framework</span><span>#genai</span><span>#harness</span></div>
+</article><article class="card" data-search="camel camel-ai/camel 多 agent 框架，用角色扮演同對話令幾個 agent 協作完成任務。 🐫 camel: the first and the best multi-agent framework. finding the scaling law of agents. https://www.camel-ai.org python agent ai-societies artificial-intelligence communicative-ai cooperative-ai deep-learning large-language-models multi-agent-systems">
+  <header>
+    <h3><span class="rank">42</span><a href="https://github.com/camel-ai/camel">camel</a></h3>
+    <div class="stars">★ 17,989</div>
+  </header>
+  <p class="meta">camel-ai/camel · Python · Apache-2.0 · 最近推送 2026-10-27</p>
+  <p class="summary">多 agent 框架，用角色扮演同對話令幾個 agent 協作完成任務。</p>
+  <div class="links"><a href="https://github.com/camel-ai/camel">GitHub</a><a href="https://docs.camel-ai.org/">主頁</a></div>
+  <div class="topics"><span>#agent</span><span>#ai-societies</span><span>#artificial-intelligence</span></div>
+</article></div>
+  <div class="papers"><h3>相關論文</h3><div class="grid"><article class="card" data-search="generative agents: interactive simulacra of human behavior 用記憶、反思同計劃，模擬小鎮入面多個 ai 角色點樣自己過日常、互相影響。 paper arxiv">
+  <header>
+    <h3><a href="https://arxiv.org/abs/2304.03442">Generative Agents: Interactive Simulacra of Human Behavior</a></h3>
+    <div class="stars">2023</div>
+  </header>
+  <p class="meta">論文 · arXiv</p>
+  <p class="summary">用記憶、反思同計劃，模擬小鎮入面多個 AI 角色點樣自己過日常、互相影響。</p>
+  <div class="links"><a href="https://arxiv.org/abs/2304.03442">arXiv</a><a href="https://github.com/joonspk-research/generative_agents">程式</a><span class="badge">論文</span></div>
+</article><article class="card" data-search="react: synergizing reasoning and acting in language models 提出推理同行動交替進行：語言模型先寫低思考，再調用工具，然後按觀察結果繼續推理。 paper arxiv">
+  <header>
+    <h3><a href="https://arxiv.org/abs/2210.03629">ReAct: Synergizing Reasoning and Acting in Language Models</a></h3>
+    <div class="stars">2023</div>
+  </header>
+  <p class="meta">論文 · arXiv</p>
+  <p class="summary">提出推理同行動交替進行：語言模型先寫低思考，再調用工具，然後按觀察結果繼續推理。</p>
+  <div class="links"><a href="https://arxiv.org/abs/2210.03629">arXiv</a><a href="https://github.com/ysymyth/ReAct">程式</a><span class="badge">論文</span></div>
+</article><article class="card" data-search="reflexion: language agents with verbal reinforcement learning agent 用自然語言總結自己嘅失敗，記住教訓再試，而唔係靠更新模型權重。 paper arxiv">
+  <header>
+    <h3><a href="https://arxiv.org/abs/2303.11366">Reflexion: Language Agents with Verbal Reinforcement Learning</a></h3>
+    <div class="stars">2023</div>
+  </header>
+  <p class="meta">論文 · arXiv</p>
+  <p class="summary">Agent 用自然語言總結自己嘅失敗，記住教訓再試，而唔係靠更新模型權重。</p>
+  <div class="links"><a href="https://arxiv.org/abs/2303.11366">arXiv</a><a href="https://github.com/noahshinn/reflexion">程式</a><span class="badge">論文</span></div>
+</article><article class="card" data-search="voyager: an open-ended embodied agent with large language models 一個喺 minecraft 入面自己寫程式、累積技能庫，可以持續探索同完成新任務嘅 agent。 paper arxiv">
+  <header>
+    <h3><a href="https://arxiv.org/abs/2305.16291">Voyager: An Open-Ended Embodied Agent with Large Language Models</a></h3>
+    <div class="stars">2023</div>
+  </header>
+  <p class="meta">論文 · arXiv</p>
+  <p class="summary">一個喺 Minecraft 入面自己寫程式、累積技能庫，可以持續探索同完成新任務嘅 agent。</p>
+  <div class="links"><a href="https://arxiv.org/abs/2305.16291">arXiv</a><a href="https://github.com/MineDojo/Voyager">程式</a><span class="badge">論文</span></div>
+</article></div></div>
+</section>
+    </main>
+  </div>
+  <footer class="site">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 排序以 stars 為準 · 重複項目只保留一次</footer>
+</div>
+<script>
+(function () {
+  const input = document.querySelector("#q");
+  const cards = Array.from(document.querySelectorAll("[data-search]"));
+  const sections = Array.from(document.querySelectorAll("[data-section]"));
+  const empty = document.querySelector("#empty");
+  function apply() {
+    const q = input.value.trim().toLowerCase();
+    let shown = 0;
+    cards.forEach((card) => {
+      const ok = !q || card.dataset.search.includes(q);
+      card.hidden = !ok;
+      if (ok) shown += 1;
+    });
+    sections.forEach((section) => {
+      section.hidden = !Array.from(section.querySelectorAll("[data-search]")).some((card) => !card.hidden);
+    });
+    empty.hidden = shown !== 0;
+    empty.style.display = shown === 0 ? "block" : "none";
+  }
+  input.addEventListener("input", apply);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "/" && document.activeElement !== input) {
+      event.preventDefault();
+      input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>
