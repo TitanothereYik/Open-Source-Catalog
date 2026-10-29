@@ -1,6 +1,6 @@
 {
   "title": "Open Source Catalog",
-  "updated_at": "2026-10-29T22:51:16+08:00",
+  "updated_at": "2026-10-29T23:42:05+08:00",
   "base_url": "https://titanothereyik.github.io/Open-Source-Catalog/",
   "projects": [
     {
@@ -11335,6 +11335,32 @@
       "paper_title": "",
       "paper_url": "",
       "added_at": "2026-10-29T22:51:16+08:00"
+    },
+    {
+      "id": "github:flashml-org/freevideo",
+      "type": "github",
+      "category": "video",
+      "name": "FreeVideo",
+      "full_name": "FlashML-org/FreeVideo",
+      "url": "https://github.com/FlashML-org/FreeVideo",
+      "homepage": "",
+      "description": "Make videos on the computer you already own. FreeVideo runs MiniMax H3 in as little as 8 GB of VRAM and 16 GB of RAM, and adapts its acceleration path to your hardware.",
+      "summary": "喺家用電腦跑 MiniMax H3 出片嘅推理引擎，顯存可以低到 8GB。佢按顯示卡揀精度，並將權重分批載入，唔使成個模型一次過放喺顯存。介面係 ComfyUI 工作區，另有 Windows、Mac 同 Linux 啟動器。模型係現成嘅，呢個倉庫負責喺本機跑。",
+      "summary_locked": true,
+      "stars": 2434,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "topics": [
+        "diffusion-models",
+        "inference",
+        "minimax-h3",
+        "video-generation"
+      ],
+      "archived": false,
+      "pushed_at": "2026-10-29",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-10-29T23:42:05+08:00"
     }
   ],
   "papers": [
@@ -11403,12 +11429,7 @@
     }
   ],
   "last_new_ids": [
-    "github:civitai/civitai",
-    "github:abdullahalfaraj/auto-photoshop-stablediffusion-plugin",
-    "github:tmoroney/auto-subs",
-    "github:shashankvemuri/finance",
-    "github:zvtvz/zvt",
-    "github:fudan-generative-vision/champ"
+    "github:flashml-org/freevideo"
   ],
   "rate_limit": {
     "used": 4000,
