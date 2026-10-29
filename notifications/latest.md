@@ -1,18 +1,17 @@
 # Open Source Catalog 已更新
 
-- 時間：2026年10月29日 07:48（香港時間）
-- 今次新增：7 個開源項目
-- 目錄總數：354 個開源項目
-- 分類：Gaussian Splatting 48 · World Model 34 · Image to 3D 39 · AI Agent 48 · 圖像 49 · 影片 39 · VFX / CG / Blender 33 · Stock Trading 36 · Crypto Trading 28
+- 時間：2026年10月29日 08:57（香港時間）
+- 今次新增：6 個開源項目
+- 目錄總數：360 個開源項目
+- 分類：Gaussian Splatting 48 · World Model 34 · Image to 3D 40 · AI Agent 50 · 圖像 51 · 影片 40 · VFX / CG / Blender 33 · Stock Trading 36 · Crypto Trading 28
 - GitHub 請求配額：已用 4000/5000（80.0%，目標 80%）
 - 瀏覽：https://titanothereyik.github.io/Open-Source-Catalog/
 
 ## 新增
 
-- thedotmack/claude-mem · ★ 104,028 · ai-agent · https://github.com/thedotmack/claude-mem
-- phillipi/pix2pix · ★ 10,658 · image · https://github.com/phillipi/pix2pix
-- RunanywhereAI/runanywhere-sdks · ★ 10,333 · image · https://github.com/RunanywhereAI/runanywhere-sdks
-- nadermx/backgroundremover · ★ 8,135 · video · https://github.com/nadermx/backgroundremover
-- yi1108/printfilm · ★ 7,228 · video · https://github.com/yi1108/printfilm
-- hugo2046/QuantsPlaybook · ★ 6,778 · stock-trading · https://github.com/hugo2046/QuantsPlaybook
-- charliedream1/ai_quant_trade · ★ 6,665 · crypto-trading · https://github.com/charliedream1/ai_quant_trade
+- unclecode/crawl4ai · ★ 86,467 · ai-agent · https://github.com/unclecode/crawl4ai
+- cheaper-inference/OmniRoute · ★ 82,261 · ai-agent · https://github.com/cheaper-inference/OmniRoute
+- Stability-AI/StableStudio · ★ 9,035 · image · https://github.com/Stability-AI/StableStudio
+- LykosAI/StabilityMatrix · ★ 8,968 · image · https://github.com/LykosAI/StabilityMatrix
+- modelscope/FunClip · ★ 6,471 · video · https://github.com/modelscope/FunClip
+- amagine-ai/Amagine3D · ★ 6,279 · image-to-3d · https://github.com/amagine-ai/Amagine3D
