@@ -14,7 +14,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pathlib import Path
@@ -148,6 +148,23 @@ MIN_NEW = {
     "vfx-cg-blender": 2500,
     "stock-trading": 1500,
     "crypto-trading": 1200,
+}
+
+# Young repos can enter below MIN_NEW when stars are climbing quickly.
+# FreeVideo passed this bar: about 2,400 stars in six weeks.
+FAST_RISE_DAYS = 120
+FAST_RISE_MIN_STARS = 400
+FAST_RISE_PER_DAY = 12
+RECENT_FOCUS = {
+    "gaussian-splatting": "gaussian splatting OR 3dgs OR gaussian-splatting",
+    "world-model": '"world model" OR "world models"',
+    "image-to-3d": '"image to 3d" OR "image-to-3d" OR "text to 3d" OR "text-to-3d"',
+    "ai-agent": '"ai agent" OR "coding agent" OR "agent framework"',
+    "image": '"image generation" OR inpainting OR "stable diffusion"',
+    "video": '"video generation" OR "text-to-video" OR "image-to-video" OR "ai video"',
+    "vfx-cg-blender": "blender OR renderer OR compositing",
+    "stock-trading": '"stock trading" OR "quantitative finance" OR backtesting',
+    "crypto-trading": '"crypto trading" OR "trading bot" OR cryptocurrency',
 }
 
 PAPER_LINKS = {
@@ -1364,6 +1381,34 @@ def text_blob(repo: dict) -> str:
     ).lower()
 
 
+def created_at(repo: dict) -> datetime | None:
+    text = (repo.get("created_at") or "").strip()
+    if not text:
+        return None
+    try:
+        return datetime.fromisoformat(text.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+
+def repo_age_days(repo: dict) -> int | None:
+    created = created_at(repo)
+    if created is None:
+        return None
+    return max(1, (datetime.now(timezone.utc) - created).days)
+
+
+def fast_riser(repo: dict) -> bool:
+    """True for a repo that is still new and already gaining stars quickly."""
+    age_days = repo_age_days(repo)
+    if age_days is None or age_days > FAST_RISE_DAYS:
+        return False
+    stars = int(repo.get("stargazers_count") or 0)
+    if stars < FAST_RISE_MIN_STARS:
+        return False
+    return stars / age_days >= FAST_RISE_PER_DAY
+
+
 def blocked(repo: dict) -> bool:
     name = (repo.get("name") or "").lower()
     blob = text_blob(repo)
@@ -1383,6 +1428,8 @@ def blocked(repo: dict) -> bool:
         "tutorial",
     )
     if any(part in name for part in bad_name):
+        return True
+    if "comfyui" in name and "workflow" in name:
         return True
     bad_text = ("curated list", "awesome list", "system prompt", "leaked prompt", "job search")
     return any(part in blob for part in bad_text)
@@ -1544,7 +1591,15 @@ def discover_new(catalog: dict) -> tuple[list[dict], list[str]]:
     found: dict[str, tuple[str, dict]] = {}
     pool: list[str] = []
     seen_pool = set(FETCHED)
-    queries = [(category, query) for category in CATEGORIES for query in QUERIES[category["id"]]]
+    announced: set[str] = set()
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=FAST_RISE_DAYS)).date().isoformat()
+    recent = [
+        (category, f"{RECENT_FOCUS[category['id']]} created:>={cutoff} stars:>={FAST_RISE_MIN_STARS}")
+        for category in CATEGORIES
+    ]
+    regular = [(category, query) for category in CATEGORIES for query in QUERIES[category["id"]]]
+    queries = recent + regular
+    page_cap = {id(query): (2 if (category, query) in recent else 10) for category, query in queries}
     more_pages = {id(query): True for _, query in queries}
 
     def remember(full_name: str) -> None:
@@ -1563,10 +1618,16 @@ def discover_new(catalog: dict) -> tuple[list[dict], list[str]]:
         threshold = MIN_NEW[category_id]
         if len(catalog["projects"]) < 200:
             threshold = max(200, threshold // 4)
-        if int(repo.get("stargazers_count") or 0) < threshold:
+        stars = int(repo.get("stargazers_count") or 0)
+        rising = fast_riser(repo)
+        if stars < threshold and not rising:
             return
         if not relevant(category_id, repo):
             return
+        if rising and key not in announced:
+            announced.add(key)
+            age_days = repo_age_days(repo) or 0
+            print(f"fast riser {full_name} {stars} stars in {age_days}d", flush=True)
         current = found.get(key)
         if current is None or repo.get("stargazers_count", 0) > current[1].get("stargazers_count", 0):
             found[key] = (category_id, repo)
@@ -1584,6 +1645,8 @@ def discover_new(catalog: dict) -> tuple[list[dict], list[str]]:
     for page in range(1, 11):
         progressed = False
         for category, query in queries:
+            if page > page_cap.get(id(query), 10):
+                continue
             if not more_pages.get(id(query), False):
                 continue
             try:
@@ -1599,20 +1662,49 @@ def discover_new(catalog: dict) -> tuple[list[dict], list[str]]:
         drain()
         if core_quota_met() or not progressed:
             break
-    ranked = sorted(found.values(), key=lambda item: -int(item[1].get("stargazers_count") or 0))
+    def rise_key(item: tuple[str, dict]) -> tuple[int, float, int]:
+        repo = item[1]
+        stars = int(repo.get("stargazers_count") or 0)
+        if fast_riser(repo):
+            age_days = repo_age_days(repo) or 1
+            return (1, stars / age_days, stars)
+        return (0, 0, stars)
+
+    ranked = sorted(found.values(), key=rise_key, reverse=True)
     per_category: dict[str, int] = {category["id"]: 0 for category in CATEGORIES}
+    per_fast: dict[str, int] = {category["id"]: 0 for category in CATEGORIES}
     chosen = []
-    limit = 24 if len(catalog["projects"]) < 200 else 8
-    per_limit = 8 if len(catalog["projects"]) < 200 else 2
+    young_catalog = len(catalog["projects"]) < 200
+    normal_limit = 24 if young_catalog else 8
+    normal_per = 8 if young_catalog else 2
+    fast_limit = 8
+    fast_per = 3
+    total_limit = 14 if not young_catalog else 24
     added_at = iso_hk()
+    fast_count = 0
+    normal_count = 0
     for category_id, repo in ranked:
-        if len(chosen) >= limit or per_category[category_id] >= per_limit:
+        if len(chosen) >= total_limit:
+            break
+        rising = fast_riser(repo)
+        stars = int(repo.get("stargazers_count") or 0)
+        threshold = MIN_NEW[category_id]
+        take_fast = rising and fast_count < fast_limit and per_fast[category_id] < fast_per
+        take_normal = stars >= threshold and normal_count < normal_limit and per_category[category_id] < normal_per
+        if not take_fast and not take_normal:
             continue
+        rising = take_fast
         summary = (repo.get("description") or "").strip()
         project = project_from_repo(repo, category_id, summary, False, added_at)
         chosen.append(project)
         per_category[category_id] += 1
         existing.add(project["full_name"].lower())
+        if rising:
+            fast_count += 1
+            per_fast[category_id] += 1
+        else:
+            normal_count += 1
+    print(f"chosen {len(chosen)} new repos, {fast_count} fast risers", flush=True)
     return chosen, list(seen_pool)
 
 
