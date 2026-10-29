@@ -80,6 +80,14 @@ CATEGORIES = [
         "blurb_en": "Video generation, editing, playback, transcoding, and processing.",
     },
     {
+        "id": "motion-graphics",
+        "dir": "motion-graphics",
+        "title": "Motion Graphics / After Effects",
+        "title_en": "Motion Graphics / After Effects",
+        "blurb": "動態圖形、After Effects 動畫播放、外掛、自動渲染，同埋用程式或節點做 motion 嘅工具。",
+        "blurb_en": "Motion graphics, After Effects playback, plugins, render automation, and tools that build motion with code or nodes.",
+    },
+    {
         "id": "vfx-cg-blender",
         "dir": "vfx-cg-blender",
         "title": "VFX / CG / Blender",
@@ -139,6 +147,11 @@ QUERIES = {
         "topic:video-editing",
         "topic:ai-video",
     ],
+    "motion-graphics": [
+        "topic:lottie",
+        "topic:after-effects",
+        '"motion graphics" OR "after effects" OR bodymovin stars:>80',
+    ],
     "vfx-cg-blender": [
         "topic:blender",
         "topic:computer-graphics",
@@ -165,6 +178,7 @@ MIN_NEW = {
     "ai-agent": 5000,
     "image": 4000,
     "video": 3000,
+    "motion-graphics": 800,
     "vfx-cg-blender": 2500,
     "stock-trading": 1500,
     "crypto-trading": 1200,
@@ -182,6 +196,7 @@ RECENT_FOCUS = {
     "ai-agent": '"ai agent" OR "coding agent" OR "agent skill" OR "claude skill"',
     "image": '"image generation" OR inpainting OR "stable diffusion"',
     "video": '"video generation" OR "text-to-video" OR "image-to-video" OR "ai video"',
+    "motion-graphics": '"motion graphics" OR "after effects" OR lottie OR bodymovin',
     "vfx-cg-blender": "blender OR renderer OR compositing",
     "stock-trading": '"stock trading" OR "quantitative finance" OR backtesting',
     "crypto-trading": '"crypto trading" OR "trading bot" OR cryptocurrency',
@@ -1124,7 +1139,7 @@ def render_document(catalog: dict, active: str | None) -> str:
 <header class="hero">
     <p class="kicker">{bi("每兩小時更新", "Updated every 2 hours")}</p>
     <h1>Open Source Catalog</h1>
-    <p class="lede">{bi("九個分類各自一頁。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。", "Nine categories, each on its own page. Projects are sorted by stars, highest first. A repository is listed only once.")}</p>
+    <p class="lede">{bi("十個分類各自一頁。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。", "Ten categories, each on its own page. Projects are sorted by stars, highest first. A repository is listed only once.")}</p>
     <div class="stats">
       <div class="stat"><b>{project_count}</b><span>{bi("開源項目", "Projects")}</span></div>
       <div class="stat"><b>{paper_count}</b><span>{bi("未另列 repo 嘅論文", "Papers without their own repo")}</span></div>
@@ -1153,7 +1168,7 @@ def render_document(catalog: dict, active: str | None) -> str:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0c0d11">
-<meta name="description" data-zh="Open Source Catalog：AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。" data-en="Open Source Catalog: open-source projects and related papers for AI agents, images, video, VFX/CG/Blender, stock trading, and crypto trading." content="Open Source Catalog：AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。">
+<meta name="description" data-zh="Open Source Catalog：AI Agent、圖像、影片、Motion Graphics / After Effects、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。" data-en="Open Source Catalog: open-source projects and related papers for AI agents, images, video, motion graphics, VFX/CG/Blender, stock trading, and crypto trading." content="Open Source Catalog：AI Agent、圖像、影片、Motion Graphics / After Effects、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。">
 <title data-zh="{esc(title_zh)}" data-en="{esc(title_en)}">{esc(title_zh)}</title>
 {canonical}
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1568,7 +1583,7 @@ def email_html(catalog: dict, new_projects: list[dict], mode: str) -> str:
         </td></tr>
         <tr><td style="padding:8px 20px 8px;">{''.join(f'<table role="presentation" width="100%">{block}</table>' for block in blocks)}</td></tr>
         <tr><td align="center" style="padding:28px 24px 12px;">{button}</td></tr>
-        <tr><td style="padding:8px 28px 28px;color:#8d867c;font-size:12px;line-height:1.5;">分類次序：Gaussian Splatting、World Model、Image to 3D、AI Agent、圖像、影片、VFX / CG / Blender、Stock Trading、Crypto Trading。開源項目按 stars 由多至少。已收錄項目唔會再加入。</td></tr>
+        <tr><td style="padding:8px 28px 28px;color:#8d867c;font-size:12px;line-height:1.5;">分類次序：Gaussian Splatting、World Model、Image to 3D、AI Agent、圖像、影片、Motion Graphics / After Effects、VFX / CG / Blender、Stock Trading、Crypto Trading。開源項目按 stars 由多至少。已收錄項目唔會再加入。</td></tr>
       </table>
     </td></tr>
   </table>
@@ -1715,6 +1730,17 @@ def relevant(category: str, repo: dict) -> bool:
         return any(key in blob for key in ("image", "diffusion", "photo", "vision", "ocr", "upscal"))
     if category == "video":
         return any(key in blob for key in ("video", "film", "ffmpeg", "movie", "editor"))
+    if category == "motion-graphics":
+        keys = (
+            "after effects",
+            "after-effects",
+            "motion graphics",
+            "motion design",
+            "lottie",
+            "bodymovin",
+            "motion graphic",
+        )
+        return any(key in blob for key in keys)
     if category == "vfx-cg-blender":
         return any(key in blob for key in ("blender", "render", "vfx", "3d", "graphics", "gaussian", "shader", "composit"))
     if category == "stock-trading":

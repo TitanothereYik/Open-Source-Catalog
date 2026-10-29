@@ -27,7 +27,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html .nojekyll _site/
-          cp -R gaussian-splatting world-model image-to-3d ai-agent image video vfx-cg-blender stock-trading crypto-trading _site/
+          cp -R gaussian-splatting world-model image-to-3d ai-agent image video motion-graphics vfx-cg-blender stock-trading crypto-trading _site/
 
       - uses: actions/upload-pages-artifact@v3
         with:
