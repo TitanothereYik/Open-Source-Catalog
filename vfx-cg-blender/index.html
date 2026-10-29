@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
+<script>try{if(localStorage.getItem("osc-lang")==="en")document.documentElement.lang="en";}catch(e){}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0c0d11">
-<meta name="description" content="Open Source Catalog：AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。">
-<title>VFX / CG / Blender · Open Source Catalog</title>
+<meta name="description" data-zh="Open Source Catalog：AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。" data-en="Open Source Catalog: open-source projects and related papers for AI agents, images, video, VFX/CG/Blender, stock trading, and crypto trading." content="Open Source Catalog：AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。">
+<title data-zh="VFX / CG / Blender · Open Source Catalog" data-en="VFX / CG / Blender · Open Source Catalog">VFX / CG / Blender · Open Source Catalog</title>
 <link rel="canonical" href="https://titanothereyik.github.io/Open-Source-Catalog/vfx-cg-blender/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,8 +49,37 @@ a { color: inherit; }
   z-index: 5;
 }
 .skip:focus { top: 12px; }
+.lang-switch {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 6;
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(12, 13, 17, 0.94);
+  box-shadow: var(--shadow);
+}
+.lang-switch button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  padding: 8px 12px;
+  cursor: pointer;
+  min-width: 42px;
+}
+.lang-switch button + button { box-shadow: inset 1px 0 0 var(--line); }
+.lang-switch button[aria-pressed="true"] { background: var(--gold); color: var(--ink); font-weight: 650; }
+.t-en { display: none; }
+html[lang="en"] .t-zh { display: none; }
+html[lang="en"] .t-en { display: inline; }
 .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
-header.hero { padding: 36px 0 18px; }
+header.hero { padding: 36px 96px 18px 0; }
 .kicker {
   margin: 0 0 8px;
   color: var(--gold);
@@ -80,7 +110,7 @@ h1 {
   position: sticky;
   top: 0;
   z-index: 3;
-  padding: 8px 0 12px;
+  padding: 8px 96px 12px 0;
   background: linear-gradient(var(--bg) 72%, rgba(12, 13, 17, 0.94) 88%, transparent);
 }
 nav.pages {
@@ -235,427 +265,431 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
 </style>
 </head>
 <body>
-<a class="skip" href="#content">跳到項目</a>
+<div class="lang-switch" role="group" data-zh-label="語言" data-en-label="Language" aria-label="語言">
+  <button type="button" data-lang="en">EN</button>
+  <button type="button" data-lang="zh-Hant" aria-pressed="true">中</button>
+</div>
+<a class="skip" href="#content"><span class="t-zh">跳到項目</span><span class="t-en">Skip to projects</span></a>
 <div class="wrap">
   
 <header class="hero hero-sub">
     <p class="kicker"><a href="../">Open Source Catalog</a></p>
-    <h1>VFX / CG / Blender</h1>
-    <p class="lede">三維、合成、渲染、材質同 Blender 生態。 開源項目按 GitHub stars 由多至少。</p>
+    <h1><span class="t-zh">VFX / CG / Blender</span><span class="t-en">VFX / CG / Blender</span></h1>
+    <p class="lede"><span class="t-zh">三維、合成、渲染、材質同 Blender 生態。</span><span class="t-en">3D, compositing, rendering, materials, and the Blender ecosystem.</span> <span class="t-zh">開源項目按 GitHub stars 由多至少。</span><span class="t-en">Sorted by GitHub stars, highest first.</span></p>
     <div class="stats">
-      <div class="stat"><b>42</b><span>開源項目</span></div>
-      <div class="stat"><b>1</b><span>相關論文</span></div>
-      <div class="stat"><b>2026年10月30日</b><span>04:36（香港時間）</span></div>
+      <div class="stat"><b>42</b><span><span class="t-zh">開源項目</span><span class="t-en">Projects</span></span></div>
+      <div class="stat"><b>1</b><span><span class="t-zh">相關論文</span><span class="t-en">Related papers</span></span></div>
+      <div class="stat"><b><span class="t-zh">2026年10月30日</span><span class="t-en">30 Oct 2026</span></b><span><span class="t-zh">04:36（香港時間）</span><span class="t-en">04:36 (Hong Kong)</span></span></div>
     </div>
   </header>
 
   <div class="stickybar">
-    <nav class="pages" aria-label="分類"><a href="../">目錄</a><a href="../gaussian-splatting/">Gaussian Splatting<span class="count">52</span></a><a href="../world-model/">World Model<span class="count">36</span></a><a href="../image-to-3d/">Image to 3D<span class="count">42</span></a><a href="../ai-agent/">AI Agent<span class="count">63</span></a><a href="../image/">圖像<span class="count">85</span></a><a href="../video/">影片<span class="count">58</span></a><a href="./" aria-current="page">VFX / CG / Blender<span class="count">42</span></a><a href="../stock-trading/">Stock Trading<span class="count">49</span></a><a href="../crypto-trading/">Crypto Trading<span class="count">30</span></a></nav>
+    <nav class="pages" data-zh-label="分類" data-en-label="Categories" aria-label="分類"><a href="../"><span class="t-zh">目錄</span><span class="t-en">Catalog</span></a><a href="../gaussian-splatting/"><span class="t-zh">Gaussian Splatting</span><span class="t-en">Gaussian Splatting</span><span class="count">52</span></a><a href="../world-model/"><span class="t-zh">World Model</span><span class="t-en">World Model</span><span class="count">36</span></a><a href="../image-to-3d/"><span class="t-zh">Image to 3D</span><span class="t-en">Image to 3D</span><span class="count">42</span></a><a href="../ai-agent/"><span class="t-zh">AI Agent</span><span class="t-en">AI Agent</span><span class="count">63</span></a><a href="../image/"><span class="t-zh">圖像</span><span class="t-en">Image</span><span class="count">85</span></a><a href="../video/"><span class="t-zh">影片</span><span class="t-en">Video</span><span class="count">58</span></a><a href="./" aria-current="page"><span class="t-zh">VFX / CG / Blender</span><span class="t-en">VFX / CG / Blender</span><span class="count">42</span></a><a href="../stock-trading/"><span class="t-zh">Stock Trading</span><span class="t-en">Stock Trading</span><span class="count">49</span></a><a href="../crypto-trading/"><span class="t-zh">Crypto Trading</span><span class="t-en">Crypto Trading</span><span class="count">30</span></a></nav>
     <div class="toolbar">
-      <div class="sort" role="group" aria-label="排序">
-        <button type="button" data-sort="stars" aria-pressed="true">星數</button>
-        <button type="button" data-sort="pushed" aria-pressed="false" aria-label="按最後推送日期，由新到舊">最近推送</button>
+      <div class="sort" role="group" data-zh-label="排序" data-en-label="Sort" aria-label="排序">
+        <button type="button" data-sort="stars" aria-pressed="true"><span class="t-zh">星數</span><span class="t-en">Stars</span></button>
+        <button type="button" data-sort="pushed" aria-pressed="false" data-zh-label="按最後推送日期，由新到舊" data-en-label="Sort by last push, newest first"><span class="t-zh">最近推送</span><span class="t-en">Last push</span></button>
       </div>
       <form class="search" role="search" onsubmit="return false">
-        <label class="sr" for="q" style="position:absolute;left:-999px">搜尋</label>
-        <input id="q" type="search" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
+        <label class="sr" for="q" style="position:absolute;left:-999px"><span class="t-zh">搜尋</span><span class="t-en">Search</span></label>
+        <input id="q" type="search" data-zh-placeholder="搜尋名稱、摘要、語言或主題" data-en-placeholder="Search name, summary, language, or topic" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
       </form>
     </div>
   </div>
   <main class="page" id="content">
-    <p id="empty">沒有符合呢個搜尋嘅項目。</p>
+    <p id="empty"><span class="t-zh">沒有符合呢個搜尋嘅項目。</span><span class="t-en">No projects match this search.</span></p>
     <section class="section" id="vfx-cg-blender" data-section>
-  <div class="grid"><article class="card" id="p-godotengine-godot" data-repo="godotengine/godot" data-search="godot godotengine/godot 跨平台 2d／3d 遊戲引擎，可以用嚟做即時圖像、互動同動畫。場景、腳本同渲染都包喺編輯器入面，適合做遊戲同即時視覺，而唔使自己寫引擎。2d 同 3d 都喺同一編輯器，匯出時再揀平台。 godot engine – multi-platform 2d and 3d game engine c++ game-development game-engine gamedev godot godotengine multi-platform open-source">
+  <div class="grid"><article class="card" id="p-godotengine-godot" data-repo="godotengine/godot" data-search="godot godotengine/godot 跨平台 2d／3d 遊戲引擎，可以用嚟做即時圖像、互動同動畫。場景、腳本同渲染都包喺編輯器入面，適合做遊戲同即時視覺，而唔使自己寫引擎。2d 同 3d 都喺同一編輯器，匯出時再揀平台。 a cross-platform 2d and 3d game engine for real-time graphics, interaction, and animation. scenes, scripts, and rendering are all in the editor, which suits games and real-time visuals without writing an engine yourself. 2d and 3d are both in the same editor, and you choose the platform when you export. godot engine – multi-platform 2d and 3d game engine c++ game-development game-engine gamedev godot godotengine multi-platform open-source">
   <header>
     <h3><span class="rank">01</span><a href="https://github.com/godotengine/godot">godot</a></h3>
     <div class="stars">★ 119,257</div>
   </header>
-  <p class="meta">godotengine/godot · C++ · MIT · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">跨平台 2D／3D 遊戲引擎，可以用嚟做即時圖像、互動同動畫。場景、腳本同渲染都包喺編輯器入面，適合做遊戲同即時視覺，而唔使自己寫引擎。2D 同 3D 都喺同一編輯器，匯出時再揀平台。</p>
-  <div class="links"><a href="https://github.com/godotengine/godot">GitHub</a><a href="https://godotengine.org">主頁</a></div>
+  <p class="meta">godotengine/godot · C++ · MIT · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">跨平台 2D／3D 遊戲引擎，可以用嚟做即時圖像、互動同動畫。場景、腳本同渲染都包喺編輯器入面，適合做遊戲同即時視覺，而唔使自己寫引擎。2D 同 3D 都喺同一編輯器，匯出時再揀平台。</span><span class="t-en">A cross-platform 2D and 3D game engine for real-time graphics, interaction, and animation. Scenes, scripts, and rendering are all in the editor, which suits games and real-time visuals without writing an engine yourself. 2D and 3D are both in the same editor, and you choose the platform when you export.</span></p>
+  <div class="links"><a href="https://github.com/godotengine/godot">GitHub</a><a href="https://godotengine.org"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#game-development</span><span>#game-engine</span><span>#gamedev</span></div>
-</article><article class="card" id="p-mrdoob-three-js" data-repo="mrdoob/three.js" data-search="three.js mrdoob/three.js 用 javascript 喺瀏覽器建立同渲染 3d 場景。相機、燈光、模型同材質都有現成物件，係網頁三維、產品展示同不少 webgl 效果嘅常用底層。產品展示、小遊戲同視覺實驗好多都直接用佢起場景。 javascript 3d library. javascript 3d augmented-reality canvas html5 javascript svg virtual-reality webaudio">
+</article><article class="card" id="p-mrdoob-three-js" data-repo="mrdoob/three.js" data-search="three.js mrdoob/three.js 用 javascript 喺瀏覽器建立同渲染 3d 場景。相機、燈光、模型同材質都有現成物件，係網頁三維、產品展示同不少 webgl 效果嘅常用底層。產品展示、小遊戲同視覺實驗好多都直接用佢起場景。 create and render 3d scenes in the browser with javascript. cameras, lights, models, and materials are all ready-made objects, and it is a common foundation for web 3d, product showcases, and many webgl effects. many product showcases, small games, and visual experiments build their scenes directly with it. javascript 3d library. javascript 3d augmented-reality canvas html5 javascript svg virtual-reality webaudio">
   <header>
     <h3><span class="rank">02</span><a href="https://github.com/mrdoob/three.js">three.js</a></h3>
     <div class="stars">★ 117,182</div>
   </header>
-  <p class="meta">mrdoob/three.js · JavaScript · MIT · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">用 JavaScript 喺瀏覽器建立同渲染 3D 場景。相機、燈光、模型同材質都有現成物件，係網頁三維、產品展示同不少 WebGL 效果嘅常用底層。產品展示、小遊戲同視覺實驗好多都直接用佢起場景。</p>
-  <div class="links"><a href="https://github.com/mrdoob/three.js">GitHub</a><a href="https://threejs.org/">主頁</a></div>
+  <p class="meta">mrdoob/three.js · JavaScript · MIT · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">用 JavaScript 喺瀏覽器建立同渲染 3D 場景。相機、燈光、模型同材質都有現成物件，係網頁三維、產品展示同不少 WebGL 效果嘅常用底層。產品展示、小遊戲同視覺實驗好多都直接用佢起場景。</span><span class="t-en">Create and render 3D scenes in the browser with JavaScript. Cameras, lights, models, and materials are all ready-made objects, and it is a common foundation for web 3D, product showcases, and many WebGL effects. Many product showcases, small games, and visual experiments build their scenes directly with it.</span></p>
+  <div class="links"><a href="https://github.com/mrdoob/three.js">GitHub</a><a href="https://threejs.org/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#3d</span><span>#augmented-reality</span><span>#canvas</span></div>
-</article><article class="card" id="p-pixijs-pixijs" data-repo="pixijs/pixijs" data-search="pixijs pixijs/pixijs 高速 2d webgl 渲染引擎，用嚟做互動圖像同視覺效果。精靈、濾鏡同場景圖適合遊戲同網頁動畫，當畫面要大量圖形同時郁嘅時候會用到。大量精靈同濾鏡同時郁時，會比普通 dom 動畫穩。 the html5 creation engine: create beautiful digital content with the fastest, most flexible 2d webgl renderer. typescript canvas canvas2d data-visualization game glsl javascript pixi pixijs">
+</article><article class="card" id="p-pixijs-pixijs" data-repo="pixijs/pixijs" data-search="pixijs pixijs/pixijs 高速 2d webgl 渲染引擎，用嚟做互動圖像同視覺效果。精靈、濾鏡同場景圖適合遊戲同網頁動畫，當畫面要大量圖形同時郁嘅時候會用到。大量精靈同濾鏡同時郁時，會比普通 dom 動畫穩。 a fast 2d webgl rendering engine for interactive graphics and visual effects. sprites, filters, and a scene graph suit games and web animation, and it is used when a large number of graphics have to move at the same time. when many sprites and filters move together, it is steadier than ordinary dom animation. the html5 creation engine: create beautiful digital content with the fastest, most flexible 2d webgl renderer. typescript canvas canvas2d data-visualization game glsl javascript pixi pixijs">
   <header>
     <h3><span class="rank">03</span><a href="https://github.com/pixijs/pixijs">pixijs</a></h3>
     <div class="stars">★ 48,589</div>
   </header>
-  <p class="meta">pixijs/pixijs · TypeScript · MIT · <time class="pushed" datetime="2026-10-29">最近推送 2026-10-29</time></p>
-  <p class="summary">高速 2D WebGL 渲染引擎，用嚟做互動圖像同視覺效果。精靈、濾鏡同場景圖適合遊戲同網頁動畫，當畫面要大量圖形同時郁嘅時候會用到。大量精靈同濾鏡同時郁時，會比普通 DOM 動畫穩。</p>
-  <div class="links"><a href="https://github.com/pixijs/pixijs">GitHub</a><a href="http://pixijs.com">主頁</a></div>
+  <p class="meta">pixijs/pixijs · TypeScript · MIT · <time class="pushed" datetime="2026-10-29"><span class="t-zh">最近推送 2026-10-29</span><span class="t-en">Pushed 2026-10-29</span></time></p>
+  <p class="summary"><span class="t-zh">高速 2D WebGL 渲染引擎，用嚟做互動圖像同視覺效果。精靈、濾鏡同場景圖適合遊戲同網頁動畫，當畫面要大量圖形同時郁嘅時候會用到。大量精靈同濾鏡同時郁時，會比普通 DOM 動畫穩。</span><span class="t-en">A fast 2D WebGL rendering engine for interactive graphics and visual effects. Sprites, filters, and a scene graph suit games and web animation, and it is used when a large number of graphics have to move at the same time. When many sprites and filters move together, it is steadier than ordinary DOM animation.</span></p>
+  <div class="links"><a href="https://github.com/pixijs/pixijs">GitHub</a><a href="http://pixijs.com"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#canvas</span><span>#canvas2d</span><span>#data-visualization</span></div>
-</article><article class="card" id="p-pmndrs-react-three-fiber" data-repo="pmndrs/react-three-fiber" data-search="react-three-fiber pmndrs/react-three-fiber 用 react 方式寫 three.js 場景嘅渲染器。三維物件可以寫成組件，狀態一變就更新畫面，方便將 3d 放進現有嘅 react 介面。介面狀態同三維場景可以寫喺同一套 react 組件。 🇨🇭 a react renderer for three.js typescript 3d animation fiber react renderer threejs">
+</article><article class="card" id="p-pmndrs-react-three-fiber" data-repo="pmndrs/react-three-fiber" data-search="react-three-fiber pmndrs/react-three-fiber 用 react 方式寫 three.js 場景嘅渲染器。三維物件可以寫成組件，狀態一變就更新畫面，方便將 3d 放進現有嘅 react 介面。介面狀態同三維場景可以寫喺同一套 react 組件。 a renderer for writing three.js scenes in the react style. 3d objects can be written as components, and the picture updates when state changes, which makes it easier to put 3d into an existing react interface. interface state and the 3d scene can be written in the same set of react components. 🇨🇭 a react renderer for three.js typescript 3d animation fiber react renderer threejs">
   <header>
     <h3><span class="rank">04</span><a href="https://github.com/pmndrs/react-three-fiber">react-three-fiber</a></h3>
     <div class="stars">★ 33,335</div>
   </header>
-  <p class="meta">pmndrs/react-three-fiber · TypeScript · MIT · <time class="pushed" datetime="2026-10-21">最近推送 2026-10-21</time></p>
-  <p class="summary">用 React 方式寫 Three.js 場景嘅渲染器。三維物件可以寫成組件，狀態一變就更新畫面，方便將 3D 放進現有嘅 React 介面。介面狀態同三維場景可以寫喺同一套 React 組件。</p>
-  <div class="links"><a href="https://github.com/pmndrs/react-three-fiber">GitHub</a><a href="https://docs.pmnd.rs/react-three-fiber">主頁</a></div>
+  <p class="meta">pmndrs/react-three-fiber · TypeScript · MIT · <time class="pushed" datetime="2026-10-21"><span class="t-zh">最近推送 2026-10-21</span><span class="t-en">Pushed 2026-10-21</span></time></p>
+  <p class="summary"><span class="t-zh">用 React 方式寫 Three.js 場景嘅渲染器。三維物件可以寫成組件，狀態一變就更新畫面，方便將 3D 放進現有嘅 React 介面。介面狀態同三維場景可以寫喺同一套 React 組件。</span><span class="t-en">A renderer for writing Three.js scenes in the React style. 3D objects can be written as components, and the picture updates when state changes, which makes it easier to put 3D into an existing React interface. Interface state and the 3D scene can be written in the same set of React components.</span></p>
+  <div class="links"><a href="https://github.com/pmndrs/react-three-fiber">GitHub</a><a href="https://docs.pmnd.rs/react-three-fiber"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#3d</span><span>#animation</span><span>#fiber</span></div>
-</article><article class="card" id="p-ahujasid-mcp-for-blender" data-repo="ahujasid/mcp-for-blender" data-search="mcp-for-blender ahujasid/mcp-for-blender 社群插件，用嚟喺 blender 入面用任何語言模型控制三維操作。可以叫模型幫手建模、改場景，同官方 blender foundation 無關。指令會轉成 blender 入面嘅操作。 community plugin to control blender 3d with any llm of your choice. not affiliated with the official blender foundation. python 3d-modeling ai blender blender-addon blender-mcp claude generative-ai llm">
+</article><article class="card" id="p-ahujasid-mcp-for-blender" data-repo="ahujasid/mcp-for-blender" data-search="mcp-for-blender ahujasid/mcp-for-blender 社群插件，用嚟喺 blender 入面用任何語言模型控制三維操作。可以叫模型幫手建模、改場景，同官方 blender foundation 無關。指令會轉成 blender 入面嘅操作。 a community plugin for controlling 3d operations inside blender with any language model. you can ask the model to help with modeling and scene edits, and it is not affiliated with the official blender foundation. commands are turned into operations inside blender. community plugin to control blender 3d with any llm of your choice. not affiliated with the official blender foundation. python 3d-modeling ai blender blender-addon blender-mcp claude generative-ai llm">
   <header>
     <h3><span class="rank">05</span><a href="https://github.com/ahujasid/mcp-for-blender">mcp-for-blender</a></h3>
     <div class="stars">★ 32,709</div>
   </header>
-  <p class="meta">ahujasid/mcp-for-blender · Python · MIT · <time class="pushed" datetime="2026-10-29">最近推送 2026-10-29</time></p>
-  <p class="summary">社群插件，用嚟喺 Blender 入面用任何語言模型控制三維操作。可以叫模型幫手建模、改場景，同官方 Blender Foundation 無關。指令會轉成 Blender 入面嘅操作。</p>
-  <div class="links"><a href="https://github.com/ahujasid/mcp-for-blender">GitHub</a><a href="https://www.mcp-for-blender.com/">主頁</a></div>
+  <p class="meta">ahujasid/mcp-for-blender · Python · MIT · <time class="pushed" datetime="2026-10-29"><span class="t-zh">最近推送 2026-10-29</span><span class="t-en">Pushed 2026-10-29</span></time></p>
+  <p class="summary"><span class="t-zh">社群插件，用嚟喺 Blender 入面用任何語言模型控制三維操作。可以叫模型幫手建模、改場景，同官方 Blender Foundation 無關。指令會轉成 Blender 入面嘅操作。</span><span class="t-en">A community plugin for controlling 3D operations inside Blender with any language model. You can ask the model to help with modeling and scene edits, and it is not affiliated with the official Blender Foundation. Commands are turned into operations inside Blender.</span></p>
+  <div class="links"><a href="https://github.com/ahujasid/mcp-for-blender">GitHub</a><a href="https://www.mcp-for-blender.com/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#3d-modeling</span><span>#ai</span><span>#blender</span></div>
-</article><article class="card" id="p-taichi-dev-taichi" data-repo="taichi-dev/taichi" data-search="taichi taichi-dev/taichi 用 python 寫高效能 gpu 程式嘅語言同編譯器。適合電腦圖像、物理模擬同可微分計算，同一套程式可以喺唔同顯示卡上跑。研究渲染同模擬時可以少寫底層顯示卡程式。 productive, portable, and performant gpu programming in python. c++ computer-graphics differentiable-programming gpu gpu-programming sparse-computation taichi">
+</article><article class="card" id="p-taichi-dev-taichi" data-repo="taichi-dev/taichi" data-search="taichi taichi-dev/taichi 用 python 寫高效能 gpu 程式嘅語言同編譯器。適合電腦圖像、物理模擬同可微分計算，同一套程式可以喺唔同顯示卡上跑。研究渲染同模擬時可以少寫底層顯示卡程式。 a language and compiler for writing high-performance gpu programs in python. it suits computer graphics, physics simulation, and differentiable computing, and the same program can run on different graphics cards. when researching rendering and simulation, you can write less low-level gpu code. productive, portable, and performant gpu programming in python. c++ computer-graphics differentiable-programming gpu gpu-programming sparse-computation taichi">
   <header>
     <h3><span class="rank">06</span><a href="https://github.com/taichi-dev/taichi">taichi</a></h3>
     <div class="stars">★ 28,428</div>
   </header>
-  <p class="meta">taichi-dev/taichi · C++ · Apache-2.0 · <time class="pushed" datetime="2026-10-06">最近推送 2026-10-06</time></p>
-  <p class="summary">用 Python 寫高效能 GPU 程式嘅語言同編譯器。適合電腦圖像、物理模擬同可微分計算，同一套程式可以喺唔同顯示卡上跑。研究渲染同模擬時可以少寫底層顯示卡程式。</p>
-  <div class="links"><a href="https://github.com/taichi-dev/taichi">GitHub</a><a href="https://taichi-lang.org">主頁</a></div>
+  <p class="meta">taichi-dev/taichi · C++ · Apache-2.0 · <time class="pushed" datetime="2026-10-06"><span class="t-zh">最近推送 2026-10-06</span><span class="t-en">Pushed 2026-10-06</span></time></p>
+  <p class="summary"><span class="t-zh">用 Python 寫高效能 GPU 程式嘅語言同編譯器。適合電腦圖像、物理模擬同可微分計算，同一套程式可以喺唔同顯示卡上跑。研究渲染同模擬時可以少寫底層顯示卡程式。</span><span class="t-en">A language and compiler for writing high-performance GPU programs in Python. It suits computer graphics, physics simulation, and differentiable computing, and the same program can run on different graphics cards. When researching rendering and simulation, you can write less low-level GPU code.</span></p>
+  <div class="links"><a href="https://github.com/taichi-dev/taichi">GitHub</a><a href="https://taichi-lang.org"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#computer-graphics</span><span>#differentiable-programming</span><span>#gpu</span></div>
-</article><article class="card" id="p-babylonjs-babylon-js" data-repo="BabylonJS/Babylon.js" data-search="babylon.js babylonjs/babylon.js 功能完整嘅網頁 3d 渲染同遊戲引擎。除咗顯示模型，亦包含物理、動畫同工具，適合想喺瀏覽器做互動場景，又想有一套較完整引擎嘅人。想要較完整嘅網頁引擎，而唔係只得一個渲染器。 babylon.js is a powerful, beautiful, simple, and open game and rendering engine packed into a friendly javascript framework. typescript 3d babylon game-development game-engine game-engine-3d typescript webaudio webgl">
+</article><article class="card" id="p-babylonjs-babylon-js" data-repo="BabylonJS/Babylon.js" data-search="babylon.js babylonjs/babylon.js 功能完整嘅網頁 3d 渲染同遊戲引擎。除咗顯示模型，亦包含物理、動畫同工具，適合想喺瀏覽器做互動場景，又想有一套較完整引擎嘅人。想要較完整嘅網頁引擎，而唔係只得一個渲染器。 a full-featured web 3d rendering and game engine. besides displaying models, it also includes physics, animation, and tools, for people who want interactive scenes in the browser and a fairly complete engine. it is for when you want a more complete web engine rather than only a renderer. babylon.js is a powerful, beautiful, simple, and open game and rendering engine packed into a friendly javascript framework. typescript 3d babylon game-development game-engine game-engine-3d typescript webaudio webgl">
   <header>
     <h3><span class="rank">07</span><a href="https://github.com/BabylonJS/Babylon.js">Babylon.js</a></h3>
     <div class="stars">★ 26,243</div>
   </header>
-  <p class="meta">BabylonJS/Babylon.js · TypeScript · Apache-2.0 · <time class="pushed" datetime="2026-10-29">最近推送 2026-10-29</time></p>
-  <p class="summary">功能完整嘅網頁 3D 渲染同遊戲引擎。除咗顯示模型，亦包含物理、動畫同工具，適合想喺瀏覽器做互動場景，又想有一套較完整引擎嘅人。想要較完整嘅網頁引擎，而唔係只得一個渲染器。</p>
-  <div class="links"><a href="https://github.com/BabylonJS/Babylon.js">GitHub</a><a href="http://www.babylonjs.com">主頁</a></div>
+  <p class="meta">BabylonJS/Babylon.js · TypeScript · Apache-2.0 · <time class="pushed" datetime="2026-10-29"><span class="t-zh">最近推送 2026-10-29</span><span class="t-en">Pushed 2026-10-29</span></time></p>
+  <p class="summary"><span class="t-zh">功能完整嘅網頁 3D 渲染同遊戲引擎。除咗顯示模型，亦包含物理、動畫同工具，適合想喺瀏覽器做互動場景，又想有一套較完整引擎嘅人。想要較完整嘅網頁引擎，而唔係只得一個渲染器。</span><span class="t-en">A full-featured web 3D rendering and game engine. Besides displaying models, it also includes physics, animation, and tools, for people who want interactive scenes in the browser and a fairly complete engine. It is for when you want a more complete web engine rather than only a renderer.</span></p>
+  <div class="links"><a href="https://github.com/BabylonJS/Babylon.js">GitHub</a><a href="http://www.babylonjs.com"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#3d</span><span>#babylon</span><span>#game-development</span></div>
-</article><article class="card" id="p-ssloy-tinyrenderer" data-repo="ssloy/tinyrenderer" data-search="tinyrenderer ssloy/tinyrenderer 一份簡短嘅電腦圖像課程，用 c++ 由零寫一個細渲染器。跟住課你會自己做光柵化、著色同貼圖，適合想搞清楚畫面點樣畫出嚟，而唔係只係呼叫現成引擎。程式短，方便對住每一行睇渲染點做。 a brief computer graphics / rendering course c++ 3d 3d-graphics c-plus-plus computer-graphics cpp engine fun graphics">
+</article><article class="card" id="p-ssloy-tinyrenderer" data-repo="ssloy/tinyrenderer" data-search="tinyrenderer ssloy/tinyrenderer 一份簡短嘅電腦圖像課程，用 c++ 由零寫一個細渲染器。跟住課你會自己做光柵化、著色同貼圖，適合想搞清楚畫面點樣畫出嚟，而唔係只係呼叫現成引擎。程式短，方便對住每一行睇渲染點做。 a short computer graphics course that writes a small renderer from scratch in c++. following the lessons, you implement rasterization, shading, and texturing yourself, for people who want to understand how a picture is drawn rather than only calling a ready-made engine. the code is short, so you can read line by line how the rendering is done. a brief computer graphics / rendering course c++ 3d 3d-graphics c-plus-plus computer-graphics cpp engine fun graphics">
   <header>
     <h3><span class="rank">08</span><a href="https://github.com/ssloy/tinyrenderer">tinyrenderer</a></h3>
     <div class="stars">★ 24,478</div>
   </header>
-  <p class="meta">ssloy/tinyrenderer · C++ · <time class="pushed" datetime="2026-07-29">最近推送 2026-07-29</time></p>
-  <p class="summary">一份簡短嘅電腦圖像課程，用 C++ 由零寫一個細渲染器。跟住課你會自己做光柵化、著色同貼圖，適合想搞清楚畫面點樣畫出嚟，而唔係只係呼叫現成引擎。程式短，方便對住每一行睇渲染點做。</p>
-  <div class="links"><a href="https://github.com/ssloy/tinyrenderer">GitHub</a><a href="https://haqr.eu/tinyrenderer/">主頁</a></div>
+  <p class="meta">ssloy/tinyrenderer · C++ · <time class="pushed" datetime="2026-07-29"><span class="t-zh">最近推送 2026-07-29</span><span class="t-en">Pushed 2026-07-29</span></time></p>
+  <p class="summary"><span class="t-zh">一份簡短嘅電腦圖像課程，用 C++ 由零寫一個細渲染器。跟住課你會自己做光柵化、著色同貼圖，適合想搞清楚畫面點樣畫出嚟，而唔係只係呼叫現成引擎。程式短，方便對住每一行睇渲染點做。</span><span class="t-en">A short computer graphics course that writes a small renderer from scratch in C++. Following the lessons, you implement rasterization, shading, and texturing yourself, for people who want to understand how a picture is drawn rather than only calling a ready-made engine. The code is short, so you can read line by line how the rendering is done.</span></p>
+  <div class="links"><a href="https://github.com/ssloy/tinyrenderer">GitHub</a><a href="https://haqr.eu/tinyrenderer/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#3d</span><span>#3d-graphics</span><span>#c-plus-plus</span></div>
-</article><article class="card" id="p-blender-blender" data-repo="blender/blender" data-search="blender blender/blender blender 官方原始碼，涵蓋建模、動畫、合成、剪接同渲染。呢個係軟件本身嘅程式庫，想改功能、寫分支或者理解 blender 點樣運作先需要佢。日常用 blender 唔使下載呢個倉庫，改程式或者自編譯先要。 official mirror of blender c++ 3d animation b3d computer-graphics modeling rendering">
+</article><article class="card" id="p-blender-blender" data-repo="blender/blender" data-search="blender blender/blender blender 官方原始碼，涵蓋建模、動畫、合成、剪接同渲染。呢個係軟件本身嘅程式庫，想改功能、寫分支或者理解 blender 點樣運作先需要佢。日常用 blender 唔使下載呢個倉庫，改程式或者自編譯先要。 the official blender source code, covering modeling, animation, compositing, video editing, and rendering. this is the software&#x27;s own codebase, and you need it to change features, write a fork, or understand how blender works. everyday use of blender does not require downloading this repository. you need it only to change the program or build it yourself. official mirror of blender c++ 3d animation b3d computer-graphics modeling rendering">
   <header>
     <h3><span class="rank">09</span><a href="https://github.com/blender/blender">blender</a></h3>
     <div class="stars">★ 21,414</div>
   </header>
-  <p class="meta">blender/blender · C++ · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">Blender 官方原始碼，涵蓋建模、動畫、合成、剪接同渲染。呢個係軟件本身嘅程式庫，想改功能、寫分支或者理解 Blender 點樣運作先需要佢。日常用 Blender 唔使下載呢個倉庫，改程式或者自編譯先要。</p>
-  <div class="links"><a href="https://github.com/blender/blender">GitHub</a><a href="https://developer.blender.org/docs/handbook/contributing/using_git/#github-mirror">主頁</a></div>
+  <p class="meta">blender/blender · C++ · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">Blender 官方原始碼，涵蓋建模、動畫、合成、剪接同渲染。呢個係軟件本身嘅程式庫，想改功能、寫分支或者理解 Blender 點樣運作先需要佢。日常用 Blender 唔使下載呢個倉庫，改程式或者自編譯先要。</span><span class="t-en">The official Blender source code, covering modeling, animation, compositing, video editing, and rendering. This is the software&#x27;s own codebase, and you need it to change features, write a fork, or understand how Blender works. Everyday use of Blender does not require downloading this repository. You need it only to change the program or build it yourself.</span></p>
+  <div class="links"><a href="https://github.com/blender/blender">GitHub</a><a href="https://developer.blender.org/docs/handbook/contributing/using_git/#github-mirror"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#3d</span><span>#animation</span><span>#b3d</span></div>
-</article><article class="card" id="p-google-filament" data-repo="google/filament" data-search="filament google/filament google 嘅即時物理式渲染引擎，可用喺多個平台。重點係材質同燈光比較接近真實，適合要喺應用入面嵌一個高質即時渲染器，而唔係整套 dcc 軟件。要嵌進自己嘅應用做即時畫面，而唔係取代 blender。 filament is a real-time physically based rendering engine for android, ios, windows, linux, macos, and webgl2 c++ 3d-graphics android gltf gltf-viewer graphics metal opengl opengl-es">
+</article><article class="card" id="p-google-filament" data-repo="google/filament" data-search="filament google/filament google 嘅即時物理式渲染引擎，可用喺多個平台。重點係材質同燈光比較接近真實，適合要喺應用入面嵌一個高質即時渲染器，而唔係整套 dcc 軟件。要嵌進自己嘅應用做即時畫面，而唔係取代 blender。 google&#x27;s real-time physically based rendering engine, usable on multiple platforms. the emphasis is materials and lighting that stay closer to reality, for embedding a high-quality real-time renderer in an application rather than building a full dcc application. it is meant to be embedded in your own application for real-time images, not to replace blender. filament is a real-time physically based rendering engine for android, ios, windows, linux, macos, and webgl2 c++ 3d-graphics android gltf gltf-viewer graphics metal opengl opengl-es">
   <header>
     <h3><span class="rank">10</span><a href="https://github.com/google/filament">filament</a></h3>
     <div class="stars">★ 20,667</div>
   </header>
-  <p class="meta">google/filament · C++ · Apache-2.0 · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">Google 嘅即時物理式渲染引擎，可用喺多個平台。重點係材質同燈光比較接近真實，適合要喺應用入面嵌一個高質即時渲染器，而唔係整套 DCC 軟件。要嵌進自己嘅應用做即時畫面，而唔係取代 Blender。</p>
-  <div class="links"><a href="https://github.com/google/filament">GitHub</a><a href="https://google.github.io/filament/">主頁</a></div>
+  <p class="meta">google/filament · C++ · Apache-2.0 · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">Google 嘅即時物理式渲染引擎，可用喺多個平台。重點係材質同燈光比較接近真實，適合要喺應用入面嵌一個高質即時渲染器，而唔係整套 DCC 軟件。要嵌進自己嘅應用做即時畫面，而唔係取代 Blender。</span><span class="t-en">Google&#x27;s real-time physically based rendering engine, usable on multiple platforms. The emphasis is materials and lighting that stay closer to reality, for embedding a high-quality real-time renderer in an application rather than building a full DCC application. It is meant to be embedded in your own application for real-time images, not to replace Blender.</span></p>
+  <div class="links"><a href="https://github.com/google/filament">GitHub</a><a href="https://google.github.io/filament/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#3d-graphics</span><span>#android</span><span>#gltf</span></div>
-</article><article class="card" id="p-bkaradzic-bgfx" data-repo="bkaradzic/bgfx" data-search="bgfx bkaradzic/bgfx 跨圖形 api 嘅渲染庫，方便自己嘅引擎接 opengl、direct3d、vulkan 同 metal。你寫一套渲染呼叫，由佢處理不同平台嘅後端差異。自己寫引擎時用佢擋低各平台圖形 api 嘅差異。 cross-platform, graphics api agnostic, &quot;bring your own engine/framework&quot; style rendering library. c++ d3d11 d3d12 directx directx-11 directx-12 engine gamedev gles">
+</article><article class="card" id="p-bkaradzic-bgfx" data-repo="bkaradzic/bgfx" data-search="bgfx bkaradzic/bgfx 跨圖形 api 嘅渲染庫，方便自己嘅引擎接 opengl、direct3d、vulkan 同 metal。你寫一套渲染呼叫，由佢處理不同平台嘅後端差異。自己寫引擎時用佢擋低各平台圖形 api 嘅差異。 a cross-graphics-api rendering library that lets your own engine target opengl, direct3d, vulkan, and metal. you write one set of rendering calls, and it handles backend differences across platforms. when writing your own engine, use it to absorb the differences between each platform&#x27;s graphics api. cross-platform, graphics api agnostic, &quot;bring your own engine/framework&quot; style rendering library. c++ d3d11 d3d12 directx directx-11 directx-12 engine gamedev gles">
   <header>
     <h3><span class="rank">11</span><a href="https://github.com/bkaradzic/bgfx">bgfx</a></h3>
     <div class="stars">★ 17,595</div>
   </header>
-  <p class="meta">bkaradzic/bgfx · C++ · BSD-2-Clause · <time class="pushed" datetime="2026-10-29">最近推送 2026-10-29</time></p>
-  <p class="summary">跨圖形 API 嘅渲染庫，方便自己嘅引擎接 OpenGL、Direct3D、Vulkan 同 Metal。你寫一套渲染呼叫，由佢處理不同平台嘅後端差異。自己寫引擎時用佢擋低各平台圖形 API 嘅差異。</p>
-  <div class="links"><a href="https://github.com/bkaradzic/bgfx">GitHub</a><a href="https://bkaradzic.github.io/bgfx/overview.html">主頁</a></div>
+  <p class="meta">bkaradzic/bgfx · C++ · BSD-2-Clause · <time class="pushed" datetime="2026-10-29"><span class="t-zh">最近推送 2026-10-29</span><span class="t-en">Pushed 2026-10-29</span></time></p>
+  <p class="summary"><span class="t-zh">跨圖形 API 嘅渲染庫，方便自己嘅引擎接 OpenGL、Direct3D、Vulkan 同 Metal。你寫一套渲染呼叫，由佢處理不同平台嘅後端差異。自己寫引擎時用佢擋低各平台圖形 API 嘅差異。</span><span class="t-en">A cross-graphics-API rendering library that lets your own engine target OpenGL, Direct3D, Vulkan, and Metal. You write one set of rendering calls, and it handles backend differences across platforms. When writing your own engine, use it to absorb the differences between each platform&#x27;s graphics API.</span></p>
+  <div class="links"><a href="https://github.com/bkaradzic/bgfx">GitHub</a><a href="https://bkaradzic.github.io/bgfx/overview.html"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#d3d11</span><span>#d3d12</span><span>#directx</span></div>
-</article><article class="card" id="p-nvlabs-instant-ngp" data-repo="NVlabs/instant-ngp" data-search="instant-ngp nvlabs/instant-ngp nvidia 嘅即時神經圖形基元，大幅加快 nerf 一類場景嘅訓練同渲染。用哈希編碼同顯示卡加速，令由相片學一個場景唔使再等好耐。nerf 訓練由幾小時縮到短很多，先令呢類場景變得實用。 instant neural graphics primitives: lightning fast nerf and more cuda 3d-reconstruction computer-graphics computer-vision cuda function-approximation machine-learning nerf neural-network">
+</article><article class="card" id="p-nvlabs-instant-ngp" data-repo="NVlabs/instant-ngp" data-search="instant-ngp nvlabs/instant-ngp nvidia 嘅即時神經圖形基元，大幅加快 nerf 一類場景嘅訓練同渲染。用哈希編碼同顯示卡加速，令由相片學一個場景唔使再等好耐。nerf 訓練由幾小時縮到短很多，先令呢類場景變得實用。 nvidia&#x27;s instant neural graphics primitives, which greatly speed up training and rendering of nerf-style scenes. hash encoding and gpu acceleration mean learning a scene from photos no longer takes a long wait. cutting nerf training from several hours to much less is what made this kind of scene practical. instant neural graphics primitives: lightning fast nerf and more cuda 3d-reconstruction computer-graphics computer-vision cuda function-approximation machine-learning nerf neural-network">
   <header>
     <h3><span class="rank">12</span><a href="https://github.com/NVlabs/instant-ngp">instant-ngp</a></h3>
     <div class="stars">★ 17,583</div>
   </header>
-  <p class="meta">NVlabs/instant-ngp · Cuda · <time class="pushed" datetime="2026-02-02">最近推送 2026-02-02</time></p>
-  <p class="summary">NVIDIA 嘅即時神經圖形基元，大幅加快 NeRF 一類場景嘅訓練同渲染。用哈希編碼同顯示卡加速，令由相片學一個場景唔使再等好耐。NeRF 訓練由幾小時縮到短很多，先令呢類場景變得實用。</p>
-  <div class="links"><a href="https://github.com/NVlabs/instant-ngp">GitHub</a><a href="https://nvlabs.github.io/instant-ngp">主頁</a><a href="https://arxiv.org/abs/2201.05989">論文</a></div>
+  <p class="meta">NVlabs/instant-ngp · Cuda · <time class="pushed" datetime="2026-02-02"><span class="t-zh">最近推送 2026-02-02</span><span class="t-en">Pushed 2026-02-02</span></time></p>
+  <p class="summary"><span class="t-zh">NVIDIA 嘅即時神經圖形基元，大幅加快 NeRF 一類場景嘅訓練同渲染。用哈希編碼同顯示卡加速，令由相片學一個場景唔使再等好耐。NeRF 訓練由幾小時縮到短很多，先令呢類場景變得實用。</span><span class="t-en">NVIDIA&#x27;s instant neural graphics primitives, which greatly speed up training and rendering of NeRF-style scenes. Hash encoding and GPU acceleration mean learning a scene from photos no longer takes a long wait. Cutting NeRF training from several hours to much less is what made this kind of scene practical.</span></p>
+  <div class="links"><a href="https://github.com/NVlabs/instant-ngp">GitHub</a><a href="https://nvlabs.github.io/instant-ngp"><span class="t-zh">主頁</span><span class="t-en">Home</span></a><a href="https://arxiv.org/abs/2201.05989"><span class="t-zh">論文</span><span class="t-en">Paper</span></a></div>
   <div class="topics"><span>#3d-reconstruction</span><span>#computer-graphics</span><span>#computer-vision</span></div>
-</article><article class="card" id="p-playcanvas-engine" data-repo="playcanvas/engine" data-search="engine playcanvas/engine 建基於 webgl、webgpu 同 gltf 嘅網頁圖形引擎。用來喺瀏覽器載入三維場景同做互動，編輯器生態亦圍繞呢個執行核心。場景用 gltf 載入，編輯器同運行時都圍繞呢個核心。 powerful web graphics runtime built on webgl, webgpu, webxr and gltf javascript 3d-gaussian-splatting 3dgs game-development game-engine gamedev gaussian-splatting gltf hacktoberfest">
+</article><article class="card" id="p-playcanvas-engine" data-repo="playcanvas/engine" data-search="engine playcanvas/engine 建基於 webgl、webgpu 同 gltf 嘅網頁圖形引擎。用來喺瀏覽器載入三維場景同做互動，編輯器生態亦圍繞呢個執行核心。場景用 gltf 載入，編輯器同運行時都圍繞呢個核心。 a web graphics engine built on webgl, webgpu, and gltf. it loads 3d scenes and runs interaction in the browser, and the editor ecosystem is built around this runtime core. scenes load through gltf, and both the editor and the runtime are built around this core. powerful web graphics runtime built on webgl, webgpu, webxr and gltf javascript 3d-gaussian-splatting 3dgs game-development game-engine gamedev gaussian-splatting gltf hacktoberfest">
   <header>
     <h3><span class="rank">13</span><a href="https://github.com/playcanvas/engine">engine</a></h3>
     <div class="stars">★ 17,159</div>
   </header>
-  <p class="meta">playcanvas/engine · JavaScript · MIT · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">建基於 WebGL、WebGPU 同 glTF 嘅網頁圖形引擎。用來喺瀏覽器載入三維場景同做互動，編輯器生態亦圍繞呢個執行核心。場景用 glTF 載入，編輯器同運行時都圍繞呢個核心。</p>
-  <div class="links"><a href="https://github.com/playcanvas/engine">GitHub</a><a href="https://playcanvas.com">主頁</a></div>
+  <p class="meta">playcanvas/engine · JavaScript · MIT · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">建基於 WebGL、WebGPU 同 glTF 嘅網頁圖形引擎。用來喺瀏覽器載入三維場景同做互動，編輯器生態亦圍繞呢個執行核心。場景用 glTF 載入，編輯器同運行時都圍繞呢個核心。</span><span class="t-en">A web graphics engine built on WebGL, WebGPU, and glTF. It loads 3D scenes and runs interaction in the browser, and the editor ecosystem is built around this runtime core. Scenes load through glTF, and both the editor and the runtime are built around this core.</span></p>
+  <div class="links"><a href="https://github.com/playcanvas/engine">GitHub</a><a href="https://playcanvas.com"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#3d-gaussian-splatting</span><span>#3dgs</span><span>#game-development</span></div>
-</article><article class="card" id="p-bulletphysics-bullet3" data-repo="bulletphysics/bullet3" data-search="bullet3 bulletphysics/bullet3 即時碰撞偵測同物理模擬庫，常用於視覺效果、遊戲同機器人。剛體、約束同碰撞可以放進自己嘅場景，而唔使自己由零寫物理。特效、遊戲同機器人都可以共用同一套碰撞同剛體。碰撞結果可以再交俾渲染或機械人控制。 bullet physics sdk: real-time collision detection and multi-physics simulation for vr, games, visual effects, robotics, machine learning etc. c++ computer-animation game-development kinematics pybullet reinforcement-learning robotics simulation simulator">
+</article><article class="card" id="p-bulletphysics-bullet3" data-repo="bulletphysics/bullet3" data-search="bullet3 bulletphysics/bullet3 即時碰撞偵測同物理模擬庫，常用於視覺效果、遊戲同機器人。剛體、約束同碰撞可以放進自己嘅場景，而唔使自己由零寫物理。特效、遊戲同機器人都可以共用同一套碰撞同剛體。碰撞結果可以再交俾渲染或機械人控制。 a real-time collision detection and physics library, commonly used in visual effects, games, and robotics. rigid bodies, constraints, and collisions can go into your own scene without writing physics from scratch. effects, games, and robots can share the same collision and rigid-body system. collision results can then be passed on to rendering or robot control. bullet physics sdk: real-time collision detection and multi-physics simulation for vr, games, visual effects, robotics, machine learning etc. c++ computer-animation game-development kinematics pybullet reinforcement-learning robotics simulation simulator">
   <header>
     <h3><span class="rank">14</span><a href="https://github.com/bulletphysics/bullet3">bullet3</a></h3>
     <div class="stars">★ 14,828</div>
   </header>
-  <p class="meta">bulletphysics/bullet3 · C++ · <time class="pushed" datetime="2026-10-10">最近推送 2026-10-10</time></p>
-  <p class="summary">即時碰撞偵測同物理模擬庫，常用於視覺效果、遊戲同機器人。剛體、約束同碰撞可以放進自己嘅場景，而唔使自己由零寫物理。特效、遊戲同機器人都可以共用同一套碰撞同剛體。碰撞結果可以再交俾渲染或機械人控制。</p>
-  <div class="links"><a href="https://github.com/bulletphysics/bullet3">GitHub</a><a href="http://bulletphysics.org">主頁</a></div>
+  <p class="meta">bulletphysics/bullet3 · C++ · <time class="pushed" datetime="2026-10-10"><span class="t-zh">最近推送 2026-10-10</span><span class="t-en">Pushed 2026-10-10</span></time></p>
+  <p class="summary"><span class="t-zh">即時碰撞偵測同物理模擬庫，常用於視覺效果、遊戲同機器人。剛體、約束同碰撞可以放進自己嘅場景，而唔使自己由零寫物理。特效、遊戲同機器人都可以共用同一套碰撞同剛體。碰撞結果可以再交俾渲染或機械人控制。</span><span class="t-en">A real-time collision detection and physics library, commonly used in visual effects, games, and robotics. Rigid bodies, constraints, and collisions can go into your own scene without writing physics from scratch. Effects, games, and robots can share the same collision and rigid-body system. Collision results can then be passed on to rendering or robot control.</span></p>
+  <div class="links"><a href="https://github.com/bulletphysics/bullet3">GitHub</a><a href="http://bulletphysics.org"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#computer-animation</span><span>#game-development</span><span>#kinematics</span></div>
-</article><article class="card" id="p-isl-org-open3d" data-repo="isl-org/Open3D" data-search="open3d isl-org/open3d 現代 3d 數據處理庫，用嚟做點雲、網格同視覺化。掃描數據可以喺度濾波、配準同重建，python 同 c++ 都可以呼叫。掃描點雲嘅清理同配準可以喺 python 入面做完再視覺化。 open3d: a modern library for 3d data processing c++ 3d 3d-perception arm computer-graphics cpp cuda gpu gui">
+</article><article class="card" id="p-isl-org-open3d" data-repo="isl-org/Open3D" data-search="open3d isl-org/open3d 現代 3d 數據處理庫，用嚟做點雲、網格同視覺化。掃描數據可以喺度濾波、配準同重建，python 同 c++ 都可以呼叫。掃描點雲嘅清理同配準可以喺 python 入面做完再視覺化。 a modern 3d data processing library for point clouds, meshes, and visualization. scan data can be filtered, registered, and reconstructed here, and both python and c++ can call it. cleaning and registration of scanned point clouds can be finished in python and then visualized. open3d: a modern library for 3d data processing c++ 3d 3d-perception arm computer-graphics cpp cuda gpu gui">
   <header>
     <h3><span class="rank">15</span><a href="https://github.com/isl-org/Open3D">Open3D</a></h3>
     <div class="stars">★ 14,142</div>
   </header>
-  <p class="meta">isl-org/Open3D · C++ · <time class="pushed" datetime="2026-09-30">最近推送 2026-09-30</time></p>
-  <p class="summary">現代 3D 數據處理庫，用嚟做點雲、網格同視覺化。掃描數據可以喺度濾波、配準同重建，Python 同 C++ 都可以呼叫。掃描點雲嘅清理同配準可以喺 Python 入面做完再視覺化。</p>
-  <div class="links"><a href="https://github.com/isl-org/Open3D">GitHub</a><a href="http://www.open3d.org">主頁</a></div>
+  <p class="meta">isl-org/Open3D · C++ · <time class="pushed" datetime="2026-09-30"><span class="t-zh">最近推送 2026-09-30</span><span class="t-en">Pushed 2026-09-30</span></time></p>
+  <p class="summary"><span class="t-zh">現代 3D 數據處理庫，用嚟做點雲、網格同視覺化。掃描數據可以喺度濾波、配準同重建，Python 同 C++ 都可以呼叫。掃描點雲嘅清理同配準可以喺 Python 入面做完再視覺化。</span><span class="t-en">A modern 3D data processing library for point clouds, meshes, and visualization. Scan data can be filtered, registered, and reconstructed here, and both Python and C++ can call it. Cleaning and registration of scanned point clouds can be finished in Python and then visualized.</span></p>
+  <div class="links"><a href="https://github.com/isl-org/Open3D">GitHub</a><a href="http://www.open3d.org"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#3d</span><span>#3d-perception</span><span>#arm</span></div>
-</article><article class="card" id="p-assimp-assimp" data-repo="assimp/assimp" data-search="assimp assimp/assimp 將四十幾種 3d 檔案格式讀入同一個數據結構。遊戲同工具用佢讀 fbx、gltf、obj 等模型，再轉成自己引擎需要嘅網格同材質。上游軟件匯出咩格式都先讀入同一結構，引擎先好處理。 the official open-asset-importer-library repository. loads 40+ 3d-file-formats into one unified and clean data structure. c++ 3mf android asset-pipeline assets assimp c-plus-plus collada dae">
+</article><article class="card" id="p-assimp-assimp" data-repo="assimp/assimp" data-search="assimp assimp/assimp 將四十幾種 3d 檔案格式讀入同一個數據結構。遊戲同工具用佢讀 fbx、gltf、obj 等模型，再轉成自己引擎需要嘅網格同材質。上游軟件匯出咩格式都先讀入同一結構，引擎先好處理。 reads more than forty 3d file formats into one data structure. games and tools use it to read models such as fbx, gltf, and obj, then convert them into the meshes and materials their own engine needs. whatever format upstream software exports is read into that same structure first, so the engine can handle it. the official open-asset-importer-library repository. loads 40+ 3d-file-formats into one unified and clean data structure. c++ 3mf android asset-pipeline assets assimp c-plus-plus collada dae">
   <header>
     <h3><span class="rank">16</span><a href="https://github.com/assimp/assimp">assimp</a></h3>
     <div class="stars">★ 13,294</div>
   </header>
-  <p class="meta">assimp/assimp · C++ · <time class="pushed" datetime="2026-10-29">最近推送 2026-10-29</time></p>
-  <p class="summary">將四十幾種 3D 檔案格式讀入同一個數據結構。遊戲同工具用佢讀 FBX、glTF、OBJ 等模型，再轉成自己引擎需要嘅網格同材質。上游軟件匯出咩格式都先讀入同一結構，引擎先好處理。</p>
-  <div class="links"><a href="https://github.com/assimp/assimp">GitHub</a><a href="https://www.assimp.org">主頁</a></div>
+  <p class="meta">assimp/assimp · C++ · <time class="pushed" datetime="2026-10-29"><span class="t-zh">最近推送 2026-10-29</span><span class="t-en">Pushed 2026-10-29</span></time></p>
+  <p class="summary"><span class="t-zh">將四十幾種 3D 檔案格式讀入同一個數據結構。遊戲同工具用佢讀 FBX、glTF、OBJ 等模型，再轉成自己引擎需要嘅網格同材質。上游軟件匯出咩格式都先讀入同一結構，引擎先好處理。</span><span class="t-en">Reads more than forty 3D file formats into one data structure. Games and tools use it to read models such as FBX, glTF, and OBJ, then convert them into the meshes and materials their own engine needs. Whatever format upstream software exports is read into that same structure first, so the engine can handle it.</span></p>
+  <div class="links"><a href="https://github.com/assimp/assimp">GitHub</a><a href="https://www.assimp.org"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#3mf</span><span>#android</span><span>#asset-pipeline</span></div>
-</article><article class="card" id="p-alicevision-meshroom" data-repo="alicevision/Meshroom" data-search="meshroom alicevision/meshroom 節點式攝影測量工具，可以由相片重建三維模型。你放入一組從不同角度拍嘅相，流程會估計相機同生成網格，適合實物掃描。實物拍一圈相就可以重建，節點可以按需要改流程。拍得越完整，重建出嚟嘅模型越穩。 node-based visual programming toolbox python 3d-reconstruction alicevision camera-tracking computer-vision hdr-imaging image-stitching meshroom multi-view-stereo">
+</article><article class="card" id="p-alicevision-meshroom" data-repo="alicevision/Meshroom" data-search="meshroom alicevision/meshroom 節點式攝影測量工具，可以由相片重建三維模型。你放入一組從不同角度拍嘅相，流程會估計相機同生成網格，適合實物掃描。實物拍一圈相就可以重建，節點可以按需要改流程。拍得越完整，重建出嚟嘅模型越穩。 a node-based photogrammetry tool that reconstructs a 3d model from photos. you provide a set of photos taken from different angles, and the pipeline estimates the cameras and generates a mesh, which suits scanning real objects. photographing an object all the way around is enough to reconstruct it, and the nodes let you change the pipeline as needed. the more completely you photograph it, the more stable the reconstructed model. node-based visual programming toolbox python 3d-reconstruction alicevision camera-tracking computer-vision hdr-imaging image-stitching meshroom multi-view-stereo">
   <header>
     <h3><span class="rank">17</span><a href="https://github.com/alicevision/Meshroom">Meshroom</a></h3>
     <div class="stars">★ 13,052</div>
   </header>
-  <p class="meta">alicevision/Meshroom · Python · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">節點式攝影測量工具，可以由相片重建三維模型。你放入一組從不同角度拍嘅相，流程會估計相機同生成網格，適合實物掃描。實物拍一圈相就可以重建，節點可以按需要改流程。拍得越完整，重建出嚟嘅模型越穩。</p>
-  <div class="links"><a href="https://github.com/alicevision/Meshroom">GitHub</a><a href="http://meshroom.org">主頁</a></div>
+  <p class="meta">alicevision/Meshroom · Python · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">節點式攝影測量工具，可以由相片重建三維模型。你放入一組從不同角度拍嘅相，流程會估計相機同生成網格，適合實物掃描。實物拍一圈相就可以重建，節點可以按需要改流程。拍得越完整，重建出嚟嘅模型越穩。</span><span class="t-en">A node-based photogrammetry tool that reconstructs a 3D model from photos. You provide a set of photos taken from different angles, and the pipeline estimates the cameras and generates a mesh, which suits scanning real objects. Photographing an object all the way around is enough to reconstruct it, and the nodes let you change the pipeline as needed. The more completely you photograph it, the more stable the reconstructed model.</span></p>
+  <div class="links"><a href="https://github.com/alicevision/Meshroom">GitHub</a><a href="http://meshroom.org"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#3d-reconstruction</span><span>#alicevision</span><span>#camera-tracking</span></div>
-</article><article class="card" id="p-facebookresearch-pytorch3d" data-repo="facebookresearch/pytorch3d" data-search="pytorch3d facebookresearch/pytorch3d 用 pytorch 做 3d 深度學習嘅組件庫。網格、相機同可微分渲染都可以放進訓練流程，適合研究三維視覺，而唔係做最終動畫軟件。研究三維網絡時用，而唔係拿嚟做最終動畫製作。 pytorch3d is fair&#x27;s library of reusable components for deep learning with 3d data python ">
+</article><article class="card" id="p-facebookresearch-pytorch3d" data-repo="facebookresearch/pytorch3d" data-search="pytorch3d facebookresearch/pytorch3d 用 pytorch 做 3d 深度學習嘅組件庫。網格、相機同可微分渲染都可以放進訓練流程，適合研究三維視覺，而唔係做最終動畫軟件。研究三維網絡時用，而唔係拿嚟做最終動畫製作。 a component library for 3d deep learning with pytorch. meshes, cameras, and differentiable rendering can go into a training pipeline. it suits research in 3d vision rather than making finished animation software. use it when researching 3d networks, not for final animation production. pytorch3d is fair&#x27;s library of reusable components for deep learning with 3d data python ">
   <header>
     <h3><span class="rank">18</span><a href="https://github.com/facebookresearch/pytorch3d">pytorch3d</a></h3>
     <div class="stars">★ 9,991</div>
   </header>
-  <p class="meta">facebookresearch/pytorch3d · Python · <time class="pushed" datetime="2026-10-20">最近推送 2026-10-20</time></p>
-  <p class="summary">用 PyTorch 做 3D 深度學習嘅組件庫。網格、相機同可微分渲染都可以放進訓練流程，適合研究三維視覺，而唔係做最終動畫軟件。研究三維網絡時用，而唔係拿嚟做最終動畫製作。</p>
-  <div class="links"><a href="https://github.com/facebookresearch/pytorch3d">GitHub</a><a href="https://pytorch3d.org/">主頁</a></div>
+  <p class="meta">facebookresearch/pytorch3d · Python · <time class="pushed" datetime="2026-10-20"><span class="t-zh">最近推送 2026-10-20</span><span class="t-en">Pushed 2026-10-20</span></time></p>
+  <p class="summary"><span class="t-zh">用 PyTorch 做 3D 深度學習嘅組件庫。網格、相機同可微分渲染都可以放進訓練流程，適合研究三維視覺，而唔係做最終動畫軟件。研究三維網絡時用，而唔係拿嚟做最終動畫製作。</span><span class="t-en">A component library for 3D deep learning with PyTorch. Meshes, cameras, and differentiable rendering can go into a training pipeline. It suits research in 3D vision rather than making finished animation software. Use it when researching 3D networks, not for final animation production.</span></p>
+  <div class="links"><a href="https://github.com/facebookresearch/pytorch3d">GitHub</a><a href="https://pytorch3d.org/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   
-</article><article class="card" id="p-domlysz-blendergis" data-repo="domlysz/BlenderGIS" data-search="blendergis domlysz/blendergis blender 插件，用嚟將地理數據帶入三維場景。可以拉底圖、數值高程同地圖幾何，喺 blender 入面砌地形同實景，而唔使先用另一個 gis 軟件轉檔。適合做地圖可視化同場景佈置。 blender addons to make the bridge between blender and geographic data python 3d 3d-map 3dgis addon basemap blender delaunay-triangulation dem">
+</article><article class="card" id="p-domlysz-blendergis" data-repo="domlysz/BlenderGIS" data-search="blendergis domlysz/blendergis blender 插件，用嚟將地理數據帶入三維場景。可以拉底圖、數值高程同地圖幾何，喺 blender 入面砌地形同實景，而唔使先用另一個 gis 軟件轉檔。適合做地圖可視化同場景佈置。 a blender add-on for bringing geographic data into a 3d scene. it can pull basemaps, digital elevation, and map geometry, and build terrain and real-world scenery inside blender, without first converting files in another gis program. it suits map visualization and scene layout. blender addons to make the bridge between blender and geographic data python 3d 3d-map 3dgis addon basemap blender delaunay-triangulation dem">
   <header>
     <h3><span class="rank">19</span><a href="https://github.com/domlysz/BlenderGIS">BlenderGIS</a></h3>
     <div class="stars">★ 9,547</div>
   </header>
-  <p class="meta">domlysz/BlenderGIS · Python · GPL-3.0 · <time class="pushed" datetime="2025-12-21">最近推送 2025-12-21</time></p>
-  <p class="summary">Blender 插件，用嚟將地理數據帶入三維場景。可以拉底圖、數值高程同地圖幾何，喺 Blender 入面砌地形同實景，而唔使先用另一個 GIS 軟件轉檔。適合做地圖可視化同場景佈置。</p>
+  <p class="meta">domlysz/BlenderGIS · Python · GPL-3.0 · <time class="pushed" datetime="2025-12-21"><span class="t-zh">最近推送 2025-12-21</span><span class="t-en">Pushed 2025-12-21</span></time></p>
+  <p class="summary"><span class="t-zh">Blender 插件，用嚟將地理數據帶入三維場景。可以拉底圖、數值高程同地圖幾何，喺 Blender 入面砌地形同實景，而唔使先用另一個 GIS 軟件轉檔。適合做地圖可視化同場景佈置。</span><span class="t-en">A Blender add-on for bringing geographic data into a 3D scene. It can pull basemaps, digital elevation, and map geometry, and build terrain and real-world scenery inside Blender, without first converting files in another GIS program. It suits map visualization and scene layout.</span></p>
   <div class="links"><a href="https://github.com/domlysz/BlenderGIS">GitHub</a></div>
   <div class="topics"><span>#3d</span><span>#3d-map</span><span>#3dgis</span></div>
-</article><article class="card" id="p-carson-katri-dream-textures" data-repo="carson-katri/dream-textures" data-search="dream-textures carson-katri/dream-textures 內置喺 blender 嘅 stable diffusion，可以直接喺場景入面生成貼圖。你留喺 blender 用提示詞出材質或圖像，再貼到模型上，少一次匯出同匯入。貼圖喺 blender 入面生成，模型唔使匯出去另一個軟件再貼返。 stable diffusion built-in to blender python ai blender blender-addon image-generation stable-diffusion">
+</article><article class="card" id="p-carson-katri-dream-textures" data-repo="carson-katri/dream-textures" data-search="dream-textures carson-katri/dream-textures 內置喺 blender 嘅 stable diffusion，可以直接喺場景入面生成貼圖。你留喺 blender 用提示詞出材質或圖像，再貼到模型上，少一次匯出同匯入。貼圖喺 blender 入面生成，模型唔使匯出去另一個軟件再貼返。 stable diffusion built into blender, so you can generate textures directly in the scene. you stay in blender, use a prompt to produce a material or image, and apply it to the model, which saves an export and an import. textures are generated inside blender, so the model does not have to be exported to another program and textured there before it comes back. stable diffusion built-in to blender python ai blender blender-addon image-generation stable-diffusion">
   <header>
     <h3><span class="rank">20</span><a href="https://github.com/carson-katri/dream-textures">dream-textures</a></h3>
     <div class="stars">★ 8,232</div>
   </header>
-  <p class="meta">carson-katri/dream-textures · Python · GPL-3.0 · <time class="pushed" datetime="2026-09-17">最近推送 2026-09-17</time></p>
-  <p class="summary">內置喺 Blender 嘅 Stable Diffusion，可以直接喺場景入面生成貼圖。你留喺 Blender 用提示詞出材質或圖像，再貼到模型上，少一次匯出同匯入。貼圖喺 Blender 入面生成，模型唔使匯出去另一個軟件再貼返。</p>
+  <p class="meta">carson-katri/dream-textures · Python · GPL-3.0 · <time class="pushed" datetime="2026-09-17"><span class="t-zh">最近推送 2026-09-17</span><span class="t-en">Pushed 2026-09-17</span></time></p>
+  <p class="summary"><span class="t-zh">內置喺 Blender 嘅 Stable Diffusion，可以直接喺場景入面生成貼圖。你留喺 Blender 用提示詞出材質或圖像，再貼到模型上，少一次匯出同匯入。貼圖喺 Blender 入面生成，模型唔使匯出去另一個軟件再貼返。</span><span class="t-en">Stable Diffusion built into Blender, so you can generate textures directly in the scene. You stay in Blender, use a prompt to produce a material or image, and apply it to the model, which saves an export and an import. Textures are generated inside Blender, so the model does not have to be exported to another program and textured there before it comes back.</span></p>
   <div class="links"><a href="https://github.com/carson-katri/dream-textures">GitHub</a></div>
   <div class="topics"><span>#ai</span><span>#blender</span><span>#blender-addon</span></div>
-</article><article class="card" id="p-storytold-effectcraft" data-repo="storytold/effectcraft" data-search="effectcraft storytold/effectcraft 用 rust 寫嘅開源動態圖形同合成軟件。你可以喺時間線上砌畫面同效果，而唔使靠訂閱制嘅合成工具。程式由作者自己寫，適合想有一個輕量合成器嘅人。同剪輯成片係兩種工作。 effectcraft: an open-source motion graphics and compositing tool written by scratch in pure rust rust art compositing compositing-software motion-graphics rust">
+</article><article class="card" id="p-storytold-effectcraft" data-repo="storytold/effectcraft" data-search="effectcraft storytold/effectcraft 用 rust 寫嘅開源動態圖形同合成軟件。你可以喺時間線上砌畫面同效果，而唔使靠訂閱制嘅合成工具。程式由作者自己寫，適合想有一個輕量合成器嘅人。同剪輯成片係兩種工作。 open-source motion-graphics and compositing software written in rust. you can build frames and effects on a timeline without relying on a subscription compositing tool. the program is written by the author, and it suits people who want a lightweight compositor. compositing and editing a finished film are two different jobs. effectcraft: an open-source motion graphics and compositing tool written by scratch in pure rust rust art compositing compositing-software motion-graphics rust">
   <header>
     <h3><span class="rank">21</span><a href="https://github.com/storytold/effectcraft">effectcraft</a></h3>
     <div class="stars">★ 8,150</div>
   </header>
-  <p class="meta">storytold/effectcraft · Rust · Apache-2.0 · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">用 Rust 寫嘅開源動態圖形同合成軟件。你可以喺時間線上砌畫面同效果，而唔使靠訂閱制嘅合成工具。程式由作者自己寫，適合想有一個輕量合成器嘅人。同剪輯成片係兩種工作。</p>
-  <div class="links"><a href="https://github.com/storytold/effectcraft">GitHub</a><a href="https://getartcraft.com/apps/effectcraft">主頁</a></div>
+  <p class="meta">storytold/effectcraft · Rust · Apache-2.0 · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">用 Rust 寫嘅開源動態圖形同合成軟件。你可以喺時間線上砌畫面同效果，而唔使靠訂閱制嘅合成工具。程式由作者自己寫，適合想有一個輕量合成器嘅人。同剪輯成片係兩種工作。</span><span class="t-en">Open-source motion-graphics and compositing software written in Rust. You can build frames and effects on a timeline without relying on a subscription compositing tool. The program is written by the author, and it suits people who want a lightweight compositor. Compositing and editing a finished film are two different jobs.</span></p>
+  <div class="links"><a href="https://github.com/storytold/effectcraft">GitHub</a><a href="https://getartcraft.com/apps/effectcraft"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#art</span><span>#compositing</span><span>#compositing-software</span></div>
-</article><article class="card" id="p-opentoonz-opentoonz" data-repo="opentoonz/opentoonz" data-search="opentoonz opentoonz/opentoonz 功能完整嘅開源 2d 動畫製作軟件。掃描、上色、時間線同特效都包含在內，係傳統手繪動畫流程可以用嘅免費工具。掃描線稿、上色同時間線可以留喺同一套 2d 動畫流程。上色同時間線不用分開兩個軟件。 opentoonz - an open-source full-featured 2d animation creation software c++ ">
+</article><article class="card" id="p-opentoonz-opentoonz" data-repo="opentoonz/opentoonz" data-search="opentoonz opentoonz/opentoonz 功能完整嘅開源 2d 動畫製作軟件。掃描、上色、時間線同特效都包含在內，係傳統手繪動畫流程可以用嘅免費工具。掃描線稿、上色同時間線可以留喺同一套 2d 動畫流程。上色同時間線不用分開兩個軟件。 a full-featured open-source 2d animation production program. scanning, coloring, the timeline, and effects are all included, so it is a free tool a traditional hand-drawn animation workflow can use. scanned line art, coloring, and the timeline can stay in one 2d animation workflow. coloring and the timeline do not need two separate programs. opentoonz - an open-source full-featured 2d animation creation software c++ ">
   <header>
     <h3><span class="rank">22</span><a href="https://github.com/opentoonz/opentoonz">opentoonz</a></h3>
     <div class="stars">★ 7,879</div>
   </header>
-  <p class="meta">opentoonz/opentoonz · C++ · <time class="pushed" datetime="2026-10-28">最近推送 2026-10-28</time></p>
-  <p class="summary">功能完整嘅開源 2D 動畫製作軟件。掃描、上色、時間線同特效都包含在內，係傳統手繪動畫流程可以用嘅免費工具。掃描線稿、上色同時間線可以留喺同一套 2D 動畫流程。上色同時間線不用分開兩個軟件。</p>
-  <div class="links"><a href="https://github.com/opentoonz/opentoonz">GitHub</a><a href="https://opentoonz.github.io/">主頁</a></div>
+  <p class="meta">opentoonz/opentoonz · C++ · <time class="pushed" datetime="2026-10-28"><span class="t-zh">最近推送 2026-10-28</span><span class="t-en">Pushed 2026-10-28</span></time></p>
+  <p class="summary"><span class="t-zh">功能完整嘅開源 2D 動畫製作軟件。掃描、上色、時間線同特效都包含在內，係傳統手繪動畫流程可以用嘅免費工具。掃描線稿、上色同時間線可以留喺同一套 2D 動畫流程。上色同時間線不用分開兩個軟件。</span><span class="t-en">A full-featured open-source 2D animation production program. Scanning, coloring, the timeline, and effects are all included, so it is a free tool a traditional hand-drawn animation workflow can use. Scanned line art, coloring, and the timeline can stay in one 2D animation workflow. Coloring and the timeline do not need two separate programs.</span></p>
+  <div class="links"><a href="https://github.com/opentoonz/opentoonz">GitHub</a><a href="https://opentoonz.github.io/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   
-</article><article class="card" id="p-pixaranimationstudios-openusd" data-repo="PixarAnimationStudios/OpenUSD" data-search="openusd pixaranimationstudios/openusd pixar 嘅通用場景描述，用嚟喺唔同軟件之間交換三維場景。模型、燈光、材質同動畫可以寫成 usd，讓 blender、渲染器同遊戲引擎讀同一套場景。燈光同動畫都寫入場景描述，唔止係交換一個靜態模型。 universal scene description c++ ">
+</article><article class="card" id="p-pixaranimationstudios-openusd" data-repo="PixarAnimationStudios/OpenUSD" data-search="openusd pixaranimationstudios/openusd pixar 嘅通用場景描述，用嚟喺唔同軟件之間交換三維場景。模型、燈光、材質同動畫可以寫成 usd，讓 blender、渲染器同遊戲引擎讀同一套場景。燈光同動畫都寫入場景描述，唔止係交換一個靜態模型。 pixar&#x27;s universal scene description, for exchanging 3d scenes between different programs. models, lights, materials, and animation can be written as usd so that blender, renderers, and game engines read the same scene. lights and animation are written into the scene description, so it exchanges more than a static model. universal scene description c++ ">
   <header>
     <h3><span class="rank">23</span><a href="https://github.com/PixarAnimationStudios/OpenUSD">OpenUSD</a></h3>
     <div class="stars">★ 7,598</div>
   </header>
-  <p class="meta">PixarAnimationStudios/OpenUSD · C++ · <time class="pushed" datetime="2026-10-24">最近推送 2026-10-24</time></p>
-  <p class="summary">Pixar 嘅通用場景描述，用嚟喺唔同軟件之間交換三維場景。模型、燈光、材質同動畫可以寫成 USD，讓 Blender、渲染器同遊戲引擎讀同一套場景。燈光同動畫都寫入場景描述，唔止係交換一個靜態模型。</p>
-  <div class="links"><a href="https://github.com/PixarAnimationStudios/OpenUSD">GitHub</a><a href="http://www.openusd.org">主頁</a></div>
+  <p class="meta">PixarAnimationStudios/OpenUSD · C++ · <time class="pushed" datetime="2026-10-24"><span class="t-zh">最近推送 2026-10-24</span><span class="t-en">Pushed 2026-10-24</span></time></p>
+  <p class="summary"><span class="t-zh">Pixar 嘅通用場景描述，用嚟喺唔同軟件之間交換三維場景。模型、燈光、材質同動畫可以寫成 USD，讓 Blender、渲染器同遊戲引擎讀同一套場景。燈光同動畫都寫入場景描述，唔止係交換一個靜態模型。</span><span class="t-en">Pixar&#x27;s Universal Scene Description, for exchanging 3D scenes between different programs. Models, lights, materials, and animation can be written as USD so that Blender, renderers, and game engines read the same scene. Lights and animation are written into the scene description, so it exchanges more than a static model.</span></p>
+  <div class="links"><a href="https://github.com/PixarAnimationStudios/OpenUSD">GitHub</a><a href="http://www.openusd.org"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   
-</article><article class="card" id="p-nvidia-pix2pixhd" data-repo="NVIDIA/pix2pixHD" data-search="pix2pixhd nvidia/pix2pixhd nvidia 嘅高解像條件式生成對抗網絡。用嚟由標籤圖或條件合成 2048 乘 1024 嘅圖像，同埋操控已有畫面。適合想喺電腦圖像同視覺實驗入面做高解像圖像轉換嘅人。 synthesizing and manipulating 2048x1024 images with conditional gans python computer-graphics computer-vision deep-learning deep-neural-networks gan generative-adversarial-network image-to-image-translation pix2pix">
+</article><article class="card" id="p-nvidia-pix2pixhd" data-repo="NVIDIA/pix2pixHD" data-search="pix2pixhd nvidia/pix2pixhd nvidia 嘅高解像條件式生成對抗網絡。用嚟由標籤圖或條件合成 2048 乘 1024 嘅圖像，同埋操控已有畫面。適合想喺電腦圖像同視覺實驗入面做高解像圖像轉換嘅人。 nvidia&#x27;s high-resolution conditional generative adversarial network. it synthesizes 2048 by 1024 images from label maps or other conditions, and it can also manipulate existing images. it suits people who want high-resolution image translation in computer-graphics and vision experiments. synthesizing and manipulating 2048x1024 images with conditional gans python computer-graphics computer-vision deep-learning deep-neural-networks gan generative-adversarial-network image-to-image-translation pix2pix">
   <header>
     <h3><span class="rank">24</span><a href="https://github.com/NVIDIA/pix2pixHD">pix2pixHD</a></h3>
     <div class="stars">★ 6,924</div>
   </header>
-  <p class="meta">NVIDIA/pix2pixHD · Python · <time class="pushed" datetime="2024-11-05">最近推送 2024-11-05</time></p>
-  <p class="summary">NVIDIA 嘅高解像條件式生成對抗網絡。用嚟由標籤圖或條件合成 2048 乘 1024 嘅圖像，同埋操控已有畫面。適合想喺電腦圖像同視覺實驗入面做高解像圖像轉換嘅人。</p>
-  <div class="links"><a href="https://github.com/NVIDIA/pix2pixHD">GitHub</a><a href="https://tcwang0509.github.io/pix2pixHD/">主頁</a></div>
+  <p class="meta">NVIDIA/pix2pixHD · Python · <time class="pushed" datetime="2024-11-05"><span class="t-zh">最近推送 2024-11-05</span><span class="t-en">Pushed 2024-11-05</span></time></p>
+  <p class="summary"><span class="t-zh">NVIDIA 嘅高解像條件式生成對抗網絡。用嚟由標籤圖或條件合成 2048 乘 1024 嘅圖像，同埋操控已有畫面。適合想喺電腦圖像同視覺實驗入面做高解像圖像轉換嘅人。</span><span class="t-en">NVIDIA&#x27;s high-resolution conditional generative adversarial network. It synthesizes 2048 by 1024 images from label maps or other conditions, and it can also manipulate existing images. It suits people who want high-resolution image translation in computer-graphics and vision experiments.</span></p>
+  <div class="links"><a href="https://github.com/NVIDIA/pix2pixHD">GitHub</a><a href="https://tcwang0509.github.io/pix2pixHD/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#computer-graphics</span><span>#computer-vision</span><span>#deep-learning</span></div>
-</article><article class="card" id="p-cnr-isti-vclab-meshlab" data-repo="cnr-isti-vclab/meshlab" data-search="meshlab cnr-isti-vclab/meshlab 開源網格處理系統，用嚟清理、修復同檢視 3d 模型。掃描出來嘅網格可以喺度簡化、補洞同對齊，再送去其他軟件繼續做。掃描網格太亂時，先喺度清理再送去 blender 或引擎。 the open source mesh processing system c++ 3d 3d-models 3d-printing 3d-reconstruction 3d-scanning mesh mesh-editing mesh-generation">
+</article><article class="card" id="p-cnr-isti-vclab-meshlab" data-repo="cnr-isti-vclab/meshlab" data-search="meshlab cnr-isti-vclab/meshlab 開源網格處理系統，用嚟清理、修復同檢視 3d 模型。掃描出來嘅網格可以喺度簡化、補洞同對齊，再送去其他軟件繼續做。掃描網格太亂時，先喺度清理再送去 blender 或引擎。 an open-source mesh processing system for cleaning, repairing, and viewing 3d models. scanned meshes can be simplified, hole-filled, and aligned here, then sent on to other software. when a scanned mesh is too messy, clean it here first and then send it to blender or an engine. the open source mesh processing system c++ 3d 3d-models 3d-printing 3d-reconstruction 3d-scanning mesh mesh-editing mesh-generation">
   <header>
     <h3><span class="rank">25</span><a href="https://github.com/cnr-isti-vclab/meshlab">meshlab</a></h3>
     <div class="stars">★ 5,894</div>
   </header>
-  <p class="meta">cnr-isti-vclab/meshlab · C++ · GPL-3.0 · <time class="pushed" datetime="2026-08-26">最近推送 2026-08-26</time></p>
-  <p class="summary">開源網格處理系統，用嚟清理、修復同檢視 3D 模型。掃描出來嘅網格可以喺度簡化、補洞同對齊，再送去其他軟件繼續做。掃描網格太亂時，先喺度清理再送去 Blender 或引擎。</p>
-  <div class="links"><a href="https://github.com/cnr-isti-vclab/meshlab">GitHub</a><a href="http://www.meshlab.net">主頁</a></div>
+  <p class="meta">cnr-isti-vclab/meshlab · C++ · GPL-3.0 · <time class="pushed" datetime="2026-08-26"><span class="t-zh">最近推送 2026-08-26</span><span class="t-en">Pushed 2026-08-26</span></time></p>
+  <p class="summary"><span class="t-zh">開源網格處理系統，用嚟清理、修復同檢視 3D 模型。掃描出來嘅網格可以喺度簡化、補洞同對齊，再送去其他軟件繼續做。掃描網格太亂時，先喺度清理再送去 Blender 或引擎。</span><span class="t-en">An open-source mesh processing system for cleaning, repairing, and viewing 3D models. Scanned meshes can be simplified, hole-filled, and aligned here, then sent on to other software. When a scanned mesh is too messy, clean it here first and then send it to Blender or an engine.</span></p>
+  <div class="links"><a href="https://github.com/cnr-isti-vclab/meshlab">GitHub</a><a href="http://www.meshlab.net"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#3d</span><span>#3d-models</span><span>#3d-printing</span></div>
-</article><article class="card" id="p-shader-slang-slang" data-repo="shader-slang/slang" data-search="slang shader-slang/slang 讓著色器更容易寫、亦更容易跨平台編譯嘅著色語言。一份著色程式可以編譯到不同圖形 api，減少為 vulkan、direct3d 同 metal 各寫一次。同一份著色碼編譯到幾個圖形 api，引擎先少維護多份。 making it easier to work with shaders c++ cuda d3d12 glsl hlsl shaders vulkan">
+</article><article class="card" id="p-shader-slang-slang" data-repo="shader-slang/slang" data-search="slang shader-slang/slang 讓著色器更容易寫、亦更容易跨平台編譯嘅著色語言。一份著色程式可以編譯到不同圖形 api，減少為 vulkan、direct3d 同 metal 各寫一次。同一份著色碼編譯到幾個圖形 api，引擎先少維護多份。 a shading language that makes shaders easier to write and easier to compile across platforms. one shader program can be compiled to different graphics apis, so you write it fewer times for vulkan, direct3d, and metal separately. the same shader code compiles to several graphics apis, so an engine maintains fewer copies. making it easier to work with shaders c++ cuda d3d12 glsl hlsl shaders vulkan">
   <header>
     <h3><span class="rank">26</span><a href="https://github.com/shader-slang/slang">slang</a></h3>
     <div class="stars">★ 5,766</div>
   </header>
-  <p class="meta">shader-slang/slang · C++ · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">讓著色器更容易寫、亦更容易跨平台編譯嘅著色語言。一份著色程式可以編譯到不同圖形 API，減少為 Vulkan、Direct3D 同 Metal 各寫一次。同一份著色碼編譯到幾個圖形 API，引擎先少維護多份。</p>
-  <div class="links"><a href="https://github.com/shader-slang/slang">GitHub</a><a href="http://shader-slang.com">主頁</a></div>
+  <p class="meta">shader-slang/slang · C++ · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">讓著色器更容易寫、亦更容易跨平台編譯嘅著色語言。一份著色程式可以編譯到不同圖形 API，減少為 Vulkan、Direct3D 同 Metal 各寫一次。同一份著色碼編譯到幾個圖形 API，引擎先少維護多份。</span><span class="t-en">A shading language that makes shaders easier to write and easier to compile across platforms. One shader program can be compiled to different graphics APIs, so you write it fewer times for Vulkan, Direct3D, and Metal separately. The same shader code compiles to several graphics APIs, so an engine maintains fewer copies.</span></p>
+  <div class="links"><a href="https://github.com/shader-slang/slang">GitHub</a><a href="http://shader-slang.com"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#cuda</span><span>#d3d12</span><span>#glsl</span></div>
-</article><article class="card" id="p-natrongithub-natron" data-repo="NatronGitHub/Natron" data-search="natron natrongithub/natron 開源節點式影片合成軟件，用途接近 after effects 同 nuke。遮罩、調色同特效用節點連接，適合做鏡頭合成，而唔係時間線剪接。節點合成接近 nuke 嘅用法，時間線剪接就用其他軟件。 open-source video compositing software. node-graph based. similar in functionalities to adobe after effects and nuke by the foundry. c++ ">
+</article><article class="card" id="p-natrongithub-natron" data-repo="NatronGitHub/Natron" data-search="natron natrongithub/natron 開源節點式影片合成軟件，用途接近 after effects 同 nuke。遮罩、調色同特效用節點連接，適合做鏡頭合成，而唔係時間線剪接。節點合成接近 nuke 嘅用法，時間線剪接就用其他軟件。 an open-source node-based compositing program, close in purpose to after effects and nuke. masks, color grading, and effects are connected with nodes. it suits shot compositing rather than timeline editing. node compositing is close to how nuke is used. timeline editing belongs in other software. open-source video compositing software. node-graph based. similar in functionalities to adobe after effects and nuke by the foundry. c++ ">
   <header>
     <h3><span class="rank">27</span><a href="https://github.com/NatronGitHub/Natron">Natron</a></h3>
     <div class="stars">★ 5,620</div>
   </header>
-  <p class="meta">NatronGitHub/Natron · C++ · GPL-2.0 · <time class="pushed" datetime="2026-07-24">最近推送 2026-07-24</time></p>
-  <p class="summary">開源節點式影片合成軟件，用途接近 After Effects 同 Nuke。遮罩、調色同特效用節點連接，適合做鏡頭合成，而唔係時間線剪接。節點合成接近 Nuke 嘅用法，時間線剪接就用其他軟件。</p>
-  <div class="links"><a href="https://github.com/NatronGitHub/Natron">GitHub</a><a href="http://NatronGitHub.github.io">主頁</a></div>
+  <p class="meta">NatronGitHub/Natron · C++ · GPL-2.0 · <time class="pushed" datetime="2026-07-24"><span class="t-zh">最近推送 2026-07-24</span><span class="t-en">Pushed 2026-07-24</span></time></p>
+  <p class="summary"><span class="t-zh">開源節點式影片合成軟件，用途接近 After Effects 同 Nuke。遮罩、調色同特效用節點連接，適合做鏡頭合成，而唔係時間線剪接。節點合成接近 Nuke 嘅用法，時間線剪接就用其他軟件。</span><span class="t-en">An open-source node-based compositing program, close in purpose to After Effects and Nuke. Masks, color grading, and effects are connected with nodes. It suits shot compositing rather than timeline editing. Node compositing is close to how Nuke is used. Timeline editing belongs in other software.</span></p>
+  <div class="links"><a href="https://github.com/NatronGitHub/Natron">GitHub</a><a href="http://NatronGitHub.github.io"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   
-</article><article class="card" id="p-ssloy-tinyraytracer" data-repo="ssloy/tinyraytracer" data-search="tinyraytracer ssloy/tinyraytracer 一份簡短嘅光線追蹤課程，用 c++ 由零寫一個細渲染器。跟住課你會自己做光線同場景相交。同作者嘅 tinyrenderer 係一連串圖像課，適合想搞清楚光點樣計算出畫面。 a brief computer graphics / rendering course c++ 3d 3d-graphics c-plus-plus computer-graphics cpp fun graphics images">
+</article><article class="card" id="p-ssloy-tinyraytracer" data-repo="ssloy/tinyraytracer" data-search="tinyraytracer ssloy/tinyraytracer 一份簡短嘅光線追蹤課程，用 c++ 由零寫一個細渲染器。跟住課你會自己做光線同場景相交。同作者嘅 tinyrenderer 係一連串圖像課，適合想搞清楚光點樣計算出畫面。 a short ray-tracing course that writes a small renderer from scratch in c++. as you follow the lessons, you implement ray-scene intersection yourself. together with the author&#x27;s tinyrenderer, it is a series of graphics courses, for people who want to understand how light is computed into an image. a brief computer graphics / rendering course c++ 3d 3d-graphics c-plus-plus computer-graphics cpp fun graphics images">
   <header>
     <h3><span class="rank">28</span><a href="https://github.com/ssloy/tinyraytracer">tinyraytracer</a></h3>
     <div class="stars">★ 5,392</div>
   </header>
-  <p class="meta">ssloy/tinyraytracer · C++ · <time class="pushed" datetime="2023-07-07">最近推送 2023-07-07</time></p>
-  <p class="summary">一份簡短嘅光線追蹤課程，用 C++ 由零寫一個細渲染器。跟住課你會自己做光線同場景相交。同作者嘅 tinyrenderer 係一連串圖像課，適合想搞清楚光點樣計算出畫面。</p>
-  <div class="links"><a href="https://github.com/ssloy/tinyraytracer">GitHub</a><a href="https://github.com/ssloy/tinyraytracer/wiki">主頁</a></div>
+  <p class="meta">ssloy/tinyraytracer · C++ · <time class="pushed" datetime="2023-07-07"><span class="t-zh">最近推送 2023-07-07</span><span class="t-en">Pushed 2023-07-07</span></time></p>
+  <p class="summary"><span class="t-zh">一份簡短嘅光線追蹤課程，用 C++ 由零寫一個細渲染器。跟住課你會自己做光線同場景相交。同作者嘅 tinyrenderer 係一連串圖像課，適合想搞清楚光點樣計算出畫面。</span><span class="t-en">A short ray-tracing course that writes a small renderer from scratch in C++. As you follow the lessons, you implement ray-scene intersection yourself. Together with the author&#x27;s tinyrenderer, it is a series of graphics courses, for people who want to understand how light is computed into an image.</span></p>
+  <div class="links"><a href="https://github.com/ssloy/tinyraytracer">GitHub</a><a href="https://github.com/ssloy/tinyraytracer/wiki"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#3d</span><span>#3d-graphics</span><span>#c-plus-plus</span></div>
-</article><article class="card" id="p-nvlabs-neuralangelo" data-repo="NVlabs/neuralangelo" data-search="neuralangelo nvlabs/neuralangelo nvidia 嘅高保真神經表面重建，用嚟由相片恢復細緻嘅三維曲面，輪廓比早年神經輻射場更貼物件。cvpr 2023 官方程式。產出係曲面網格，而唔係一張貼圖或者一段影片。適合由實拍重建物件外形。 official implementation of &quot;neuralangelo: high-fidelity neural surface reconstruction&quot; (cvpr 2023) python 3d-reconstruction computer-graphics computer-vision neural-rendering neural-representation">
+</article><article class="card" id="p-nvlabs-neuralangelo" data-repo="NVlabs/neuralangelo" data-search="neuralangelo nvlabs/neuralangelo nvidia 嘅高保真神經表面重建，用嚟由相片恢復細緻嘅三維曲面，輪廓比早年神經輻射場更貼物件。cvpr 2023 官方程式。產出係曲面網格，而唔係一張貼圖或者一段影片。適合由實拍重建物件外形。 nvidia&#x27;s high-fidelity neural surface reconstruction, for recovering a detailed 3d surface from photos, with contours that fit the object more closely than earlier neural radiance fields. this is the official code from cvpr 2023. the output is a surface mesh, not a texture or a video. it suits reconstructing an object&#x27;s shape from real footage. official implementation of &quot;neuralangelo: high-fidelity neural surface reconstruction&quot; (cvpr 2023) python 3d-reconstruction computer-graphics computer-vision neural-rendering neural-representation">
   <header>
     <h3><span class="rank">29</span><a href="https://github.com/NVlabs/neuralangelo">neuralangelo</a></h3>
     <div class="stars">★ 4,615</div>
   </header>
-  <p class="meta">NVlabs/neuralangelo · Python · <time class="pushed" datetime="2024-04-15">最近推送 2024-04-15</time></p>
-  <p class="summary">NVIDIA 嘅高保真神經表面重建，用嚟由相片恢復細緻嘅三維曲面，輪廓比早年神經輻射場更貼物件。CVPR 2023 官方程式。產出係曲面網格，而唔係一張貼圖或者一段影片。適合由實拍重建物件外形。</p>
-  <div class="links"><a href="https://github.com/NVlabs/neuralangelo">GitHub</a><a href="https://research.nvidia.com/labs/dir/neuralangelo/">主頁</a></div>
+  <p class="meta">NVlabs/neuralangelo · Python · <time class="pushed" datetime="2024-04-15"><span class="t-zh">最近推送 2024-04-15</span><span class="t-en">Pushed 2024-04-15</span></time></p>
+  <p class="summary"><span class="t-zh">NVIDIA 嘅高保真神經表面重建，用嚟由相片恢復細緻嘅三維曲面，輪廓比早年神經輻射場更貼物件。CVPR 2023 官方程式。產出係曲面網格，而唔係一張貼圖或者一段影片。適合由實拍重建物件外形。</span><span class="t-en">NVIDIA&#x27;s high-fidelity neural surface reconstruction, for recovering a detailed 3D surface from photos, with contours that fit the object more closely than earlier neural radiance fields. This is the official code from CVPR 2023. The output is a surface mesh, not a texture or a video. It suits reconstructing an object&#x27;s shape from real footage.</span></p>
+  <div class="links"><a href="https://github.com/NVlabs/neuralangelo">GitHub</a><a href="https://research.nvidia.com/labs/dir/neuralangelo/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#3d-reconstruction</span><span>#computer-graphics</span><span>#computer-vision</span></div>
-</article><article class="card" id="p-absolute-quantum-cats-blender-plugin" data-repo="absolute-quantum/cats-blender-plugin" data-search="cats-blender-plugin absolute-quantum/cats-blender-plugin blender 外掛，用嚟將 mmd、mixamo、daz 等模型整理好，再送去 vrchat。一鍵可以減面、做口型同步同眼神追蹤，仲會合併骨骼。適合縮短上載虛擬角色嘅步驟，而唔係一個渲染引擎。 :smiley_cat: a tool designed to shorten steps needed to import and optimize models into vrchat. compatible models are: mmd, xnalara, mixamo, daz/poser, blender rigify, sims 2, motion builder, 3ds max and potentially more python 3dsmax blender mixamo mmd motionbuilder vrchat xnalara">
+</article><article class="card" id="p-absolute-quantum-cats-blender-plugin" data-repo="absolute-quantum/cats-blender-plugin" data-search="cats-blender-plugin absolute-quantum/cats-blender-plugin blender 外掛，用嚟將 mmd、mixamo、daz 等模型整理好，再送去 vrchat。一鍵可以減面、做口型同步同眼神追蹤，仲會合併骨骼。適合縮短上載虛擬角色嘅步驟，而唔係一個渲染引擎。 a blender add-on for tidying models from mmd, mixamo, daz, and similar sources, then sending them to vrchat. one click can reduce the polygon count, set up lip sync and eye tracking, and merge bones. it suits shortening the steps for uploading a virtual character, and it is not a render engine. :smiley_cat: a tool designed to shorten steps needed to import and optimize models into vrchat. compatible models are: mmd, xnalara, mixamo, daz/poser, blender rigify, sims 2, motion builder, 3ds max and potentially more python 3dsmax blender mixamo mmd motionbuilder vrchat xnalara">
   <header>
     <h3><span class="rank">30</span><a href="https://github.com/absolute-quantum/cats-blender-plugin">cats-blender-plugin</a></h3>
     <div class="stars">★ 4,127</div>
   </header>
-  <p class="meta">absolute-quantum/cats-blender-plugin · Python · MIT · <time class="pushed" datetime="2024-05-28">最近推送 2024-05-28</time></p>
-  <p class="summary">Blender 外掛，用嚟將 MMD、Mixamo、DAZ 等模型整理好，再送去 VRChat。一鍵可以減面、做口型同步同眼神追蹤，仲會合併骨骼。適合縮短上載虛擬角色嘅步驟，而唔係一個渲染引擎。</p>
+  <p class="meta">absolute-quantum/cats-blender-plugin · Python · MIT · <time class="pushed" datetime="2024-05-28"><span class="t-zh">最近推送 2024-05-28</span><span class="t-en">Pushed 2024-05-28</span></time></p>
+  <p class="summary"><span class="t-zh">Blender 外掛，用嚟將 MMD、Mixamo、DAZ 等模型整理好，再送去 VRChat。一鍵可以減面、做口型同步同眼神追蹤，仲會合併骨骼。適合縮短上載虛擬角色嘅步驟，而唔係一個渲染引擎。</span><span class="t-en">A Blender add-on for tidying models from MMD, Mixamo, DAZ, and similar sources, then sending them to VRChat. One click can reduce the polygon count, set up lip sync and eye tracking, and merge bones. It suits shortening the steps for uploading a virtual character, and it is not a render engine.</span></p>
   <div class="links"><a href="https://github.com/absolute-quantum/cats-blender-plugin">GitHub</a></div>
   <div class="topics"><span>#3dsmax</span><span>#blender</span><span>#mixamo</span></div>
-</article><article class="card" id="p-arnegiacomo-fugleramme" data-repo="arnegiacomo/fugleramme" data-search="fugleramme arnegiacomo/fugleramme 用本機聲音模型認花園入面嘅鳥，再顯示成十九世紀手繪插圖。可以放喺電子紙、電視或者樹莓派。識別喺自己部機做。聽到邊種就換邊張圖。適合架一個鳥相框，而唔係做影片合成或者三維場景。 bird frame for raspberry pi or your homelab - real-time bird detection by audio, fully local ai, rendered as real, hand-cut 1800s bird illustrations. on an e-ink panel, a tv, or any screen. python bird-detection birding birdnet birdnet-go birdwatching docker e-ink epaper">
+</article><article class="card" id="p-arnegiacomo-fugleramme" data-repo="arnegiacomo/fugleramme" data-search="fugleramme arnegiacomo/fugleramme 用本機聲音模型認花園入面嘅鳥，再顯示成十九世紀手繪插圖。可以放喺電子紙、電視或者樹莓派。識別喺自己部機做。聽到邊種就換邊張圖。適合架一個鳥相框，而唔係做影片合成或者三維場景。 it uses a local sound model to recognize birds in the garden, then displays them as nineteenth-century hand-drawn illustrations. it can sit on e-paper, a television, or a raspberry pi. recognition is done on your own machine. whichever species is heard, that picture is swapped in. it suits setting up a bird picture frame, not video compositing or a 3d scene. bird frame for raspberry pi or your homelab - real-time bird detection by audio, fully local ai, rendered as real, hand-cut 1800s bird illustrations. on an e-ink panel, a tv, or any screen. python bird-detection birding birdnet birdnet-go birdwatching docker e-ink epaper">
   <header>
     <h3><span class="rank">31</span><a href="https://github.com/arnegiacomo/fugleramme">fugleramme</a></h3>
     <div class="stars">★ 3,955</div>
   </header>
-  <p class="meta">arnegiacomo/fugleramme · Python · MIT · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">用本機聲音模型認花園入面嘅鳥，再顯示成十九世紀手繪插圖。可以放喺電子紙、電視或者樹莓派。識別喺自己部機做。聽到邊種就換邊張圖。適合架一個鳥相框，而唔係做影片合成或者三維場景。</p>
-  <div class="links"><a href="https://github.com/arnegiacomo/fugleramme">GitHub</a><a href="http://arnegiacomo.dev/fugleramme/">主頁</a></div>
+  <p class="meta">arnegiacomo/fugleramme · Python · MIT · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">用本機聲音模型認花園入面嘅鳥，再顯示成十九世紀手繪插圖。可以放喺電子紙、電視或者樹莓派。識別喺自己部機做。聽到邊種就換邊張圖。適合架一個鳥相框，而唔係做影片合成或者三維場景。</span><span class="t-en">It uses a local sound model to recognize birds in the garden, then displays them as nineteenth-century hand-drawn illustrations. It can sit on e-paper, a television, or a Raspberry Pi. Recognition is done on your own machine. Whichever species is heard, that picture is swapped in. It suits setting up a bird picture frame, not video compositing or a 3D scene.</span></p>
+  <div class="links"><a href="https://github.com/arnegiacomo/fugleramme">GitHub</a><a href="http://arnegiacomo.dev/fugleramme/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#bird-detection</span><span>#birding</span><span>#birdnet</span></div>
-</article><article class="card" id="p-obsidianmd-pele" data-repo="obsidianmd/pele" data-search="pele obsidianmd/pele obsidian 官方嘅 mermaid 圖渲染器，將圖表轉成 svg。程式細、同步執行、冇運行時依賴，顏色跟 css 變數。支援 mermaid 12 嘅圖種。適合要快啲出流程圖，而唔係做影片合成。 renders mermaid diagrams faster than you&#x27;d run from a volcano! 🌋 typescript charts diagramming diagrams mermaid mermaid-diagrams mermaidjs">
+</article><article class="card" id="p-obsidianmd-pele" data-repo="obsidianmd/pele" data-search="pele obsidianmd/pele obsidian 官方嘅 mermaid 圖渲染器，將圖表轉成 svg。程式細、同步執行、冇運行時依賴，顏色跟 css 變數。支援 mermaid 12 嘅圖種。適合要快啲出流程圖，而唔係做影片合成。 obsidian&#x27;s official mermaid diagram renderer, which turns diagrams into svg. the program is small, runs synchronously, and has no runtime dependencies, and its colors follow css variables. it supports the diagram types in mermaid 12. it suits producing a flowchart quickly, not doing video compositing. renders mermaid diagrams faster than you&#x27;d run from a volcano! 🌋 typescript charts diagramming diagrams mermaid mermaid-diagrams mermaidjs">
   <header>
     <h3><span class="rank">32</span><a href="https://github.com/obsidianmd/pele">pele</a></h3>
     <div class="stars">★ 3,869</div>
   </header>
-  <p class="meta">obsidianmd/pele · TypeScript · <time class="pushed" datetime="2026-10-29">最近推送 2026-10-29</time></p>
-  <p class="summary">Obsidian 官方嘅 Mermaid 圖渲染器，將圖表轉成 SVG。程式細、同步執行、冇運行時依賴，顏色跟 CSS 變數。支援 Mermaid 12 嘅圖種。適合要快啲出流程圖，而唔係做影片合成。</p>
-  <div class="links"><a href="https://github.com/obsidianmd/pele">GitHub</a><a href="https://pele.run">主頁</a></div>
+  <p class="meta">obsidianmd/pele · TypeScript · <time class="pushed" datetime="2026-10-29"><span class="t-zh">最近推送 2026-10-29</span><span class="t-en">Pushed 2026-10-29</span></time></p>
+  <p class="summary"><span class="t-zh">Obsidian 官方嘅 Mermaid 圖渲染器，將圖表轉成 SVG。程式細、同步執行、冇運行時依賴，顏色跟 CSS 變數。支援 Mermaid 12 嘅圖種。適合要快啲出流程圖，而唔係做影片合成。</span><span class="t-en">Obsidian&#x27;s official Mermaid diagram renderer, which turns diagrams into SVG. The program is small, runs synchronously, and has no runtime dependencies, and its colors follow CSS variables. It supports the diagram types in Mermaid 12. It suits producing a flowchart quickly, not doing video compositing.</span></p>
+  <div class="links"><a href="https://github.com/obsidianmd/pele">GitHub</a><a href="https://pele.run"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#charts</span><span>#diagramming</span><span>#diagrams</span></div>
-</article><article class="card" id="p-mmp-pbrt-v4" data-repo="mmp/pbrt-v4" data-search="pbrt-v4 mmp/pbrt-v4 《physically based rendering》第四版描述嘅物理式光線追蹤器原始碼。用來學習同實驗真實感渲染算法，係教材對應嘅參考實作，而唔係動畫廠的生產渲染器。讀教材時可以對住呢份碼做實驗，出圖速度唔係生產取向。 source code to pbrt, the ray tracer described in the forthcoming 4th edition of the &quot;physically based rendering: from theory to implementation&quot; book. c++ ">
+</article><article class="card" id="p-mmp-pbrt-v4" data-repo="mmp/pbrt-v4" data-search="pbrt-v4 mmp/pbrt-v4 《physically based rendering》第四版描述嘅物理式光線追蹤器原始碼。用來學習同實驗真實感渲染算法，係教材對應嘅參考實作，而唔係動畫廠的生產渲染器。讀教材時可以對住呢份碼做實驗，出圖速度唔係生產取向。 source code for the physically based ray tracer described in the fourth edition of physically based rendering. it is for learning and experimenting with photorealistic rendering algorithms, the reference implementation that matches the textbook, not a production renderer for an animation studio. while reading the book you can experiment against this code. render speed is not aimed at production. source code to pbrt, the ray tracer described in the forthcoming 4th edition of the &quot;physically based rendering: from theory to implementation&quot; book. c++ ">
   <header>
     <h3><span class="rank">33</span><a href="https://github.com/mmp/pbrt-v4">pbrt-v4</a></h3>
     <div class="stars">★ 3,739</div>
   </header>
-  <p class="meta">mmp/pbrt-v4 · C++ · Apache-2.0 · <time class="pushed" datetime="2026-09-09">最近推送 2026-09-09</time></p>
-  <p class="summary">《Physically Based Rendering》第四版描述嘅物理式光線追蹤器原始碼。用來學習同實驗真實感渲染算法，係教材對應嘅參考實作，而唔係動畫廠的生產渲染器。讀教材時可以對住呢份碼做實驗，出圖速度唔係生產取向。</p>
-  <div class="links"><a href="https://github.com/mmp/pbrt-v4">GitHub</a><a href="https://pbrt.org">主頁</a></div>
+  <p class="meta">mmp/pbrt-v4 · C++ · Apache-2.0 · <time class="pushed" datetime="2026-09-09"><span class="t-zh">最近推送 2026-09-09</span><span class="t-en">Pushed 2026-09-09</span></time></p>
+  <p class="summary"><span class="t-zh">《Physically Based Rendering》第四版描述嘅物理式光線追蹤器原始碼。用來學習同實驗真實感渲染算法，係教材對應嘅參考實作，而唔係動畫廠的生產渲染器。讀教材時可以對住呢份碼做實驗，出圖速度唔係生產取向。</span><span class="t-en">Source code for the physically based ray tracer described in the fourth edition of Physically Based Rendering. It is for learning and experimenting with photorealistic rendering algorithms, the reference implementation that matches the textbook, not a production renderer for an animation studio. While reading the book you can experiment against this code. Render speed is not aimed at production.</span></p>
+  <div class="links"><a href="https://github.com/mmp/pbrt-v4">GitHub</a><a href="https://pbrt.org"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   
-</article><article class="card" id="p-mexicat-pdoom-video" data-repo="mexicat/pdoom-video" data-search="pdoom-video mexicat/pdoom-video 一條用程式渲染嘅音樂影片，字幕跟住歌嘅時間。每一幀由歌曲時間決定，所以瀏覽器預覽同匯出嘅 1080p 或 4k 一樣。佢係呢首歌嘅作品，而唔係通用嘅出片工具。可以喺自己部機再渲染。 code-rendered music video for &quot;i&#x27;m upping my p(doom)&quot; typescript ">
+</article><article class="card" id="p-mexicat-pdoom-video" data-repo="mexicat/pdoom-video" data-search="pdoom-video mexicat/pdoom-video 一條用程式渲染嘅音樂影片，字幕跟住歌嘅時間。每一幀由歌曲時間決定，所以瀏覽器預覽同匯出嘅 1080p 或 4k 一樣。佢係呢首歌嘅作品，而唔係通用嘅出片工具。可以喺自己部機再渲染。 a music video rendered by a program, with subtitles timed to the song. each frame is determined by the song&#x27;s time, so the browser preview matches the exported 1080p or 4k. it is a work for this song, not a general video-making tool. you can render it again on your own machine. code-rendered music video for &quot;i&#x27;m upping my p(doom)&quot; typescript ">
   <header>
     <h3><span class="rank">34</span><a href="https://github.com/mexicat/pdoom-video">pdoom-video</a></h3>
     <div class="stars">★ 3,630</div>
   </header>
-  <p class="meta">mexicat/pdoom-video · TypeScript · MIT · <time class="pushed" datetime="2026-10-06">最近推送 2026-10-06</time></p>
-  <p class="summary">一條用程式渲染嘅音樂影片，字幕跟住歌嘅時間。每一幀由歌曲時間決定，所以瀏覽器預覽同匯出嘅 1080p 或 4K 一樣。佢係呢首歌嘅作品，而唔係通用嘅出片工具。可以喺自己部機再渲染。</p>
+  <p class="meta">mexicat/pdoom-video · TypeScript · MIT · <time class="pushed" datetime="2026-10-06"><span class="t-zh">最近推送 2026-10-06</span><span class="t-en">Pushed 2026-10-06</span></time></p>
+  <p class="summary"><span class="t-zh">一條用程式渲染嘅音樂影片，字幕跟住歌嘅時間。每一幀由歌曲時間決定，所以瀏覽器預覽同匯出嘅 1080p 或 4K 一樣。佢係呢首歌嘅作品，而唔係通用嘅出片工具。可以喺自己部機再渲染。</span><span class="t-en">A music video rendered by a program, with subtitles timed to the song. Each frame is determined by the song&#x27;s time, so the browser preview matches the exported 1080p or 4K. It is a work for this song, not a general video-making tool. You can render it again on your own machine.</span></p>
   <div class="links"><a href="https://github.com/mexicat/pdoom-video">GitHub</a></div>
   
-</article><article class="card" id="p-academysoftwarefoundation-openvdb" data-repo="AcademySoftwareFoundation/openvdb" data-search="openvdb academysoftwarefoundation/openvdb 稀疏體積數據結構同工具，係特效入面煙、火、雲嘅常用格式。模擬結果可以存成 vdb，再喺唔同軟件入面渲染同交換。流體模擬交去渲染器時，vdb 係常見嘅中間格式。煙火模擬交去其他軟件時就用呢個格式。 openvdb - sparse volume data structure and tools c++ c-plus-plus dreamworks fx openvdb openvdb-development vfx volume-rendering voxel">
+</article><article class="card" id="p-academysoftwarefoundation-openvdb" data-repo="AcademySoftwareFoundation/openvdb" data-search="openvdb academysoftwarefoundation/openvdb 稀疏體積數據結構同工具，係特效入面煙、火、雲嘅常用格式。模擬結果可以存成 vdb，再喺唔同軟件入面渲染同交換。流體模擬交去渲染器時，vdb 係常見嘅中間格式。煙火模擬交去其他軟件時就用呢個格式。 a sparse volumetric data structure and toolset, a common format for smoke, fire, and clouds in visual effects. simulation results can be stored as vdb, then rendered and exchanged in different programs. when a fluid simulation is handed to a renderer, vdb is a common intermediate format. smoke and fire simulations use this format when they are passed to other software. openvdb - sparse volume data structure and tools c++ c-plus-plus dreamworks fx openvdb openvdb-development vfx volume-rendering voxel">
   <header>
     <h3><span class="rank">35</span><a href="https://github.com/AcademySoftwareFoundation/openvdb">openvdb</a></h3>
     <div class="stars">★ 3,446</div>
   </header>
-  <p class="meta">AcademySoftwareFoundation/openvdb · C++ · Apache-2.0 · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">稀疏體積數據結構同工具，係特效入面煙、火、雲嘅常用格式。模擬結果可以存成 VDB，再喺唔同軟件入面渲染同交換。流體模擬交去渲染器時，VDB 係常見嘅中間格式。煙火模擬交去其他軟件時就用呢個格式。</p>
-  <div class="links"><a href="https://github.com/AcademySoftwareFoundation/openvdb">GitHub</a><a href="http://www.openvdb.org/">主頁</a></div>
+  <p class="meta">AcademySoftwareFoundation/openvdb · C++ · Apache-2.0 · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">稀疏體積數據結構同工具，係特效入面煙、火、雲嘅常用格式。模擬結果可以存成 VDB，再喺唔同軟件入面渲染同交換。流體模擬交去渲染器時，VDB 係常見嘅中間格式。煙火模擬交去其他軟件時就用呢個格式。</span><span class="t-en">A sparse volumetric data structure and toolset, a common format for smoke, fire, and clouds in visual effects. Simulation results can be stored as VDB, then rendered and exchanged in different programs. When a fluid simulation is handed to a renderer, VDB is a common intermediate format. Smoke and fire simulations use this format when they are passed to other software.</span></p>
+  <div class="links"><a href="https://github.com/AcademySoftwareFoundation/openvdb">GitHub</a><a href="http://www.openvdb.org/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#c-plus-plus</span><span>#dreamworks</span><span>#fx</span></div>
-</article><article class="card" id="p-pixaranimationstudios-opensubdiv" data-repo="PixarAnimationStudios/OpenSubdiv" data-search="opensubdiv pixaranimationstudios/opensubdiv pixar 嘅開源細分曲面庫。模型用較少控制點描述曲面，渲染或顯示時再細分到平滑，遊戲同動畫軟件都會嵌佢。模型保持低面數，顯示時先細分，遊戲同動畫都會嵌佢。曲面平滑唔使先把模型拆到很密。 an open-source subdivision surface library. c++ ">
+</article><article class="card" id="p-pixaranimationstudios-opensubdiv" data-repo="PixarAnimationStudios/OpenSubdiv" data-search="opensubdiv pixaranimationstudios/opensubdiv pixar 嘅開源細分曲面庫。模型用較少控制點描述曲面，渲染或顯示時再細分到平滑，遊戲同動畫軟件都會嵌佢。模型保持低面數，顯示時先細分，遊戲同動畫都會嵌佢。曲面平滑唔使先把模型拆到很密。 pixar&#x27;s open-source subdivision surface library. a model describes a surface with fewer control points, then subdivides to a smooth result when it is rendered or displayed, and both games and animation software embed it. the model keeps a low polygon count and is subdivided only at display time. games and animation both embed it. smoothing a surface does not require splitting the model into a very dense mesh first. an open-source subdivision surface library. c++ ">
   <header>
     <h3><span class="rank">36</span><a href="https://github.com/PixarAnimationStudios/OpenSubdiv">OpenSubdiv</a></h3>
     <div class="stars">★ 3,085</div>
   </header>
-  <p class="meta">PixarAnimationStudios/OpenSubdiv · C++ · <time class="pushed" datetime="2026-10-26">最近推送 2026-10-26</time></p>
-  <p class="summary">Pixar 嘅開源細分曲面庫。模型用較少控制點描述曲面，渲染或顯示時再細分到平滑，遊戲同動畫軟件都會嵌佢。模型保持低面數，顯示時先細分，遊戲同動畫都會嵌佢。曲面平滑唔使先把模型拆到很密。</p>
-  <div class="links"><a href="https://github.com/PixarAnimationStudios/OpenSubdiv">GitHub</a><a href="https://www.opensubdiv.org">主頁</a></div>
+  <p class="meta">PixarAnimationStudios/OpenSubdiv · C++ · <time class="pushed" datetime="2026-10-26"><span class="t-zh">最近推送 2026-10-26</span><span class="t-en">Pushed 2026-10-26</span></time></p>
+  <p class="summary"><span class="t-zh">Pixar 嘅開源細分曲面庫。模型用較少控制點描述曲面，渲染或顯示時再細分到平滑，遊戲同動畫軟件都會嵌佢。模型保持低面數，顯示時先細分，遊戲同動畫都會嵌佢。曲面平滑唔使先把模型拆到很密。</span><span class="t-en">Pixar&#x27;s open-source subdivision surface library. A model describes a surface with fewer control points, then subdivides to a smooth result when it is rendered or displayed, and both games and animation software embed it. The model keeps a low polygon count and is subdivided only at display time. Games and animation both embed it. Smoothing a surface does not require splitting the model into a very dense mesh first.</span></p>
+  <div class="links"><a href="https://github.com/PixarAnimationStudios/OpenSubdiv">GitHub</a><a href="https://www.opensubdiv.org"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   
-</article><article class="card" id="p-mitsuba-renderer-mitsuba3" data-repo="mitsuba-renderer/mitsuba3" data-search="mitsuba3 mitsuba-renderer/mitsuba3 可重定向嘅正向同逆向渲染器，用嚟做研究級物理渲染。除咗出圖，亦可以對場景參數求梯度，適合研究外觀、材質同反向繪製。可以對材質同燈光求梯度，用嚟做反向渲染研究。研究渲染算法多過拿嚟出動畫成片。 mitsuba 3: a retargetable forward and inverse renderer c++ ">
+</article><article class="card" id="p-mitsuba-renderer-mitsuba3" data-repo="mitsuba-renderer/mitsuba3" data-search="mitsuba3 mitsuba-renderer/mitsuba3 可重定向嘅正向同逆向渲染器，用嚟做研究級物理渲染。除咗出圖，亦可以對場景參數求梯度，適合研究外觀、材質同反向繪製。可以對材質同燈光求梯度，用嚟做反向渲染研究。研究渲染算法多過拿嚟出動畫成片。 a retargetable forward and inverse renderer for research-grade physically based rendering. besides producing images, it can take gradients of scene parameters, which suits research on appearance, materials, and inverse rendering. gradients can be taken for materials and lights for inverse rendering research. it is used more to study rendering algorithms than to deliver finished animation. mitsuba 3: a retargetable forward and inverse renderer c++ ">
   <header>
     <h3><span class="rank">37</span><a href="https://github.com/mitsuba-renderer/mitsuba3">mitsuba3</a></h3>
     <div class="stars">★ 2,970</div>
   </header>
-  <p class="meta">mitsuba-renderer/mitsuba3 · C++ · <time class="pushed" datetime="2026-10-25">最近推送 2026-10-25</time></p>
-  <p class="summary">可重定向嘅正向同逆向渲染器，用嚟做研究級物理渲染。除咗出圖，亦可以對場景參數求梯度，適合研究外觀、材質同反向繪製。可以對材質同燈光求梯度，用嚟做反向渲染研究。研究渲染算法多過拿嚟出動畫成片。</p>
-  <div class="links"><a href="https://github.com/mitsuba-renderer/mitsuba3">GitHub</a><a href="https://www.mitsuba-renderer.org/">主頁</a></div>
+  <p class="meta">mitsuba-renderer/mitsuba3 · C++ · <time class="pushed" datetime="2026-10-25"><span class="t-zh">最近推送 2026-10-25</span><span class="t-en">Pushed 2026-10-25</span></time></p>
+  <p class="summary"><span class="t-zh">可重定向嘅正向同逆向渲染器，用嚟做研究級物理渲染。除咗出圖，亦可以對場景參數求梯度，適合研究外觀、材質同反向繪製。可以對材質同燈光求梯度，用嚟做反向渲染研究。研究渲染算法多過拿嚟出動畫成片。</span><span class="t-en">A retargetable forward and inverse renderer for research-grade physically based rendering. Besides producing images, it can take gradients of scene parameters, which suits research on appearance, materials, and inverse rendering. Gradients can be taken for materials and lights for inverse rendering research. It is used more to study rendering algorithms than to deliver finished animation.</span></p>
+  <div class="links"><a href="https://github.com/mitsuba-renderer/mitsuba3">GitHub</a><a href="https://www.mitsuba-renderer.org/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   
-</article><article class="card" id="p-academysoftwarefoundation-materialx" data-repo="AcademySoftwareFoundation/MaterialX" data-search="materialx academysoftwarefoundation/materialx 喺唔同軟件同渲染器之間交換材質同外觀描述嘅開放標準。一個材質圖可以帶到另一個軟件，減少因為各自著色器而要重做外觀。材質由一個軟件帶到另一個渲染器時，外觀描述有共同格式。外觀換渲染器時少一次重畫材質。 materialx is an open standard for the exchange of rich material and look-development content across applications and renderers. c++ 3d-graphics computer-graphics materialx physically-based-rendering real-time-rendering vfx">
+</article><article class="card" id="p-academysoftwarefoundation-materialx" data-repo="AcademySoftwareFoundation/MaterialX" data-search="materialx academysoftwarefoundation/materialx 喺唔同軟件同渲染器之間交換材質同外觀描述嘅開放標準。一個材質圖可以帶到另一個軟件，減少因為各自著色器而要重做外觀。材質由一個軟件帶到另一個渲染器時，外觀描述有共同格式。外觀換渲染器時少一次重畫材質。 an open standard for exchanging material and look descriptions between different programs and renderers. a material graph can be carried into another program, so a look is rebuilt less often just because each shader is different. when a material moves from one program to another renderer, the look description has a shared format. changing renderer for a look means redrawing the material one less time. materialx is an open standard for the exchange of rich material and look-development content across applications and renderers. c++ 3d-graphics computer-graphics materialx physically-based-rendering real-time-rendering vfx">
   <header>
     <h3><span class="rank">38</span><a href="https://github.com/AcademySoftwareFoundation/MaterialX">MaterialX</a></h3>
     <div class="stars">★ 2,292</div>
   </header>
-  <p class="meta">AcademySoftwareFoundation/MaterialX · C++ · Apache-2.0 · <time class="pushed" datetime="2026-10-29">最近推送 2026-10-29</time></p>
-  <p class="summary">喺唔同軟件同渲染器之間交換材質同外觀描述嘅開放標準。一個材質圖可以帶到另一個軟件，減少因為各自著色器而要重做外觀。材質由一個軟件帶到另一個渲染器時，外觀描述有共同格式。外觀換渲染器時少一次重畫材質。</p>
-  <div class="links"><a href="https://github.com/AcademySoftwareFoundation/MaterialX">GitHub</a><a href="http://www.materialx.org/">主頁</a></div>
+  <p class="meta">AcademySoftwareFoundation/MaterialX · C++ · Apache-2.0 · <time class="pushed" datetime="2026-10-29"><span class="t-zh">最近推送 2026-10-29</span><span class="t-en">Pushed 2026-10-29</span></time></p>
+  <p class="summary"><span class="t-zh">喺唔同軟件同渲染器之間交換材質同外觀描述嘅開放標準。一個材質圖可以帶到另一個軟件，減少因為各自著色器而要重做外觀。材質由一個軟件帶到另一個渲染器時，外觀描述有共同格式。外觀換渲染器時少一次重畫材質。</span><span class="t-en">An open standard for exchanging material and look descriptions between different programs and renderers. A material graph can be carried into another program, so a look is rebuilt less often just because each shader is different. When a material moves from one program to another renderer, the look description has a shared format. Changing renderer for a look means redrawing the material one less time.</span></p>
+  <div class="links"><a href="https://github.com/AcademySoftwareFoundation/MaterialX">GitHub</a><a href="http://www.materialx.org/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#3d-graphics</span><span>#computer-graphics</span><span>#materialx</span></div>
-</article><article class="card" id="p-academysoftwarefoundation-opencolorio" data-repo="AcademySoftwareFoundation/OpenColorIO" data-search="opencolorio academysoftwarefoundation/opencolorio 視覺效果同動畫用嘅色彩管理框架。佢負責喺拍攝、合成同顯示之間轉換顏色空間，令不同軟件看到嘅顏色保持一致。顯示同合成看到嘅顏色要一致時，會用佢做轉換。鏡頭之間色溫唔同，都靠佢對齊。 a color management framework for visual effects and animation. c++ opencolorio">
+</article><article class="card" id="p-academysoftwarefoundation-opencolorio" data-repo="AcademySoftwareFoundation/OpenColorIO" data-search="opencolorio academysoftwarefoundation/opencolorio 視覺效果同動畫用嘅色彩管理框架。佢負責喺拍攝、合成同顯示之間轉換顏色空間，令不同軟件看到嘅顏色保持一致。顯示同合成看到嘅顏色要一致時，會用佢做轉換。鏡頭之間色溫唔同，都靠佢對齊。 a color management framework for visual effects and animation. it converts color spaces between capture, compositing, and display so that different programs see the same color. when the displayed color and the composited color need to match, it does the conversion. when color temperature differs between shots, it is also what lines them up. a color management framework for visual effects and animation. c++ opencolorio">
   <header>
     <h3><span class="rank">39</span><a href="https://github.com/AcademySoftwareFoundation/OpenColorIO">OpenColorIO</a></h3>
     <div class="stars">★ 2,134</div>
   </header>
-  <p class="meta">AcademySoftwareFoundation/OpenColorIO · C++ · BSD-3-Clause · <time class="pushed" datetime="2026-10-01">最近推送 2026-10-01</time></p>
-  <p class="summary">視覺效果同動畫用嘅色彩管理框架。佢負責喺拍攝、合成同顯示之間轉換顏色空間，令不同軟件看到嘅顏色保持一致。顯示同合成看到嘅顏色要一致時，會用佢做轉換。鏡頭之間色溫唔同，都靠佢對齊。</p>
-  <div class="links"><a href="https://github.com/AcademySoftwareFoundation/OpenColorIO">GitHub</a><a href="https://opencolorio.org">主頁</a></div>
+  <p class="meta">AcademySoftwareFoundation/OpenColorIO · C++ · BSD-3-Clause · <time class="pushed" datetime="2026-10-01"><span class="t-zh">最近推送 2026-10-01</span><span class="t-en">Pushed 2026-10-01</span></time></p>
+  <p class="summary"><span class="t-zh">視覺效果同動畫用嘅色彩管理框架。佢負責喺拍攝、合成同顯示之間轉換顏色空間，令不同軟件看到嘅顏色保持一致。顯示同合成看到嘅顏色要一致時，會用佢做轉換。鏡頭之間色溫唔同，都靠佢對齊。</span><span class="t-en">A color management framework for visual effects and animation. It converts color spaces between capture, compositing, and display so that different programs see the same color. When the displayed color and the composited color need to match, it does the conversion. When color temperature differs between shots, it is also what lines them up.</span></p>
+  <div class="links"><a href="https://github.com/AcademySoftwareFoundation/OpenColorIO">GitHub</a><a href="https://opencolorio.org"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#opencolorio</span></div>
-</article><article class="card" id="p-academysoftwarefoundation-openexr" data-repo="AcademySoftwareFoundation/openexr" data-search="openexr academysoftwarefoundation/openexr 電影工業常用嘅高動態範圍 exr 圖像格式同參考實作。合成同渲染會用佢保存高於一般螢幕範圍嘅亮度同多個圖層，而唔係只存 8-bit 圖片。一張 exr 可以帶多個圖層同高光，合成時先唔會夾死亮度。 the openexr project provides the specification and reference implementation of the exr file format, the professional-grade image storage format of the motion picture industry. c academy hdr image-processing images openexr vfx">
+</article><article class="card" id="p-academysoftwarefoundation-openexr" data-repo="AcademySoftwareFoundation/openexr" data-search="openexr academysoftwarefoundation/openexr 電影工業常用嘅高動態範圍 exr 圖像格式同參考實作。合成同渲染會用佢保存高於一般螢幕範圍嘅亮度同多個圖層，而唔係只存 8-bit 圖片。一張 exr 可以帶多個圖層同高光，合成時先唔會夾死亮度。 the high-dynamic-range exr image format widely used in the film industry, and its reference implementation. compositing and rendering use it to store brightness beyond a normal screen range, plus multiple layers, rather than only 8-bit images. one exr can carry multiple layers and highlights, so compositing does not clip the brightness. the openexr project provides the specification and reference implementation of the exr file format, the professional-grade image storage format of the motion picture industry. c academy hdr image-processing images openexr vfx">
   <header>
     <h3><span class="rank">40</span><a href="https://github.com/AcademySoftwareFoundation/openexr">openexr</a></h3>
     <div class="stars">★ 1,874</div>
   </header>
-  <p class="meta">AcademySoftwareFoundation/openexr · C · BSD-3-Clause · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">電影工業常用嘅高動態範圍 EXR 圖像格式同參考實作。合成同渲染會用佢保存高於一般螢幕範圍嘅亮度同多個圖層，而唔係只存 8-bit 圖片。一張 EXR 可以帶多個圖層同高光，合成時先唔會夾死亮度。</p>
-  <div class="links"><a href="https://github.com/AcademySoftwareFoundation/openexr">GitHub</a><a href="http://www.openexr.com/">主頁</a></div>
+  <p class="meta">AcademySoftwareFoundation/openexr · C · BSD-3-Clause · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">電影工業常用嘅高動態範圍 EXR 圖像格式同參考實作。合成同渲染會用佢保存高於一般螢幕範圍嘅亮度同多個圖層，而唔係只存 8-bit 圖片。一張 EXR 可以帶多個圖層同高光，合成時先唔會夾死亮度。</span><span class="t-en">The high-dynamic-range EXR image format widely used in the film industry, and its reference implementation. Compositing and rendering use it to store brightness beyond a normal screen range, plus multiple layers, rather than only 8-bit images. One EXR can carry multiple layers and highlights, so compositing does not clip the brightness.</span></p>
+  <div class="links"><a href="https://github.com/AcademySoftwareFoundation/openexr">GitHub</a><a href="http://www.openexr.com/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#academy</span><span>#hdr</span><span>#image-processing</span></div>
-</article><article class="card" id="p-noniv-web-ocean" data-repo="Noniv/web-ocean" data-search="web-ocean noniv/web-ocean 一個 webgpu 海洋渲染示範，單一 html 檔就可以喺 chrome 打開。有 fft 海浪、白沫、陽光同日落天空。你可以自由飛攝影機。冇遊戲引擎。適合睇即時水面點樣寫，而唔係一套三維軟件。 real-time webgpu ocean renderer written from scratch, no engine. fft waves, whitecaps, sun glitter, physically based sunset sky with clouds, free camera. built with claude code (opus 5.5). opens from a single 61 kb html file in chrome. html ">
+</article><article class="card" id="p-noniv-web-ocean" data-repo="Noniv/web-ocean" data-search="web-ocean noniv/web-ocean 一個 webgpu 海洋渲染示範，單一 html 檔就可以喺 chrome 打開。有 fft 海浪、白沫、陽光同日落天空。你可以自由飛攝影機。冇遊戲引擎。適合睇即時水面點樣寫，而唔係一套三維軟件。 a webgpu ocean-rendering demo. a single html file can open it in chrome. it has fft waves, foam, sunlight, and a sunset sky. you can fly the camera freely. there is no game engine. it suits looking at how a real-time water surface is written, not a 3d software package. real-time webgpu ocean renderer written from scratch, no engine. fft waves, whitecaps, sun glitter, physically based sunset sky with clouds, free camera. built with claude code (opus 5.5). opens from a single 61 kb html file in chrome. html ">
   <header>
     <h3><span class="rank">41</span><a href="https://github.com/Noniv/web-ocean">web-ocean</a></h3>
     <div class="stars">★ 946</div>
   </header>
-  <p class="meta">Noniv/web-ocean · HTML · MIT · <time class="pushed" datetime="2026-10-17">最近推送 2026-10-17</time></p>
-  <p class="summary">一個 WebGPU 海洋渲染示範，單一 HTML 檔就可以喺 Chrome 打開。有 FFT 海浪、白沫、陽光同日落天空。你可以自由飛攝影機。冇遊戲引擎。適合睇即時水面點樣寫，而唔係一套三維軟件。</p>
-  <div class="links"><a href="https://github.com/Noniv/web-ocean">GitHub</a><a href="https://ocean-noniv.vercel.app/">主頁</a></div>
+  <p class="meta">Noniv/web-ocean · HTML · MIT · <time class="pushed" datetime="2026-10-17"><span class="t-zh">最近推送 2026-10-17</span><span class="t-en">Pushed 2026-10-17</span></time></p>
+  <p class="summary"><span class="t-zh">一個 WebGPU 海洋渲染示範，單一 HTML 檔就可以喺 Chrome 打開。有 FFT 海浪、白沫、陽光同日落天空。你可以自由飛攝影機。冇遊戲引擎。適合睇即時水面點樣寫，而唔係一套三維軟件。</span><span class="t-en">A WebGPU ocean-rendering demo. A single HTML file can open it in Chrome. It has FFT waves, foam, sunlight, and a sunset sky. You can fly the camera freely. There is no game engine. It suits looking at how a real-time water surface is written, not a 3D software package.</span></p>
+  <div class="links"><a href="https://github.com/Noniv/web-ocean">GitHub</a><a href="https://ocean-noniv.vercel.app/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   
-</article><article class="card" id="p-patch-gg-anymove" data-repo="patch-gg/anymove" data-search="anymove patch-gg/anymove 由一段片捉任何生物嘅動作，再套上骨骼輸出 glb。同一幀有兩個機位，用嚟對齊關節。亦可以當 agent skill 交俾編程助手跑。適合遊戲同三維角色要動作、又冇動作捕捉棚嘅人。 motion capture for any creature from one ai video: two cameras in one frame, a dinov2 joint reader, the rig fitted in both views, a glb out. python agent-skills animation blender claude-code-plugin dinov2 gamedev generative-ai motion-capture">
+</article><article class="card" id="p-patch-gg-anymove" data-repo="patch-gg/anymove" data-search="anymove patch-gg/anymove 由一段片捉任何生物嘅動作，再套上骨骼輸出 glb。同一幀有兩個機位，用嚟對齊關節。亦可以當 agent skill 交俾編程助手跑。適合遊戲同三維角色要動作、又冇動作捕捉棚嘅人。 it captures the motion of any creature from a video, fits that motion onto a skeleton, and exports glb. the same frame has two camera views, used to align the joints. it can also be used as an agent skill and handed to a coding assistant to run. it suits games and 3d characters that need motion and do not have a motion-capture studio. motion capture for any creature from one ai video: two cameras in one frame, a dinov2 joint reader, the rig fitted in both views, a glb out. python agent-skills animation blender claude-code-plugin dinov2 gamedev generative-ai motion-capture">
   <header>
     <h3><span class="rank">42</span><a href="https://github.com/patch-gg/anymove">anymove</a></h3>
     <div class="stars">★ 417</div>
   </header>
-  <p class="meta">patch-gg/anymove · Python · Apache-2.0 · <time class="pushed" datetime="2026-10-27">最近推送 2026-10-27</time></p>
-  <p class="summary">由一段片捉任何生物嘅動作，再套上骨骼輸出 GLB。同一幀有兩個機位，用嚟對齊關節。亦可以當 agent skill 交俾編程助手跑。適合遊戲同三維角色要動作、又冇動作捕捉棚嘅人。</p>
-  <div class="links"><a href="https://github.com/patch-gg/anymove">GitHub</a><a href="https://patch.gg">主頁</a></div>
+  <p class="meta">patch-gg/anymove · Python · Apache-2.0 · <time class="pushed" datetime="2026-10-27"><span class="t-zh">最近推送 2026-10-27</span><span class="t-en">Pushed 2026-10-27</span></time></p>
+  <p class="summary"><span class="t-zh">由一段片捉任何生物嘅動作，再套上骨骼輸出 GLB。同一幀有兩個機位，用嚟對齊關節。亦可以當 agent skill 交俾編程助手跑。適合遊戲同三維角色要動作、又冇動作捕捉棚嘅人。</span><span class="t-en">It captures the motion of any creature from a video, fits that motion onto a skeleton, and exports GLB. The same frame has two camera views, used to align the joints. It can also be used as an agent skill and handed to a coding assistant to run. It suits games and 3D characters that need motion and do not have a motion-capture studio.</span></p>
+  <div class="links"><a href="https://github.com/patch-gg/anymove">GitHub</a><a href="https://patch.gg"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#agent-skills</span><span>#animation</span><span>#blender</span></div>
 </article></div>
-  <div class="papers"><h3>相關論文</h3><div class="grid"><article class="card" data-search="nerf: representing scenes as neural radiance fields for view synthesis 用神經網路表示一個立體場景，由多張相片合成未拍過嘅新視角。場景被寫成連續嘅輻射場，沿光線取樣就可以渲染。後來大量新視角合成同神經渲染工作都由呢篇論文開始。 paper arxiv">
+  <div class="papers"><h3><span class="t-zh">相關論文</span><span class="t-en">Related papers</span></h3><div class="grid"><article class="card" data-search="nerf: representing scenes as neural radiance fields for view synthesis 用神經網路表示一個立體場景，由多張相片合成未拍過嘅新視角。場景被寫成連續嘅輻射場，沿光線取樣就可以渲染。後來大量新視角合成同神經渲染工作都由呢篇論文開始。 a neural network represents a 3d scene and synthesizes viewpoints that were never photographed. the scene is a continuous radiance field, and rendering samples along rays. a lot of later view-synthesis and neural-rendering work starts from this paper. paper arxiv">
   <header>
     <h3><a href="https://arxiv.org/abs/2003.08934">NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis</a></h3>
     <div class="stars">2020</div>
   </header>
-  <p class="meta">論文 · arXiv</p>
-  <p class="summary">用神經網路表示一個立體場景，由多張相片合成未拍過嘅新視角。場景被寫成連續嘅輻射場，沿光線取樣就可以渲染。後來大量新視角合成同神經渲染工作都由呢篇論文開始。</p>
-  <div class="links"><a href="https://arxiv.org/abs/2003.08934">arXiv</a><a href="https://github.com/bmild/nerf">程式</a><span class="badge">論文</span></div>
+  <p class="meta"><span class="t-zh">論文</span><span class="t-en">Paper</span> · arXiv</p>
+  <p class="summary"><span class="t-zh">用神經網路表示一個立體場景，由多張相片合成未拍過嘅新視角。場景被寫成連續嘅輻射場，沿光線取樣就可以渲染。後來大量新視角合成同神經渲染工作都由呢篇論文開始。</span><span class="t-en">A neural network represents a 3D scene and synthesizes viewpoints that were never photographed. The scene is a continuous radiance field, and rendering samples along rays. A lot of later view-synthesis and neural-rendering work starts from this paper.</span></p>
+  <div class="links"><a href="https://arxiv.org/abs/2003.08934">arXiv</a><a href="https://github.com/bmild/nerf"><span class="t-zh">程式</span><span class="t-en">Code</span></a><span class="badge"><span class="t-zh">論文</span><span class="t-en">Paper</span></span></div>
 </article></div></div>
 </section>
   </main>
-  <footer class="site">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 預設按 stars 排，可以改按最近推送 · 重複項目只保留一次 · 最近推送會喺你睇到嗰張卡時向 GitHub 更新</footer>
+  <footer class="site"><span class="t-zh">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 預設按 stars 排，可以改按最近推送 · 重複項目只保留一次 · 最近推送會喺你睇到嗰張卡時向 GitHub 更新</span><span class="t-en">Open Source Catalog · Data from public GitHub and arXiv · Stars by default, or sort by last push · Each repository is listed once · Last push updates from GitHub when the card is on screen</span></footer>
 </div>
 <script>
 (function () {
@@ -771,7 +805,14 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
       const node = card.querySelector("time.pushed");
       if (!node) return;
       node.dateTime = day;
-      node.textContent = "最近推送 " + day;
+      node.replaceChildren();
+      const zhLabel = document.createElement("span");
+      zhLabel.className = "t-zh";
+      zhLabel.textContent = "最近推送 " + day;
+      const enLabel = document.createElement("span");
+      enLabel.className = "t-en";
+      enLabel.textContent = "Pushed " + day;
+      node.append(zhLabel, enLabel);
     });
     if (sortMode === "pushed") {
       sortGrids();
@@ -851,6 +892,30 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   }
   window.addEventListener("scroll", schedulePushed, { passive: true });
   window.addEventListener("resize", schedulePushed);
+  function applyLang(lang) {
+    const next = lang === "en" ? "en" : "zh-Hant";
+    const english = next === "en";
+    document.documentElement.lang = next;
+    document.querySelectorAll(".lang-switch button").forEach((button) => {
+      button.setAttribute("aria-pressed", button.dataset.lang === next ? "true" : "false");
+    });
+    document.querySelectorAll("[data-zh-label]").forEach((node) => {
+      node.setAttribute("aria-label", english ? node.getAttribute("data-en-label") : node.getAttribute("data-zh-label"));
+    });
+    document.querySelectorAll("[data-zh-placeholder]").forEach((node) => {
+      node.placeholder = english ? node.getAttribute("data-en-placeholder") : node.getAttribute("data-zh-placeholder");
+    });
+    const title = document.querySelector("title");
+    if (title) title.textContent = english ? title.getAttribute("data-en") : title.getAttribute("data-zh");
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", english ? meta.getAttribute("data-en") : meta.getAttribute("data-zh"));
+    try { localStorage.setItem("osc-lang", next); }
+    catch (error) {}
+  }
+  document.querySelectorAll(".lang-switch button").forEach((button) => {
+    button.addEventListener("click", () => applyLang(button.dataset.lang));
+  });
+  applyLang(document.documentElement.lang);
   input.addEventListener("input", apply);
   input.addEventListener("search", apply);
   sortButtons.forEach((button) => {

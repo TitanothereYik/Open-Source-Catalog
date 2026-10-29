@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
+<script>try{if(localStorage.getItem("osc-lang")==="en")document.documentElement.lang="en";}catch(e){}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0c0d11">
-<meta name="description" content="Open Source Catalog：AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。">
-<title>影片 · Open Source Catalog</title>
+<meta name="description" data-zh="Open Source Catalog：AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。" data-en="Open Source Catalog: open-source projects and related papers for AI agents, images, video, VFX/CG/Blender, stock trading, and crypto trading." content="Open Source Catalog：AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。">
+<title data-zh="影片 · Open Source Catalog" data-en="Video · Open Source Catalog">影片 · Open Source Catalog</title>
 <link rel="canonical" href="https://titanothereyik.github.io/Open-Source-Catalog/video/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,8 +49,37 @@ a { color: inherit; }
   z-index: 5;
 }
 .skip:focus { top: 12px; }
+.lang-switch {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 6;
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(12, 13, 17, 0.94);
+  box-shadow: var(--shadow);
+}
+.lang-switch button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  padding: 8px 12px;
+  cursor: pointer;
+  min-width: 42px;
+}
+.lang-switch button + button { box-shadow: inset 1px 0 0 var(--line); }
+.lang-switch button[aria-pressed="true"] { background: var(--gold); color: var(--ink); font-weight: 650; }
+.t-en { display: none; }
+html[lang="en"] .t-zh { display: none; }
+html[lang="en"] .t-en { display: inline; }
 .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
-header.hero { padding: 36px 0 18px; }
+header.hero { padding: 36px 96px 18px 0; }
 .kicker {
   margin: 0 0 8px;
   color: var(--gold);
@@ -80,7 +110,7 @@ h1 {
   position: sticky;
   top: 0;
   z-index: 3;
-  padding: 8px 0 12px;
+  padding: 8px 96px 12px 0;
   background: linear-gradient(var(--bg) 72%, rgba(12, 13, 17, 0.94) 88%, transparent);
 }
 nav.pages {
@@ -235,563 +265,567 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
 </style>
 </head>
 <body>
-<a class="skip" href="#content">跳到項目</a>
+<div class="lang-switch" role="group" data-zh-label="語言" data-en-label="Language" aria-label="語言">
+  <button type="button" data-lang="en">EN</button>
+  <button type="button" data-lang="zh-Hant" aria-pressed="true">中</button>
+</div>
+<a class="skip" href="#content"><span class="t-zh">跳到項目</span><span class="t-en">Skip to projects</span></a>
 <div class="wrap">
   
 <header class="hero hero-sub">
     <p class="kicker"><a href="../">Open Source Catalog</a></p>
-    <h1>影片</h1>
-    <p class="lede">影片生成、剪接、播放、轉碼同處理。 開源項目按 GitHub stars 由多至少。</p>
+    <h1><span class="t-zh">影片</span><span class="t-en">Video</span></h1>
+    <p class="lede"><span class="t-zh">影片生成、剪接、播放、轉碼同處理。</span><span class="t-en">Video generation, editing, playback, transcoding, and processing.</span> <span class="t-zh">開源項目按 GitHub stars 由多至少。</span><span class="t-en">Sorted by GitHub stars, highest first.</span></p>
     <div class="stats">
-      <div class="stat"><b>58</b><span>開源項目</span></div>
-      <div class="stat"><b>0</b><span>相關論文</span></div>
-      <div class="stat"><b>2026年10月30日</b><span>04:36（香港時間）</span></div>
+      <div class="stat"><b>58</b><span><span class="t-zh">開源項目</span><span class="t-en">Projects</span></span></div>
+      <div class="stat"><b>0</b><span><span class="t-zh">相關論文</span><span class="t-en">Related papers</span></span></div>
+      <div class="stat"><b><span class="t-zh">2026年10月30日</span><span class="t-en">30 Oct 2026</span></b><span><span class="t-zh">04:36（香港時間）</span><span class="t-en">04:36 (Hong Kong)</span></span></div>
     </div>
   </header>
 
   <div class="stickybar">
-    <nav class="pages" aria-label="分類"><a href="../">目錄</a><a href="../gaussian-splatting/">Gaussian Splatting<span class="count">52</span></a><a href="../world-model/">World Model<span class="count">36</span></a><a href="../image-to-3d/">Image to 3D<span class="count">42</span></a><a href="../ai-agent/">AI Agent<span class="count">63</span></a><a href="../image/">圖像<span class="count">85</span></a><a href="./" aria-current="page">影片<span class="count">58</span></a><a href="../vfx-cg-blender/">VFX / CG / Blender<span class="count">42</span></a><a href="../stock-trading/">Stock Trading<span class="count">49</span></a><a href="../crypto-trading/">Crypto Trading<span class="count">30</span></a></nav>
+    <nav class="pages" data-zh-label="分類" data-en-label="Categories" aria-label="分類"><a href="../"><span class="t-zh">目錄</span><span class="t-en">Catalog</span></a><a href="../gaussian-splatting/"><span class="t-zh">Gaussian Splatting</span><span class="t-en">Gaussian Splatting</span><span class="count">52</span></a><a href="../world-model/"><span class="t-zh">World Model</span><span class="t-en">World Model</span><span class="count">36</span></a><a href="../image-to-3d/"><span class="t-zh">Image to 3D</span><span class="t-en">Image to 3D</span><span class="count">42</span></a><a href="../ai-agent/"><span class="t-zh">AI Agent</span><span class="t-en">AI Agent</span><span class="count">63</span></a><a href="../image/"><span class="t-zh">圖像</span><span class="t-en">Image</span><span class="count">85</span></a><a href="./" aria-current="page"><span class="t-zh">影片</span><span class="t-en">Video</span><span class="count">58</span></a><a href="../vfx-cg-blender/"><span class="t-zh">VFX / CG / Blender</span><span class="t-en">VFX / CG / Blender</span><span class="count">42</span></a><a href="../stock-trading/"><span class="t-zh">Stock Trading</span><span class="t-en">Stock Trading</span><span class="count">49</span></a><a href="../crypto-trading/"><span class="t-zh">Crypto Trading</span><span class="t-en">Crypto Trading</span><span class="count">30</span></a></nav>
     <div class="toolbar">
-      <div class="sort" role="group" aria-label="排序">
-        <button type="button" data-sort="stars" aria-pressed="true">星數</button>
-        <button type="button" data-sort="pushed" aria-pressed="false" aria-label="按最後推送日期，由新到舊">最近推送</button>
+      <div class="sort" role="group" data-zh-label="排序" data-en-label="Sort" aria-label="排序">
+        <button type="button" data-sort="stars" aria-pressed="true"><span class="t-zh">星數</span><span class="t-en">Stars</span></button>
+        <button type="button" data-sort="pushed" aria-pressed="false" data-zh-label="按最後推送日期，由新到舊" data-en-label="Sort by last push, newest first"><span class="t-zh">最近推送</span><span class="t-en">Last push</span></button>
       </div>
       <form class="search" role="search" onsubmit="return false">
-        <label class="sr" for="q" style="position:absolute;left:-999px">搜尋</label>
-        <input id="q" type="search" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
+        <label class="sr" for="q" style="position:absolute;left:-999px"><span class="t-zh">搜尋</span><span class="t-en">Search</span></label>
+        <input id="q" type="search" data-zh-placeholder="搜尋名稱、摘要、語言或主題" data-en-placeholder="Search name, summary, language, or topic" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
       </form>
     </div>
   </div>
   <main class="page" id="content">
-    <p id="empty">沒有符合呢個搜尋嘅項目。</p>
+    <p id="empty"><span class="t-zh">沒有符合呢個搜尋嘅項目。</span><span class="t-en">No projects match this search.</span></p>
     <section class="section" id="video" data-section>
-  <div class="grid"><article class="card" id="p-yt-dlp-yt-dlp" data-repo="yt-dlp/yt-dlp" data-search="yt-dlp yt-dlp/yt-dlp 功能完整嘅命令列影音下載器，可以從大量網站保存影片同音訊。你可以揀格式、字幕同播放清單，適合要歸檔或者再處理網上影片嘅人。網站改版後更新密，係而家命令列下載嘅主流選擇。播放清單同字幕可以一次過保存。 a feature-rich command-line audio/video downloader python cli downloader python sponsorblock youtube-dl youtube-downloader yt-dlp">
+  <div class="grid"><article class="card" id="p-yt-dlp-yt-dlp" data-repo="yt-dlp/yt-dlp" data-search="yt-dlp yt-dlp/yt-dlp 功能完整嘅命令列影音下載器，可以從大量網站保存影片同音訊。你可以揀格式、字幕同播放清單，適合要歸檔或者再處理網上影片嘅人。網站改版後更新密，係而家命令列下載嘅主流選擇。播放清單同字幕可以一次過保存。 a full-featured command-line audio and video downloader that can save video and audio from a large number of sites. you can choose the format, subtitles, and playlists, which suits people who need to archive or further process online video. it is updated frequently after sites change, and it is the mainstream choice for command-line downloading now. playlists and subtitles can be saved in one pass. a feature-rich command-line audio/video downloader python cli downloader python sponsorblock youtube-dl youtube-downloader yt-dlp">
   <header>
     <h3><span class="rank">01</span><a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a></h3>
     <div class="stars">★ 203,676</div>
   </header>
-  <p class="meta">yt-dlp/yt-dlp · Python · Unlicense · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">功能完整嘅命令列影音下載器，可以從大量網站保存影片同音訊。你可以揀格式、字幕同播放清單，適合要歸檔或者再處理網上影片嘅人。網站改版後更新密，係而家命令列下載嘅主流選擇。播放清單同字幕可以一次過保存。</p>
-  <div class="links"><a href="https://github.com/yt-dlp/yt-dlp">GitHub</a><a href="https://discord.gg/H5MNcFW63r">主頁</a></div>
+  <p class="meta">yt-dlp/yt-dlp · Python · Unlicense · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">功能完整嘅命令列影音下載器，可以從大量網站保存影片同音訊。你可以揀格式、字幕同播放清單，適合要歸檔或者再處理網上影片嘅人。網站改版後更新密，係而家命令列下載嘅主流選擇。播放清單同字幕可以一次過保存。</span><span class="t-en">A full-featured command-line audio and video downloader that can save video and audio from a large number of sites. You can choose the format, subtitles, and playlists, which suits people who need to archive or further process online video. It is updated frequently after sites change, and it is the mainstream choice for command-line downloading now. Playlists and subtitles can be saved in one pass.</span></p>
+  <div class="links"><a href="https://github.com/yt-dlp/yt-dlp">GitHub</a><a href="https://discord.gg/H5MNcFW63r"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#cli</span><span>#downloader</span><span>#python</span></div>
-</article><article class="card" id="p-obsproject-obs-studio" data-repo="obsproject/obs-studio" data-search="obs-studio obsproject/obs-studio 免費開源嘅直播同螢幕錄製軟件。可以混合畫面、鏡頭、視窗同音訊，再用場景切換，適合直播、上課同錄製教學，而唔使另買擷取軟件。場景可以預先排好，直播時一鍵切鏡頭同畫面。上課、直播同錄螢幕都可以共用同一批場景。 obs studio - free and open source software for live streaming and screen recording c c c-plus-plus directshow facebook-live ffmpeg game-capture live-streaming screen-capture">
+</article><article class="card" id="p-obsproject-obs-studio" data-repo="obsproject/obs-studio" data-search="obs-studio obsproject/obs-studio 免費開源嘅直播同螢幕錄製軟件。可以混合畫面、鏡頭、視窗同音訊，再用場景切換，適合直播、上課同錄製教學，而唔使另買擷取軟件。場景可以預先排好，直播時一鍵切鏡頭同畫面。上課、直播同錄螢幕都可以共用同一批場景。 free, open-source live streaming and screen recording software. it can mix screens, cameras, windows, and audio, then switch scenes, which suits livestreaming, teaching, and recording tutorials without buying separate capture software. scenes can be arranged in advance and switched with one click during a stream. teaching, livestreaming, and screen recording can share the same set of scenes. obs studio - free and open source software for live streaming and screen recording c c c-plus-plus directshow facebook-live ffmpeg game-capture live-streaming screen-capture">
   <header>
     <h3><span class="rank">02</span><a href="https://github.com/obsproject/obs-studio">obs-studio</a></h3>
     <div class="stars">★ 78,570</div>
   </header>
-  <p class="meta">obsproject/obs-studio · C · GPL-2.0 · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">免費開源嘅直播同螢幕錄製軟件。可以混合畫面、鏡頭、視窗同音訊，再用場景切換，適合直播、上課同錄製教學，而唔使另買擷取軟件。場景可以預先排好，直播時一鍵切鏡頭同畫面。上課、直播同錄螢幕都可以共用同一批場景。</p>
-  <div class="links"><a href="https://github.com/obsproject/obs-studio">GitHub</a><a href="https://obsproject.com">主頁</a></div>
+  <p class="meta">obsproject/obs-studio · C · GPL-2.0 · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">免費開源嘅直播同螢幕錄製軟件。可以混合畫面、鏡頭、視窗同音訊，再用場景切換，適合直播、上課同錄製教學，而唔使另買擷取軟件。場景可以預先排好，直播時一鍵切鏡頭同畫面。上課、直播同錄螢幕都可以共用同一批場景。</span><span class="t-en">Free, open-source live streaming and screen recording software. It can mix screens, cameras, windows, and audio, then switch scenes, which suits livestreaming, teaching, and recording tutorials without buying separate capture software. Scenes can be arranged in advance and switched with one click during a stream. Teaching, livestreaming, and screen recording can share the same set of scenes.</span></p>
+  <div class="links"><a href="https://github.com/obsproject/obs-studio">GitHub</a><a href="https://obsproject.com"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#c</span><span>#c-plus-plus</span><span>#directshow</span></div>
-</article><article class="card" id="p-calesthio-openmontage" data-repo="calesthio/OpenMontage" data-search="openmontage calesthio/openmontage 開源嘅 agent 影片製作系統，用多條製作流程同工具產出影片。你交一個製作目標，系統會調用唔同步驟去組織素材同成片，而唔係只提供一個剪接時間線。適合想由目標驅動成片，而唔係自己逐段拖時間線。 world&#x27;s first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. turn your ai coding assistant into a full video production studio. python agent agentic-ai ai claude copilot cursor elevenlabs ffmpeg">
+</article><article class="card" id="p-calesthio-openmontage" data-repo="calesthio/OpenMontage" data-search="openmontage calesthio/openmontage 開源嘅 agent 影片製作系統，用多條製作流程同工具產出影片。你交一個製作目標，系統會調用唔同步驟去組織素材同成片，而唔係只提供一個剪接時間線。適合想由目標驅動成片，而唔係自己逐段拖時間線。 an open-source agent video production system that produces video with multiple production pipelines and tools. you give it a production goal, and the system calls different steps to organize the material and a finished cut, rather than only offering an editing timeline. it suits people who want a finished video driven by a goal, rather than dragging the timeline piece by piece themselves. world&#x27;s first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. turn your ai coding assistant into a full video production studio. python agent agentic-ai ai claude copilot cursor elevenlabs ffmpeg">
   <header>
     <h3><span class="rank">03</span><a href="https://github.com/calesthio/OpenMontage">OpenMontage</a></h3>
     <div class="stars">★ 72,979</div>
   </header>
-  <p class="meta">calesthio/OpenMontage · Python · AGPL-3.0 · <time class="pushed" datetime="2026-10-29">最近推送 2026-10-29</time></p>
-  <p class="summary">開源嘅 agent 影片製作系統，用多條製作流程同工具產出影片。你交一個製作目標，系統會調用唔同步驟去組織素材同成片，而唔係只提供一個剪接時間線。適合想由目標驅動成片，而唔係自己逐段拖時間線。</p>
-  <div class="links"><a href="https://github.com/calesthio/OpenMontage">GitHub</a><a href="https://www.openmontage.video/">主頁</a></div>
+  <p class="meta">calesthio/OpenMontage · Python · AGPL-3.0 · <time class="pushed" datetime="2026-10-29"><span class="t-zh">最近推送 2026-10-29</span><span class="t-en">Pushed 2026-10-29</span></time></p>
+  <p class="summary"><span class="t-zh">開源嘅 agent 影片製作系統，用多條製作流程同工具產出影片。你交一個製作目標，系統會調用唔同步驟去組織素材同成片，而唔係只提供一個剪接時間線。適合想由目標驅動成片，而唔係自己逐段拖時間線。</span><span class="t-en">An open-source agent video production system that produces video with multiple production pipelines and tools. You give it a production goal, and the system calls different steps to organize the material and a finished cut, rather than only offering an editing timeline. It suits people who want a finished video driven by a goal, rather than dragging the timeline piece by piece themselves.</span></p>
+  <div class="links"><a href="https://github.com/calesthio/OpenMontage">GitHub</a><a href="https://www.openmontage.video/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#agent</span><span>#agentic-ai</span><span>#ai</span></div>
-</article><article class="card" id="p-remotion-dev-remotion" data-repo="remotion-dev/remotion" data-search="remotion remotion-dev/remotion 用 react 以程式方式製作影片，適合可重複嘅動畫同模板。畫面用組件寫，數據一變就可以渲染出新版本，適合批量做片頭、圖表同社群影片。同一條片可以按數據批量出好多版本，例如每個人一段。 🎥      make videos programmatically with react typescript javascript react video">
+</article><article class="card" id="p-remotion-dev-remotion" data-repo="remotion-dev/remotion" data-search="remotion remotion-dev/remotion 用 react 以程式方式製作影片，適合可重複嘅動畫同模板。畫面用組件寫，數據一變就可以渲染出新版本，適合批量做片頭、圖表同社群影片。同一條片可以按數據批量出好多版本，例如每個人一段。 make videos programmatically with react, for repeatable animation and templates. the picture is written as components, and when the data changes a new version can be rendered, which suits batch production of intros, charts, and social videos. the same video can be batch-rendered into many versions from data, for example one clip per person. 🎥      make videos programmatically with react typescript javascript react video">
   <header>
     <h3><span class="rank">04</span><a href="https://github.com/remotion-dev/remotion">remotion</a></h3>
     <div class="stars">★ 68,857</div>
   </header>
-  <p class="meta">remotion-dev/remotion · TypeScript · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">用 React 以程式方式製作影片，適合可重複嘅動畫同模板。畫面用組件寫，數據一變就可以渲染出新版本，適合批量做片頭、圖表同社群影片。同一條片可以按數據批量出好多版本，例如每個人一段。</p>
-  <div class="links"><a href="https://github.com/remotion-dev/remotion">GitHub</a><a href="https://remotion.dev">主頁</a></div>
+  <p class="meta">remotion-dev/remotion · TypeScript · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">用 React 以程式方式製作影片，適合可重複嘅動畫同模板。畫面用組件寫，數據一變就可以渲染出新版本，適合批量做片頭、圖表同社群影片。同一條片可以按數據批量出好多版本，例如每個人一段。</span><span class="t-en">Make videos programmatically with React, for repeatable animation and templates. The picture is written as components, and when the data changes a new version can be rendered, which suits batch production of intros, charts, and social videos. The same video can be batch-rendered into many versions from data, for example one clip per person.</span></p>
+  <div class="links"><a href="https://github.com/remotion-dev/remotion">GitHub</a><a href="https://remotion.dev"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#javascript</span><span>#react</span><span>#video</span></div>
-</article><article class="card" id="p-ffmpeg-ffmpeg" data-repo="FFmpeg/FFmpeg" data-search="ffmpeg ffmpeg/ffmpeg 處理影音嘅核心工具，負責轉碼、剪接、串流同格式轉換。播放器、剪接軟件同網站後台很多時都係叫佢做實際嘅解碼同編碼。自己寫剪接或串流工具時，底層幾乎都會叫到佢。幾乎所有影音軟件最後都會叫到佢。 mirror of https://git.ffmpeg.org/ffmpeg.git c audio c ffmpeg fft hevc hls matroska mp4">
+</article><article class="card" id="p-ffmpeg-ffmpeg" data-repo="FFmpeg/FFmpeg" data-search="ffmpeg ffmpeg/ffmpeg 處理影音嘅核心工具，負責轉碼、剪接、串流同格式轉換。播放器、剪接軟件同網站後台很多時都係叫佢做實際嘅解碼同編碼。自己寫剪接或串流工具時，底層幾乎都會叫到佢。幾乎所有影音軟件最後都會叫到佢。 a core tool for audio and video, handling transcoding, cutting, streaming, and format conversion. players, editing software, and website backends often call it for the actual decoding and encoding. when you write your own editing or streaming tool, the lower layer almost always calls it. almost all audio and video software ends up calling it. mirror of https://git.ffmpeg.org/ffmpeg.git c audio c ffmpeg fft hevc hls matroska mp4">
   <header>
     <h3><span class="rank">05</span><a href="https://github.com/FFmpeg/FFmpeg">FFmpeg</a></h3>
     <div class="stars">★ 66,033</div>
   </header>
-  <p class="meta">FFmpeg/FFmpeg · C · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">處理影音嘅核心工具，負責轉碼、剪接、串流同格式轉換。播放器、剪接軟件同網站後台很多時都係叫佢做實際嘅解碼同編碼。自己寫剪接或串流工具時，底層幾乎都會叫到佢。幾乎所有影音軟件最後都會叫到佢。</p>
-  <div class="links"><a href="https://github.com/FFmpeg/FFmpeg">GitHub</a><a href="https://ffmpeg.org/">主頁</a></div>
+  <p class="meta">FFmpeg/FFmpeg · C · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">處理影音嘅核心工具，負責轉碼、剪接、串流同格式轉換。播放器、剪接軟件同網站後台很多時都係叫佢做實際嘅解碼同編碼。自己寫剪接或串流工具時，底層幾乎都會叫到佢。幾乎所有影音軟件最後都會叫到佢。</span><span class="t-en">A core tool for audio and video, handling transcoding, cutting, streaming, and format conversion. Players, editing software, and website backends often call it for the actual decoding and encoding. When you write your own editing or streaming tool, the lower layer almost always calls it. Almost all audio and video software ends up calling it.</span></p>
+  <div class="links"><a href="https://github.com/FFmpeg/FFmpeg">GitHub</a><a href="https://ffmpeg.org/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#audio</span><span>#c</span><span>#ffmpeg</span></div>
-</article><article class="card" id="p-jellyfin-jellyfin" data-repo="jellyfin/jellyfin" data-search="jellyfin jellyfin/jellyfin 自由軟件媒體系統，可以自己架伺服器整理同播放影片。影片庫、字幕同多個客戶端都由你控制，用作家庭影音伺服器，而唔使將片庫放上商業平台。家中幾部裝置可以播自己片庫，帳號同元數據都自己管。 the free software media system - server backend &amp; api c# csharp dotnet hacktoberfest jellyfin">
+</article><article class="card" id="p-jellyfin-jellyfin" data-repo="jellyfin/jellyfin" data-search="jellyfin jellyfin/jellyfin 自由軟件媒體系統，可以自己架伺服器整理同播放影片。影片庫、字幕同多個客戶端都由你控制，用作家庭影音伺服器，而唔使將片庫放上商業平台。家中幾部裝置可以播自己片庫，帳號同元數據都自己管。 a free-software media system you can host yourself to organize and play video. you control the library, subtitles, and multiple clients, and it is used as a home media server without putting the library on a commercial platform. several devices at home can play your own library, and you manage the accounts and metadata yourself. the free software media system - server backend &amp; api c# csharp dotnet hacktoberfest jellyfin">
   <header>
     <h3><span class="rank">06</span><a href="https://github.com/jellyfin/jellyfin">jellyfin</a></h3>
     <div class="stars">★ 58,783</div>
   </header>
-  <p class="meta">jellyfin/jellyfin · C# · GPL-2.0 · <time class="pushed" datetime="2026-10-29">最近推送 2026-10-29</time></p>
-  <p class="summary">自由軟件媒體系統，可以自己架伺服器整理同播放影片。影片庫、字幕同多個客戶端都由你控制，用作家庭影音伺服器，而唔使將片庫放上商業平台。家中幾部裝置可以播自己片庫，帳號同元數據都自己管。</p>
-  <div class="links"><a href="https://github.com/jellyfin/jellyfin">GitHub</a><a href="https://jellyfin.org">主頁</a></div>
+  <p class="meta">jellyfin/jellyfin · C# · GPL-2.0 · <time class="pushed" datetime="2026-10-29"><span class="t-zh">最近推送 2026-10-29</span><span class="t-en">Pushed 2026-10-29</span></time></p>
+  <p class="summary"><span class="t-zh">自由軟件媒體系統，可以自己架伺服器整理同播放影片。影片庫、字幕同多個客戶端都由你控制，用作家庭影音伺服器，而唔使將片庫放上商業平台。家中幾部裝置可以播自己片庫，帳號同元數據都自己管。</span><span class="t-en">A free-software media system you can host yourself to organize and play video. You control the library, subtitles, and multiple clients, and it is used as a home media server without putting the library on a commercial platform. Several devices at home can play your own library, and you manage the accounts and metadata yourself.</span></p>
+  <div class="links"><a href="https://github.com/jellyfin/jellyfin">GitHub</a><a href="https://jellyfin.org"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#csharp</span><span>#dotnet</span><span>#hacktoberfest</span></div>
-</article><article class="card" id="p-mpv-player-mpv" data-repo="mpv-player/mpv" data-search="mpv mpv-player/mpv 輕量、高質素嘅命令列媒體播放器。支援大量格式同著色器，可以用鍵盤同腳本控制播放，亦經常被其他介面包一層來用。著色器同腳本可以改播放效果，介面則多數另包。設定檔可以同步到幾部電腦。 🎥 command line media player c audio c ffmpeg mplayer mpv multimedia video">
+</article><article class="card" id="p-mpv-player-mpv" data-repo="mpv-player/mpv" data-search="mpv mpv-player/mpv 輕量、高質素嘅命令列媒體播放器。支援大量格式同著色器，可以用鍵盤同腳本控制播放，亦經常被其他介面包一層來用。著色器同腳本可以改播放效果，介面則多數另包。設定檔可以同步到幾部電腦。 a lightweight, high-quality command-line media player. it supports many formats and shaders, playback can be controlled by keyboard and scripts, and other interfaces often wrap it. shaders and scripts can change the playback look, while the interface is usually wrapped separately. configuration files can be synced to several computers. 🎥 command line media player c audio c ffmpeg mplayer mpv multimedia video">
   <header>
     <h3><span class="rank">07</span><a href="https://github.com/mpv-player/mpv">mpv</a></h3>
     <div class="stars">★ 37,620</div>
   </header>
-  <p class="meta">mpv-player/mpv · C · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">輕量、高質素嘅命令列媒體播放器。支援大量格式同著色器，可以用鍵盤同腳本控制播放，亦經常被其他介面包一層來用。著色器同腳本可以改播放效果，介面則多數另包。設定檔可以同步到幾部電腦。</p>
-  <div class="links"><a href="https://github.com/mpv-player/mpv">GitHub</a><a href="https://mpv.io">主頁</a></div>
+  <p class="meta">mpv-player/mpv · C · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">輕量、高質素嘅命令列媒體播放器。支援大量格式同著色器，可以用鍵盤同腳本控制播放，亦經常被其他介面包一層來用。著色器同腳本可以改播放效果，介面則多數另包。設定檔可以同步到幾部電腦。</span><span class="t-en">A lightweight, high-quality command-line media player. It supports many formats and shaders, playback can be controlled by keyboard and scripts, and other interfaces often wrap it. Shaders and scripts can change the playback look, while the interface is usually wrapped separately. Configuration files can be synced to several computers.</span></p>
+  <div class="links"><a href="https://github.com/mpv-player/mpv">GitHub</a><a href="https://mpv.io"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#audio</span><span>#c</span><span>#ffmpeg</span></div>
-</article><article class="card" id="p-anil-matcha-open-generative-ai" data-repo="Anil-matcha/Open-Generative-AI" data-search="open-generative-ai anil-matcha/open-generative-ai 可以自己架設嘅圖像同影片生成工作室，整合 flux、kling、sora、veo 等模型。用嚟喺本機出圖同出片，採 mit 授權。模型可以換成自己已經有嘅接口。 unrestricted open-source alternative to ai video platforms — free ai image &amp; video generation studio with 600+ models (flux, midjourney, kling, sora, veo). no content filters. self-hosted, mit licensed. javascript ai-art-generator ai-image-generation ai-video-generation fal-ai-alternative generative-ai image-to-video invideo-alternative kling-ai">
+</article><article class="card" id="p-anil-matcha-open-generative-ai" data-repo="Anil-matcha/Open-Generative-AI" data-search="open-generative-ai anil-matcha/open-generative-ai 可以自己架設嘅圖像同影片生成工作室，整合 flux、kling、sora、veo 等模型。用嚟喺本機出圖同出片，採 mit 授權。模型可以換成自己已經有嘅接口。 a self-hosted image and video generation studio that integrates models such as flux, kling, sora, and veo. it is for generating images and video locally, under the mit license. models can be swapped for interfaces you already have. unrestricted open-source alternative to ai video platforms — free ai image &amp; video generation studio with 600+ models (flux, midjourney, kling, sora, veo). no content filters. self-hosted, mit licensed. javascript ai-art-generator ai-image-generation ai-video-generation fal-ai-alternative generative-ai image-to-video invideo-alternative kling-ai">
   <header>
     <h3><span class="rank">08</span><a href="https://github.com/Anil-matcha/Open-Generative-AI">Open-Generative-AI</a></h3>
     <div class="stars">★ 31,808</div>
   </header>
-  <p class="meta">Anil-matcha/Open-Generative-AI · JavaScript · MIT · <time class="pushed" datetime="2026-10-29">最近推送 2026-10-29</time></p>
-  <p class="summary">可以自己架設嘅圖像同影片生成工作室，整合 Flux、Kling、Sora、Veo 等模型。用嚟喺本機出圖同出片，採 MIT 授權。模型可以換成自己已經有嘅接口。</p>
-  <div class="links"><a href="https://github.com/Anil-matcha/Open-Generative-AI">GitHub</a><a href="https://muapi.ai/open-generative-ai?utm_source=github&amp;utm_medium=about&amp;utm_campaign=open-generative-ai">主頁</a></div>
+  <p class="meta">Anil-matcha/Open-Generative-AI · JavaScript · MIT · <time class="pushed" datetime="2026-10-29"><span class="t-zh">最近推送 2026-10-29</span><span class="t-en">Pushed 2026-10-29</span></time></p>
+  <p class="summary"><span class="t-zh">可以自己架設嘅圖像同影片生成工作室，整合 Flux、Kling、Sora、Veo 等模型。用嚟喺本機出圖同出片，採 MIT 授權。模型可以換成自己已經有嘅接口。</span><span class="t-en">A self-hosted image and video generation studio that integrates models such as FLUX, Kling, Sora, and Veo. It is for generating images and video locally, under the MIT license. Models can be swapped for interfaces you already have.</span></p>
+  <div class="links"><a href="https://github.com/Anil-matcha/Open-Generative-AI">GitHub</a><a href="https://muapi.ai/open-generative-ai?utm_source=github&amp;utm_medium=about&amp;utm_campaign=open-generative-ai"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#ai-art-generator</span><span>#ai-image-generation</span><span>#ai-video-generation</span></div>
-</article><article class="card" id="p-hpcaitech-open-sora" data-repo="hpcaitech/Open-Sora" data-search="open-sora hpcaitech/open-sora 開源影片生成項目，目標係降低高質文字到影片嘅製作門檻。提供模型同訓練、推理相關程式，讓研究同創作可以喺開放權重上試文字生成影片。想改訓練或推理而唔係只使用現成網站，就睇呢個開放項目。 open-sora: democratizing efficient video production for all python ">
+</article><article class="card" id="p-hpcaitech-open-sora" data-repo="hpcaitech/Open-Sora" data-search="open-sora hpcaitech/open-sora 開源影片生成項目，目標係降低高質文字到影片嘅製作門檻。提供模型同訓練、推理相關程式，讓研究同創作可以喺開放權重上試文字生成影片。想改訓練或推理而唔係只使用現成網站，就睇呢個開放項目。 an open-source video generation project aimed at lowering the barrier to high-quality text-to-video. it provides models and training and inference code so research and creative work can try text-to-video on open weights. if you want to change training or inference rather than only use a ready-made website, look at this open project. open-sora: democratizing efficient video production for all python ">
   <header>
     <h3><span class="rank">09</span><a href="https://github.com/hpcaitech/Open-Sora">Open-Sora</a></h3>
     <div class="stars">★ 29,885</div>
   </header>
-  <p class="meta">hpcaitech/Open-Sora · Python · Apache-2.0 · <time class="pushed" datetime="2026-04-09">最近推送 2026-04-09</time></p>
-  <p class="summary">開源影片生成項目，目標係降低高質文字到影片嘅製作門檻。提供模型同訓練、推理相關程式，讓研究同創作可以喺開放權重上試文字生成影片。想改訓練或推理而唔係只使用現成網站，就睇呢個開放項目。</p>
-  <div class="links"><a href="https://github.com/hpcaitech/Open-Sora">GitHub</a><a href="https://hpcaitech.github.io/Open-Sora/">主頁</a></div>
+  <p class="meta">hpcaitech/Open-Sora · Python · Apache-2.0 · <time class="pushed" datetime="2026-04-09"><span class="t-zh">最近推送 2026-04-09</span><span class="t-en">Pushed 2026-04-09</span></time></p>
+  <p class="summary"><span class="t-zh">開源影片生成項目，目標係降低高質文字到影片嘅製作門檻。提供模型同訓練、推理相關程式，讓研究同創作可以喺開放權重上試文字生成影片。想改訓練或推理而唔係只使用現成網站，就睇呢個開放項目。</span><span class="t-en">An open-source video generation project aimed at lowering the barrier to high-quality text-to-video. It provides models and training and inference code so research and creative work can try text-to-video on open weights. If you want to change training or inference rather than only use a ready-made website, look at this open project.</span></p>
+  <div class="links"><a href="https://github.com/hpcaitech/Open-Sora">GitHub</a><a href="https://hpcaitech.github.io/Open-Sora/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   
-</article><article class="card" id="p-ath-maas-pixelle-video" data-repo="ATH-MaaS/Pixelle-Video" data-search="pixelle-video ath-maas/pixelle-video ai 自動短片引擎，由內容一路做到成片。你可以由文字或素材開始，讓流程負責腳本、畫面同輸出，縮短做一條短片要跨好多工具嘅時間。短片步驟串埋一齊，減少腳本、畫面同輸出各用一個軟件。 🚀 ai 全自动短视频引擎 | ai fully automated short video engine python aigc comfyui image-generation tts video-generation">
+</article><article class="card" id="p-ath-maas-pixelle-video" data-repo="ATH-MaaS/Pixelle-Video" data-search="pixelle-video ath-maas/pixelle-video ai 自動短片引擎，由內容一路做到成片。你可以由文字或素材開始，讓流程負責腳本、畫面同輸出，縮短做一條短片要跨好多工具嘅時間。短片步驟串埋一齊，減少腳本、畫面同輸出各用一個軟件。 an ai automatic short-video engine that goes from content all the way to a finished video. you can start from text or source material and let the pipeline handle the script, the visuals, and the output, shortening the time spent across many tools to make one short video. the short-video steps are chained together, so the script, the visuals, and the output do not each use a separate program. 🚀 ai 全自动短视频引擎 | ai fully automated short video engine python aigc comfyui image-generation tts video-generation">
   <header>
     <h3><span class="rank">10</span><a href="https://github.com/ATH-MaaS/Pixelle-Video">Pixelle-Video</a></h3>
     <div class="stars">★ 29,537</div>
   </header>
-  <p class="meta">ATH-MaaS/Pixelle-Video · Python · Apache-2.0 · <time class="pushed" datetime="2026-06-14">最近推送 2026-06-14</time></p>
-  <p class="summary">AI 自動短片引擎，由內容一路做到成片。你可以由文字或素材開始，讓流程負責腳本、畫面同輸出，縮短做一條短片要跨好多工具嘅時間。短片步驟串埋一齊，減少腳本、畫面同輸出各用一個軟件。</p>
-  <div class="links"><a href="https://github.com/ATH-MaaS/Pixelle-Video">GitHub</a><a href="https://aidc-ai.github.io/Pixelle-Video/zh">主頁</a></div>
+  <p class="meta">ATH-MaaS/Pixelle-Video · Python · Apache-2.0 · <time class="pushed" datetime="2026-06-14"><span class="t-zh">最近推送 2026-06-14</span><span class="t-en">Pushed 2026-06-14</span></time></p>
+  <p class="summary"><span class="t-zh">AI 自動短片引擎，由內容一路做到成片。你可以由文字或素材開始，讓流程負責腳本、畫面同輸出，縮短做一條短片要跨好多工具嘅時間。短片步驟串埋一齊，減少腳本、畫面同輸出各用一個軟件。</span><span class="t-en">An AI automatic short-video engine that goes from content all the way to a finished video. You can start from text or source material and let the pipeline handle the script, the visuals, and the output, shortening the time spent across many tools to make one short video. The short-video steps are chained together, so the script, the visuals, and the output do not each use a separate program.</span></p>
+  <div class="links"><a href="https://github.com/ATH-MaaS/Pixelle-Video">GitHub</a><a href="https://aidc-ai.github.io/Pixelle-Video/zh"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#aigc</span><span>#comfyui</span><span>#image-generation</span></div>
-</article><article class="card" id="p-stability-ai-generative-models" data-repo="Stability-AI/generative-models" data-search="generative-models stability-ai/generative-models stability ai 嘅生成模型程式，包含 stable video diffusion 等圖像到影片模型。可以用一張圖作為起點生成短片，亦係佢哋多個生成模型嘅官方程式集合。圖像到影片嘅 stable video diffusion 同其他生成模型程式都收喺呢度。 generative models by stability ai python ">
+</article><article class="card" id="p-stability-ai-generative-models" data-repo="Stability-AI/generative-models" data-search="generative-models stability-ai/generative-models stability ai 嘅生成模型程式，包含 stable video diffusion 等圖像到影片模型。可以用一張圖作為起點生成短片，亦係佢哋多個生成模型嘅官方程式集合。圖像到影片嘅 stable video diffusion 同其他生成模型程式都收喺呢度。 stability ai&#x27;s generative model code, including image-to-video models such as stable video diffusion. you can generate a short video starting from a single image, and it is also the official code collection for several of their generative models. stable video diffusion for image-to-video and the code for the other generative models are both collected here. generative models by stability ai python ">
   <header>
     <h3><span class="rank">11</span><a href="https://github.com/Stability-AI/generative-models">generative-models</a></h3>
     <div class="stars">★ 27,316</div>
   </header>
-  <p class="meta">Stability-AI/generative-models · Python · MIT · <time class="pushed" datetime="2025-12-16">最近推送 2025-12-16</time></p>
-  <p class="summary">Stability AI 嘅生成模型程式，包含 Stable Video Diffusion 等圖像到影片模型。可以用一張圖作為起點生成短片，亦係佢哋多個生成模型嘅官方程式集合。圖像到影片嘅 Stable Video Diffusion 同其他生成模型程式都收喺呢度。</p>
-  <div class="links"><a href="https://github.com/Stability-AI/generative-models">GitHub</a><a href="https://arxiv.org/abs/2311.15127">論文</a></div>
+  <p class="meta">Stability-AI/generative-models · Python · MIT · <time class="pushed" datetime="2025-12-16"><span class="t-zh">最近推送 2025-12-16</span><span class="t-en">Pushed 2025-12-16</span></time></p>
+  <p class="summary"><span class="t-zh">Stability AI 嘅生成模型程式，包含 Stable Video Diffusion 等圖像到影片模型。可以用一張圖作為起點生成短片，亦係佢哋多個生成模型嘅官方程式集合。圖像到影片嘅 Stable Video Diffusion 同其他生成模型程式都收喺呢度。</span><span class="t-en">Stability AI&#x27;s generative model code, including image-to-video models such as Stable Video Diffusion. You can generate a short video starting from a single image, and it is also the official code collection for several of their generative models. Stable Video Diffusion for image-to-video and the code for the other generative models are both collected here.</span></p>
+  <div class="links"><a href="https://github.com/Stability-AI/generative-models">GitHub</a><a href="https://arxiv.org/abs/2311.15127"><span class="t-zh">論文</span><span class="t-en">Paper</span></a></div>
   
-</article><article class="card" id="p-handbrake-handbrake" data-repo="HandBrake/HandBrake" data-search="handbrake handbrake/handbrake 開源影片轉檔工具，用嚟壓縮同轉換成常見格式。有圖形介面可以揀裝置預設，適合將大檔變成方便播放或者上載嘅版本。預設對應常見裝置，轉完就可以直接播或者上傳。批次轉檔時可以沿用同一個預設。 handbrake&#x27;s development repository c gplv2 multi-platform video-transcoding">
+</article><article class="card" id="p-handbrake-handbrake" data-repo="HandBrake/HandBrake" data-search="handbrake handbrake/handbrake 開源影片轉檔工具，用嚟壓縮同轉換成常見格式。有圖形介面可以揀裝置預設，適合將大檔變成方便播放或者上載嘅版本。預設對應常見裝置，轉完就可以直接播或者上傳。批次轉檔時可以沿用同一個預設。 an open-source video transcoding tool for compressing and converting to common formats. it has a graphical interface where you can choose device presets, which suits turning large files into versions that are easy to play or upload. presets match common devices, so after conversion you can play or upload directly. when batch-converting, you can keep using the same preset. handbrake&#x27;s development repository c gplv2 multi-platform video-transcoding">
   <header>
     <h3><span class="rank">12</span><a href="https://github.com/HandBrake/HandBrake">HandBrake</a></h3>
     <div class="stars">★ 24,820</div>
   </header>
-  <p class="meta">HandBrake/HandBrake · C · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">開源影片轉檔工具，用嚟壓縮同轉換成常見格式。有圖形介面可以揀裝置預設，適合將大檔變成方便播放或者上載嘅版本。預設對應常見裝置，轉完就可以直接播或者上傳。批次轉檔時可以沿用同一個預設。</p>
-  <div class="links"><a href="https://github.com/HandBrake/HandBrake">GitHub</a><a href="https://handbrake.fr">主頁</a></div>
+  <p class="meta">HandBrake/HandBrake · C · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">開源影片轉檔工具，用嚟壓縮同轉換成常見格式。有圖形介面可以揀裝置預設，適合將大檔變成方便播放或者上載嘅版本。預設對應常見裝置，轉完就可以直接播或者上傳。批次轉檔時可以沿用同一個預設。</span><span class="t-en">An open-source video transcoding tool for compressing and converting to common formats. It has a graphical interface where you can choose device presets, which suits turning large files into versions that are easy to play or upload. Presets match common devices, so after conversion you can play or upload directly. When batch-converting, you can keep using the same preset.</span></p>
+  <div class="links"><a href="https://github.com/HandBrake/HandBrake">GitHub</a><a href="https://handbrake.fr"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#gplv2</span><span>#multi-platform</span><span>#video-transcoding</span></div>
-</article><article class="card" id="p-k4yt3x-video2x" data-repo="k4yt3x/video2x" data-search="video2x k4yt3x/video2x 用機器學習做影片超解像同補幀。可以將低解像影片放大，或者提高幀率，令舊片同動畫喺大畫面播放時少啲鋸齒同卡頓。放大同補幀可以分開做，舊動畫同源影片都用得。模型可以按動畫或實拍分開揀。 a machine learning-based video super resolution and frame interpolation framework. est. hack the valley ii, 2018. c++ anime4k frame-interpolation machine-learning neural-networks realcugan realesrgan rife super-resoluion">
+</article><article class="card" id="p-k4yt3x-video2x" data-repo="k4yt3x/video2x" data-search="video2x k4yt3x/video2x 用機器學習做影片超解像同補幀。可以將低解像影片放大，或者提高幀率，令舊片同動畫喺大畫面播放時少啲鋸齒同卡頓。放大同補幀可以分開做，舊動畫同源影片都用得。模型可以按動畫或實拍分開揀。 video super-resolution and frame interpolation with machine learning. it can enlarge low-resolution video or raise the frame rate, so old footage and animation show less aliasing and stutter on a large screen. upscaling and frame interpolation can be done separately, and both old animation and source video can be used. models can be chosen separately for animation or live action. a machine learning-based video super resolution and frame interpolation framework. est. hack the valley ii, 2018. c++ anime4k frame-interpolation machine-learning neural-networks realcugan realesrgan rife super-resoluion">
   <header>
     <h3><span class="rank">13</span><a href="https://github.com/k4yt3x/video2x">video2x</a></h3>
     <div class="stars">★ 22,469</div>
   </header>
-  <p class="meta">k4yt3x/video2x · C++ · AGPL-3.0 · <time class="pushed" datetime="2026-03-07">最近推送 2026-03-07</time></p>
-  <p class="summary">用機器學習做影片超解像同補幀。可以將低解像影片放大，或者提高幀率，令舊片同動畫喺大畫面播放時少啲鋸齒同卡頓。放大同補幀可以分開做，舊動畫同源影片都用得。模型可以按動畫或實拍分開揀。</p>
-  <div class="links"><a href="https://github.com/k4yt3x/video2x">GitHub</a><a href="https://docs.video2x.org">主頁</a></div>
+  <p class="meta">k4yt3x/video2x · C++ · AGPL-3.0 · <time class="pushed" datetime="2026-03-07"><span class="t-zh">最近推送 2026-03-07</span><span class="t-en">Pushed 2026-03-07</span></time></p>
+  <p class="summary"><span class="t-zh">用機器學習做影片超解像同補幀。可以將低解像影片放大，或者提高幀率，令舊片同動畫喺大畫面播放時少啲鋸齒同卡頓。放大同補幀可以分開做，舊動畫同源影片都用得。模型可以按動畫或實拍分開揀。</span><span class="t-en">Video super-resolution and frame interpolation with machine learning. It can enlarge low-resolution video or raise the frame rate, so old footage and animation show less aliasing and stutter on a large screen. Upscaling and frame interpolation can be done separately, and both old animation and source video can be used. Models can be chosen separately for animation or live action.</span></p>
+  <div class="links"><a href="https://github.com/k4yt3x/video2x">GitHub</a><a href="https://docs.video2x.org"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#anime4k</span><span>#frame-interpolation</span><span>#machine-learning</span></div>
-</article><article class="card" id="p-bloc97-anime4k" data-repo="bloc97/Anime4K" data-search="anime4k bloc97/anime4k 即時動漫影片放大算法，可以喺播放時提升畫質。佢着重線條同色塊，適合邊播邊放大動漫，而唔使先將成條片離線重新渲染。播放器可以即時套用，唔使先渲染成一條新檔。mpv 等播放器可以直接掛呢套算法。 a high-quality real time upscaler for anime video jupyter notebook anime anime-upscaling anime4k cnn computer-graphics convolutional-neural-networks denoising-algorithms neural-networks">
+</article><article class="card" id="p-bloc97-anime4k" data-repo="bloc97/Anime4K" data-search="anime4k bloc97/anime4k 即時動漫影片放大算法，可以喺播放時提升畫質。佢着重線條同色塊，適合邊播邊放大動漫，而唔使先將成條片離線重新渲染。播放器可以即時套用，唔使先渲染成一條新檔。mpv 等播放器可以直接掛呢套算法。 a real-time anime video upscaling algorithm that can improve quality during playback. it focuses on lines and flat color, which suits enlarging anime while you watch without first re-rendering the whole video offline. a player can apply it in real time, without first rendering a new file. players such as mpv can attach this algorithm directly. a high-quality real time upscaler for anime video jupyter notebook anime anime-upscaling anime4k cnn computer-graphics convolutional-neural-networks denoising-algorithms neural-networks">
   <header>
     <h3><span class="rank">14</span><a href="https://github.com/bloc97/Anime4K">Anime4K</a></h3>
     <div class="stars">★ 21,580</div>
   </header>
-  <p class="meta">bloc97/Anime4K · Jupyter Notebook · MIT · <time class="pushed" datetime="2024-08-17">最近推送 2024-08-17</time></p>
-  <p class="summary">即時動漫影片放大算法，可以喺播放時提升畫質。佢着重線條同色塊，適合邊播邊放大動漫，而唔使先將成條片離線重新渲染。播放器可以即時套用，唔使先渲染成一條新檔。mpv 等播放器可以直接掛呢套算法。</p>
-  <div class="links"><a href="https://github.com/bloc97/Anime4K">GitHub</a><a href="https://bloc97.github.io/Anime4K/">主頁</a></div>
+  <p class="meta">bloc97/Anime4K · Jupyter Notebook · MIT · <time class="pushed" datetime="2024-08-17"><span class="t-zh">最近推送 2024-08-17</span><span class="t-en">Pushed 2024-08-17</span></time></p>
+  <p class="summary"><span class="t-zh">即時動漫影片放大算法，可以喺播放時提升畫質。佢着重線條同色塊，適合邊播邊放大動漫，而唔使先將成條片離線重新渲染。播放器可以即時套用，唔使先渲染成一條新檔。mpv 等播放器可以直接掛呢套算法。</span><span class="t-en">A real-time anime video upscaling algorithm that can improve quality during playback. It focuses on lines and flat color, which suits enlarging anime while you watch without first re-rendering the whole video offline. A player can apply it in real time, without first rendering a new file. Players such as mpv can attach this algorithm directly.</span></p>
+  <div class="links"><a href="https://github.com/bloc97/Anime4K">GitHub</a><a href="https://bloc97.github.io/Anime4K/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#anime</span><span>#anime-upscaling</span><span>#anime4k</span></div>
-</article><article class="card" id="p-hbai-ltd-toonflow-app" data-repo="HBAI-Ltd/Toonflow-app" data-search="toonflow-app hbai-ltd/toonflow-app 開源短劇同漫劇工具，涵蓋劇本、分鏡、角色場景同圖像、影片生成。一條短片需要嘅前期同畫面步驟可以喺同一個專案入面推進。短劇由劇本走到畫面，中間分鏡同角色可以留喺同一專案。角色設定可以沿用到後面嘅分鏡。 短剧、漫剧制作工具 toonflow：开源 ai 视频创作平台，集成剧本创作、智能分镜、角色与场景资产管理、图像生成和视频生成。融合无限画布、ai agent 与可视化工作流，支持本地部署、自选模型、跨平台客户端、mcp 与插件扩展。open-source ai short drama and motion comic creation tool with an infinite canvas, ai agents, storyboarding, image and video generation. self-hosted and extensible, with a canvas-based approach similar to libtv and tapnow. typescript ai-agents ai-comic ai-content-creation ai-filmmaking ai-short-drama generative-ai image-generation image-to-video">
+</article><article class="card" id="p-hbai-ltd-toonflow-app" data-repo="HBAI-Ltd/Toonflow-app" data-search="toonflow-app hbai-ltd/toonflow-app 開源短劇同漫劇工具，涵蓋劇本、分鏡、角色場景同圖像、影片生成。一條短片需要嘅前期同畫面步驟可以喺同一個專案入面推進。短劇由劇本走到畫面，中間分鏡同角色可以留喺同一專案。角色設定可以沿用到後面嘅分鏡。 an open-source tool for short dramas and comic dramas, covering scripts, storyboards, characters and scenes, and image and video generation. the preproduction and visual steps a short video needs can move forward inside the same project. a short drama goes from script to picture, and the storyboards and characters in between can stay in the same project. character settings can be carried into later storyboards. 短剧、漫剧制作工具 toonflow：开源 ai 视频创作平台，集成剧本创作、智能分镜、角色与场景资产管理、图像生成和视频生成。融合无限画布、ai agent 与可视化工作流，支持本地部署、自选模型、跨平台客户端、mcp 与插件扩展。open-source ai short drama and motion comic creation tool with an infinite canvas, ai agents, storyboarding, image and video generation. self-hosted and extensible, with a canvas-based approach similar to libtv and tapnow. typescript ai-agents ai-comic ai-content-creation ai-filmmaking ai-short-drama generative-ai image-generation image-to-video">
   <header>
     <h3><span class="rank">15</span><a href="https://github.com/HBAI-Ltd/Toonflow-app">Toonflow-app</a></h3>
     <div class="stars">★ 19,890</div>
   </header>
-  <p class="meta">HBAI-Ltd/Toonflow-app · TypeScript · MIT · <time class="pushed" datetime="2026-10-27">最近推送 2026-10-27</time></p>
-  <p class="summary">開源短劇同漫劇工具，涵蓋劇本、分鏡、角色場景同圖像、影片生成。一條短片需要嘅前期同畫面步驟可以喺同一個專案入面推進。短劇由劇本走到畫面，中間分鏡同角色可以留喺同一專案。角色設定可以沿用到後面嘅分鏡。</p>
-  <div class="links"><a href="https://github.com/HBAI-Ltd/Toonflow-app">GitHub</a><a href="https://toonflow.net">主頁</a></div>
+  <p class="meta">HBAI-Ltd/Toonflow-app · TypeScript · MIT · <time class="pushed" datetime="2026-10-27"><span class="t-zh">最近推送 2026-10-27</span><span class="t-en">Pushed 2026-10-27</span></time></p>
+  <p class="summary"><span class="t-zh">開源短劇同漫劇工具，涵蓋劇本、分鏡、角色場景同圖像、影片生成。一條短片需要嘅前期同畫面步驟可以喺同一個專案入面推進。短劇由劇本走到畫面，中間分鏡同角色可以留喺同一專案。角色設定可以沿用到後面嘅分鏡。</span><span class="t-en">An open-source tool for short dramas and comic dramas, covering scripts, storyboards, characters and scenes, and image and video generation. The preproduction and visual steps a short video needs can move forward inside the same project. A short drama goes from script to picture, and the storyboards and characters in between can stay in the same project. Character settings can be carried into later storyboards.</span></p>
+  <div class="links"><a href="https://github.com/HBAI-Ltd/Toonflow-app">GitHub</a><a href="https://toonflow.net"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#ai-agents</span><span>#ai-comic</span><span>#ai-content-creation</span></div>
-</article><article class="card" id="p-klingairesearch-liveportrait" data-repo="KlingAIResearch/LivePortrait" data-search="liveportrait klingairesearch/liveportrait 將一張人像變成會郁嘅肖像動畫。你用一張相做身份，再驅動作表情同頭部動作，適合做會說話或者會轉頭嘅人像，而唔使先拍一段影片。只有一張肖像都做得，驅動則來自另一段動作或表情。 bring portraits to life! python face-animation image-animation video-editing video-generation">
+</article><article class="card" id="p-klingairesearch-liveportrait" data-repo="KlingAIResearch/LivePortrait" data-search="liveportrait klingairesearch/liveportrait 將一張人像變成會郁嘅肖像動畫。你用一張相做身份，再驅動作表情同頭部動作，適合做會說話或者會轉頭嘅人像，而唔使先拍一段影片。只有一張肖像都做得，驅動則來自另一段動作或表情。 turns a single portrait into a moving portrait animation. you use one photo as the identity, then drive expressions and head movement, which suits portraits that talk or turn their head without first filming a video. a single portrait is enough, and the driving comes from another motion or expression clip. bring portraits to life! python face-animation image-animation video-editing video-generation">
   <header>
     <h3><span class="rank">16</span><a href="https://github.com/KlingAIResearch/LivePortrait">LivePortrait</a></h3>
     <div class="stars">★ 19,350</div>
   </header>
-  <p class="meta">KlingAIResearch/LivePortrait · Python · <time class="pushed" datetime="2026-06-02">最近推送 2026-06-02</time></p>
-  <p class="summary">將一張人像變成會郁嘅肖像動畫。你用一張相做身份，再驅動作表情同頭部動作，適合做會說話或者會轉頭嘅人像，而唔使先拍一段影片。只有一張肖像都做得，驅動則來自另一段動作或表情。</p>
-  <div class="links"><a href="https://github.com/KlingAIResearch/LivePortrait">GitHub</a><a href="https://liveportrait.github.io">主頁</a></div>
+  <p class="meta">KlingAIResearch/LivePortrait · Python · <time class="pushed" datetime="2026-06-02"><span class="t-zh">最近推送 2026-06-02</span><span class="t-en">Pushed 2026-06-02</span></time></p>
+  <p class="summary"><span class="t-zh">將一張人像變成會郁嘅肖像動畫。你用一張相做身份，再驅動作表情同頭部動作，適合做會說話或者會轉頭嘅人像，而唔使先拍一段影片。只有一張肖像都做得，驅動則來自另一段動作或表情。</span><span class="t-en">Turns a single portrait into a moving portrait animation. You use one photo as the identity, then drive expressions and head movement, which suits portraits that talk or turn their head without first filming a video. A single portrait is enough, and the driving comes from another motion or expression clip.</span></p>
+  <div class="links"><a href="https://github.com/KlingAIResearch/LivePortrait">GitHub</a><a href="https://liveportrait.github.io"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#face-animation</span><span>#image-animation</span><span>#video-editing</span></div>
-</article><article class="card" id="p-wan-video-wan2-2" data-repo="Wan-Video/Wan2.2" data-search="wan2.2 wan-video/wan2.2 阿里 wan 系列嘅開源大型影片生成模型。可以用文字或圖像作為條件生成影片，權重同推理程式開放，方便研究同二次開發接上自己嘅流程。開放權重方便你接到自己嘅剪接或生成流程再試。 wan: open and advanced large-scale video generative models python aigc video-generation">
+</article><article class="card" id="p-wan-video-wan2-2" data-repo="Wan-Video/Wan2.2" data-search="wan2.2 wan-video/wan2.2 阿里 wan 系列嘅開源大型影片生成模型。可以用文字或圖像作為條件生成影片，權重同推理程式開放，方便研究同二次開發接上自己嘅流程。開放權重方便你接到自己嘅剪接或生成流程再試。 an open-source large video generation model in alibaba&#x27;s wan series. it can generate video conditioned on text or an image, with open weights and inference code, which makes it easier for research and further development to connect to your own pipeline. open weights make it easy to connect it to your own editing or generation pipeline and try it. wan: open and advanced large-scale video generative models python aigc video-generation">
   <header>
     <h3><span class="rank">17</span><a href="https://github.com/Wan-Video/Wan2.2">Wan2.2</a></h3>
     <div class="stars">★ 18,263</div>
   </header>
-  <p class="meta">Wan-Video/Wan2.2 · Python · Apache-2.0 · <time class="pushed" datetime="2026-09-21">最近推送 2026-09-21</time></p>
-  <p class="summary">阿里 Wan 系列嘅開源大型影片生成模型。可以用文字或圖像作為條件生成影片，權重同推理程式開放，方便研究同二次開發接上自己嘅流程。開放權重方便你接到自己嘅剪接或生成流程再試。</p>
-  <div class="links"><a href="https://github.com/Wan-Video/Wan2.2">GitHub</a><a href="https://wan.video">主頁</a></div>
+  <p class="meta">Wan-Video/Wan2.2 · Python · Apache-2.0 · <time class="pushed" datetime="2026-09-21"><span class="t-zh">最近推送 2026-09-21</span><span class="t-en">Pushed 2026-09-21</span></time></p>
+  <p class="summary"><span class="t-zh">阿里 Wan 系列嘅開源大型影片生成模型。可以用文字或圖像作為條件生成影片，權重同推理程式開放，方便研究同二次開發接上自己嘅流程。開放權重方便你接到自己嘅剪接或生成流程再試。</span><span class="t-en">An open-source large video generation model in Alibaba&#x27;s Wan series. It can generate video conditioned on text or an image, with open weights and inference code, which makes it easier for research and further development to connect to your own pipeline. Open weights make it easy to connect it to your own editing or generation pipeline and try it.</span></p>
+  <div class="links"><a href="https://github.com/Wan-Video/Wan2.2">GitHub</a><a href="https://wan.video"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#aigc</span><span>#video-generation</span></div>
-</article><article class="card" id="p-lllyasviel-framepack" data-repo="lllyasviel/FramePack" data-search="framepack lllyasviel/framepack 令影片擴散模型嘅生成更加實際，降低長片段對記憶體嘅壓力。佢改變幀嘅處理方式，讓較長嘅生成唔使一次過將所有幀嘅狀態放喺顯示卡入面。顯示卡放唔下長片時，呢種幀處理先有實際意義。 lets make video diffusion practical! python ">
+</article><article class="card" id="p-lllyasviel-framepack" data-repo="lllyasviel/FramePack" data-search="framepack lllyasviel/framepack 令影片擴散模型嘅生成更加實際，降低長片段對記憶體嘅壓力。佢改變幀嘅處理方式，讓較長嘅生成唔使一次過將所有幀嘅狀態放喺顯示卡入面。顯示卡放唔下長片時，呢種幀處理先有實際意義。 makes generation with video diffusion models more practical by lowering the memory pressure of long clips. it changes how frames are processed so a longer generation does not have to keep the state of every frame on the gpu at once. this way of handling frames becomes practically useful when the gpu cannot hold a long video. lets make video diffusion practical! python ">
   <header>
     <h3><span class="rank">18</span><a href="https://github.com/lllyasviel/FramePack">FramePack</a></h3>
     <div class="stars">★ 17,334</div>
   </header>
-  <p class="meta">lllyasviel/FramePack · Python · Apache-2.0 · <time class="pushed" datetime="2025-10-16">最近推送 2025-10-16</time></p>
-  <p class="summary">令影片擴散模型嘅生成更加實際，降低長片段對記憶體嘅壓力。佢改變幀嘅處理方式，讓較長嘅生成唔使一次過將所有幀嘅狀態放喺顯示卡入面。顯示卡放唔下長片時，呢種幀處理先有實際意義。</p>
+  <p class="meta">lllyasviel/FramePack · Python · Apache-2.0 · <time class="pushed" datetime="2025-10-16"><span class="t-zh">最近推送 2025-10-16</span><span class="t-en">Pushed 2025-10-16</span></time></p>
+  <p class="summary"><span class="t-zh">令影片擴散模型嘅生成更加實際，降低長片段對記憶體嘅壓力。佢改變幀嘅處理方式，讓較長嘅生成唔使一次過將所有幀嘅狀態放喺顯示卡入面。顯示卡放唔下長片時，呢種幀處理先有實際意義。</span><span class="t-en">Makes generation with video diffusion models more practical by lowering the memory pressure of long clips. It changes how frames are processed so a longer generation does not have to keep the state of every frame on the GPU at once. This way of handling frames becomes practically useful when the GPU cannot hold a long video.</span></p>
   <div class="links"><a href="https://github.com/lllyasviel/FramePack">GitHub</a></div>
   
-</article><article class="card" id="p-storytold-filmcraft" data-repo="storytold/filmcraft" data-search="filmcraft storytold/filmcraft 用 rust 由零寫嘅開源非線性影片剪接軟件。方向係提供一個可以剪接、整理時間線嘅本地工具，而唔係再包一層現成剪接引擎。想睇一個用 rust 新寫嘅時間線，而唔係再套現成剪接核心。 filmcraft: an open-source, nonlinear video editor written by scratch in pure rust rust art rust video video-editing video-editor video-processing">
+</article><article class="card" id="p-storytold-filmcraft" data-repo="storytold/filmcraft" data-search="filmcraft storytold/filmcraft 用 rust 由零寫嘅開源非線性影片剪接軟件。方向係提供一個可以剪接、整理時間線嘅本地工具，而唔係再包一層現成剪接引擎。想睇一個用 rust 新寫嘅時間線，而唔係再套現成剪接核心。 open-source nonlinear video editing software written from scratch in rust. the direction is a local tool that can edit and organize a timeline, rather than wrapping another layer around an existing editing engine. it is for people who want to look at a timeline newly written in rust, rather than another wrap around an existing editing core. filmcraft: an open-source, nonlinear video editor written by scratch in pure rust rust art rust video video-editing video-editor video-processing">
   <header>
     <h3><span class="rank">19</span><a href="https://github.com/storytold/filmcraft">filmcraft</a></h3>
     <div class="stars">★ 16,846</div>
   </header>
-  <p class="meta">storytold/filmcraft · Rust · Apache-2.0 · <time class="pushed" datetime="2026-10-29">最近推送 2026-10-29</time></p>
-  <p class="summary">用 Rust 由零寫嘅開源非線性影片剪接軟件。方向係提供一個可以剪接、整理時間線嘅本地工具，而唔係再包一層現成剪接引擎。想睇一個用 Rust 新寫嘅時間線，而唔係再套現成剪接核心。</p>
-  <div class="links"><a href="https://github.com/storytold/filmcraft">GitHub</a><a href="https://getartcraft.com/apps/filmcraft">主頁</a></div>
+  <p class="meta">storytold/filmcraft · Rust · Apache-2.0 · <time class="pushed" datetime="2026-10-29"><span class="t-zh">最近推送 2026-10-29</span><span class="t-en">Pushed 2026-10-29</span></time></p>
+  <p class="summary"><span class="t-zh">用 Rust 由零寫嘅開源非線性影片剪接軟件。方向係提供一個可以剪接、整理時間線嘅本地工具，而唔係再包一層現成剪接引擎。想睇一個用 Rust 新寫嘅時間線，而唔係再套現成剪接核心。</span><span class="t-en">Open-source nonlinear video editing software written from scratch in Rust. The direction is a local tool that can edit and organize a timeline, rather than wrapping another layer around an existing editing engine. It is for people who want to look at a timeline newly written in Rust, rather than another wrap around an existing editing core.</span></p>
+  <div class="links"><a href="https://github.com/storytold/filmcraft">GitHub</a><a href="https://getartcraft.com/apps/filmcraft"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#art</span><span>#rust</span><span>#video</span></div>
-</article><article class="card" id="p-duixcom-duix-avatar" data-repo="duixcom/Duix-Avatar" data-search="duix-avatar duixcom/duix-avatar 可離線使用嘅開源數位人工具，用嚟生成口播影片同克隆數位人。你可以喺本機做口型同形象，適合不想將聲線同肖像送到雲端嘅口播流程。口播片可以離線出，適合唔想把肖像同聲線送去雲端。 🚀 truly open-source ai avatar(digital human) toolkit for offline video generation and digital human cloning. c ai-avatar ai-avatars cloning cloning-tool digital-human multimodal-ai video-generation video-synthesis">
+</article><article class="card" id="p-duixcom-duix-avatar" data-repo="duixcom/Duix-Avatar" data-search="duix-avatar duixcom/duix-avatar 可離線使用嘅開源數位人工具，用嚟生成口播影片同克隆數位人。你可以喺本機做口型同形象，適合不想將聲線同肖像送到雲端嘅口播流程。口播片可以離線出，適合唔想把肖像同聲線送去雲端。 an open-source digital-human tool that can be used offline to generate talking-head videos and clone digital humans. you can do lip sync and appearance on your own machine, which suits talking-head workflows where you do not want to send the voice and portrait to the cloud. talking-head videos can be produced offline, which suits people who do not want to send portraits and voices to the cloud. 🚀 truly open-source ai avatar(digital human) toolkit for offline video generation and digital human cloning. c ai-avatar ai-avatars cloning cloning-tool digital-human multimodal-ai video-generation video-synthesis">
   <header>
     <h3><span class="rank">20</span><a href="https://github.com/duixcom/Duix-Avatar">Duix-Avatar</a></h3>
     <div class="stars">★ 16,139</div>
   </header>
-  <p class="meta">duixcom/Duix-Avatar · C · <time class="pushed" datetime="2026-04-21">最近推送 2026-04-21</time></p>
-  <p class="summary">可離線使用嘅開源數位人工具，用嚟生成口播影片同克隆數位人。你可以喺本機做口型同形象，適合不想將聲線同肖像送到雲端嘅口播流程。口播片可以離線出，適合唔想把肖像同聲線送去雲端。</p>
-  <div class="links"><a href="https://github.com/duixcom/Duix-Avatar">GitHub</a><a href="https://www.duix.com/">主頁</a></div>
+  <p class="meta">duixcom/Duix-Avatar · C · <time class="pushed" datetime="2026-04-21"><span class="t-zh">最近推送 2026-04-21</span><span class="t-en">Pushed 2026-04-21</span></time></p>
+  <p class="summary"><span class="t-zh">可離線使用嘅開源數位人工具，用嚟生成口播影片同克隆數位人。你可以喺本機做口型同形象，適合不想將聲線同肖像送到雲端嘅口播流程。口播片可以離線出，適合唔想把肖像同聲線送去雲端。</span><span class="t-en">An open-source digital-human tool that can be used offline to generate talking-head videos and clone digital humans. You can do lip sync and appearance on your own machine, which suits talking-head workflows where you do not want to send the voice and portrait to the cloud. Talking-head videos can be produced offline, which suits people who do not want to send portraits and voices to the cloud.</span></p>
+  <div class="links"><a href="https://github.com/duixcom/Duix-Avatar">GitHub</a><a href="https://www.duix.com/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#ai-avatar</span><span>#ai-avatars</span><span>#cloning</span></div>
-</article><article class="card" id="p-mltframework-shotcut" data-repo="mltframework/shotcut" data-search="shotcut mltframework/shotcut 跨平台開源影片剪接軟件，基於 mlt 框架。時間線、濾鏡同匯出都有圖形介面，適合想要一個免費、可以離線剪片嘅桌面工具。基於 mlt，濾鏡同匯出都喺桌面完成，唔使再寫指令。 cross-platform (qt), open-source (gplv3) video editor c++ cross-platform gplv3 mlt shotcut video-editor">
+</article><article class="card" id="p-mltframework-shotcut" data-repo="mltframework/shotcut" data-search="shotcut mltframework/shotcut 跨平台開源影片剪接軟件，基於 mlt 框架。時間線、濾鏡同匯出都有圖形介面，適合想要一個免費、可以離線剪片嘅桌面工具。基於 mlt，濾鏡同匯出都喺桌面完成，唔使再寫指令。 cross-platform open-source video editing software based on the mlt framework. the timeline, filters, and export all have a graphical interface, which suits people who want a free desktop tool that can edit video offline. because it is based on mlt, filters and export are finished on the desktop, without writing further commands. cross-platform (qt), open-source (gplv3) video editor c++ cross-platform gplv3 mlt shotcut video-editor">
   <header>
     <h3><span class="rank">21</span><a href="https://github.com/mltframework/shotcut">shotcut</a></h3>
     <div class="stars">★ 15,537</div>
   </header>
-  <p class="meta">mltframework/shotcut · C++ · GPL-3.0 · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">跨平台開源影片剪接軟件，基於 MLT 框架。時間線、濾鏡同匯出都有圖形介面，適合想要一個免費、可以離線剪片嘅桌面工具。基於 MLT，濾鏡同匯出都喺桌面完成，唔使再寫指令。</p>
-  <div class="links"><a href="https://github.com/mltframework/shotcut">GitHub</a><a href="https://www.shotcut.org">主頁</a></div>
+  <p class="meta">mltframework/shotcut · C++ · GPL-3.0 · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">跨平台開源影片剪接軟件，基於 MLT 框架。時間線、濾鏡同匯出都有圖形介面，適合想要一個免費、可以離線剪片嘅桌面工具。基於 MLT，濾鏡同匯出都喺桌面完成，唔使再寫指令。</span><span class="t-en">Cross-platform open-source video editing software based on the MLT framework. The timeline, filters, and export all have a graphical interface, which suits people who want a free desktop tool that can edit video offline. Because it is based on MLT, filters and export are finished on the desktop, without writing further commands.</span></p>
+  <div class="links"><a href="https://github.com/mltframework/shotcut">GitHub</a><a href="https://www.shotcut.org"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#cross-platform</span><span>#gplv3</span><span>#mlt</span></div>
-</article><article class="card" id="p-zulko-moviepy" data-repo="Zulko/moviepy" data-search="moviepy zulko/moviepy 用 python 做影片剪接、合成同基本特效嘅庫。可以用程式裁片、接音訊、加字同輸出，適合批量生產影片，而唔使打開剪接軟件逐條做。幾條片用同一腳本處理時，會比逐條打開剪接軟件快。 video editing with python python animation gif hacktoberfest python video video-editing video-processing">
+</article><article class="card" id="p-zulko-moviepy" data-repo="Zulko/moviepy" data-search="moviepy zulko/moviepy 用 python 做影片剪接、合成同基本特效嘅庫。可以用程式裁片、接音訊、加字同輸出，適合批量生產影片，而唔使打開剪接軟件逐條做。幾條片用同一腳本處理時，會比逐條打開剪接軟件快。 a python library for video editing, compositing, and basic effects. you can cut clips, attach audio, add text, and export in code, which suits producing videos in batches without opening an editor for each one. when several videos are processed with the same script, it is faster than opening an editor for each one. video editing with python python animation gif hacktoberfest python video video-editing video-processing">
   <header>
     <h3><span class="rank">22</span><a href="https://github.com/Zulko/moviepy">moviepy</a></h3>
     <div class="stars">★ 15,054</div>
   </header>
-  <p class="meta">Zulko/moviepy · Python · MIT · <time class="pushed" datetime="2026-08-26">最近推送 2026-08-26</time></p>
-  <p class="summary">用 Python 做影片剪接、合成同基本特效嘅庫。可以用程式裁片、接音訊、加字同輸出，適合批量生產影片，而唔使打開剪接軟件逐條做。幾條片用同一腳本處理時，會比逐條打開剪接軟件快。</p>
-  <div class="links"><a href="https://github.com/Zulko/moviepy">GitHub</a><a href="https://zulko.github.io/moviepy/">主頁</a></div>
+  <p class="meta">Zulko/moviepy · Python · MIT · <time class="pushed" datetime="2026-08-26"><span class="t-zh">最近推送 2026-08-26</span><span class="t-en">Pushed 2026-08-26</span></time></p>
+  <p class="summary"><span class="t-zh">用 Python 做影片剪接、合成同基本特效嘅庫。可以用程式裁片、接音訊、加字同輸出，適合批量生產影片，而唔使打開剪接軟件逐條做。幾條片用同一腳本處理時，會比逐條打開剪接軟件快。</span><span class="t-en">A Python library for video editing, compositing, and basic effects. You can cut clips, attach audio, add text, and export in code, which suits producing videos in batches without opening an editor for each one. When several videos are processed with the same script, it is faster than opening an editor for each one.</span></p>
+  <div class="links"><a href="https://github.com/Zulko/moviepy">GitHub</a><a href="https://zulko.github.io/moviepy/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#animation</span><span>#gif</span><span>#hacktoberfest</span></div>
-</article><article class="card" id="p-humanaigc-animateanyone" data-repo="HumanAIGC/AnimateAnyone" data-search="animateanyone humanaigc/animateanyone 用一張人物圖生成動作一致、可控制嘅人物影片。參考動作片提供舞步或姿態，角色外觀則來自你嘅圖片，用來做人物動畫而唔使真人重拍。角色圖同動作片係分開輸入，所以同一套舞可以換人。 animate anyone: consistent and controllable image-to-video synthesis for character animation  ">
+</article><article class="card" id="p-humanaigc-animateanyone" data-repo="HumanAIGC/AnimateAnyone" data-search="animateanyone humanaigc/animateanyone 用一張人物圖生成動作一致、可控制嘅人物影片。參考動作片提供舞步或姿態，角色外觀則來自你嘅圖片，用來做人物動畫而唔使真人重拍。角色圖同動作片係分開輸入，所以同一套舞可以換人。 generates controllable character video with consistent motion from a single person image. a reference motion clip supplies the dance or pose, and the character&#x27;s appearance comes from your image, for character animation without reshooting a real person. the character image and the motion clip are separate inputs, so the same dance can be put on a different person. animate anyone: consistent and controllable image-to-video synthesis for character animation  ">
   <header>
     <h3><span class="rank">23</span><a href="https://github.com/HumanAIGC/AnimateAnyone">AnimateAnyone</a></h3>
     <div class="stars">★ 14,780</div>
   </header>
-  <p class="meta">HumanAIGC/AnimateAnyone · Apache-2.0 · <time class="pushed" datetime="2025-09-20">最近推送 2025-09-20</time></p>
-  <p class="summary">用一張人物圖生成動作一致、可控制嘅人物影片。參考動作片提供舞步或姿態，角色外觀則來自你嘅圖片，用來做人物動畫而唔使真人重拍。角色圖同動作片係分開輸入，所以同一套舞可以換人。</p>
+  <p class="meta">HumanAIGC/AnimateAnyone · Apache-2.0 · <time class="pushed" datetime="2025-09-20"><span class="t-zh">最近推送 2025-09-20</span><span class="t-en">Pushed 2025-09-20</span></time></p>
+  <p class="summary"><span class="t-zh">用一張人物圖生成動作一致、可控制嘅人物影片。參考動作片提供舞步或姿態，角色外觀則來自你嘅圖片，用來做人物動畫而唔使真人重拍。角色圖同動作片係分開輸入，所以同一套舞可以換人。</span><span class="t-en">Generates controllable character video with consistent motion from a single person image. A reference motion clip supplies the dance or pose, and the character&#x27;s appearance comes from your image, for character animation without reshooting a real person. The character image and the motion clip are separate inputs, so the same dance can be put on a different person.</span></p>
   <div class="links"><a href="https://github.com/HumanAIGC/AnimateAnyone">GitHub</a></div>
   
-</article><article class="card" id="p-zai-org-cogvideo" data-repo="zai-org/CogVideo" data-search="cogvideo zai-org/cogvideo 文字同圖像到影片嘅模型項目，包含 cogvideo 同 cogvideox。提供開放權重同相關程式，用嚟由描述或圖片生成短片，並作為研究基線。cogvideox 亦包含在內，文字或圖片都可以做生成條件。 text and image to video generation: cogvideox (2024) and cogvideo (iclr 2023) python cogvideox image-to-video llm sora text-to-video video-generation">
+</article><article class="card" id="p-zai-org-cogvideo" data-repo="zai-org/CogVideo" data-search="cogvideo zai-org/cogvideo 文字同圖像到影片嘅模型項目，包含 cogvideo 同 cogvideox。提供開放權重同相關程式，用嚟由描述或圖片生成短片，並作為研究基線。cogvideox 亦包含在內，文字或圖片都可以做生成條件。 a text- and image-to-video model project that includes cogvideo and cogvideox. it provides open weights and related code for generating short videos from a description or a picture, and for use as a research baseline. cogvideox is included as well, and either text or an image can be the generation condition. text and image to video generation: cogvideox (2024) and cogvideo (iclr 2023) python cogvideox image-to-video llm sora text-to-video video-generation">
   <header>
     <h3><span class="rank">24</span><a href="https://github.com/zai-org/CogVideo">CogVideo</a></h3>
     <div class="stars">★ 13,142</div>
   </header>
-  <p class="meta">zai-org/CogVideo · Python · Apache-2.0 · <time class="pushed" datetime="2025-11-04">最近推送 2025-11-04</time></p>
-  <p class="summary">文字同圖像到影片嘅模型項目，包含 CogVideo 同 CogVideoX。提供開放權重同相關程式，用嚟由描述或圖片生成短片，並作為研究基線。CogVideoX 亦包含在內，文字或圖片都可以做生成條件。</p>
-  <div class="links"><a href="https://github.com/zai-org/CogVideo">GitHub</a><a href="https://arxiv.org/abs/2205.15868">論文</a></div>
+  <p class="meta">zai-org/CogVideo · Python · Apache-2.0 · <time class="pushed" datetime="2025-11-04"><span class="t-zh">最近推送 2025-11-04</span><span class="t-en">Pushed 2025-11-04</span></time></p>
+  <p class="summary"><span class="t-zh">文字同圖像到影片嘅模型項目，包含 CogVideo 同 CogVideoX。提供開放權重同相關程式，用嚟由描述或圖片生成短片，並作為研究基線。CogVideoX 亦包含在內，文字或圖片都可以做生成條件。</span><span class="t-en">A text- and image-to-video model project that includes CogVideo and CogVideoX. It provides open weights and related code for generating short videos from a description or a picture, and for use as a research baseline. CogVideoX is included as well, and either text or an image can be the generation condition.</span></p>
+  <div class="links"><a href="https://github.com/zai-org/CogVideo">GitHub</a><a href="https://arxiv.org/abs/2205.15868"><span class="t-zh">論文</span><span class="t-en">Paper</span></a></div>
   <div class="topics"><span>#cogvideox</span><span>#image-to-video</span><span>#llm</span></div>
-</article><article class="card" id="p-hkuds-vimax" data-repo="HKUDS/ViMax" data-search="vimax hkuds/vimax 港大嘅多 agent 影片生成系統。導演、編劇、監製同分鏡會分工，可以由一個想法或者劇本做到成條片。用嚟將文字推進到可睇嘅影片，而唔係只出一段提示詞。每個角色負責一段工序，方便你只改劇本或者只改畫面。 &quot;vimax: agentic video generation (director, screenwriter, producer, and video generator all-in-one)&quot; python agentic-aigc video-generation">
+</article><article class="card" id="p-hkuds-vimax" data-repo="HKUDS/ViMax" data-search="vimax hkuds/vimax 港大嘅多 agent 影片生成系統。導演、編劇、監製同分鏡會分工，可以由一個想法或者劇本做到成條片。用嚟將文字推進到可睇嘅影片，而唔係只出一段提示詞。每個角色負責一段工序，方便你只改劇本或者只改畫面。 a multi-agent video generation system from the university of hong kong. a director, screenwriter, producer, and storyboard artist divide the work, and it can take an idea or a script through to a full video. it pushes text through to a watchable video rather than only producing a prompt. each role handles one stage, so you can change only the script or only the picture. &quot;vimax: agentic video generation (director, screenwriter, producer, and video generator all-in-one)&quot; python agentic-aigc video-generation">
   <header>
     <h3><span class="rank">25</span><a href="https://github.com/HKUDS/ViMax">ViMax</a></h3>
     <div class="stars">★ 12,800</div>
   </header>
-  <p class="meta">HKUDS/ViMax · Python · MIT · <time class="pushed" datetime="2026-09-30">最近推送 2026-09-30</time></p>
-  <p class="summary">港大嘅多 agent 影片生成系統。導演、編劇、監製同分鏡會分工，可以由一個想法或者劇本做到成條片。用嚟將文字推進到可睇嘅影片，而唔係只出一段提示詞。每個角色負責一段工序，方便你只改劇本或者只改畫面。</p>
-  <div class="links"><a href="https://github.com/HKUDS/ViMax">GitHub</a><a href="https://arxiv.org/abs/2606.07649">主頁</a></div>
+  <p class="meta">HKUDS/ViMax · Python · MIT · <time class="pushed" datetime="2026-09-30"><span class="t-zh">最近推送 2026-09-30</span><span class="t-en">Pushed 2026-09-30</span></time></p>
+  <p class="summary"><span class="t-zh">港大嘅多 agent 影片生成系統。導演、編劇、監製同分鏡會分工，可以由一個想法或者劇本做到成條片。用嚟將文字推進到可睇嘅影片，而唔係只出一段提示詞。每個角色負責一段工序，方便你只改劇本或者只改畫面。</span><span class="t-en">A multi-agent video generation system from the University of Hong Kong. A director, screenwriter, producer, and storyboard artist divide the work, and it can take an idea or a script through to a full video. It pushes text through to a watchable video rather than only producing a prompt. Each role handles one stage, so you can change only the script or only the picture.</span></p>
+  <div class="links"><a href="https://github.com/HKUDS/ViMax">GitHub</a><a href="https://arxiv.org/abs/2606.07649"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#agentic-aigc</span><span>#video-generation</span></div>
-</article><article class="card" id="p-tencent-hunyuan-hunyuanvideo" data-repo="Tencent-Hunyuan/HunyuanVideo" data-search="hunyuanvideo tencent-hunyuan/hunyuanvideo 騰訊混元嘅大型開源影片生成框架。可以用文字生成影片，並提供推理所需程式，讓開發者喺本地或自己嘅環境試高參數嘅影片模型。大型影片模型嘅推理程式開放，方便喺自己機器試效果。長提示詞可以先用短片試清楚再加長。 hunyuanvideo: a systematic framework for large video generation model python diffusion-models diffusion-transformer video-generation">
+</article><article class="card" id="p-tencent-hunyuan-hunyuanvideo" data-repo="Tencent-Hunyuan/HunyuanVideo" data-search="hunyuanvideo tencent-hunyuan/hunyuanvideo 騰訊混元嘅大型開源影片生成框架。可以用文字生成影片，並提供推理所需程式，讓開發者喺本地或自己嘅環境試高參數嘅影片模型。大型影片模型嘅推理程式開放，方便喺自己機器試效果。長提示詞可以先用短片試清楚再加長。 tencent hunyuan&#x27;s large open-source video generation framework. it can generate video from text and provides the code needed for inference, so developers can try a high-parameter video model locally or in their own environment. the inference code for the large video model is open, which makes it easy to try the result on your own machine. a long prompt can first be tried clearly as a short clip, then lengthened. hunyuanvideo: a systematic framework for large video generation model python diffusion-models diffusion-transformer video-generation">
   <header>
     <h3><span class="rank">26</span><a href="https://github.com/Tencent-Hunyuan/HunyuanVideo">HunyuanVideo</a></h3>
     <div class="stars">★ 12,692</div>
   </header>
-  <p class="meta">Tencent-Hunyuan/HunyuanVideo · Python · <time class="pushed" datetime="2026-10-08">最近推送 2026-10-08</time></p>
-  <p class="summary">騰訊混元嘅大型開源影片生成框架。可以用文字生成影片，並提供推理所需程式，讓開發者喺本地或自己嘅環境試高參數嘅影片模型。大型影片模型嘅推理程式開放，方便喺自己機器試效果。長提示詞可以先用短片試清楚再加長。</p>
-  <div class="links"><a href="https://github.com/Tencent-Hunyuan/HunyuanVideo">GitHub</a><a href="https://aivideo.hunyuan.tencent.com">主頁</a><a href="https://arxiv.org/abs/2412.03603">論文</a></div>
+  <p class="meta">Tencent-Hunyuan/HunyuanVideo · Python · <time class="pushed" datetime="2026-10-08"><span class="t-zh">最近推送 2026-10-08</span><span class="t-en">Pushed 2026-10-08</span></time></p>
+  <p class="summary"><span class="t-zh">騰訊混元嘅大型開源影片生成框架。可以用文字生成影片，並提供推理所需程式，讓開發者喺本地或自己嘅環境試高參數嘅影片模型。大型影片模型嘅推理程式開放，方便喺自己機器試效果。長提示詞可以先用短片試清楚再加長。</span><span class="t-en">Tencent Hunyuan&#x27;s large open-source video generation framework. It can generate video from text and provides the code needed for inference, so developers can try a high-parameter video model locally or in their own environment. The inference code for the large video model is open, which makes it easy to try the result on your own machine. A long prompt can first be tried clearly as a short clip, then lengthened.</span></p>
+  <div class="links"><a href="https://github.com/Tencent-Hunyuan/HunyuanVideo">GitHub</a><a href="https://aivideo.hunyuan.tencent.com"><span class="t-zh">主頁</span><span class="t-en">Home</span></a><a href="https://arxiv.org/abs/2412.03603"><span class="t-zh">論文</span><span class="t-en">Paper</span></a></div>
   <div class="topics"><span>#diffusion-models</span><span>#diffusion-transformer</span><span>#video-generation</span></div>
-</article><article class="card" id="p-jub0t-concat" data-repo="jub0t/Concat" data-search="concat jub0t/concat 本地優先嘅開源影片剪輯器，用嚟取代 capcut。支援多軌剪接、字幕、文字轉語音同去背，用 rust 引擎喺自己部機跑。片段唔使上傳，亦可以用 json-rpc 同 mcp 寫腳本控制。 the truly free, open-source, local-first, cross-platform capcut replacement. scriptable through a json-rpc api &amp; mcp. rust ffmpeg free-video-editor model-context-protocol non-linear-editor offline-first open-source-video-editor self-hosted video-editing">
+</article><article class="card" id="p-jub0t-concat" data-repo="jub0t/Concat" data-search="concat jub0t/concat 本地優先嘅開源影片剪輯器，用嚟取代 capcut。支援多軌剪接、字幕、文字轉語音同去背，用 rust 引擎喺自己部機跑。片段唔使上傳，亦可以用 json-rpc 同 mcp 寫腳本控制。 a local-first open-source video editor meant to replace capcut. it supports multi-track editing, subtitles, text-to-speech, and background removal, and a rust engine runs it on your own machine. clips do not have to be uploaded, and you can also script it over json-rpc and mcp. the truly free, open-source, local-first, cross-platform capcut replacement. scriptable through a json-rpc api &amp; mcp. rust ffmpeg free-video-editor model-context-protocol non-linear-editor offline-first open-source-video-editor self-hosted video-editing">
   <header>
     <h3><span class="rank">27</span><a href="https://github.com/jub0t/Concat">Concat</a></h3>
     <div class="stars">★ 12,614</div>
   </header>
-  <p class="meta">jub0t/Concat · Rust · AGPL-3.0 · <time class="pushed" datetime="2026-10-28">最近推送 2026-10-28</time></p>
-  <p class="summary">本地優先嘅開源影片剪輯器，用嚟取代 CapCut。支援多軌剪接、字幕、文字轉語音同去背，用 Rust 引擎喺自己部機跑。片段唔使上傳，亦可以用 JSON-RPC 同 MCP 寫腳本控制。</p>
-  <div class="links"><a href="https://github.com/jub0t/Concat">GitHub</a><a href="https://concat.standalones.org">主頁</a></div>
+  <p class="meta">jub0t/Concat · Rust · AGPL-3.0 · <time class="pushed" datetime="2026-10-28"><span class="t-zh">最近推送 2026-10-28</span><span class="t-en">Pushed 2026-10-28</span></time></p>
+  <p class="summary"><span class="t-zh">本地優先嘅開源影片剪輯器，用嚟取代 CapCut。支援多軌剪接、字幕、文字轉語音同去背，用 Rust 引擎喺自己部機跑。片段唔使上傳，亦可以用 JSON-RPC 同 MCP 寫腳本控制。</span><span class="t-en">A local-first open-source video editor meant to replace CapCut. It supports multi-track editing, subtitles, text-to-speech, and background removal, and a Rust engine runs it on your own machine. Clips do not have to be uploaded, and you can also script it over JSON-RPC and MCP.</span></p>
+  <div class="links"><a href="https://github.com/jub0t/Concat">GitHub</a><a href="https://concat.standalones.org"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#ffmpeg</span><span>#free-video-editor</span><span>#model-context-protocol</span></div>
-</article><article class="card" id="p-guoyww-animatediff" data-repo="guoyww/AnimateDiff" data-search="animatediff guoyww/animatediff 畀文字到圖像模型加時間模組，無需逐個再訓練就可以生成短片。已有嘅圖像模型可以因此產出動作，而唔使為每一個畫風另訓練一條影片模型。你已經有嘅圖像模型可以加時間模組，唔使為每個畫風再練一條片。 official implementation of animatediff. python ">
+</article><article class="card" id="p-guoyww-animatediff" data-repo="guoyww/AnimateDiff" data-search="animatediff guoyww/animatediff 畀文字到圖像模型加時間模組，無需逐個再訓練就可以生成短片。已有嘅圖像模型可以因此產出動作，而唔使為每一個畫風另訓練一條影片模型。你已經有嘅圖像模型可以加時間模組，唔使為每個畫風再練一條片。 adds a temporal module to text-to-image models so they can generate short videos without retraining each one. existing image models can then produce motion, without training a separate video model for every art style. an image model you already have can be given a temporal module, without training another video for each style. official implementation of animatediff. python ">
   <header>
     <h3><span class="rank">28</span><a href="https://github.com/guoyww/AnimateDiff">AnimateDiff</a></h3>
     <div class="stars">★ 12,279</div>
   </header>
-  <p class="meta">guoyww/AnimateDiff · Python · Apache-2.0 · <time class="pushed" datetime="2024-07-31">最近推送 2024-07-31</time></p>
-  <p class="summary">畀文字到圖像模型加時間模組，無需逐個再訓練就可以生成短片。已有嘅圖像模型可以因此產出動作，而唔使為每一個畫風另訓練一條影片模型。你已經有嘅圖像模型可以加時間模組，唔使為每個畫風再練一條片。</p>
-  <div class="links"><a href="https://github.com/guoyww/AnimateDiff">GitHub</a><a href="https://animatediff.github.io">主頁</a><a href="https://arxiv.org/abs/2307.04725">論文</a></div>
+  <p class="meta">guoyww/AnimateDiff · Python · Apache-2.0 · <time class="pushed" datetime="2024-07-31"><span class="t-zh">最近推送 2024-07-31</span><span class="t-en">Pushed 2024-07-31</span></time></p>
+  <p class="summary"><span class="t-zh">畀文字到圖像模型加時間模組，無需逐個再訓練就可以生成短片。已有嘅圖像模型可以因此產出動作，而唔使為每一個畫風另訓練一條影片模型。你已經有嘅圖像模型可以加時間模組，唔使為每個畫風再練一條片。</span><span class="t-en">Adds a temporal module to text-to-image models so they can generate short videos without retraining each one. Existing image models can then produce motion, without training a separate video model for every art style. An image model you already have can be given a temporal module, without training another video for each style.</span></p>
+  <div class="links"><a href="https://github.com/guoyww/AnimateDiff">GitHub</a><a href="https://animatediff.github.io"><span class="t-zh">主頁</span><span class="t-en">Home</span></a><a href="https://arxiv.org/abs/2307.04725"><span class="t-zh">論文</span><span class="t-en">Paper</span></a></div>
   
-</article><article class="card" id="p-lightricks-ltx-video" data-repo="Lightricks/LTX-Video" data-search="ltx-video lightricks/ltx-video lightricks 嘅開源影片生成模型同官方程式。可以用文字或圖像生成影片，重點係提供可以自己跑嘅權重同推理流程，方便接入創作工具。官方程式可以直接跑，再決定點樣嵌進自己嘅工具。 official repository for ltx-video python diffusion-models dit image-to-video image-to-video-generation text-to-video text-to-video-generation">
+</article><article class="card" id="p-lightricks-ltx-video" data-repo="Lightricks/LTX-Video" data-search="ltx-video lightricks/ltx-video lightricks 嘅開源影片生成模型同官方程式。可以用文字或圖像生成影片，重點係提供可以自己跑嘅權重同推理流程，方便接入創作工具。官方程式可以直接跑，再決定點樣嵌進自己嘅工具。 lightricks&#x27; open-source video generation model and official code. it can generate video from text or an image, and the focus is weights and an inference pipeline you can run yourself, so it is easier to connect to creative tools. the official code can be run directly, and then you decide how to embed it in your own tools. official repository for ltx-video python diffusion-models dit image-to-video image-to-video-generation text-to-video text-to-video-generation">
   <header>
     <h3><span class="rank">29</span><a href="https://github.com/Lightricks/LTX-Video">LTX-Video</a></h3>
     <div class="stars">★ 11,224</div>
   </header>
-  <p class="meta">Lightricks/LTX-Video · Python · Apache-2.0 · <time class="pushed" datetime="2026-01-06">最近推送 2026-01-06</time></p>
-  <p class="summary">Lightricks 嘅開源影片生成模型同官方程式。可以用文字或圖像生成影片，重點係提供可以自己跑嘅權重同推理流程，方便接入創作工具。官方程式可以直接跑，再決定點樣嵌進自己嘅工具。</p>
-  <div class="links"><a href="https://github.com/Lightricks/LTX-Video">GitHub</a><a href="https://ltx.io/model">主頁</a></div>
+  <p class="meta">Lightricks/LTX-Video · Python · Apache-2.0 · <time class="pushed" datetime="2026-01-06"><span class="t-zh">最近推送 2026-01-06</span><span class="t-en">Pushed 2026-01-06</span></time></p>
+  <p class="summary"><span class="t-zh">Lightricks 嘅開源影片生成模型同官方程式。可以用文字或圖像生成影片，重點係提供可以自己跑嘅權重同推理流程，方便接入創作工具。官方程式可以直接跑，再決定點樣嵌進自己嘅工具。</span><span class="t-en">Lightricks&#x27; open-source video generation model and official code. It can generate video from text or an image, and the focus is weights and an inference pipeline you can run yourself, so it is easier to connect to creative tools. The official code can be run directly, and then you decide how to embed it in your own tools.</span></p>
+  <div class="links"><a href="https://github.com/Lightricks/LTX-Video">GitHub</a><a href="https://ltx.io/model"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#diffusion-models</span><span>#dit</span><span>#image-to-video</span></div>
-</article><article class="card" id="p-magic-research-magic-animate" data-repo="magic-research/magic-animate" data-search="magic-animate magic-research/magic-animate 用擴散模型做時間上一致嘅人物圖像動畫。參考動作驅動一張人物圖，目標係整個片段入面身份同動作都保持穩定，而唔係逐幀各做各的。重點係成段身份唔跳，而唔係每一幀單獨好看。動作片要清楚，角色先跟得穩。 [cvpr 2024] official repository for &quot;magicanimate: temporally consistent human image animation using diffusion model&quot; python ">
+</article><article class="card" id="p-magic-research-magic-animate" data-repo="magic-research/magic-animate" data-search="magic-animate magic-research/magic-animate 用擴散模型做時間上一致嘅人物圖像動畫。參考動作驅動一張人物圖，目標係整個片段入面身份同動作都保持穩定，而唔係逐幀各做各的。重點係成段身份唔跳，而唔係每一幀單獨好看。動作片要清楚，角色先跟得穩。 temporally consistent character image animation with a diffusion model. a reference motion drives a character image, and the goal is stable identity and motion across the whole clip rather than each frame doing its own thing. the point is that identity does not jump across the clip, rather than each frame looking good on its own. the motion clip needs to be clear for the character to follow it steadily. [cvpr 2024] official repository for &quot;magicanimate: temporally consistent human image animation using diffusion model&quot; python ">
   <header>
     <h3><span class="rank">30</span><a href="https://github.com/magic-research/magic-animate">magic-animate</a></h3>
     <div class="stars">★ 10,890</div>
   </header>
-  <p class="meta">magic-research/magic-animate · Python · BSD-3-Clause · <time class="pushed" datetime="2025-08-29">最近推送 2025-08-29</time></p>
-  <p class="summary">用擴散模型做時間上一致嘅人物圖像動畫。參考動作驅動一張人物圖，目標係整個片段入面身份同動作都保持穩定，而唔係逐幀各做各的。重點係成段身份唔跳，而唔係每一幀單獨好看。動作片要清楚，角色先跟得穩。</p>
-  <div class="links"><a href="https://github.com/magic-research/magic-animate">GitHub</a><a href="https://showlab.github.io/magicanimate/">主頁</a></div>
+  <p class="meta">magic-research/magic-animate · Python · BSD-3-Clause · <time class="pushed" datetime="2025-08-29"><span class="t-zh">最近推送 2025-08-29</span><span class="t-en">Pushed 2025-08-29</span></time></p>
+  <p class="summary"><span class="t-zh">用擴散模型做時間上一致嘅人物圖像動畫。參考動作驅動一張人物圖，目標係整個片段入面身份同動作都保持穩定，而唔係逐幀各做各的。重點係成段身份唔跳，而唔係每一幀單獨好看。動作片要清楚，角色先跟得穩。</span><span class="t-en">Temporally consistent character image animation with a diffusion model. A reference motion drives a character image, and the goal is stable identity and motion across the whole clip rather than each frame doing its own thing. The point is that identity does not jump across the clip, rather than each frame looking good on its own. The motion clip needs to be clear for the character to follow it steadily.</span></p>
+  <div class="links"><a href="https://github.com/magic-research/magic-animate">GitHub</a><a href="https://showlab.github.io/magicanimate/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   
-</article><article class="card" id="p-nvlabs-sana" data-repo="NVlabs/Sana" data-search="sana nvlabs/sana nvidia 嘅高效擴散模型，用線性注意力喺較少計算量下生成高解像圖像，亦包含 sana-video 同串流版本。用嚟出圖同出片，適合想喺自己部機跑較輕量嘅擴散模型。 sana: efficient high-resolution image synthesis with linear diffusion transformer python diffusion dit linear-transformer nvfp4 pytorch reinforcement-learning sana streaming-video">
+</article><article class="card" id="p-nvlabs-sana" data-repo="NVlabs/Sana" data-search="sana nvlabs/sana nvidia 嘅高效擴散模型，用線性注意力喺較少計算量下生成高解像圖像，亦包含 sana-video 同串流版本。用嚟出圖同出片，適合想喺自己部機跑較輕量嘅擴散模型。 nvidia&#x27;s efficient diffusion model uses linear attention to generate high-resolution images with less computation, and it also includes sana-video and a streaming version. it is for generating images and video, for people who want to run a lighter diffusion model on their own machine. sana: efficient high-resolution image synthesis with linear diffusion transformer python diffusion dit linear-transformer nvfp4 pytorch reinforcement-learning sana streaming-video">
   <header>
     <h3><span class="rank">31</span><a href="https://github.com/NVlabs/Sana">Sana</a></h3>
     <div class="stars">★ 9,715</div>
   </header>
-  <p class="meta">NVlabs/Sana · Python · Apache-2.0 · <time class="pushed" datetime="2026-10-29">最近推送 2026-10-29</time></p>
-  <p class="summary">NVIDIA 嘅高效擴散模型，用線性注意力喺較少計算量下生成高解像圖像，亦包含 SANA-Video 同串流版本。用嚟出圖同出片，適合想喺自己部機跑較輕量嘅擴散模型。</p>
-  <div class="links"><a href="https://github.com/NVlabs/Sana">GitHub</a><a href="https://nvlabs.github.io/Sana/docs/">主頁</a></div>
+  <p class="meta">NVlabs/Sana · Python · Apache-2.0 · <time class="pushed" datetime="2026-10-29"><span class="t-zh">最近推送 2026-10-29</span><span class="t-en">Pushed 2026-10-29</span></time></p>
+  <p class="summary"><span class="t-zh">NVIDIA 嘅高效擴散模型，用線性注意力喺較少計算量下生成高解像圖像，亦包含 SANA-Video 同串流版本。用嚟出圖同出片，適合想喺自己部機跑較輕量嘅擴散模型。</span><span class="t-en">NVIDIA&#x27;s efficient diffusion model uses linear attention to generate high-resolution images with less computation, and it also includes SANA-Video and a streaming version. It is for generating images and video, for people who want to run a lighter diffusion model on their own machine.</span></p>
+  <div class="links"><a href="https://github.com/NVlabs/Sana">GitHub</a><a href="https://nvlabs.github.io/Sana/docs/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#diffusion</span><span>#dit</span><span>#linear-transformer</span></div>
-</article><article class="card" id="p-gyroflow-gyroflow" data-repo="gyroflow/gyroflow" data-search="gyroflow gyroflow/gyroflow 用陀螺儀數據做影片防震。相機或運動相機記錄嘅運動數據會用來校正畫面，適合飛機、單車同運動鏡頭，而唔係只靠畫面估計震動。有陀螺儀記錄嘅運動相機最受用，純畫面防震係另一條路。 video stabilization using gyroscope data rust fpv gopro gpu gpu-computing gyroscope insta360 rolling-shutter-undistortion rust">
+</article><article class="card" id="p-gyroflow-gyroflow" data-repo="gyroflow/gyroflow" data-search="gyroflow gyroflow/gyroflow 用陀螺儀數據做影片防震。相機或運動相機記錄嘅運動數據會用來校正畫面，適合飛機、單車同運動鏡頭，而唔係只靠畫面估計震動。有陀螺儀記錄嘅運動相機最受用，純畫面防震係另一條路。 video stabilization using gyroscope data. motion data recorded by a camera or action camera is used to correct the picture, which suits aircraft, bicycles, and action shots rather than estimating shake from the image alone. action cameras that record gyroscope data benefit the most, and stabilization from the picture alone is a different path. video stabilization using gyroscope data rust fpv gopro gpu gpu-computing gyroscope insta360 rolling-shutter-undistortion rust">
   <header>
     <h3><span class="rank">32</span><a href="https://github.com/gyroflow/gyroflow">gyroflow</a></h3>
     <div class="stars">★ 9,654</div>
   </header>
-  <p class="meta">gyroflow/gyroflow · Rust · GPL-3.0 · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">用陀螺儀數據做影片防震。相機或運動相機記錄嘅運動數據會用來校正畫面，適合飛機、單車同運動鏡頭，而唔係只靠畫面估計震動。有陀螺儀記錄嘅運動相機最受用，純畫面防震係另一條路。</p>
-  <div class="links"><a href="https://github.com/gyroflow/gyroflow">GitHub</a><a href="https://gyroflow.xyz">主頁</a></div>
+  <p class="meta">gyroflow/gyroflow · Rust · GPL-3.0 · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">用陀螺儀數據做影片防震。相機或運動相機記錄嘅運動數據會用來校正畫面，適合飛機、單車同運動鏡頭，而唔係只靠畫面估計震動。有陀螺儀記錄嘅運動相機最受用，純畫面防震係另一條路。</span><span class="t-en">Video stabilization using gyroscope data. Motion data recorded by a camera or action camera is used to correct the picture, which suits aircraft, bicycles, and action shots rather than estimating shake from the image alone. Action cameras that record gyroscope data benefit the most, and stabilization from the picture alone is a different path.</span></p>
+  <div class="links"><a href="https://github.com/gyroflow/gyroflow">GitHub</a><a href="https://gyroflow.xyz"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#fpv</span><span>#gopro</span><span>#gpu</span></div>
-</article><article class="card" id="p-lucidrains-imagen-pytorch" data-repo="lucidrains/imagen-pytorch" data-search="imagen-pytorch lucidrains/imagen-pytorch google imagen 文字生成圖像嘅 pytorch 實作。用嚟研究同跑文字出圖，倉庫亦有文字生成影片相關嘅實驗。適合想對住程式睇擴散模型點樣由文字變成畫面嘅人。 implementation of imagen, google&#x27;s text-to-image neural network, in pytorch python artificial-intelligence deep-learning imagination-machine text-to-image text-to-video">
+</article><article class="card" id="p-lucidrains-imagen-pytorch" data-repo="lucidrains/imagen-pytorch" data-search="imagen-pytorch lucidrains/imagen-pytorch google imagen 文字生成圖像嘅 pytorch 實作。用嚟研究同跑文字出圖，倉庫亦有文字生成影片相關嘅實驗。適合想對住程式睇擴散模型點樣由文字變成畫面嘅人。 a pytorch implementation of google imagen for text-to-image. it is for researching and running text-to-image, and the repository also has experiments related to text-to-video. it suits people who want to read the code and see how a diffusion model turns text into an image. implementation of imagen, google&#x27;s text-to-image neural network, in pytorch python artificial-intelligence deep-learning imagination-machine text-to-image text-to-video">
   <header>
     <h3><span class="rank">33</span><a href="https://github.com/lucidrains/imagen-pytorch">imagen-pytorch</a></h3>
     <div class="stars">★ 8,430</div>
   </header>
-  <p class="meta">lucidrains/imagen-pytorch · Python · MIT · <time class="pushed" datetime="2024-10-07">最近推送 2024-10-07</time></p>
-  <p class="summary">Google Imagen 文字生成圖像嘅 PyTorch 實作。用嚟研究同跑文字出圖，倉庫亦有文字生成影片相關嘅實驗。適合想對住程式睇擴散模型點樣由文字變成畫面嘅人。</p>
+  <p class="meta">lucidrains/imagen-pytorch · Python · MIT · <time class="pushed" datetime="2024-10-07"><span class="t-zh">最近推送 2024-10-07</span><span class="t-en">Pushed 2024-10-07</span></time></p>
+  <p class="summary"><span class="t-zh">Google Imagen 文字生成圖像嘅 PyTorch 實作。用嚟研究同跑文字出圖，倉庫亦有文字生成影片相關嘅實驗。適合想對住程式睇擴散模型點樣由文字變成畫面嘅人。</span><span class="t-en">A PyTorch implementation of Google Imagen for text-to-image. It is for researching and running text-to-image, and the repository also has experiments related to text-to-video. It suits people who want to read the code and see how a diffusion model turns text into an image.</span></p>
   <div class="links"><a href="https://github.com/lucidrains/imagen-pytorch">GitHub</a></div>
   <div class="topics"><span>#artificial-intelligence</span><span>#deep-learning</span><span>#imagination-machine</span></div>
-</article><article class="card" id="p-nadermx-backgroundremover" data-repo="nadermx/backgroundremover" data-search="backgroundremover nadermx/backgroundremover 用命令列幫圖像同影片去除背景嘅開源工具。一條指令就可以抽出主體，唔使開圖像軟件逐格摳。模型喺本地跑，適合要批量處理相片或者短片嘅人。輸出可以再交俾剪輯軟件，檔案留喺本機。 background remover lets you remove background from images and video using ai with a simple command line interface that is free and open source. python ai background-removal background-remover backgroundremover photo-editing python pytorch remove-background">
+</article><article class="card" id="p-nadermx-backgroundremover" data-repo="nadermx/backgroundremover" data-search="backgroundremover nadermx/backgroundremover 用命令列幫圖像同影片去除背景嘅開源工具。一條指令就可以抽出主體，唔使開圖像軟件逐格摳。模型喺本地跑，適合要批量處理相片或者短片嘅人。輸出可以再交俾剪輯軟件，檔案留喺本機。 an open-source command-line tool that removes backgrounds from images and video. one command extracts the subject, without opening image software to cut it out frame by frame. the model runs locally, which suits people who need to batch-process photos or short clips. the output can be passed to editing software, and the files stay on the machine. background remover lets you remove background from images and video using ai with a simple command line interface that is free and open source. python ai background-removal background-remover backgroundremover photo-editing python pytorch remove-background">
   <header>
     <h3><span class="rank">34</span><a href="https://github.com/nadermx/backgroundremover">backgroundremover</a></h3>
     <div class="stars">★ 8,137</div>
   </header>
-  <p class="meta">nadermx/backgroundremover · Python · MIT · <time class="pushed" datetime="2026-07-10">最近推送 2026-07-10</time></p>
-  <p class="summary">用命令列幫圖像同影片去除背景嘅開源工具。一條指令就可以抽出主體，唔使開圖像軟件逐格摳。模型喺本地跑，適合要批量處理相片或者短片嘅人。輸出可以再交俾剪輯軟件，檔案留喺本機。</p>
-  <div class="links"><a href="https://github.com/nadermx/backgroundremover">GitHub</a><a href="https://backgroundremoverai.com">主頁</a></div>
+  <p class="meta">nadermx/backgroundremover · Python · MIT · <time class="pushed" datetime="2026-07-10"><span class="t-zh">最近推送 2026-07-10</span><span class="t-en">Pushed 2026-07-10</span></time></p>
+  <p class="summary"><span class="t-zh">用命令列幫圖像同影片去除背景嘅開源工具。一條指令就可以抽出主體，唔使開圖像軟件逐格摳。模型喺本地跑，適合要批量處理相片或者短片嘅人。輸出可以再交俾剪輯軟件，檔案留喺本機。</span><span class="t-en">An open-source command-line tool that removes backgrounds from images and video. One command extracts the subject, without opening image software to cut it out frame by frame. The model runs locally, which suits people who need to batch-process photos or short clips. The output can be passed to editing software, and the files stay on the machine.</span></p>
+  <div class="links"><a href="https://github.com/nadermx/backgroundremover">GitHub</a><a href="https://backgroundremoverai.com"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#ai</span><span>#background-removal</span><span>#background-remover</span></div>
-</article><article class="card" id="p-yi1108-printfilm" data-repo="yi1108/printfilm" data-search="printfilm yi1108/printfilm 用嚟做 ai 短片同漫劇嘅創作平台。可以由文案去到分鏡、參考圖、圖生影片再合成預覽。角色同場景可以重用，每一步都可以先檢查再繼續，而唔係一次過出成條片。預設係豎屏短片，亦可以改做靜圖成片。 printfilm: ai short-video marketing and ai short-drama creation platform python ai ai-video short-drama short-video">
+</article><article class="card" id="p-yi1108-printfilm" data-repo="yi1108/printfilm" data-search="printfilm yi1108/printfilm 用嚟做 ai 短片同漫劇嘅創作平台。可以由文案去到分鏡、參考圖、圖生影片再合成預覽。角色同場景可以重用，每一步都可以先檢查再繼續，而唔係一次過出成條片。預設係豎屏短片，亦可以改做靜圖成片。 a creation platform for ai short films and comic dramas. you can go from copy to a storyboard, reference images, image-to-video, and then a composite preview. characters and scenes can be reused, and each step can be checked before you continue, rather than producing the whole film in one pass. the default is vertical short video, and it can also be switched to a film made of still images. printfilm: ai short-video marketing and ai short-drama creation platform python ai ai-video short-drama short-video">
   <header>
     <h3><span class="rank">35</span><a href="https://github.com/yi1108/printfilm">printfilm</a></h3>
     <div class="stars">★ 7,372</div>
   </header>
-  <p class="meta">yi1108/printfilm · Python · MIT · <time class="pushed" datetime="2026-10-29">最近推送 2026-10-29</time></p>
-  <p class="summary">用嚟做 AI 短片同漫劇嘅創作平台。可以由文案去到分鏡、參考圖、圖生影片再合成預覽。角色同場景可以重用，每一步都可以先檢查再繼續，而唔係一次過出成條片。預設係豎屏短片，亦可以改做靜圖成片。</p>
-  <div class="links"><a href="https://github.com/yi1108/printfilm">GitHub</a><a href="https://www.printfilm.com">主頁</a></div>
+  <p class="meta">yi1108/printfilm · Python · MIT · <time class="pushed" datetime="2026-10-29"><span class="t-zh">最近推送 2026-10-29</span><span class="t-en">Pushed 2026-10-29</span></time></p>
+  <p class="summary"><span class="t-zh">用嚟做 AI 短片同漫劇嘅創作平台。可以由文案去到分鏡、參考圖、圖生影片再合成預覽。角色同場景可以重用，每一步都可以先檢查再繼續，而唔係一次過出成條片。預設係豎屏短片，亦可以改做靜圖成片。</span><span class="t-en">A creation platform for AI short films and comic dramas. You can go from copy to a storyboard, reference images, image-to-video, and then a composite preview. Characters and scenes can be reused, and each step can be checked before you continue, rather than producing the whole film in one pass. The default is vertical short video, and it can also be switched to a film made of still images.</span></p>
+  <div class="links"><a href="https://github.com/yi1108/printfilm">GitHub</a><a href="https://www.printfilm.com"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#ai</span><span>#ai-video</span><span>#short-drama</span></div>
-</article><article class="card" id="p-opentalker-video-retalking" data-repo="OpenTalker/video-retalking" data-search="video-retalking opentalker/video-retalking 按音訊為實拍人物影片做口型同步。你換一段聲音，畫面入面嘅嘴就跟住新音訊郁，適合配音、換旁白同修正口播，而唔使重拍。配音換咗之後，嘴形跟新聲音，適合口播同旁白修正。口播換旁白時最常用，表情其餘部分變動較少。 [siggraph asia 2022] videoretalking: audio-based lip synchronization for talking head video editing in the wild python lip-synchronization siggraph-asia-2022 talking-head-videos video-editing">
+</article><article class="card" id="p-opentalker-video-retalking" data-repo="OpenTalker/video-retalking" data-search="video-retalking opentalker/video-retalking 按音訊為實拍人物影片做口型同步。你換一段聲音，畫面入面嘅嘴就跟住新音訊郁，適合配音、換旁白同修正口播，而唔使重拍。配音換咗之後，嘴形跟新聲音，適合口播同旁白修正。口播換旁白時最常用，表情其餘部分變動較少。 lip-syncs live-action footage of a person to audio. you replace the sound, and the mouth in the picture moves with the new audio, which suits dubbing, replacing narration, and fixing a talking-head take without reshooting. after the dubbed audio is changed, the mouth follows the new voice, which suits talking-head and narration fixes. it is most often used when replacing narration on a talking-head video, and the rest of the expression changes less. [siggraph asia 2022] videoretalking: audio-based lip synchronization for talking head video editing in the wild python lip-synchronization siggraph-asia-2022 talking-head-videos video-editing">
   <header>
     <h3><span class="rank">36</span><a href="https://github.com/OpenTalker/video-retalking">video-retalking</a></h3>
     <div class="stars">★ 7,297</div>
   </header>
-  <p class="meta">OpenTalker/video-retalking · Python · Apache-2.0 · <time class="pushed" datetime="2024-08-05">最近推送 2024-08-05</time></p>
-  <p class="summary">按音訊為實拍人物影片做口型同步。你換一段聲音，畫面入面嘅嘴就跟住新音訊郁，適合配音、換旁白同修正口播，而唔使重拍。配音換咗之後，嘴形跟新聲音，適合口播同旁白修正。口播換旁白時最常用，表情其餘部分變動較少。</p>
-  <div class="links"><a href="https://github.com/OpenTalker/video-retalking">GitHub</a><a href="https://opentalker.github.io/video-retalking/">主頁</a></div>
+  <p class="meta">OpenTalker/video-retalking · Python · Apache-2.0 · <time class="pushed" datetime="2024-08-05"><span class="t-zh">最近推送 2024-08-05</span><span class="t-en">Pushed 2024-08-05</span></time></p>
+  <p class="summary"><span class="t-zh">按音訊為實拍人物影片做口型同步。你換一段聲音，畫面入面嘅嘴就跟住新音訊郁，適合配音、換旁白同修正口播，而唔使重拍。配音換咗之後，嘴形跟新聲音，適合口播同旁白修正。口播換旁白時最常用，表情其餘部分變動較少。</span><span class="t-en">Lip-syncs live-action footage of a person to audio. You replace the sound, and the mouth in the picture moves with the new audio, which suits dubbing, replacing narration, and fixing a talking-head take without reshooting. After the dubbed audio is changed, the mouth follows the new voice, which suits talking-head and narration fixes. It is most often used when replacing narration on a talking-head video, and the rest of the expression changes less.</span></p>
+  <div class="links"><a href="https://github.com/OpenTalker/video-retalking">GitHub</a><a href="https://opentalker.github.io/video-retalking/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#lip-synchronization</span><span>#siggraph-asia-2022</span><span>#talking-head-videos</span></div>
-</article><article class="card" id="p-openshot-openshot-qt" data-repo="OpenShot/openshot-qt" data-search="openshot-qt openshot/openshot-qt 跨平台開源影片剪接軟件，介面比較直接。時間線、轉場同標題都用圖形操作，適合想快上手、又不想先學一套專業剪接軟件嘅人。功能比專業軟件少，但時間線同標題足夠做一般剪接。家庭影片同簡單片頭通常夠用。 openshot video editor is an award-winning free and open-source video editor for linux, mac, and windows, and is dedicated to delivering high quality video editing and animation solutions to the world. python c-plus-plus ffmpeg gplv3 openshot python qt5 video video-editing">
+</article><article class="card" id="p-openshot-openshot-qt" data-repo="OpenShot/openshot-qt" data-search="openshot-qt openshot/openshot-qt 跨平台開源影片剪接軟件，介面比較直接。時間線、轉場同標題都用圖形操作，適合想快上手、又不想先學一套專業剪接軟件嘅人。功能比專業軟件少，但時間線同標題足夠做一般剪接。家庭影片同簡單片頭通常夠用。 cross-platform open-source video editing software with a fairly straightforward interface. the timeline, transitions, and titles are all operated graphically, which suits people who want to get started quickly without first learning a professional editing suite. it has fewer features than professional software, but the timeline and titles are enough for ordinary editing. home videos and simple intros are usually within what it can handle. openshot video editor is an award-winning free and open-source video editor for linux, mac, and windows, and is dedicated to delivering high quality video editing and animation solutions to the world. python c-plus-plus ffmpeg gplv3 openshot python qt5 video video-editing">
   <header>
     <h3><span class="rank">37</span><a href="https://github.com/OpenShot/openshot-qt">openshot-qt</a></h3>
     <div class="stars">★ 6,704</div>
   </header>
-  <p class="meta">OpenShot/openshot-qt · Python · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">跨平台開源影片剪接軟件，介面比較直接。時間線、轉場同標題都用圖形操作，適合想快上手、又不想先學一套專業剪接軟件嘅人。功能比專業軟件少，但時間線同標題足夠做一般剪接。家庭影片同簡單片頭通常夠用。</p>
-  <div class="links"><a href="https://github.com/OpenShot/openshot-qt">GitHub</a><a href="http://www.openshot.org">主頁</a></div>
+  <p class="meta">OpenShot/openshot-qt · Python · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">跨平台開源影片剪接軟件，介面比較直接。時間線、轉場同標題都用圖形操作，適合想快上手、又不想先學一套專業剪接軟件嘅人。功能比專業軟件少，但時間線同標題足夠做一般剪接。家庭影片同簡單片頭通常夠用。</span><span class="t-en">Cross-platform open-source video editing software with a fairly straightforward interface. The timeline, transitions, and titles are all operated graphically, which suits people who want to get started quickly without first learning a professional editing suite. It has fewer features than professional software, but the timeline and titles are enough for ordinary editing. Home videos and simple intros are usually within what it can handle.</span></p>
+  <div class="links"><a href="https://github.com/OpenShot/openshot-qt">GitHub</a><a href="http://www.openshot.org"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#c-plus-plus</span><span>#ffmpeg</span><span>#gplv3</span></div>
-</article><article class="card" id="p-modelscope-funclip" data-repo="modelscope/FunClip" data-search="funclip modelscope/funclip 基於 funasr 嘅影片剪輯工具。用嚟做語音轉文字、生成字幕，再用語言模型幫手揀片段。有本地 gradio 介面，適合中文口播片要自動上字幕同粗剪嘅人。辨識同剪輯都可以留喺自己部機。 funasr-powered video transcription, subtitle generation, and llm-assisted clipping tool with a local gradio ui. python ai-tools ai-video-editing asr auto-subtitles chinese content-creation funasr funclip">
+</article><article class="card" id="p-modelscope-funclip" data-repo="modelscope/FunClip" data-search="funclip modelscope/funclip 基於 funasr 嘅影片剪輯工具。用嚟做語音轉文字、生成字幕，再用語言模型幫手揀片段。有本地 gradio 介面，適合中文口播片要自動上字幕同粗剪嘅人。辨識同剪輯都可以留喺自己部機。 a video-editing tool based on funasr. it does speech-to-text, generates subtitles, and uses a language model to help choose clips. it has a local gradio interface and suits people who need automatic subtitles and a rough cut for chinese talking-head videos. recognition and editing can both stay on your own machine. funasr-powered video transcription, subtitle generation, and llm-assisted clipping tool with a local gradio ui. python ai-tools ai-video-editing asr auto-subtitles chinese content-creation funasr funclip">
   <header>
     <h3><span class="rank">38</span><a href="https://github.com/modelscope/FunClip">FunClip</a></h3>
     <div class="stars">★ 6,474</div>
   </header>
-  <p class="meta">modelscope/FunClip · Python · MIT · <time class="pushed" datetime="2026-10-08">最近推送 2026-10-08</time></p>
-  <p class="summary">基於 FunASR 嘅影片剪輯工具。用嚟做語音轉文字、生成字幕，再用語言模型幫手揀片段。有本地 Gradio 介面，適合中文口播片要自動上字幕同粗剪嘅人。辨識同剪輯都可以留喺自己部機。</p>
-  <div class="links"><a href="https://github.com/modelscope/FunClip">GitHub</a><a href="https://huggingface.co/spaces/FunAudioLLM/FunClip">主頁</a></div>
+  <p class="meta">modelscope/FunClip · Python · MIT · <time class="pushed" datetime="2026-10-08"><span class="t-zh">最近推送 2026-10-08</span><span class="t-en">Pushed 2026-10-08</span></time></p>
+  <p class="summary"><span class="t-zh">基於 FunASR 嘅影片剪輯工具。用嚟做語音轉文字、生成字幕，再用語言模型幫手揀片段。有本地 Gradio 介面，適合中文口播片要自動上字幕同粗剪嘅人。辨識同剪輯都可以留喺自己部機。</span><span class="t-en">A video-editing tool based on FunASR. It does speech-to-text, generates subtitles, and uses a language model to help choose clips. It has a local Gradio interface and suits people who need automatic subtitles and a rough cut for Chinese talking-head videos. Recognition and editing can both stay on your own machine.</span></p>
+  <div class="links"><a href="https://github.com/modelscope/FunClip">GitHub</a><a href="https://huggingface.co/spaces/FunAudioLLM/FunClip"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#ai-tools</span><span>#ai-video-editing</span><span>#asr</span></div>
-</article><article class="card" id="p-wyattblue-auto-editor" data-repo="WyattBlue/auto-editor" data-search="auto-editor wyattblue/auto-editor 自動剪片工具，用嚟偵測無聲同靜止畫面，再將有內容嘅段落接埋。支援影片同音訊，適合口播、錄音同學堂片要快速去掉空白。你可以調閾值，而唔係只得一個自動結果。輸出可以再交俾其他剪輯軟件。 effort free video editing! nim audio audio-editing audio-processing automatic nim video video-editing video-processing">
+</article><article class="card" id="p-wyattblue-auto-editor" data-repo="WyattBlue/auto-editor" data-search="auto-editor wyattblue/auto-editor 自動剪片工具，用嚟偵測無聲同靜止畫面，再將有內容嘅段落接埋。支援影片同音訊，適合口播、錄音同學堂片要快速去掉空白。你可以調閾值，而唔係只得一個自動結果。輸出可以再交俾其他剪輯軟件。 an automatic editing tool that detects silence and still frames, then joins the segments that have content. it supports video and audio, and it suits talking-head videos, recordings, and lecture footage that need the empty parts removed quickly. you can adjust the threshold, rather than having only one automatic result. the output can be passed on to other editing software. effort free video editing! nim audio audio-editing audio-processing automatic nim video video-editing video-processing">
   <header>
     <h3><span class="rank">39</span><a href="https://github.com/WyattBlue/auto-editor">auto-editor</a></h3>
     <div class="stars">★ 5,659</div>
   </header>
-  <p class="meta">WyattBlue/auto-editor · Nim · Unlicense · <time class="pushed" datetime="2026-10-28">最近推送 2026-10-28</time></p>
-  <p class="summary">自動剪片工具，用嚟偵測無聲同靜止畫面，再將有內容嘅段落接埋。支援影片同音訊，適合口播、錄音同學堂片要快速去掉空白。你可以調閾值，而唔係只得一個自動結果。輸出可以再交俾其他剪輯軟件。</p>
-  <div class="links"><a href="https://github.com/WyattBlue/auto-editor">GitHub</a><a href="https://auto-editor.com">主頁</a></div>
+  <p class="meta">WyattBlue/auto-editor · Nim · Unlicense · <time class="pushed" datetime="2026-10-28"><span class="t-zh">最近推送 2026-10-28</span><span class="t-en">Pushed 2026-10-28</span></time></p>
+  <p class="summary"><span class="t-zh">自動剪片工具，用嚟偵測無聲同靜止畫面，再將有內容嘅段落接埋。支援影片同音訊，適合口播、錄音同學堂片要快速去掉空白。你可以調閾值，而唔係只得一個自動結果。輸出可以再交俾其他剪輯軟件。</span><span class="t-en">An automatic editing tool that detects silence and still frames, then joins the segments that have content. It supports video and audio, and it suits talking-head videos, recordings, and lecture footage that need the empty parts removed quickly. You can adjust the threshold, rather than having only one automatic result. The output can be passed on to other editing software.</span></p>
+  <div class="links"><a href="https://github.com/WyattBlue/auto-editor">GitHub</a><a href="https://auto-editor.com"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#audio</span><span>#audio-editing</span><span>#audio-processing</span></div>
-</article><article class="card" id="p-anil-matcha-ai-youtube-shorts-generator" data-repo="Anil-matcha/AI-Youtube-Shorts-Generator" data-search="ai-youtube-shorts-generator anil-matcha/ai-youtube-shorts-generator 將長片剪成直向短片嘅開源工具。用語音轉文字同語言模型搵重點，再自動裁成 9:16。用嚟喺自己部機出片段，冇浮水印同按條收費。成片仍然要你自己睇過先發佈。字幕同裁切都可以再改。 open-source alternative to opus clip, vidyo.ai, klap &amp; submagic. turn long-form youtube videos into viral 9:16 shorts using llm highlight detection, whisper transcription, and auto vertical cropping — free, no watermarks, no per-clip credits. python 2short-ai-alternative ai-clip-generator ai-clipping auto-clip auto-crop highlight-detection klap-alternative llm">
+</article><article class="card" id="p-anil-matcha-ai-youtube-shorts-generator" data-repo="Anil-matcha/AI-Youtube-Shorts-Generator" data-search="ai-youtube-shorts-generator anil-matcha/ai-youtube-shorts-generator 將長片剪成直向短片嘅開源工具。用語音轉文字同語言模型搵重點，再自動裁成 9:16。用嚟喺自己部機出片段，冇浮水印同按條收費。成片仍然要你自己睇過先發佈。字幕同裁切都可以再改。 an open-source tool that cuts long videos into vertical shorts. it uses speech-to-text and a language model to find the highlights, then crops them to 9:16 automatically. it produces the clips on your own machine, with no watermark and no per-clip fee. you still need to review the finished video yourself before publishing. subtitles and the crop can both be changed again. open-source alternative to opus clip, vidyo.ai, klap &amp; submagic. turn long-form youtube videos into viral 9:16 shorts using llm highlight detection, whisper transcription, and auto vertical cropping — free, no watermarks, no per-clip credits. python 2short-ai-alternative ai-clip-generator ai-clipping auto-clip auto-crop highlight-detection klap-alternative llm">
   <header>
     <h3><span class="rank">40</span><a href="https://github.com/Anil-matcha/AI-Youtube-Shorts-Generator">AI-Youtube-Shorts-Generator</a></h3>
     <div class="stars">★ 5,652</div>
   </header>
-  <p class="meta">Anil-matcha/AI-Youtube-Shorts-Generator · Python · MIT · <time class="pushed" datetime="2026-10-25">最近推送 2026-10-25</time></p>
-  <p class="summary">將長片剪成直向短片嘅開源工具。用語音轉文字同語言模型搵重點，再自動裁成 9:16。用嚟喺自己部機出片段，冇浮水印同按條收費。成片仍然要你自己睇過先發佈。字幕同裁切都可以再改。</p>
-  <div class="links"><a href="https://github.com/Anil-matcha/AI-Youtube-Shorts-Generator">GitHub</a><a href="https://www.vadoo.tv/ai-youtube-shorts-generator">主頁</a></div>
+  <p class="meta">Anil-matcha/AI-Youtube-Shorts-Generator · Python · MIT · <time class="pushed" datetime="2026-10-25"><span class="t-zh">最近推送 2026-10-25</span><span class="t-en">Pushed 2026-10-25</span></time></p>
+  <p class="summary"><span class="t-zh">將長片剪成直向短片嘅開源工具。用語音轉文字同語言模型搵重點，再自動裁成 9:16。用嚟喺自己部機出片段，冇浮水印同按條收費。成片仍然要你自己睇過先發佈。字幕同裁切都可以再改。</span><span class="t-en">An open-source tool that cuts long videos into vertical shorts. It uses speech-to-text and a language model to find the highlights, then crops them to 9:16 automatically. It produces the clips on your own machine, with no watermark and no per-clip fee. You still need to review the finished video yourself before publishing. Subtitles and the crop can both be changed again.</span></p>
+  <div class="links"><a href="https://github.com/Anil-matcha/AI-Youtube-Shorts-Generator">GitHub</a><a href="https://www.vadoo.tv/ai-youtube-shorts-generator"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#2short-ai-alternative</span><span>#ai-clip-generator</span><span>#ai-clipping</span></div>
-</article><article class="card" id="p-ailab-cvc-videocrafter" data-repo="AILab-CVC/VideoCrafter" data-search="videocrafter ailab-cvc/videocrafter 影片擴散模型項目，用嚟喺有限數據下生成影片。包含文字到影片同圖像到影片嘅研究程式，適合作為開放嘅影片生成實驗起點。數據有限時嘅影片擴散研究，可以當實驗基線。想改模型而唔係只用網站，就由呢度起。 videocrafter2: overcoming data limitations for high-quality video diffusion models python image-to-video text-to-video video-generation">
+</article><article class="card" id="p-ailab-cvc-videocrafter" data-repo="AILab-CVC/VideoCrafter" data-search="videocrafter ailab-cvc/videocrafter 影片擴散模型項目，用嚟喺有限數據下生成影片。包含文字到影片同圖像到影片嘅研究程式，適合作為開放嘅影片生成實驗起點。數據有限時嘅影片擴散研究，可以當實驗基線。想改模型而唔係只用網站，就由呢度起。 a video diffusion model project for generating video with limited data. it includes research code for text-to-video and image-to-video, and it suits an open starting point for video generation experiments. for video diffusion research when data is limited, it can serve as an experimental baseline. if you want to change the model rather than only use a website, start here. videocrafter2: overcoming data limitations for high-quality video diffusion models python image-to-video text-to-video video-generation">
   <header>
     <h3><span class="rank">41</span><a href="https://github.com/AILab-CVC/VideoCrafter">VideoCrafter</a></h3>
     <div class="stars">★ 5,110</div>
   </header>
-  <p class="meta">AILab-CVC/VideoCrafter · Python · <time class="pushed" datetime="2026-01-09">最近推送 2026-01-09</time></p>
-  <p class="summary">影片擴散模型項目，用嚟喺有限數據下生成影片。包含文字到影片同圖像到影片嘅研究程式，適合作為開放嘅影片生成實驗起點。數據有限時嘅影片擴散研究，可以當實驗基線。想改模型而唔係只用網站，就由呢度起。</p>
-  <div class="links"><a href="https://github.com/AILab-CVC/VideoCrafter">GitHub</a><a href="https://ailab-cvc.github.io/videocrafter2/">主頁</a></div>
+  <p class="meta">AILab-CVC/VideoCrafter · Python · <time class="pushed" datetime="2026-01-09"><span class="t-zh">最近推送 2026-01-09</span><span class="t-en">Pushed 2026-01-09</span></time></p>
+  <p class="summary"><span class="t-zh">影片擴散模型項目，用嚟喺有限數據下生成影片。包含文字到影片同圖像到影片嘅研究程式，適合作為開放嘅影片生成實驗起點。數據有限時嘅影片擴散研究，可以當實驗基線。想改模型而唔係只用網站，就由呢度起。</span><span class="t-en">A video diffusion model project for generating video with limited data. It includes research code for text-to-video and image-to-video, and it suits an open starting point for video generation experiments. For video diffusion research when data is limited, it can serve as an experimental baseline. If you want to change the model rather than only use a website, start here.</span></p>
+  <div class="links"><a href="https://github.com/AILab-CVC/VideoCrafter">GitHub</a><a href="https://ailab-cvc.github.io/videocrafter2/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#image-to-video</span><span>#text-to-video</span><span>#video-generation</span></div>
-</article><article class="card" id="p-getopenscreen-openscreen" data-repo="getopenscreen/openscreen" data-search="openscreen getopenscreen/openscreen 開源螢幕錄影程式，用嚟錄產品示範片。支援 windows、macos 同 linux，有 gpu 加速，冇浮水印同訂閱。片段留喺自己部機，適合要出 demo 又唔想用閉源錄影工具嘅人。 record your screen, ship a demo. free and open-source, gpu-accelerated, no watermarks, no subscriptions. windows, macos, linux. actively maintained. typescript cross-platform electron ffmpeg open-source product-demo rust screen-capture screen-recorder">
+</article><article class="card" id="p-getopenscreen-openscreen" data-repo="getopenscreen/openscreen" data-search="openscreen getopenscreen/openscreen 開源螢幕錄影程式，用嚟錄產品示範片。支援 windows、macos 同 linux，有 gpu 加速，冇浮水印同訂閱。片段留喺自己部機，適合要出 demo 又唔想用閉源錄影工具嘅人。 an open-source screen recorder for product demo videos. it supports windows, macos, and linux, with gpu acceleration and no watermark or subscription. clips stay on your own machine. it suits people who need to produce demos and do not want a closed-source recording tool. record your screen, ship a demo. free and open-source, gpu-accelerated, no watermarks, no subscriptions. windows, macos, linux. actively maintained. typescript cross-platform electron ffmpeg open-source product-demo rust screen-capture screen-recorder">
   <header>
     <h3><span class="rank">42</span><a href="https://github.com/getopenscreen/openscreen">openscreen</a></h3>
     <div class="stars">★ 5,106</div>
   </header>
-  <p class="meta">getopenscreen/openscreen · TypeScript · MIT · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">開源螢幕錄影程式，用嚟錄產品示範片。支援 Windows、macOS 同 Linux，有 GPU 加速，冇浮水印同訂閱。片段留喺自己部機，適合要出 demo 又唔想用閉源錄影工具嘅人。</p>
-  <div class="links"><a href="https://github.com/getopenscreen/openscreen">GitHub</a><a href="https://getopenscreen.com/">主頁</a></div>
+  <p class="meta">getopenscreen/openscreen · TypeScript · MIT · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">開源螢幕錄影程式，用嚟錄產品示範片。支援 Windows、macOS 同 Linux，有 GPU 加速，冇浮水印同訂閱。片段留喺自己部機，適合要出 demo 又唔想用閉源錄影工具嘅人。</span><span class="t-en">An open-source screen recorder for product demo videos. It supports Windows, macOS, and Linux, with GPU acceleration and no watermark or subscription. Clips stay on your own machine. It suits people who need to produce demos and do not want a closed-source recording tool.</span></p>
+  <div class="links"><a href="https://github.com/getopenscreen/openscreen">GitHub</a><a href="https://getopenscreen.com/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#cross-platform</span><span>#electron</span><span>#ffmpeg</span></div>
-</article><article class="card" id="p-wide-trace-open-higgsfield" data-repo="wide-trace/open-higgsfield" data-search="open-higgsfield wide-trace/open-higgsfield 一個開源嘅圖像同影片工作室，用一條提示詞呼叫多個現成模型。你要自己帶平台鑰匙，工作室本身唔係模型。適合想喺同一個畫面試唔同出圖同出片模型、又唔想被單一網站綁住嘅人。 a studio for image and video generation — one prompt bar, each model’s own settings, and every finished run in one gallery. typescript ">
+</article><article class="card" id="p-wide-trace-open-higgsfield" data-repo="wide-trace/open-higgsfield" data-search="open-higgsfield wide-trace/open-higgsfield 一個開源嘅圖像同影片工作室，用一條提示詞呼叫多個現成模型。你要自己帶平台鑰匙，工作室本身唔係模型。適合想喺同一個畫面試唔同出圖同出片模型、又唔想被單一網站綁住嘅人。 an open-source image and video studio that calls several existing models with one prompt. you have to bring your own platform keys. the studio itself is not a model. it suits people who want to try different image and video models on the same screen without being locked to a single website. a studio for image and video generation — one prompt bar, each model’s own settings, and every finished run in one gallery. typescript ">
   <header>
     <h3><span class="rank">43</span><a href="https://github.com/wide-trace/open-higgsfield">open-higgsfield</a></h3>
     <div class="stars">★ 5,035</div>
   </header>
-  <p class="meta">wide-trace/open-higgsfield · TypeScript · <time class="pushed" datetime="2026-09-17">最近推送 2026-09-17</time></p>
-  <p class="summary">一個開源嘅圖像同影片工作室，用一條提示詞呼叫多個現成模型。你要自己帶平台鑰匙，工作室本身唔係模型。適合想喺同一個畫面試唔同出圖同出片模型、又唔想被單一網站綁住嘅人。</p>
-  <div class="links"><a href="https://github.com/wide-trace/open-higgsfield">GitHub</a><a href="https://openhiggsfield.ai">主頁</a></div>
+  <p class="meta">wide-trace/open-higgsfield · TypeScript · <time class="pushed" datetime="2026-09-17"><span class="t-zh">最近推送 2026-09-17</span><span class="t-en">Pushed 2026-09-17</span></time></p>
+  <p class="summary"><span class="t-zh">一個開源嘅圖像同影片工作室，用一條提示詞呼叫多個現成模型。你要自己帶平台鑰匙，工作室本身唔係模型。適合想喺同一個畫面試唔同出圖同出片模型、又唔想被單一網站綁住嘅人。</span><span class="t-en">An open-source image and video studio that calls several existing models with one prompt. You have to bring your own platform keys. The studio itself is not a model. It suits people who want to try different image and video models on the same screen without being locked to a single website.</span></p>
+  <div class="links"><a href="https://github.com/wide-trace/open-higgsfield">GitHub</a><a href="https://openhiggsfield.ai"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   
-</article><article class="card" id="p-darkzogx-youtube-automation-agent" data-repo="darkzOGx/youtube-automation-agent" data-search="youtube-automation-agent darkzogx/youtube-automation-agent 可以自己架嘅影片 agent。用嚟由題目寫腳本、配音同畫面，你批准之後先發佈，再按數據調整下一條。模型接口可以換。成片同發佈都要你自己確認。腳本同成片都可以留喺自己部機再改。 🎬 open-source, self-hosted ai agent that runs a youtube channel end to end: researches topics, writes scripts, generates narration, visuals and video, optimizes seo, and publishes after your approval, then learns from analytics. works with gemini, openai, openrouter, deepseek and more. javascript ai-agents automation content-automation content-creation content-strategy google-gemini javascript nodejs">
+</article><article class="card" id="p-darkzogx-youtube-automation-agent" data-repo="darkzOGx/youtube-automation-agent" data-search="youtube-automation-agent darkzogx/youtube-automation-agent 可以自己架嘅影片 agent。用嚟由題目寫腳本、配音同畫面，你批准之後先發佈，再按數據調整下一條。模型接口可以換。成片同發佈都要你自己確認。腳本同成片都可以留喺自己部機再改。 a self-hosted video agent. it writes a script, voiceover, and visuals from a topic, publishes only after you approve, and then adjusts the next video from the data. the model interface can be swapped. you have to confirm the finished video and the publishing yourself. the script and the finished video can stay on your own machine for further edits. 🎬 open-source, self-hosted ai agent that runs a youtube channel end to end: researches topics, writes scripts, generates narration, visuals and video, optimizes seo, and publishes after your approval, then learns from analytics. works with gemini, openai, openrouter, deepseek and more. javascript ai-agents automation content-automation content-creation content-strategy google-gemini javascript nodejs">
   <header>
     <h3><span class="rank">44</span><a href="https://github.com/darkzOGx/youtube-automation-agent">youtube-automation-agent</a></h3>
     <div class="stars">★ 4,849</div>
   </header>
-  <p class="meta">darkzOGx/youtube-automation-agent · JavaScript · MIT · <time class="pushed" datetime="2026-10-27">最近推送 2026-10-27</time></p>
-  <p class="summary">可以自己架嘅影片 agent。用嚟由題目寫腳本、配音同畫面，你批准之後先發佈，再按數據調整下一條。模型接口可以換。成片同發佈都要你自己確認。腳本同成片都可以留喺自己部機再改。</p>
-  <div class="links"><a href="https://github.com/darkzOGx/youtube-automation-agent">GitHub</a><a href="https://github.com/darkzOGx/youtube-automation-agent#readme">主頁</a></div>
+  <p class="meta">darkzOGx/youtube-automation-agent · JavaScript · MIT · <time class="pushed" datetime="2026-10-27"><span class="t-zh">最近推送 2026-10-27</span><span class="t-en">Pushed 2026-10-27</span></time></p>
+  <p class="summary"><span class="t-zh">可以自己架嘅影片 agent。用嚟由題目寫腳本、配音同畫面，你批准之後先發佈，再按數據調整下一條。模型接口可以換。成片同發佈都要你自己確認。腳本同成片都可以留喺自己部機再改。</span><span class="t-en">A self-hosted video agent. It writes a script, voiceover, and visuals from a topic, publishes only after you approve, and then adjusts the next video from the data. The model interface can be swapped. You have to confirm the finished video and the publishing yourself. The script and the finished video can stay on your own machine for further edits.</span></p>
+  <div class="links"><a href="https://github.com/darkzOGx/youtube-automation-agent">GitHub</a><a href="https://github.com/darkzOGx/youtube-automation-agent#readme"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#ai-agents</span><span>#automation</span><span>#content-automation</span></div>
-</article><article class="card" id="p-nexu-io-html-video" data-repo="nexu-io/html-video" data-search="html-video nexu-io/html-video 喺自己部電腦將 html、css 同數據渲成 mp4 嘅工具。寫程式助手可以叫佢出片，有現成模板同可換嘅渲染引擎。用嚟做程式化影片，而唔係按次收費嘅雲端渲染。影片檔留喺你部電腦。 programmatic video for coding agents — html to video on your laptop. turn html, css &amp; data into real mp4s with pluggable render engines, 21 templates, ai soundtrack. apache-2.0, no per-render fees. an official project by the open design team. html ai-agent apache-2 coding-agent css ffmpeg html html-to-video hyperframes">
+</article><article class="card" id="p-nexu-io-html-video" data-repo="nexu-io/html-video" data-search="html-video nexu-io/html-video 喺自己部電腦將 html、css 同數據渲成 mp4 嘅工具。寫程式助手可以叫佢出片，有現成模板同可換嘅渲染引擎。用嚟做程式化影片，而唔係按次收費嘅雲端渲染。影片檔留喺你部電腦。 a tool that renders html, css, and data into an mp4 on your own computer. a coding assistant can ask it to produce a video. it has ready-made templates and a swappable rendering engine. it is for programmatic video, not pay-per-render cloud rendering. the video file stays on your computer. programmatic video for coding agents — html to video on your laptop. turn html, css &amp; data into real mp4s with pluggable render engines, 21 templates, ai soundtrack. apache-2.0, no per-render fees. an official project by the open design team. html ai-agent apache-2 coding-agent css ffmpeg html html-to-video hyperframes">
   <header>
     <h3><span class="rank">45</span><a href="https://github.com/nexu-io/html-video">html-video</a></h3>
     <div class="stars">★ 4,783</div>
   </header>
-  <p class="meta">nexu-io/html-video · HTML · Apache-2.0 · <time class="pushed" datetime="2026-06-22">最近推送 2026-06-22</time></p>
-  <p class="summary">喺自己部電腦將 HTML、CSS 同數據渲成 MP4 嘅工具。寫程式助手可以叫佢出片，有現成模板同可換嘅渲染引擎。用嚟做程式化影片，而唔係按次收費嘅雲端渲染。影片檔留喺你部電腦。</p>
-  <div class="links"><a href="https://github.com/nexu-io/html-video">GitHub</a><a href="https://open-design.ai/html-video">主頁</a></div>
+  <p class="meta">nexu-io/html-video · HTML · Apache-2.0 · <time class="pushed" datetime="2026-06-22"><span class="t-zh">最近推送 2026-06-22</span><span class="t-en">Pushed 2026-06-22</span></time></p>
+  <p class="summary"><span class="t-zh">喺自己部電腦將 HTML、CSS 同數據渲成 MP4 嘅工具。寫程式助手可以叫佢出片，有現成模板同可換嘅渲染引擎。用嚟做程式化影片，而唔係按次收費嘅雲端渲染。影片檔留喺你部電腦。</span><span class="t-en">A tool that renders HTML, CSS, and data into an MP4 on your own computer. A coding assistant can ask it to produce a video. It has ready-made templates and a swappable rendering engine. It is for programmatic video, not pay-per-render cloud rendering. The video file stays on your computer.</span></p>
+  <div class="links"><a href="https://github.com/nexu-io/html-video">GitHub</a><a href="https://open-design.ai/html-video"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#ai-agent</span><span>#apache-2</span><span>#coding-agent</span></div>
-</article><article class="card" id="p-guanyixuan-pyjianyingdraft" data-repo="GuanYixuan/pyJianYingDraft" data-search="pyjianyingdraft guanyixuan/pyjianyingdraft 用 python 生成剪映草稿嘅工具。你可以程式化擺影片、圖片、時間軸同效果，再匯出草稿去剪映繼續改，用嚟砌自動剪輯流水線。capcut 版本喺另一個倉庫開發。適合要批量出片，又想留低可以再編輯嘅草稿。 轻量、灵活、易上手的python剪映草稿生成及导出工具，构建全自动化视频剪辑/混剪流水线。本项目的capcut版本正于 https://github.com/guanyixuan/pycapcut 内开发 python api automation capcut jianying video-editing video-production">
+</article><article class="card" id="p-guanyixuan-pyjianyingdraft" data-repo="GuanYixuan/pyJianYingDraft" data-search="pyjianyingdraft guanyixuan/pyjianyingdraft 用 python 生成剪映草稿嘅工具。你可以程式化擺影片、圖片、時間軸同效果，再匯出草稿去剪映繼續改，用嚟砌自動剪輯流水線。capcut 版本喺另一個倉庫開發。適合要批量出片，又想留低可以再編輯嘅草稿。 a python tool that generates jianying drafts. you can place video, images, a timeline, and effects in code, then export the draft into jianying and keep editing, which is a way to build an automatic editing pipeline. the capcut version is developed in another repository. it suits people who need to produce videos in batches and still want drafts that can be edited again. 轻量、灵活、易上手的python剪映草稿生成及导出工具，构建全自动化视频剪辑/混剪流水线。本项目的capcut版本正于 https://github.com/guanyixuan/pycapcut 内开发 python api automation capcut jianying video-editing video-production">
   <header>
     <h3><span class="rank">46</span><a href="https://github.com/GuanYixuan/pyJianYingDraft">pyJianYingDraft</a></h3>
     <div class="stars">★ 4,729</div>
   </header>
-  <p class="meta">GuanYixuan/pyJianYingDraft · Python · Apache-2.0 · <time class="pushed" datetime="2026-10-14">最近推送 2026-10-14</time></p>
-  <p class="summary">用 Python 生成剪映草稿嘅工具。你可以程式化擺影片、圖片、時間軸同效果，再匯出草稿去剪映繼續改，用嚟砌自動剪輯流水線。CapCut 版本喺另一個倉庫開發。適合要批量出片，又想留低可以再編輯嘅草稿。</p>
+  <p class="meta">GuanYixuan/pyJianYingDraft · Python · Apache-2.0 · <time class="pushed" datetime="2026-10-14"><span class="t-zh">最近推送 2026-10-14</span><span class="t-en">Pushed 2026-10-14</span></time></p>
+  <p class="summary"><span class="t-zh">用 Python 生成剪映草稿嘅工具。你可以程式化擺影片、圖片、時間軸同效果，再匯出草稿去剪映繼續改，用嚟砌自動剪輯流水線。CapCut 版本喺另一個倉庫開發。適合要批量出片，又想留低可以再編輯嘅草稿。</span><span class="t-en">A Python tool that generates Jianying drafts. You can place video, images, a timeline, and effects in code, then export the draft into Jianying and keep editing, which is a way to build an automatic editing pipeline. The CapCut version is developed in another repository. It suits people who need to produce videos in batches and still want drafts that can be edited again.</span></p>
   <div class="links"><a href="https://github.com/GuanYixuan/pyJianYingDraft">GitHub</a></div>
   <div class="topics"><span>#api</span><span>#automation</span><span>#capcut</span></div>
-</article><article class="card" id="p-antgroup-echomimic-v2" data-repo="antgroup/echomimic_v2" data-search="echomimic_v2 antgroup/echomimic_v2 螞蟻集團嘅半身人像動畫，用聲音驅動人講嘢同埋身體動作。你可以畀一段聲同參考圖，生成對嘴同姿勢嘅影片。cvpr 2025。重點係人像表演，而唔係一般剪片或者文字生片。適合做口播同虛擬人。 [cvpr 2025] echomimicv2: towards striking, simplified, and semi-body human animation python audio-driven-body-animation audio-driven-portrait-animations audio-driven-talking-face cvpr2025 human-animation talking-face-generation talking-head video-generation">
+</article><article class="card" id="p-antgroup-echomimic-v2" data-repo="antgroup/echomimic_v2" data-search="echomimic_v2 antgroup/echomimic_v2 螞蟻集團嘅半身人像動畫，用聲音驅動人講嘢同埋身體動作。你可以畀一段聲同參考圖，生成對嘴同姿勢嘅影片。cvpr 2025。重點係人像表演，而唔係一般剪片或者文字生片。適合做口播同虛擬人。 ant group&#x27;s half-body portrait animation, which uses audio to drive speech and body movement. you can give it an audio clip and a reference image, and it generates a video with matched lips and pose. cvpr 2025. the focus is portrait performance, not general video editing or text-to-video. it suits talking-head videos and virtual humans. [cvpr 2025] echomimicv2: towards striking, simplified, and semi-body human animation python audio-driven-body-animation audio-driven-portrait-animations audio-driven-talking-face cvpr2025 human-animation talking-face-generation talking-head video-generation">
   <header>
     <h3><span class="rank">47</span><a href="https://github.com/antgroup/echomimic_v2">echomimic_v2</a></h3>
     <div class="stars">★ 4,667</div>
   </header>
-  <p class="meta">antgroup/echomimic_v2 · Python · Apache-2.0 · <time class="pushed" datetime="2026-02-23">最近推送 2026-02-23</time></p>
-  <p class="summary">螞蟻集團嘅半身人像動畫，用聲音驅動人講嘢同埋身體動作。你可以畀一段聲同參考圖，生成對嘴同姿勢嘅影片。CVPR 2025。重點係人像表演，而唔係一般剪片或者文字生片。適合做口播同虛擬人。</p>
-  <div class="links"><a href="https://github.com/antgroup/echomimic_v2">GitHub</a><a href="https://antgroup.github.io/ai/echomimic_v2/">主頁</a></div>
+  <p class="meta">antgroup/echomimic_v2 · Python · Apache-2.0 · <time class="pushed" datetime="2026-02-23"><span class="t-zh">最近推送 2026-02-23</span><span class="t-en">Pushed 2026-02-23</span></time></p>
+  <p class="summary"><span class="t-zh">螞蟻集團嘅半身人像動畫，用聲音驅動人講嘢同埋身體動作。你可以畀一段聲同參考圖，生成對嘴同姿勢嘅影片。CVPR 2025。重點係人像表演，而唔係一般剪片或者文字生片。適合做口播同虛擬人。</span><span class="t-en">Ant Group&#x27;s half-body portrait animation, which uses audio to drive speech and body movement. You can give it an audio clip and a reference image, and it generates a video with matched lips and pose. CVPR 2025. The focus is portrait performance, not general video editing or text-to-video. It suits talking-head videos and virtual humans.</span></p>
+  <div class="links"><a href="https://github.com/antgroup/echomimic_v2">GitHub</a><a href="https://antgroup.github.io/ai/echomimic_v2/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#audio-driven-body-animation</span><span>#audio-driven-portrait-animations</span><span>#audio-driven-talking-face</span></div>
-</article><article class="card" id="p-tencent-hunyuan-hunyuanvideo-1-5" data-repo="Tencent-Hunyuan/HunyuanVideo-1.5" data-search="hunyuanvideo-1.5 tencent-hunyuan/hunyuanvideo-1.5 騰訊混元嘅輕量影片生成模型，可以由文字或者圖片出片。重點係模型細、容易跑，同時保持可睇嘅畫面。官方程式同權重說明喺呢個倉庫。適合想喺自己部機試文字生片，而唔使先部署超大模型。 hunyuanvideo-1.5: a leading lightweight video generation model python image-to-video text-to-video video-generation">
+</article><article class="card" id="p-tencent-hunyuan-hunyuanvideo-1-5" data-repo="Tencent-Hunyuan/HunyuanVideo-1.5" data-search="hunyuanvideo-1.5 tencent-hunyuan/hunyuanvideo-1.5 騰訊混元嘅輕量影片生成模型，可以由文字或者圖片出片。重點係模型細、容易跑，同時保持可睇嘅畫面。官方程式同權重說明喺呢個倉庫。適合想喺自己部機試文字生片，而唔使先部署超大模型。 tencent hunyuan&#x27;s lightweight video generation model, which can make a video from text or from an image. the focus is a small model that is easy to run while keeping a watchable picture. the official code and the notes on the weights are in this repository. it suits people who want to try text-to-video on their own machine without deploying an extremely large model first. hunyuanvideo-1.5: a leading lightweight video generation model python image-to-video text-to-video video-generation">
   <header>
     <h3><span class="rank">48</span><a href="https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5">HunyuanVideo-1.5</a></h3>
     <div class="stars">★ 4,582</div>
   </header>
-  <p class="meta">Tencent-Hunyuan/HunyuanVideo-1.5 · Python · <time class="pushed" datetime="2026-04-10">最近推送 2026-04-10</time></p>
-  <p class="summary">騰訊混元嘅輕量影片生成模型，可以由文字或者圖片出片。重點係模型細、容易跑，同時保持可睇嘅畫面。官方程式同權重說明喺呢個倉庫。適合想喺自己部機試文字生片，而唔使先部署超大模型。</p>
-  <div class="links"><a href="https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5">GitHub</a><a href="https://hunyuan.tencent.com/video/zh?tabIndex=0">主頁</a></div>
+  <p class="meta">Tencent-Hunyuan/HunyuanVideo-1.5 · Python · <time class="pushed" datetime="2026-04-10"><span class="t-zh">最近推送 2026-04-10</span><span class="t-en">Pushed 2026-04-10</span></time></p>
+  <p class="summary"><span class="t-zh">騰訊混元嘅輕量影片生成模型，可以由文字或者圖片出片。重點係模型細、容易跑，同時保持可睇嘅畫面。官方程式同權重說明喺呢個倉庫。適合想喺自己部機試文字生片，而唔使先部署超大模型。</span><span class="t-en">Tencent Hunyuan&#x27;s lightweight video generation model, which can make a video from text or from an image. The focus is a small model that is easy to run while keeping a watchable picture. The official code and the notes on the weights are in this repository. It suits people who want to try text-to-video on their own machine without deploying an extremely large model first.</span></p>
+  <div class="links"><a href="https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5">GitHub</a><a href="https://hunyuan.tencent.com/video/zh?tabIndex=0"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#image-to-video</span><span>#text-to-video</span><span>#video-generation</span></div>
-</article><article class="card" id="p-tmoroney-auto-subs" data-repo="tmoroney/auto-subs" data-search="auto-subs tmoroney/auto-subs 喺自己部電腦做字幕嘅工具，聲同片唔使上傳。可以獨立用，亦可以駁 davinci resolve、premiere 同 after effects。支援多語言轉錄同翻譯，仲可以分辨邊個講緊嘢。適合要本地出字幕、又想直接入剪輯軟件嘅人。 on-device subtitle generation that connects directly to davinci resolve, premiere, and after effects. typescript ai cross-platform davinci davinci-resolve premiere resolve rust speech-to-text">
+</article><article class="card" id="p-tmoroney-auto-subs" data-repo="tmoroney/auto-subs" data-search="auto-subs tmoroney/auto-subs 喺自己部電腦做字幕嘅工具，聲同片唔使上傳。可以獨立用，亦可以駁 davinci resolve、premiere 同 after effects。支援多語言轉錄同翻譯，仲可以分辨邊個講緊嘢。適合要本地出字幕、又想直接入剪輯軟件嘅人。 a tool for making subtitles on your own computer, so the audio and video do not have to be uploaded. it can be used on its own, and it can also connect to davinci resolve, premiere, and after effects. it supports multilingual transcription and translation, and it can tell who is speaking. it suits people who need local subtitles and want them to go straight into editing software. on-device subtitle generation that connects directly to davinci resolve, premiere, and after effects. typescript ai cross-platform davinci davinci-resolve premiere resolve rust speech-to-text">
   <header>
     <h3><span class="rank">49</span><a href="https://github.com/tmoroney/auto-subs">auto-subs</a></h3>
     <div class="stars">★ 4,480</div>
   </header>
-  <p class="meta">tmoroney/auto-subs · TypeScript · MIT · <time class="pushed" datetime="2026-10-26">最近推送 2026-10-26</time></p>
-  <p class="summary">喺自己部電腦做字幕嘅工具，聲同片唔使上傳。可以獨立用，亦可以駁 DaVinci Resolve、Premiere 同 After Effects。支援多語言轉錄同翻譯，仲可以分辨邊個講緊嘢。適合要本地出字幕、又想直接入剪輯軟件嘅人。</p>
-  <div class="links"><a href="https://github.com/tmoroney/auto-subs">GitHub</a><a href="https://tom-moroney.com/auto-subs/">主頁</a></div>
+  <p class="meta">tmoroney/auto-subs · TypeScript · MIT · <time class="pushed" datetime="2026-10-26"><span class="t-zh">最近推送 2026-10-26</span><span class="t-en">Pushed 2026-10-26</span></time></p>
+  <p class="summary"><span class="t-zh">喺自己部電腦做字幕嘅工具，聲同片唔使上傳。可以獨立用，亦可以駁 DaVinci Resolve、Premiere 同 After Effects。支援多語言轉錄同翻譯，仲可以分辨邊個講緊嘢。適合要本地出字幕、又想直接入剪輯軟件嘅人。</span><span class="t-en">A tool for making subtitles on your own computer, so the audio and video do not have to be uploaded. It can be used on its own, and it can also connect to DaVinci Resolve, Premiere, and After Effects. It supports multilingual transcription and translation, and it can tell who is speaking. It suits people who need local subtitles and want them to go straight into editing software.</span></p>
+  <div class="links"><a href="https://github.com/tmoroney/auto-subs">GitHub</a><a href="https://tom-moroney.com/auto-subs/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#ai</span><span>#cross-platform</span><span>#davinci</span></div>
-</article><article class="card" id="p-fudan-generative-vision-champ" data-repo="fudan-generative-vision/champ" data-search="champ fudan-generative-vision/champ 用三維參數引導嘅人像動畫，可以將一張人像按動作變成穩定影片。eccv 2024。重點係人物動作同外觀保持一致，而唔係一般文字生片。適合由一張相做人物動畫研究。官方程式對住論文。 [eccv 2024] champ: controllable and consistent human image animation with 3d parametric guidance python human-animation image-animatioln video-generation">
+</article><article class="card" id="p-fudan-generative-vision-champ" data-repo="fudan-generative-vision/champ" data-search="champ fudan-generative-vision/champ 用三維參數引導嘅人像動畫，可以將一張人像按動作變成穩定影片。eccv 2024。重點係人物動作同外觀保持一致，而唔係一般文字生片。適合由一張相做人物動畫研究。官方程式對住論文。 portrait animation guided by 3d parameters, which can turn one portrait into a stable video according to the motion. eccv 2024. the focus is keeping the person&#x27;s motion and appearance consistent, not general text-to-video. it suits research on character animation from a single photo. the official code follows the paper. [eccv 2024] champ: controllable and consistent human image animation with 3d parametric guidance python human-animation image-animatioln video-generation">
   <header>
     <h3><span class="rank">50</span><a href="https://github.com/fudan-generative-vision/champ">champ</a></h3>
     <div class="stars">★ 4,262</div>
   </header>
-  <p class="meta">fudan-generative-vision/champ · Python · MIT · <time class="pushed" datetime="2024-07-10">最近推送 2024-07-10</time></p>
-  <p class="summary">用三維參數引導嘅人像動畫，可以將一張人像按動作變成穩定影片。ECCV 2024。重點係人物動作同外觀保持一致，而唔係一般文字生片。適合由一張相做人物動畫研究。官方程式對住論文。</p>
-  <div class="links"><a href="https://github.com/fudan-generative-vision/champ">GitHub</a><a href="https://fudan-generative-vision.github.io/champ/">主頁</a></div>
+  <p class="meta">fudan-generative-vision/champ · Python · MIT · <time class="pushed" datetime="2024-07-10"><span class="t-zh">最近推送 2024-07-10</span><span class="t-en">Pushed 2024-07-10</span></time></p>
+  <p class="summary"><span class="t-zh">用三維參數引導嘅人像動畫，可以將一張人像按動作變成穩定影片。ECCV 2024。重點係人物動作同外觀保持一致，而唔係一般文字生片。適合由一張相做人物動畫研究。官方程式對住論文。</span><span class="t-en">Portrait animation guided by 3D parameters, which can turn one portrait into a stable video according to the motion. ECCV 2024. The focus is keeping the person&#x27;s motion and appearance consistent, not general text-to-video. It suits research on character animation from a single photo. The official code follows the paper.</span></p>
+  <div class="links"><a href="https://github.com/fudan-generative-vision/champ">GitHub</a><a href="https://fudan-generative-vision.github.io/champ/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#human-animation</span><span>#image-animatioln</span><span>#video-generation</span></div>
-</article><article class="card" id="p-picsart-ai-research-text2video-zero" data-repo="Picsart-AI-Research/Text2Video-Zero" data-search="text2video-zero picsart-ai-research/text2video-zero 用文字生圖嘅擴散模型，零樣本做出影片。唔使為影片再訓練一個新模型，就可以由文字或圖生成短片。iccv 2023 口頭報告嘅官方程式。適合研究點樣由圖像模型延伸到影片。 [iccv 2023 oral] text-to-image diffusion models are zero-shot video generators python video-editing video-generation">
+</article><article class="card" id="p-picsart-ai-research-text2video-zero" data-repo="Picsart-AI-Research/Text2Video-Zero" data-search="text2video-zero picsart-ai-research/text2video-zero 用文字生圖嘅擴散模型，零樣本做出影片。唔使為影片再訓練一個新模型，就可以由文字或圖生成短片。iccv 2023 口頭報告嘅官方程式。適合研究點樣由圖像模型延伸到影片。 it uses a text-to-image diffusion model to make video in a zero-shot way. without training a new model for video, it can generate short clips from text or from an image. this is the official code for an iccv 2023 oral. it suits research into how an image model can be extended to video. [iccv 2023 oral] text-to-image diffusion models are zero-shot video generators python video-editing video-generation">
   <header>
     <h3><span class="rank">51</span><a href="https://github.com/Picsart-AI-Research/Text2Video-Zero">Text2Video-Zero</a></h3>
     <div class="stars">★ 4,247</div>
   </header>
-  <p class="meta">Picsart-AI-Research/Text2Video-Zero · Python · <time class="pushed" datetime="2023-05-07">最近推送 2023-05-07</time></p>
-  <p class="summary">用文字生圖嘅擴散模型，零樣本做出影片。唔使為影片再訓練一個新模型，就可以由文字或圖生成短片。ICCV 2023 口頭報告嘅官方程式。適合研究點樣由圖像模型延伸到影片。</p>
-  <div class="links"><a href="https://github.com/Picsart-AI-Research/Text2Video-Zero">GitHub</a><a href="https://text2video-zero.github.io/">主頁</a></div>
+  <p class="meta">Picsart-AI-Research/Text2Video-Zero · Python · <time class="pushed" datetime="2023-05-07"><span class="t-zh">最近推送 2023-05-07</span><span class="t-en">Pushed 2023-05-07</span></time></p>
+  <p class="summary"><span class="t-zh">用文字生圖嘅擴散模型，零樣本做出影片。唔使為影片再訓練一個新模型，就可以由文字或圖生成短片。ICCV 2023 口頭報告嘅官方程式。適合研究點樣由圖像模型延伸到影片。</span><span class="t-en">It uses a text-to-image diffusion model to make video in a zero-shot way. Without training a new model for video, it can generate short clips from text or from an image. This is the official code for an ICCV 2023 oral. It suits research into how an image model can be extended to video.</span></p>
+  <div class="links"><a href="https://github.com/Picsart-AI-Research/Text2Video-Zero">GitHub</a><a href="https://text2video-zero.github.io/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#video-editing</span><span>#video-generation</span></div>
-</article><article class="card" id="p-genmoai-mochi" data-repo="genmoai/mochi" data-search="mochi genmoai/mochi genmo 嘅開源文字到影片模型。提供權重同推理程式，用一句描述生成短片，方便研究者同開發者喺開放模型上試影片生成。開放權重可以用一句描述出短片，再同其他影片模型對照。可以同其他開放影片模型並排出較。 the best oss video generation models, created by genmo python ">
+</article><article class="card" id="p-genmoai-mochi" data-repo="genmoai/mochi" data-search="mochi genmoai/mochi genmo 嘅開源文字到影片模型。提供權重同推理程式，用一句描述生成短片，方便研究者同開發者喺開放模型上試影片生成。開放權重可以用一句描述出短片，再同其他影片模型對照。可以同其他開放影片模型並排出較。 genmo&#x27;s open-source text-to-video model. it provides weights and inference code to generate a short video from one description, so researchers and developers can try video generation on an open model. with the open weights you can produce a short video from one description and compare it with other video models. it can be compared side by side with other open video models. the best oss video generation models, created by genmo python ">
   <header>
     <h3><span class="rank">52</span><a href="https://github.com/genmoai/mochi">mochi</a></h3>
     <div class="stars">★ 3,757</div>
   </header>
-  <p class="meta">genmoai/mochi · Python · Apache-2.0 · <time class="pushed" datetime="2026-10-23">最近推送 2026-10-23</time></p>
-  <p class="summary">Genmo 嘅開源文字到影片模型。提供權重同推理程式，用一句描述生成短片，方便研究者同開發者喺開放模型上試影片生成。開放權重可以用一句描述出短片，再同其他影片模型對照。可以同其他開放影片模型並排出較。</p>
+  <p class="meta">genmoai/mochi · Python · Apache-2.0 · <time class="pushed" datetime="2026-10-23"><span class="t-zh">最近推送 2026-10-23</span><span class="t-en">Pushed 2026-10-23</span></time></p>
+  <p class="summary"><span class="t-zh">Genmo 嘅開源文字到影片模型。提供權重同推理程式，用一句描述生成短片，方便研究者同開發者喺開放模型上試影片生成。開放權重可以用一句描述出短片，再同其他影片模型對照。可以同其他開放影片模型並排出較。</span><span class="t-en">Genmo&#x27;s open-source text-to-video model. It provides weights and inference code to generate a short video from one description, so researchers and developers can try video generation on an open model. With the open weights you can produce a short video from one description and compare it with other video models. It can be compared side by side with other open video models.</span></p>
   <div class="links"><a href="https://github.com/genmoai/mochi">GitHub</a></div>
   
-</article><article class="card" id="p-openfilm-openfilm" data-repo="openfilm/openfilm" data-search="openfilm openfilm/openfilm 開源嘅 ai 影片 agent。你可以將而家用緊嘅編程助手變成出片助手，做完仲有編輯器改佢生成嘅畫面。適合想用對話砌片、又想事後逐段改，而唔係只收一條成品。生成同剪接留喺同一條流程。 the open source ai video agent: turns any coding agent into a video agent, with an editor to change anything it makes. typescript ai-video claude-code codex coding-agents html motion-graphics video-agent video-editor">
+</article><article class="card" id="p-openfilm-openfilm" data-repo="openfilm/openfilm" data-search="openfilm openfilm/openfilm 開源嘅 ai 影片 agent。你可以將而家用緊嘅編程助手變成出片助手，做完仲有編輯器改佢生成嘅畫面。適合想用對話砌片、又想事後逐段改，而唔係只收一條成品。生成同剪接留喺同一條流程。 an open-source ai video agent. you can turn the coding assistant you are already using into a video assistant, and after it finishes there is still an editor for changing the frames it generated. it suits people who want to build a video through conversation and then edit it section by section, rather than only receiving a finished piece. generation and editing stay in the same workflow. the open source ai video agent: turns any coding agent into a video agent, with an editor to change anything it makes. typescript ai-video claude-code codex coding-agents html motion-graphics video-agent video-editor">
   <header>
     <h3><span class="rank">53</span><a href="https://github.com/openfilm/openfilm">openfilm</a></h3>
     <div class="stars">★ 3,573</div>
   </header>
-  <p class="meta">openfilm/openfilm · TypeScript · MIT · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">開源嘅 AI 影片 agent。你可以將而家用緊嘅編程助手變成出片助手，做完仲有編輯器改佢生成嘅畫面。適合想用對話砌片、又想事後逐段改，而唔係只收一條成品。生成同剪接留喺同一條流程。</p>
-  <div class="links"><a href="https://github.com/openfilm/openfilm">GitHub</a><a href="https://openfilm.dev">主頁</a></div>
+  <p class="meta">openfilm/openfilm · TypeScript · MIT · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">開源嘅 AI 影片 agent。你可以將而家用緊嘅編程助手變成出片助手，做完仲有編輯器改佢生成嘅畫面。適合想用對話砌片、又想事後逐段改，而唔係只收一條成品。生成同剪接留喺同一條流程。</span><span class="t-en">An open-source AI video agent. You can turn the coding assistant you are already using into a video assistant, and after it finishes there is still an editor for changing the frames it generated. It suits people who want to build a video through conversation and then edit it section by section, rather than only receiving a finished piece. Generation and editing stay in the same workflow.</span></p>
+  <div class="links"><a href="https://github.com/openfilm/openfilm">GitHub</a><a href="https://openfilm.dev"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#ai-video</span><span>#claude-code</span><span>#codex</span></div>
-</article><article class="card" id="p-kaomei-stickman-video-director" data-repo="kaomei/stickman-video-director" data-search="stickman-video-director kaomei/stickman-video-director 將稿或者題目變成火柴人動畫片嘅開源流程。畫面、配音、字幕同音效可以一次過砌。適合做冇露臉嘅頻道，而唔使自己逐格畫。輸出係成片，唔係淨係一張分鏡。成片留喺你部電腦。 turn any script into viral, multi-style animated stickman videos for faceless youtube channels. automate visuals, voiceover, captions &amp; sfx. 100% free &amp; open-source. python agent-skills-manager ai-animation-generator ai-video-production automated-video codex-skills content-creation creator-tools faceless-youtube">
+</article><article class="card" id="p-kaomei-stickman-video-director" data-repo="kaomei/stickman-video-director" data-search="stickman-video-director kaomei/stickman-video-director 將稿或者題目變成火柴人動畫片嘅開源流程。畫面、配音、字幕同音效可以一次過砌。適合做冇露臉嘅頻道，而唔使自己逐格畫。輸出係成片，唔係淨係一張分鏡。成片留喺你部電腦。 an open-source pipeline that turns a script or a topic into a stick-figure animation. picture, voiceover, subtitles, and sound effects can be assembled in one pass. it suits faceless channels, without drawing every frame yourself. the output is a finished video, not only a storyboard. the finished video stays on your computer. turn any script into viral, multi-style animated stickman videos for faceless youtube channels. automate visuals, voiceover, captions &amp; sfx. 100% free &amp; open-source. python agent-skills-manager ai-animation-generator ai-video-production automated-video codex-skills content-creation creator-tools faceless-youtube">
   <header>
     <h3><span class="rank">54</span><a href="https://github.com/kaomei/stickman-video-director">stickman-video-director</a></h3>
     <div class="stars">★ 3,304</div>
   </header>
-  <p class="meta">kaomei/stickman-video-director · Python · MIT · <time class="pushed" datetime="2026-10-29">最近推送 2026-10-29</time></p>
-  <p class="summary">將稿或者題目變成火柴人動畫片嘅開源流程。畫面、配音、字幕同音效可以一次過砌。適合做冇露臉嘅頻道，而唔使自己逐格畫。輸出係成片，唔係淨係一張分鏡。成片留喺你部電腦。</p>
+  <p class="meta">kaomei/stickman-video-director · Python · MIT · <time class="pushed" datetime="2026-10-29"><span class="t-zh">最近推送 2026-10-29</span><span class="t-en">Pushed 2026-10-29</span></time></p>
+  <p class="summary"><span class="t-zh">將稿或者題目變成火柴人動畫片嘅開源流程。畫面、配音、字幕同音效可以一次過砌。適合做冇露臉嘅頻道，而唔使自己逐格畫。輸出係成片，唔係淨係一張分鏡。成片留喺你部電腦。</span><span class="t-en">An open-source pipeline that turns a script or a topic into a stick-figure animation. Picture, voiceover, subtitles, and sound effects can be assembled in one pass. It suits faceless channels, without drawing every frame yourself. The output is a finished video, not only a storyboard. The finished video stays on your computer.</span></p>
   <div class="links"><a href="https://github.com/kaomei/stickman-video-director">GitHub</a></div>
   <div class="topics"><span>#agent-skills-manager</span><span>#ai-animation-generator</span><span>#ai-video-production</span></div>
-</article><article class="card" id="p-vincentwei1021-anything2explainer" data-repo="Vincentwei1021/anything2explainer" data-search="anything2explainer vincentwei1021/anything2explainer 一個 claude code 同 codex skill，用 remotion 將題目畫成講解短片，有配音、字幕同章節條。每一幀係程式畫出嚟，唔係生成模型。中英文都可以。工具本身係非商業許可。適合用 agent 出講解片，而唔係收一條現成影片。 topic in, narrated explainer video out. a claude code / codex skill that turns any topic into a black-canvas motion-graphics explainer video with tts voiceover, subtitles and a chapter progress bar. chinese or english; every frame drawn in code with remotion. typescript agent-skills ai-agents ai-video claude-code claude-code-skill codex edge-tts educational-video">
+</article><article class="card" id="p-vincentwei1021-anything2explainer" data-repo="Vincentwei1021/anything2explainer" data-search="anything2explainer vincentwei1021/anything2explainer 一個 claude code 同 codex skill，用 remotion 將題目畫成講解短片，有配音、字幕同章節條。每一幀係程式畫出嚟，唔係生成模型。中英文都可以。工具本身係非商業許可。適合用 agent 出講解片，而唔係收一條現成影片。 a claude code and codex skill that uses remotion to turn a topic into an explainer short, with voiceover, subtitles, and a chapter bar. every frame is drawn by code, not by a generative model. both chinese and english work. the tool itself is under a non-commercial license. it suits using an agent to produce an explainer, rather than receiving a ready-made video. topic in, narrated explainer video out. a claude code / codex skill that turns any topic into a black-canvas motion-graphics explainer video with tts voiceover, subtitles and a chapter progress bar. chinese or english; every frame drawn in code with remotion. typescript agent-skills ai-agents ai-video claude-code claude-code-skill codex edge-tts educational-video">
   <header>
     <h3><span class="rank">55</span><a href="https://github.com/Vincentwei1021/anything2explainer">anything2explainer</a></h3>
     <div class="stars">★ 2,835</div>
   </header>
-  <p class="meta">Vincentwei1021/anything2explainer · TypeScript · <time class="pushed" datetime="2026-09-18">最近推送 2026-09-18</time></p>
-  <p class="summary">一個 Claude Code 同 Codex skill，用 Remotion 將題目畫成講解短片，有配音、字幕同章節條。每一幀係程式畫出嚟，唔係生成模型。中英文都可以。工具本身係非商業許可。適合用 agent 出講解片，而唔係收一條現成影片。</p>
+  <p class="meta">Vincentwei1021/anything2explainer · TypeScript · <time class="pushed" datetime="2026-09-18"><span class="t-zh">最近推送 2026-09-18</span><span class="t-en">Pushed 2026-09-18</span></time></p>
+  <p class="summary"><span class="t-zh">一個 Claude Code 同 Codex skill，用 Remotion 將題目畫成講解短片，有配音、字幕同章節條。每一幀係程式畫出嚟，唔係生成模型。中英文都可以。工具本身係非商業許可。適合用 agent 出講解片，而唔係收一條現成影片。</span><span class="t-en">A Claude Code and Codex skill that uses Remotion to turn a topic into an explainer short, with voiceover, subtitles, and a chapter bar. Every frame is drawn by code, not by a generative model. Both Chinese and English work. The tool itself is under a non-commercial license. It suits using an agent to produce an explainer, rather than receiving a ready-made video.</span></p>
   <div class="links"><a href="https://github.com/Vincentwei1021/anything2explainer">GitHub</a></div>
   <div class="topics"><span>#agent-skills</span><span>#ai-agents</span><span>#ai-video</span></div>
-</article><article class="card" id="p-flashml-org-freevideo" data-repo="FlashML-org/FreeVideo" data-search="freevideo flashml-org/freevideo 喺家用電腦跑 minimax h3 出片嘅推理引擎，顯存可以低到 8gb。佢按顯示卡揀精度，並將權重分批載入，唔使成個模型一次過放喺顯存。介面係 comfyui 工作區，另有 windows、mac 同 linux 啟動器。模型係現成嘅，呢個倉庫負責喺本機跑。 make videos on the computer you already own. freevideo runs minimax h3 in as little as 8 gb of vram and 16 gb of ram, and adapts its acceleration path to your hardware. python diffusion-models inference minimax-h3 video-generation">
+</article><article class="card" id="p-flashml-org-freevideo" data-repo="FlashML-org/FreeVideo" data-search="freevideo flashml-org/freevideo 喺家用電腦跑 minimax h3 出片嘅推理引擎，顯存可以低到 8gb。佢按顯示卡揀精度，並將權重分批載入，唔使成個模型一次過放喺顯存。介面係 comfyui 工作區，另有 windows、mac 同 linux 啟動器。模型係現成嘅，呢個倉庫負責喺本機跑。 an inference engine for running minimax h3 video generation on a home computer, with vram that can be as low as 8gb. it chooses precision according to the gpu and loads the weights in batches, so the whole model does not have to sit in vram at once. the interface is a comfyui workspace, with launchers for windows, mac, and linux as well. the model is an existing one, and this repository runs it locally. make videos on the computer you already own. freevideo runs minimax h3 in as little as 8 gb of vram and 16 gb of ram, and adapts its acceleration path to your hardware. python diffusion-models inference minimax-h3 video-generation">
   <header>
     <h3><span class="rank">56</span><a href="https://github.com/FlashML-org/FreeVideo">FreeVideo</a></h3>
     <div class="stars">★ 2,441</div>
   </header>
-  <p class="meta">FlashML-org/FreeVideo · Python · Apache-2.0 · <time class="pushed" datetime="2026-10-30">最近推送 2026-10-30</time></p>
-  <p class="summary">喺家用電腦跑 MiniMax H3 出片嘅推理引擎，顯存可以低到 8GB。佢按顯示卡揀精度，並將權重分批載入，唔使成個模型一次過放喺顯存。介面係 ComfyUI 工作區，另有 Windows、Mac 同 Linux 啟動器。模型係現成嘅，呢個倉庫負責喺本機跑。</p>
+  <p class="meta">FlashML-org/FreeVideo · Python · Apache-2.0 · <time class="pushed" datetime="2026-10-30"><span class="t-zh">最近推送 2026-10-30</span><span class="t-en">Pushed 2026-10-30</span></time></p>
+  <p class="summary"><span class="t-zh">喺家用電腦跑 MiniMax H3 出片嘅推理引擎，顯存可以低到 8GB。佢按顯示卡揀精度，並將權重分批載入，唔使成個模型一次過放喺顯存。介面係 ComfyUI 工作區，另有 Windows、Mac 同 Linux 啟動器。模型係現成嘅，呢個倉庫負責喺本機跑。</span><span class="t-en">An inference engine for running MiniMax H3 video generation on a home computer, with VRAM that can be as low as 8GB. It chooses precision according to the GPU and loads the weights in batches, so the whole model does not have to sit in VRAM at once. The interface is a ComfyUI workspace, with launchers for Windows, Mac, and Linux as well. The model is an existing one, and this repository runs it locally.</span></p>
   <div class="links"><a href="https://github.com/FlashML-org/FreeVideo">GitHub</a></div>
   <div class="topics"><span>#diffusion-models</span><span>#inference</span><span>#minimax-h3</span></div>
-</article><article class="card" id="p-glanderness-beeftv" data-repo="glanderness/BeefTV" data-search="beeftv glanderness/beeftv 本地優先嘅 ai 影片工作台，喺畫布入面連接素材、模型同 agent。桌面版可以喺自己部機跑，由分鏡改到成片。新代碼要商業使用就另外授權。適合想喺畫布砌片，而唔係一個由零訓練嘅影片模型。 high-performance · lightweight · ai native video workspace. 面向 ai 时代的视频创作工作台。 在画布中，和agent一起自由连接创意和素材。 typescript ai-image-generation ai-video ai-video-generation ai-workspace aigc creative-tools infinite-canvas local-first">
+</article><article class="card" id="p-glanderness-beeftv" data-repo="glanderness/BeefTV" data-search="beeftv glanderness/beeftv 本地優先嘅 ai 影片工作台，喺畫布入面連接素材、模型同 agent。桌面版可以喺自己部機跑，由分鏡改到成片。新代碼要商業使用就另外授權。適合想喺畫布砌片，而唔係一個由零訓練嘅影片模型。 a local-first ai video workbench that connects assets, models, and agents on a canvas. the desktop version can run on your own machine, from storyboard changes through to a finished film. commercial use of the new code requires a separate license. it suits people who want to build a video on a canvas, and it is not a video model trained from scratch. high-performance · lightweight · ai native video workspace. 面向 ai 时代的视频创作工作台。 在画布中，和agent一起自由连接创意和素材。 typescript ai-image-generation ai-video ai-video-generation ai-workspace aigc creative-tools infinite-canvas local-first">
   <header>
     <h3><span class="rank">57</span><a href="https://github.com/glanderness/BeefTV">BeefTV</a></h3>
     <div class="stars">★ 1,950</div>
   </header>
-  <p class="meta">glanderness/BeefTV · TypeScript · <time class="pushed" datetime="2026-10-29">最近推送 2026-10-29</time></p>
-  <p class="summary">本地優先嘅 AI 影片工作台，喺畫布入面連接素材、模型同 agent。桌面版可以喺自己部機跑，由分鏡改到成片。新代碼要商業使用就另外授權。適合想喺畫布砌片，而唔係一個由零訓練嘅影片模型。</p>
-  <div class="links"><a href="https://github.com/glanderness/BeefTV">GitHub</a><a href="https://beeftv.app/">主頁</a></div>
+  <p class="meta">glanderness/BeefTV · TypeScript · <time class="pushed" datetime="2026-10-29"><span class="t-zh">最近推送 2026-10-29</span><span class="t-en">Pushed 2026-10-29</span></time></p>
+  <p class="summary"><span class="t-zh">本地優先嘅 AI 影片工作台，喺畫布入面連接素材、模型同 agent。桌面版可以喺自己部機跑，由分鏡改到成片。新代碼要商業使用就另外授權。適合想喺畫布砌片，而唔係一個由零訓練嘅影片模型。</span><span class="t-en">A local-first AI video workbench that connects assets, models, and agents on a canvas. The desktop version can run on your own machine, from storyboard changes through to a finished film. Commercial use of the new code requires a separate license. It suits people who want to build a video on a canvas, and it is not a video model trained from scratch.</span></p>
+  <div class="links"><a href="https://github.com/glanderness/BeefTV">GitHub</a><a href="https://beeftv.app/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   <div class="topics"><span>#ai-image-generation</span><span>#ai-video</span><span>#ai-video-generation</span></div>
-</article><article class="card" id="p-sirioberati-genjustsu-open-source-workflow" data-repo="sirioberati/Genjustsu-Open-Source-Workflow" data-search="genjustsu-open-source-workflow sirioberati/genjustsu-open-source-workflow 本地介面，用嚟換片入面嘅人或物件。佢準備深度、sam 遮罩同面網，再交畀 seedance 生成，匯出時保留原本成段聲音。要另外接 enhancor 嘅 api。適合做角色替換，而唔係一個自己訓練嘅影片模型。 open-source ai video replacement workflow by tein. combine depth maps, sam segmentation, face meshes, and audio processing to replace characters and objects with seedance. includes a local web ui to prepare inputs, review masks, preview generations, and export with original audio. python ">
+</article><article class="card" id="p-sirioberati-genjustsu-open-source-workflow" data-repo="sirioberati/Genjustsu-Open-Source-Workflow" data-search="genjustsu-open-source-workflow sirioberati/genjustsu-open-source-workflow 本地介面，用嚟換片入面嘅人或物件。佢準備深度、sam 遮罩同面網，再交畀 seedance 生成，匯出時保留原本成段聲音。要另外接 enhancor 嘅 api。適合做角色替換，而唔係一個自己訓練嘅影片模型。 a local interface for replacing a person or an object in a video. it prepares depth, a sam mask, and a face mesh, then hands them to seedance to generate, and on export it keeps the original audio for the whole clip. you need to connect the enhancor api separately. it suits character replacement, and it is not a video model trained by this project. open-source ai video replacement workflow by tein. combine depth maps, sam segmentation, face meshes, and audio processing to replace characters and objects with seedance. includes a local web ui to prepare inputs, review masks, preview generations, and export with original audio. python ">
   <header>
     <h3><span class="rank">58</span><a href="https://github.com/sirioberati/Genjustsu-Open-Source-Workflow">Genjustsu-Open-Source-Workflow</a></h3>
     <div class="stars">★ 1,302</div>
   </header>
-  <p class="meta">sirioberati/Genjustsu-Open-Source-Workflow · Python · MIT · <time class="pushed" datetime="2026-10-09">最近推送 2026-10-09</time></p>
-  <p class="summary">本地介面，用嚟換片入面嘅人或物件。佢準備深度、SAM 遮罩同面網，再交畀 Seedance 生成，匯出時保留原本成段聲音。要另外接 Enhancor 嘅 API。適合做角色替換，而唔係一個自己訓練嘅影片模型。</p>
-  <div class="links"><a href="https://github.com/sirioberati/Genjustsu-Open-Source-Workflow">GitHub</a><a href="https://tein.ai">主頁</a></div>
+  <p class="meta">sirioberati/Genjustsu-Open-Source-Workflow · Python · MIT · <time class="pushed" datetime="2026-10-09"><span class="t-zh">最近推送 2026-10-09</span><span class="t-en">Pushed 2026-10-09</span></time></p>
+  <p class="summary"><span class="t-zh">本地介面，用嚟換片入面嘅人或物件。佢準備深度、SAM 遮罩同面網，再交畀 Seedance 生成，匯出時保留原本成段聲音。要另外接 Enhancor 嘅 API。適合做角色替換，而唔係一個自己訓練嘅影片模型。</span><span class="t-en">A local interface for replacing a person or an object in a video. It prepares depth, a SAM mask, and a face mesh, then hands them to Seedance to generate, and on export it keeps the original audio for the whole clip. You need to connect the Enhancor API separately. It suits character replacement, and it is not a video model trained by this project.</span></p>
+  <div class="links"><a href="https://github.com/sirioberati/Genjustsu-Open-Source-Workflow">GitHub</a><a href="https://tein.ai"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
   
 </article></div>
   
 </section>
   </main>
-  <footer class="site">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 預設按 stars 排，可以改按最近推送 · 重複項目只保留一次 · 最近推送會喺你睇到嗰張卡時向 GitHub 更新</footer>
+  <footer class="site"><span class="t-zh">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 預設按 stars 排，可以改按最近推送 · 重複項目只保留一次 · 最近推送會喺你睇到嗰張卡時向 GitHub 更新</span><span class="t-en">Open Source Catalog · Data from public GitHub and arXiv · Stars by default, or sort by last push · Each repository is listed once · Last push updates from GitHub when the card is on screen</span></footer>
 </div>
 <script>
 (function () {
@@ -907,7 +941,14 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
       const node = card.querySelector("time.pushed");
       if (!node) return;
       node.dateTime = day;
-      node.textContent = "最近推送 " + day;
+      node.replaceChildren();
+      const zhLabel = document.createElement("span");
+      zhLabel.className = "t-zh";
+      zhLabel.textContent = "最近推送 " + day;
+      const enLabel = document.createElement("span");
+      enLabel.className = "t-en";
+      enLabel.textContent = "Pushed " + day;
+      node.append(zhLabel, enLabel);
     });
     if (sortMode === "pushed") {
       sortGrids();
@@ -987,6 +1028,30 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   }
   window.addEventListener("scroll", schedulePushed, { passive: true });
   window.addEventListener("resize", schedulePushed);
+  function applyLang(lang) {
+    const next = lang === "en" ? "en" : "zh-Hant";
+    const english = next === "en";
+    document.documentElement.lang = next;
+    document.querySelectorAll(".lang-switch button").forEach((button) => {
+      button.setAttribute("aria-pressed", button.dataset.lang === next ? "true" : "false");
+    });
+    document.querySelectorAll("[data-zh-label]").forEach((node) => {
+      node.setAttribute("aria-label", english ? node.getAttribute("data-en-label") : node.getAttribute("data-zh-label"));
+    });
+    document.querySelectorAll("[data-zh-placeholder]").forEach((node) => {
+      node.placeholder = english ? node.getAttribute("data-en-placeholder") : node.getAttribute("data-zh-placeholder");
+    });
+    const title = document.querySelector("title");
+    if (title) title.textContent = english ? title.getAttribute("data-en") : title.getAttribute("data-zh");
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", english ? meta.getAttribute("data-en") : meta.getAttribute("data-zh"));
+    try { localStorage.setItem("osc-lang", next); }
+    catch (error) {}
+  }
+  document.querySelectorAll(".lang-switch button").forEach((button) => {
+    button.addEventListener("click", () => applyLang(button.dataset.lang));
+  });
+  applyLang(document.documentElement.lang);
   input.addEventListener("input", apply);
   input.addEventListener("search", apply);
   sortButtons.forEach((button) => {

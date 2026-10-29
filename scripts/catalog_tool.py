@@ -35,55 +35,73 @@ CATEGORIES = [
         "id": "gaussian-splatting",
         "dir": "gaussian-splatting",
         "title": "Gaussian Splatting",
+        "title_en": "Gaussian Splatting",
         "blurb": "用三維高斯重建場景、即時渲染、編輯同 SLAM，包括 3DGS、4D 動態場景同瀏覽器檢視器。",
+        "blurb_en": "Reconstruct scenes with 3D Gaussians for real-time rendering, editing, and SLAM, including 3DGS, dynamic 4D scenes, and browser viewers.",
     },
     {
         "id": "world-model",
         "dir": "world-model",
         "title": "World Model",
+        "title_en": "World Model",
         "blurb": "學識預測下一個畫面或狀態嘅世界模型，用喺影片、自動駕駛、機械人同可探索嘅三維世界。",
+        "blurb_en": "World models that learn to predict the next frame or state, for video, driving, robots, and explorable 3D worlds.",
     },
     {
         "id": "image-to-3d",
         "dir": "image-to-3d",
         "title": "Image to 3D",
+        "title_en": "Image to 3D",
         "blurb": "由一張圖或一段文字生成三維模型，包括網格、高斯同多視角幾何重建。",
+        "blurb_en": "Generate a 3D model from one image or a text prompt, including meshes, Gaussians, and multi-view geometry.",
     },
     {
         "id": "ai-agent",
         "dir": "ai-agent",
         "title": "AI Agent",
+        "title_en": "AI Agent",
         "blurb": "會規劃、調用工具、同其他 agent 一齊做嘢嘅開源框架同程式。",
+        "blurb_en": "Open-source frameworks and programs that plan, call tools, and work with other agents.",
     },
     {
         "id": "image",
         "dir": "image",
         "title": "圖像",
+        "title_en": "Image",
         "blurb": "圖像生成、編輯、修補、放大、識別同影像處理。",
+        "blurb_en": "Image generation, editing, inpainting, upscaling, recognition, and image processing.",
     },
     {
         "id": "video",
         "dir": "video",
         "title": "影片",
+        "title_en": "Video",
         "blurb": "影片生成、剪接、播放、轉碼同處理。",
+        "blurb_en": "Video generation, editing, playback, transcoding, and processing.",
     },
     {
         "id": "vfx-cg-blender",
         "dir": "vfx-cg-blender",
         "title": "VFX / CG / Blender",
+        "title_en": "VFX / CG / Blender",
         "blurb": "三維、合成、渲染、材質同 Blender 生態。",
+        "blurb_en": "3D, compositing, rendering, materials, and the Blender ecosystem.",
     },
     {
         "id": "stock-trading",
         "dir": "stock-trading",
         "title": "Stock Trading",
+        "title_en": "Stock Trading",
         "blurb": "股票同量化研究、回測、行情數據同交易框架。",
+        "blurb_en": "Stock and quantitative research, backtesting, market data, and trading frameworks.",
     },
     {
         "id": "crypto-trading",
         "dir": "crypto-trading",
         "title": "Crypto Trading",
+        "title_en": "Crypto Trading",
         "blurb": "加密貨幣交易所 API、交易機械人同回測工具。",
+        "blurb_en": "Cryptocurrency exchange APIs, trading bots, and backtesting tools.",
     },
 ]
 
@@ -245,6 +263,7 @@ STANDALONE_PAPERS = [
         "url": "https://arxiv.org/abs/2210.03629",
         "code_url": "https://github.com/ysymyth/ReAct",
         "summary": "呢篇論文提出推理同行動要交替進行。語言模型先寫低自己嘅思考，再決定調用邊個工具，然後讀取觀察結果，繼續下一步。後來好多 agent 框架都跟住呢個「諗、做、再諗」嘅循環。",
+        "summary_en": "This paper argues that reasoning and acting should alternate. The language model writes down its thinking, chooses a tool, reads the observation, and continues. Many later agent frameworks follow this think, act, think loop.",
     },
     {
         "id": "arxiv:2304.03442",
@@ -254,6 +273,7 @@ STANDALONE_PAPERS = [
         "url": "https://arxiv.org/abs/2304.03442",
         "code_url": "https://github.com/joonspk-research/generative_agents",
         "summary": "用記憶、反思同計劃，模擬小鎮入面多個 AI 角色點樣自己過日常。每個角色會記住發生過嘅事、整理成較高層嘅看法，再決定同邊個傾偈、做咩活動，從而互相影響。",
+        "summary_en": "Memory, reflection, and planning let several AI characters live through a day in a simulated town. Each one remembers what happened, turns it into a higher-level view, and decides who to talk to and what to do, so they influence one another.",
     },
     {
         "id": "arxiv:2303.11366",
@@ -263,6 +283,7 @@ STANDALONE_PAPERS = [
         "url": "https://arxiv.org/abs/2303.11366",
         "code_url": "https://github.com/noahshinn/reflexion",
         "summary": "Agent 做完一次嘗試之後，用自然語言寫低自己點解失敗，將呢段教訓放入記憶，下次再試就避開同一啲錯。重點係靠文字反思改進，而唔係重新訓練模型權重。",
+        "summary_en": "After an attempt, the agent writes in plain language why it failed, stores that lesson in memory, and avoids the same mistake next time. The improvement comes from written reflection, not from retraining the model weights.",
     },
     {
         "id": "arxiv:2305.16291",
@@ -272,6 +293,7 @@ STANDALONE_PAPERS = [
         "url": "https://arxiv.org/abs/2305.16291",
         "code_url": "https://github.com/MineDojo/Voyager",
         "summary": "一個喺 Minecraft 入面自己寫程式、累積技能庫嘅 agent。佢會探索地圖、將成功嘅程式存低做技能，之後遇到新任務可以重用，所以可以持續學新嘢而唔使每次由零開始。",
+        "summary_en": "An agent that writes its own programs and builds a skill library inside Minecraft. It explores, saves programs that worked as skills, and reuses them on later tasks, so it can keep learning without starting from scratch.",
     },
     {
         "id": "arxiv:2307.01952",
@@ -281,6 +303,7 @@ STANDALONE_PAPERS = [
         "url": "https://arxiv.org/abs/2307.01952",
         "code_url": "https://github.com/Stability-AI/generative-models",
         "summary": "Stable Diffusion 嘅較大版本，針對高解像圖像生成。佢改善構圖、提示詞跟隨同整體畫質，尤其係人物同文字細節。研究同產品都常用佢做比第一代更清楚嘅出圖底子。",
+        "summary_en": "A larger Stable Diffusion model aimed at high-resolution images. It improves composition, prompt following, and overall quality, especially people and text. Research and products often use it when they want a clearer base than the first generation.",
     },
     {
         "id": "arxiv:2211.09800",
@@ -290,6 +313,7 @@ STANDALONE_PAPERS = [
         "url": "https://arxiv.org/abs/2211.09800",
         "code_url": "https://github.com/timothybrooks/instruct-pix2pix",
         "summary": "用一句自然語言指令直接改一張現有圖像，例如換背景、加物件或者轉風格。模型要同時睇住原圖同指示，所以改動跟住你講嘅嘢，而唔係由文字重新生成成張新圖。",
+        "summary_en": "Edit an existing image with one natural-language instruction, such as changing the background, adding an object, or shifting the style. The model sees both the original and the instruction, so the edit follows what you asked instead of generating a new picture from text alone.",
     },
     {
         "id": "arxiv:2003.08934",
@@ -299,6 +323,7 @@ STANDALONE_PAPERS = [
         "url": "https://arxiv.org/abs/2003.08934",
         "code_url": "https://github.com/bmild/nerf",
         "summary": "用神經網路表示一個立體場景，由多張相片合成未拍過嘅新視角。場景被寫成連續嘅輻射場，沿光線取樣就可以渲染。後來大量新視角合成同神經渲染工作都由呢篇論文開始。",
+        "summary_en": "A neural network represents a 3D scene and synthesizes viewpoints that were never photographed. The scene is a continuous radiance field, and rendering samples along rays. A lot of later view-synthesis and neural-rendering work starts from this paper.",
     },
 ]
 
@@ -312,10 +337,34 @@ def iso_hk(moment: datetime | None = None) -> str:
     return moment.strftime("%Y-%m-%dT%H:%M:%S%z")[:-2] + ":" + moment.strftime("%z")[-2:]
 
 
-def format_hk(iso: str) -> str:
+_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
+def hk_moment(iso: str) -> datetime:
     text = iso.replace("Z", "+00:00")
-    moment = datetime.fromisoformat(text).astimezone(HK)
+    return datetime.fromisoformat(text).astimezone(HK)
+
+
+def format_hk(iso: str) -> str:
+    moment = hk_moment(iso)
     return moment.strftime("%Y年%m月%d日 %H:%M（香港時間）")
+
+
+def date_zh(iso: str) -> str:
+    return hk_moment(iso).strftime("%Y年%m月%d日")
+
+
+def time_zh(iso: str) -> str:
+    return hk_moment(iso).strftime("%H:%M（香港時間）")
+
+
+def date_en(iso: str) -> str:
+    moment = hk_moment(iso)
+    return f"{moment.day} {_MONTHS[moment.month - 1]} {moment.year}"
+
+
+def time_en(iso: str) -> str:
+    return hk_moment(iso).strftime("%H:%M (Hong Kong)")
 
 
 def load_json(path: Path, default):
@@ -526,7 +575,7 @@ def license_of(repo: dict) -> str:
     return spdx
 
 
-def project_from_repo(repo: dict, category: str, summary: str, locked: bool, added_at: str) -> dict:
+def project_from_repo(repo: dict, category: str, summary: str, locked: bool, added_at: str, summary_en: str = "") -> dict:
     paper = PAPER_LINKS.get(repo["full_name"], {})
     homepage = repo.get("homepage") or ""
     if not str(homepage).startswith("http"):
@@ -541,6 +590,7 @@ def project_from_repo(repo: dict, category: str, summary: str, locked: bool, add
         "homepage": homepage,
         "description": (repo.get("description") or "").strip(),
         "summary": summary.strip(),
+        "summary_en": (summary_en or summary).strip(),
         "summary_locked": locked,
         "stars": int(repo.get("stargazers_count") or 0),
         "language": repo.get("language") or "",
@@ -640,6 +690,11 @@ def esc(value) -> str:
     return html.escape(str(value or ""), quote=True)
 
 
+def bi(zh: str, en: str) -> str:
+    """One label in both page languages. CSS shows the span that matches html lang."""
+    return f'<span class="t-zh">{esc(zh)}</span><span class="t-en">{esc(en)}</span>'
+
+
 def fmt_stars(value: int) -> str:
     return f"{int(value):,}"
 
@@ -682,8 +737,37 @@ a { color: inherit; }
   z-index: 5;
 }
 .skip:focus { top: 12px; }
+.lang-switch {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 6;
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(12, 13, 17, 0.94);
+  box-shadow: var(--shadow);
+}
+.lang-switch button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  padding: 8px 12px;
+  cursor: pointer;
+  min-width: 42px;
+}
+.lang-switch button + button { box-shadow: inset 1px 0 0 var(--line); }
+.lang-switch button[aria-pressed="true"] { background: var(--gold); color: var(--ink); font-weight: 650; }
+.t-en { display: none; }
+html[lang="en"] .t-zh { display: none; }
+html[lang="en"] .t-en { display: inline; }
 .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
-header.hero { padding: 36px 0 18px; }
+header.hero { padding: 36px 96px 18px 0; }
 .kicker {
   margin: 0 0 8px;
   color: var(--gold);
@@ -714,7 +798,7 @@ h1 {
   position: sticky;
   top: 0;
   z-index: 3;
-  padding: 8px 0 12px;
+  padding: 8px 96px 12px 0;
   background: linear-gradient(var(--bg) 72%, rgba(12, 13, 17, 0.94) 88%, transparent);
 }
 nav.pages {
@@ -874,7 +958,7 @@ def project_anchor(project: dict) -> str:
     return "p-" + "".join(ch if ch.isalnum() or ch == "-" else "-" for ch in slug)
 
 
-def card_html(project: dict, rank: int, category_href: str = "", category_title: str = "") -> str:
+def card_html(project: dict, rank: int, category_href: str = "", category_title: str = "", category_title_en: str = "") -> str:
     bits = [project["full_name"]]
     if project.get("language"):
         bits.append(project["language"])
@@ -886,6 +970,7 @@ def card_html(project: dict, rank: int, category_href: str = "", category_title:
             project.get("name", ""),
             project.get("full_name", ""),
             project.get("summary", ""),
+            project.get("summary_en", ""),
             project.get("description", ""),
             project.get("language", ""),
             " ".join(project.get("topics") or []),
@@ -893,19 +978,23 @@ def card_html(project: dict, rank: int, category_href: str = "", category_title:
     ).lower()
     links = [f'<a href="{esc(project["url"])}">GitHub</a>']
     if project.get("homepage"):
-        links.append(f'<a href="{esc(project["homepage"])}">主頁</a>')
+        links.append(f'<a href="{esc(project["homepage"])}">{bi("主頁", "Home")}</a>')
     if project.get("paper_url"):
-        links.append(f'<a href="{esc(project["paper_url"])}">論文</a>')
+        links.append(f'<a href="{esc(project["paper_url"])}">{bi("論文", "Paper")}</a>')
     if category_title and category_href:
-        links.append(f'<a href="{esc(category_href)}#{project_anchor(project)}">{esc(category_title)}</a>')
+        links.append(
+            f'<a href="{esc(category_href)}#{project_anchor(project)}">{bi(category_title, category_title_en or category_title)}</a>'
+        )
     badges = ""
     if project.get("archived"):
-        badges = '<span class="badge arch">已封存</span>'
+        badges = f'<span class="badge arch">{bi("已封存", "Archived")}</span>'
     topics = "".join(f"<span>#{esc(topic)}</span>" for topic in (project.get("topics") or [])[:3])
     topic_html = f'<div class="topics">{topics}</div>' if topics else ""
     meta_parts = [esc(bit) for bit in bits]
-    label = esc(pushed) if pushed else "…"
-    meta_parts.append(f'<time class="pushed" datetime="{esc(pushed)}">最近推送 {label}</time>')
+    label = pushed or "…"
+    meta_parts.append(
+        f'<time class="pushed" datetime="{esc(pushed)}">{bi("最近推送 " + label, "Pushed " + label)}</time>'
+    )
     return f"""
 <article class="card" id="{esc(project_anchor(project))}" data-repo="{esc(project["full_name"])}" data-search="{esc(search)}">
   <header>
@@ -913,7 +1002,7 @@ def card_html(project: dict, rank: int, category_href: str = "", category_title:
     <div class="stars">★ {fmt_stars(project.get("stars") or 0)}</div>
   </header>
   <p class="meta">{" · ".join(meta_parts)}</p>
-  <p class="summary">{esc(project.get("summary"))}</p>
+  <p class="summary">{bi(project.get("summary") or "", project.get("summary_en") or project.get("description") or project.get("summary") or "")}</p>
   <div class="links">{''.join(links)}{badges}</div>
   {topic_html}
 </article>
@@ -921,28 +1010,30 @@ def card_html(project: dict, rank: int, category_href: str = "", category_title:
 
 
 def paper_html(paper: dict) -> str:
-    search = " ".join([paper["title"], paper.get("summary", ""), "paper", "arxiv"]).lower()
+    search = " ".join(
+        [paper["title"], paper.get("summary", ""), paper.get("summary_en", ""), "paper", "arxiv"]
+    ).lower()
     links = [f'<a href="{esc(paper["url"])}">arXiv</a>']
     if paper.get("code_url"):
-        links.append(f'<a href="{esc(paper["code_url"])}">程式</a>')
+        links.append(f'<a href="{esc(paper["code_url"])}">{bi("程式", "Code")}</a>')
     return f"""
 <article class="card" data-search="{esc(search)}">
   <header>
     <h3><a href="{esc(paper["url"])}">{esc(paper["title"])}</a></h3>
     <div class="stars">{esc(paper.get("year"))}</div>
   </header>
-  <p class="meta">論文 · arXiv</p>
-  <p class="summary">{esc(paper.get("summary"))}</p>
-  <div class="links">{''.join(links)}<span class="badge">論文</span></div>
+  <p class="meta">{bi("論文", "Paper")} · arXiv</p>
+  <p class="summary">{bi(paper.get("summary") or "", paper.get("summary_en") or paper.get("summary") or "")}</p>
+  <div class="links">{''.join(links)}<span class="badge">{bi("論文", "Paper")}</span></div>
 </article>
 """.strip()
 
 
 def page_nav(grouped: dict[str, list[dict]], active: str | None) -> str:
     if active is None:
-        links = ['<a href="./" aria-current="page">目錄</a>']
+        links = [f'<a href="./" aria-current="page">{bi("目錄", "Catalog")}</a>']
     else:
-        links = ['<a href="../">目錄</a>']
+        links = [f'<a href="../">{bi("目錄", "Catalog")}</a>']
     for category in CATEGORIES:
         count = len(grouped.get(category["id"], []))
         if active == category["id"]:
@@ -955,9 +1046,9 @@ def page_nav(grouped: dict[str, list[dict]], active: str | None) -> str:
             href = f'../{category["dir"]}/'
             current = ""
         links.append(
-            f'<a href="{href}"{current}>{esc(category["title"])}<span class="count">{count}</span></a>'
+            f'<a href="{href}"{current}>{bi(category["title"], category["title_en"])}<span class="count">{count}</span></a>'
         )
-    return f'<nav class="pages" aria-label="分類">{"".join(links)}</nav>'
+    return f'<nav class="pages" data-zh-label="分類" data-en-label="Categories" aria-label="分類">{"".join(links)}</nav>'
 
 
 def hub_html(grouped: dict[str, list[dict]]) -> str:
@@ -967,14 +1058,14 @@ def hub_html(grouped: dict[str, list[dict]]) -> str:
         top = items[0] if items else None
         top_line = ""
         if top:
-            top_line = f'<p class="top">星數最高 · {esc(top["name"])} ★ {fmt_stars(top.get("stars") or 0)}</p>'
+            top_line = f'<p class="top">{bi("星數最高", "Most starred")} · {esc(top["name"])} ★ {fmt_stars(top.get("stars") or 0)}</p>'
         tiles.append(
             f"""
 <a class="tile" href="{esc(category["dir"])}/">
-  <div class="tile-top"><h2>{esc(category["title"])}</h2><span class="count">{len(items)}</span></div>
-  <p>{esc(category["blurb"])}</p>
+  <div class="tile-top"><h2>{bi(category["title"], category["title_en"])}</h2><span class="count">{len(items)}</span></div>
+  <p>{bi(category["blurb"], category["blurb_en"])}</p>
   {top_line}
-  <span class="go">打開呢一頁</span>
+  <span class="go">{bi("打開呢一頁", "Open this page")}</span>
 </a>
 """.strip()
         )
@@ -985,9 +1076,12 @@ def render_document(catalog: dict, active: str | None) -> str:
     grouped = projects_by_category(catalog)
     papers = papers_by_category(catalog)
     site = catalog.get("base_url") or base_url()
-    title = "Open Source Catalog"
+    title_zh = "Open Source Catalog"
+    title_en = "Open Source Catalog"
     if active:
-        title = f"{category_map()[active]['title']} · Open Source Catalog"
+        category = category_map()[active]
+        title_zh = f"{category['title']} · Open Source Catalog"
+        title_en = f"{category['title_en']} · Open Source Catalog"
     canonical = ""
     if site:
         path = "" if active is None else category_map()[active]["dir"] + "/"
@@ -998,7 +1092,7 @@ def render_document(catalog: dict, active: str | None) -> str:
         for category in CATEGORIES:
             href = f'{category["dir"]}/'
             for rank, project in enumerate(grouped.get(category["id"], []), 1):
-                result_cards.append(card_html(project, rank, href, category["title"]))
+                result_cards.append(card_html(project, rank, href, category["title"], category["title_en"]))
             for paper in papers.get(category["id"], []):
                 result_cards.append(paper_html(paper))
         body = f"""
@@ -1016,7 +1110,7 @@ def render_document(catalog: dict, active: str | None) -> str:
         paper_cards = [paper_html(paper) for paper in papers.get(category["id"], [])]
         paper_block = ""
         if paper_cards:
-            paper_block = '<div class="papers"><h3>相關論文</h3><div class="grid">' + "".join(paper_cards) + "</div></div>"
+            paper_block = '<div class="papers"><h3>' + bi("相關論文", "Related papers") + '</h3><div class="grid">' + "".join(paper_cards) + "</div></div>"
         body = f"""
 <section class="section" id="{esc(category["id"])}" data-section>
   <div class="grid">{''.join(cards)}</div>
@@ -1028,13 +1122,13 @@ def render_document(catalog: dict, active: str | None) -> str:
     if active is None:
         hero = f"""
 <header class="hero">
-    <p class="kicker">每兩小時更新</p>
+    <p class="kicker">{bi("每兩小時更新", "Updated every 2 hours")}</p>
     <h1>Open Source Catalog</h1>
-    <p class="lede">九個分類各自一頁。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。</p>
+    <p class="lede">{bi("九個分類各自一頁。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。", "Nine categories, each on its own page. Projects are sorted by stars, highest first. A repository is listed only once.")}</p>
     <div class="stats">
-      <div class="stat"><b>{project_count}</b><span>開源項目</span></div>
-      <div class="stat"><b>{paper_count}</b><span>未另列 repo 嘅論文</span></div>
-      <div class="stat"><b>{esc(format_hk(catalog["updated_at"]).split(" ")[0])}</b><span>{esc(format_hk(catalog["updated_at"]).split(" ", 1)[1])}</span></div>
+      <div class="stat"><b>{project_count}</b><span>{bi("開源項目", "Projects")}</span></div>
+      <div class="stat"><b>{paper_count}</b><span>{bi("未另列 repo 嘅論文", "Papers without their own repo")}</span></div>
+      <div class="stat"><b>{bi(date_zh(catalog["updated_at"]), date_en(catalog["updated_at"]))}</b><span>{bi(time_zh(catalog["updated_at"]), time_en(catalog["updated_at"]))}</span></div>
     </div>
   </header>
 """
@@ -1043,23 +1137,24 @@ def render_document(catalog: dict, active: str | None) -> str:
         hero = f"""
 <header class="hero hero-sub">
     <p class="kicker"><a href="../">Open Source Catalog</a></p>
-    <h1>{esc(category["title"])}</h1>
-    <p class="lede">{esc(category["blurb"])} 開源項目按 GitHub stars 由多至少。</p>
+    <h1>{bi(category["title"], category["title_en"])}</h1>
+    <p class="lede">{bi(category["blurb"], category["blurb_en"])} {bi("開源項目按 GitHub stars 由多至少。", "Sorted by GitHub stars, highest first.")}</p>
     <div class="stats">
-      <div class="stat"><b>{len(grouped.get(active, []))}</b><span>開源項目</span></div>
-      <div class="stat"><b>{len(papers.get(active, []))}</b><span>相關論文</span></div>
-      <div class="stat"><b>{esc(format_hk(catalog["updated_at"]).split(" ")[0])}</b><span>{esc(format_hk(catalog["updated_at"]).split(" ", 1)[1])}</span></div>
+      <div class="stat"><b>{len(grouped.get(active, []))}</b><span>{bi("開源項目", "Projects")}</span></div>
+      <div class="stat"><b>{len(papers.get(active, []))}</b><span>{bi("相關論文", "Related papers")}</span></div>
+      <div class="stat"><b>{bi(date_zh(catalog["updated_at"]), date_en(catalog["updated_at"]))}</b><span>{bi(time_zh(catalog["updated_at"]), time_en(catalog["updated_at"]))}</span></div>
     </div>
   </header>
 """
     return f"""<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
+<script>try{{if(localStorage.getItem("osc-lang")==="en")document.documentElement.lang="en";}}catch(e){{}}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0c0d11">
-<meta name="description" content="Open Source Catalog：AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。">
-<title>{esc(title)}</title>
+<meta name="description" data-zh="Open Source Catalog：AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。" data-en="Open Source Catalog: open-source projects and related papers for AI agents, images, video, VFX/CG/Blender, stock trading, and crypto trading." content="Open Source Catalog：AI Agent、圖像、影片、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。">
+<title data-zh="{esc(title_zh)}" data-en="{esc(title_en)}">{esc(title_zh)}</title>
 {canonical}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1070,27 +1165,31 @@ def render_document(catalog: dict, active: str | None) -> str:
 </style>
 </head>
 <body>
-<a class="skip" href="#content">跳到項目</a>
+<div class="lang-switch" role="group" data-zh-label="語言" data-en-label="Language" aria-label="語言">
+  <button type="button" data-lang="en">EN</button>
+  <button type="button" data-lang="zh-Hant" aria-pressed="true">中</button>
+</div>
+<a class="skip" href="#content">{bi("跳到項目", "Skip to projects")}</a>
 <div class="wrap">
   {hero}
   <div class="stickybar">
     {nav}
     <div class="toolbar">
-      <div class="sort" role="group" aria-label="排序">
-        <button type="button" data-sort="stars" aria-pressed="true">星數</button>
-        <button type="button" data-sort="pushed" aria-pressed="false" aria-label="按最後推送日期，由新到舊">最近推送</button>
+      <div class="sort" role="group" data-zh-label="排序" data-en-label="Sort" aria-label="排序">
+        <button type="button" data-sort="stars" aria-pressed="true">{bi("星數", "Stars")}</button>
+        <button type="button" data-sort="pushed" aria-pressed="false" data-zh-label="按最後推送日期，由新到舊" data-en-label="Sort by last push, newest first">{bi("最近推送", "Last push")}</button>
       </div>
       <form class="search" role="search" onsubmit="return false">
-        <label class="sr" for="q" style="position:absolute;left:-999px">搜尋</label>
-        <input id="q" type="search" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
+        <label class="sr" for="q" style="position:absolute;left:-999px">{bi("搜尋", "Search")}</label>
+        <input id="q" type="search" data-zh-placeholder="搜尋名稱、摘要、語言或主題" data-en-placeholder="Search name, summary, language, or topic" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
       </form>
     </div>
   </div>
   <main class="page" id="content">
-    <p id="empty">沒有符合呢個搜尋嘅項目。</p>
+    <p id="empty">{bi("沒有符合呢個搜尋嘅項目。", "No projects match this search.")}</p>
     {body}
   </main>
-  <footer class="site">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 預設按 stars 排，可以改按最近推送 · 重複項目只保留一次 · 最近推送會喺你睇到嗰張卡時向 GitHub 更新</footer>
+  <footer class="site">{bi("Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 預設按 stars 排，可以改按最近推送 · 重複項目只保留一次 · 最近推送會喺你睇到嗰張卡時向 GitHub 更新", "Open Source Catalog · Data from public GitHub and arXiv · Stars by default, or sort by last push · Each repository is listed once · Last push updates from GitHub when the card is on screen")}</footer>
 </div>
 <script>
 (function () {{
@@ -1206,7 +1305,14 @@ def render_document(catalog: dict, active: str | None) -> str:
       const node = card.querySelector("time.pushed");
       if (!node) return;
       node.dateTime = day;
-      node.textContent = "最近推送 " + day;
+      node.replaceChildren();
+      const zhLabel = document.createElement("span");
+      zhLabel.className = "t-zh";
+      zhLabel.textContent = "最近推送 " + day;
+      const enLabel = document.createElement("span");
+      enLabel.className = "t-en";
+      enLabel.textContent = "Pushed " + day;
+      node.append(zhLabel, enLabel);
     }});
     if (sortMode === "pushed") {{
       sortGrids();
@@ -1286,6 +1392,30 @@ def render_document(catalog: dict, active: str | None) -> str:
   }}
   window.addEventListener("scroll", schedulePushed, {{ passive: true }});
   window.addEventListener("resize", schedulePushed);
+  function applyLang(lang) {{
+    const next = lang === "en" ? "en" : "zh-Hant";
+    const english = next === "en";
+    document.documentElement.lang = next;
+    document.querySelectorAll(".lang-switch button").forEach((button) => {{
+      button.setAttribute("aria-pressed", button.dataset.lang === next ? "true" : "false");
+    }});
+    document.querySelectorAll("[data-zh-label]").forEach((node) => {{
+      node.setAttribute("aria-label", english ? node.getAttribute("data-en-label") : node.getAttribute("data-zh-label"));
+    }});
+    document.querySelectorAll("[data-zh-placeholder]").forEach((node) => {{
+      node.placeholder = english ? node.getAttribute("data-en-placeholder") : node.getAttribute("data-zh-placeholder");
+    }});
+    const title = document.querySelector("title");
+    if (title) title.textContent = english ? title.getAttribute("data-en") : title.getAttribute("data-zh");
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", english ? meta.getAttribute("data-en") : meta.getAttribute("data-zh"));
+    try {{ localStorage.setItem("osc-lang", next); }}
+    catch (error) {{}}
+  }}
+  document.querySelectorAll(".lang-switch button").forEach((button) => {{
+    button.addEventListener("click", () => applyLang(button.dataset.lang));
+  }});
+  applyLang(document.documentElement.lang);
   input.addEventListener("input", apply);
   input.addEventListener("search", apply);
   sortButtons.forEach((button) => {{
@@ -1646,6 +1776,7 @@ def apply_repo_payload(project: dict, repo: dict) -> bool:
         project["description"] = description
         if not project.get("summary_locked"):
             project["summary"] = description
+            project["summary_en"] = description
     if repo.get("topics"):
         project["topics"] = list(repo.get("topics") or [])[:8]
     return changed
@@ -1921,10 +2052,30 @@ def validate(catalog: dict | None = None) -> None:
             length = len(project.get("summary") or "")
             if length < 80 or length > 150:
                 raise SystemExit(f"summary for {project['full_name']} is {length} chars, want about 100")
+            english = project.get("summary_en") or ""
+            if len(english) < 40:
+                raise SystemExit(f"English summary for {project['full_name']} is {len(english)} chars")
+    summaries = load_json(DATA / "summaries.json", {})
+    summaries_en = load_json(DATA / "summaries_en.json", {})
+    for project in projects:
+        if not project.get("summary_locked"):
+            continue
+        name = project["full_name"]
+        if summaries.get(name) != project.get("summary"):
+            raise SystemExit(f"Chinese summary drift for {name}")
+        if summaries_en.get(name) != project.get("summary_en"):
+            raise SystemExit(f"English summary drift for {name}")
+    for paper in catalog.get("papers") or []:
+        if len(paper.get("summary_en") or "") < 40:
+            raise SystemExit(f"missing English paper summary for {paper.get('id')}")
+    if 'data-lang="en"' not in html_text or 'class="lang-switch"' not in html_text:
+        raise SystemExit("language switch is missing from the home page")
     for category in CATEGORIES:
         page = (ROOT / category["dir"] / "index.html").read_text()
         if category["title"] not in page:
             raise SystemExit(f"subpage missing title {category['title']}")
+        if 'class="lang-switch"' not in page:
+            raise SystemExit(f"{category['dir']} is missing the language switch")
         if 'href="../"' not in page:
             raise SystemExit(f"{category['dir']} does not link back to the catalog")
         page_root = f"{PAGES_ROOT}{category['dir']}/"
