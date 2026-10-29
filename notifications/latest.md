@@ -1,16 +1,18 @@
 # Open Source Catalog 已更新
 
-- 時間：2026年10月29日 12:54（香港時間）
-- 今次新增：5 個開源項目
-- 目錄總數：371 個開源項目
-- 分類：Gaussian Splatting 48 · World Model 34 · Image to 3D 40 · AI Agent 51 · 圖像 54 · 影片 42 · VFX / CG / Blender 33 · Stock Trading 39 · Crypto Trading 30
+- 時間：2026年10月29日 14:48（香港時間）
+- 今次新增：7 個開源項目
+- 目錄總數：378 個開源項目
+- 分類：Gaussian Splatting 49 · World Model 34 · Image to 3D 40 · AI Agent 52 · 圖像 56 · 影片 43 · VFX / CG / Blender 34 · Stock Trading 40 · Crypto Trading 30
 - GitHub 請求配額：已用 4000/5000（80.0%，目標 80%）
 - 瀏覽：https://titanothereyik.github.io/Open-Source-Catalog/
 
 ## 新增
 
-- MochiDiffusion/MochiDiffusion · ★ 7,973 · image · https://github.com/MochiDiffusion/MochiDiffusion
-- WyattBlue/auto-editor · ★ 5,652 · video · https://github.com/WyattBlue/auto-editor
-- Anil-matcha/AI-Youtube-Shorts-Generator · ★ 5,643 · video · https://github.com/Anil-matcha/AI-Youtube-Shorts-Generator
-- freqtrade/freqtrade-strategies · ★ 5,603 · crypto-trading · https://github.com/freqtrade/freqtrade-strategies
-- google/tf-quant-finance · ★ 5,548 · stock-trading · https://github.com/google/tf-quant-finance
+- bojieli/ai-agent-book · ★ 56,439 · ai-agent · https://github.com/bojieli/ai-agent-book
+- TheLastBen/fast-stable-diffusion · ★ 7,910 · image · https://github.com/TheLastBen/fast-stable-diffusion
+- leejet/stable-diffusion.cpp · ★ 7,817 · image · https://github.com/leejet/stable-diffusion.cpp
+- JerBouma/FinanceToolkit · ★ 5,474 · stock-trading · https://github.com/JerBouma/FinanceToolkit
+- ssloy/tinyraytracer · ★ 5,392 · vfx-cg-blender · https://github.com/ssloy/tinyraytracer
+- NVIDIAGameWorks/kaolin · ★ 5,193 · gaussian-splatting · https://github.com/NVIDIAGameWorks/kaolin
+- getopenscreen/openscreen · ★ 5,058 · video · https://github.com/getopenscreen/openscreen
