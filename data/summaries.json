@@ -479,5 +479,18 @@
   "toadstorm/MOPS": "Houdini 入面嘅 Motion Operators，用節點做動態圖形同程序化動畫。佢係 Houdini 工具，唔係 After Effects 圖層系統，部機亦唔使裝 AE。",
   "mrachinskiy/commotion": "Blender 嘅動態圖形附加元件，用嚟喺 Blender 做程序化動畫同效果。佢跑喺 Blender，唔係 After Effects 外掛，部機唔使裝 AE。",
   "xvrh/lottie-flutter": "用純 Dart 寫嘅 Flutter Lottie 播放器，喺 App 播 After Effects 匯出嘅動畫。佢係播放元件，唔係剪片軟件，動畫要喺 AE 做好再匯出。",
-  "thorvg/thorvg": "C++ 向量繪圖引擎，可以渲染 SVG 同 Lottie 動畫，適合嵌進其他程式。佢係底層繪圖庫，唔係 After Effects，亦唔係剪片軟件，部機唔使裝 AE。"
+  "thorvg/thorvg": "C++ 向量繪圖引擎，可以渲染 SVG 同 Lottie 動畫，適合嵌進其他程式。佢係底層繪圖庫，唔係 After Effects，亦唔係剪片軟件，部機唔使裝 AE。",
+  "valentderah/totk-pc-recomp": "將《薩爾達傳說 王國之淚》靜態重編譯成 Windows 程式，用 Vulkan 渲染。遊戲檔唔喺 repo，要自己合法擁有。佢係遊戲移植，唔係 Blender 或合成工具，而家仍然早期。",
+  "Leonxlnx/earshot": "畀 coding agent 用嘅聽覺工具，可以描述一段聲音、用程式造聲，再聽返嚟改。只靠 CPU，亦有 MCP。適合評 UI 聲同配樂。佢唔係剪片軟件，亦唔係新訓練嘅音樂模型。",
+  "onehumanbeing/esp32-iphone-agent": "用一塊大約七美元嘅 ESP32 畀現成視覺模型操控一部真 iPhone：AirPlay 當眼，USB HID 當手。唔使 Mac、開發者帳號或越獄。佢係硬件橋，唔係新訓練嘅模型。",
+  "zai-org/ZCode": "Z.ai 出嘅 AI 編程工作台，有桌面、瀏覽器同終端 agent，repo 包含客戶端、後端同 agent 運行時。佢係寫程式嘅 harness，唔係圖像或剪片模型。",
+  "Tejashmakwana/motionmaxxing": "畀 agent 用嘅動態圖形 skill，用 Chrome 同 ffmpeg 渲染，想把 AI 片整得似 motion designer 做。佢係 skill 加渲染流程，唔係 After Effects 外掛。",
+  "QwenLM/Qwen-Image-2.1": "通義千問公開嘅圖像模型，視覺部分約七十億參數，可以文字生圖、改圖同出透明圖，亦支援最多十張參考圖。權重同程式喺度，但研究授權只畀研究同評估，商業用途要另外攞授權。",
+  "langchain-ai/design-agent": "LangChain 開放嘅設計 agent，喺對話入面做出符合品牌嘅靜態圖、簡報、圖表同動態圖像，建喺 Deep Agents 上面。唔係 After Effects，成品交畀程式同模型。",
+  "StreamEval/StreamEval": "評測互動串流影片生成模型嘅基準同數據集，附論文、測試集同 Hugging Face 數據。佢用嚟量模型嘅即時互動表現，唔係一個會自己出片嘅生成器，亦唔係剪片軟件。",
+  "ChatAnyTeam/ChatAny": "已經停更嘅網頁，基於 ChatGPT-Next-Web，一鍵接上 ChatGPT 同多個 AI 服務，包括圖像。佢係聚合介面，唔係圖像模型，作者話呢個項目唔再維護。",
+  "GVCLab/PersonaLive": "CVPR 2026 嘅人像動畫研究，用一張肖像做出有表情、可以直播嘅畫面，人像會跟住驅動訊號郁。係論文作者放出嘅模型程式，唔係一般剪片軟件，亦唔係套殼直播工具。",
+  "junyanz/iGAN": "2016 年 Berkeley 嘅互動圖像生成研究，用草圖同筆刷即時畫出 GAN 圖像。係當年嘅 Torch 程式，唔係 Blender 外掛，亦唔係而家嘅擴散模型。",
+  "edtechre/pybroker": "用 Python 做算法交易回測嘅庫，可以加入機器學習訊號。授權係 Apache 2.0 再加 Commons Clause，將個庫本身攞去賣係唔得。佢係回測工具，唔係券商落單程式。",
+  "tradytics/eiten": "Tradytics 出嘅組合工具，用特徵組合、最低方差、最高夏普同遺傳演算法砌股票組合，可以自己揀股票再回測，並附測試框架。佢係研究同配置工具，唔係即時落單嘅券商程式。"
 }
