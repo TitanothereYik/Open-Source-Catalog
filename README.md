@@ -14,7 +14,7 @@
 8. Stock Trading
 9. Crypto Trading
 
-第一版收錄 200 個開源項目，之後再加入 Gaussian Splatting、World Model 同 Image to 3D。每個項目有大約一百字嘅中文說明。已經收錄嘅 repo 唔會再加入。之後每小時檢查一次，只加入未見過、而且符合分類嘅新項目，同時更新 stars 同最近推送。
+第一版收錄 200 個開源項目，之後再加入 Gaussian Splatting、World Model 同 Image to 3D。每個項目有大約一百字嘅中文說明。已經收錄嘅 repo 唔會再加入。之後每兩小時檢查一次，只加入未見過、而且符合分類嘅新項目，同時更新 stars 同最近推送。
 
 ## 本地瀏覽
 
@@ -42,7 +42,7 @@ python3 scripts/catalog_tool.py validate
 
 ## GitHub
 
-公開網站放喺 [TitanothereYik/Open-Source-Catalog](https://github.com/TitanothereYik/Open-Source-Catalog)。頁面標題係 **Open Source Catalog**。Repo 要公開，免費 GitHub Pages 先用到。每小時嘅更新唔係 GitHub Actions 跑，而係喺呢個對話排程，因為新項目嘅中文說明要喺度寫。
+公開網站放喺 [TitanothereYik/Open-Source-Catalog](https://github.com/TitanothereYik/Open-Source-Catalog)。頁面標題係 **Open Source Catalog**。Repo 要公開，免費 GitHub Pages 先用到。每兩小時嘅更新唔係 GitHub Actions 跑，而係喺呢個對話排程，因為新項目嘅中文說明要喺度寫。
 
 網站網址：
 
@@ -52,9 +52,9 @@ https://titanothereyik.github.io/Open-Source-Catalog/
 
 根目錄 `index.html` 就係 Pages 嘅內容。推上 GitHub `main` 之後，`.github/workflows/pages.yml` 會部署。更新根網址固定係上面呢個 GitHub Pages 網址。
 
-## 每小時
+## 每兩小時
 
-更新由呢個對話喺每小時整點排程，唔經 GitHub Actions。`scripts/catalog_tool.py update` 會更新 stars、最近推送，並搵新 repo。已經鎖住嘅中文說明唔會被蓋過。新項目嘅 caption 會喺度寫成大約一百字嘅繁體中文，鎖住之後先推上 `main`。
+更新由呢個對話每兩小時排程一次，唔經 GitHub Actions。中間留時間寫新項目嘅中文說明同做其他工作。`scripts/catalog_tool.py update` 會更新 stars、最近推送，並搵新 repo。已經鎖住嘅中文說明唔會被蓋過。新項目嘅 caption 會喺度寫成大約一百字嘅繁體中文，鎖住之後先推上 `main`。
 
 每次完成會：
 

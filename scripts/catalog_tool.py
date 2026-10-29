@@ -336,7 +336,8 @@ class RateLimitExceeded(RuntimeError):
 
 
 # Latest core REST quota (resources.core), updated from /rate_limit and response headers.
-RATE = {"limit": 0, "remaining": 0, "reset": 0}
+# spent counts requests made by this run and does not reset when the hourly window rolls.
+RATE = {"limit": 0, "remaining": 0, "reset": 0, "spent": 0}
 FETCHED: set[str] = set()
 
 
@@ -360,22 +361,32 @@ def note_rate_headers(headers) -> None:
     if (headers.get("X-RateLimit-Resource") or "") != "core":
         return
     try:
-        RATE["limit"] = int(headers.get("X-RateLimit-Limit") or 0)
-        RATE["remaining"] = int(headers.get("X-RateLimit-Remaining") or 0)
-        RATE["reset"] = int(headers.get("X-RateLimit-Reset") or 0)
+        limit = int(headers.get("X-RateLimit-Limit") or 0)
+        remaining = int(headers.get("X-RateLimit-Remaining") or 0)
+        reset = int(headers.get("X-RateLimit-Reset") or 0)
     except ValueError:
         return
-    limit = RATE["limit"]
-    if limit and (limit - RATE["remaining"]) % 100 == 0:
-        print(f"core rate {limit - RATE['remaining']}/{limit}", flush=True)
+    previous = int(RATE["remaining"] or 0)
+    previous_reset = int(RATE["reset"] or 0)
+    before_spent = int(RATE["spent"] or 0)
+    if previous and previous_reset and reset == previous_reset and remaining < previous:
+        RATE["spent"] = before_spent + (previous - remaining)
+    RATE["limit"] = limit
+    RATE["remaining"] = remaining
+    RATE["reset"] = reset
+    spent = int(RATE["spent"])
+    if limit and spent // 100 != before_spent // 100:
+        print(f"core rate {spent}/{limit}", flush=True)
 
 
 def core_quota_met() -> bool:
     limit = int(RATE["limit"] or 0)
     if limit <= 0:
         return False
-    used = limit - int(RATE["remaining"])
-    return used >= math.ceil(limit * CORE_USAGE_TARGET)
+    target = math.ceil(limit * CORE_USAGE_TARGET)
+    spent = int(RATE["spent"] or 0)
+    window_used = max(0, limit - int(RATE["remaining"] or 0))
+    return max(spent, window_used) >= target
 
 
 def read_core_quota() -> None:
@@ -968,7 +979,7 @@ def render_document(catalog: dict, active: str | None) -> str:
     if active is None:
         hero = f"""
 <header class="hero">
-    <p class="kicker">每小時更新</p>
+    <p class="kicker">每兩小時更新</p>
     <h1>Open Source Catalog</h1>
     <p class="lede">九個分類各自一頁。而家聚焦 Gaussian Splatting、World Model 同 Image to 3D。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。</p>
     <div class="stats">
@@ -1642,7 +1653,8 @@ def spend_core_quota(names: list[str]) -> None:
 def record_rate_usage(catalog: dict) -> None:
     limit = int(RATE["limit"] or 0)
     remaining = int(RATE["remaining"] or 0)
-    used = max(0, limit - remaining)
+    window_used = max(0, limit - remaining)
+    used = max(window_used, int(RATE["spent"] or 0))
     percent = round(100 * used / limit, 1) if limit else 0
     catalog["rate_limit"] = {"used": used, "limit": limit, "remaining": remaining, "percent": percent}
     print(f"GitHub core requests used {used}/{limit} ({percent}%)", flush=True)
@@ -1656,6 +1668,7 @@ def update() -> dict:
         return bootstrap(force=False)
     catalog = load_json(catalog_path, {})
     FETCHED.clear()
+    RATE["spent"] = 0
     wait_for_core_budget()
     refresh_stars(catalog)
     new_projects, seen_names = discover_new(catalog)
