@@ -59,7 +59,7 @@ CATEGORIES = [
         "id": "image",
         "dir": "image",
         "title": "圖像",
-        "blurb": "圖像生成、編輯、放大、識別同影像處理。",
+        "blurb": "圖像生成、編輯、修補、放大、識別同影像處理。",
     },
     {
         "id": "video",
