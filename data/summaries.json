@@ -358,5 +358,11 @@
   "Stability-AI/StableStudio": "Stability AI 社群維護嘅生成圖像介面，係 DreamStudio 嘅開源前端。用嚟喺瀏覽器入面寫提示、出圖同管理 Stable Diffusion 嘅生成。介面同模型後端可以分開，方便接自己已經架好嘅服務。",
   "LykosAI/StabilityMatrix": "跨平台嘅 Stable Diffusion 套件管理器。用嚟安裝同切換 Automatic1111、ComfyUI 等介面，模型同設定放喺同一個地方。唔使逐個介面自己砌 Python 環境，適合想喺本機試唔同出圖介面嘅人。",
   "modelscope/FunClip": "基於 FunASR 嘅影片剪輯工具。用嚟做語音轉文字、生成字幕，再用語言模型幫手揀片段。有本地 Gradio 介面，適合中文口播片要自動上字幕同粗剪嘅人。辨識同剪輯都可以留喺自己部機。",
-  "amagine-ai/Amagine3D": "由產品描述、參考圖同尺寸生成可編輯三維設計嘅開源工具。重點係硬件外殼同裝配結構，可以輸出 STEP、STL 同 3MF。用嚟由需求做到可改嘅 CAD，而唔係只出一張睇落立體嘅圖。"
+  "amagine-ai/Amagine3D": "由產品描述、參考圖同尺寸生成可編輯三維設計嘅開源工具。重點係硬件外殼同裝配結構，可以輸出 STEP、STL 同 3MF。用嚟由需求做到可改嘅 CAD，而唔係只出一張睇落立體嘅圖。",
+  "heygen-com/hyperframes": "HeyGen 開源嘅影片渲染框架。用 HTML、CSS 同動畫寫畫面，再輸出穩定嘅 MP4。可以喺本機用命令列跑，寫程式助手亦可以叫佢出片。適合想用網頁排版方式做片，而唔係由零砌 FFmpeg 指令嘅人。",
+  "FoundationVision/VAR": "NeurIPS 2024 最佳論文嘅官方實作。用視覺自回歸、按下一層尺度預測嚟生成圖像，而唔係逐步去噪嘅擴散模型。用嚟研究同跑可擴展嘅圖像生成，程式刻意保持短同易改。",
+  "PaddlePaddle/PaddleGAN": "百度飛槳嘅 GAN 應用庫。收錄動作遷移、人像修復、圖像編輯、風格轉換同相片轉動畫等例子。用嚟喺一個倉庫試呢類生成模型，而唔使逐篇論文自己砌訓練環境。想一次過試幾個經典效果，可以由呢度開始。",
+  "achannarasappa/ticker": "喺終端機即時睇股票、加密貨幣同衍生品報價同持倉嘅小工具。用嚟開住個畫面監察價格，而唔係自動落盤嘅策略。數據顯示喺命令列，適合想離開瀏覽器睇行情嘅人。報價刷新唔使開圖表網站。",
+  "PyPortfolio/PyPortfolioOpt": "用 Python 做投資組合優化嘅程式庫。可以計有效前沿、Black-Litterman 同層次風險平價，幫手由預期回報同風險配置權重。用嚟研究點樣分配倉位，而唔係一個落單程式。",
+  "Mathieu2301/TradingView-API": "非官方嘅程式庫，用嚟從 TradingView 讀即時報價同圖表數據。可以接住做自己嘅監察或回測數據源。佢唔係 TradingView 官方接口，亦唔會代替券商落單。"
 }
