@@ -106,6 +106,8 @@ QUERIES = {
         "topic:ai-agents",
         "topic:autonomous-agents",
         "topic:agent-framework",
+        "topic:agent-skills",
+        "topic:claude-skills",
     ],
     "image": [
         "topic:stable-diffusion",
@@ -159,7 +161,7 @@ RECENT_FOCUS = {
     "gaussian-splatting": "gaussian splatting OR 3dgs OR gaussian-splatting",
     "world-model": '"world model" OR "world models"',
     "image-to-3d": '"image to 3d" OR "image-to-3d" OR "text to 3d" OR "text-to-3d"',
-    "ai-agent": '"ai agent" OR "coding agent" OR "agent framework"',
+    "ai-agent": '"ai agent" OR "coding agent" OR "agent skill" OR "claude skill"',
     "image": '"image generation" OR inpainting OR "stable diffusion"',
     "video": '"video generation" OR "text-to-video" OR "image-to-video" OR "ai video"',
     "vfx-cg-blender": "blender OR renderer OR compositing",
@@ -1418,7 +1420,6 @@ def blocked(repo: dict) -> bool:
         "leak",
         "best-practice",
         "best_practice",
-        "skill",
         "cheatsheet",
         "paper-list",
         "papers-with",
@@ -1427,7 +1428,11 @@ def blocked(repo: dict) -> bool:
         "-guide",
         "tutorial",
     )
-    if any(part in name for part in bad_name):
+    # Skill repos are collected. An awesome-list is still skipped unless it is a skill catalog.
+    name_checks = tuple(part for part in bad_name if part != "skill")
+    if "skill" in name:
+        name_checks = tuple(part for part in name_checks if part != "awesome")
+    if any(part in name for part in name_checks):
         return True
     if "comfyui" in name and "workflow" in name:
         return True

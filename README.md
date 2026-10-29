@@ -56,7 +56,7 @@ https://titanothereyik.github.io/Open-Source-Catalog/
 
 更新由呢個對話每兩小時排程一次，唔經 GitHub Actions。中間留時間寫新項目嘅中文說明同做其他工作。`scripts/catalog_tool.py update` 會更新 stars、最近推送，並搵新 repo。已經鎖住嘅中文說明唔會被蓋過。新項目嘅 caption 會喺度寫成大約一百字嘅繁體中文，鎖住之後先推上 `main`。
 
-出咗唔夠四個月、而且星數升得快嘅項目會優先收，即使未到原本嘅星數門檻。例如一個新影片引擎幾個星期就有幾千星，都會入選。清單、skill、教學同 ComfyUI 工作流合集仍然唔收。星數升得快本身唔會當成理由剔走。
+出咗唔夠四個月、而且星數升得快嘅項目會優先收，即使未到原本嘅星數門檻。例如一個新影片引擎幾個星期就有幾千星，都會入選。Agent skill 同 Claude skill 都會收。清單、教學同 ComfyUI 工作流合集仍然唔收。星數升得快本身唔會當成理由剔走。
 
 每次完成會：
 
