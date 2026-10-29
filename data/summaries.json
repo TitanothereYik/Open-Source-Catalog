@@ -443,5 +443,17 @@
   "11cafe/jaaz": "開源嘅多模態創作助手，可以本地跑，用嚟做設計同生成，定位係 Canva 一類工具嘅替代。私隱優先。適合想喺自己部機做圖文創作，而唔使將稿交去一個訂閱網站。稿同對話都可以留喺本機。",
   "Picsart-AI-Research/Text2Video-Zero": "用文字生圖嘅擴散模型，零樣本做出影片。唔使為影片再訓練一個新模型，就可以由文字或圖生成短片。ICCV 2023 口頭報告嘅官方程式。適合研究點樣由圖像模型延伸到影片。",
   "lightly-ai/lightly": "Python 自監督學習庫，用嚟喺圖像上學表示，亦包含潛在世界模型。你可以喺未標註嘅圖上訓練，再將表示用落下游任務。適合做視覺預訓練，而唔係一個出片或交易程式。",
-  "luigifreda/pyslam": "Python 同 C++ 混合嘅視覺 SLAM。支援單目、雙目同 RGB-D，可以估相機點行，亦包含高斯潑濺同語意分割。適合做定位同重建研究。佢係完整流水線，而唔係淨係一個點雲檢視器。"
+  "luigifreda/pyslam": "Python 同 C++ 混合嘅視覺 SLAM。支援單目、雙目同 RGB-D，可以估相機點行，亦包含高斯潑濺同語意分割。適合做定位同重建研究。佢係完整流水線，而唔係淨係一個點雲檢視器。",
+  "xai-org/grok-build": "SpaceXAI 嘅終端編程 agent，全螢幕介面可以睇專案、改檔同跑指令。亦可以無介面跑，或者經 Agent Client Protocol 嵌進編輯器。程式用 Rust 寫，由佢哋嘅主倉庫同步出嚟。適合想喺終端交辦開發，而唔使開一個網頁聊天窗。",
+  "Jakeschincariol/replica-skill": "十一個 Claude skill，用嚟拆解一個 app 嘅流程，再由 agent 重新砌一個。佢要求只重建功能，唔抄程式、標誌同文案。可以喺 Claude Code 當插件裝。適合想用技能包試做同類產品，而唔係一個現成嘅應用程式。",
+  "morganlinton/BeautifulRust": "畀 coding agent 用嘅 Rust skill。一個教寫得地道，一個負責審查同指出邊條規則，一個將 C、Python 等程式搬去 Rust。另有一份 clippy 設定可以放喺 CI。適合想 agent 寫 Rust 時跟官方風格，而唔使每次自己貼指南。",
+  "sirioberati/Genjustsu-Open-Source-Workflow": "本地介面，用嚟換片入面嘅人或物件。佢準備深度、SAM 遮罩同面網，再交畀 Seedance 生成，匯出時保留原本成段聲音。要另外接 Enhancor 嘅 API。適合做角色替換，而唔係一個自己訓練嘅影片模型。",
+  "glanderness/BeefTV": "本地優先嘅 AI 影片工作台，喺畫布入面連接素材、模型同 agent。桌面版可以喺自己部機跑，由分鏡改到成片。新代碼要商業使用就另外授權。適合想喺畫布砌片，而唔係一個由零訓練嘅影片模型。",
+  "Vincentwei1021/anything2explainer": "一個 Claude Code 同 Codex skill，用 Remotion 將題目畫成講解短片，有配音、字幕同章節條。每一幀係程式畫出嚟，唔係生成模型。中英文都可以。工具本身係非商業許可。適合用 agent 出講解片，而唔係收一條現成影片。",
+  "yanliudesign/mono-color-skill": "一個圖像 skill，用嚟出單色或雙色嘅編輯風格圖，例如海報、小誌同人像。預設係一隻主色加少少點綴，白紙或暖紙底都可以。佢係風格指示，唔係一個新圖像模型。適合要印刷感嘅圖，而唔係一般彩色生圖。",
+  "hi3d-official/Hi3Dv1.0": "Hi3D 嘅官方推論程式，用參考圖將粗網格修到更高解像度嘅幾何。底層係 Sparc3D，權重喺 Hugging Face。倉庫有推論，冇訓練碼。適合已有粗模型再加細節，而唔係由一張圖由零生成。",
+  "arnegiacomo/fugleramme": "用本機聲音模型認花園入面嘅鳥，再顯示成十九世紀手繪插圖。可以放喺電子紙、電視或者樹莓派。識別喺自己部機做。聽到邊種就換邊張圖。適合架一個鳥相框，而唔係做影片合成或者三維場景。",
+  "absolute-quantum/cats-blender-plugin": "Blender 外掛，用嚟將 MMD、Mixamo、DAZ 等模型整理好，再送去 VRChat。一鍵可以減面、做口型同步同眼神追蹤，仲會合併骨骼。適合縮短上載虛擬角色嘅步驟，而唔係一個渲染引擎。",
+  "AI4Finance-Foundation/FinRL-Trading": "FinRL 系列嘅量化交易基建，叫 FinRL-X。佢將數據、策略、回測同券商下單收成同一套權重介面。有 PyPI 套件同論文。適合想由研究策略行到模擬落單，而唔係淨係一個強化學習教學庫。",
+  "simonlin1212/TradingAgents-astock": "將 TradingAgents 改到適合 A 股嘅多 agent 投研框架。七個分析師會按龍虎榜、解禁等數據辯論。可以用 pip 裝，定位係研究同教學。適合試多角色投研，而唔係一個自動落單嘅交易程式。"
 }
