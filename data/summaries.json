@@ -364,5 +364,10 @@
   "PaddlePaddle/PaddleGAN": "百度飛槳嘅 GAN 應用庫。收錄動作遷移、人像修復、圖像編輯、風格轉換同相片轉動畫等例子。用嚟喺一個倉庫試呢類生成模型，而唔使逐篇論文自己砌訓練環境。想一次過試幾個經典效果，可以由呢度開始。",
   "achannarasappa/ticker": "喺終端機即時睇股票、加密貨幣同衍生品報價同持倉嘅小工具。用嚟開住個畫面監察價格，而唔係自動落盤嘅策略。數據顯示喺命令列，適合想離開瀏覽器睇行情嘅人。報價刷新唔使開圖表網站。",
   "PyPortfolio/PyPortfolioOpt": "用 Python 做投資組合優化嘅程式庫。可以計有效前沿、Black-Litterman 同層次風險平價，幫手由預期回報同風險配置權重。用嚟研究點樣分配倉位，而唔係一個落單程式。",
-  "Mathieu2301/TradingView-API": "非官方嘅程式庫，用嚟從 TradingView 讀即時報價同圖表數據。可以接住做自己嘅監察或回測數據源。佢唔係 TradingView 官方接口，亦唔會代替券商落單。"
+  "Mathieu2301/TradingView-API": "非官方嘅程式庫，用嚟從 TradingView 讀即時報價同圖表數據。可以接住做自己嘅監察或回測數據源。佢唔係 TradingView 官方接口，亦唔會代替券商落單。",
+  "MochiDiffusion/MochiDiffusion": "喺 Mac 原生跑 Stable Diffusion 嘅程式，用 Swift 同 Core ML，可以走 Apple 神經網絡引擎。用嚟喺自己部 Mac 出圖，唔使先裝一套 Python 環境。模型同生成都留喺本機。",
+  "WyattBlue/auto-editor": "自動剪片工具，用嚟偵測無聲同靜止畫面，再將有內容嘅段落接埋。支援影片同音訊，適合口播、錄音同學堂片要快速去掉空白。你可以調閾值，而唔係只得一個自動結果。輸出可以再交俾其他剪輯軟件。",
+  "Anil-matcha/AI-Youtube-Shorts-Generator": "將長片剪成直向短片嘅開源工具。用語音轉文字同語言模型搵重點，再自動裁成 9:16。用嚟喺自己部機出片段，冇浮水印同按條收費。成片仍然要你自己睇過先發佈。字幕同裁切都可以再改。",
+  "freqtrade/freqtrade-strategies": "Freqtrade 交易機械人嘅策略例子庫。入面係其他人分享嘅買賣規則，可以攞嚟回測同研究。用嚟睇策略點寫，而唔係一套保證獲利、可以即刻實盤嘅訊號。每條策略都要你自己驗證。",
+  "google/tf-quant-finance": "Google 用 TensorFlow 寫嘅量化金融庫。用嚟做定價、風險同數值計算，可以放到 GPU 上跑。適合研究金融模型點樣加速，而唔係一個落單或者揀股程式。"
 }
