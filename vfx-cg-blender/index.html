@@ -111,6 +111,36 @@ nav.pages a[aria-current="page"] {
 nav.pages .count { color: var(--faint); font-variant-numeric: tabular-nums; }
 nav.pages a[aria-current="page"] .count { color: var(--ink); }
 .search { padding: 0; }
+.toolbar { display: flex; flex-direction: column; gap: 8px; }
+.sort {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(21, 23, 30, 0.92);
+}
+.sort button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 15px;
+  min-width: 0;
+  padding: 12px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sort button + button { box-shadow: inset 1px 0 0 var(--line); }
+.sort button[aria-pressed="true"] { background: var(--gold); color: var(--ink); font-weight: 650; }
+@media (min-width: 760px) {
+  .toolbar { flex-direction: row; align-items: stretch; }
+  .toolbar .search { flex: 1; min-width: 0; }
+  .sort { display: inline-flex; flex: none; width: auto; max-width: none; }
+}
 .hub { display: grid; grid-template-columns: 1fr; gap: 14px; }
 .hub[hidden], #results[hidden] { display: none !important; }
 .tile {
@@ -221,10 +251,16 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
 
   <div class="stickybar">
     <nav class="pages" aria-label="分類"><a href="../">目錄</a><a href="../gaussian-splatting/">Gaussian Splatting<span class="count">52</span></a><a href="../world-model/">World Model<span class="count">36</span></a><a href="../image-to-3d/">Image to 3D<span class="count">42</span></a><a href="../ai-agent/">AI Agent<span class="count">63</span></a><a href="../image/">圖像<span class="count">85</span></a><a href="../video/">影片<span class="count">58</span></a><a href="./" aria-current="page">VFX / CG / Blender<span class="count">42</span></a><a href="../stock-trading/">Stock Trading<span class="count">49</span></a><a href="../crypto-trading/">Crypto Trading<span class="count">30</span></a></nav>
-    <form class="search" role="search" onsubmit="return false">
-      <label class="sr" for="q" style="position:absolute;left:-999px">搜尋</label>
-      <input id="q" type="search" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
-    </form>
+    <div class="toolbar">
+      <div class="sort" role="group" aria-label="排序">
+        <button type="button" data-sort="stars" aria-pressed="true">星數</button>
+        <button type="button" data-sort="pushed" aria-pressed="false" aria-label="按最後推送日期，由新到舊">最近推送</button>
+      </div>
+      <form class="search" role="search" onsubmit="return false">
+        <label class="sr" for="q" style="position:absolute;left:-999px">搜尋</label>
+        <input id="q" type="search" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
+      </form>
+    </div>
   </div>
   <main class="page" id="content">
     <p id="empty">沒有符合呢個搜尋嘅項目。</p>
@@ -619,7 +655,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
 </article></div></div>
 </section>
   </main>
-  <footer class="site">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 排序以 stars 為準 · 重複項目只保留一次 · 最近推送會喺你睇到嗰張卡時向 GitHub 更新</footer>
+  <footer class="site">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 預設按 stars 排，可以改按最近推送 · 重複項目只保留一次 · 最近推送會喺你睇到嗰張卡時向 GitHub 更新</footer>
 </div>
 <script>
 (function () {
@@ -629,15 +665,64 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   const cards = Array.from(document.querySelectorAll("#results [data-search], section [data-search]"));
   const sections = Array.from(document.querySelectorAll("[data-section]"));
   const empty = document.querySelector("#empty");
+  const sortButtons = Array.from(document.querySelectorAll(".sort button"));
+  const projectGrids = Array.from(document.querySelectorAll("#results > .grid, section.section > .grid"));
+  let sortMode = "stars";
+  projectGrids.forEach((grid) => {
+    Array.from(grid.querySelectorAll(":scope > article.card[data-repo]")).forEach((card, index) => {
+      card.dataset.order = String(index);
+      const rank = card.querySelector(".rank");
+      if (rank) card.dataset.rank = rank.textContent;
+    });
+  });
+  function pushedDay(card) {
+    const node = card.querySelector("time.pushed");
+    return node && node.dateTime ? node.dateTime : "";
+  }
+  function sortGrids() {
+    projectGrids.forEach((grid) => {
+      const children = Array.from(grid.children);
+      const projects = children.filter((card) => card.matches("article.card[data-repo]"));
+      const rest = children.filter((card) => !card.matches("article.card[data-repo]"));
+      projects.sort((a, b) => {
+        if (sortMode === "pushed") {
+          const dayA = pushedDay(a);
+          const dayB = pushedDay(b);
+          if (dayA !== dayB) return dayA < dayB ? 1 : -1;
+        }
+        return Number(a.dataset.order) - Number(b.dataset.order);
+      });
+      projects.forEach((card) => grid.appendChild(card));
+      rest.forEach((card) => grid.appendChild(card));
+    });
+  }
+  function paintRanks() {
+    projectGrids.forEach((grid) => {
+      let visible = 0;
+      Array.from(grid.querySelectorAll(":scope > article.card[data-repo]")).forEach((card) => {
+        const rank = card.querySelector(".rank");
+        if (!rank) return;
+        if (sortMode !== "pushed") {
+          rank.textContent = card.dataset.rank || rank.textContent;
+          return;
+        }
+        if (card.hidden) return;
+        visible += 1;
+        rank.textContent = String(visible).padStart(2, "0");
+      });
+    });
+  }
   function apply() {
+    sortGrids();
     const q = input.value.trim().toLowerCase();
+    const showHub = Boolean(hub && results && q.length === 0 && sortMode === "stars");
     if (hub && results) {
-      const browsing = q.length === 0;
-      hub.hidden = !browsing;
-      results.hidden = browsing;
-      if (browsing) {
+      hub.hidden = !showHub;
+      results.hidden = showHub;
+      if (showHub) {
         empty.hidden = true;
         empty.style.display = "none";
+        paintRanks();
         refreshPushed();
         return;
       }
@@ -653,6 +738,7 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
     });
     empty.hidden = shown !== 0;
     empty.style.display = shown === 0 ? "block" : "none";
+    paintRanks();
     refreshPushed();
   }
   const cacheKey = "osc-pushed-v1";
@@ -687,6 +773,10 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
       node.dateTime = day;
       node.textContent = "最近推送 " + day;
     });
+    if (sortMode === "pushed") {
+      sortGrids();
+      paintRanks();
+    }
   }
   function cachedDay(name) {
     const hit = readCache()[name];
@@ -762,6 +852,16 @@ footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
   window.addEventListener("scroll", schedulePushed, { passive: true });
   window.addEventListener("resize", schedulePushed);
   input.addEventListener("input", apply);
+  input.addEventListener("search", apply);
+  sortButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      sortMode = button.dataset.sort || "stars";
+      sortButtons.forEach((item) => {
+        item.setAttribute("aria-pressed", item === button ? "true" : "false");
+      });
+      apply();
+    });
+  });
   refreshPushed();
   document.addEventListener("keydown", (event) => {
     if (event.key === "/" && document.activeElement !== input) {
