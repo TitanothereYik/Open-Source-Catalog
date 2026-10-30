@@ -492,5 +492,19 @@
   "GVCLab/PersonaLive": "CVPR 2026 嘅人像動畫研究，用一張肖像做出有表情、可以直播嘅畫面，人像會跟住驅動訊號郁。係論文作者放出嘅模型程式，唔係一般剪片軟件，亦唔係套殼直播工具。",
   "junyanz/iGAN": "2016 年 Berkeley 嘅互動圖像生成研究，用草圖同筆刷即時畫出 GAN 圖像。係當年嘅 Torch 程式，唔係 Blender 外掛，亦唔係而家嘅擴散模型。",
   "edtechre/pybroker": "用 Python 做算法交易回測嘅庫，可以加入機器學習訊號。授權係 Apache 2.0 再加 Commons Clause，將個庫本身攞去賣係唔得。佢係回測工具，唔係券商落單程式。",
-  "tradytics/eiten": "Tradytics 出嘅組合工具，用特徵組合、最低方差、最高夏普同遺傳演算法砌股票組合，可以自己揀股票再回測，並附測試框架。佢係研究同配置工具，唔係即時落單嘅券商程式。"
+  "tradytics/eiten": "Tradytics 出嘅組合工具，用特徵組合、最低方差、最高夏普同遺傳演算法砌股票組合，可以自己揀股票再回測，並附測試框架。佢係研究同配置工具，唔係即時落單嘅券商程式。",
+  "Louis-CFM/coucou": "掛喺 Mac 凹槽、Windows、Linux 同手機上面嘅小工具，用嚟睇住 Claude Code、Codex、Cursor 等 coding agent，可以批權限同傳檔。佢係監察介面，唔係自己寫程式嘅 agent。",
+  "google/artemis": "Google 出嘅 Android 自動化工具，畀 AI 助手同測試套件好似人手咁操控真手機，可以跑完整流程同擷取 log。佢係手機自動化，唔係一般寫程式 agent。",
+  "CopilotKit/OpenDuet": "CopilotKit 出嘅主動 agent 範本，建喺 OpenBot 上面，做完事先同你匯報，你可以中途介入。而家仍然早期。佢係起步範本，唔係一個已經訓練好嘅獨立模型。",
+  "D3voz/openjutsu": "本地一鍵角色替換程式，前面係 Next.js，後面用 ComfyUI 流程呼叫現成 MiniMax H3、SAM 同 Qwen3-VL。佢係套殼應用，唔係新訓練嘅影片模型。",
+  "cclank/lanshu-create-ai-presenter-video": "畀 Codex 用嘅 presenter 影片 skill，用腳本同一張已授權嘅主持人圖做出影片，再用 HyperFrames 渲染。佢係 skill，呼叫現成服務，唔係新訓練嘅數字人模型。",
+  "Tencent-Hunyuan/Prism": "騰訊混元嘅影片加聲音生成研究，用動態稀疏注意力，目標係 2K 同時出畫面同聲。權重放喺 Hugging Face。佢係論文模型，唔係圖像編輯器，亦唔係剪片軟件。",
+  "EL4CTEO/blender-skills": "二十二個 Blender 5.2 agent skill，涵蓋建模、UV、材質、綁骨、動畫、渲染同檢查，畀 Claude Code、Codex、Cursor 等用。佢係 skill 包，部機要裝 Blender。",
+  "EverettFish/holo-card-studio": "畀 Codex 用嘅閃卡 skill，用一句描述或者參考圖，喺 Blender 搭一張可改嘅全息卡，再出 Three.js 網頁。佢係 skill，唔係獨立嘅三維軟件。",
+  "blixvip/NullMotion": "播一條做好嘅動態圖形廣告，同步對住 HyperFrames 草稿，再將分鏡過程匯出成 MP4。佢係對稿播放器，唔係 After Effects，亦唔係由零開始嘅剪片軟件。",
+  "veedstudio/open-edit": "畀 coding agent 用嘅剪片流程，用文字描述就可以加字幕、動態圖形同簡報，再渲染成 MP4。佢係 agent 剪片管線，唔係 After Effects。",
+  "yl4579/StyleTTS2": "用 style diffusion 做文字轉語音嘅研究模型，唔使參考錄音都可以配聲線。佢係語音合成，唔係圖像生成模型，雖然 topic 有 diffusion。",
+  "imbue-bit/AlphaGPT": "用深度強化學習自動搜量化因子嘅研究程式，repo 有數據管道、模型核心同策略管理，可以自己接數據做實驗。實驗結果要自己核。佢係因子研究工具，唔係券商落單程式，亦唔保證賺錢。",
+  "LLMQuant/quant-mind": "畀量化研究用嘅知識抽取同檢索框架，本身係一個 Python 套件，可以用 agent 整同查金融資料，再交畀之後嘅研究流程。佢係資料同檢索工具，唔係回測引擎，亦唔係自動落單程式。",
+  "alsk1992/CloddsBot": "加密貨幣、期貨同預測市場嘅交易終端，可以用 AI agent 掃描市場同落單，支援多個交易所同預測市場。落單前要自己睇風險。佢係交易程式，唔係保證獲利嘅策略，虧損要自己承擔。"
 }
