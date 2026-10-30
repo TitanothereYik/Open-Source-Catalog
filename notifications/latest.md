@@ -1,25 +1,25 @@
 # Open Source Catalog 已更新
 
-- 時間：2026年10月31日 02:38（香港時間）
+- 時間：2026年10月31日 04:34（香港時間）
 - 今次新增：14 個開源項目
-- 目錄總數：572 個開源項目
-- 分類：Gaussian Splatting 52 · World Model 38 · Image to 3D 42 · AI Agent 84 · 圖像 97 · 影片 73 · Motion Graphics / After Effects 31 · VFX / CG / Blender 58 · Stock Trading 61 · Crypto Trading 36
+- 目錄總數：586 個開源項目
+- 分類：Gaussian Splatting 52 · World Model 38 · Image to 3D 42 · AI Agent 87 · 圖像 99 · 影片 75 · Motion Graphics / After Effects 31 · VFX / CG / Blender 61 · Stock Trading 63 · Crypto Trading 38
 - GitHub 請求配額：已用 4000/5000（80.0%，目標 80%）
 - 瀏覽：https://titanothereyik.github.io/Open-Source-Catalog/
 
 ## 新增
 
-- CopilotKit/OpenBot · ★ 8,637 · ai-agent · https://github.com/CopilotKit/OpenBot
-- XiaoDuoYa/codex-with-chatgpt · ★ 7,617 · ai-agent · https://github.com/XiaoDuoYa/codex-with-chatgpt
-- transformerlab/transformerlab-app · ★ 5,199 · image · https://github.com/transformerlab/transformerlab-app
-- philz1337x/clarity-upscaler · ★ 5,160 · image · https://github.com/philz1337x/clarity-upscaler
-- skfolio/skfolio · ★ 2,562 · stock-trading · https://github.com/skfolio/skfolio
-- anandanand84/technicalindicators · ★ 2,452 · stock-trading · https://github.com/anandanand84/technicalindicators
-- vybenetwork/solana-swap-api · ★ 2,154 · crypto-trading · https://github.com/vybenetwork/solana-swap-api
-- Thinklab-SJTU/Bench2Drive · ★ 1,970 · world-model · https://github.com/Thinklab-SJTU/Bench2Drive
-- cranebeaker/coop-anything · ★ 1,628 · ai-agent · https://github.com/cranebeaker/coop-anything
-- ant-research/4DAnyone · ★ 1,452 · video · https://github.com/ant-research/4DAnyone
-- WhiteTowerAI/ohmygame · ★ 1,421 · video · https://github.com/WhiteTowerAI/ohmygame
-- viettranx/3dviz-pro-max · ★ 972 · vfx-cg-blender · https://github.com/viettranx/3dviz-pro-max
-- vincentsch/explainroo · ★ 695 · vfx-cg-blender · https://github.com/vincentsch/explainroo
-- ng-native/ng-native · ★ 601 · vfx-cg-blender · https://github.com/ng-native/ng-native
+- pkuliyi2015/multidiffusion-upscaler-for-automatic1111 · ★ 4,992 · image · https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111
+- Oldcircle/geo-sleuth · ★ 4,604 · ai-agent · https://github.com/Oldcircle/geo-sleuth
+- omnirush-ai/omnirush-gui · ★ 4,458 · ai-agent · https://github.com/omnirush-ai/omnirush-gui
+- ali-vilab/VACE · ★ 4,024 · video · https://github.com/ali-vilab/VACE
+- rorysroes/SGX-Full-OrderBook-Tick-Data-Trading-Strategy · ★ 2,366 · stock-trading · https://github.com/rorysroes/SGX-Full-OrderBook-Tick-Data-Trading-Strategy
+- barter-rs/barter-rs · ★ 2,361 · stock-trading · https://github.com/barter-rs/barter-rs
+- zhuyansen/new-term-radar · ★ 1,981 · ai-agent · https://github.com/zhuyansen/new-term-radar
+- Yvictor/TradingGym · ★ 1,924 · crypto-trading · https://github.com/Yvictor/TradingGym
+- ccxt/go-binance · ★ 1,907 · crypto-trading · https://github.com/ccxt/go-binance
+- nikopueringer/CorridorKey2.0 · ★ 1,904 · vfx-cg-blender · https://github.com/nikopueringer/CorridorKey2.0
+- NikoDemon80/ComfyUI-H3-Motion-Context · ★ 1,325 · video · https://github.com/NikoDemon80/ComfyUI-H3-Motion-Context
+- chipfighter/context-attachment-manager · ★ 613 · image · https://github.com/chipfighter/context-attachment-manager
+- gatewai-dev/framefields · ★ 501 · vfx-cg-blender · https://github.com/gatewai-dev/framefields
+- snuri00/psp-web-recomp · ★ 403 · vfx-cg-blender · https://github.com/snuri00/psp-web-recomp

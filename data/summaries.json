@@ -570,5 +570,19 @@
   "skfolio/skfolio": "建喺 scikit-learn 上嘅投資組合庫，用嚟做配置、因子模型同風險管理，亦可以回測。佢係研究程式庫，唔係券商，亦唔保證賺。授權係 BSD-3-Clause。",
   "anandanand84/technicalindicators": "用 TypeScript 寫、可以喺瀏覽器計嘅技術指標同蠟燭形態。你把股價數據傳入去，佢計數字。佢係指標函式庫，唔係落單軟件，亦唔係一套策略。授權係 MIT。最後更新已有幾年。",
   "vybenetwork/solana-swap-api": "示範點樣用 Vybe 嘅托管交換 API 攞報價，同組未簽名嘅 Solana 交易。要自己申請 API key。佢係示範客戶端，唔係你自己跑嘅路由程式。GitHub 未標授權。",
-  "Thinklab-SJTU/Bench2Drive": "NeurIPS 2024 嘅閉環自動駕駛評測，用世界模型強化學習專家做參考。用嚟比較駕駛模型。佢係基準，唔係你可以遊玩嘅世界。授權係 CC BY-NC-ND，唔可以商用，亦唔可以改作再散佈。"
+  "Thinklab-SJTU/Bench2Drive": "NeurIPS 2024 嘅閉環自動駕駛評測，用世界模型強化學習專家做參考。用嚟比較駕駛模型。佢係基準，唔係你可以遊玩嘅世界。授權係 CC BY-NC-ND，唔可以商用，亦唔可以改作再散佈。",
+  "omnirush-ai/omnirush-gui": "桌面 coding agent，模型由 omnirush.ai 帳戶目錄揀，唔支援你自己嘅供應商 key。技能同本機 MCP 可以加。佢係客戶端，唔係你訓練嘅模型。桌面程式係 MIT，ee 目錄另有授權。",
+  "zhuyansen/new-term-radar": "每日雷達同 agent skill，喺 X、Hugging Face、GitHub 同網站地圖搵新模型同產品個名，再出每日報告。佢係監察工具，唔係新模型。授權係 MIT。",
+  "Oldcircle/geo-sleuth": "agent skill，用街景、衛星、等高同 OpenStreetMap 估一張相喺邊度，同埋點樣收窄。要裝喺 coding agent 先用到。佢係技能，唔係新訓練嘅視覺模型。授權係 MIT。",
+  "gatewai-dev/framefields": "用 WebGPU 做合成、動態圖形同立體嘅程式庫，agent 用程式驅動出片。而家係 beta。佢係渲染庫，唔係 After Effects，亦唔係新影片模型。授權係 Apache-2.0。",
+  "nikopueringer/CorridorKey2.0": "綠幕同藍幕摳像模型，要 NVIDIA GPU，權重約 5GB 另外下載。授權係 CC BY-NC-SA 變體，商業軟件整合要另外睇條款。佢係摳像模型，唔係 Blender 插件。",
+  "snuri00/psp-web-recomp": "把你自己擁有嘅 PSP 遊戲譯成 WebAssembly，喺瀏覽器入面跑。倉庫冇遊戲檔。佢係遊戲重編譯同 WebGL 渲染，唔係 Blender 或特效工具。授權係 MIT。",
+  "chipfighter/context-attachment-manager": "Codex 同 Claude 嘅插件，把對話入面嘅圖抽起，模型需要先再拎返嚟，長對話就唔使塞滿。佢係附件管理，唔係圖像生成模型，亦唔會幫你畫新圖。授權係 MIT。",
+  "NikoDemon80/ComfyUI-H3-Motion-Context": "ComfyUI 節點，把 MiniMax H3 上一段片嘅尾幀同聲音交畀下一段，動作同聲可以接住。要你已有 ComfyUI 同 H3。佢係接片節點，唔係新影片模型。授權係 GPL-3.0。",
+  "pkuliyi2015/multidiffusion-upscaler-for-automatic1111": "Automatic1111 嘅擴充，用分塊擴散喺細顯存畫大圖。建喺現成 Stable Diffusion 上。授權係 CC BY-NC-SA，唔可以拿代碼去賣，你畫出嚟嘅圖唔受呢個限制。",
+  "ali-vilab/VACE": "ICCV 2025 嘅影片生成同編輯研究，可以用文字同條件做片同改片。權重喺 Hugging Face。佢係模型，唔係剪片時間軸。程式授權係 Apache-2.0。",
+  "rorysroes/SGX-Full-OrderBook-Tick-Data-Trading-Strategy": "用機器學習睇高頻訂單簿嘅筆記本，示範一種簡單策略點計盈虧。冇授權檔。佢係研究筆記，唔係實盤程式，結果要你自己再驗。最後更新已有幾年，數據亦唔喺倉庫入面。只供參考。",
+  "barter-rs/barter-rs": "用 Rust 寫嘅交易框架，可以實盤、模擬同回測，策略同風控可以自己插。支援多種市場。佢係框架，唔係一套賺到錢嘅策略，落單前要你自己接交易所。授權係 MIT。延遲要自己量。",
+  "Yvictor/TradingGym": "畀強化學習用嘅交易練習環境，支援逐筆同 K 線，可以訓練同回測。數據要你自己帶。佢係練習場，唔係券商，亦唔會自己落實盤單。授權係 MIT。最後更新已有一段時間。",
+  "ccxt/go-binance": "用 Go 寫嘅 Binance API 客戶端，REST 同 websocket 都有。要你自己嘅帳戶同 key。佢係交易所 SDK，唔係交易策略。授權係 MIT。"
 }
