@@ -1,22 +1,24 @@
 # Open Source Catalog 已更新
 
-- 時間：2026年10月30日 18:36（香港時間）
-- 今次新增：11 個開源項目
-- 目錄總數：519 個開源項目
-- 分類：Gaussian Splatting 52 · World Model 36 · Image to 3D 42 · AI Agent 72 · 圖像 90 · 影片 64 · Motion Graphics / After Effects 29 · VFX / CG / Blender 48 · Stock Trading 55 · Crypto Trading 31
+- 時間：2026年10月30日 20:36（香港時間）
+- 今次新增：13 個開源項目
+- 目錄總數：532 個開源項目
+- 分類：Gaussian Splatting 52 · World Model 36 · Image to 3D 42 · AI Agent 75 · 圖像 92 · 影片 66 · Motion Graphics / After Effects 30 · VFX / CG / Blender 50 · Stock Trading 56 · Crypto Trading 33
 - GitHub 請求配額：已用 4000/5000（80.0%，目標 80%）
 - 瀏覽：https://titanothereyik.github.io/Open-Source-Catalog/
 
 ## 新增
 
-- ChenYilong/CYLTabBarController · ★ 7,055 · motion-graphics · https://github.com/ChenYilong/CYLTabBarController
-- bytedance/LatentSync · ★ 6,219 · image · https://github.com/bytedance/LatentSync
-- kaankiziltug/logo-design-skill · ★ 5,323 · ai-agent · https://github.com/kaankiziltug/logo-design-skill
-- QingYunA/answer-me-with-html · ★ 4,843 · ai-agent · https://github.com/QingYunA/answer-me-with-html
-- hello245m/free-stockdb · ★ 3,082 · stock-trading · https://github.com/hello245m/free-stockdb
-- letianzj/QuantResearch · ★ 3,051 · stock-trading · https://github.com/letianzj/QuantResearch
-- alchaincyf/huashu-motion · ★ 1,911 · ai-agent · https://github.com/alchaincyf/huashu-motion
-- sixtysevenlf/dsh-blender-plugin · ★ 1,471 · vfx-cg-blender · https://github.com/sixtysevenlf/dsh-blender-plugin
-- alexgreensh/anidoodle · ★ 1,175 · vfx-cg-blender · https://github.com/alexgreensh/anidoodle
-- DozenTwelve/Papermorph · ★ 1,023 · video · https://github.com/DozenTwelve/Papermorph
-- HeyChengC/wallstreet-explainer · ★ 417 · video · https://github.com/HeyChengC/wallstreet-explainer
+- op7418/guizang-ppt-skill · ★ 28,970 · image · https://github.com/op7418/guizang-ppt-skill
+- Vincentwei1021/video-shotcraft · ★ 14,990 · ai-agent · https://github.com/Vincentwei1021/video-shotcraft
+- wiltodelta/remove-ai-watermarks · ★ 6,217 · image · https://github.com/wiltodelta/remove-ai-watermarks
+- DLR-RM/BlenderProc · ★ 3,772 · vfx-cg-blender · https://github.com/DLR-RM/BlenderProc
+- marketcalls/openalgo · ★ 2,936 · stock-trading · https://github.com/marketcalls/openalgo
+- brndnmtthws/thetagang · ★ 2,759 · crypto-trading · https://github.com/brndnmtthws/thetagang
+- wquguru/nof0 · ★ 2,755 · crypto-trading · https://github.com/wquguru/nof0
+- eternityspring/reelbench-skills · ★ 1,187 · video · https://github.com/eternityspring/reelbench-skills
+- udhaykumarbala/cleanyourtv-app · ★ 1,139 · ai-agent · https://github.com/udhaykumarbala/cleanyourtv-app
+- daveebbelaar/bama · ★ 851 · ai-agent · https://github.com/daveebbelaar/bama
+- HeyChengC/vibe-knowledge-film · ★ 816 · video · https://github.com/HeyChengC/vibe-knowledge-film
+- howseen-ai/claude-motion-design · ★ 730 · motion-graphics · https://github.com/howseen-ai/claude-motion-design
+- Humpalumps/Ultra-Water · ★ 405 · vfx-cg-blender · https://github.com/Humpalumps/Ultra-Water

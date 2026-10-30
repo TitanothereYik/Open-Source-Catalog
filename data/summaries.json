@@ -517,5 +517,18 @@
   "ChenYilong/CYLTabBarController": "iOS 嘅 TabBar 元件庫，用 Lottie 同 Liquid Glass 做分頁 icon 動畫，亦可以加中間大按鈕同紅點。佢係 App 介面元件，唔係剪片或 After Effects。",
   "bytedance/LatentSync": "字節跳動嘅對口型研究，用擴散模型令畫面嘅嘴跟住聲音郁，適合虛擬人同配音對嘴。權重喺 Hugging Face。佢係口型模型，唔係圖像編輯器，亦唔係一般剪片軟件。",
   "hello245m/free-stockdb": "本地 A 股同 ETF 數據引擎，可以增量同步日 K、分鐘 K，做復權、指標同回測。數據放喺自己部機，亦可以計三十九種指標。佢係數據同研究工具，唔係券商落單程式。",
-  "letianzj/QuantResearch": "量化研究筆記同回測例子，用 Jupyter 做組合優化、機器學習同深度強化學習策略，附有筆記同示範。佢係研究筆記，策略只係示範，唔係即時落單嘅交易系統，例子要自己核。"
+  "letianzj/QuantResearch": "量化研究筆記同回測例子，用 Jupyter 做組合優化、機器學習同深度強化學習策略，附有筆記同示範。佢係研究筆記，策略只係示範，唔係即時落單嘅交易系統，例子要自己核。",
+  "Humpalumps/Ultra-Water": "three.js 嘅即時海洋渲染，用 FFT 做碎浪、泡沫、焦散同浮力，目標係瀏覽器入面高幀率跑。佢係網頁水面，唔係 Blender 流體模擬，公開不足一日，畫面仍會再改。",
+  "Vincentwei1021/video-shotcraft": "畀 Claude Code 同 Codex 用嘅影片 skill，用 Remotion 做可以改嘅產品宣傳片，有鏡頭卡、動態預覽同剪映匯出。佢係 skill，唔係新訓練嘅影片模型。",
+  "udhaykumarbala/cleanyourtv-app": "用 Android 手機清理 Android TV 同 Fire TV 嘅廣告同預裝項目，唔使電腦。分類因為描述有 agent 呢個字，但佢唔係 AI agent，亦話唔會卸載系統。",
+  "daveebbelaar/bama": "畀 agent 用嘅 Mac app skill，用 Swift 同 SwiftUI 由構思做到 Dock，可以參考一個現有 app 再自己重做。唔使開 Xcode 介面。佢係 skill，成品要你自己編譯。",
+  "HeyChengC/vibe-knowledge-film": "抖音知識短片風格嘅 skill，可以拆解參考片、排分鏡、自動配音效再出片。畫風係模仿參考片，唔係新訓練嘅影片模型，樣片亦唔等於你擁有原片。成片要自己再睇一次先。",
+  "eternityspring/reelbench-skills": "畀 Claude Code 同 Codex 用嘅影片 skill，包括鏡頭分析同 ffmpeg 工具。README 亦當學習筆記。佢係 skill，唔係新訓練嘅影片模型。",
+  "howseen-ai/claude-motion-design": "畀 Claude Code 用嘅動態設計 skill，用 HTML、Playwright 同 ffmpeg 由程式出片。唔使 After Effects，亦唔使 Remotion 授權。佢係 skill，唔係剪片軟件。",
+  "op7418/guizang-ppt-skill": "畀 agent 用嘅簡報 skill，用 HTML 做出雜誌或瑞士風格投影片，可以帶圖片提示同社交封面。佢係 skill，唔係 PowerPoint，亦唔係圖像模型。授權係 AGPL。",
+  "wiltodelta/remove-ai-watermarks": "Python 庫、命令列同 agent skill，用嚟清走你自己生成嘅圖同片上嘅可見標記，以及 C2PA、EXIF 呢類來源資料。清走標記唔會將生成圖變成實拍。",
+  "DLR-RM/BlenderProc": "德國宇航中心出嘅 Blender 流程，用程序生成逼真訓練圖，可以控制場景同相機。部機要裝 Blender。輸出係訓練用嘅合成圖，適合偵測同分割嘅訓練集，唔係電影合成軟件。",
+  "marketcalls/openalgo": "開源算法交易平台，可以接券商、圖表同策略，策略可以用 Python 寫，亦有交易介面。平台係一個 Python 服務。佢係下單同研究嘅系統，唔係保證賺錢嘅機械人。授權係 AGPL。",
+  "brndnmtthws/thetagang": "接 Interactive Brokers 嘅期權機械人，用嚟跑 theta 類策略。分類雖然喺加密貨幣，佢實際係股票期權，唔係交易所現貨程式，亦唔保證賺，虧損要自己承擔。",
+  "wquguru/nof0": "重現 NOF1 交易擂台嘅開源項目，用嚟比較唔同 LLM agent 喺 Hyperliquid 嘅交易。擂台結果唔等於實盤。佢係對打環境，唔係一個已被證明獲利嘅策略。"
 }
