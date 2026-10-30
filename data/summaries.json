@@ -543,5 +543,18 @@
   "Fanghua-Yu/SUPIR": "CVPR 2024 嘅相片修復研究，用擴散模型把野外爛相整到更清晰。有論文同網上示範。授權係 SupPixel 自訂條款，商業用途要另外睇條件，唔係一般開源許可。",
   "open-gigaai/giga-brain-0": "機械人用嘅視覺語言動作模型，用世界模型做基礎，目標係浮現出操作能力。而家公開嘅係程式同權重說明。佢係具身模型，唔係俾人遊玩嘅影片世界。權重同程式一齊喺 repo 公開。",
   "exchange-core/exchange-core": "用 Java 寫嘅超快撮合引擎，主題包括加密貨幣、外匯同高頻交易。可以用喺交易所後台。佢係撮合核心，唔係一套交易策略，亦唔保證賺。高頻只係設計目標，延遲要自己量。",
-  "LottieFiles/motion-design-skill": "LottieFiles 出嘅動態設計 skill，把時間、緩動同迪士尼動畫原則寫畀 AI agent 用。佢係原則技能包，唔係 Lottie 播放器，亦唔係 After Effects。"
+  "LottieFiles/motion-design-skill": "LottieFiles 出嘅動態設計 skill，把時間、緩動同迪士尼動畫原則寫畀 AI agent 用。佢係原則技能包，唔係 Lottie 播放器，亦唔係 After Effects。",
+  "wangzan101/Mika": "Android 上嘅私人助理，用一句交代，佢喺後台畫面操作你已裝嘅 App 同網頁。模型要你自己配 API 或者本機服務，佢唔係新訓練嘅模型。而家係公開測試版。授權係 Apache-2.0。",
+  "ccch1mneyyy/dsh-Go": "DeepSeek Harness 嘅非官方 Android 客戶端，手機可以裝 Linux 環境本機跑，亦可以連去你自己電腦上嘅 DSH。模型請求仍然交畀你配置嘅服務商。同 DeepSeek 官方無關。授權係 AGPL-3.0，吉祥物唔喺呢個授權入面。",
+  "genspark-ai/genoffice": "開源辦公室套件，可以開同儲存真正嘅 docx、xlsx、pptx，亦可以改 PDF。內置 agent 改文件，另外有 CLI 同 skill 畀 Claude Code、Codex、Cursor 本地用。要自己帶 API key。唔係新模型。授權係 Apache-2.0。",
+  "5hyuns/maya-workflow-kit-for-blender": "把 Maya 嘅操作習慣搬入 Blender 嘅免費擴充，包括熱盒、標記選單、Channel Box 同屬性編輯器。要裝 Blender 先用到。佢係 Blender 擴充，唔係 Autodesk Maya。授權係 GPL-3.0。",
+  "v-modal/vmodal_sdk_flutter": "畀 Flutter 用嘅影片搜尋 SDK，可以按畫面、語音同字幕搵片段，上傳同索引都經 VModal 嘅服務。要自己申請 API key。佢係客戶端 SDK，唔係你部機跑嘅影片模型。授權係 MIT。",
+  "noahdunnagan/mcopt": "Minecraft Java 版嘅 Fabric 模組，喺 Apple Silicon Mac 用 Metal 自己畫世界。而家仍然係 alpha，要備份存檔。佢係遊戲渲染模組，唔係 Blender 或合成工具。授權係 Apache-2.0。",
+  "Nyankomintsu/world-execute-me-lyric-mv": "用程式逐幀畫出嚟嘅一首歌粉絲歌詞 MV，畫面係對話窗同版畫。倉庫冇歌、冇歌詞，兩樣都要你自己有權先放進去。佢係一條片，唔係 VFX 工具。程式碼授權係 MIT。",
+  "liyupi/ai-promo-video-maker": "畀 Cursor、Claude Code、Codex 用嘅產品宣傳片 skill，用 Remotion 模板同腳本做片。配音可以用 ElevenLabs，冇 key 就用字幕。佢係 skill，唔係新訓練嘅影片模型。授權係 MIT。Remotion 對較大公司要另外買授權。",
+  "shy3130/tick-stock-panel": "自托管嘅 A 股量化工作台，可以用嚟寫策略、監控同回測，亦可以接你自己嘅數據源。作者講明唔當投資軟件，亦冇內置薦股。佢係研究工作台，唔係券商。授權係 MIT，只供研究。",
+  "ATH-MaaS/ComfyUI-Copilot": "ComfyUI 入面嘅智能節點，可以幫你查工作流、除錯同按描述改節點。原廠 API 已經停，要自己填 API key 同位址。佢係助手節點，唔係新圖像模型，亦唔係一份工作流收藏。授權係 MIT。",
+  "man-group/ArcticDB": "用嚟存 Pandas 表格嘅無伺服器資料庫，可以放上 S3 或 LMDB，適合時間序列。研究可以用。正式生產或者做成資料庫服務要另外買授權。佢係資料庫，唔係交易策略。GitHub 未標標準開源許可。",
+  "TNT-Likely/PanWatch": "自托管嘅股票監察，覆蓋 A 股、港股同美股，用現成嘅 TradingAgents 做分析、持倉同提醒，亦有模擬交易。佢係監察台，唔係交易所，亦唔保證賺。授權係 MIT。",
+  "Lumiwealth/lumibot": "Python 交易框架，可以回測、模擬同實盤落單，覆蓋股票、期權、期貨、外匯、加密貨幣同預測市場。策略用你自己嘅模型同券商。佢係框架，唔係一套賺到錢嘅策略。授權係 GPL-3.0。"
 }
