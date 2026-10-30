@@ -506,5 +506,16 @@
   "yl4579/StyleTTS2": "用 style diffusion 做文字轉語音嘅研究模型，唔使參考錄音都可以配聲線。佢係語音合成，唔係圖像生成模型，雖然 topic 有 diffusion。",
   "imbue-bit/AlphaGPT": "用深度強化學習自動搜量化因子嘅研究程式，repo 有數據管道、模型核心同策略管理，可以自己接數據做實驗。實驗結果要自己核。佢係因子研究工具，唔係券商落單程式，亦唔保證賺錢。",
   "LLMQuant/quant-mind": "畀量化研究用嘅知識抽取同檢索框架，本身係一個 Python 套件，可以用 agent 整同查金融資料，再交畀之後嘅研究流程。佢係資料同檢索工具，唔係回測引擎，亦唔係自動落單程式。",
-  "alsk1992/CloddsBot": "加密貨幣、期貨同預測市場嘅交易終端，可以用 AI agent 掃描市場同落單，支援多個交易所同預測市場。落單前要自己睇風險。佢係交易程式，唔係保證獲利嘅策略，虧損要自己承擔。"
+  "alsk1992/CloddsBot": "加密貨幣、期貨同預測市場嘅交易終端，可以用 AI agent 掃描市場同落單，支援多個交易所同預測市場。落單前要自己睇風險。佢係交易程式，唔係保證獲利嘅策略，虧損要自己承擔。",
+  "alchaincyf/huashu-motion": "畀 coding agent 用嘅產品宣傳片 skill，可以作曲，亦可以指住畫面改。片由程式渲染。佢係 skill，唔係 After Effects，亦唔係新訓練嘅影片模型。",
+  "QingYunA/answer-me-with-html": "畀 agent 用嘅 skill，遇到複雜問題就交一頁睇得明嘅 HTML，可以有圖、表同流程，而唔係一長段純文字。佢係回答格式，唔係瀏覽器，亦唔係新訓練嘅模型。",
+  "kaankiziltug/logo-design-skill": "畀 Claude、Codex、Gemini 用嘅標誌設計 skill，有原則、流程、SVG 做法同測試工具，另外附一千四百個標誌參考。佢係 skill，唔係會自己出圖嘅設計軟件。",
+  "DozenTwelve/Papermorph": "把一本書變成有旁白、有動畫、可以互動嘅網頁 skill，agent 跟住內容排畫面，旁白可以用現成語音。佢係 skill，唔係剪片軟件。書本內容要你自己有權用。",
+  "HeyChengC/wallstreet-explainer": "華爾街風格財經短片 skill，負責畫面風格、搵素材、截圖、配音同渲染，數字用簡潔圖表表達。樣片入面嘅實拍同新聞圖係引用。佢係 skill，唔係新訓練嘅影片模型。",
+  "sixtysevenlf/dsh-blender-plugin": "把 DeepSeek Harness 接到 Blender 嘅外掛，agent 可以喺開住嘅 Blender 入面改場景、檢查同匯出，無介面時亦可以無頭跑。部機要裝 Blender，隨包有建模 skill。",
+  "alexgreensh/anidoodle": "用程式畫插畫、循環動畫同有聲短片嘅工具，每一幀同聲效都由程式畫，agent 可以用 skill 叫佢渲染成片。佢唔係 After Effects，亦唔係手繪軟件。",
+  "ChenYilong/CYLTabBarController": "iOS 嘅 TabBar 元件庫，用 Lottie 同 Liquid Glass 做分頁 icon 動畫，亦可以加中間大按鈕同紅點。佢係 App 介面元件，唔係剪片或 After Effects。",
+  "bytedance/LatentSync": "字節跳動嘅對口型研究，用擴散模型令畫面嘅嘴跟住聲音郁，適合虛擬人同配音對嘴。權重喺 Hugging Face。佢係口型模型，唔係圖像編輯器，亦唔係一般剪片軟件。",
+  "hello245m/free-stockdb": "本地 A 股同 ETF 數據引擎，可以增量同步日 K、分鐘 K，做復權、指標同回測。數據放喺自己部機，亦可以計三十九種指標。佢係數據同研究工具，唔係券商落單程式。",
+  "letianzj/QuantResearch": "量化研究筆記同回測例子，用 Jupyter 做組合優化、機器學習同深度強化學習策略，附有筆記同示範。佢係研究筆記，策略只係示範，唔係即時落單嘅交易系統，例子要自己核。"
 }
