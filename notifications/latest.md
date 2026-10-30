@@ -1,24 +1,24 @@
 # Open Source Catalog 已更新
 
-- 時間：2026年10月30日 20:36（香港時間）
+- 時間：2026年10月30日 22:37（香港時間）
 - 今次新增：13 個開源項目
-- 目錄總數：532 個開源項目
-- 分類：Gaussian Splatting 52 · World Model 36 · Image to 3D 42 · AI Agent 75 · 圖像 92 · 影片 66 · Motion Graphics / After Effects 30 · VFX / CG / Blender 50 · Stock Trading 56 · Crypto Trading 33
+- 目錄總數：545 個開源項目
+- 分類：Gaussian Splatting 52 · World Model 37 · Image to 3D 42 · AI Agent 78 · 圖像 94 · 影片 69 · Motion Graphics / After Effects 31 · VFX / CG / Blender 52 · Stock Trading 57 · Crypto Trading 33
 - GitHub 請求配額：已用 4000/5000（80.0%，目標 80%）
 - 瀏覽：https://titanothereyik.github.io/Open-Source-Catalog/
 
 ## 新增
 
-- op7418/guizang-ppt-skill · ★ 28,970 · image · https://github.com/op7418/guizang-ppt-skill
-- Vincentwei1021/video-shotcraft · ★ 14,990 · ai-agent · https://github.com/Vincentwei1021/video-shotcraft
-- wiltodelta/remove-ai-watermarks · ★ 6,217 · image · https://github.com/wiltodelta/remove-ai-watermarks
-- DLR-RM/BlenderProc · ★ 3,772 · vfx-cg-blender · https://github.com/DLR-RM/BlenderProc
-- marketcalls/openalgo · ★ 2,936 · stock-trading · https://github.com/marketcalls/openalgo
-- brndnmtthws/thetagang · ★ 2,759 · crypto-trading · https://github.com/brndnmtthws/thetagang
-- wquguru/nof0 · ★ 2,755 · crypto-trading · https://github.com/wquguru/nof0
-- eternityspring/reelbench-skills · ★ 1,187 · video · https://github.com/eternityspring/reelbench-skills
-- udhaykumarbala/cleanyourtv-app · ★ 1,139 · ai-agent · https://github.com/udhaykumarbala/cleanyourtv-app
-- daveebbelaar/bama · ★ 851 · ai-agent · https://github.com/daveebbelaar/bama
-- HeyChengC/vibe-knowledge-film · ★ 816 · video · https://github.com/HeyChengC/vibe-knowledge-film
-- howseen-ai/claude-motion-design · ★ 730 · motion-graphics · https://github.com/howseen-ai/claude-motion-design
-- Humpalumps/Ultra-Water · ★ 405 · vfx-cg-blender · https://github.com/Humpalumps/Ultra-Water
+- trycompai/crm · ★ 11,771 · ai-agent · https://github.com/trycompai/crm
+- Human-Agent-Society/reef · ★ 7,769 · ai-agent · https://github.com/Human-Agent-Society/reef
+- google/elephant-goldfish-model · ★ 6,453 · ai-agent · https://github.com/google/elephant-goldfish-model
+- Akegarasu/lora-scripts · ★ 6,200 · image · https://github.com/Akegarasu/lora-scripts
+- Fanghua-Yu/SUPIR · ★ 5,691 · image · https://github.com/Fanghua-Yu/SUPIR
+- open-gigaai/giga-brain-0 · ★ 2,667 · world-model · https://github.com/open-gigaai/giga-brain-0
+- exchange-core/exchange-core · ★ 2,660 · stock-trading · https://github.com/exchange-core/exchange-core
+- LottieFiles/motion-design-skill · ★ 2,621 · motion-graphics · https://github.com/LottieFiles/motion-design-skill
+- jd-opensource/JoyAI-Video-Edit · ★ 1,994 · video · https://github.com/jd-opensource/JoyAI-Video-Edit
+- MengTo/kage · ★ 1,764 · vfx-cg-blender · https://github.com/MengTo/kage
+- op7418/guizang-product-video-skill · ★ 887 · video · https://github.com/op7418/guizang-product-video-skill
+- MisakaZentai/world-execute-me-dsh-pv · ★ 672 · vfx-cg-blender · https://github.com/MisakaZentai/world-execute-me-dsh-pv
+- sitor-ai/frametell · ★ 439 · video · https://github.com/sitor-ai/frametell

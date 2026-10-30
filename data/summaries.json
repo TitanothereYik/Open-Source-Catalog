@@ -530,5 +530,18 @@
   "DLR-RM/BlenderProc": "德國宇航中心出嘅 Blender 流程，用程序生成逼真訓練圖，可以控制場景同相機。部機要裝 Blender。輸出係訓練用嘅合成圖，適合偵測同分割嘅訓練集，唔係電影合成軟件。",
   "marketcalls/openalgo": "開源算法交易平台，可以接券商、圖表同策略，策略可以用 Python 寫，亦有交易介面。平台係一個 Python 服務。佢係下單同研究嘅系統，唔係保證賺錢嘅機械人。授權係 AGPL。",
   "brndnmtthws/thetagang": "接 Interactive Brokers 嘅期權機械人，用嚟跑 theta 類策略。分類雖然喺加密貨幣，佢實際係股票期權，唔係交易所現貨程式，亦唔保證賺，虧損要自己承擔。",
-  "wquguru/nof0": "重現 NOF1 交易擂台嘅開源項目，用嚟比較唔同 LLM agent 喺 Hyperliquid 嘅交易。擂台結果唔等於實盤。佢係對打環境，唔係一個已被證明獲利嘅策略。"
+  "wquguru/nof0": "重現 NOF1 交易擂台嘅開源項目，用嚟比較唔同 LLM agent 喺 Hyperliquid 嘅交易。擂台結果唔等於實盤。佢係對打環境，唔係一個已被證明獲利嘅策略。",
+  "google/elephant-goldfish-model": "Google 出嘅軟件設計同審查 skill，個名有 model，實際係畀 Claude Code、Codex 等用嘅技能包。裝落 coding agent 先用到。唔係一個新訓練嘅語言模型。",
+  "trycompai/crm": "畀 AI agent 用嘅開源客戶關係管理，由 agent 先出發去記客戶同跟進，可以記銷售、客戶紀錄同下一步。佢係 CRM 軟件，唔係一個會自己做生意嘅助理。",
+  "Human-Agent-Society/reef": "做會持續自我改進嘅 agent 基建，repo 涵蓋推理、訓練同強化學習，用嚟撐住長期運行嘅 agent。佢係底層設施，唔係一個開箱即用、已經學完嘅助手。仍然係研究基建。",
+  "jd-opensource/JoyAI-Video-Edit": "京東開源嘅即時影片編輯模型，用自回歸擴散做開放式修改，可以跟住文字改片入面嘅內容。權重喺 Hugging Face。佢係編輯模型，唔係剪片時間軸軟件。改完要再睇一次。",
+  "MisakaZentai/world-execute-me-dsh-pv": "用程式渲染嘅一首歌粉絲 PV，畫面係 TUI 同對話窗。程式碼係 MIT，畫作係 CC BY-NC-SA，唔可以當商業素材。歌名只係題材。佢係一條片，唔係 VFX 工具。",
+  "sitor-ai/frametell": "本地優先嘅解說片導演 agent，可以用你自己嘅模型，把點子同素材排成片。成片喺你部機渲染。佢係導演流程，唔係新訓練嘅影片模型。授權係 AGPL。素材要你自己有權用。",
+  "MengTo/kage": "一個京都山寺夜行嘅互動網頁，一共五章，用 Three.js 即時行過場景，再疊上生成畫面。可以喺瀏覽器入面行。佢係一件作品，唔係 Blender 或合成工具。山寺係虛構遊覽。",
+  "op7418/guizang-product-video-skill": "畀 Claude Code 同 Codex 用嘅產品宣傳片 skill，用真實產品元件同程式做更新片，包含分鏡、配樂同渲染。佢係 skill，唔係新訓練嘅影片模型。授權係 AGPL。",
+  "Akegarasu/lora-scripts": "用 kohya-ss 訓練器做 LoRA 同 Dreambooth 嘅腳本同圖形介面，可以微調擴散模型。要自己準備數據集。佢係訓練工具，唔係新模型本身。授權係 AGPL。",
+  "Fanghua-Yu/SUPIR": "CVPR 2024 嘅相片修復研究，用擴散模型把野外爛相整到更清晰。有論文同網上示範。授權係 SupPixel 自訂條款，商業用途要另外睇條件，唔係一般開源許可。",
+  "open-gigaai/giga-brain-0": "機械人用嘅視覺語言動作模型，用世界模型做基礎，目標係浮現出操作能力。而家公開嘅係程式同權重說明。佢係具身模型，唔係俾人遊玩嘅影片世界。權重同程式一齊喺 repo 公開。",
+  "exchange-core/exchange-core": "用 Java 寫嘅超快撮合引擎，主題包括加密貨幣、外匯同高頻交易。可以用喺交易所後台。佢係撮合核心，唔係一套交易策略，亦唔保證賺。高頻只係設計目標，延遲要自己量。",
+  "LottieFiles/motion-design-skill": "LottieFiles 出嘅動態設計 skill，把時間、緩動同迪士尼動畫原則寫畀 AI agent 用。佢係原則技能包，唔係 Lottie 播放器，亦唔係 After Effects。"
 }
