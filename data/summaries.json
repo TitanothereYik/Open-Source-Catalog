@@ -707,5 +707,16 @@
   "chensjtu/GaussianObject": "研究框架，用四張圖重建物件嘅 3D Gaussian，可以唔靠 COLMAP。SIGGRAPH Asia 2024。修復步驟用擴散模型。2024 年 9 月之後少更新。repo 冇附開源授權檔。佢係重建方法，唔係檢視器。",
   "VladimirYugay/Gaussian-SLAM": "研究系統，用 RGB-D 做寫實密集 SLAM，場景以 3D Gaussian 表示。作者喺 RTX 3090 同 A6000 試過。2024 年 7 月之後少更新。佢係 SLAM，唔係新檢視器。授權係 MIT。",
   "MIT-SPARK/VGGT-SLAM": "密集 RGB SLAM，用現成 VGGT 做前向重建。呢個 repo 授權係 BSD-2-Clause。SAM 3 同 Perception Encoder 係可選，授權各自唔同。同目錄嘅 VGGT、VGGT Omega 唔同。佢係 SLAM，唔係新幾何模型。",
-  "alibaba-damo-academy/RynnVLA-002": "研究模型，將動作模型同世界模型放喺一個框架。世界模型按動作預測下一幀。權重喺 Hugging Face。作者話 LIBERO 成功率 97.4%，要你自己量。README 標 Apache-2.0，根目錄冇 LICENSE 檔。"
+  "alibaba-damo-academy/RynnVLA-002": "研究模型，將動作模型同世界模型放喺一個框架。世界模型按動作預測下一幀。權重喺 Hugging Face。作者話 LIBERO 成功率 97.4%，要你自己量。README 標 Apache-2.0，根目錄冇 LICENSE 檔。",
+  "larashero3-dotcom/lieflat-charts": "agent skill，用嚟出互動 HTML 圖表，預設係圖，你明確要求先至出 PPT 或整頁報告。moxt、Claude Code、Codex 等讀到 SKILL.md 嘅 agent 可以用。佢係技能，唔係新模型。授權係 PolyForm Noncommercial，唔可以商用。",
+  "jwuthri-cloud/Tracely-ai": "自托管嘅 agent CI。生產 trace 入嚟會評分，失敗例子凍結成可以重播嘅回歸測試，退步可以擋 pull request。另有技能教 agent 用佢。佢係測試閘，唔係新模型。授權係 MIT。",
+  "amontlabs/lcu": "Codex 電腦操作嘅執行層，拆出嚟畀其他 harness 用。要本機裝住官方 ChatGPT 桌面 app。控制 app 之前要你批准。佢係執行層，唔係新模型。授權係 MIT。",
+  "zenstory-ai/drama-skills": "十一個 agent skill，由點子或原著去到分集劇本、分鏡同圖片影片提示詞。片要用現成模型出。同目錄嘅 shuohao-skills 唔同。佢係技能，唔係影片模型。授權係 MIT。",
+  "goldspanlabs/optopsy": "呢個期權回測同統計庫，內置三十八種策略。你要自己準備行情。回測唔代表賺到錢。另有一個 MCP repo，唔係呢個套件。佢係庫，唔係券商。授權係 AGPL-3.0。",
+  "open-gigaai/giga-world-1": "機械人世界模型嘅訓練同推理代碼，用嚟評估策略。權重喺 Hugging Face 嘅 open-gigaai/Giga-World-1。佢係世界模型，唔係聊天機械人。授權係 Apache-2.0。效果要你自己量。",
+  "manycoretech/aholo-viewer": "高效 3DGS 同 mesh 渲染器，用分塊串流 LOD 睇大型場景。要 Node.js 22.22.1 或更新。附一個整合 skill，但主體係渲染器，唔係訓練器。授權係 MIT。",
+  "iart-ai/motion-skills": "五十六個 agent skill，分成十九個包，教 coding agent 做動態圖形、動畫同短片。你用自己嘅 agent 出片。佢係技能，唔係 After Effects，亦唔係新影片模型。授權係 MIT。",
+  "lizhe00/AnimatableGaussians": "研究代碼，由影片學一個可動畫嘅人體，姿態對應 3D Gaussian。CVPR 2024。清華授權只限非商業研究、教育同藝術，商用要另外申請。2024 年 11 月之後少更新。佢係化身模型，唔係檢視器。",
+  "THU-LYJ-Lab/T3Bench": "文字到三維嘅基準，一共三百條提示，用現成方法出結果再評質量同對齊。2023 年 10 月之後少有更新。repo 冇附開源授權檔。佢係基準，唔係新嘅三維生成模型。",
+  "Pan-Chera/Multi-Agent-CAD": "多 agent 框架，把一句設計說明變成可編輯 CAD，輸出 STEP、STL 或 GLB。組件組裝仲係實驗，落機前要你自己核。要 Python 3.11 或更新。佢係 CAD 生成，唔係相片轉 mesh。授權係 MIT。"
 }
