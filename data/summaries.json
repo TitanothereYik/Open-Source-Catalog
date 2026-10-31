@@ -646,5 +646,14 @@
   "SandAI-org/MAGI-1": "自回歸影片生成模型，有 4.5B 同 24B，另有蒸餾同量化版。權重喺 Hugging Face。24B 要多張 H100。佢係影片模型本身。授權係 Apache-2.0。速度同畫質要你自己量。",
   "FireRedTeam/FireRed-OpenStoryline": "用自然語言指揮嘅剪片 agent，可以計劃、呼叫工具，同把一套剪法存成 skill 再套去新素材。成片要你再睇。佢係剪片 agent，唔係新影片模型。授權係 Apache-2.0。",
   "avhz/RustQuant": "用 Rust 寫嘅量化金融庫，可以做期權定價同相關數學。你自己接行情同決定落唔落單。佢係庫，唔係券商，唔保證賺。授權係 MIT 同 Apache-2.0。滑價要自己量。",
-  "scenario.com/kinetic-film": "Claude skill，用嚟做發佈片。一句 brief 變成一頁網頁，逐格渲染，有真實動態模糊。音樂同音效經 Scenario MCP 生成，要你自己嘅帳戶。佢係技能，唔係 After Effects，亦唔係影片模型。ZIP 冇寫開源授權，字型係 OFL。"
+  "scenario.com/kinetic-film": "Claude skill，用嚟做發佈片。一句 brief 變成一頁網頁，逐格渲染，有真實動態模糊。音樂同音效經 Scenario MCP 生成，要你自己嘅帳戶。佢係技能，唔係 After Effects，亦唔係影片模型。ZIP 冇寫開源授權，字型係 OFL。",
+  "UnderleveledBuilder/awesome-short-drama-skills": "精選短劇 skill 目錄，多數係別人寫嘅 SKILL.md，可以裝去 Claude Code、Codex 等。劇本同分鏡之後，片仍然係 Seedance、可靈、MiniMax 等現成模型出。佢係技能目錄，唔係新影片模型。授權係 CC0-1.0。",
+  "makecindy/cindy": "開箱用嘅 AI agent 客戶端，可以連你部電腦同電話。模型要你自己帶：Claude、Codex 訂閱、API key、本地模型，或者佢哋嘅代管服務。客戶端免費，模型用量另計。佢係殼，唔係新模型。授權係 Apache-2.0。",
+  "shengjidaguai-china/goutoujunshi": "Codex skill，睇成人關係嘅對話，幫你判斷局勢同下一步，涵蓋曖昧、衝突、分手同復合。建議要你自己再睇。佢係技能，唔係輔導員，亦唔係法律意見，更唔係新模型。授權係 MIT。",
+  "VectorSpaceLab/OmniGen": "一個統一圖像生成模型，可以用文字同參考圖做多種編輯。權重喺 Hugging Face。佢係圖像模型本身。授權係 MIT。2025 年底之後少更新，效果要你自己量。",
+  "ali-vilab/AnyDoor": "研究模型，把一件物件零樣本放進另一張圖，物件外形可以保留。有 Gradio 示範。2024 年後少更新。用之前先備份原圖。佢係研究代碼，唔係修圖軟件。授權係 MIT。",
+  "microsoft/ResearchStudio": "微軟嘅研究 skill 包，由一個未定嘅題目行到論文，Reel 再做成互動簡報片。要 Claude Code 或 Codex。佢係技能，唔係新影片模型。授權係 MIT。",
+  "jy0205/Pyramid-Flow": "自回歸影片生成模型，用 flow matching，作者話可以出約 10 秒、768p、24 幀。權重喺 Hugging Face。佢係影片模型本身。授權係 MIT。畫質同速度要你自己量。",
+  "xelatihy/yocto-gl": "幾份好細嘅 C++ 圖形庫，有數學、顏色、幾何、採樣同著色。用嚟寫自己嘅渲染實驗。佢係庫，唔係 Blender，亦唔係開箱渲染器。README 話授權係 MIT。",
+  "xavier150/Blender-For-UnrealEngine-Addons": "Blender 附加組件，可以批量把網格、骨骼、動畫同相機交去 Unreal。要 Blender 2.8 或更新，同 Unreal 4.26 或 5。佢係匯出工具，唔係新渲染器。授權係 GPL-3.0。"
 }
