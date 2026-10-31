@@ -696,5 +696,16 @@
   "Kiri-Innovation/3dgs-render-blender-addon": "Blender 擴充，用嚟匯入、修改同渲染 3D Gaussian。要你自己開住 Blender。部分功能係實驗性，先備份。而家轉做社群維護。佢係擴充，唔係新訓練器。授權係 GPL-2.0。",
   "shobrook/BitVision": "終端機面板，睇 Bitstamp 嘅比特幣圖，亦可以開自動交易。要你自己嘅帳戶，鑰匙留喺本機。作者話仲係 alpha，有 bug。預測唔代表賺到。2022 年 12 月之後少更新。授權係 MIT。",
   "Tencent-Hunyuan/HunyuanWorld-Mirror": "前向三維重建模型，一次過出點雲、深度、相機、法線同 3D Gaussian。ICML 2026。權重喺 Hugging Face。同目錄嘅 HunyuanWorld-1.0、Voyager 唔同。騰訊社區協議：歐盟、英國、南韓唔適用，月活過一百萬要書面批准。",
-  "dendenxu/fast-gaussian-rasterization": "3D Gaussian 渲染器，可以換走 diff-gaussian-rasterization 嘅繪製。作者話有時快 5 到 10 倍，密點雲未必更快，而且未有反向。2025 年 2 月之後少更新。數字要你自己量。佢係渲染器，唔係新訓練器。授權係 MIT。"
+  "dendenxu/fast-gaussian-rasterization": "3D Gaussian 渲染器，可以換走 diff-gaussian-rasterization 嘅繪製。作者話有時快 5 到 10 倍，密點雲未必更快，而且未有反向。2025 年 2 月之後少更新。數字要你自己量。佢係渲染器，唔係新訓練器。授權係 MIT。",
+  "shinshin86/mesh-avatar-studio": "本地工作室，用一張圖做成會眨眼、講嘢、轉頭嘅二維 mesh 頭像。Claude Code 或 Codex 先按指南砌，你再喺編輯器改。要 Node.js 22.17 或更新。佢係編輯器，唔係新模型。授權係 MIT。",
+  "feder-cr/git-ai": "畀 coding agent 用嘅版本控制，獨立實作一個公開設計，同 Anthropic 無關。伺服器唔會呼叫語言模型。底下仍然係普通 Git 倉庫。主體授權係 MIT。佢係版本控制，唔係新模型。",
+  "nateherkai/scroll-craft": "agent skill，用嚟做沉浸式滾動網站。Codex、Claude Code 或者其他識改檔同開瀏覽器嘅 agent 都可以用，亦有 Claude Code 插件。佢係技能，唔係網站產生器，亦唔係新模型。授權係 MIT。",
+  "khscience/OSkhQuant": "A 股回測桌面軟件，唔使開戶，亦唔使裝 QMT。行情由 BaoStock 或 Tushare 落去本機 DuckDB，策略用 Python 寫。只支援 Windows。回測唔代表賺到。授權係 CC BY-NC 4.0，唔可以商用。",
+  "alpacahq/alpaca-py": "Alpaca 官方 Python SDK，用嚟接佢哋嘅行情同交易介面。要你自己嘅帳戶同 key。佢係 SDK，唔係交易策略，亦唔保證賺。授權係 Apache-2.0。",
+  "bitcoinvsalts/node-binance-trader": "Binance 嘅策略同組合框架。README 話原網站已停，項目唔再維護，2024 年 8 月之後少更新。同目錄嘅 node-binance-api 唔同。要你自己嘅帳戶。框架唔代表賺到。授權係 MIT。",
+  "Baseflow/LottieXamarin": "Xamarin 播放器，用 Bodymovin 喺 Android、iOS、Mac 同 tvOS 播 After Effects 匯出嘅 JSON。你要自己出檔。2024 年 4 月之後少更新。佢係播放器，唔係 After Effects。授權係 Apache-2.0。",
+  "chensjtu/GaussianObject": "研究框架，用四張圖重建物件嘅 3D Gaussian，可以唔靠 COLMAP。SIGGRAPH Asia 2024。修復步驟用擴散模型。2024 年 9 月之後少更新。repo 冇附開源授權檔。佢係重建方法，唔係檢視器。",
+  "VladimirYugay/Gaussian-SLAM": "研究系統，用 RGB-D 做寫實密集 SLAM，場景以 3D Gaussian 表示。作者喺 RTX 3090 同 A6000 試過。2024 年 7 月之後少更新。佢係 SLAM，唔係新檢視器。授權係 MIT。",
+  "MIT-SPARK/VGGT-SLAM": "密集 RGB SLAM，用現成 VGGT 做前向重建。呢個 repo 授權係 BSD-2-Clause。SAM 3 同 Perception Encoder 係可選，授權各自唔同。同目錄嘅 VGGT、VGGT Omega 唔同。佢係 SLAM，唔係新幾何模型。",
+  "alibaba-damo-academy/RynnVLA-002": "研究模型，將動作模型同世界模型放喺一個框架。世界模型按動作預測下一幀。權重喺 Hugging Face。作者話 LIBERO 成功率 97.4%，要你自己量。README 標 Apache-2.0，根目錄冇 LICENSE 檔。"
 }
