@@ -645,5 +645,6 @@
   "xlite-dev/lite.ai.toolkit": "C++ 工具箱，用 MNN、ONNX Runtime 同 TensorRT 跑一百幾個現成模型，包括偵測、分割、摳圖、人臉同 Stable Diffusion。權重要另外攞。佢係執行器，唔係新模型。授權係 GPL-3.0。",
   "SandAI-org/MAGI-1": "自回歸影片生成模型，有 4.5B 同 24B，另有蒸餾同量化版。權重喺 Hugging Face。24B 要多張 H100。佢係影片模型本身。授權係 Apache-2.0。速度同畫質要你自己量。",
   "FireRedTeam/FireRed-OpenStoryline": "用自然語言指揮嘅剪片 agent，可以計劃、呼叫工具，同把一套剪法存成 skill 再套去新素材。成片要你再睇。佢係剪片 agent，唔係新影片模型。授權係 Apache-2.0。",
-  "avhz/RustQuant": "用 Rust 寫嘅量化金融庫，可以做期權定價同相關數學。你自己接行情同決定落唔落單。佢係庫，唔係券商，唔保證賺。授權係 MIT 同 Apache-2.0。滑價要自己量。"
+  "avhz/RustQuant": "用 Rust 寫嘅量化金融庫，可以做期權定價同相關數學。你自己接行情同決定落唔落單。佢係庫，唔係券商，唔保證賺。授權係 MIT 同 Apache-2.0。滑價要自己量。",
+  "scenario.com/kinetic-film": "Claude skill，用嚟做發佈片。一句 brief 變成一頁網頁，逐格渲染，有真實動態模糊。音樂同音效經 Scenario MCP 生成，要你自己嘅帳戶。佢係技能，唔係 After Effects，亦唔係影片模型。ZIP 冇寫開源授權，字型係 OFL。"
 }

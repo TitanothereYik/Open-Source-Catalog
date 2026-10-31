@@ -18390,6 +18390,32 @@
       "paper_title": "",
       "paper_url": "",
       "added_at": "2026-10-31T14:32:09+08:00"
+    },
+    {
+      "id": "web:scenario-kinetic-film",
+      "type": "web",
+      "category": "motion-graphics",
+      "name": "Kinetic Film",
+      "full_name": "scenario.com/kinetic-film",
+      "url": "https://www.scenario.com/explorations/kinetic-film/",
+      "homepage": "",
+      "description": "One film, one Claude skill. Launch films written as code and scored with Scenario. Every frame is one web page, rendered with real motion blur.",
+      "summary": "Claude skill，用嚟做發佈片。一句 brief 變成一頁網頁，逐格渲染，有真實動態模糊。音樂同音效經 Scenario MCP 生成，要你自己嘅帳戶。佢係技能，唔係 After Effects，亦唔係影片模型。ZIP 冇寫開源授權，字型係 OFL。",
+      "summary_en": "A Claude skill for launch films. A brief becomes one web page, rendered frame by frame with real motion blur. Music and sound effects come from the Scenario MCP, so you need your own account. It is a skill, not After Effects and not a video model. The ZIP names no open-source license. The fonts are OFL.",
+      "summary_locked": true,
+      "stars": 0,
+      "language": "JavaScript",
+      "license": "",
+      "topics": [
+        "claude-skill",
+        "kinetic-type",
+        "motion-graphics"
+      ],
+      "archived": false,
+      "pushed_at": "2026-09-26",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-10-31T15:53:13+08:00"
     }
   ],
   "papers": [

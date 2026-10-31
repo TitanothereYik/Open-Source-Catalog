@@ -991,7 +991,10 @@ def card_html(project: dict, rank: int, category_href: str = "", category_title:
             " ".join(project.get("topics") or []),
         ]
     ).lower()
-    links = [f'<a href="{esc(project["url"])}">GitHub</a>']
+    if "github.com" in (project.get("url") or ""):
+        links = [f'<a href="{esc(project["url"])}">GitHub</a>']
+    else:
+        links = [f'<a href="{esc(project["url"])}">{bi("頁面", "Page")}</a>']
     if project.get("homepage"):
         links.append(f'<a href="{esc(project["homepage"])}">{bi("主頁", "Home")}</a>')
     if project.get("paper_url"):
@@ -1007,14 +1010,16 @@ def card_html(project: dict, rank: int, category_href: str = "", category_title:
     topic_html = f'<div class="topics">{topics}</div>' if topics else ""
     meta_parts = [esc(bit) for bit in bits]
     label = pushed or "…"
-    meta_parts.append(
-        f'<time class="pushed" datetime="{esc(pushed)}">{bi("最近推送 " + label, "Pushed " + label)}</time>'
-    )
+    if project.get("type") == "github":
+        when = bi("最近推送 " + label, "Pushed " + label)
+    else:
+        when = bi("技能包 " + label, "Skill package " + label)
+    meta_parts.append(f'<time class="pushed" datetime="{esc(pushed)}">{when}</time>')
     return f"""
 <article class="card" id="{esc(project_anchor(project))}" data-repo="{esc(project["full_name"])}" data-search="{esc(search)}">
   <header>
     <h3><span class="rank">{rank:02d}</span><a href="{esc(project["url"])}">{esc(project["name"])}</a></h3>
-    <div class="stars">★ {fmt_stars(project.get("stars") or 0)}</div>
+    <div class="stars">{("★ " + fmt_stars(project.get("stars") or 0)) if project.get("type") == "github" else ""}</div>
   </header>
   <p class="meta">{" · ".join(meta_parts)}</p>
   <p class="summary">{bi(project.get("summary") or "", project.get("summary_en") or project.get("description") or project.get("summary") or "")}</p>
