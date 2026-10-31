@@ -674,5 +674,15 @@
   "NarratorAI-Studio/narrator-ai-cli-skill": "agent skill，教 coding agent 呼叫 narrator-ai-cli 做解說片。要另外裝個 CLI。片要用你有權用嘅素材。佢係技能，唔係新影片模型。授權係 MIT。",
   "Doubiiu/DynamiCrafter": "研究模型，用影片擴散先驗把一張開放領域嘅圖做成短片。ECCV 2024。權重要另外下載。2024 年後少更新。佢係影片模型本身。授權係 Apache-2.0。效果要你自己量。",
   "VAST-AI-Research/TripoSplat": "推理代碼，把一張圖轉成數量可變嘅 3D Gaussian，用嚟做資產。訓練代碼喺另一個 repo。權重要跟倉庫說明下載。佢係高斯濺射模型，唔係剪片軟件。授權係 MIT。",
-  "allenai/objaverse-xl": "下載同處理腳本，對象超過一千萬個立體檔。代碼授權係 Apache-2.0。每個檔嘅使用權要你自己核，唔好當全部都可以商用。下載之前先睇來源。佢係資料集工具，唔係新嘅立體生成模型。"
+  "allenai/objaverse-xl": "下載同處理腳本，對象超過一千萬個立體檔。代碼授權係 Apache-2.0。每個檔嘅使用權要你自己核，唔好當全部都可以商用。下載之前先睇來源。佢係資料集工具，唔係新嘅立體生成模型。",
+  "aicodeking/pandacode": "桌面工作區，用嚟開你已有嘅 coding CLI，例如 Claude Code、Codex、Copilot。佢係工作區，唔係新模型。PandaCode License 係 MIT，商用或公開發佈嘅 fork 要寫明 This is a fork of PandaCode，並連去呢個 repo。",
+  "hujjun/mcd-saver-strategist": "非官方嘅麥當勞中國優惠券組合 skill，係比賽作品，唔係麥當勞官方產品。佢經 MCP 攞菜單同優惠，計最平嘅合法組合，落單前要你確認。作者舉過 ¥47 變 ¥21.9，嗰個係佢當時嘅例子，唔係保證。授權係 MIT。",
+  "rociiu/talorys": "個人 agent，部署喺你自己嘅 Cloudflare 帳戶，一條 npx create-talorys@latest。單人用。傾偈用 Workers AI 嘅 glm-4.7-flash，有每日免費額。即使嗰個模型停咗，任務、筆記同提醒仍然行到。佢係殼，唔係新模型。授權係 MIT。",
+  "TA-Lib/ta-lib": "技術分析庫，有指標同蠟燭形態，可以批量或者串流計。有 C、Rust、Java、C# 等。安裝說明喺 ta-lib.org/install。佢係指標庫，唔係券商，亦唔係自動交易程式。授權係 BSD-3-Clause。",
+  "ivopetiz/algotrading": "加密貨幣嘅演算法交易框架，用 Python 寫。目錄放喺股票分類，佢做嘅係加密貨幣，唔係股票券商。有 quickstart。2026 年 1 月之後少更新。回測同實盤都唔代表賺到錢。授權係 MIT。",
+  "EA31337/EA31337": "外匯自動交易機械人，有 Lite、Advanced 同 Rider，行喺 MT4 同 MT5。目錄放喺加密貨幣分類，佢做嘅係外匯，唔係幣圈策略。2026 年 4 月之後少更新。跑到唔代表賺到。授權係 GPL-3.0。",
+  "chenqingspring/vue-lottie": "Vue 播放器，用 Bodymovin 播 After Effects 匯出嘅動畫。你要自己出 JSON。同作者嘅 react-lottie 係另一個 repo。2022 年 12 月之後少更新。佢係播放器，唔係 After Effects。授權係 MIT。",
+  "nv-tlabs/Difix3D": "研究模型，用單步擴散改善三維重建，包括 Gaussian。CVPR 2025 oral。權重喺 Hugging Face 嘅 nvidia/difix。2025 年 6 月之後少更新。佢係修復模型，唔係新嘅濺射訓練器。授權係 NVIDIA License。效果要你自己量。",
+  "gnzsnz/ib-gateway-docker": "Docker 映像，包住 Interactive Brokers 嘅 Gateway 或者 TWS，再加 IBC。目錄放喺加密貨幣分類，佢係券商閘道，用嚟連你自己嘅 IB 帳戶，唔係交易策略。授權係 MIT。",
+  "fastgs/FastGS": "3D Gaussian 訓練加速。作者話 Deep Blending 可以大約一百秒訓完，比 DashGaussian 快 3.32 倍、比原版快 15.45 倍。數字係作者嘅，要你自己量。預訓練權重喺 Hugging Face。佢係加速器，唔係新檢視器。授權係 MIT。"
 }
