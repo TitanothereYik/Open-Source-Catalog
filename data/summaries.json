@@ -666,5 +666,13 @@
   "taesungp/contrastive-unpaired-translation": "研究代碼，做不成對嘅圖到圖翻譯，作者話訓練比 CycleGAN 快同省記憶體。2023 年後少更新。佢係研究模型，唔係修圖軟件。授權係 BSD 式條款，要保留版權聲明。",
   "ScottfreeLLC/AlphaPy": "用 scikit-learn 等做 AutoML 嘅開源框架，可以用嚟做交易同體育投注實驗。Pro 係另一個套件。佢係框架，唔係券商，唔保證賺。授權係 Apache-2.0。",
   "enzoampil/fastquant": "Python 回測庫，幾行代碼就可以試一個交易策略同做優化。2023 年後少更新。你自己接行情。佢係回測庫，唔係券商，一個回測唔等於賺到。授權係 MIT。滑價要自己量。",
-  "jkbrzt/cointrol": "Bitstamp 嘅比特幣交易機械人，附實時儀表板。儀表板可以只睇單，唔使落單。要你自己嘅帳戶同 key。2023 年後少更新。佢係機械人，唔保證賺。授權係 MIT。"
+  "jkbrzt/cointrol": "Bitstamp 嘅比特幣交易機械人，附實時儀表板。儀表板可以只睇單，唔使落單。要你自己嘅帳戶同 key。2023 年後少更新。佢係機械人，唔保證賺。授權係 MIT。",
+  "nano-muse/nanoMuse": "跨裝置嘅個人 agent，可以喺手機、電腦同瀏覽器做事，關咗 app 都繼續。唔可以撤銷嘅行動會先問你。手機畫面同電腦係佢嘅手。佢係 agent，唔係新模型。授權係 GPL-3.0。",
+  "dmmulroy/anti-slop": "Oxlint 規則，擋走作者覺得證據唔夠嘅 TypeScript 同 JavaScript 寫法。要抄入你個 repo，冇官方 npm 套件。附一個 skill 幫手抄第一次。同目錄另一個 anti-slop 唔同。授權係 MIT。",
+  "tigerless-labs/agent-memory": "agent 嘅長期記憶層，用 Markdown 做來源，本機排序搵返。Claude Code 同 Codex 可以共用。唔使 API key。佢係記憶層，唔係新模型。授權係 MIT。",
+  "simonlin1212/a-stock-data": "A 股數據工具包，可以攞 K 線、逐筆、公告、資金面同可轉債。作者話除 iwencai 外唔使 key。佢係行情庫，唔係券商，報價要你自己核。授權係 Apache-2.0。",
+  "NarratorAI-Studio/narrator-ai-cli-skill": "agent skill，教 coding agent 呼叫 narrator-ai-cli 做解說片。要另外裝個 CLI。片要用你有權用嘅素材。佢係技能，唔係新影片模型。授權係 MIT。",
+  "Doubiiu/DynamiCrafter": "研究模型，用影片擴散先驗把一張開放領域嘅圖做成短片。ECCV 2024。權重要另外下載。2024 年後少更新。佢係影片模型本身。授權係 Apache-2.0。效果要你自己量。",
+  "VAST-AI-Research/TripoSplat": "推理代碼，把一張圖轉成數量可變嘅 3D Gaussian，用嚟做資產。訓練代碼喺另一個 repo。權重要跟倉庫說明下載。佢係高斯濺射模型，唔係剪片軟件。授權係 MIT。",
+  "allenai/objaverse-xl": "下載同處理腳本，對象超過一千萬個立體檔。代碼授權係 Apache-2.0。每個檔嘅使用權要你自己核，唔好當全部都可以商用。下載之前先睇來源。佢係資料集工具，唔係新嘅立體生成模型。"
 }
