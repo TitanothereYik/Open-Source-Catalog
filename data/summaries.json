@@ -718,5 +718,15 @@
   "iart-ai/motion-skills": "五十六個 agent skill，分成十九個包，教 coding agent 做動態圖形、動畫同短片。你用自己嘅 agent 出片。佢係技能，唔係 After Effects，亦唔係新影片模型。授權係 MIT。",
   "lizhe00/AnimatableGaussians": "研究代碼，由影片學一個可動畫嘅人體，姿態對應 3D Gaussian。CVPR 2024。清華授權只限非商業研究、教育同藝術，商用要另外申請。2024 年 11 月之後少更新。佢係化身模型，唔係檢視器。",
   "THU-LYJ-Lab/T3Bench": "文字到三維嘅基準，一共三百條提示，用現成方法出結果再評質量同對齊。2023 年 10 月之後少有更新。repo 冇附開源授權檔。佢係基準，唔係新嘅三維生成模型。",
-  "Pan-Chera/Multi-Agent-CAD": "多 agent 框架，把一句設計說明變成可編輯 CAD，輸出 STEP、STL 或 GLB。組件組裝仲係實驗，落機前要你自己核。要 Python 3.11 或更新。佢係 CAD 生成，唔係相片轉 mesh。授權係 MIT。"
+  "Pan-Chera/Multi-Agent-CAD": "多 agent 框架，把一句設計說明變成可編輯 CAD，輸出 STEP、STL 或 GLB。組件組裝仲係實驗，落機前要你自己核。要 Python 3.11 或更新。佢係 CAD 生成，唔係相片轉 mesh。授權係 MIT。",
+  "microsoft/skill-recorder": "桌面 app，錄低你喺螢幕做嘅一次工序，再用 GitHub Copilot CLI 整理成意圖同步驟。你核准之後先變成 SKILL.md 或者排程自動化。要 Copilot。佢係錄製器，唔係新模型。授權係 MIT。",
+  "JetBrains/thinkrail": "JetBrains 孵化嘅輕量 IDE，包住 pi coding agent。工作用 git worktree 隔開。佢可以記住專案同重用技能，但係 IDE，唔係新模型。授權係 Apache-2.0。",
+  "Jakeschincariol/linkedin-agent-skill": "十一個 Claude skill，幫你起草 LinkedIn 帖文、留言、回覆、檔案評分同每週計劃。未得你同意唔會發佈。humanizer 只係改走模板腔。佢係技能，唔係 LinkedIn，亦唔係新模型。授權係 MIT。",
+  "3DTopia/3DTopia-XL": "研究模型，由一張圖或文字生成帶 PBR 材質嘅三維資產。CVPR 2025 highlight。權重喺 Hugging Face 嘅 FrozenBurning/3DTopia-XL。同目錄嘅 LGM、OpenLRM 唔同。2025 年 7 月之後少更新。授權係 Apache-2.0。",
+  "Bingeljell/image-to-3dlab": "本地流水線，用現成模型把一句提示或一張圖做成已綁骨、有材質嘅遊戲角色。支援 Apple Silicon 同 NVIDIA。每個模型嘅授權要你自己核。佢係流水線，唔係新模型。授權係 Apache-2.0。",
+  "ed-asriyan/lottie-converter": "轉換器，把 Lottie JSON、.lottie 同 Telegram 嘅 TGS 轉成 GIF、PNG、APNG、WEBP 或 WEBM。你要自己出原檔。佢係轉換器，唔係 After Effects。授權係 MIT。",
+  "margelo/react-native-skottie": "React Native 播放器，用 Skia 嘅 Skottie 播 Lottie。要先裝 react-native-skia。作者話低階 Android 快啲，數字要你自己量。2025 年 1 月後少更新。佢係播放器，唔係 After Effects。授權係 MIT。",
+  "maximeraafat/BlenderNeRF": "Blender 擴充，一掣匯出畫面同相機，用嚟做 NeRF 或 Gaussian Splatting 嘅合成數據。要 Blender 4.0 或更新。2024 年 12 月之後少更新。佢係數據工具，唔係訓練器。授權係 MIT。",
+  "markaren/threepp": "C++20 三維庫，API 跟 three.js，有 OpenGL 同 Vulkan 兩條後端，亦有 Python 綁定。目錄放喺 Gaussian Splatting，佢係通用場景庫，唔係濺射訓練器。授權係 MIT。",
+  "AlayaLab/Evoke": "互動世界模型，三步、唔使用 CFG。作者話單張 H200 大約 2.11 秒出 1.5 秒片，WBench 數字係佢報嘅，要你自己量。2026 年 9 月之後少更新。佢係世界模型本身。授權係 Apache-2.0。"
 }
