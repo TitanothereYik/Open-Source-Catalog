@@ -623,5 +623,17 @@
   "EpicGames/BlenderTools": "Epic 出嘅 Blender 附加組件，一鍵把資產由 Blender 送到 Unreal。要兩邊都裝。佢係遊戲流水線工具，唔係新渲染器，亦唔係 Blender 本體。授權係 MIT。",
   "chengzuopeng/stock-sdk": "前端同 Node 用嘅股票行情 SDK，可以攞 A 股、港股、美股同基金報價，亦有 MCP。唔使自己起後端。佢係行情庫，唔係券商，報價要你自己核。授權係 ISC。",
   "basmilius/meteocons": "手繪天氣圖示包，超過 475 個，分四種風格，有 SVG 同 Lottie，可以播動畫。佢係圖示，唔係 After Effects，亦唔係天氣預測模型。授權係 MIT。",
-  "ccxt/node-binance-api": "Node.js 嘅 Binance API 庫，可以查詢同落單。要你自己嘅帳戶同 key。佢係 SDK，唔係交易策略，亦唔保證賺。授權係 MIT。延遲要自己量。"
+  "ccxt/node-binance-api": "Node.js 嘅 Binance API 庫，可以查詢同落單。要你自己嘅帳戶同 key。佢係 SDK，唔係交易策略，亦唔保證賺。授權係 MIT。延遲要自己量。",
+  "nanaism/yomiyasu": "agent skill，把 AI 寫嘅日文改到順口，留低意思、數字同否定，唔會自己加事實。寫唔清就問你，唔會估。只處理日文。佢係技能，唔係新語言模型。程式碼授權係 MIT。",
+  "miqdadbadjuber/anti-slop": "畀 coding agent 用嘅規則同 skill，擋走樣板介面、空泛文字同 AI 味代碼。唔指定顏色、字體定排版，方向仍然係你嘅。佢係技能，唔係新模型。授權係 MIT。",
+  "yjh051108/dsh-routing-suite": "DeepSeek Harness 嘅插件套件，先裝熱載入 injector，再按任務揀推理模式。作者公開咗自己嘅量度，你可以重跑個腳本。佢係插件，唔係新模型。授權係 MIT。",
+  "trustfuture/simon-skills": "兩個影片 skill，一個用 Remotion 做調查長片，一個用手繪白板風講解。畀 coding agent 一句題目就出片。成片要你再睇。佢係技能，唔係新影片模型。授權係 MIT。",
+  "TencentARC/GAE-GeometricAutoEncoder": "騰訊 ARC 嘅研究模型，用一張圖加一句提示，生成帶幾何一致嘅多視角影片。權重喺 Hugging Face。只可以學術用，唔可以商業或正式上線。授權係騰訊自訂條款。",
+  "mcmonkeyprojects/SwarmUI": "而家繼續維護嘅 Stable Diffusion 網頁介面，前身係 StableSwarmUI。你自己接現成模型同 GPU。佢係介面，唔係新圖像模型。授權係 MIT。",
+  "nateraw/stable-diffusion-videos": "用現成 Stable Diffusion checkpoint，喺兩句提示之間插值，做成變形影片。要你自己有模型同 GPU。佢係工具，唔係新影片模型。授權係 Apache-2.0。",
+  "armory3d/armory": "開源 3D 遊戲引擎，以 Blender 附加組件形式裝入，渲染器可以用腳本改，有延遲同前向兩條路徑。要 Blender。佢係引擎，唔係 Blender 本體。授權係 Zlib。",
+  "CGCookie/retopoflow": "Blender 嘅重拓樸工具組，用嚟喺高模上面重新拉乾淨嘅低模網格。要開住 Blender，改之前先備份。佢係附加組件，唔係獨立建模軟件。授權係 GPL-3.0。",
+  "VivekPa/AIAlpha": "用自編碼器降維，再用 LSTM 或隨機森林預測股票回報嘅研究程式。原始行情唔喺 repo。2020 年後少更新。佢係實驗，唔係券商，一個預測唔等於落單。授權係 MIT。",
+  "CyberPunkMetalHead/Binance-News-Sentiment-Bot": "Binance 交易機械人，睇加密新聞標題嘅情緒，正面先落買單。要你自己嘅帳戶同 key。2022 年後少更新。佢係機械人，唔保證賺，延遲要自己量。授權係 MIT。",
+  "rodrigo-brito/ninjabot": "用 Go 寫嘅加密貨幣交易框架，可以為 Binance 現貨同期貨寫策略同回測。要你自己嘅 key 同策略。佢係框架，唔係一套賺到錢嘅策略。授權係 MIT。滑價要自己量。"
 }
