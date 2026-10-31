@@ -611,5 +611,17 @@
   "thu-ml/TurboDiffusion": "影片擴散加速框架，用 SageAttention 等把生成加快，論文話 100 到 200 倍。checkpoint 未定稿，長英文 prompt 先準。佢係加速，唔係新影片模型。授權係 Apache-2.0。",
   "coding-kitties/investing-algorithm-framework": "量化交易框架，可以用嚟寫策略、大規模回測同部署，邊套先上線要你自己判斷。你自己接市場。佢係框架，唔係一套賺到錢嘅策略。授權係 Apache-2.0。滑價要自己量。",
   "jmfernandes/robin_stocks": "用 Python 呼叫 Robinhood、Gemini 同 TD Ameritrade 嘅非官方庫，可以睇報價同落單。要你自己嘅帳戶。佢係 API 庫，唔係券商，亦唔保證賺。授權係 MIT。",
-  "chenqingspring/react-lottie": "React 元件，用 lottie-web 播放由 After Effects 經 Bodymovin 匯出嘅 JSON。你可以控制播放。佢係播放器，唔係 After Effects，亦唔會畫新動畫。授權係 MIT。"
+  "chenqingspring/react-lottie": "React 元件，用 lottie-web 播放由 After Effects 經 Bodymovin 匯出嘅 JSON。你可以控制播放。佢係播放器，唔係 After Effects，亦唔會畫新動畫。授權係 MIT。",
+  "reason-machines/reason-network": "一個 daemon，令你同隊友嘅 coding agent 可以互相發訊息，點對點加密，冇中央伺服器讀到內容。支援 Claude Code、Codex、Cursor 等。佢係通訊層，唔係新模型。授權係 Apache-2.0。",
+  "trailhq/Trail-Code": "畀 Claude Code、Cursor、Codex 一張代碼地圖，記低函數同團隊學過嘅決定，等改碼之前睇到邊度會壞。佢係上下文層，唔係新模型。授權係 MIT。",
+  "s1dashu/ip-as-logo-skill": "agent skill，指導現成圖像模型畫簡化、圓角嘅 IP 吉祥物標誌。要裝喺 coding agent，圖仍然係你嘅模型畫。佢係技能，唔係新圖像模型。授權係 MIT。",
+  "kajisho5/ffmpeg-skill": "畀 coding agent 用嘅本地剪片 skill，用 FFmpeg 做切割、字幕、響度同平台匯出。冇雲、唔使 API key。佢係技能，唔係新影片模型。授權係 MIT。",
+  "NomaDamas/CozyClay": "瀏覽器入面嘅預覽軟件，可以擺場景、擺角色同運鏡，再把同一鏡頭交畀你已有嘅 AI 影片模型。佢係預覽，唔係影片模型本身。要你自己有模型。授權係 AGPL-3.0。",
+  "pireel/pireel": "開源影片編輯器，可以喺畫布同時間軸改，亦可以由 AI agent 經 MCP 驅動。成片要你再睇一次先出。佢係剪片軟件，唔係新影片模型。授權係 AGPL-3.0。",
+  "shanliuling/dsh-image-gen": "DeepSeek Harness 嘅圖像工作室插件，可以喺對話入面生圖、改圖同對比，亦可以接 ComfyUI 同其他現成模型。內置提示詞庫。佢係插件，唔係新圖像模型。授權係 Apache-2.0。",
+  "hlorus/CAD_Sketcher": "Blender 嘅約束素描擴充，用相切、距離等條件畫精確二維形。而家仍然係實驗，用之前要備份。要 Blender 5.0。佢係擴充，唔係獨立 CAD 軟件。授權係 GPL-3.0。",
+  "EpicGames/BlenderTools": "Epic 出嘅 Blender 附加組件，一鍵把資產由 Blender 送到 Unreal。要兩邊都裝。佢係遊戲流水線工具，唔係新渲染器，亦唔係 Blender 本體。授權係 MIT。",
+  "chengzuopeng/stock-sdk": "前端同 Node 用嘅股票行情 SDK，可以攞 A 股、港股、美股同基金報價，亦有 MCP。唔使自己起後端。佢係行情庫，唔係券商，報價要你自己核。授權係 ISC。",
+  "basmilius/meteocons": "手繪天氣圖示包，超過 475 個，分四種風格，有 SVG 同 Lottie，可以播動畫。佢係圖示，唔係 After Effects，亦唔係天氣預測模型。授權係 MIT。",
+  "ccxt/node-binance-api": "Node.js 嘅 Binance API 庫，可以查詢同落單。要你自己嘅帳戶同 key。佢係 SDK，唔係交易策略，亦唔保證賺。授權係 MIT。延遲要自己量。"
 }
