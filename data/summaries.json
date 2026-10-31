@@ -597,5 +597,19 @@
   "OpenGVLab/DragGAN": "非官方重現嘅 DragGAN，用拖點喺 GAN 圖上改姿勢同形狀。要自己跑，模型權重要另外準備。GitHub 未標授權。佢係編輯示範，唔係新訓練嘅基礎模型。最後更新已有幾年。",
   "thu-ml/SageAttention": "量化 attention 嘅 CUDA 程式，推理可以快過 FlashAttention，語言、圖像同影片模型都可以插。佢係加速核，唔係影片模型，亦唔改模型指標。授權係 Apache-2.0。",
   "achillesrasquinha/bulbea": "用深度學習做股票預測同建模嘅 Python 庫，輸入歷史價。最後更新已有幾年，介面可能過時。佢係預測程式庫，唔係券商，亦唔保證準。授權係 Apache-2.0。只供研究。",
-  "asavinov/intelligent-trading-bot": "用機器學習同特徵工程出信號，再自動做加密貨幣交易嘅實驗程式。要你自己接數據同交易所。佢係實驗，唔保證賺，回測結果要你自己再驗。授權係 MIT。一個訊號唔等於落單。"
+  "asavinov/intelligent-trading-bot": "用機器學習同特徵工程出信號，再自動做加密貨幣交易嘅實驗程式。要你自己接數據同交易所。佢係實驗，唔保證賺，回測結果要你自己再驗。授權係 MIT。一個訊號唔等於落單。",
+  "feitangyuan/onetake": "Claude agent skill，做一鏡到底嘅產品片，每一格由上一格長出嚟，用 oracle 量連續性。佢係技能，唔係新影片模型。授權係 PolyForm Noncommercial，只可以非商業用。",
+  "TencentCloud/Octop": "騰訊雲出嘅自托管助理，可以多用戶、多 agent，檔案留喺你部機。對話模型要你自己接，佢唔會附送一個新聊天模型。本機下載嘅只係嵌入模型。授權係 MIT。而家係助理殼。",
+  "Jakeschincariol/founder-skill": "11 個 Claude skill，開業前試吓董事會、市場、定價同買家面板。唔使 API key。個董事會只係提示框架，唔係真人。佢係技能包，唔保證賺。授權係 MIT。",
+  "bangtutorial/bang-motion": "瀏覽器動態圖形 skill，用一份 index.html 做片頭、宣傳同動態字。畀 Claude Code、Codex、Cursor 用。佢係技能，唔係 After Effects，亦唔係影片模型。授權係 MIT。",
+  "mfranzon/print3d": "畀 coding agent 用嘅 3D 打印 skill，可以由文字或相片做到 Bambu Lab 切片專案。只對 X2D 或 P2S、0.4mm 噴嘴。佢係技能，唔係新訓練嘅立體模型。授權係 MIT。",
+  "AlibabaResearch/SparkDiffusion": "加速 DiT 影片生成嘅框架，作者聲稱推理可以快 265 倍，用稀疏、蒸餾同量化。權重喺 Hugging Face。佢係加速，唔係新影片模型，速度要你自己量。授權係 Apache-2.0。",
+  "arjun988/blender-skills": "94 個 Blender skill，畀 Cursor、Claude Code、Codex 用，經 MCP 由粗模做到匯出。要開住 Blender。同另一個 blender-skills 唔同作者。佢係技能包。授權係 MIT。",
+  "anteloc/ldraw-nova": "用 agent 砌 LEGO 嘅工具，輸出可改嘅 LDraw 檔。要你自己裝零件庫同 LeoCAD。生成用現成 coding agent。佢係工具，唔係新模型。授權係 AGPL-3.0。",
+  "hao-ai-lab/FastVideo": "影片生成嘅推理同後訓練框架，有由 MiniMax H3 蒸餾出嚟嘅快版本。要 GPU。佢係框架，唔係剪片軟件，亦唔係圖像編輯器。授權係 Apache-2.0。速度要你自己量。",
+  "yangjian102621/geekai": "自托管嘅創作後台，接住 ChatGPT、Midjourney、Stable Diffusion 等現成服務做對話、畫圖同片。要你自己嘅帳戶。佢係介面，唔係新模型。授權係 Apache-2.0。",
+  "thu-ml/TurboDiffusion": "影片擴散加速框架，用 SageAttention 等把生成加快，論文話 100 到 200 倍。checkpoint 未定稿，長英文 prompt 先準。佢係加速，唔係新影片模型。授權係 Apache-2.0。",
+  "coding-kitties/investing-algorithm-framework": "量化交易框架，可以用嚟寫策略、大規模回測同部署，邊套先上線要你自己判斷。你自己接市場。佢係框架，唔係一套賺到錢嘅策略。授權係 Apache-2.0。滑價要自己量。",
+  "jmfernandes/robin_stocks": "用 Python 呼叫 Robinhood、Gemini 同 TD Ameritrade 嘅非官方庫，可以睇報價同落單。要你自己嘅帳戶。佢係 API 庫，唔係券商，亦唔保證賺。授權係 MIT。",
+  "chenqingspring/react-lottie": "React 元件，用 lottie-web 播放由 After Effects 經 Bodymovin 匯出嘅 JSON。你可以控制播放。佢係播放器，唔係 After Effects，亦唔會畫新動畫。授權係 MIT。"
 }
