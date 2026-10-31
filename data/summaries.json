@@ -684,5 +684,17 @@
   "chenqingspring/vue-lottie": "Vue 播放器，用 Bodymovin 播 After Effects 匯出嘅動畫。你要自己出 JSON。同作者嘅 react-lottie 係另一個 repo。2022 年 12 月之後少更新。佢係播放器，唔係 After Effects。授權係 MIT。",
   "nv-tlabs/Difix3D": "研究模型，用單步擴散改善三維重建，包括 Gaussian。CVPR 2025 oral。權重喺 Hugging Face 嘅 nvidia/difix。2025 年 6 月之後少更新。佢係修復模型，唔係新嘅濺射訓練器。授權係 NVIDIA License。效果要你自己量。",
   "gnzsnz/ib-gateway-docker": "Docker 映像，包住 Interactive Brokers 嘅 Gateway 或者 TWS，再加 IBC。目錄放喺加密貨幣分類，佢係券商閘道，用嚟連你自己嘅 IB 帳戶，唔係交易策略。授權係 MIT。",
-  "fastgs/FastGS": "3D Gaussian 訓練加速。作者話 Deep Blending 可以大約一百秒訓完，比 DashGaussian 快 3.32 倍、比原版快 15.45 倍。數字係作者嘅，要你自己量。預訓練權重喺 Hugging Face。佢係加速器，唔係新檢視器。授權係 MIT。"
+  "fastgs/FastGS": "3D Gaussian 訓練加速。作者話 Deep Blending 可以大約一百秒訓完，比 DashGaussian 快 3.32 倍、比原版快 15.45 倍。數字係作者嘅，要你自己量。預訓練權重喺 Hugging Face。佢係加速器，唔係新檢視器。授權係 MIT。",
+  "elie222/rakazo": "自托管嘅常駐 agent，有網頁、桌面同手機版。模型同電腦你自己揀，亦可以全本地跑。而家係 beta。佢係 agent，唔係新模型。授權係 Apache-2.0。",
+  "eternityspring/shuohao-skills": "七個 agent skill，用嚟做短劇前期：角色、大綱、美術設定、劇本同分鏡。任何讀到 SKILL.md 嘅 agent 都可以用，Claude Code 同 Codex 只係例子。片要另用現成工具出。佢係技能，唔係影片模型。授權係 Apache-2.0。",
+  "ZJU-REAL/Easel": "社媒內容工作台，建喺 OpenClaw 上面。可以搵熱點、寫稿，再按你需要發去小紅書、抖音、知乎、B 站。帳戶係你自己嘅。佢係 agent，唔係新模型。授權係 Apache-2.0。",
+  "drowzeys/Imagination-Studio-by-keys-Wasserman": "本地電影工作室，喺你部 Mac 或者 NVIDIA 機度，用現成模型出圖同有聲影片。核心安裝大約要 125 GB。佢係工作室，唔係新模型。授權係 Apache-2.0。效果要你自己量。",
+  "deepentropy/tvscreener": "非官方 Python 庫，用嚟向 TradingView 篩選器攞表格。同 TradingView 無關，用咗要守佢哋條款。目錄放喺股票，佢亦涵蓋加密貨幣、外匯同期貨。佢係數據客戶端，唔係券商。授權係 Apache-2.0。",
+  "koreainvestment/open-trading-api": "韓國投資證券嘅官方樣本代碼，用嚟接佢哋嘅 Open API。要你自己嘅帳戶。有策略設計同回測，回測唔代表賺到。GitHub 冇標 SPDX 授權。目錄放喺股票分類。",
+  "manu354/cryptocurrency-arbitrage": "呢個公開版只係加密貨幣價差計算機，覆蓋好多個市場。作者話交易機械人留喺私人代碼，2022 年 5 月之後少有更新。睇到價差唔代表賺到錢。授權係 GPL-3.0。",
+  "useAnimations/react-useanimations": "React 圖示元件，大約三百個會郁嘅圖示，播放器內置，亦可以播你自己嘅 Lottie。你要自己放入介面。佢係圖示庫，唔係 After Effects。授權係 MIT。",
+  "Kiri-Innovation/3dgs-render-blender-addon": "Blender 擴充，用嚟匯入、修改同渲染 3D Gaussian。要你自己開住 Blender。部分功能係實驗性，先備份。而家轉做社群維護。佢係擴充，唔係新訓練器。授權係 GPL-2.0。",
+  "shobrook/BitVision": "終端機面板，睇 Bitstamp 嘅比特幣圖，亦可以開自動交易。要你自己嘅帳戶，鑰匙留喺本機。作者話仲係 alpha，有 bug。預測唔代表賺到。2022 年 12 月之後少更新。授權係 MIT。",
+  "Tencent-Hunyuan/HunyuanWorld-Mirror": "前向三維重建模型，一次過出點雲、深度、相機、法線同 3D Gaussian。ICML 2026。權重喺 Hugging Face。同目錄嘅 HunyuanWorld-1.0、Voyager 唔同。騰訊社區協議：歐盟、英國、南韓唔適用，月活過一百萬要書面批准。",
+  "dendenxu/fast-gaussian-rasterization": "3D Gaussian 渲染器，可以換走 diff-gaussian-rasterization 嘅繪製。作者話有時快 5 到 10 倍，密點雲未必更快，而且未有反向。2025 年 2 月之後少更新。數字要你自己量。佢係渲染器，唔係新訓練器。授權係 MIT。"
 }
