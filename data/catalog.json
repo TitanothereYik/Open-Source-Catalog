@@ -1,6 +1,6 @@
 {
   "title": "Open Source Catalog",
-  "updated_at": "2026-10-31T12:32:04+08:00",
+  "updated_at": "2026-10-31T14:32:09+08:00",
   "base_url": "https://titanothereyik.github.io/Open-Source-Catalog/",
   "projects": [
     {
@@ -14,7 +14,7 @@
       "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
       "summary": "開放嘅 AI agent 平台，用嚟由一個目標自動拆解任務。佢可以自己揀工具、跑步驟同整理結果，等你專注喺想完成嘅事，而唔使由零砌晒成條工具鏈。你畀一個目標就得，執行過程可以自己托管。",
       "summary_locked": true,
-      "stars": 187840,
+      "stars": 187839,
       "language": "Python",
       "license": "",
       "topics": [
@@ -45,7 +45,7 @@
       "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
       "summary": "用嚟搭建 agent 工作流同 RAG 應用嘅平台。你可以接多種模型、知識庫同工具，用視覺化流程編排，然後放喺雲端或者自己架，做成可以對話同執行任務嘅應用。做好嘅應用可以俾其他人用對話介面直接開。",
       "summary_locked": true,
-      "stars": 160041,
+      "stars": 160048,
       "language": "Python",
       "license": "",
       "topics": [
@@ -76,7 +76,7 @@
       "description": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
       "summary": "用視覺化流程搭建同部署 AI agent 同工作流。每個節點可以係模型、提示詞、工具或者資料來源，拉線就組成一條流程，方便試完即刻運行。流程儲低之後可以再改節點，唔使推倒重來。",
       "summary_locked": true,
-      "stars": 156175,
+      "stars": 156179,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -105,7 +105,7 @@
       "description": "The agent engineering platform.",
       "summary": "開發 agent 嘅工程平台，將模型、工具、記憶同流程砌成可重用嘅應用。適合想用程式控制每一步、而唔係只靠一個大提示詞嘅人，去接自己嘅數據同系統。適合要接資料庫、API 同自己內部系統嘅工程師。",
       "summary_locked": true,
-      "stars": 148748,
+      "stars": 148750,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -136,7 +136,7 @@
       "description": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.",
       "summary": "畀 AI agent 操控瀏覽器嘅 Python 庫。佢可以自己打開網頁、撳掣、填表同拎資料，將睇網頁變成 agent 可以完成嘅動作，而唔使你逐步寫選擇器。登入後台、跨頁搬資料呢類步驟可以交俾佢試。",
       "summary_locked": true,
-      "stars": 119608,
+      "stars": 119616,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -167,7 +167,7 @@
       "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
       "summary": "將 Gemini 帶入終端機嘅開源 agent。你可以喺命令列交代開發工作，由佢讀專案、建議改動同執行指令，唔使離開而家用開嘅終端環境。改完可以留喺原本個 repo，唔使轉去另一個編輯器。",
       "summary_locked": true,
-      "stars": 108639,
+      "stars": 108641,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "topics": [
@@ -197,7 +197,7 @@
       "description": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
       "summary": "結合檢索增強生成同 agent 嘅開源引擎。佢負責將文件切段、建立索引，再喺回答時拎返有出處嘅上下文，令大模型唔使單靠自己記憶作答。答錯時可以對返被引用嘅段落，而唔係只睇最後一句。",
       "summary_locked": true,
-      "stars": 93228,
+      "stars": 93230,
       "language": "Go",
       "license": "Apache-2.0",
       "topics": [
@@ -228,7 +228,7 @@
       "description": "🙌 OpenHands: AI-Driven Development",
       "summary": "用 AI 做軟件開發嘅 agent。你可以交一個開發任務俾佢，佢會自己改程式、跑指令、睇測試結果，再按失敗繼續修，而唔係只吐一段建議程式碼。測試失敗會留喺同一輪，等佢繼續改到過到為止。",
       "summary_locked": true,
-      "stars": 92300,
+      "stars": 92308,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -259,7 +259,7 @@
       "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
       "summary": "長時程 agent 框架，可以做研究、寫程式同創作。複雜任務會拆開，交俾沙盒、記憶同子 agent 各自處理，避免一個對話要由頭記晒所有步驟。研究、寫程式同創作可以拆給唔同子任務一齊跑。",
       "summary_locked": true,
-      "stars": 84742,
+      "stars": 84744,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -290,7 +290,7 @@
       "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
       "summary": "一個 agent harness，用嚟協調多個 agent、自動工作流同帶記憶嘅對話系統。重點係將角色、工具同狀態放喺同一個執行環境，方便一齊完成較長嘅任務。狀態唔會因為開新對話就消失，較長工作流先用得着。",
       "summary_locked": true,
-      "stars": 80321,
+      "stars": 80330,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -321,7 +321,7 @@
       "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
       "summary": "多 agent 框架，將產品、設計同工程角色編成一個軟件團隊。你用自然語言講需求，佢哋會按職位分工，產出設計同程式，而唔係由單一聊天機器人一次過做晒。產出會按職位分檔，方便你只審設計或者只審程式。",
       "summary_locked": true,
-      "stars": 71097,
+      "stars": 71099,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -349,7 +349,7 @@
       "description": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant.",
       "summary": "可以獨立寫程式嘅 coding agent，有 IDE 擴充、SDK 同命令列幾種用法。佢可以讀專案、改檔案同跑指令，適合想喺編輯器入面直接交辦開發工作嘅人。同一套指示可以喺編輯器或命令列重用。",
       "summary_locked": true,
-      "stars": 71081,
+      "stars": 71083,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "topics": [],
@@ -371,7 +371,7 @@
       "description": "A coding agent for open models like Kimi K3 and GLM 5.3",
       "summary": "面向開源模型嘅 coding agent，可以喺本機寫程式同執行指令。你用自然語言講想做嘅事，佢就喺你部機產生程式並運行，檔案同環境都留喺本地。生成嘅程式會喺本機運行，結果檔留喺你部電腦。",
       "summary_locked": true,
-      "stars": 68747,
+      "stars": 68749,
       "language": "Rust",
       "license": "Apache-2.0",
       "topics": [
@@ -401,7 +401,7 @@
       "description": "The Memory Layer for AI Agents - Drop-in memory infrastructure for AI agents and apps. Context that persists. Built for production.",
       "summary": "畀 AI agent 用嘅記憶層。對話入面值得記住嘅事實會被抽出並保存，之後新對話可以再搵返，令 agent 唔使每次都當你係第一次見面。新會話開始時可以搵返舊事實，唔使用戶重講一次。",
       "summary_locked": true,
-      "stars": 68124,
+      "stars": 68129,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -432,7 +432,7 @@
       "description": "Stop renting your intelligence. Own it with AnythingLLM. Everything you need for a powerful local-first agent experience",
       "summary": "可以自託管嘅本地優先工作台。文件、對話同 agent 都放喺自己部機或者自己嘅伺服器，適合想用私有資料做問答，又唔想將文件交出去嘅人。私有文件可以只留喺自己伺服器再做問答。",
       "summary_locked": true,
-      "stars": 67768,
+      "stars": 67774,
       "language": "JavaScript",
       "license": "MIT",
       "topics": [
@@ -494,7 +494,7 @@
       "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.",
       "summary": "將唔同角色嘅自主 agent 組成團隊，一齊完成比較複雜嘅任務。每個成員有自己嘅目標同工具，由流程決定邊個先做、邊個接住做，而唔係單人包辦。你要改嘅係角色分工，而唔係一整段越寫越長嘅提示。",
       "summary_locked": true,
-      "stars": 60320,
+      "stars": 60321,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -522,7 +522,7 @@
       "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
       "summary": "可擴展嘅 AI agent，唔止建議程式碼，仲可以安裝、執行、修改同測試。佢喺本機按你嘅指示操作開發環境，適合想有一個可以真係動手嘅終端助手。安裝依賴同跑測試都係佢自己做，唔止係出 diff。",
       "summary_locked": true,
-      "stars": 55990,
+      "stars": 55995,
       "language": "Rust",
       "license": "Apache-2.0",
       "topics": [
@@ -580,7 +580,7 @@
       "description": "Your AI workspace for models, agents, and productivity.",
       "summary": "桌面 AI 工作台，將聊天、自主 agent 同大量助手放喺同一個程式。你可以接唔同模型供應商，用本機介面管理對話、工具同常用工作流。換模型供應商時，對話同助手清單仍然留喺本機。",
       "summary_locked": true,
-      "stars": 53110,
+      "stars": 53112,
       "language": "TypeScript",
       "license": "AGPL-3.0",
       "topics": [
@@ -609,7 +609,7 @@
       "description": "LlamaIndex is the document processing platform for AI",
       "summary": "文件處理同檢索平台，用嚟將資料接駁到可以查詢同採取行動嘅 AI 應用。佢負責讀入文件、做索引同檢索，再交俾模型回答或者交俾 agent 繼續執行。先處理文件，再決定係問答定交俾 agent 行動。",
       "summary_locked": true,
-      "stars": 52753,
+      "stars": 52754,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -640,7 +640,7 @@
       "description": "Your lightweight open-source personal agent.",
       "summary": "輕量、可自託管嘅個人 agent 框架。佢帶網頁介面、工具、記憶同多 agent 工作流，適合想喺自己部機跑一個小型助手，而唔使先部署一整套平台。想先有一個細規模助手，唔使一開始就部署大平台。",
       "summary_locked": true,
-      "stars": 49691,
+      "stars": 49694,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -671,7 +671,7 @@
       "description": "Open-source personal AI assistant & Agent Harness. Plans tasks, runs tools and skills, self-evolves with memory and knowledge. Multi-agent, multi-model, multi-channel. Lightweight, extensible, one-line install.",
       "summary": "開源個人 AI 助手，可以計劃任務、使用工具同技能。佢會將對話同知識記住，之後嘅任務可以引用之前學到嘅嘢，而唔係每次都由空白上下文開始。技能同知識會累積，重複交代同一件事會少啲。",
       "summary_locked": true,
-      "stars": 47704,
+      "stars": 47706,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -702,7 +702,7 @@
       "description": "Build resilient agents.",
       "summary": "用圖結構編排可靠嘅 agent 流程。節點同邊可以表達分支、循環同人工確認，適合步驟會返轉頭、或者要跑好耐先完成嘅任務，而唔係一條直線呼叫。要人撳確認、或者失敗後返轉頭再試，都可以畫成圖。",
       "summary_locked": true,
-      "stars": 44193,
+      "stars": 44198,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -733,7 +733,7 @@
       "description": "The self-driving agent platform",
       "summary": "一個可以自我改進嘅 agent 平台，用嚟建立同運行 AI agent。你可以定義工具同知識，讓 agent 喺執行之後累積經驗，下一次處理類似工作時少走彎路。同類工作做完一次，下次可以沿用之前嘅做法。",
       "summary_locked": true,
-      "stars": 42986,
+      "stars": 42991,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -761,7 +761,7 @@
       "description": "微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。",
       "summary": "多 agent 輿情分析助手，由零實現。幾個角色會分工搜集公眾討論、整理時間線同還原事件，幫你判斷一個話題點樣發酵，而唔係只交回一堆連結。適合追一單公眾事件點樣發酵，而唔係寫一般聊天機械人。",
       "summary_locked": true,
-      "stars": 42556,
+      "stars": 42555,
       "language": "Python",
       "license": "GPL-2.0",
       "topics": [
@@ -792,7 +792,7 @@
       "description": "DSPy: The framework for programming—not prompting—language models",
       "summary": "用程式而唔係手寫提示去組合語言模型。你將任務拆成一個個模組，再由框架優化每一步嘅提示，適合想系統化調教流程、而唔係逐句試 prompt 嘅人。改任務時改模組，而唔係每次手動試一句新提示。",
       "summary_locked": true,
-      "stars": 38860,
+      "stars": 38861,
       "language": "Python",
       "license": "MIT",
       "topics": [],
@@ -842,7 +842,7 @@
       "description": "ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration",
       "summary": "用多個語言模型 agent 扮演開發團隊，協作完成軟件設計同實作。產品、程式同測試等角色會輪流交檔，將一句需求推進到可以睇嘅程式，而唔係一次過生成。一句需求會行完整個小團隊，先至見到可讀嘅程式。",
       "summary_locked": true,
-      "stars": 34628,
+      "stars": 34629,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [],
@@ -894,7 +894,7 @@
       "description": "An autonomous agent that conducts deep research on any data using any LLM providers",
       "summary": "自主研究 agent，可以就一個題目搜集資料並寫成有來源嘅研究報告。佢會自己計劃要查咩、讀取結果再綜合，而唔係只根據你貼上嚟嘅幾段文字作答。你交題目就得，唔使先自己搵好十篇文再貼上去。",
       "summary_locked": true,
-      "stars": 30390,
+      "stars": 30392,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -947,7 +947,7 @@
       "description": "Mastra is the modern TypeScript framework for AI-powered applications and agents.",
       "summary": "用 TypeScript 建立 AI 應用同 agent 嘅框架。工作流、工具同模型呼叫都用程式組織，方便放進現有嘅網頁或服務端專案，而唔使另起一套 Python 服務。已經用 TypeScript 嘅服務可以直駁，唔使另開 Python。",
       "summary_locked": true,
-      "stars": 29224,
+      "stars": 29225,
       "language": "TypeScript",
       "license": "",
       "topics": [
@@ -1006,7 +1006,7 @@
       "description": "Open-source AI orchestration framework for building context-engineered, production-ready LLM applications. Design modular pipelines and agent workflows with explicit control over retrieval, routing, memory, and generation. Built for scalable agents, RAG, multimodal applications, semantic search, and conversational systems.",
       "summary": "用模組化流程搭建可上線嘅語言模型同 agent 應用。檢索、生成同工具都係可以替換嘅組件，方便你控制每一步嘅輸入輸出，而唔係將成條鏈藏喺一個黑盒。上線時可以換檢索或模型組件，而唔使整條流程重寫。",
       "summary_locked": true,
-      "stars": 26894,
+      "stars": 26895,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -1037,7 +1037,7 @@
       "description": "Platform for stateful agents: AI with advanced memory that can learn and self-improve over time.",
       "summary": "有狀態嘅 agent 平台，前身係 MemGPT，重點係長期記憶。Agent 可以將重要內容寫入記憶、需要時再讀返，令一個專案可以跨越多次對話累積。同一個 agent 隔幾日再打開，仍然記得先前寫低嘅重點。",
       "summary_locked": true,
-      "stars": 25295,
+      "stars": 25298,
       "language": "",
       "license": "Apache-2.0",
       "topics": [
@@ -1205,7 +1205,7 @@
       "description": "Educational framework exploring ergonomic, lightweight multi-agent orchestration. Managed by OpenAI Solution team.",
       "summary": "OpenAI 出嚟嘅輕量多 agent 教學框架。佢示範點樣將工作由一個 agent 交畀另一個，程式刻意保持短小，適合用嚟理解交接，而唔係當作完整生產平台。官方後來有更新嘅 agent SDK，呢個保留作輕量示範。",
       "summary_locked": true,
-      "stars": 22089,
+      "stars": 22090,
       "language": "Python",
       "license": "MIT",
       "topics": [],
@@ -1227,7 +1227,7 @@
       "description": "Stable Diffusion web UI",
       "summary": "廣泛使用嘅 Stable Diffusion 網頁介面，用嚟喺本機用文字生成同調整圖像。你可以裝擴充、換模型、做局部重繪同放大，唔使自己寫推理程式。模型、擴充同重繪都喺同一個頁面換，係很多人嘅本機出圖入口。",
       "summary_locked": true,
-      "stars": 165185,
+      "stars": 165189,
       "language": "Python",
       "license": "AGPL-3.0",
       "topics": [
@@ -1258,7 +1258,7 @@
       "description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.",
       "summary": "用節點圖搭建擴散模型流程嘅介面同後端。每個步驟，例如載入模型、提示詞、ControlNet 同輸出，都係一個節點，適合要重複、要改流程嘅圖像生成。同一張圖可以存成工作流，下次換提示詞再跑一次。",
       "summary_locked": true,
-      "stars": 144219,
+      "stars": 144233,
       "language": "Python",
       "license": "GPL-3.0",
       "topics": [
@@ -1318,7 +1318,7 @@
       "description": "Open Source Computer Vision Library",
       "summary": "開源電腦視覺庫，處理圖像同影片嘅讀取、濾鏡、特徵同偵測。科研同產品都會用佢做底層操作，例如縮放、找邊緣、追蹤物體，再交俾更高層嘅模型。自己寫視覺流程時，讀寫、幾何同特徵多數先經呢度。",
       "summary_locked": true,
-      "stars": 91388,
+      "stars": 91387,
       "language": "C++",
       "license": "Apache-2.0",
       "topics": [
@@ -1346,7 +1346,7 @@
       "description": "Tesseract Open Source OCR Engine (main repository)",
       "summary": "經典開源光學字元識別引擎，可以從圖片抽出文字。佢歷史長、語言包多，適合做命令列或者嵌入其他程式嘅文字識別，而唔一定要上神經網路服務。沒有顯示卡都可以跑，適合嵌進舊系統做批量認字。",
       "summary_locked": true,
-      "stars": 77259,
+      "stars": 77260,
       "language": "C++",
       "license": "Apache-2.0",
       "topics": [
@@ -1398,7 +1398,7 @@
       "description": "Focus on prompting and generating",
       "summary": "將 Stable Diffusion 收成一個注重提示詞同出圖嘅簡化介面。好多模型同參數選擇被收埋，令你主要改句子就可以出圖，而唔使先理解成張節點圖。想少調參、快啲看到圖，會比完整節點介面容易開始。",
       "summary_locked": true,
-      "stars": 53769,
+      "stars": 53768,
       "language": "Python",
       "license": "GPL-3.0",
       "topics": [],
@@ -1451,7 +1451,7 @@
       "description": "🆙 Upscayl - #1 Free and Open Source AI Image Upscaler for Linux, MacOS and Windows.",
       "summary": "桌面版免費 AI 圖像放大器，支援 Linux、macOS 同 Windows。你將低清圖片拖入去，佢用超解像模型放大並補細節，唔使自己配置 Python 環境。唔使開終端機，拖一張相入桌面程式就完成放大。",
       "summary_locked": true,
-      "stars": 51371,
+      "stars": 51377,
       "language": "TypeScript",
       "license": "AGPL-3.0",
       "topics": [
@@ -1543,7 +1543,7 @@
       "description": "Real-ESRGAN aims at developing Practical Algorithms for General Image/Video Restoration.",
       "summary": "實用嘅圖像同影片修復模型，用嚟放大同改善畫質。對真實相片同動漫畫面都有對應模型，適合將細圖放大，同時減少模糊同壓縮痕跡。相片同動漫要揀唔同權重，放大倍數亦可以分開設。放大倍數太大時要留意臉同文字會唔會變形。",
       "summary_locked": true,
-      "stars": 37288,
+      "stars": 37289,
       "language": "Python",
       "license": "BSD-3-Clause",
       "topics": [
@@ -1588,7 +1588,7 @@
         "pytorch"
       ],
       "archived": false,
-      "pushed_at": "2026-10-30",
+      "pushed_at": "2026-10-31",
       "paper_title": "",
       "paper_url": "",
       "added_at": "2026-10-28T20:06:15+08:00",
@@ -1802,7 +1802,7 @@
       "description": "Official inference repo for FLUX.1 models",
       "summary": "Black Forest Labs FLUX.1 圖像模型嘅官方推理程式。用佢可以喺本機跑 FLUX 文字到圖像，作為比早期 Stable Diffusion 更新一代嘅出圖模型入口。官方推理入口，接自己流程之前可以先用佢出一張對照。",
       "summary_locked": true,
-      "stars": 26042,
+      "stars": 26043,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [],
@@ -1855,7 +1855,7 @@
       "description": "Rembg is a tool to remove images background",
       "summary": "用 AI 自動去除圖片背景嘅工具。命令列同程式庫都可以用，將人、產品或者其他主體從背景分離，輸出透明底，方便之後合成。商品圖同人像都可以出透明底，再交俾合成或網店版面。去背結果最好再檢查頭髮同半透明邊緣。",
       "summary_locked": true,
-      "stars": 25248,
+      "stars": 25250,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -2101,7 +2101,7 @@
       "description": "A fast image processing library with low memory needs.",
       "summary": "低記憶體、高速度嘅圖像處理庫。佢按需要處理大圖，伺服器端縮圖同格式轉換經常揀佢，而唔係將成張高解像圖一次過載入記憶體。處理超大圖時唔使成張解碼，所以伺服器先會揀佢。縮圖服務人多時，記憶體優勢會明顯啲。",
       "summary_locked": true,
-      "stars": 11773,
+      "stars": 11774,
       "language": "C",
       "license": "LGPL-2.1",
       "topics": [
@@ -2246,7 +2246,7 @@
       "description": "A feature-rich command-line audio/video downloader",
       "summary": "功能完整嘅命令列影音下載器，可以從大量網站保存影片同音訊。你可以揀格式、字幕同播放清單，適合要歸檔或者再處理網上影片嘅人。網站改版後更新密，係而家命令列下載嘅主流選擇。播放清單同字幕可以一次過保存。",
       "summary_locked": true,
-      "stars": 204020,
+      "stars": 204046,
       "language": "Python",
       "license": "Unlicense",
       "topics": [
@@ -2276,7 +2276,7 @@
       "description": "OBS Studio - Free and open source software for live streaming and screen recording",
       "summary": "免費開源嘅直播同螢幕錄製軟件。可以混合畫面、鏡頭、視窗同音訊，再用場景切換，適合直播、上課同錄製教學，而唔使另買擷取軟件。場景可以預先排好，直播時一鍵切鏡頭同畫面。上課、直播同錄螢幕都可以共用同一批場景。",
       "summary_locked": true,
-      "stars": 78640,
+      "stars": 78647,
       "language": "C",
       "license": "GPL-2.0",
       "topics": [
@@ -2307,7 +2307,7 @@
       "description": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
       "summary": "開源嘅 agent 影片製作系統，用多條製作流程同工具產出影片。你交一個製作目標，系統會調用唔同步驟去組織素材同成片，而唔係只提供一個剪接時間線。適合想由目標驅動成片，而唔係自己逐段拖時間線。",
       "summary_locked": true,
-      "stars": 73516,
+      "stars": 73569,
       "language": "Python",
       "license": "AGPL-3.0",
       "topics": [
@@ -2338,7 +2338,7 @@
       "description": "🎥      Make videos programmatically with React",
       "summary": "用 React 以程式方式製作影片，適合可重複嘅動畫同模板。畫面用組件寫，數據一變就可以渲染出新版本，適合批量做片頭、圖表同社群影片。同一條片可以按數據批量出好多版本，例如每個人一段。",
       "summary_locked": true,
-      "stars": 69170,
+      "stars": 69192,
       "language": "TypeScript",
       "license": "",
       "topics": [
@@ -2364,7 +2364,7 @@
       "description": "Mirror of https://git.ffmpeg.org/ffmpeg.git",
       "summary": "處理影音嘅核心工具，負責轉碼、剪接、串流同格式轉換。播放器、剪接軟件同網站後台很多時都係叫佢做實際嘅解碼同編碼。自己寫剪接或串流工具時，底層幾乎都會叫到佢。幾乎所有影音軟件最後都會叫到佢。",
       "summary_locked": true,
-      "stars": 66100,
+      "stars": 66102,
       "language": "C",
       "license": "",
       "topics": [
@@ -2395,7 +2395,7 @@
       "description": "The Free Software Media System - Server Backend & API",
       "summary": "自由軟件媒體系統，可以自己架伺服器整理同播放影片。影片庫、字幕同多個客戶端都由你控制，用作家庭影音伺服器，而唔使將片庫放上商業平台。家中幾部裝置可以播自己片庫，帳號同元數據都自己管。",
       "summary_locked": true,
-      "stars": 58842,
+      "stars": 58847,
       "language": "C#",
       "license": "GPL-2.0",
       "topics": [
@@ -2452,7 +2452,7 @@
       "description": "🚀 AI 全自动短视频引擎 | AI Fully Automated Short Video Engine",
       "summary": "AI 自動短片引擎，由內容一路做到成片。你可以由文字或素材開始，讓流程負責腳本、畫面同輸出，縮短做一條短片要跨好多工具嘅時間。短片步驟串埋一齊，減少腳本、畫面同輸出各用一個軟件。",
       "summary_locked": true,
-      "stars": 29592,
+      "stars": 29593,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -2480,7 +2480,7 @@
       "description": "Open-Sora: Democratizing Efficient Video Production for All",
       "summary": "開源影片生成項目，目標係降低高質文字到影片嘅製作門檻。提供模型同訓練、推理相關程式，讓研究同創作可以喺開放權重上試文字生成影片。想改訓練或推理而唔係只使用現成網站，就睇呢個開放項目。",
       "summary_locked": true,
-      "stars": 29890,
+      "stars": 29891,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [],
@@ -2502,7 +2502,7 @@
       "description": "Generative Models by Stability AI",
       "summary": "Stability AI 嘅生成模型程式，包含 Stable Video Diffusion 等圖像到影片模型。可以用一張圖作為起點生成短片，亦係佢哋多個生成模型嘅官方程式集合。圖像到影片嘅 Stable Video Diffusion 同其他生成模型程式都收喺呢度。",
       "summary_locked": true,
-      "stars": 27316,
+      "stars": 27317,
       "language": "Python",
       "license": "MIT",
       "topics": [],
@@ -2550,7 +2550,7 @@
       "description": "A machine learning-based video super resolution and frame interpolation framework. Est. Hack the Valley II, 2018.",
       "summary": "用機器學習做影片超解像同補幀。可以將低解像影片放大，或者提高幀率，令舊片同動畫喺大畫面播放時少啲鋸齒同卡頓。放大同補幀可以分開做，舊動畫同源影片都用得。模型可以按動畫或實拍分開揀。",
       "summary_locked": true,
-      "stars": 22492,
+      "stars": 22493,
       "language": "C++",
       "license": "AGPL-3.0",
       "topics": [
@@ -2612,7 +2612,7 @@
       "description": "短剧、漫剧制作工具 Toonflow：开源 AI 视频创作平台，集成剧本创作、智能分镜、角色与场景资产管理、图像生成和视频生成。融合无限画布、AI Agent 与可视化工作流，支持本地部署、自选模型、跨平台客户端、MCP 与插件扩展。Open-source AI short drama and motion comic creation tool with an infinite canvas, AI agents, storyboarding, image and video generation. Self-hosted and extensible, with a canvas-based approach similar to LibTV and TapNow.",
       "summary": "開源短劇同漫劇工具，涵蓋劇本、分鏡、角色場景同圖像、影片生成。一條短片需要嘅前期同畫面步驟可以喺同一個專案入面推進。短劇由劇本走到畫面，中間分鏡同角色可以留喺同一專案。角色設定可以沿用到後面嘅分鏡。",
       "summary_locked": true,
-      "stars": 20005,
+      "stars": 20013,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -2643,7 +2643,7 @@
       "description": "Bring portraits to life!",
       "summary": "將一張人像變成會郁嘅肖像動畫。你用一張相做身份，再驅動作表情同頭部動作，適合做會說話或者會轉頭嘅人像，而唔使先拍一段影片。只有一張肖像都做得，驅動則來自另一段動作或表情。",
       "summary_locked": true,
-      "stars": 19355,
+      "stars": 19356,
       "language": "Python",
       "license": "",
       "topics": [
@@ -2695,7 +2695,7 @@
       "description": "Lets make video diffusion practical!",
       "summary": "令影片擴散模型嘅生成更加實際，降低長片段對記憶體嘅壓力。佢改變幀嘅處理方式，讓較長嘅生成唔使一次過將所有幀嘅狀態放喺顯示卡入面。顯示卡放唔下長片時，呢種幀處理先有實際意義。",
       "summary_locked": true,
-      "stars": 17334,
+      "stars": 17337,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [],
@@ -2717,7 +2717,7 @@
       "description": "FilmCraft: An open-source, nonlinear video editor written by scratch in pure Rust",
       "summary": "用 Rust 由零寫嘅開源非線性影片剪接軟件。方向係提供一個可以剪接、整理時間線嘅本地工具，而唔係再包一層現成剪接引擎。想睇一個用 Rust 新寫嘅時間線，而唔係再套現成剪接核心。",
       "summary_locked": true,
-      "stars": 16976,
+      "stars": 16985,
       "language": "Rust",
       "license": "Apache-2.0",
       "topics": [
@@ -2835,7 +2835,7 @@
       "description": "Animate Anyone: Consistent and Controllable Image-to-Video Synthesis for Character Animation",
       "summary": "用一張人物圖生成動作一致、可控制嘅人物影片。參考動作片提供舞步或姿態，角色外觀則來自你嘅圖片，用來做人物動畫而唔使真人重拍。角色圖同動作片係分開輸入，所以同一套舞可以換人。",
       "summary_locked": true,
-      "stars": 14779,
+      "stars": 14780,
       "language": "",
       "license": "Apache-2.0",
       "topics": [],
@@ -2857,7 +2857,7 @@
       "description": "text and image to video generation: CogVideoX (2024) and CogVideo (ICLR 2023)",
       "summary": "文字同圖像到影片嘅模型項目，包含 CogVideo 同 CogVideoX。提供開放權重同相關程式，用嚟由描述或圖片生成短片，並作為研究基線。CogVideoX 亦包含在內，文字或圖片都可以做生成條件。",
       "summary_locked": true,
-      "stars": 13169,
+      "stars": 13170,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -2934,7 +2934,7 @@
       "description": "Official repository for LTX-Video",
       "summary": "Lightricks 嘅開源影片生成模型同官方程式。可以用文字或圖像生成影片，重點係提供可以自己跑嘅權重同推理流程，方便接入創作工具。官方程式可以直接跑，再決定點樣嵌進自己嘅工具。",
       "summary_locked": true,
-      "stars": 11252,
+      "stars": 11253,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -3043,7 +3043,7 @@
       "description": "OpenShot Video Editor is an award-winning free and open-source video editor for Linux, Mac, and Windows, and is dedicated to delivering high quality video editing and animation solutions to the world.",
       "summary": "跨平台開源影片剪接軟件，介面比較直接。時間線、轉場同標題都用圖形操作，適合想快上手、又不想先學一套專業剪接軟件嘅人。功能比專業軟件少，但時間線同標題足夠做一般剪接。家庭影片同簡單片頭通常夠用。",
       "summary_locked": true,
-      "stars": 6708,
+      "stars": 6709,
       "language": "Python",
       "license": "",
       "topics": [
@@ -3122,7 +3122,7 @@
       "description": "Godot Engine – Multi-platform 2D and 3D game engine",
       "summary": "跨平台 2D／3D 遊戲引擎，可以用嚟做即時圖像、互動同動畫。場景、腳本同渲染都包喺編輯器入面，適合做遊戲同即時視覺，而唔使自己寫引擎。2D 同 3D 都喺同一編輯器，匯出時再揀平台。",
       "summary_locked": true,
-      "stars": 119311,
+      "stars": 119312,
       "language": "C++",
       "license": "MIT",
       "topics": [
@@ -3152,7 +3152,7 @@
       "description": "JavaScript 3D Library.",
       "summary": "用 JavaScript 喺瀏覽器建立同渲染 3D 場景。相機、燈光、模型同材質都有現成物件，係網頁三維、產品展示同不少 WebGL 效果嘅常用底層。產品展示、小遊戲同視覺實驗好多都直接用佢起場景。",
       "summary_locked": true,
-      "stars": 117248,
+      "stars": 117254,
       "language": "JavaScript",
       "license": "MIT",
       "topics": [
@@ -3214,7 +3214,7 @@
       "description": "🇨🇭 A React renderer for Three.js",
       "summary": "用 React 方式寫 Three.js 場景嘅渲染器。三維物件可以寫成組件，狀態一變就更新畫面，方便將 3D 放進現有嘅 React 介面。介面狀態同三維場景可以寫喺同一套 React 組件。",
       "summary_locked": true,
-      "stars": 33380,
+      "stars": 33381,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -3300,7 +3300,7 @@
       "description": "Official mirror of Blender",
       "summary": "Blender 官方原始碼，涵蓋建模、動畫、合成、剪接同渲染。呢個係軟件本身嘅程式庫，想改功能、寫分支或者理解 Blender 點樣運作先需要佢。日常用 Blender 唔使下載呢個倉庫，改程式或者自編譯先要。",
       "summary_locked": true,
-      "stars": 21452,
+      "stars": 21453,
       "language": "C++",
       "license": "",
       "topics": [
@@ -3329,7 +3329,7 @@
       "description": "Filament is a real-time physically based rendering engine for Android, iOS, Windows, Linux, macOS, and WebGL2",
       "summary": "Google 嘅即時物理式渲染引擎，可用喺多個平台。重點係材質同燈光比較接近真實，適合要喺應用入面嵌一個高質即時渲染器，而唔係整套 DCC 軟件。要嵌進自己嘅應用做即時畫面，而唔係取代 Blender。",
       "summary_locked": true,
-      "stars": 20674,
+      "stars": 20675,
       "language": "C++",
       "license": "Apache-2.0",
       "topics": [
@@ -3484,7 +3484,7 @@
       "description": "Open3D: A Modern Library for 3D Data Processing",
       "summary": "現代 3D 數據處理庫，用嚟做點雲、網格同視覺化。掃描數據可以喺度濾波、配準同重建，Python 同 C++ 都可以呼叫。掃描點雲嘅清理同配準可以喺 Python 入面做完再視覺化。",
       "summary_locked": true,
-      "stars": 14159,
+      "stars": 14160,
       "language": "C++",
       "license": "",
       "topics": [
@@ -3608,7 +3608,7 @@
       "description": "3D Gaussian Splat Editor",
       "summary": "喺瀏覽器入面編輯 3D Gaussian Splat 嘅工具。你可以檢視、修剪同整理掃描得到嘅高斯場景，再匯出，而唔使先裝一套桌面研究程式。場景用高斯即時渲染，可以轉去未影過嘅角度，而唔使先重建成傳統網格。",
       "summary_locked": true,
-      "stars": 10496,
+      "stars": 10497,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -3711,7 +3711,7 @@
       "description": "Universal Scene Description",
       "summary": "Pixar 嘅通用場景描述，用嚟喺唔同軟件之間交換三維場景。模型、燈光、材質同動畫可以寫成 USD，讓 Blender、渲染器同遊戲引擎讀同一套場景。燈光同動畫都寫入場景描述，唔止係交換一個靜態模型。",
       "summary_locked": true,
-      "stars": 7602,
+      "stars": 7603,
       "language": "C++",
       "license": "",
       "topics": [],
@@ -3817,7 +3817,7 @@
       "description": "Open-source video compositing software. Node-graph based. Similar in functionalities to Adobe After Effects and Nuke by The Foundry.",
       "summary": "開源節點式影片合成軟件，用途接近 After Effects 同 Nuke。遮罩、調色同特效用節點連接，適合做鏡頭合成，而唔係時間線剪接。節點合成接近 Nuke 嘅用法，時間線剪接就用其他軟件。",
       "summary_locked": true,
-      "stars": 5621,
+      "stars": 5622,
       "language": "C++",
       "license": "GPL-2.0",
       "topics": [],
@@ -4018,7 +4018,7 @@
       "description": "Open Data Platform for analysts, quants and AI agents.",
       "summary": "畀分析師、量化研究員同 AI agent 用嘅開源金融數據平台。可以將行情、基本面同宏觀數據拉到同一個介面或程式入面，再做研究而唔使逐個網站抄數。分析師同 agent 都可以叫同一套數據，唔使逐個網站抄數。",
       "summary_locked": true,
-      "stars": 74926,
+      "stars": 74927,
       "language": "Python",
       "license": "",
       "topics": [
@@ -4049,7 +4049,7 @@
       "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
       "summary": "用語言模型做多市場股票分析，整合行情、新聞同決策看板，可以定時推送。適合想每日收到一份整理好嘅市場摘要，而唔係自己逐隻股票翻新聞。多個市場可以排程出摘要，適合每日睇一次而唔係全日盯盤。",
       "summary_locked": true,
-      "stars": 67307,
+      "stars": 67309,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -4079,7 +4079,7 @@
       "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process.",
       "summary": "微軟面向 AI 嘅量化投資平台，由構思因子、準備數據到研究同落地都涵蓋。重點係用機器學習做預測同組合，而唔係只提供一個下單接口。機器學習因子研究係主線，下單只係後面嘅落地部分。",
       "summary_locked": true,
-      "stars": 49846,
+      "stars": 49849,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -4110,7 +4110,7 @@
       "description": "基于Python的开源量化交易平台开发框架",
       "summary": "基於 Python 嘅開源量化交易框架，覆蓋數據、策略、回測同實盤。事件驅動引擎同交易接口都有，適合想由研究一路接到交易嘅人。策略研究同實盤接口放埋，減少回測同交易各寫一套。",
       "summary_locked": true,
-      "stars": 46160,
+      "stars": 46162,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -4141,7 +4141,7 @@
       "description": "\"Vibe-Trading: Your Personal Trading Agent\"",
       "summary": "個人交易 agent，用自然語言輔助做交易研究同決策。你可以將問題講俾佢，由佢整理數據同想法，而唔使先自己寫晒所有指標腳本。先用自然語言收窄方向，再決定要唔要寫成正式策略。",
       "summary_locked": true,
-      "stars": 37247,
+      "stars": 37255,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -4172,7 +4172,7 @@
       "description": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
       "summary": "開源金融終端，用嚟睇市場分析、投資研究同經濟數據。方向係將終端機式嘅行情同研究工具開放出嚟，而唔使依賴單一商業終端。想要終端機式研究畫面，又可以自己改數據來源。數據來源可以自己換，唔綁死一家供應商。",
       "summary_locked": true,
-      "stars": 33297,
+      "stars": 33299,
       "language": "C++",
       "license": "",
       "topics": [
@@ -4203,7 +4203,7 @@
       "description": "Production-grade Rust-native trading engine with deterministic event-driven architecture",
       "summary": "用 Rust 寫嘅實盤級交易引擎，事件驅動而且回測可重現，支援多種資產。同一套事件模型可以用於股票同其他市場，著重速度同回測同實盤一致。回測用嘅事件順序同實盤同一套，減少兩邊結果對唔上。",
       "summary_locked": true,
-      "stars": 31087,
+      "stars": 31088,
       "language": "Rust",
       "license": "LGPL-3.0",
       "topics": [
@@ -4234,7 +4234,7 @@
       "description": "Download market data from Yahoo! Finance's API",
       "summary": "從 Yahoo Finance 下載股票行情同基本資料嘅 Python 庫。幾行程式就可以攞歷史價格同財報摘要，適合研究同教學，正式交易則要再核對數據來源。教學同原型好用，正式交易前要用券商或交易所數據再核對。",
       "summary_locked": true,
-      "stars": 25763,
+      "stars": 25764,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -4323,7 +4323,7 @@
       "description": "Lean Algorithmic Trading Engine by QuantConnect (Python, C#)",
       "summary": "QuantConnect 嘅演算法交易引擎，可以用 Python 或 C# 做回測同實盤，亦支援加密貨幣。策略寫一次就可以喺引擎跑，資產唔限於股票。同一策略可以跑股票同加密貨幣，語言可以揀 Python 或 C#。",
       "summary_locked": true,
-      "stars": 22314,
+      "stars": 22317,
       "language": "C#",
       "license": "Apache-2.0",
       "topics": [
@@ -4354,7 +4354,7 @@
       "description": "FinGPT: Open-Source Financial Large Language Models!  Revolutionize 🔥    We release the trained model on HuggingFace.",
       "summary": "開源金融大語言模型，用嚟做金融文本同市場相關嘅語言任務。可以處理新聞、報告同情緒呢類文字，而唔係用來直接計算報價或下單。用嚟讀新聞同報告，訊號仍要你自己決定點樣落到交易。",
       "summary_locked": true,
-      "stars": 21495,
+      "stars": 21496,
       "language": "Jupyter Notebook",
       "license": "MIT",
       "topics": [
@@ -4385,7 +4385,7 @@
       "description": "OpenStock is an open-source alternative to expensive market platforms. Track real-time prices, set personalized alerts, and explore detailed company insights — built openly, for everyone, forever free.",
       "summary": "開源行情平台，可以追蹤價格、設定提醒同查看公司資料。重點係一個可以自己睇同自己改嘅股票追蹤介面，而唔係完整嘅券商交易系統。提醒同公司資料係重點，落單要另接券商。公司資料同價格提醒可以自己改畫面。",
       "summary_locked": true,
-      "stars": 20996,
+      "stars": 20998,
       "language": "TypeScript",
       "license": "AGPL-3.0",
       "topics": [
@@ -4503,7 +4503,7 @@
       "description": "Performant financial charts built with HTML5 canvas",
       "summary": "TradingView 開源嘅高效能金融圖表庫。可以喺網頁畫 K 線同成交量，互動流暢，適合自己做行情介面，而唔使嵌入成個 TradingView 網站。自己網站要 K 線時嵌佢就得，唔使打開 TradingView 成頁。",
       "summary_locked": true,
-      "stars": 17732,
+      "stars": 17733,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "topics": [
@@ -4534,7 +4534,7 @@
       "description": "FinRL®:  Financial Reinforcement Learning. 🔥",
       "summary": "用深度強化學習做金融交易嘅開源庫，包含市場環境同訓練流程。策略係訓練一個代理去交易，而唔係手寫每條進出場規則，適合研究強化學習。環境已經包好市場步驟，你可以集中改強化學習算法。",
       "summary_locked": true,
-      "stars": 16908,
+      "stars": 16910,
       "language": "Jupyter Notebook",
       "license": "MIT",
       "topics": [
@@ -4702,7 +4702,7 @@
       "description": "The research engine that gives you an unfair advantage. Run thousands of trading ideas before others finish one.",
       "summary": "向量化量化研究引擎，可以一次過回測大量交易想法。信號用陣列運算，而唔係逐筆事件循環，適合想快速掃很多參數同規則嘅研究。想掃很多參數組合時，向量化會比逐筆迴圈快。參數表可以一次出好多條資金曲線。",
       "summary_locked": true,
-      "stars": 9599,
+      "stars": 9601,
       "language": "Python",
       "license": "",
       "topics": [
@@ -4733,7 +4733,7 @@
       "description": "🔎 📈 🐍 💰  Backtest trading strategies in Python.",
       "summary": "用 Python 簡潔地回測交易策略嘅庫。介面短小，可以用幾行程式定義進出場，並畫出結果，適合試一個想法，而唔係搭建完整交易系統。想法尚未成形時先用佢試，複雜撮合再換更大嘅框架。",
       "summary_locked": true,
-      "stars": 9164,
+      "stars": 9165,
       "language": "Python",
       "license": "AGPL-3.0",
       "topics": [
@@ -4764,7 +4764,7 @@
       "description": "Portfolio analytics for quants, written in Python",
       "summary": "用 Python 做投資組合表現同風險分析。可以計回報、回撤同常見風險指標，並生成報告，用嚟檢查一個策略或組合嘅成績，而唔係負責下單。策略跑完先用佢出回撤同風險報告，佢本身唔落單。",
       "summary_locked": true,
-      "stars": 7769,
+      "stars": 7770,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -4912,7 +4912,7 @@
       "description": "Free, open source crypto trading bot",
       "summary": "免費開源嘅加密貨幣交易機械人，包含策略、回測同實盤。你用 Python 寫買賣規則，可以先用歷史數據測試，再接到交易所自動落單。策略檔、歷史回測同實盤設定都喺同一套機械人入面。",
       "summary_locked": true,
-      "stars": 56180,
+      "stars": 56182,
       "language": "Python",
       "license": "GPL-3.0",
       "topics": [
@@ -4943,7 +4943,7 @@
       "description": "A unified trading API with more than 100 crypto exchanges and prediction markets in JavaScript / TypeScript / Python / C# / PHP / Go / Java / Rust",
       "summary": "統一咗一百幾個加密貨幣交易所嘅交易 API，有多種程式語言。同一套方法可以查價同落單，換交易所時少改程式，係很多交易機械人嘅底層。換交易所時多數只改名稱同密鑰，買賣方法可以留低。",
       "summary_locked": true,
-      "stars": 44631,
+      "stars": 44635,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -4974,7 +4974,7 @@
       "description": "Open source software that helps you create and deploy high-frequency crypto trading bots",
       "summary": "用嚟建立同部署高頻加密貨幣交易機械人嘅開源軟件，常見於做市。可以喺買賣價之間掛單，亦有連接不同交易所同策略嘅框架。做市掛單同庫存控制係常見用法，唔止係單向追漲。庫存偏了一邊時，做市策略要自己調。",
       "summary_locked": true,
-      "stars": 20842,
+      "stars": 20845,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -5714,7 +5714,7 @@
       "description": "3D Reconstruction for all",
       "summary": "用 Rust 寫嘅三維重建程式，可以由相片或影片訓練 3D Gaussian Splatting。介面偏實用，想喺自己部機由畫面變成可轉視角嘅場景，可以由此入手。",
       "summary_locked": true,
-      "stars": 5232,
+      "stars": 5233,
       "language": "Rust",
       "license": "Apache-2.0",
       "topics": [
@@ -5799,7 +5799,7 @@
       "description": ":sparkles:  An advanced 3D Gaussian Splatting renderer for THREE.js",
       "summary": "畀 Three.js 用嘅進階 3D Gaussian Splatting 渲染器。網頁同互動場景可以直接載入高斯點雲，喺瀏覽器入面即時睇新視角，而唔使另開研究檢視器。",
       "summary_locked": true,
-      "stars": 3832,
+      "stars": 3833,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [],
@@ -6091,7 +6091,7 @@
       "description": "Cross-vendor 3D Gaussian Splatting trainer - video to splat to mesh, Vulkan or CUDA.",
       "summary": "跨顯示卡嘅 3D Gaussian Splatting 訓練器，支援 Vulkan 或 CUDA，可以由影片訓練 splat 再轉成網格。想喺唔同硬件上跑重建，呢套係一個選擇。",
       "summary_locked": true,
-      "stars": 2043,
+      "stars": 2044,
       "language": "C++",
       "license": "GPL-3.0",
       "topics": [
@@ -6848,7 +6848,7 @@
       "description": "NVIDIA Cosmos is an open platform of world models, datasets, and tools that enables developers to build Physical AI for robots, autonomous vehicles, smart infrastructure, and more.",
       "summary": "NVIDIA 嘅世界模型平台，提供模型、數據同工具，用嚟做機械人、自動駕駛同實體智能。可以生成同模擬之後會發生嘅畫面，再訓練下游策略。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。",
       "summary_locked": true,
-      "stars": 12213,
+      "stars": 12214,
       "language": "",
       "license": "",
       "topics": [],
@@ -6949,7 +6949,7 @@
       "description": "Official code for world model Kairos",
       "summary": "機械人方向嘅世界模型 Kairos 官方程式。模型學習環境點樣隨動作改變，用嚟預測未來觀察同支援操作，而唔使每次都喺真機上試錯。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。",
       "summary_locked": true,
-      "stars": 3122,
+      "stars": 3125,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [],
@@ -7002,7 +7002,7 @@
       "description": "Long Video Gen / World Model / World Action Model (Embodied) Infrastructure",
       "summary": "面向長影片、世界模型同帶動作嘅具身生成嘅基建。用嚟研究模型點樣維持長時間一致嘅世界，並按動作繼續演下去，而唔使每段片重新開始。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。",
       "summary_locked": true,
-      "stars": 2852,
+      "stars": 2853,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -7686,7 +7686,7 @@
       "description": "🌍 WorldGen - Generate Any 3D Scene in Seconds",
       "summary": "由描述快速生成任意三維場景。幾秒內可以得到一個可睇嘅立體空間，適合做世界草稿，再交畀其他工具繼續渲染或編輯。重點係預測環境之後會點變，用嚟模擬、規劃，或者生成一個可互動嘅世界。",
       "summary_locked": true,
-      "stars": 2182,
+      "stars": 2183,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -7770,7 +7770,7 @@
       "description": "[CVPR 2025 Best Paper Award] VGGT: Visual Geometry Grounded Transformer",
       "summary": "視覺幾何 Transformer，由圖片直接估計相機、深度同三維點。多張相片唔使傳統逐步配對，都可以一次過重建場景幾何，係 CVPR 2025 最佳論文。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。",
       "summary_locked": true,
-      "stars": 14584,
+      "stars": 14585,
       "language": "Python",
       "license": "",
       "topics": [],
@@ -7792,7 +7792,7 @@
       "description": "Official repo for paper \"Structured 3D Latents for Scalable and Versatile 3D Generation\" (CVPR'25 Spotlight).",
       "summary": "用結構化三維潛在空間做可擴展嘅三維生成，可以由圖像或文字得到模型。潛在表示同時照顧形狀同外觀，係 CVPR 2025 嘅代表程式。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。",
       "summary_locked": true,
-      "stars": 14153,
+      "stars": 14154,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -7820,7 +7820,7 @@
       "description": "Native and Compact Structured Latents for 3D Generation",
       "summary": "TRELLIS 嘅下一代，用更原生同更緊湊嘅結構化潛在空間做三維生成。同樣面向由圖像或文字得到高質素資產，而且表示更慳。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。",
       "summary_locked": true,
-      "stars": 12560,
+      "stars": 12562,
       "language": "Python",
       "license": "MIT",
       "topics": [],
@@ -8198,7 +8198,7 @@
       "description": "Grounding Image Matching in 3D with MASt3R",
       "summary": "喺 DUSt3R 之上做三維圖像匹配，令對應點有幾何根據。多張圖對齊同重建會更穩，適合相片集要準確拼成一個場景。由平面圖像或文字得到可以旋轉睇嘅三維資產，再交畀渲染或者遊戲流程。",
       "summary_locked": true,
-      "stars": 3149,
+      "stars": 3150,
       "language": "Python",
       "license": "",
       "topics": [],
@@ -8765,7 +8765,7 @@
       "description": "Local UI to run and train LLMs and diffusion models. Supports GGUF, MLX, Qwen3.8, DeepSeek-V4.1, MiniMax-H3, Gemma 4, FLUX and more.",
       "summary": "本機介面，用嚟跑同微調語言模型同擴散模型。支援 GGUF、MLX、FLUX 等，可以喺自己部機訓練圖像模型，而唔使靠雲端服務。想試新模型時，唔使每次重寫成套訓練腳本。",
       "summary_locked": true,
-      "stars": 78831,
+      "stars": 78834,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -8796,7 +8796,7 @@
       "description": "LocalAI is the open-source AI engine. Run any model - LLMs, vision, voice, image, video - on any hardware. No GPU required.",
       "summary": "開源本地 AI 引擎，可以喺自己部機跑語言模型、視覺、語音、圖像同影片。唔使顯示卡都得，用一個介面取代多個雲端 API。出圖同推理都可以留喺自己部機。資料唔使上傳去外面。",
       "summary_locked": true,
-      "stars": 50082,
+      "stars": 50083,
       "language": "Go",
       "license": "MIT",
       "topics": [
@@ -8827,7 +8827,7 @@
       "description": "Community plugin to control Blender 3D with any LLM of your choice. Not affiliated with the official Blender Foundation.",
       "summary": "社群插件，用嚟喺 Blender 入面用任何語言模型控制三維操作。可以叫模型幫手建模、改場景，同官方 Blender Foundation 無關。指令會轉成 Blender 入面嘅操作。",
       "summary_locked": true,
-      "stars": 32848,
+      "stars": 32856,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -8858,7 +8858,7 @@
       "description": "Unrestricted Open-source alternative to AI video platforms — Free AI image & video generation studio with 600+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.",
       "summary": "可以自己架設嘅圖像同影片生成工作室，整合 Flux、Kling、Sora、Veo 等模型。用嚟喺本機出圖同出片，採 MIT 授權。模型可以換成自己已經有嘅接口。",
       "summary_locked": true,
-      "stars": 31893,
+      "stars": 31897,
       "language": "JavaScript",
       "license": "MIT",
       "topics": [
@@ -8949,7 +8949,7 @@
       "description": "DeepSeek Harness: Everything is a Plugin.",
       "summary": "DeepSeek 官方出嘅 agent harness，個架構係「樣樣都係插件」。用 Cordis 將工具同介面砌成可以換嘅部件，你可以喺本機用 npx 開網頁介面。而家仲係開發預覽，插件介面之後可能會改。",
       "summary_locked": true,
-      "stars": 266833,
+      "stars": 266881,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -8976,7 +8976,7 @@
       "description": "The agent that grows with you",
       "summary": "Nous Research 嘅自主 agent，會將用過嘅經驗寫成技能，同記住你係邊個。可以喺平價伺服器、顯示卡叢集，或者閒置幾乎唔使錢嘅環境跑。新對話會翻查舊紀錄，唔使每次由零介紹自己。",
       "summary_locked": true,
-      "stars": 258919,
+      "stars": 258936,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -9007,7 +9007,7 @@
       "description": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral). Get started - free.",
       "summary": "可以自己架嘅個人 AI 第二大腦。用嚟喺網頁同你嘅文件搵答案，又可以砌自訂 agent、排程自動化同做深入研究。本地或者網上嘅語言模型都接得，亦可以出圖，資料可以留喺自己部機。",
       "summary_locked": true,
-      "stars": 37911,
+      "stars": 37912,
       "language": "Python",
       "license": "AGPL-3.0",
       "topics": [
@@ -9038,7 +9038,7 @@
       "description": "A brief computer graphics / rendering course",
       "summary": "一份簡短嘅電腦圖像課程，用 C++ 由零寫一個細渲染器。跟住課你會自己做光柵化、著色同貼圖，適合想搞清楚畫面點樣畫出嚟，而唔係只係呼叫現成引擎。程式短，方便對住每一行睇渲染點做。",
       "summary_locked": true,
-      "stars": 24484,
+      "stars": 24485,
       "language": "C++",
       "license": "",
       "topics": [
@@ -9069,7 +9069,7 @@
       "description": "QuestDB is a high performance, open-source, time-series database",
       "summary": "高效能開源時間序列資料庫，用嚟存同查市場數據呢類帶時間戳嘅資料。查詢快、延遲低，支援 Parquet 同資本市場常用嘅數據格式，適合作交易系統嘅行情儲存，而唔係一隻自動下單策略。",
       "summary_locked": true,
-      "stars": 17487,
+      "stars": 17488,
       "language": "Java",
       "license": "Apache-2.0",
       "topics": [
@@ -9131,7 +9131,7 @@
       "description": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥",
       "summary": "開源爬蟲，用嚟將網頁抓成乾淨嘅 Markdown，再交俾 AI agent 用。可以爬成個站、抽取結構化資料，而唔使每個網站自己寫選擇器。適合要將網上資料帶入 agent 嘅人。",
       "summary_locked": true,
-      "stars": 197161,
+      "stars": 197174,
       "language": "TypeScript",
       "license": "AGPL-3.0",
       "topics": [
@@ -9162,7 +9162,7 @@
       "description": "Enlightened library to convert HTML and CSS to SVG",
       "summary": "Vercel 嘅程式庫，用嚟將 HTML 同 CSS 轉成 SVG 圖。常見用途係生成 Open Graph 預覽圖，唔使開瀏覽器截圖。佢係排版出圖，而唔係擴散模型咁由文字生成畫面。",
       "summary_locked": true,
-      "stars": 14147,
+      "stars": 14148,
       "language": "TypeScript",
       "license": "MPL-2.0",
       "topics": [
@@ -9238,7 +9238,7 @@
         "forex"
       ],
       "archived": false,
-      "pushed_at": "2026-10-30",
+      "pushed_at": "2026-10-31",
       "paper_title": "",
       "paper_url": "",
       "added_at": "2026-10-29T01:44:32+08:00",
@@ -9280,7 +9280,7 @@
       "description": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
       "summary": "桌面同手機都可以用嘅 agent IDE。用嚟將 Codex、Claude Code 等幾個寫程式 agent 並排跑，每個放喺自己嘅 git worktree。可以用你自己嘅訂閱，喺終端機、遠端機器同手機跟住進度。",
       "summary_locked": true,
-      "stars": 111218,
+      "stars": 111257,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -9368,7 +9368,7 @@
       "description": "The truly free, open-source, local-first, cross-platform CapCut replacement. Scriptable through a JSON-RPC API & MCP.",
       "summary": "本地優先嘅開源影片剪輯器，用嚟取代 CapCut。支援多軌剪接、字幕、文字轉語音同去背，用 Rust 引擎喺自己部機跑。片段唔使上傳，亦可以用 JSON-RPC 同 MCP 寫腳本控制。",
       "summary_locked": true,
-      "stars": 12879,
+      "stars": 12890,
       "language": "Rust",
       "license": "AGPL-3.0",
       "topics": [
@@ -9492,7 +9492,7 @@
       "description": "The open-source app everyone uses to manage agents at work",
       "summary": "開源嘅 agent 編排程式，用嚟管理一隊 AI 同事。你可以設定目標、分配角色同預算，再喺一個介面追蹤工作同成本。每個 agent 可以揀唔同模型，任務同權限留喺自己架嘅伺服器。",
       "summary_locked": true,
-      "stars": 109019,
+      "stars": 109036,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -9644,7 +9644,7 @@
       "description": "Synthesizing and manipulating 2048x1024 images with conditional GANs",
       "summary": "NVIDIA 嘅高解像條件式生成對抗網絡。用嚟由標籤圖或條件合成 2048 乘 1024 嘅圖像，同埋操控已有畫面。適合想喺電腦圖像同視覺實驗入面做高解像圖像轉換嘅人。",
       "summary_locked": true,
-      "stars": 6924,
+      "stars": 6925,
       "language": "Python",
       "license": "",
       "topics": [
@@ -9675,7 +9675,7 @@
       "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
       "summary": "跨對話嘅 agent 記憶插件。用嚟記錄每次工作入面用過嘅工具同做法，壓縮之後喺下一輪再注入相關上下文。支援 Claude Code、Codex、Gemini 等，等 agent 唔使每次都當專案係新嘅。",
       "summary_locked": true,
-      "stars": 106482,
+      "stars": 106610,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "topics": [
@@ -9768,7 +9768,7 @@
       "description": "Background Remover lets you Remove Background from images and video using AI with a simple command line interface that is free and open source.",
       "summary": "用命令列幫圖像同影片去除背景嘅開源工具。一條指令就可以抽出主體，唔使開圖像軟件逐格摳。模型喺本地跑，適合要批量處理相片或者短片嘅人。輸出可以再交俾剪輯軟件，檔案留喺本機。",
       "summary_locked": true,
-      "stars": 8136,
+      "stars": 8137,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -9799,7 +9799,7 @@
       "description": "PRINTFILM: AI short-video marketing and AI short-drama creation platform",
       "summary": "用嚟做 AI 短片同漫劇嘅創作平台。可以由文案去到分鏡、參考圖、圖生影片再合成預覽。角色同場景可以重用，每一步都可以先檢查再繼續，而唔係一次過出成條片。預設係豎屏短片，亦可以改做靜圖成片。",
       "summary_locked": true,
-      "stars": 7379,
+      "stars": 7380,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -9826,7 +9826,7 @@
       "description": "量化研究-券商金工研报复现",
       "summary": "用 Python 筆記本重現券商金工研報嘅量化研究合集。用嚟對住研報睇因子、回測同圖表點樣計出嚟，而唔係一個可以即刻落盤嘅交易程式。你可以改數據再自己重算一次。",
       "summary_locked": true,
-      "stars": 6812,
+      "stars": 6814,
       "language": "Jupyter Notebook",
       "license": "",
       "topics": [
@@ -9915,7 +9915,7 @@
       "description": "Never stop coding. Free MIT AI gateway: one endpoint, 375 providers (150+ free), 1,400+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 900+ contributors",
       "summary": "可以自己架嘅 AI 閘道。用一個接口接住好多模型供應商，Claude Code、Codex、Cursor 等都可以指去呢度。配額用盡會自動轉去下一個供應商。金鑰留喺你自己部機，而唔係再逐個軟件分開設定。",
       "summary_locked": true,
-      "stars": 82924,
+      "stars": 82950,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -10061,7 +10061,7 @@
       "description": "Write HTML. Render video. Built for agents.",
       "summary": "HeyGen 開源嘅影片渲染框架。用 HTML、CSS 同動畫寫畫面，再輸出穩定嘅 MP4。可以喺本機用命令列跑，寫程式助手亦可以叫佢出片。適合想用網頁排版方式做片，而唔係由零砌 FFmpeg 指令嘅人。",
       "summary_locked": true,
-      "stars": 76116,
+      "stars": 76145,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "topics": [
@@ -10216,7 +10216,7 @@
       "description": "📈 Get real-time stocks from TradingView",
       "summary": "非官方嘅程式庫，用嚟從 TradingView 讀即時報價同圖表數據。可以接住做自己嘅監察或回測數據源。佢唔係 TradingView 官方接口，亦唔會代替券商落單。",
       "summary_locked": true,
-      "stars": 5784,
+      "stars": 5785,
       "language": "TypeScript",
       "license": "",
       "topics": [
@@ -10400,7 +10400,7 @@
       "description": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码",
       "summary": "李博傑《深入理解 AI Agent》嘅開源倉庫。有全書正文、PDF 同按章配套程式。用嚟對住設計原理睇記憶、工具同工程實踐，而唔係一個裝好即用嘅 agent 產品。你可以由某一章嘅程式開始改。",
       "summary_locked": true,
-      "stars": 56703,
+      "stars": 56707,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -10586,7 +10586,7 @@
       "description": "Record your screen, ship a demo. Free and open-source, GPU-accelerated, no watermarks, no subscriptions. Windows, macOS, Linux. Actively maintained.",
       "summary": "開源螢幕錄影程式，用嚟錄產品示範片。支援 Windows、macOS 同 Linux，有 GPU 加速，冇浮水印同訂閱。片段留喺自己部機，適合要出 demo 又唔想用閉源錄影工具嘅人。",
       "summary_locked": true,
-      "stars": 5227,
+      "stars": 5249,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -10617,7 +10617,7 @@
       "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
       "summary": "港大嘅個人化補習 agent。用嚟按你嘅程度做長期輔導、研究同互動練習，可以自己架。重點係持續記住學習進度，而唔係一個只答一條問題嘅聊天窗。教材同對話都可以留喺自己部機。",
       "summary_locked": true,
-      "stars": 51893,
+      "stars": 51967,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -10765,7 +10765,7 @@
       "description": "🎬 Open-source, self-hosted AI agent that runs a YouTube channel end to end: researches topics, writes scripts, generates narration, visuals and video, optimizes SEO, and publishes after your approval, then learns from analytics. Works with Gemini, OpenAI, OpenRouter, DeepSeek and more.",
       "summary": "可以自己架嘅影片 agent。用嚟由題目寫腳本、配音同畫面，你批准之後先發佈，再按數據調整下一條。模型接口可以換。成片同發佈都要你自己確認。腳本同成片都可以留喺自己部機再改。",
       "summary_locked": true,
-      "stars": 4891,
+      "stars": 4892,
       "language": "JavaScript",
       "license": "MIT",
       "topics": [
@@ -10827,7 +10827,7 @@
       "description": "Programmatic video for coding agents — HTML to video on your laptop. Turn HTML, CSS & data into real MP4s with pluggable render engines, 21 templates, AI soundtrack. Apache-2.0, no per-render fees. An official project by the Open Design team.",
       "summary": "喺自己部電腦將 HTML、CSS 同數據渲成 MP4 嘅工具。寫程式助手可以叫佢出片，有現成模板同可換嘅渲染引擎。用嚟做程式化影片，而唔係按次收費嘅雲端渲染。影片檔留喺你部電腦。",
       "summary_locked": true,
-      "stars": 4785,
+      "stars": 4786,
       "language": "HTML",
       "license": "Apache-2.0",
       "topics": [
@@ -11077,7 +11077,7 @@
       "description": "[ECCV 2024] The official implementation of paper \"BrushNet: A Plug-and-Play Image Inpainting Model with Decomposed Dual-Branch Diffusion\"",
       "summary": "插拔式嘅擴散修補模型，用分開嘅雙分支處理遮罩同原圖。可以接上現有文字生圖模型，按筆刷區域重畫，而唔使將成個底模重新訓練。ECCV 2024。想保留原本個擴散模型，只加一個修補分支就得。",
       "summary_locked": true,
-      "stars": 1750,
+      "stars": 1751,
       "language": "Python",
       "license": "",
       "topics": [
@@ -11106,7 +11106,7 @@
       "description": "High quality training free inpaint for every stable diffusion model. Supports ComfyUI",
       "summary": "唔使再訓練嘅修補採樣器，可以套喺已有嘅擴散同整流模型上。遮罩入面先多諗幾步再去噪，用多啲計算換補得更穩，亦支援按文字換局部。有 ComfyUI 節點，方法本身係一篇採樣論文，唔止一個節點包。TMLR。",
       "summary_locked": true,
-      "stars": 1474,
+      "stars": 1475,
       "language": "Python",
       "license": "GPL-3.0",
       "topics": [
@@ -11323,7 +11323,7 @@
       "description": "A framework for efficient model inference with omni-modality models",
       "summary": "vLLM 嘅多模態推理框架，用嚟高效跑圖像、聲音同影片生成模型。重點係部署同吞吐，而唔係畫布或者剪輯介面。你可以喺自己部機開服務，讓其他程式呼叫呢啲模型。適合要同時服務幾種模態嘅後端。",
       "summary_locked": true,
-      "stars": 7433,
+      "stars": 7437,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -11587,7 +11587,7 @@
       "description": "A repository of models, textual inversions, and more",
       "summary": "Civitai 嘅開源程式，用嚟營運一個分享模型、文字反轉同 LoRA 嘅社群網站。你可以瀏覽、上傳同下載別人訓練嘅權重，而唔係喺度由文字生圖。適合想自己架一個模型分享站，或者睇吓個平台點樣做成。",
       "summary_locked": true,
-      "stars": 7303,
+      "stars": 7304,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "topics": [
@@ -11644,7 +11644,7 @@
       "description": "On-device subtitle generation that connects directly to DaVinci Resolve, Premiere, and After Effects.",
       "summary": "喺自己部電腦做字幕嘅工具，聲同片唔使上傳。可以獨立用，亦可以駁 DaVinci Resolve、Premiere 同 After Effects。支援多語言轉錄同翻譯，仲可以分辨邊個講緊嘢。適合要本地出字幕、又想直接入剪輯軟件嘅人。",
       "summary_locked": true,
-      "stars": 4487,
+      "stars": 4488,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -11790,7 +11790,7 @@
       "description": "An agent skill for creating detailed, interactive isometric illustrations of real-world machines and complex systems. Generates polished SVGs with optional WebGL shaders and 3D effects.",
       "summary": "Claude 嘅 skill，用嚟將一個概念畫成可以互動嘅等軸測機械圖。輸出係 SVG、WebGL 或者三維，零件分得細。佢叫編程助手砌一個睇得明嘅物件，而唔係只回一段文字。亦可以喺 Codex 同 OpenCode 用。",
       "summary_locked": true,
-      "stars": 23068,
+      "stars": 23089,
       "language": "JavaScript",
       "license": "MIT",
       "topics": [
@@ -11817,7 +11817,7 @@
       "description": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
       "summary": "用嚟關掉國產安卓手機入面嘅廣告、熱搜同推銷通知。唔使 root，改動可以還原。可以插上手機用桌面程式撳，亦可以交俾 AI agent 一次過執行。適合想清走系統廣告、又唔想刷機嘅人。",
       "summary_locked": true,
-      "stars": 5127,
+      "stars": 5168,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -11848,7 +11848,7 @@
       "description": "AI digital-human talking-head videos from one photo: Renoise MCP generation + 5 editing styles + 48 creator-grade packaging components. Agent skill for Claude Code / Codex / OpenClaw / WorkBuddy …",
       "summary": "一個 agent skill，用一張相同一句稿生成數字人口播片。佢叫 Renoise 嘅服務做對嘴同包裝，而唔係喺你部機由零訓練模型。適合想交俾 Claude Code 或者 Codex 出一條口播片嘅人。",
       "summary_locked": true,
-      "stars": 1560,
+      "stars": 1562,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [],
@@ -11870,7 +11870,7 @@
       "description": "11 Claude skills for day trading: scan thousands of charts, track breaking news, time every entry and exit, and replay every outcome before you risk a dollar.",
       "summary": "一組 Claude skill，用免費公開數據掃圖、追新聞同重播舊走勢。你可以喺落單之前睇返一個形態之後點行。佢係研究同覆盤工具，而唔係券商落盤程式，亦唔會保證賺到錢。",
       "summary_locked": true,
-      "stars": 3661,
+      "stars": 3697,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -11898,7 +11898,7 @@
       "description": "EffectCraft: An open-source motion graphics and compositing tool written by scratch in pure Rust",
       "summary": "用 Rust 寫嘅開源動態圖形同合成軟件。你可以喺時間線上砌畫面同效果，而唔使靠訂閱制嘅合成工具。程式由作者自己寫，適合想有一個輕量合成器嘅人。同剪輯成片係兩種工作。",
       "summary_locked": true,
-      "stars": 8221,
+      "stars": 8224,
       "language": "Rust",
       "license": "Apache-2.0",
       "topics": [
@@ -11926,7 +11926,7 @@
       "description": "Qwen-Image 2.1 NSFW/姿势出图 skill：作者级提示词配方 + NSFW LoRA + 136 姿势 VNCCS 人偶控制；适用 Claude Code / Codex / Cursor / OpenClaw",
       "summary": "一個 agent skill，用嚟喺 ComfyUI 入面用 Qwen-Image 按姿勢出圖。配方包括提示詞、成人向 LoRA 同一百幾個三維姿勢。適合想用編程助手跟住固定步驟出圖嘅人。內容係成人向，唔係一般插畫工具。",
       "summary_locked": true,
-      "stars": 3853,
+      "stars": 3854,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -11986,7 +11986,7 @@
       "description": "Image-driven 3D scene generation system. Users provide a reference image and prompt words, and the system generates previewable, replayable, and traceable scene results according to the camera trajectory; official 3D demonstration assets allow direct viewing of color/depth animations and Gaussian point clouds in the browser 图像驱动的三维场景生成系统",
       "summary": "用一張參考圖同提示詞，沿住鏡頭軌跡生成可以預覽嘅三維場景。瀏覽器可以播顏色、深度同高斯點雲。網站用 Docker 起。適合想由一張相行出一段可重播場景，而唔係只得一張靜態圖。",
       "summary_locked": true,
-      "stars": 918,
+      "stars": 940,
       "language": "Python",
       "license": "",
       "topics": [
@@ -12012,7 +12012,7 @@
       "description": "A studio for image and video generation — one prompt bar, each model’s own settings, and every finished run in one gallery.",
       "summary": "一個開源嘅圖像同影片工作室，用一條提示詞呼叫多個現成模型。你要自己帶平台鑰匙，工作室本身唔係模型。適合想喺同一個畫面試唔同出圖同出片模型、又唔想被單一網站綁住嘅人。",
       "summary_locked": true,
-      "stars": 5113,
+      "stars": 5120,
       "language": "TypeScript",
       "license": "",
       "topics": [],
@@ -12034,7 +12034,7 @@
       "description": "RSI-Anything: Unlocking Recursive Self-Improvement with World Models",
       "summary": "研究點樣用世界模型做遞迴自我改進。系統先預測下一步結果，再由互動入面學，然後改下一次決定。倉庫跟住論文。適合睇世界模型點樣參與決策，而唔係一個可以即刻玩嘅遊戲。",
       "summary_locked": true,
-      "stars": 1074,
+      "stars": 1075,
       "language": "HTML",
       "license": "Apache-2.0",
       "topics": [
@@ -12061,7 +12061,7 @@
       "description": "Turn any script into viral, multi-style animated stickman videos for Faceless YouTube Channels. Automate visuals, voiceover, captions & SFX. 100% Free & Open-Source.",
       "summary": "將稿或者題目變成火柴人動畫片嘅開源流程。畫面、配音、字幕同音效可以一次過砌。適合做冇露臉嘅頻道，而唔使自己逐格畫。輸出係成片，唔係淨係一張分鏡。成片留喺你部電腦。",
       "summary_locked": true,
-      "stars": 3542,
+      "stars": 3557,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -12092,7 +12092,7 @@
       "description": "A股行情分析与AI智能投研智能体：股票分析、量化交易分析、盘后复盘桌面工作台——easy stock",
       "summary": "A 股嘅桌面投研工作台。你可以睇行情、做個股研究同盤後復盤，再叫 AI 整理證據。佢係分析工具，而唔係自動向券商落盤嘅程式。適合想喺自己部機做復盤嘅人。判斷要你自己落。",
       "summary_locked": true,
-      "stars": 1695,
+      "stars": 1698,
       "language": "Go",
       "license": "",
       "topics": [
@@ -12123,7 +12123,7 @@
       "description": "Scenario for Blender: AI images, video, 3D and PBR materials in the viewport, plus a local MCP server for agents. Blender 5.0+ extension, GPL-3.0-or-later.",
       "summary": "Scenario 嘅 Blender 擴充，可以喺視窗入面生成圖像、影片、三維模型同 PBR 材質。另外開一個本地 MCP，等 agent 可以叫到呢啲功能。需要 Blender 5.0 或更新。生成係呼叫佢哋嘅服務，唔係 Blender 內置模型。",
       "summary_locked": true,
-      "stars": 914,
+      "stars": 915,
       "language": "Python",
       "license": "GPL-3.0",
       "topics": [
@@ -12185,7 +12185,7 @@
       "description": "The agent skills I use every day. Works with Claude Code and Codex.",
       "summary": "Theo 每日用嘅 agent skill 合集，清理到其他人都可以用。可以喺 Claude Code 同 Codex 跑，有 T3 Code 時會用佢嘅功能，冇就退返原生工具。適合想直接用一套日常開發技能，而唔使由零寫 skill。",
       "summary_locked": true,
-      "stars": 2479,
+      "stars": 2480,
       "language": "Python",
       "license": "MIT",
       "topics": [],
@@ -12207,7 +12207,7 @@
       "description": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.",
       "summary": "畀 AI agent 用嘅族譜 skill，專門查前蘇聯、蘇聯同俄羅斯帝國嘅親屬紀錄。佢會讀教堂冊、民事、軍事同流放檔案，並且分開已證實同推測。適合要追查家族、又想每條資料留低出處嘅人。",
       "summary_locked": true,
-      "stars": 1347,
+      "stars": 1350,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -12238,7 +12238,7 @@
       "description": "Best headless browser for AI agents. Lite, Fast, High-Compatibility. Built in Rust",
       "summary": "用 Rust 寫嘅無頭瀏覽器，畀 AI agent 操控網頁。重點係輕、快、相容性高。你可以喺冇視窗嘅環境打開頁面同做操作。適合想用自己嘅 agent 瀏覽網頁，而唔使靠一個厚重瀏覽器。",
       "summary_locked": true,
-      "stars": 21756,
+      "stars": 21769,
       "language": "Rust",
       "license": "Apache-2.0",
       "topics": [
@@ -12269,7 +12269,7 @@
       "description": "Official repository for MOSS-Image, a 5B-parameter base DiT model with high-quality text rendering, layout generation, and efficient fine-tuning.",
       "summary": "OpenMOSS 嘅 50 億參數圖像模型，擅長畫入面嘅文字同版面。可以微調。官方程式同權重說明喺度。適合要文字渲染清楚嘅生圖，而唔係一個畫布軟件。模型要自己下載再跑。",
       "summary_locked": true,
-      "stars": 2313,
+      "stars": 2319,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -12297,7 +12297,7 @@
       "description": "Renders Mermaid diagrams faster than you'd run from a volcano! 🌋",
       "summary": "Obsidian 官方嘅 Mermaid 圖渲染器，將圖表轉成 SVG。程式細、同步執行、冇運行時依賴，顏色跟 CSS 變數。支援 Mermaid 12 嘅圖種。適合要快啲出流程圖，而唔係做影片合成。",
       "summary_locked": true,
-      "stars": 3946,
+      "stars": 3950,
       "language": "TypeScript",
       "license": "",
       "topics": [
@@ -12326,7 +12326,7 @@
       "description": "The open source AI video agent: turns any coding agent into a video agent, with an editor to change anything it makes.",
       "summary": "開源嘅 AI 影片 agent。你可以將而家用緊嘅編程助手變成出片助手，做完仲有編輯器改佢生成嘅畫面。適合想用對話砌片、又想事後逐段改，而唔係只收一條成品。生成同剪接留喺同一條流程。",
       "summary_locked": true,
-      "stars": 3785,
+      "stars": 3797,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -12401,7 +12401,7 @@
       "description": "The world's first open-source multimodal creative assistant  This is a substitute for Canva and Manus that prioritizes privacy and is usable locally.",
       "summary": "開源嘅多模態創作助手，可以本地跑，用嚟做設計同生成，定位係 Canva 一類工具嘅替代。私隱優先。適合想喺自己部機做圖文創作，而唔使將稿交去一個訂閱網站。稿同對話都可以留喺本機。",
       "summary_locked": true,
-      "stars": 6725,
+      "stars": 6726,
       "language": "TypeScript",
       "license": "",
       "topics": [
@@ -12457,7 +12457,7 @@
       "description": "A python library for self-supervised learning and latent world models on images.",
       "summary": "Python 自監督學習庫，用嚟喺圖像上學表示，亦包含潛在世界模型。你可以喺未標註嘅圖上訓練，再將表示用落下游任務。適合做視覺預訓練，而唔係一個出片或交易程式。",
       "summary_locked": true,
-      "stars": 3825,
+      "stars": 3826,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -12519,7 +12519,7 @@
       "description": "SpaceXAI's coding agent harness and TUI. Fullscreen, mouse interactive, extensible.",
       "summary": "SpaceXAI 嘅終端編程 agent，全螢幕介面可以睇專案、改檔同跑指令。亦可以無介面跑，或者經 Agent Client Protocol 嵌進編輯器。程式用 Rust 寫，由佢哋嘅主倉庫同步出嚟。適合想喺終端交辦開發，而唔使開一個網頁聊天窗。",
       "summary_locked": true,
-      "stars": 27622,
+      "stars": 27624,
       "language": "Rust",
       "license": "Apache-2.0",
       "topics": [],
@@ -12541,7 +12541,7 @@
       "description": "Eleven free Claude skills that clone any app: reverse-engineer it, rebuild it, test it for bugs, then fix what its users hate. Free, MIT.",
       "summary": "十一個 Claude skill，用嚟拆解一個 app 嘅流程，再由 agent 重新砌一個。佢要求只重建功能，唔抄程式、標誌同文案。可以喺 Claude Code 當插件裝。適合想用技能包試做同類產品，而唔係一個現成嘅應用程式。",
       "summary_locked": true,
-      "stars": 6680,
+      "stars": 6690,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -12572,7 +12572,7 @@
       "description": "Agent Skills that teach coding agents to write, review, and port idiomatic Rust, plus a tested clippy config. Works with Claude Code, Codex, Copilot, Cursor, and Gemini CLI.",
       "summary": "畀 coding agent 用嘅 Rust skill。一個教寫得地道，一個負責審查同指出邊條規則，一個將 C、Python 等程式搬去 Rust。另有一份 clippy 設定可以放喺 CI。適合想 agent 寫 Rust 時跟官方風格，而唔使每次自己貼指南。",
       "summary_locked": true,
-      "stars": 1534,
+      "stars": 1544,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -12603,7 +12603,7 @@
       "description": "Open-source AI video replacement workflow by TEIN. Combine depth maps, SAM segmentation, face meshes, and audio processing to replace characters and objects with Seedance. Includes a local web UI to prepare inputs, review masks, preview generations, and export with original audio.",
       "summary": "本地介面，用嚟換片入面嘅人或物件。佢準備深度、SAM 遮罩同面網，再交畀 Seedance 生成，匯出時保留原本成段聲音。要另外接 Enhancor 嘅 API。適合做角色替換，而唔係一個自己訓練嘅影片模型。",
       "summary_locked": true,
-      "stars": 1338,
+      "stars": 1340,
       "language": "Python",
       "license": "MIT",
       "topics": [],
@@ -12625,7 +12625,7 @@
       "description": "High-performance · Lightweight · AI Native Video workspace. 面向 AI 时代的视频创作工作台。 在画布中，和Agent一起自由连接创意和素材。",
       "summary": "本地優先嘅 AI 影片工作台，喺畫布入面連接素材、模型同 agent。桌面版可以喺自己部機跑，由分鏡改到成片。新代碼要商業使用就另外授權。適合想喺畫布砌片，而唔係一個由零訓練嘅影片模型。",
       "summary_locked": true,
-      "stars": 1987,
+      "stars": 1989,
       "language": "TypeScript",
       "license": "",
       "topics": [
@@ -12656,7 +12656,7 @@
       "description": "Topic in, narrated explainer video out. A Claude Code / Codex skill that turns any topic into a black-canvas motion-graphics explainer video with TTS voiceover, subtitles and a chapter progress bar. Chinese or English; every frame drawn in code with Remotion.",
       "summary": "一個 Claude Code 同 Codex skill，用 Remotion 將題目畫成講解短片，有配音、字幕同章節條。每一幀係程式畫出嚟，唔係生成模型。中英文都可以。工具本身係非商業許可。適合用 agent 出講解片，而唔係收一條現成影片。",
       "summary_locked": true,
-      "stars": 2859,
+      "stars": 2861,
       "language": "TypeScript",
       "license": "",
       "topics": [
@@ -12687,7 +12687,7 @@
       "description": "One-ink editorial print image skill — warm paper, halftone photography, active negative space, and restrained typography.",
       "summary": "一個圖像 skill，用嚟出單色或雙色嘅編輯風格圖，例如海報、小誌同人像。預設係一隻主色加少少點綴，白紙或暖紙底都可以。佢係風格指示，唔係一個新圖像模型。適合要印刷感嘅圖，而唔係一般彩色生圖。",
       "summary_locked": true,
-      "stars": 3556,
+      "stars": 3557,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -12718,7 +12718,7 @@
       "description": "Official Hi3D v1.0: high-resolution 3D geometry refinement built on Sparc3D. Inference code, model weights, and documentation.",
       "summary": "Hi3D 嘅官方推論程式，用參考圖將粗網格修到更高解像度嘅幾何。底層係 Sparc3D，權重喺 Hugging Face。倉庫有推論，冇訓練碼。適合已有粗模型再加細節，而唔係由一張圖由零生成。",
       "summary_locked": true,
-      "stars": 628,
+      "stars": 629,
       "language": "Python",
       "license": "",
       "topics": [
@@ -12837,7 +12837,7 @@
       "description": "A股多Agent投研框架 — 适配A股数据源(龙虎榜/游资/解禁等)，7位分析师基于A股规则的辩论决策，基于TradingAgents深度改造，适配大A。A-share multi-agent investment research framework — 7 AI analysts, bull/bear debate, risk assessment。",
       "summary": "將 TradingAgents 改到適合 A 股嘅多 agent 投研框架。七個分析師會按龍虎榜、解禁等數據辯論。可以用 pip 裝，定位係研究同教學。適合試多角色投研，而唔係一個自動落單嘅交易程式。",
       "summary_locked": true,
-      "stars": 3849,
+      "stars": 3850,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -12869,7 +12869,7 @@
       "summary": "Airbnb 出嘅網頁 Lottie 播放器，用嚟播 After Effects 經 Bodymovin 匯出嘅 JSON 動畫。佢只負責喺瀏覽器播放，唔係剪片或合成軟件，動作要喺 AE 做好再匯出。",
       "summary_en": "Airbnb's web Lottie player renders JSON exported from After Effects through Bodymovin. It only plays the animation in a browser. The motion is authored in AE or another tool, then exported.",
       "summary_locked": true,
-      "stars": 32293,
+      "stars": 32294,
       "language": "JavaScript",
       "license": "MIT",
       "topics": [],
@@ -13020,7 +13020,7 @@
         "react-native"
       ],
       "archived": false,
-      "pushed_at": "2026-10-30",
+      "pushed_at": "2026-10-31",
       "paper_title": "",
       "paper_url": "",
       "added_at": "2026-10-30T05:54:21+08:00"
@@ -13183,7 +13183,7 @@
       "summary": "用 TypeScript 寫動態圖形嘅框架，喺程式入面排時間軸、做補間，再渲染成片。佢係寫程式做 motion，唔係 After Effects 外掛，部機亦唔使裝 AE。",
       "summary_en": "A framework for motion graphics written in TypeScript. You lay out a timeline and tweens in code, then render a video. It is code-driven motion, not an After Effects plugin, and AE is not required.",
       "summary_locked": true,
-      "stars": 19606,
+      "stars": 19607,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -13268,7 +13268,7 @@
       "summary": "用 Python 做數學動畫嘅社群版，適合講解公式同幾何，公式會一步步畫出嚟，再渲染成教學片。佢係教學影片工具，唔係商業 After Effects 合成，部機亦唔使裝 AE。",
       "summary_en": "The community Python framework for mathematical animation. It draws formulas and geometry step by step and renders a teaching film. It makes teaching videos, not commercial After Effects comps, and AE is not required.",
       "summary_locked": true,
-      "stars": 42033,
+      "stars": 42037,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -13547,7 +13547,7 @@
       "summary": "將《薩爾達傳說 王國之淚》靜態重編譯成 Windows 程式，用 Vulkan 渲染。遊戲檔唔喺 repo，要自己合法擁有。佢係遊戲移植，唔係 Blender 或合成工具，而家仍然早期。",
       "summary_en": "A static recompilation of The Legend of Zelda: Tears of the Kingdom into a Windows program with a Vulkan renderer. Game files are not in the repo; you need your own legal copy. It is a game port, not a Blender or compositing tool, and it is still early.",
       "summary_locked": true,
-      "stars": 1733,
+      "stars": 1828,
       "language": "C",
       "license": "MIT",
       "topics": [],
@@ -13569,7 +13569,7 @@
       "summary": "畀 coding agent 用嘅聽覺工具，可以描述一段聲音、用程式造聲，再聽返嚟改。只靠 CPU，亦有 MCP。適合評 UI 聲同配樂。佢唔係剪片軟件，亦唔係新訓練嘅音樂模型。",
       "summary_en": "Ears for coding agents: describe a sound, synthesize it in code, then listen and revise. It runs on CPU and includes an MCP server. It is for UI sounds and score, not a video editor or a newly trained music model.",
       "summary_locked": true,
-      "stars": 3328,
+      "stars": 3332,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -13597,7 +13597,7 @@
       "summary": "用一塊大約七美元嘅 ESP32 畀現成視覺模型操控一部真 iPhone：AirPlay 當眼，USB HID 當手。唔使 Mac、開發者帳號或越獄。佢係硬件橋，唔係新訓練嘅模型。",
       "summary_en": "A roughly seven-dollar ESP32 lets an existing vision model use a real iPhone: AirPlay for eyes and USB HID for hands. No Mac, developer account, or jailbreak. It is a hardware bridge, not a newly trained model.",
       "summary_locked": true,
-      "stars": 4133,
+      "stars": 4136,
       "language": "C",
       "license": "MIT",
       "topics": [
@@ -13628,7 +13628,7 @@
       "summary": "Z.ai 出嘅 AI 編程工作台，有桌面、瀏覽器同終端 agent，repo 包含客戶端、後端同 agent 運行時。佢係寫程式嘅 harness，唔係圖像或剪片模型。",
       "summary_en": "Z.ai's coding workbench, with desktop, browser, and terminal agents. The repo includes the client, backend, and agent runtime. It is a coding harness, not an image or video model.",
       "summary_locked": true,
-      "stars": 8387,
+      "stars": 8388,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "topics": [],
@@ -13650,7 +13650,7 @@
       "summary": "畀 agent 用嘅動態圖形 skill，用 Chrome 同 ffmpeg 渲染，想把 AI 片整得似 motion designer 做。佢係 skill 加渲染流程，唔係 After Effects 外掛。",
       "summary_en": "An agent skill for motion graphics. It renders with Chrome and ffmpeg and tries to make AI videos look like a motion designer's work. It is a skill plus a render path, not an After Effects plugin.",
       "summary_locked": true,
-      "stars": 1144,
+      "stars": 1147,
       "language": "JavaScript",
       "license": "Apache-2.0",
       "topics": [
@@ -13911,7 +13911,7 @@
       "summary": "掛喺 Mac 凹槽、Windows、Linux 同手機上面嘅小工具，用嚟睇住 Claude Code、Codex、Cursor 等 coding agent，可以批權限同傳檔。佢係監察介面，唔係自己寫程式嘅 agent。",
       "summary_en": "A small companion in the Mac notch, and on Windows, Linux, and phones, that watches coding agents such as Claude Code, Codex, and Cursor. You can approve permissions and drop files. It is a monitor, not an agent that writes the code.",
       "summary_locked": true,
-      "stars": 6805,
+      "stars": 6810,
       "language": "Swift",
       "license": "MIT",
       "topics": [
@@ -13942,7 +13942,7 @@
       "summary": "Google 出嘅 Android 自動化工具，畀 AI 助手同測試套件好似人手咁操控真手機，可以跑完整流程同擷取 log。佢係手機自動化，唔係一般寫程式 agent。",
       "summary_en": "Google's Android automation tool. AI assistants and test suites can use a real phone like a person, run a full workflow, and capture logs. It automates phones, not a general coding agent.",
       "summary_locked": true,
-      "stars": 15837,
+      "stars": 15847,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -13970,7 +13970,7 @@
       "summary": "CopilotKit 出嘅主動 agent 範本，建喺 OpenBot 上面，做完事先同你匯報，你可以中途介入。而家仍然早期。佢係起步範本，唔係一個已經訓練好嘅獨立模型。",
       "summary_en": "CopilotKit's template for a proactive agent, built on OpenBot, that does the work and checks back so you can step in. It is still early. It is a starter template, not a separately trained model.",
       "summary_locked": true,
-      "stars": 1663,
+      "stars": 1668,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [],
@@ -13992,7 +13992,7 @@
       "summary": "本地一鍵角色替換程式，前面係 Next.js，後面用 ComfyUI 流程呼叫現成 MiniMax H3、SAM 同 Qwen3-VL。佢係套殼應用，唔係新訓練嘅影片模型。",
       "summary_en": "A local one-click character-swap app. The Next.js front end runs a ComfyUI workflow on existing MiniMax H3, SAM, and Qwen3-VL weights. It is a wrapper app, not a newly trained video model.",
       "summary_locked": true,
-      "stars": 645,
+      "stars": 651,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -14077,7 +14077,7 @@
       "summary": "二十二個 Blender 5.2 agent skill，涵蓋建模、UV、材質、綁骨、動畫、渲染同檢查，畀 Claude Code、Codex、Cursor 等用。佢係 skill 包，部機要裝 Blender。",
       "summary_en": "Twenty-two Blender 5.2 agent skills for modeling, UVs, materials, rigging, animation, rendering, and checks, for Claude Code, Codex, Cursor, and others. It is a skill pack, and Blender must be installed.",
       "summary_locked": true,
-      "stars": 605,
+      "stars": 606,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -14130,7 +14130,7 @@
       "summary": "播一條做好嘅動態圖形廣告，同步對住 HyperFrames 草稿，再將分鏡過程匯出成 MP4。佢係對稿播放器，唔係 After Effects，亦唔係由零開始嘅剪片軟件。",
       "summary_en": "Plays a finished motion-graphics ad in sync with the HyperFrames drafts it grew from, then exports that breakdown as an MP4. It is a breakdown player, not After Effects or an editor you start from scratch.",
       "summary_locked": true,
-      "stars": 1228,
+      "stars": 1229,
       "language": "HTML",
       "license": "MIT",
       "topics": [
@@ -14161,7 +14161,7 @@
       "summary": "畀 coding agent 用嘅剪片流程，用文字描述就可以加字幕、動態圖形同簡報，再渲染成 MP4。佢係 agent 剪片管線，唔係 After Effects。",
       "summary_en": "An editing pipeline for coding agents. A text description can add subtitles, motion graphics, and slides, then render an MP4. It is an agent editing pipeline, not After Effects.",
       "summary_locked": true,
-      "stars": 1755,
+      "stars": 1756,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "topics": [
@@ -14285,7 +14285,7 @@
       "summary": "加密貨幣、期貨同預測市場嘅交易終端，可以用 AI agent 掃描市場同落單，支援多個交易所同預測市場。落單前要自己睇風險。佢係交易程式，唔係保證獲利嘅策略，虧損要自己承擔。",
       "summary_en": "A trading terminal for crypto, futures, and prediction markets. An AI agent can scan markets and place orders across exchanges and prediction markets. Review the risk before an order. It is trading software, not a strategy that guarantees profit, and losses are yours.",
       "summary_locked": true,
-      "stars": 3024,
+      "stars": 3025,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -14316,7 +14316,7 @@
       "summary": "畀 coding agent 用嘅產品宣傳片 skill，可以作曲，亦可以指住畫面改。片由程式渲染。佢係 skill，唔係 After Effects，亦唔係新訓練嘅影片模型。",
       "summary_en": "A product-film skill for coding agents. It can compose music and you can point at a frame to change it. The film is rendered from code. It is a skill, not After Effects or a newly trained video model.",
       "summary_locked": true,
-      "stars": 1925,
+      "stars": 1926,
       "language": "JavaScript",
       "license": "MIT",
       "topics": [
@@ -14347,7 +14347,7 @@
       "summary": "畀 agent 用嘅 skill，遇到複雜問題就交一頁睇得明嘅 HTML，可以有圖、表同流程，而唔係一長段純文字。佢係回答格式，唔係瀏覽器，亦唔係新訓練嘅模型。",
       "summary_en": "An agent skill that answers a hard question with one readable HTML page, including figures, tables, and flows, instead of a long block of plain text. It is an answer format, not a browser or a newly trained model.",
       "summary_locked": true,
-      "stars": 4916,
+      "stars": 4927,
       "language": "JavaScript",
       "license": "MIT",
       "topics": [
@@ -14378,7 +14378,7 @@
       "summary": "畀 Claude、Codex、Gemini 用嘅標誌設計 skill，有原則、流程、SVG 做法同測試工具，另外附一千四百個標誌參考。佢係 skill，唔係會自己出圖嘅設計軟件。",
       "summary_en": "A logo-design skill for Claude, Codex, and Gemini, with principles, a process, SVG craft, and test tools, plus a library of about 1,400 reference logos. It is a skill, not a design app that draws logos by itself.",
       "summary_locked": true,
-      "stars": 5437,
+      "stars": 5454,
       "language": "HTML",
       "license": "MIT",
       "topics": [
@@ -14440,7 +14440,7 @@
       "summary": "華爾街風格財經短片 skill，負責畫面風格、搵素材、截圖、配音同渲染，數字用簡潔圖表表達。樣片入面嘅實拍同新聞圖係引用。佢係 skill，唔係新訓練嘅影片模型。",
       "summary_en": "A skill for spare, finance-explainer shorts. It sets the look, finds footage, takes stills, adds voice, and renders, with numbers shown as simple charts. The sample's live footage and news images are credited sources. It is a skill, not a newly trained video model.",
       "summary_locked": true,
-      "stars": 418,
+      "stars": 419,
       "language": "JavaScript",
       "license": "",
       "topics": [
@@ -14471,7 +14471,7 @@
       "summary": "把 DeepSeek Harness 接到 Blender 嘅外掛，agent 可以喺開住嘅 Blender 入面改場景、檢查同匯出，無介面時亦可以無頭跑。部機要裝 Blender，隨包有建模 skill。",
       "summary_en": "A plugin that connects DeepSeek Harness to Blender. An agent can change, check, and export a scene in an open Blender, or run the same loop headless. Blender must be installed, and a modeling skill is included.",
       "summary_locked": true,
-      "stars": 1485,
+      "stars": 1486,
       "language": "Python",
       "license": "BSD-3-Clause",
       "topics": [
@@ -14564,7 +14564,7 @@
       "summary": "字節跳動嘅對口型研究，用擴散模型令畫面嘅嘴跟住聲音郁，適合虛擬人同配音對嘴。權重喺 Hugging Face。佢係口型模型，唔係圖像編輯器，亦唔係一般剪片軟件。",
       "summary_en": "ByteDance's lip-sync research. A diffusion model moves the mouth to match audio, for avatars and dubbed speech. Weights are on Hugging Face. It is a lip-sync model, not an image editor or a general video editor.",
       "summary_locked": true,
-      "stars": 6226,
+      "stars": 6228,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -14654,7 +14654,7 @@
       "summary": "three.js 嘅即時海洋渲染，用 FFT 做碎浪、泡沫、焦散同浮力，目標係瀏覽器入面高幀率跑。佢係網頁水面，唔係 Blender 流體模擬，公開不足一日，畫面仍會再改。",
       "summary_en": "A real-time ocean renderer for three.js. FFT drives shore breakers, foam, caustics, and buoyancy, aiming at a high frame rate in the browser. It is a web water surface, not a Blender fluid sim, and it has been public for less than a day, so the look can still change.",
       "summary_locked": true,
-      "stars": 444,
+      "stars": 451,
       "language": "JavaScript",
       "license": "MIT",
       "topics": [],
@@ -14676,7 +14676,7 @@
       "summary": "畀 Claude Code 同 Codex 用嘅影片 skill，用 Remotion 做可以改嘅產品宣傳片，有鏡頭卡、動態預覽同剪映匯出。佢係 skill，唔係新訓練嘅影片模型。",
       "summary_en": "A video skill for Claude Code and Codex. It builds editable product promos in Remotion, with shot cards, motion previews, and a JianYing export. It is a skill, not a newly trained video model.",
       "summary_locked": true,
-      "stars": 15182,
+      "stars": 15209,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "topics": [
@@ -14707,7 +14707,7 @@
       "summary": "用 Android 手機清理 Android TV 同 Fire TV 嘅廣告同預裝項目，唔使電腦。分類因為描述有 agent 呢個字，但佢唔係 AI agent，亦話唔會卸載系統。",
       "summary_en": "An Android phone app that clears ads and preinstalled items from an Android TV or Fire TV, without a computer. It is listed under AI Agent because the description mentions the word agent. It is not an AI agent, and it says it does not uninstall the system.",
       "summary_locked": true,
-      "stars": 1190,
+      "stars": 1199,
       "language": "Kotlin",
       "license": "MIT",
       "topics": [
@@ -14736,7 +14736,7 @@
       "summary": "畀 agent 用嘅 Mac app skill，用 Swift 同 SwiftUI 由構思做到 Dock，可以參考一個現有 app 再自己重做。唔使開 Xcode 介面。佢係 skill，成品要你自己編譯。",
       "summary_en": "Agent skills for Mac apps. They take a Swift and SwiftUI app from an idea to the Dock, and can study an existing app so you rebuild your own. You do not open the Xcode interface. It is a skill, and you compile the result.",
       "summary_locked": true,
-      "stars": 957,
+      "stars": 966,
       "language": "Swift",
       "license": "MIT",
       "topics": [
@@ -14767,7 +14767,7 @@
       "summary": "抖音知識短片風格嘅 skill，可以拆解參考片、排分鏡、自動配音效再出片。畫風係模仿參考片，唔係新訓練嘅影片模型，樣片亦唔等於你擁有原片。成片要自己再睇一次先。",
       "summary_en": "A skill for the look of viral knowledge shorts. It studies a reference, builds a shot list, adds sound, and renders. The look imitates the reference. It is not a newly trained video model, the sample does not give you the original film, and you should watch the result.",
       "summary_locked": true,
-      "stars": 820,
+      "stars": 822,
       "language": "JavaScript",
       "license": "",
       "topics": [
@@ -14826,7 +14826,7 @@
       "summary": "畀 Claude Code 用嘅動態設計 skill，用 HTML、Playwright 同 ffmpeg 由程式出片。唔使 After Effects，亦唔使 Remotion 授權。佢係 skill，唔係剪片軟件。",
       "summary_en": "A Claude Code skill for motion design. It renders films from HTML with Playwright and ffmpeg. After Effects is not required, and neither is a Remotion license. It is a skill, not a video editor.",
       "summary_locked": true,
-      "stars": 736,
+      "stars": 737,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -14854,7 +14854,7 @@
       "summary": "畀 agent 用嘅簡報 skill，用 HTML 做出雜誌或瑞士風格投影片，可以帶圖片提示同社交封面。佢係 skill，唔係 PowerPoint，亦唔係圖像模型。授權係 AGPL。",
       "summary_en": "An agent skill for slide decks. It builds magazine or Swiss-style HTML slides, with image prompts and social covers. It is a skill, not PowerPoint and not an image model. The license is AGPL.",
       "summary_locked": true,
-      "stars": 28987,
+      "stars": 28989,
       "language": "HTML",
       "license": "AGPL-3.0",
       "topics": [
@@ -14885,7 +14885,7 @@
       "summary": "Python 庫、命令列同 agent skill，用嚟清走你自己生成嘅圖同片上嘅可見標記，以及 C2PA、EXIF 呢類來源資料。清走標記唔會將生成圖變成實拍。",
       "summary_en": "A Python library, command-line tool, and agent skill that clears visible marks and provenance metadata such as C2PA and EXIF from images and video you generated. Stripping those marks does not turn a generated image into a photograph.",
       "summary_locked": true,
-      "stars": 6223,
+      "stars": 6224,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -14947,7 +14947,7 @@
       "summary": "開源算法交易平台，可以接券商、圖表同策略，策略可以用 Python 寫，亦有交易介面。平台係一個 Python 服務。佢係下單同研究嘅系統，唔係保證賺錢嘅機械人。授權係 AGPL。",
       "summary_en": "An open algorithmic-trading platform. It connects brokers, charts, and strategies written in Python, and it includes a trading interface. It is a Python service for orders and research, not a bot that guarantees profit. The license is AGPL.",
       "summary_locked": true,
-      "stars": 2938,
+      "stars": 2940,
       "language": "Python",
       "license": "AGPL-3.0",
       "topics": [
@@ -15040,7 +15040,7 @@
       "summary": "Google 出嘅軟件設計同審查 skill，個名有 model，實際係畀 Claude Code、Codex 等用嘅技能包。裝落 coding agent 先用到。唔係一個新訓練嘅語言模型。",
       "summary_en": "Google's skills for designing and reviewing software. The name says model, but the repo is a skill pack for Claude Code, Codex, and similar agents. You install it into a coding agent. It is not a newly trained language model.",
       "summary_locked": true,
-      "stars": 6649,
+      "stars": 6675,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -15093,7 +15093,7 @@
       "summary": "做會持續自我改進嘅 agent 基建，repo 涵蓋推理、訓練同強化學習，用嚟撐住長期運行嘅 agent。佢係底層設施，唔係一個開箱即用、已經學完嘅助手。仍然係研究基建。",
       "summary_en": "Infrastructure for agents that keep improving. The repo covers inference, training, and reinforcement learning for agents that run for a long time. It is a foundation, not a finished assistant you can open and use, and it is still research infrastructure.",
       "summary_locked": true,
-      "stars": 7775,
+      "stars": 7776,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -15259,7 +15259,7 @@
       "summary": "用 kohya-ss 訓練器做 LoRA 同 Dreambooth 嘅腳本同圖形介面，可以微調擴散模型。要自己準備數據集。佢係訓練工具，唔係新模型本身。授權係 AGPL。",
       "summary_en": "Scripts and a graphical interface around the kohya-ss trainer for LoRA and DreamBooth fine-tuning of diffusion models. You bring your own dataset. It is a training tool, not a new model. The license is AGPL.",
       "summary_locked": true,
-      "stars": 6202,
+      "stars": 6203,
       "language": "Python",
       "license": "AGPL-3.0",
       "topics": [
@@ -15286,7 +15286,7 @@
       "summary": "CVPR 2024 嘅相片修復研究，用擴散模型把野外爛相整到更清晰。有論文同網上示範。授權係 SupPixel 自訂條款，商業用途要另外睇條件，唔係一般開源許可。",
       "summary_en": "CVPR 2024 photo-restoration research. A diffusion model tries to make damaged real-world photos look clearer. There is a paper and an online demo. The license is SupPixel's own terms, so commercial use has extra conditions. It is not a standard open-source grant.",
       "summary_locked": true,
-      "stars": 5691,
+      "stars": 5692,
       "language": "Python",
       "license": "",
       "topics": [
@@ -15370,7 +15370,7 @@
       "summary": "LottieFiles 出嘅動態設計 skill，把時間、緩動同迪士尼動畫原則寫畀 AI agent 用。佢係原則技能包，唔係 Lottie 播放器，亦唔係 After Effects。",
       "summary_en": "A LottieFiles skill that gives AI agents motion-design principles: timing, easing, choreography, and Disney-style animation rules. It is a principles pack, not a Lottie player and not After Effects.",
       "summary_locked": true,
-      "stars": 2629,
+      "stars": 2630,
       "language": "",
       "license": "MIT",
       "topics": [
@@ -15398,7 +15398,7 @@
       "summary": "Android 上嘅私人助理，用一句交代，佢喺後台畫面操作你已裝嘅 App 同網頁。模型要你自己配 API 或者本機服務，佢唔係新訓練嘅模型。而家係公開測試版。授權係 Apache-2.0。",
       "summary_en": "A private assistant on Android. You give it one sentence, and it operates apps you already installed and web pages on a background screen. You bring the model, through an API or a local server. It is not a newly trained model. It is a public beta. The license is Apache-2.0.",
       "summary_locked": true,
-      "stars": 1594,
+      "stars": 1747,
       "language": "Kotlin",
       "license": "Apache-2.0",
       "topics": [
@@ -15429,7 +15429,7 @@
       "summary": "DeepSeek Harness 嘅非官方 Android 客戶端，手機可以裝 Linux 環境本機跑，亦可以連去你自己電腦上嘅 DSH。模型請求仍然交畀你配置嘅服務商。同 DeepSeek 官方無關。授權係 AGPL-3.0，吉祥物唔喺呢個授權入面。",
       "summary_en": "An unofficial Android client for DeepSeek Harness. The phone can run it in a local Linux environment, or connect to DSH on your own computer. Model requests still go to the provider you configure. It is not affiliated with DeepSeek. The app license is AGPL-3.0, and the mascots are outside that license.",
       "summary_locked": true,
-      "stars": 2720,
+      "stars": 2836,
       "language": "Dart",
       "license": "AGPL-3.0",
       "topics": [
@@ -15491,7 +15491,7 @@
       "summary": "把 Maya 嘅操作習慣搬入 Blender 嘅免費擴充，包括熱盒、標記選單、Channel Box 同屬性編輯器。要裝 Blender 先用到。佢係 Blender 擴充，唔係 Autodesk Maya。授權係 GPL-3.0。",
       "summary_en": "A free Blender extension that brings Maya habits into Blender: a hotbox, marking menus, a Channel Box, and an attribute editor. You need Blender. It is a Blender extension, not Autodesk Maya. The license is GPL-3.0.",
       "summary_locked": true,
-      "stars": 431,
+      "stars": 432,
       "language": "Python",
       "license": "GPL-3.0",
       "topics": [
@@ -15575,7 +15575,7 @@
       "summary": "用程式逐幀畫出嚟嘅一首歌粉絲歌詞 MV，畫面係對話窗同版畫。倉庫冇歌、冇歌詞，兩樣都要你自己有權先放進去。佢係一條片，唔係 VFX 工具。程式碼授權係 MIT。",
       "summary_en": "A fan lyric video for one song, drawn frame by frame in code, as a chat window and print-style pictures. The repo has no song and no lyrics; you need the right to add both. It is one film, not a VFX tool. The code license is MIT.",
       "summary_locked": true,
-      "stars": 478,
+      "stars": 479,
       "language": "JavaScript",
       "license": "MIT",
       "topics": [
@@ -15606,7 +15606,7 @@
       "summary": "畀 Cursor、Claude Code、Codex 用嘅產品宣傳片 skill，用 Remotion 模板同腳本做片。配音可以用 ElevenLabs，冇 key 就用字幕。佢係 skill，唔係新訓練嘅影片模型。授權係 MIT。Remotion 對較大公司要另外買授權。",
       "summary_en": "A product-video skill for Cursor, Claude Code, and Codex. It builds the film from a Remotion template and scripts. Voiceover can use ElevenLabs; without a key it uses captions. It is a skill, not a newly trained video model. The license is MIT. Larger companies need a separate Remotion license.",
       "summary_locked": true,
-      "stars": 413,
+      "stars": 415,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -15637,7 +15637,7 @@
       "summary": "自托管嘅 A 股量化工作台，可以用嚟寫策略、監控同回測，亦可以接你自己嘅數據源。作者講明唔當投資軟件，亦冇內置薦股。佢係研究工作台，唔係券商。授權係 MIT，只供研究。",
       "summary_en": "A self-hosted A-share research workbench for writing strategies, monitoring, and backtests. You can plug in your own data. The author says it is not investment software and it does not recommend stocks. It is a research bench, not a broker. The license is MIT, for research.",
       "summary_locked": true,
-      "stars": 6533,
+      "stars": 6551,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -15761,7 +15761,7 @@
       "summary": "Python 交易框架，可以回測、模擬同實盤落單，覆蓋股票、期權、期貨、外匯、加密貨幣同預測市場。策略用你自己嘅模型同券商。佢係框架，唔係一套賺到錢嘅策略。授權係 GPL-3.0。",
       "summary_en": "A Python trading framework for backtests, paper trading, and live orders across stocks, options, futures, forex, crypto, and prediction markets. A strategy uses your own model and broker. It is a framework, not a strategy that earns money. The license is GPL-3.0.",
       "summary_locked": true,
-      "stars": 2187,
+      "stars": 2188,
       "language": "Python",
       "license": "GPL-3.0",
       "topics": [
@@ -15775,7 +15775,7 @@
         "crypto-trading"
       ],
       "archived": false,
-      "pushed_at": "2026-10-30",
+      "pushed_at": "2026-10-31",
       "paper_title": "",
       "paper_url": "",
       "added_at": "2026-10-31T00:38:48+08:00"
@@ -15821,7 +15821,7 @@
       "summary": "每個同事 agent 有自己嘅瀏覽器、檔案同工具，動作先決定再記錄。你帶任何 AG-UI agent 過嚟，喺你自己部機跑。而家係 beta。佢係同事殼，唔係新訓練嘅模型。授權係 MIT。",
       "summary_en": "Each coworker agent gets its own browser, files, and tools. An action is decided first and recorded after. You bring any AG-UI agent and run it on your own machine. It is still beta. It is a coworker shell, not a newly trained model. The license is MIT.",
       "summary_locked": true,
-      "stars": 8871,
+      "stars": 8911,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -15851,7 +15851,7 @@
       "summary": "技能包同 MCP，畀 coding agent 研究你已有嘅單人遊戲，再試吓加網上或者分屏合作。佢係技能同流程，唔係已經做好嘅聯機補丁。遊戲要你自己有。授權係 MIT。",
       "summary_en": "A skill pack and MCP so a coding agent can study a single-player game you already have and try to add online or split-screen co-op. It is skills and a process, not a finished multiplayer patch. You need the game. The license is MIT.",
       "summary_locked": true,
-      "stars": 1658,
+      "stars": 1662,
       "language": "Python",
       "license": "MIT",
       "topics": [],
@@ -15904,7 +15904,7 @@
       "summary": "畀 Claude Code 同 Codex 用嘅立體可視化 skill，把一個點子做成 Three.js 或 Blender 場景，附食譜同可跑範例。畫面要你嘅 agent 先砌出嚟。佢係技能包，唔係一個開箱渲染器。授權係 MIT。",
       "summary_en": "A 3D visualization skill for Claude Code and Codex. It turns an idea into a Three.js or Blender scene, with recipes and runnable examples. Your agent still has to build the picture. It is a skill pack, not a renderer you open and use. The license is MIT.",
       "summary_locked": true,
-      "stars": 977,
+      "stars": 978,
       "language": "JavaScript",
       "license": "MIT",
       "topics": [
@@ -15966,7 +15966,7 @@
       "summary": "SIGGRAPH Asia 2026 嘅研究，用一條隨便拍嘅單鏡片，生成多角度一致嘅影片，方便之後做 4D Gaussian。首次用會下載權重，要有 GPU。佢係生成模型，唔係剪片軟件。程式授權係 Apache-2.0。",
       "summary_en": "SIGGRAPH Asia 2026 research. A casual single-camera video becomes consistent multi-view video for a later 4D Gaussian reconstruction. Weights download on first use, and you need a GPU. It is a generative model, not an editor. The code license is Apache-2.0.",
       "summary_locked": true,
-      "stars": 1452,
+      "stars": 1453,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -15994,7 +15994,7 @@
       "summary": "一個人用嘅開源遊戲工作室，用畫布同你自己嘅模型 key 做遊戲。支援多個模型服務商。佢係做遊戲嘅程式，唔係影片模型，亦唔保證你賺到錢。授權係 Apache-2.0。",
       "summary_en": "An open game studio for one person. You make games on a canvas with your own model key, and it talks to many model providers. It is a game-making app, not a video model, and it does not guarantee you earn money. The license is Apache-2.0.",
       "summary_locked": true,
-      "stars": 1444,
+      "stars": 1447,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "topics": [
@@ -16056,7 +16056,7 @@
       "summary": "本地圖像放大同增強，建喺 Stable Diffusion 網頁介面上，用現成模型同 LoRA 把圖拉清晰。要自己跑。佢係放大流程，唔係新訓練嘅基礎模型。授權係 AGPL-3.0。",
       "summary_en": "A local image upscaler and enhancer built on a Stable Diffusion web interface. It uses an existing model and LoRAs to make a picture clearer. You run it yourself. It is an upscaling flow, not a newly trained base model. The license is AGPL-3.0.",
       "summary_locked": true,
-      "stars": 5160,
+      "stars": 5161,
       "language": "Python",
       "license": "AGPL-3.0",
       "topics": [
@@ -16202,7 +16202,7 @@
       "summary": "桌面 coding agent，模型由 omnirush.ai 帳戶目錄揀，唔支援你自己嘅供應商 key。技能同本機 MCP 可以加。佢係客戶端，唔係你訓練嘅模型。桌面程式係 MIT，ee 目錄另有授權。",
       "summary_en": "A desktop coding agent. Models come from the catalog on your omnirush.ai account, and your own provider keys are not supported. You can add skills and local MCP servers. It is a client, not a model you trained. The desktop app is MIT, and the ee directory has a separate license.",
       "summary_locked": true,
-      "stars": 4468,
+      "stars": 4475,
       "language": "TypeScript",
       "license": "",
       "topics": [],
@@ -16224,7 +16224,7 @@
       "summary": "每日雷達同 agent skill，喺 X、Hugging Face、GitHub 同網站地圖搵新模型同產品個名，再出每日報告。佢係監察工具，唔係新模型。授權係 MIT。",
       "summary_en": "A daily radar and agent skill. It watches X, Hugging Face, GitHub, and sitemaps for names of new models and products, then writes a daily report. It is a monitor, not a new model. The license is MIT.",
       "summary_locked": true,
-      "stars": 1983,
+      "stars": 1985,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -16255,7 +16255,7 @@
       "summary": "agent skill，用街景、衛星、等高同 OpenStreetMap 估一張相喺邊度，同埋點樣收窄。要裝喺 coding agent 先用到。佢係技能，唔係新訓練嘅視覺模型。授權係 MIT。",
       "summary_en": "An agent skill that estimates where a photo was taken, using street view, satellite tiles, elevation, and OpenStreetMap, and it shows how it narrowed the search. You install it in a coding agent. It is a skill, not a newly trained vision model. The license is MIT.",
       "summary_locked": true,
-      "stars": 4615,
+      "stars": 4619,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -16317,7 +16317,7 @@
       "summary": "綠幕同藍幕摳像模型，要 NVIDIA GPU，權重約 5GB 另外下載。授權係 CC BY-NC-SA 變體，商業軟件整合要另外睇條款。佢係摳像模型，唔係 Blender 插件。",
       "summary_en": "A green-screen and blue-screen keying model. It needs an NVIDIA GPU, and the weights are about 5 GB downloaded separately. The license is a variation of CC BY-NC-SA, so integrating it into commercial software has extra terms. It is a keying model, not a Blender plugin.",
       "summary_locked": true,
-      "stars": 1910,
+      "stars": 1913,
       "language": "Python",
       "license": "",
       "topics": [
@@ -16378,7 +16378,7 @@
       "summary": "Codex 同 Claude 嘅插件，把對話入面嘅圖抽起，模型需要先再拎返嚟，長對話就唔使塞滿。佢係附件管理，唔係圖像生成模型，亦唔會幫你畫新圖。授權係 MIT。",
       "summary_en": "A plugin for Codex and Claude. It lifts images out of the chat and fetches one back only when the model needs it, so a long conversation stays lighter. It manages attachments. It is not an image-generation model, and it does not draw a new picture. The license is MIT.",
       "summary_locked": true,
-      "stars": 621,
+      "stars": 624,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -16466,7 +16466,7 @@
       "summary": "ICCV 2025 嘅影片生成同編輯研究，可以用文字同條件做片同改片。權重喺 Hugging Face。佢係模型，唔係剪片時間軸。程式授權係 Apache-2.0。",
       "summary_en": "ICCV 2025 research for creating and editing video from text and other conditions. Weights are on Hugging Face. It is a model, not a timeline editor. The code license is Apache-2.0.",
       "summary_locked": true,
-      "stars": 4030,
+      "stars": 4031,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -16584,7 +16584,7 @@
       "summary": "用 Go 寫嘅 Binance API 客戶端，REST 同 websocket 都有。要你自己嘅帳戶同 key。佢係交易所 SDK，唔係交易策略。授權係 MIT。",
       "summary_en": "A Go client for the Binance API, with REST and websockets. You need your own account and key. It is an exchange SDK, not a trading strategy. The license is MIT.",
       "summary_locked": true,
-      "stars": 1907,
+      "stars": 1908,
       "language": "Go",
       "license": "MIT",
       "topics": [
@@ -16615,7 +16615,7 @@
       "summary": "微軟出嘅研究，喺黑盒外面按經驗控制 coding agent 嘅 token 花費。你帶自己嘅 agent。佢係成本控制，唔係一個新訓練嘅 agent。授權係 Apache-2.0。",
       "summary_en": "Microsoft research that controls a coding agent's token spend from outside the black box, using past experience. You bring your own agent. It is cost control, not a newly trained agent. The license is Apache-2.0.",
       "summary_locked": true,
-      "stars": 2204,
+      "stars": 2296,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [],
@@ -16637,7 +16637,7 @@
       "summary": "開源聊天殼，側欄每個 bot 底層係你本機嘅 Claude 或 Codex，再加一部雲端電腦。同 Grok Bot、Meta Muse 無關。佢係殼，唔係新模型。授權係 Apache-2.0。",
       "summary_en": "An open chat shell. Each bot in the sidebar is Claude or Codex running on your machine, plus a cloud computer. It is independent of Grok Bot and Meta Muse. It is a shell, not a new model. The license is Apache-2.0.",
       "summary_locked": true,
-      "stars": 8803,
+      "stars": 8906,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "topics": [
@@ -16668,7 +16668,7 @@
       "summary": "多 agent 嘅滲透測試研究系統，設計喺隔離實驗環境用，行動要人確認。佢係研究系統，唔係一個可以指向別人網絡嘅成品工具。授權係 AGPL-3.0。用之前先睇實驗範圍。",
       "summary_en": "A multi-agent research system for penetration testing, meant for an isolated lab, with a person confirming actions. It is a research system, not a finished tool you point at someone else's network. The license is AGPL-3.0. Read the lab scope before use.",
       "summary_locked": true,
-      "stars": 1215,
+      "stars": 1218,
       "language": "Go",
       "license": "AGPL-3.0",
       "topics": [
@@ -16984,7 +16984,7 @@
       "summary": "Claude agent skill，做一鏡到底嘅產品片，每一格由上一格長出嚟，用 oracle 量連續性。佢係技能，唔係新影片模型。授權係 PolyForm Noncommercial，只可以非商業用。",
       "summary_en": "A Claude agent skill for product films that never cut to the next slide. Each beat grows out of the one before, and an oracle measures continuity. It is a skill, not a new video model. The license is PolyForm Noncommercial, so only noncommercial use is allowed.",
       "summary_locked": true,
-      "stars": 3543,
+      "stars": 3545,
       "language": "Python",
       "license": "",
       "topics": [
@@ -17014,7 +17014,7 @@
       "summary": "騰訊雲出嘅自托管助理，可以多用戶、多 agent，檔案留喺你部機。對話模型要你自己接，佢唔會附送一個新聊天模型。本機下載嘅只係嵌入模型。授權係 MIT。而家係助理殼。",
       "summary_en": "Tencent Cloud's self-hosted assistant, with multiple users and agents, and files stay on your machine. You connect the chat model yourself. It does not include a new chat model. The local download is only an embedding model. The license is MIT. It is an assistant shell.",
       "summary_locked": true,
-      "stars": 11374,
+      "stars": 11376,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -17044,7 +17044,7 @@
       "summary": "11 個 Claude skill，開業前試吓董事會、市場、定價同買家面板。唔使 API key。個董事會只係提示框架，唔係真人。佢係技能包，唔保證賺。授權係 MIT。",
       "summary_en": "Eleven Claude skills that test a business before launch: a board, marketing, pricing, and a buyer panel. No API key is required. The board is a prompt framework, not real people. It is a skill pack, and it does not guarantee profit. The license is MIT.",
       "summary_locked": true,
-      "stars": 2243,
+      "stars": 2247,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -17122,7 +17122,7 @@
       "summary": "加速 DiT 影片生成嘅框架，作者聲稱推理可以快 265 倍，用稀疏、蒸餾同量化。權重喺 Hugging Face。佢係加速，唔係新影片模型，速度要你自己量。授權係 Apache-2.0。",
       "summary_en": "A framework that accelerates DiT video generation. The authors claim inference can be 265 times faster, using sparsity, distillation, and quantization. Weights are on Hugging Face. It is an accelerator, not a new video model, and you measure the speed yourself. The license is Apache-2.0.",
       "summary_locked": true,
-      "stars": 568,
+      "stars": 569,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -17153,7 +17153,7 @@
       "summary": "94 個 Blender skill，畀 Cursor、Claude Code、Codex 用，經 MCP 由粗模做到匯出。要開住 Blender。同另一個 blender-skills 唔同作者。佢係技能包。授權係 MIT。",
       "summary_en": "Ninety-four Blender skills for Cursor, Claude Code, and Codex. Through MCP they go from a blockout to an export. Blender has to be open. This pack is by a different author from the other blender-skills repo. It is a skill pack. The license is MIT.",
       "summary_locked": true,
-      "stars": 1590,
+      "stars": 1597,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -17215,7 +17215,7 @@
       "summary": "影片生成嘅推理同後訓練框架，有由 MiniMax H3 蒸餾出嚟嘅快版本。要 GPU。佢係框架，唔係剪片軟件，亦唔係圖像編輯器。授權係 Apache-2.0。速度要你自己量。",
       "summary_en": "An inference and post-training framework for video generation, including a fast checkpoint distilled from MiniMax H3. You need a GPU. It is a framework, not an editor and not an image editor. The license is Apache-2.0. Measure the speed yourself.",
       "summary_locked": true,
-      "stars": 4763,
+      "stars": 4764,
       "language": "Python",
       "license": "Apache-2.0",
       "topics": [
@@ -17396,7 +17396,7 @@
       "summary": "一個 daemon，令你同隊友嘅 coding agent 可以互相發訊息，點對點加密，冇中央伺服器讀到內容。支援 Claude Code、Codex、Cursor 等。佢係通訊層，唔係新模型。授權係 Apache-2.0。",
       "summary_en": "A daemon so your coding agents and your teammates' agents can message each other, end-to-end encrypted, with no central server reading the content. It supports Claude Code, Codex, Cursor, and others. It is a messaging layer, not a new model. The license is Apache-2.0.",
       "summary_locked": true,
-      "stars": 1368,
+      "stars": 1376,
       "language": "Rust",
       "license": "Apache-2.0",
       "topics": [
@@ -17427,7 +17427,7 @@
       "summary": "畀 Claude Code、Cursor、Codex 一張代碼地圖，記低函數同團隊學過嘅決定，等改碼之前睇到邊度會壞。佢係上下文層，唔係新模型。授權係 MIT。",
       "summary_en": "Gives Claude Code, Cursor, and Codex a map of the code, recording functions and decisions the team has learned, so a change shows what it can break. It is a context layer, not a new model. The license is MIT.",
       "summary_locked": true,
-      "stars": 10964,
+      "stars": 10965,
       "language": "TypeScript",
       "license": "MIT",
       "topics": [
@@ -17458,7 +17458,7 @@
       "summary": "agent skill，指導現成圖像模型畫簡化、圓角嘅 IP 吉祥物標誌。要裝喺 coding agent，圖仍然係你嘅模型畫。佢係技能，唔係新圖像模型。授權係 MIT。",
       "summary_en": "An agent skill that guides an existing image model to draw a simple, rounded IP mascot logo. You install it in a coding agent, and the picture is still drawn by your model. It is a skill, not a new image model. The license is MIT.",
       "summary_locked": true,
-      "stars": 6297,
+      "stars": 6298,
       "language": "",
       "license": "MIT",
       "topics": [
@@ -17486,7 +17486,7 @@
       "summary": "畀 coding agent 用嘅本地剪片 skill，用 FFmpeg 做切割、字幕、響度同平台匯出。冇雲、唔使 API key。佢係技能，唔係新影片模型。授權係 MIT。",
       "summary_en": "A local editing skill for a coding agent. FFmpeg cuts, captions, loudness, and platform exports. No cloud and no API key. It is a skill, not a new video model. The license is MIT.",
       "summary_locked": true,
-      "stars": 4124,
+      "stars": 4127,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -17517,7 +17517,7 @@
       "summary": "瀏覽器入面嘅預覽軟件，可以擺場景、擺角色同運鏡，再把同一鏡頭交畀你已有嘅 AI 影片模型。佢係預覽，唔係影片模型本身。要你自己有模型。授權係 AGPL-3.0。",
       "summary_en": "Browser previs. You block a scene, pose characters, and move the camera, then hand the same shot to an AI video model you already have. It is previs, not the video model itself. You need that model. The license is AGPL-3.0.",
       "summary_locked": true,
-      "stars": 1299,
+      "stars": 1303,
       "language": "JavaScript",
       "license": "AGPL-3.0",
       "topics": [
@@ -17579,7 +17579,7 @@
       "summary": "DeepSeek Harness 嘅圖像工作室插件，可以喺對話入面生圖、改圖同對比，亦可以接 ComfyUI 同其他現成模型。內置提示詞庫。佢係插件，唔係新圖像模型。授權係 Apache-2.0。",
       "summary_en": "An image-studio plugin for DeepSeek Harness. It can generate, edit, and compare images in chat, and it can connect to ComfyUI and other existing models. It includes a prompt library. It is a plugin, not a new image model. The license is Apache-2.0.",
       "summary_locked": true,
-      "stars": 969,
+      "stars": 973,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "topics": [
@@ -17758,7 +17758,7 @@
       "summary": "agent skill，把 AI 寫嘅日文改到順口，留低意思、數字同否定，唔會自己加事實。寫唔清就問你，唔會估。只處理日文。佢係技能，唔係新語言模型。程式碼授權係 MIT。",
       "summary_en": "An agent skill that rewrites AI-written Japanese so it reads more naturally. It keeps the meaning, numbers, and negations, and it does not add facts. If the wording is unclear, it asks you instead of guessing. It handles Japanese only. It is a skill, not a new language model. The code license is MIT.",
       "summary_locked": true,
-      "stars": 2753,
+      "stars": 2756,
       "language": "Python",
       "license": "MIT",
       "topics": [
@@ -17789,7 +17789,7 @@
       "summary": "畀 coding agent 用嘅規則同 skill，擋走樣板介面、空泛文字同 AI 味代碼。唔指定顏色、字體定排版，方向仍然係你嘅。佢係技能，唔係新模型。授權係 MIT。",
       "summary_en": "Rules and a skill for a coding agent. They filter out generic interfaces, empty wording, and AI-shaped code. They do not prescribe colors, fonts, or layout, so the direction stays yours. It is a skill, not a new model. The license is MIT.",
       "summary_locked": true,
-      "stars": 7650,
+      "stars": 7654,
       "language": "JavaScript",
       "license": "MIT",
       "topics": [
@@ -18096,6 +18096,300 @@
       "paper_title": "",
       "paper_url": "",
       "added_at": "2026-10-31T12:32:04+08:00"
+    },
+    {
+      "id": "github:patch-gg/pixelfx",
+      "type": "github",
+      "category": "vfx-cg-blender",
+      "name": "pixelfx",
+      "full_name": "patch-gg/pixelfx",
+      "url": "https://github.com/patch-gg/pixelfx",
+      "homepage": "https://patch-gg.github.io/pixelfx/",
+      "description": "232 pixel art effects, every one a small piece of code. Plus a Claude Code skill to make your own.",
+      "summary": "232 個像素特效，每個都係一小段代碼，可以喺瀏覽器播、轉色，或者匯出 sprite sheet。另有一個 Claude skill 用嚟畫新嘅。佢係特效庫，唔係新影片模型。授權係 MIT。",
+      "summary_en": "Two hundred thirty-two pixel-art effects, each a small piece of code. You can play them in a browser, recolor them, or export a sprite sheet. It also includes a Claude skill for drawing new ones. It is an effect library, not a new video model. The license is MIT.",
+      "summary_locked": true,
+      "stars": 441,
+      "language": "JavaScript",
+      "license": "MIT",
+      "topics": [
+        "agent-skills",
+        "animation",
+        "canvas",
+        "claude-code-plugin",
+        "gamedev",
+        "pixel-art",
+        "sprite-sheet",
+        "vfx"
+      ],
+      "archived": false,
+      "pushed_at": "2026-10-30",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-10-31T14:32:09+08:00"
+    },
+    {
+      "id": "github:jiwoochris/artex-global",
+      "type": "github",
+      "category": "ai-agent",
+      "name": "artex-global",
+      "full_name": "jiwoochris/artex-global",
+      "url": "https://github.com/jiwoochris/artex-global",
+      "homepage": "",
+      "description": "Global edition of ARTEX — an LLM multi-agent autonomous penetration-testing framework. English default, switchable to Korean/Chinese/Spanish/Japanese. For authorized, defensive and detection use only. (upstream: Autumn-27/ARTEX, AGPL-3.0)",
+      "summary": "ARTEX 嘅多語言版本，介面同報告可以轉英、韓、中、西、日。設計喺隔離實驗環境用，行動要人確認。同目錄入面另一個 ARTEX 唔同 repo。佢係研究系統。授權係 AGPL-3.0。",
+      "summary_en": "A multilingual edition of ARTEX. The interface and reports can switch among English, Korean, Chinese, Spanish, and Japanese. It is meant for an isolated lab, and a person confirms actions. It is a different repository from the other ARTEX in this catalog. It is a research system. The license is AGPL-3.0.",
+      "summary_locked": true,
+      "stars": 2413,
+      "language": "Go",
+      "license": "AGPL-3.0",
+      "topics": [
+        "ai-agent",
+        "autonomous-agents",
+        "blue-team",
+        "cybersecurity",
+        "detection-engineering",
+        "i18n",
+        "korean",
+        "llm"
+      ],
+      "archived": false,
+      "pushed_at": "2026-10-14",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-10-31T14:32:09+08:00"
+    },
+    {
+      "id": "github:dzhng/jevgrep",
+      "type": "github",
+      "category": "ai-agent",
+      "name": "jevgrep",
+      "full_name": "dzhng/jevgrep",
+      "url": "https://github.com/dzhng/jevgrep",
+      "homepage": "",
+      "description": "Find code by asking what it does. A CLI for coding agents that uses Jev to discover relevant files and source context.",
+      "summary": "畀 coding agent 用嘅搜尋命令，用一句問題搵相關檔案同原文片段。要 Node 22，同 Vercel、OpenRouter 或其他相容端點嘅 key。作者話平三成，你自己量。佢係搜尋，唔係新模型。授權係 MIT。",
+      "summary_en": "A search command for a coding agent. One question returns relevant files and verbatim excerpts. You need Node 22 and a key for Vercel, OpenRouter, or another compatible endpoint. The author says it costs about 30 percent less; measure that yourself. It is search, not a new model. The license is MIT.",
+      "summary_locked": true,
+      "stars": 3104,
+      "language": "TypeScript",
+      "license": "MIT",
+      "topics": [
+        "ai-sdk",
+        "claude-code",
+        "cli",
+        "code-search",
+        "codex",
+        "coding-agents",
+        "context-retrieval",
+        "developer-tools"
+      ],
+      "archived": false,
+      "pushed_at": "2026-10-30",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-10-31T14:32:09+08:00"
+    },
+    {
+      "id": "github:jakeschincariol/youtube-agent-skill",
+      "type": "github",
+      "category": "ai-agent",
+      "name": "youtube-agent-skill",
+      "full_name": "Jakeschincariol/youtube-agent-skill",
+      "url": "https://github.com/Jakeschincariol/youtube-agent-skill",
+      "homepage": "",
+      "description": "Eleven Claude skills that run a YouTube channel: scripts off 21 hook formulas with a scored hook, title and thumbnail linted as one pairing, an edit decision list from your transcript, a retention reader that finds where viewers actually leave, a Shorts cutter, and a virality engine. Free, MIT.",
+      "summary": "11 個 Claude skill，幫手寫稿、對標題同縮圖、讀留存、出剪接清單同搵 Shorts。唔使 API key。片要你自己上載。佢係技能包，唔保證有人睇。授權係 MIT。",
+      "summary_en": "Eleven Claude skills that help write a script, pair a title with a thumbnail, read retention, make an edit list, and find Shorts. No API key. You upload the video yourself. It is a skill pack, and it does not guarantee viewers. The license is MIT.",
+      "summary_locked": true,
+      "stars": 3891,
+      "language": "Python",
+      "license": "MIT",
+      "topics": [],
+      "archived": false,
+      "pushed_at": "2026-09-16",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-10-31T14:32:09+08:00"
+    },
+    {
+      "id": "github:scenario-labs/skills",
+      "type": "github",
+      "category": "vfx-cg-blender",
+      "name": "skills",
+      "full_name": "scenario-labs/skills",
+      "url": "https://github.com/scenario-labs/skills",
+      "homepage": "https://www.skills.sh/scenario-labs/skills",
+      "description": "Get production-ready images, video, audio, and 3D from any AI agent: skills that pick the right model, price before spending, and keep characters and brands consistent through the Scenario MCP, plus expert teams that drive Blender, Maya, ZBrush, Unreal, and Unity.",
+      "summary": "一大組 agent skill，經 Scenario MCP 用現成模型出圖、片、聲同立體。要 Scenario 帳戶或 API key。亦有技能可以驅動 Blender、Maya 等，要你自己開住軟件。佢係技能，唔係新模型。授權係 MIT。",
+      "summary_en": "A large set of agent skills. Through the Scenario MCP they use existing models for images, video, audio, and 3D. You need a Scenario account or an API key. Other skills can drive Blender, Maya, and similar tools, which you have to open yourself. It is a skill pack, not a new model. The license is MIT.",
+      "summary_locked": true,
+      "stars": 1290,
+      "language": "Python",
+      "license": "MIT",
+      "topics": [
+        "3d-models",
+        "agent-skills",
+        "ai-agents",
+        "ai-art",
+        "blender",
+        "claude-code",
+        "claude-skills",
+        "codex"
+      ],
+      "archived": false,
+      "pushed_at": "2026-10-31",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-10-31T14:32:09+08:00"
+    },
+    {
+      "id": "github:knplabs/snappy",
+      "type": "github",
+      "category": "image",
+      "name": "snappy",
+      "full_name": "KnpLabs/snappy",
+      "url": "https://github.com/KnpLabs/snappy",
+      "homepage": "https://knplabs.com",
+      "description": "PHP library allowing thumbnail, snapshot or PDF generation from a url or a html page. Wrapper for wkhtmltopdf/wkhtmltoimage",
+      "summary": "PHP 庫，把網址或 HTML 變成縮圖、截圖或 PDF。要你自己裝 wkhtmltopdf 0.12。佢係轉檔庫，唔係 AI 圖像模型。授權係 MIT。唔好把唔信嘅網頁直接交畀佢。",
+      "summary_en": "A PHP library that turns a URL or HTML into a thumbnail, a snapshot, or a PDF. You install wkhtmltopdf 0.12 yourself. It is a conversion library, not an AI image model. The license is MIT. Do not hand it a page you do not trust.",
+      "summary_locked": true,
+      "stars": 4473,
+      "language": "PHP",
+      "license": "MIT",
+      "topics": [
+        "hacktoberfest",
+        "html-to-image",
+        "html-to-pdf",
+        "image-generation",
+        "pdf-generation",
+        "php"
+      ],
+      "archived": false,
+      "pushed_at": "2026-07-29",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-10-31T14:32:09+08:00"
+    },
+    {
+      "id": "github:xlite-dev/lite.ai.toolkit",
+      "type": "github",
+      "category": "image",
+      "name": "lite.ai.toolkit",
+      "full_name": "xlite-dev/lite.ai.toolkit",
+      "url": "https://github.com/xlite-dev/lite.ai.toolkit",
+      "homepage": "https://github.com/xlite-dev/lite.ai.toolkit",
+      "description": "A lite C++ AI toolkit: 100+ models with MNN, ORT and TRT, including Det, Seg, Stable-Diffusion, Face-Fusion.",
+      "summary": "C++ 工具箱，用 MNN、ONNX Runtime 同 TensorRT 跑一百幾個現成模型，包括偵測、分割、摳圖、人臉同 Stable Diffusion。權重要另外攞。佢係執行器，唔係新模型。授權係 GPL-3.0。",
+      "summary_en": "A C++ toolkit. It runs more than a hundred existing models with MNN, ONNX Runtime, and TensorRT, including detection, segmentation, matting, faces, and Stable Diffusion. You obtain the weights separately. It is a runner, not a new model. The license is GPL-3.0.",
+      "summary_locked": true,
+      "stars": 4446,
+      "language": "C++",
+      "license": "GPL-3.0",
+      "topics": [
+        "facefusion",
+        "mnn",
+        "mnn-model",
+        "ncnn",
+        "onnx",
+        "onnxruntime",
+        "robustvideomatting",
+        "stable-diffusion"
+      ],
+      "archived": false,
+      "pushed_at": "2026-09-05",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-10-31T14:32:09+08:00"
+    },
+    {
+      "id": "github:sandai-org/magi-1",
+      "type": "github",
+      "category": "video",
+      "name": "MAGI-1",
+      "full_name": "SandAI-org/MAGI-1",
+      "url": "https://github.com/SandAI-org/MAGI-1",
+      "homepage": "https://sand.ai",
+      "description": "MAGI-1: Autoregressive Video Generation at Scale",
+      "summary": "自回歸影片生成模型，有 4.5B 同 24B，另有蒸餾同量化版。權重喺 Hugging Face。24B 要多張 H100。佢係影片模型本身。授權係 Apache-2.0。速度同畫質要你自己量。",
+      "summary_en": "An autoregressive video-generation model, with 4.5B and 24B sizes plus distilled and quantized builds. Weights are on Hugging Face. The 24B model needs several H100s. It is the video model itself. The license is Apache-2.0. Measure speed and image quality yourself.",
+      "summary_locked": true,
+      "stars": 3798,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "topics": [
+        "autoregressive",
+        "diffusion-models",
+        "video-generation"
+      ],
+      "archived": false,
+      "pushed_at": "2026-06-17",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-10-31T14:32:09+08:00"
+    },
+    {
+      "id": "github:fireredteam/firered-openstoryline",
+      "type": "github",
+      "category": "video",
+      "name": "FireRed-OpenStoryline",
+      "full_name": "FireRedTeam/FireRed-OpenStoryline",
+      "url": "https://github.com/FireRedTeam/FireRed-OpenStoryline",
+      "homepage": "",
+      "description": "FireRed-OpenStoryline is an AI video editing agent that transforms manual editing into intention-driven directing through natural language interaction, LLM-powered planning, and precise tool orchestration. It facilitates transparent, human-in-the-loop creation with reusable Style Skills for consistent, professional storytelling.",
+      "summary": "用自然語言指揮嘅剪片 agent，可以計劃、呼叫工具，同把一套剪法存成 skill 再套去新素材。成片要你再睇。佢係剪片 agent，唔係新影片模型。授權係 Apache-2.0。",
+      "summary_en": "A video-editing agent you direct in natural language. It can plan, call tools, and save one editing setup as a skill to apply to new footage. Watch the result again. It is an editing agent, not a new video model. The license is Apache-2.0.",
+      "summary_locked": true,
+      "stars": 3599,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "topics": [
+        "agent",
+        "chatbot",
+        "langchain",
+        "mcp",
+        "skills",
+        "video",
+        "video-cut",
+        "video-editing"
+      ],
+      "archived": false,
+      "pushed_at": "2026-07-31",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-10-31T14:32:09+08:00"
+    },
+    {
+      "id": "github:avhz/rustquant",
+      "type": "github",
+      "category": "stock-trading",
+      "name": "RustQuant",
+      "full_name": "avhz/RustQuant",
+      "url": "https://github.com/avhz/RustQuant",
+      "homepage": "https://avhz.github.io",
+      "description": "Rust library for quantitative finance.",
+      "summary": "用 Rust 寫嘅量化金融庫，可以做期權定價同相關數學。你自己接行情同決定落唔落單。佢係庫，唔係券商，唔保證賺。授權係 MIT 同 Apache-2.0。滑價要自己量。",
+      "summary_en": "A quantitative-finance library written in Rust. It can price options and do the related math. You connect the market yourself and decide whether to place an order. It is a library, not a broker, and it does not guarantee profit. The license is MIT and Apache-2.0. Measure slippage yourself.",
+      "summary_locked": true,
+      "stars": 1834,
+      "language": "Rust",
+      "license": "Apache-2.0",
+      "topics": [
+        "finance",
+        "machine-learning",
+        "math",
+        "mathematics",
+        "option-pricing",
+        "quantitative-finance",
+        "quantlib",
+        "regression"
+      ],
+      "archived": false,
+      "pushed_at": "2026-10-04",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-10-31T14:32:09+08:00"
     }
   ],
   "papers": [
@@ -18171,18 +18465,16 @@
     }
   ],
   "last_new_ids": [
-    "github:nanaism/yomiyasu",
-    "github:miqdadbadjuber/anti-slop",
-    "github:yjh051108/dsh-routing-suite",
-    "github:trustfuture/simon-skills",
-    "github:tencentarc/gae-geometricautoencoder",
-    "github:mcmonkeyprojects/swarmui",
-    "github:nateraw/stable-diffusion-videos",
-    "github:armory3d/armory",
-    "github:cgcookie/retopoflow",
-    "github:vivekpa/aialpha",
-    "github:cyberpunkmetalhead/binance-news-sentiment-bot",
-    "github:rodrigo-brito/ninjabot"
+    "github:patch-gg/pixelfx",
+    "github:jiwoochris/artex-global",
+    "github:dzhng/jevgrep",
+    "github:jakeschincariol/youtube-agent-skill",
+    "github:scenario-labs/skills",
+    "github:knplabs/snappy",
+    "github:xlite-dev/lite.ai.toolkit",
+    "github:sandai-org/magi-1",
+    "github:fireredteam/firered-openstoryline",
+    "github:avhz/rustquant"
   ],
   "rate_limit": {
     "used": 4000,

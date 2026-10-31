@@ -635,5 +635,15 @@
   "CGCookie/retopoflow": "Blender 嘅重拓樸工具組，用嚟喺高模上面重新拉乾淨嘅低模網格。要開住 Blender，改之前先備份。佢係附加組件，唔係獨立建模軟件。授權係 GPL-3.0。",
   "VivekPa/AIAlpha": "用自編碼器降維，再用 LSTM 或隨機森林預測股票回報嘅研究程式。原始行情唔喺 repo。2020 年後少更新。佢係實驗，唔係券商，一個預測唔等於落單。授權係 MIT。",
   "CyberPunkMetalHead/Binance-News-Sentiment-Bot": "Binance 交易機械人，睇加密新聞標題嘅情緒，正面先落買單。要你自己嘅帳戶同 key。2022 年後少更新。佢係機械人，唔保證賺，延遲要自己量。授權係 MIT。",
-  "rodrigo-brito/ninjabot": "用 Go 寫嘅加密貨幣交易框架，可以為 Binance 現貨同期貨寫策略同回測。要你自己嘅 key 同策略。佢係框架，唔係一套賺到錢嘅策略。授權係 MIT。滑價要自己量。"
+  "rodrigo-brito/ninjabot": "用 Go 寫嘅加密貨幣交易框架，可以為 Binance 現貨同期貨寫策略同回測。要你自己嘅 key 同策略。佢係框架，唔係一套賺到錢嘅策略。授權係 MIT。滑價要自己量。",
+  "patch-gg/pixelfx": "232 個像素特效，每個都係一小段代碼，可以喺瀏覽器播、轉色，或者匯出 sprite sheet。另有一個 Claude skill 用嚟畫新嘅。佢係特效庫，唔係新影片模型。授權係 MIT。",
+  "jiwoochris/artex-global": "ARTEX 嘅多語言版本，介面同報告可以轉英、韓、中、西、日。設計喺隔離實驗環境用，行動要人確認。同目錄入面另一個 ARTEX 唔同 repo。佢係研究系統。授權係 AGPL-3.0。",
+  "dzhng/jevgrep": "畀 coding agent 用嘅搜尋命令，用一句問題搵相關檔案同原文片段。要 Node 22，同 Vercel、OpenRouter 或其他相容端點嘅 key。作者話平三成，你自己量。佢係搜尋，唔係新模型。授權係 MIT。",
+  "Jakeschincariol/youtube-agent-skill": "11 個 Claude skill，幫手寫稿、對標題同縮圖、讀留存、出剪接清單同搵 Shorts。唔使 API key。片要你自己上載。佢係技能包，唔保證有人睇。授權係 MIT。",
+  "scenario-labs/skills": "一大組 agent skill，經 Scenario MCP 用現成模型出圖、片、聲同立體。要 Scenario 帳戶或 API key。亦有技能可以驅動 Blender、Maya 等，要你自己開住軟件。佢係技能，唔係新模型。授權係 MIT。",
+  "KnpLabs/snappy": "PHP 庫，把網址或 HTML 變成縮圖、截圖或 PDF。要你自己裝 wkhtmltopdf 0.12。佢係轉檔庫，唔係 AI 圖像模型。授權係 MIT。唔好把唔信嘅網頁直接交畀佢。",
+  "xlite-dev/lite.ai.toolkit": "C++ 工具箱，用 MNN、ONNX Runtime 同 TensorRT 跑一百幾個現成模型，包括偵測、分割、摳圖、人臉同 Stable Diffusion。權重要另外攞。佢係執行器，唔係新模型。授權係 GPL-3.0。",
+  "SandAI-org/MAGI-1": "自回歸影片生成模型，有 4.5B 同 24B，另有蒸餾同量化版。權重喺 Hugging Face。24B 要多張 H100。佢係影片模型本身。授權係 Apache-2.0。速度同畫質要你自己量。",
+  "FireRedTeam/FireRed-OpenStoryline": "用自然語言指揮嘅剪片 agent，可以計劃、呼叫工具，同把一套剪法存成 skill 再套去新素材。成片要你再睇。佢係剪片 agent，唔係新影片模型。授權係 Apache-2.0。",
+  "avhz/RustQuant": "用 Rust 寫嘅量化金融庫，可以做期權定價同相關數學。你自己接行情同決定落唔落單。佢係庫，唔係券商，唔保證賺。授權係 MIT 同 Apache-2.0。滑價要自己量。"
 }
