@@ -797,5 +797,8 @@
   "Alisa0808/vox-director": "Agent skill，用一個題目做紙拼貼解說片。你要先批節奏同畫面。圖、動態、旁白同音樂用你自己嘅 Atlas Cloud key 呼叫現成模型，ffmpeg 拼片。要 Python 3、Pillow 同 ffmpeg。MIT。呢個唔係新影片模型。",
   "guanmo-ai/awesome-ai-motion": "動效同創意影片目錄，作者話畫廊有 1728 個作品，附原帖同提示。作品跟原帖，清單程式 MIT。同 awesome-opus5-5-videos 唔同。呢個係目錄，唔係影片模型。最近推送到 2026-10-27。",
   "mikehasa/golive-skill": "Agent skill，幫 agent 做好嘅產品上線：主機、資料庫、網域、電郵、付款都用你自己帳戶。要你批准先寫入。Node.js 20 或更新，Codex 同 Claude Code 試過。早期 alpha，冇 GoLive 帳戶同遙測。金鑰放喺 repo 外明文檔。MIT。呢個唔係新模型。",
-  "franzenzenhofer/big-arrow-on-the-screen": "macOS 技能同命令列，畀 Claude Code 同 Codex 喺螢幕畫大箭咀、框同字。點擊會穿透，過一陣自己消失。找元件要輔助使用權限。MIT。呢個只會指，唔會代你撳。唔係新模型。"
+  "franzenzenhofer/big-arrow-on-the-screen": "macOS 技能同命令列，畀 Claude Code 同 Codex 喺螢幕畫大箭咀、框同字。點擊會穿透，過一陣自己消失。找元件要輔助使用權限。MIT。呢個只會指，唔會代你撳。唔係新模型。",
+  "dagoSte/squadra": "本機協調工具，用嚟畀 Claude Code、Codex 同 Cursor 幾個視窗一齊做同一個項目。任務、檢查同審查嘅紀錄放喺你部機，附 skill、命令列同本機面板。要 Python 3.12 或更新，macOS 或 POSIX，只用標準庫。MIT。呢個唔係新模型。",
+  "jtydhr88/screenwriting-skills": "Agent skill 包，有 26 個用嚟寫劇本、電視劇同戲劇技巧嘅 skill，畀 Claude Code 同 Codex 用。內文用中文寫，檔案放喺 repo，你用其他語言問就用嗰種語言答。裝一次兩邊都用到。MIT。呢個係寫作技能，唔係新模型。",
+  "Harvil1/codeAgent": "終端編程 agent，用嚟畀你用自然語言叫佢讀碼、改檔同跑命令。要自己接 OpenAI 相容或 Anthropic 協議嘅現成模型，預設 DeepSeek。有審批、記憶同技能，跑喺你部機。Windows 優先，Python 3.11 或更新。MIT。呢個唔係新模型。"
 }
