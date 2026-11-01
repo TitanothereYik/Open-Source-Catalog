@@ -1679,15 +1679,20 @@ def blocked(repo: dict) -> bool:
         "-guide",
         "tutorial",
     )
-    # Skill repos are collected. An awesome-list is still skipped unless it is a skill catalog.
-    name_checks = tuple(part for part in bad_name if part != "skill")
-    if "skill" in name:
+    # Skill catalogs are collected. A fast riser is also kept when the only
+    # strike is that it is an awesome or curated list, including a video or
+    # prompt catalog like Awesome Opus 5.5 Videos. Tutorials, leaks, guides,
+    # and ComfyUI workflow packs stay out.
+    name_checks = tuple(bad_name)
+    if "skill" in name or fast_riser(repo):
         name_checks = tuple(part for part in name_checks if part != "awesome")
     if any(part in name for part in name_checks):
         return True
     if "comfyui" in name and "workflow" in name:
         return True
-    bad_text = ("curated list", "awesome list", "system prompt", "leaked prompt", "job search")
+    bad_text = ["system prompt", "leaked prompt", "job search"]
+    if not fast_riser(repo):
+        bad_text = ["curated list", "awesome list", *bad_text]
     return any(part in blob for part in bad_text)
 
 
