@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import html
+import http.client
 import json
 import math
 import os
@@ -557,7 +558,7 @@ def fetch_json(url: str, cache_key: str, kind: str, use_cache: bool) -> dict:
                 RATE["remaining"] = 0
                 raise RateLimitExceeded(body)
             time.sleep(4 + attempt * 2)
-        except (TimeoutError, urllib.error.URLError) as exc:
+        except (TimeoutError, urllib.error.URLError, http.client.IncompleteRead, ConnectionError) as exc:
             last_error = str(exc)
             time.sleep(4 + attempt * 2)
     raise RuntimeError(f"GitHub request failed for {cache_key}: {last_error}")
