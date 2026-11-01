@@ -22490,6 +22490,37 @@
       "paper_title": "",
       "paper_url": "",
       "added_at": "2026-11-02T01:27:01+08:00"
+    },
+    {
+      "id": "github:yihui-dev/awesome-opus5-5-videos",
+      "type": "github",
+      "category": "video",
+      "name": "awesome-opus5-5-videos",
+      "full_name": "yihui-dev/awesome-opus5-5-videos",
+      "url": "https://github.com/yihui-dev/awesome-opus5-5-videos",
+      "homepage": "https://skillry.dev/ai-videos/opus-5-5",
+      "description": "A growing collection of viral videos made with Claude Opus 5.5 and the prompts behind them. Watch each original next to a live remake on Skillry. Updated regularly.",
+      "summary": "作品目錄，收其他人用 Claude Opus 5.5 寫網頁動畫畫出嚟嘅影片，附原帖。作者話有 703 條提示，418 條喺 Skillry 有重製。片同提示屬創作者，清單 MIT。同 awesome-claude-5-5-videos 唔同，呢個唔係影片模型。最近推送到 2026-10-13。",
+      "summary_en": "A directory of other people's videos, drawn as web animation with Claude Opus 5.5, plus links to the original posts. The author says there are 703 prompts, and 418 have a remake on Skillry. The videos and prompts belong to their creators. The list code is MIT. It is a different project from awesome-claude-5-5-videos, and it is not a video model. The last push was on 13 October 2026.",
+      "summary_locked": true,
+      "stars": 13022,
+      "language": "",
+      "license": "MIT",
+      "topics": [
+        "ai-video",
+        "awesome",
+        "awesome-list",
+        "claude",
+        "claude-opus",
+        "creative-coding",
+        "motion-graphics",
+        "prompts"
+      ],
+      "archived": false,
+      "pushed_at": "2026-10-13",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-11-02T01:41:15+08:00"
     }
   ],
   "papers": [

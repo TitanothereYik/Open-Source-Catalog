@@ -788,5 +788,6 @@
   "Jakubantalik/thinking-orbs": "AI 介面用嘅載入動畫，九種狀態、兩種尺寸，畫喺普通 canvas。npm 包裝好，React 用。自動跟深淺色，減少動態時停喺一格。MIT。最近推送到 2026-08。呢個係介面元件，唔係 agent，亦唔係模型。",
   "zvec-ai/zvec-grep": "本機搜尋，建喺現有嘅 zvec 上面，將文字搜尋、BM25 同向量搜尋放喺同一個介面。終端或者經 MCP 畀 agent 用。Node.js 22 或更新。索引同本機模型留喺你部機，遠端嵌入要你同意先送。Apache-2.0。呢個係搜尋工具，唔係新語言模型。",
   "Player-YN/BrowserKitten": "Chrome 側欄網頁 agent，喺你已登入嘅分頁做任務，要自己嘅 OpenAI 相容 key。未上商店，開發者模式載入，Chrome 135 或更新。MIT。README 叫佢 PawWork，同 browser-use 唔同。最近推送到 2026-09。呢個係瀏覽器 agent，唔係新模型。",
-  "athemeroy/awesome-claude-5-5-videos": "作品目錄，收其他人用 Claude 5.5 做嘅影片同動畫，附來源帖同製作紀錄。作者話截至 2026-10-11 有 424 條去重來源，九幀預覽睇唔到成片。Fable 只係作者自報。清單 CC-BY-4.0。同 awesome-claude-video-skills 唔同，呢個唔係影片模型。"
+  "athemeroy/awesome-claude-5-5-videos": "作品目錄，收其他人用 Claude 5.5 做嘅影片同動畫，附來源帖同製作紀錄。作者話截至 2026-10-11 有 424 條去重來源，九幀預覽睇唔到成片。Fable 只係作者自報。清單 CC-BY-4.0。同 awesome-claude-video-skills 唔同，呢個唔係影片模型。",
+  "yihui-dev/awesome-opus5-5-videos": "作品目錄，收其他人用 Claude Opus 5.5 寫網頁動畫畫出嚟嘅影片，附原帖。作者話有 703 條提示，418 條喺 Skillry 有重製。片同提示屬創作者，清單 MIT。同 awesome-claude-5-5-videos 唔同，呢個唔係影片模型。最近推送到 2026-10-13。"
 }
