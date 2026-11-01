@@ -771,5 +771,11 @@
   "vercel-labs/fx": "實驗版 Unix 風格程式 agent。一個 Zig 二進位，macOS 同 Linux，唔使裝 runtime。模型用你自己嘅 Vercel、ChatGPT、Grok 或相容接口。可以讀 skill，但佢自己係 agent。預設會自動改檔同跑測試。Apache-2.0。唔係新模型。",
   "kirodotdev/KiroCrew": "本地或你自己機器上嘅開發工作區，任務可以跨對話繼續，亦可以無人值守。預設 agent 係要另外安裝同登入嘅 kiro-cli。macOS、Linux、Windows。每日有一次匿名用量心跳，可以關掉。Apache-2.0。唔係新模型。",
   "ginwind/VLA-JEPA": "ECCV 2026，用潛在世界模型加強視覺語言動作模型。基於現有 starVLA，要 Qwen3-VL-2B 同 V-JEPA2。權重喺 Hugging Face ginwind/VLA-JEPA。程式碼 Apache-2.0，第三方部分跟原授權。2026 年 9 月後少更新。唔係影片世界模型。",
-  "NVIDIA/GR00T-Dreams": "用現有 Cosmos 世界模型，由一張圖同指示生成機械人片，再抽出動作去微調 GR00T N1。呢個 repo 係條流程，唔係新影片模型。Apache-2.0。2025 年 10 月後少更新。"
+  "NVIDIA/GR00T-Dreams": "用現有 Cosmos 世界模型，由一張圖同指示生成機械人片，再抽出動作去微調 GR00T N1。呢個 repo 係條流程，唔係新影片模型。Apache-2.0。2025 年 10 月後少更新。",
+  "lennney/stop-that-shit": "Coding agent 嘅 skill 同攔截。攔住冇人要嘅校驗和、範圍膨脹、只讀審查時改檔，同重複做完嘅檢查。Codex、Claude Code 等用到。MIT。佢係技能，唔係新模型。",
+  "ctoldigital/axuse": "本地 MCP，用無障礙樹操作瀏覽器同電腦，唔靠截圖循環。Node.js 22 或更新，要 Chromium。Codex、Claude Code 等 MCP 宿主用到。Windows 桌面已試過，macOS 要另外開權限。PolyForm Noncommercial，唔可以商用。唔係新模型。",
+  "typesafe-ai/skills": "一份 agent skill，設計 TypeSafe System One 接入：狀態、問題同請求。要你自己嘅 TypeSafe 帳戶同 API。Claude Code 可裝插件，其他 agent 用 skills.sh。同目錄另外三個同名 skills repo 唔同。MIT。唔係模型本身。",
+  "oil-oil/oil-motion": "網頁交互動畫 skill。你講表達同跟邊種操作，agent 用已有影片模型生成連續畫面，再接到滾動、滑鼠或拖動。瀏覽器只播做好嘅畫面。列喺影片，唔係 After Effects，亦唔係新影片模型。MIT。",
+  "ArcReel/ArcReel": "自己托管嘅短片工作台。小說或劇本變成角色、分鏡同片，可以出中國大陸版剪映草稿，CapCut 相容未驗證。片用你自己接嘅模型 API，要 Docker。AGPL-3.0。唔係新影片模型。",
+  "InternRobotics/Aether": "ICCV 2025，亦係該 workshop 傑出論文。一個世界模型做四維重建、按動作預測下一條片，同由目標圖做規劃。權重喺 Hugging Face AetherWorldModel/AetherV1。程式碼 MIT。2025 年 10 月後少更新。作者話可以零樣本用喺真實場景，你自己量。"
 }
