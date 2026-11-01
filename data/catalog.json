@@ -21413,6 +21413,37 @@
       "paper_title": "",
       "paper_url": "",
       "added_at": "2026-11-01T10:31:45+08:00"
+    },
+    {
+      "id": "github:belluxx/aleph",
+      "type": "github",
+      "category": "image",
+      "name": "Aleph",
+      "full_name": "Belluxx/Aleph",
+      "url": "https://github.com/Belluxx/Aleph",
+      "homepage": "",
+      "description": "Give satellite imagery, terrain data, buildings, streetview photos to your LLM",
+      "summary": "本地工具，喺地圖畫範圍，下載建築、地形、衛星圖、街景同有材質三維，畀你或者 LLM 用。Python 3.11 或更新，唔使 key。程式碼 MIT，OSM 係 ODbL，地形用 AWS 圖磚。作者話街景、衛星同三維屬 Google，下載違反條款，用未公開介面，可能會壞。呢個係下載器，唔係圖像模型。",
+      "summary_en": "A local tool. Draw an area on the map and it downloads buildings, terrain, a satellite image, Street View photos, and a textured 3D mesh, for you or for an LLM. It needs Python 3.11 or newer and no API key. The code is MIT. OSM data is ODbL. Terrain uses AWS open tiles. The author says Street View, satellite imagery, and the 3D meshes belong to Google, downloading them breaks Google's terms, and the tool uses undocumented interfaces, so it can break. It is a downloader listed under Image, not an image model.",
+      "summary_locked": true,
+      "stars": 600,
+      "language": "Python",
+      "license": "MIT",
+      "topics": [
+        "3d-city-model",
+        "3d-tiles",
+        "geospatial",
+        "gis",
+        "gltf",
+        "openstreetmap",
+        "satellite-imagery",
+        "terrain"
+      ],
+      "archived": false,
+      "pushed_at": "2026-10-30",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-11-01T11:26:41+08:00"
     }
   ],
   "papers": [

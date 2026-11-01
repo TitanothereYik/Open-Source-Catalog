@@ -749,5 +749,6 @@
   "caiyuanhao1998/Open-DiffusionGS": "研究模型，把 Gaussian Splatting 烤入擴散去噪器，一張圖一次過出三維。ICCV 2025。數據喺 Hugging Face。佢係生成模型，唔係檢視器。授權係 MIT。",
   "Dakkshin/after-effects-mcp": "MCP 伺服器，用 ExtendScript 控制你開住嘅 After Effects，可以加合成、文字同形狀。要你自己有 AE。2026 年 4 月後少更新。佢係遙控，唔係 After Effects 本身。授權係 MIT。",
   "facebookresearch/nwm": "導航世界模型，按條件擴散預測行路之後嘅畫面。CVPR 2025 oral。權重喺 Hugging Face 嘅 facebook/nwm。2025 年 11 月後少更新。授權係 CC BY-NC 4.0，唔可以商用。佢係世界模型本身。",
-  "leggedrobotics/robotic_world_model": "Isaac Lab 擴充，用神經動力學做機械人策略。可以同模擬器一齊訓練，或者離線用學到嘅模型。要 Isaac Sim。佢係機械人世界模型，唔係影片模型。授權係 Apache-2.0。"
+  "leggedrobotics/robotic_world_model": "Isaac Lab 擴充，用神經動力學做機械人策略。可以同模擬器一齊訓練，或者離線用學到嘅模型。要 Isaac Sim。佢係機械人世界模型，唔係影片模型。授權係 Apache-2.0。",
+  "Belluxx/Aleph": "本地工具，喺地圖畫範圍，下載建築、地形、衛星圖、街景同有材質三維，畀你或者 LLM 用。Python 3.11 或更新，唔使 key。程式碼 MIT，OSM 係 ODbL，地形用 AWS 圖磚。作者話街景、衛星同三維屬 Google，下載違反條款，用未公開介面，可能會壞。呢個係下載器，唔係圖像模型。"
 }
