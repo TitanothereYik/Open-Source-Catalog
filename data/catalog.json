@@ -22461,6 +22461,35 @@
       "paper_title": "",
       "paper_url": "",
       "added_at": "2026-11-02T00:31:53+08:00"
+    },
+    {
+      "id": "github:athemeroy/awesome-claude-5-5-videos",
+      "type": "github",
+      "category": "video",
+      "name": "awesome-claude-5-5-videos",
+      "full_name": "athemeroy/awesome-claude-5-5-videos",
+      "url": "https://github.com/athemeroy/awesome-claude-5-5-videos",
+      "homepage": "",
+      "description": "Source-linked Claude 5.5 video workflows: Opus and Sonnet demos, separately labeled next-Fable testing reports, prompts, tools and production evidence.",
+      "summary": "作品目錄，收其他人用 Claude 5.5 做嘅影片同動畫，附來源帖同製作紀錄。作者話截至 2026-10-11 有 424 條去重來源，九幀預覽睇唔到成片。Fable 只係作者自報。清單 CC-BY-4.0。同 awesome-claude-video-skills 唔同，呢個唔係影片模型。",
+      "summary_en": "A directory of other people's videos and animations made with Claude 5.5, with source posts and production notes. The author says that as of 11 October 2026 there were 424 distinct sources, and nine-frame previews do not show the full film. Fable entries are only what creators reported. The list is CC-BY-4.0. It is a different project from awesome-claude-video-skills, and it is not a video model.",
+      "summary_locked": true,
+      "stars": 869,
+      "language": "Python",
+      "license": "CC-BY-4.0",
+      "topics": [
+        "ai-video",
+        "awesome",
+        "awesome-list",
+        "claude",
+        "claude-opus-5-5",
+        "video-workflows"
+      ],
+      "archived": false,
+      "pushed_at": "2026-10-11",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-11-02T01:27:01+08:00"
     }
   ],
   "papers": [
