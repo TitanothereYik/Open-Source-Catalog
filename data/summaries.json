@@ -789,5 +789,11 @@
   "zvec-ai/zvec-grep": "本機搜尋，建喺現有嘅 zvec 上面，將文字搜尋、BM25 同向量搜尋放喺同一個介面。終端或者經 MCP 畀 agent 用。Node.js 22 或更新。索引同本機模型留喺你部機，遠端嵌入要你同意先送。Apache-2.0。呢個係搜尋工具，唔係新語言模型。",
   "Player-YN/BrowserKitten": "Chrome 側欄網頁 agent，喺你已登入嘅分頁做任務，要自己嘅 OpenAI 相容 key。未上商店，開發者模式載入，Chrome 135 或更新。MIT。README 叫佢 PawWork，同 browser-use 唔同。最近推送到 2026-09。呢個係瀏覽器 agent，唔係新模型。",
   "athemeroy/awesome-claude-5-5-videos": "作品目錄，收其他人用 Claude 5.5 做嘅影片同動畫，附來源帖同製作紀錄。作者話截至 2026-10-11 有 424 條去重來源，九幀預覽睇唔到成片。Fable 只係作者自報。清單 CC-BY-4.0。同 awesome-claude-video-skills 唔同，呢個唔係影片模型。",
-  "yihui-dev/awesome-opus5-5-videos": "作品目錄，收其他人用 Claude Opus 5.5 寫網頁動畫畫出嚟嘅影片，附原帖。作者話有 703 條提示，418 條喺 Skillry 有重製。片同提示屬創作者，清單 MIT。同 awesome-claude-5-5-videos 唔同，呢個唔係影片模型。最近推送到 2026-10-13。"
+  "yihui-dev/awesome-opus5-5-videos": "作品目錄，收其他人用 Claude Opus 5.5 寫網頁動畫畫出嚟嘅影片，附原帖。作者話有 703 條提示，418 條喺 Skillry 有重製。片同提示屬創作者，清單 MIT。同 awesome-claude-5-5-videos 唔同，呢個唔係影片模型。最近推送到 2026-10-13。",
+  "alexgaoth/awesome-reverse-engineered": "開源項目索引，收別人已經做出嚟嘅開源客戶端同工具，附搜尋頁、skill 同 MCP。作者話而家有一萬七千幾個項目。程式 MIT，索引資料 CC0，列出嘅項目各自有授權。呢個係索引，唔係新模型。",
+  "chengyi-ai/native-subtitle-quote-image": "Agent skill，將影片帧拼成社交長圖。原生模式只裁畫面裡已有嘅字幕，腳本模式先畫你審過嘅台詞，兩種唔會混。本地檔或者 YouTube 連結都行，Python 腳本可以單獨跑。Codex、Claude Code 用。MIT。呢個唔係新模型。",
+  "openqodex/openqodex": "本機程式檢查，喺你 push 之前用另一個已登入嘅 agent 審改動。Claude Code 同 Codex 可以做審查員，Cursor 同 Cline 只能發起。要 Node.js 22 或更新，macOS 或 Linux。冇自己嘅帳戶同 key。Apache-2.0。呢個唔係新模型。",
+  "LearnPrompt/awesome-seedance": "Seedance 案例目錄，作者話有 840 多條來源帖、27 個模板同 79 個 skill，每日由 goodcase.ai 同步。片要你自己喺即夢或 Dreamina 用現成 Seedance 出。清單 MIT。呢個係目錄，唔係新影片模型。",
+  "Alisa0808/vox-director": "Agent skill，用一個題目做紙拼貼解說片。你要先批節奏同畫面。圖、動態、旁白同音樂用你自己嘅 Atlas Cloud key 呼叫現成模型，ffmpeg 拼片。要 Python 3、Pillow 同 ffmpeg。MIT。呢個唔係新影片模型。",
+  "guanmo-ai/awesome-ai-motion": "動效同創意影片目錄，作者話畫廊有 1728 個作品，附原帖同提示。作品跟原帖，清單程式 MIT。同 awesome-opus5-5-videos 唔同。呢個係目錄，唔係影片模型。最近推送到 2026-10-27。"
 }
