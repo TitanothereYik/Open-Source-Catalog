@@ -738,5 +738,16 @@
   "PatilShreyas/MaterialDialog-Android": "Android 對話框庫，可以播 Lottie 動畫。動畫要你自己用 After Effects 出。2022 年 1 月後少更新。目錄放喺動態圖形，佢係介面庫，唔係剪片軟件。授權係 Apache-2.0。",
   "peylnog/ContinuousSR": "圖像超分研究代碼，用二維 Gaussian 由低清重建連續高清。ICLR 2026。只得測試代碼同權重，訓練代碼未放。目錄放喺 Gaussian Splatting，佢唔係三維濺射。repo 冇附開源授權檔。",
   "Junchao-cs/SolarWM": "互動世界模型框架，有長片生成、訓練同即時部署。數據同權重喺 Hugging Face，部分數據要申請。佢係世界模型框架，唔係聊天機械人。授權係 Apache-2.0。效果要你自己量。",
-  "NucleoidAI/Nucleoid": "邏輯語言，用最少 token 寫物件同關係，執行係宣告式。世界模型可以用佢記結構。有終端工作區，cargo install nucleoid。佢係語言，唔係影片世界模型。授權係 Apache-2.0。"
+  "NucleoidAI/Nucleoid": "邏輯語言，用最少 token 寫物件同關係，執行係宣告式。世界模型可以用佢記結構。有終端工作區，cargo install nucleoid。佢係語言，唔係影片世界模型。授權係 Apache-2.0。",
+  "juliobsz/skills": "agent skill，一句 brief 做成網站。要 Node.js 22.20 或更新。Claude Code、Codex 等讀到 SKILL.md 嘅 agent 可以用。佢係技能，唔係新模型。授權係 MIT。",
+  "Leonxlnx/unlazy": "agent skill，逼 agent 先寫驗收清單，做完再核對，先至報告。核心係 SKILL.md，要 Node.js 16 或更新。佢係技能，唔係新模型。授權係 MIT。",
+  "Derpyu520/qq-bridge": "本地橋，經公開 OneBot v11 把 QQ 訊息轉去 DeepSeek Harness。唔係騰訊、QQ、SnowLuma 或 DeepSeek 官方。要你自己開住兩邊服務，Windows 同 Node.js 22.13 或更新。授權係 PolyForm Noncommercial，唔可以商用。",
+  "VAST-AI-Research/EdenLive": "即時生成渲染器。參考片入去，外觀片出嚟，世界狀態留喺你嘅程式。權重喺 Hugging Face 嘅 VAST-AI/EdenLive。作者話 RTX 5090 可以 24 fps 或更高，要你自己量。佢係渲染模型，唔係遊戲引擎。授權係 Apache-2.0。",
+  "ziangcao0312/PhysX-Anything": "研究模型，一張圖出可以放進模擬嘅實體三維資產。CVPR 2026。數據集喺 Hugging Face。2026 年 4 月後少更新。授權係 S-Lab License 1.0，只限非商業用途。",
+  "DengKaiCQ/VGGT-Long": "用現成 VGGT 處理公里級長 RGB 序列，分段、對齊、閉環。唔使再訓練，亦唔使相機標定。同目錄嘅 VGGT、StreamVGGT 唔同。2026 年 3 月後少更新。授權係 VGGT License。",
+  "OpenDCAI/OpenWorldLib": "呢個世界模型嘅共用代碼庫，訓練同推理放喺一處。目錄放喺 Gaussian Splatting，佢唔係濺射訓練器，亦唔係一個新模型。授權係 Apache-2.0。",
+  "caiyuanhao1998/Open-DiffusionGS": "研究模型，把 Gaussian Splatting 烤入擴散去噪器，一張圖一次過出三維。ICCV 2025。數據喺 Hugging Face。佢係生成模型，唔係檢視器。授權係 MIT。",
+  "Dakkshin/after-effects-mcp": "MCP 伺服器，用 ExtendScript 控制你開住嘅 After Effects，可以加合成、文字同形狀。要你自己有 AE。2026 年 4 月後少更新。佢係遙控，唔係 After Effects 本身。授權係 MIT。",
+  "facebookresearch/nwm": "導航世界模型，按條件擴散預測行路之後嘅畫面。CVPR 2025 oral。權重喺 Hugging Face 嘅 facebook/nwm。2025 年 11 月後少更新。授權係 CC BY-NC 4.0，唔可以商用。佢係世界模型本身。",
+  "leggedrobotics/robotic_world_model": "Isaac Lab 擴充，用神經動力學做機械人策略。可以同模擬器一齊訓練，或者離線用學到嘅模型。要 Isaac Sim。佢係機械人世界模型，唔係影片模型。授權係 Apache-2.0。"
 }
