@@ -750,5 +750,13 @@
   "Dakkshin/after-effects-mcp": "MCP 伺服器，用 ExtendScript 控制你開住嘅 After Effects，可以加合成、文字同形狀。要你自己有 AE。2026 年 4 月後少更新。佢係遙控，唔係 After Effects 本身。授權係 MIT。",
   "facebookresearch/nwm": "導航世界模型，按條件擴散預測行路之後嘅畫面。CVPR 2025 oral。權重喺 Hugging Face 嘅 facebook/nwm。2025 年 11 月後少更新。授權係 CC BY-NC 4.0，唔可以商用。佢係世界模型本身。",
   "leggedrobotics/robotic_world_model": "Isaac Lab 擴充，用神經動力學做機械人策略。可以同模擬器一齊訓練，或者離線用學到嘅模型。要 Isaac Sim。佢係機械人世界模型，唔係影片模型。授權係 Apache-2.0。",
-  "Belluxx/Aleph": "本地工具，喺地圖畫範圍，下載建築、地形、衛星圖、街景同有材質三維，畀你或者 LLM 用。Python 3.11 或更新，唔使 key。程式碼 MIT，OSM 係 ODbL，地形用 AWS 圖磚。作者話街景、衛星同三維屬 Google，下載違反條款，用未公開介面，可能會壞。呢個係下載器，唔係圖像模型。"
+  "Belluxx/Aleph": "本地工具，喺地圖畫範圍，下載建築、地形、衛星圖、街景同有材質三維，畀你或者 LLM 用。Python 3.11 或更新，唔使 key。程式碼 MIT，OSM 係 ODbL，地形用 AWS 圖磚。作者話街景、衛星同三維屬 Google，下載違反條款，用未公開介面，可能會壞。呢個係下載器，唔係圖像模型。",
+  "NiazMorshed2007/reanimate": "Claude Code 技能，用嚟抄動畫。畀網頁、錄影、mp4、gif 或 Lottie，拍低再用你已有嘅 CSS、Framer Motion、GSAP 或 three.js 重做並對比。要 Bun 1.1+，macOS 或 Linux，唔使 key。MIT。別人素材仍屬原主。技能，唔係新動態模型。",
+  "Appllama/appllama-skills": "兩份 agent 技能，用嚟做手機畫面。研究嗰份要 Appllama MCP 同你自己嘅 Pro 帳戶。設計嗰份寫 Expo 同 React Native，唔接 MCP 都用得。Claude Code、Cursor、Codex 都裝得。程式碼 MIT。個名同標誌係商標，授權唔包括。唔係新模型。",
+  "KKKKhazix/human-writing": "中文寫作技能，要模型寫出嚟似一個具體嘅人講嘢。現實題材先核事實，虛構都要有動作同變化，初稿再砍重複、報告腔同翻案句。任何讀 SKILL.md 嘅 agent 都裝得，亦有一份短文可以貼去聊天窗。MIT。唔係新語言模型。2026 年 8 月之後少更新。",
+  "gsgen3d/gsgen": "CVPR 2024 嘅文字生成三維高斯。用現有 Point-E 或 Shap-E 做起點再訓練，可以輸出 ply 同 splat。網格而家只匯出形狀。作者話 M1 Pro 上個檢視器可以超過每秒 40 格，你自己量。MIT。2024 年 1 月之後少更新。同 GaussianDreamer 唔同。",
+  "hustvl/GaussianDreamer": "CVPR 2024，一句文字生成三維高斯。用現有 Shap-E 做三維起點，再靠二維擴散補幾何同外觀，亦可以做人體化身。作者話一張 GPU 大約 15 分鐘，你自己量。有 Hugging Face 示範。Apache-2.0。2025 年 1 月之後少更新。同 GSGEN 唔同。",
+  "EnVision-Research/LucidDreamer": "CVPR 2024 highlight，用區間分數匹配由文字蒸餾高質三維，底層係三維高斯同現有二維擴散。作者話 A100 大約 35 分鐘，你自己量。MIT。2024 年 5 月之後少更新。呢個係文字生成三維，同 luciddreamer-cvlab 嘅場景版唔同。",
+  "NVlabs/PartPacker": "一張圖生成拆到零件嘅三維。權重喺 Hugging Face nvidia/PartPacker，推理約 10GB。作者喺 3090 同 4090 試過。NVIDIA Source Code License，只限非商業，NVIDIA 可以商業用。2025 年 6 月後少更新。同 TRELLIS 唔同。",
+  "IamCreateAI/NeoVerse": "CVPR 2026 highlight，亦係 VideoWorldModel workshop 最佳論文。用單目片重建，再沿新鏡頭出片。權重喺 Hugging Face Yuppie1204/NeoVerse，用現有 Wan 2.1。作者話 A800 少過 30 秒，你自己量。Apache-2.0。"
 }
