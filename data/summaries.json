@@ -766,5 +766,10 @@
   "Lewis-Stuart-11/3DGS-to-PC": "把三維高斯 ply 或 splat 轉成密點雲，裝咗 Open3D 亦可以出網格。顏色要相機變換，否則會唔似原場景。CUDA 擴充裝唔到可以用純 Python。Apache-2.0。ICCVW 2025。2025 年 11 月後少更新。呢個係轉換器，唔係訓練器。",
   "NVlabs/LongSplat": "ICCV 2025，隨手拍嘅長片、冇相機姿態，重建三維高斯。姿態用現有 MASt3R。可以轉成一般 3DGS 檢視器格式。NVIDIA License，只限非商業研究或評估，NVIDIA 可以商業用。2026 年 1 月後少更新。",
   "UMass-Embodied-AGI/3D-VLA": "ICML 2024 嘅具身世界模型。建喺現有 3D-LLM 上，預測目標圖像同點雲，再出動作。權重喺 Hugging Face anyezhy。repo 冇授權檔。2024 年 10 月後少更新。唔係影片世界模型。",
-  "NoizAI/HelixWorld": "即時聲畫世界模型。一張圖加一句提示，行前或轉頭，畫面同空間聲一齊變。預覽權重喺 Hugging Face NoizAI/HelixWorld-preview。程式碼 Apache-2.0，權重授權另計。用現有 Gemma 3 做文字編碼。作者話 H800 可以 24 格，你自己量。約 70 GB。"
+  "NoizAI/HelixWorld": "即時聲畫世界模型。一張圖加一句提示，行前或轉頭，畫面同空間聲一齊變。預覽權重喺 Hugging Face NoizAI/HelixWorld-preview。程式碼 Apache-2.0，權重授權另計。用現有 Gemma 3 做文字編碼。作者話 H800 可以 24 格，你自己量。約 70 GB。",
+  "HarnessRouter/harnessrouter": "自己托管嘅介面，用一個 API 跑你已有嘅 Codex、Claude Code 等 harness。要 Docker、大約 4 GB 磁碟，同你自己嘅 provider key，冇內置模型。Apache-2.0。對外開放之前要改走預設登入。唔係新模型。",
+  "vercel-labs/fx": "實驗版 Unix 風格程式 agent。一個 Zig 二進位，macOS 同 Linux，唔使裝 runtime。模型用你自己嘅 Vercel、ChatGPT、Grok 或相容接口。可以讀 skill，但佢自己係 agent。預設會自動改檔同跑測試。Apache-2.0。唔係新模型。",
+  "kirodotdev/KiroCrew": "本地或你自己機器上嘅開發工作區，任務可以跨對話繼續，亦可以無人值守。預設 agent 係要另外安裝同登入嘅 kiro-cli。macOS、Linux、Windows。每日有一次匿名用量心跳，可以關掉。Apache-2.0。唔係新模型。",
+  "ginwind/VLA-JEPA": "ECCV 2026，用潛在世界模型加強視覺語言動作模型。基於現有 starVLA，要 Qwen3-VL-2B 同 V-JEPA2。權重喺 Hugging Face ginwind/VLA-JEPA。程式碼 Apache-2.0，第三方部分跟原授權。2026 年 9 月後少更新。唔係影片世界模型。",
+  "NVIDIA/GR00T-Dreams": "用現有 Cosmos 世界模型，由一張圖同指示生成機械人片，再抽出動作去微調 GR00T N1。呢個 repo 係條流程，唔係新影片模型。Apache-2.0。2025 年 10 月後少更新。"
 }
