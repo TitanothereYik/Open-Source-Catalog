@@ -777,5 +777,9 @@
   "typesafe-ai/skills": "一份 agent skill，設計 TypeSafe System One 接入：狀態、問題同請求。要你自己嘅 TypeSafe 帳戶同 API。Claude Code 可裝插件，其他 agent 用 skills.sh。同目錄另外三個同名 skills repo 唔同。MIT。唔係模型本身。",
   "oil-oil/oil-motion": "網頁交互動畫 skill。你講表達同跟邊種操作，agent 用已有影片模型生成連續畫面，再接到滾動、滑鼠或拖動。瀏覽器只播做好嘅畫面。列喺影片，唔係 After Effects，亦唔係新影片模型。MIT。",
   "ArcReel/ArcReel": "自己托管嘅短片工作台。小說或劇本變成角色、分鏡同片，可以出中國大陸版剪映草稿，CapCut 相容未驗證。片用你自己接嘅模型 API，要 Docker。AGPL-3.0。唔係新影片模型。",
-  "InternRobotics/Aether": "ICCV 2025，亦係該 workshop 傑出論文。一個世界模型做四維重建、按動作預測下一條片，同由目標圖做規劃。權重喺 Hugging Face AetherWorldModel/AetherV1。程式碼 MIT。2025 年 10 月後少更新。作者話可以零樣本用喺真實場景，你自己量。"
+  "InternRobotics/Aether": "ICCV 2025，亦係該 workshop 傑出論文。一個世界模型做四維重建、按動作預測下一條片，同由目標圖做規劃。權重喺 Hugging Face AetherWorldModel/AetherV1。程式碼 MIT。2025 年 10 月後少更新。作者話可以零樣本用喺真實場景，你自己量。",
+  "N1nEmAn/sapper-v2": "多 agent 攻防程式，指揮員分工人群，用你已裝嘅 Claude Code。作者話喺騰訊智能攻防網上賽無人值守跑完。只可測自己擁有或者有書面授權嘅系統。MIT。呢個係 agent，唔係新語言模型。",
+  "speridlabs/idol-sdk": "一張物件相變三維高斯，輸出普通 ply。Python 3.10、PyTorch 2.5 起。權重喺 HF speridlabs/idol，程式碼 Apache-2.0。DINOv3 同 FLUX.2-dev 要另外申請，許可跟佢哋。作者話峰值約 7.2GB。同 TripoSplat 唔同，係推理。",
+  "huaxialucaicaizi/ai-startup-skills": "Agent skill 包，七步加總入口：驗證、商業計劃、政策、路演、獲客、定價、註冊。畀喺中國做 AI 產品嘅一人公司，Codex、Claude Code 同 Cursor 用。政策同稅務只係資料參考，唔係專業意見。MIT。呢個唔係新模型。",
+  "AminBlg/SimpleEnglish": "寫作 skill，要已有嘅模型用短句、主動語態寫技術說明，風格跟簡化技術英語。Claude Code、Cursor、Codex 等識讀 skill 嘅 agent 都裝到。MIT。非官方，同 ASD 無關，標準原文冇收喺度。呢個唔係新模型。"
 }
