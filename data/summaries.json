@@ -837,5 +837,8 @@
   "ZeroDayEvil/ai-security-tool": "跨平台終端同供應鏈掃描器，用嚟喺你部機查已知漏洞同 SBOM，亦可以開 SSH、SFTP、RDP 同 VNC。AI 要用你自己嘅 DeepSeek 或 OpenAI key。MIT。呢個唔係攻擊教學，唔會畀你新模型。",
   "whaleyxbt/claude-motion": "動效 skill，用嚟教你嘅 coding agent 喺 Remotion 做片、對住幀自查，同用 Python 標準庫出聲。Claude Code 同 Cursor 開箱有 skill。要 Node 20、Python 3 同 ffmpeg。MIT。唔會畀你新影片模型。",
   "QoderAI/better-harness": "插件，用嚟喺你已有嘅 coding agent 入面睇工作循環、證據同下一步。支援 Claude Code、Codex、Cursor 等 host。唔包模型，證據不足會寫明。MIT。唔會畀你新模型。",
-  "eliasstravik/shepherdr": "herdr-core 嘅控制台，用嚟喺手機、平板或電腦睇多部機上嘅 coding agent。每個任務喺自己嘅 git worktree 跑，合併前有人審。要 herdr-core 0.1.14、Bun，同 macOS 或 Linux。用 Tailscale 私網，唔公開。MIT。唔會畀你新模型。"
+  "eliasstravik/shepherdr": "herdr-core 嘅控制台，用嚟喺手機、平板或電腦睇多部機上嘅 coding agent。每個任務喺自己嘅 git worktree 跑，合併前有人審。要 herdr-core 0.1.14、Bun，同 macOS 或 Linux。用 Tailscale 私網，唔公開。MIT。唔會畀你新模型。",
+  "richiemcilroy/Tov": "Tov 係一種形狀似 TypeScript 嘅語言，用嚟喺 macOS arm64 或 Linux 編譯成細小本機程式。而家係 0.1.0，Windows 未支援。自己編譯要 Rust 1.95 同 C 編譯器，TypeScript 亦未完全對齊。MIT。呢個係編譯器，唔會畀你新模型。",
+  "gnipbao/story-to-handdrawn-video": "Agent skill，用嚟喺 Codex、Claude Code 等 agent 將中文故事或有序圖片做成 3:4 靜音手繪 MP4。要 Node 20、Python 3.10、FFmpeg 同瀏覽器。新圖靠 agent 嘅生圖工具，預設唔係離線模型。MIT。唔會畀你新模型。",
+  "NVIDIA-NeMo/labs-OO-Agents": "Python 框架，用嚟喺 class 入面寫 AI agent。有省略號嘅方法交畀模型，模型要你自己嘅 API key。要 Python 3.12 或 3.13。原生 Windows 唔完整，生成程式要放喺沙盒。Apache-2.0。唔會畀你新模型。"
 }
