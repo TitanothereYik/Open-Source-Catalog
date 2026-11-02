@@ -835,5 +835,7 @@
   "chipfighter/framekeeper": "Agent 插件，用嚟管理對話入面嘅圖：舊圖唔會每次都再上傳，模型要嗰張先拉返嚟。支援 Codex、Claude Code、WorkBuddy 同 Gemini CLI。圖仍然喺你已有嘅模型處理。MIT。唔會畀你新模型。",
   "HanyuanWang/LiveStream-Agent-Studio": "Windows 本機工作台，用嚟喺你部機做抖音直播電商：搵主播、拆直播、復盤同短片編導。要你自己嘅阿里雲百煉 key。v0.2.0 beta，啟動器未商業簽名。MIT。唔會畀你新模型。",
   "ZeroDayEvil/ai-security-tool": "跨平台終端同供應鏈掃描器，用嚟喺你部機查已知漏洞同 SBOM，亦可以開 SSH、SFTP、RDP 同 VNC。AI 要用你自己嘅 DeepSeek 或 OpenAI key。MIT。呢個唔係攻擊教學，唔會畀你新模型。",
-  "whaleyxbt/claude-motion": "動效 skill，用嚟教你嘅 coding agent 喺 Remotion 做片、對住幀自查，同用 Python 標準庫出聲。Claude Code 同 Cursor 開箱有 skill。要 Node 20、Python 3 同 ffmpeg。MIT。唔會畀你新影片模型。"
+  "whaleyxbt/claude-motion": "動效 skill，用嚟教你嘅 coding agent 喺 Remotion 做片、對住幀自查，同用 Python 標準庫出聲。Claude Code 同 Cursor 開箱有 skill。要 Node 20、Python 3 同 ffmpeg。MIT。唔會畀你新影片模型。",
+  "QoderAI/better-harness": "插件，用嚟喺你已有嘅 coding agent 入面睇工作循環、證據同下一步。支援 Claude Code、Codex、Cursor 等 host。唔包模型，證據不足會寫明。MIT。唔會畀你新模型。",
+  "eliasstravik/shepherdr": "herdr-core 嘅控制台，用嚟喺手機、平板或電腦睇多部機上嘅 coding agent。每個任務喺自己嘅 git worktree 跑，合併前有人審。要 herdr-core 0.1.14、Bun，同 macOS 或 Linux。用 Tailscale 私網，唔公開。MIT。唔會畀你新模型。"
 }
