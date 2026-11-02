@@ -800,5 +800,8 @@
   "franzenzenhofer/big-arrow-on-the-screen": "macOS 技能同命令列，畀 Claude Code 同 Codex 喺螢幕畫大箭咀、框同字。點擊會穿透，過一陣自己消失。找元件要輔助使用權限。MIT。呢個只會指，唔會代你撳。唔係新模型。",
   "dagoSte/squadra": "本機協調工具，用嚟畀 Claude Code、Codex 同 Cursor 幾個視窗一齊做同一個項目。任務、檢查同審查嘅紀錄放喺你部機，附 skill、命令列同本機面板。要 Python 3.12 或更新，macOS 或 POSIX，只用標準庫。MIT。呢個唔係新模型。",
   "jtydhr88/screenwriting-skills": "Agent skill 包，有 26 個用嚟寫劇本、電視劇同戲劇技巧嘅 skill，畀 Claude Code 同 Codex 用。內文用中文寫，檔案放喺 repo，你用其他語言問就用嗰種語言答。裝一次兩邊都用到。MIT。呢個係寫作技能，唔係新模型。",
-  "Harvil1/codeAgent": "終端編程 agent，用嚟畀你用自然語言叫佢讀碼、改檔同跑命令。要自己接 OpenAI 相容或 Anthropic 協議嘅現成模型，預設 DeepSeek。有審批、記憶同技能，跑喺你部機。Windows 優先，Python 3.11 或更新。MIT。呢個唔係新模型。"
+  "Harvil1/codeAgent": "終端編程 agent，用嚟畀你用自然語言叫佢讀碼、改檔同跑命令。要自己接 OpenAI 相容或 Anthropic 協議嘅現成模型，預設 DeepSeek。有審批、記憶同技能，跑喺你部機。Windows 優先，Python 3.11 或更新。MIT。呢個唔係新模型。",
+  "yeyuxin777/baoyan-agent-benchmark": "開源基準，用嚟評保研諮詢同申請規劃嘅 agent 配置。而家有 70 條中文任務、23 個案例同 83 個答題階段。公開數據唔使審批，評分材料要收起，唔畀被測 agent 睇到。跑喺你自己接嘅現成 agent。MIT。呢個係測試集，唔係新模型。",
+  "Jakeschincariol/arena-skill": "Claude Code skill，用嚟喺同一個任務開到 100 個子 agent 打淘汰賽，每個用唔同策略，最後剩一個答案畀你決定用唔用。子 agent 只寫入 .arena/，唔會改你嘅檔案。要 Claude Code 同 Python 3.8 或更新。MIT。呢個唔係新模型。",
+  "N4darae/shrt": "API 回歸工具，用嚟記低登入、建立同讀回嘅呼叫鍊。你批准一次合格跑做基準，之後喺你部機重播，改動會話畀你知係邊步。shrt init 會裝 Claude Code skill，命令亦可以人手跑。要 Go 1.26 同 buf。而家只支援 Connect，唔係純 gRPC。MIT。呢個唔係新模型。"
 }
