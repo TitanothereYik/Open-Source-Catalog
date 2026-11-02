@@ -810,5 +810,8 @@
   "caru-ini/stack-diagram": "Agent skill，用嚟用一句說話畫架構圖，圖入面用官方標誌。喺 Claude Code、Codex、Cursor 同其他跟 agentskills.io 嘅 agent 用。用 npx skills 安裝。MIT。呢個只畫圖，唔會畀你新模型。",
   "achimala/dream-loop": "Agent skill，用嚟做有畫面嘅遊戲、應用或場景。先叫圖像模型出目標圖，再喺你部機做出嚟，另一個子 agent 對住實拍提意見，做到滿意為止。要 agent 識睇圖同生圖，3D 要自己裝 Blender。作者只試過 Codex 嘅 GPT-6 Astra。MIT。呢個唔會畀你新模型。",
   "QwenAudio/qwen-audio-agent": "即時語音 runtime，用嚟喺 agent 做緊嘢嗰陣繼續傾偈。要 Node.js 22.22.2 或更新。語音同後端用你自己嘅 API key，預設接 Qwen Audio 3.1，亦可以接其他現成語音模型。Apache-2.0。呢個唔會畀你新模型。",
-  "CookSleep/gpt_image_playground": "網頁工具，用嚟喺瀏覽器出圖同改圖。呼叫 OpenAI gpt-image-2.5 或相容接口、fal.ai，同你匯入嘅 HTTP 供應商。金鑰係你自己嘅，歷史同參數只存喺本機。MIT。呢個係介面，唔會畀你新圖像模型。"
+  "CookSleep/gpt_image_playground": "網頁工具，用嚟喺瀏覽器出圖同改圖。呼叫 OpenAI gpt-image-2.5 或相容接口、fal.ai，同你匯入嘅 HTTP 供應商。金鑰係你自己嘅，歷史同參數只存喺本機。MIT。呢個係介面，唔會畀你新圖像模型。",
+  "blendi-remade/agentcraft": "Minecraft 介面，用嚟喺遊戲裡睇 Claude 或 Codex agent 改你嘅 repo。要 Minecraft Java、Java 25、Node 22 同 git。Agent 用你嘅 Claude API 或已登入 Codex。未撳 Merge 唔推送。MIT。唔會畀你新模型。",
+  "coldteadotai/pr-lens": "工具同 skill，用嚟把 pull request 畫成架構同資料流圖，貼喺 PR 入面。GitHub App 唔使你嘅模型 key。skill 用你已有嘅 coding agent。CLI 同 Action 可以改用你自己嘅模型。要 Node 20.11 先至自己建。MIT。呢個唔會畀你新模型。",
+  "dualface/ste-zh": "Agent skill，用嚟叫 agent 用簡化技術中文匯報：結論先行、附實證、狀態固定。借 ASD-STE100 嘅原則，只規範對你講嘅話，唔改程式、註解同 commit。未開就唔生效。繁體版喺 ste-zht。MIT。呢個唔會畀你新模型。"
 }
