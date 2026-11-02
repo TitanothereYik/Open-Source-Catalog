@@ -826,5 +826,11 @@
   "MiniMax-AI/mcode-stack": "Skill 包，用嚟把 MiniMax Code 團隊日常用嘅工作流裝入 MiniMax Code、Claude Code 或 Codex。每份係 SKILL.md，唔係提示合集，裝喺你部機。模型仍然係你已登入嘅 agent。MIT。唔會畀你新模型。",
   "feder-cr/invisible_playwright_mcp": "MCP，用嚟畀 Claude Code 或 Codex 喺你部機開 Firefox，撳頁同讀內容。用 uv 裝。專案想減少網站當佢係機器人嘅機會。MIT。呢個只係瀏覽器工具，唔係新模型。",
   "redhat-et/ripwire": "本機命令列同可選 MCP，用嚟畀 coding agent 喺讀成個 repo 之前先搵到要睇嘅位。離線跑，冇 runtime 依賴。安裝亦會教 Claude Code、Codex 或 Cursor 幾時叫佢。Apache-2.0。唔會畀你新模型。",
-  "shijue-aid/aid-studio": "自建平台，用嚟喺你部伺服器做 AI 漫劇、短劇同漫畫：劇本、分鏡、圖、片同配音。文字、圖像、影片同語音都要你自己嘅模型 key。可以用 Docker 或 systemd。MIT。唔會畀你新影片模型。"
+  "shijue-aid/aid-studio": "自建平台，用嚟喺你部伺服器做 AI 漫劇、短劇同漫畫：劇本、分鏡、圖、片同配音。文字、圖像、影片同語音都要你自己嘅模型 key。可以用 Docker 或 systemd。MIT。唔會畀你新影片模型。",
+  "zhanghao123vip/ai-manju-skills": "21 個題材嘅 skill，用嚟由一句點子寫企劃、資產圖提示詞、分集劇本、分鏡同影片提示詞。可以喺 Claude Code、WorkBuddy 用，或者貼去 DeepSeek。冇依賴，唔會自己出片。MIT。唔會畀你新影片模型。",
+  "benjitaylor/skills": "Agent skill Stageshow，用嚟叫你嘅 coding agent 喺 React 做假產品界面：靜態圖、功能卡、游標示範同 bento。可以拍低結果畀 agent 檢查。用 npx skills 裝。skill 檔係 MIT。唔係新模型。",
+  "miuuyy/Octopus-SI-OS": "研究預覽嘅 agent 系統，用嚟喺 macOS 14 或更新跑 Codex 一類 agent，可以讀寫檔、用瀏覽器同桌面。要 Node 24、穩定 Rust 同 ChatGPT 帳戶。作者話而家模型唔會自己主動，普通寫程式同 Codex CLI 差唔多。MIT。唔會畀你新模型。",
+  "0xsline/OpenChatCut": "本機影片編輯器，用嚟喺多軌時間線改片。Codex、Claude Code 或內置 agent 都可以改，改動留喺工程入面。有桌面安裝包，自己建要 Node.js 24。項目同素材預設留喺你嘅機。AGPL-3.0。唔會畀你新影片模型。",
+  "maxrave-dev/kotlin-footguns": "十個 agent skill 加一個掃描器，用嚟提醒 Kotlin、Compose Multiplatform 同桌面 JVM 嘅坑。作者話係由佢嘅音樂 app 實戰整理，唔係抄文件。用 npx skills 裝，喺 Claude Code 等 agent 用。GPL-3.0。唔會畀你新模型。",
+  "chipfighter/framekeeper": "Agent 插件，用嚟管理對話入面嘅圖：舊圖唔會每次都再上傳，模型要嗰張先拉返嚟。支援 Codex、Claude Code、WorkBuddy 同 Gemini CLI。圖仍然喺你已有嘅模型處理。MIT。唔會畀你新模型。"
 }
