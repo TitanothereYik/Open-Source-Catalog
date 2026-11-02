@@ -822,5 +822,9 @@
   "Leonxlnx/cinetic": "Agent skill，用嚟叫 coding agent 用 Remotion 或 HyperFrames 做短片。支援 Claude Code、Codex 同 Cursor。要 Node 22、ffmpeg 6、Python 3.11 同 Chromium。片喺你嘅機渲。MIT。唔會畀你新模型。",
   "Aryanutkarsh/SeeCode": "Agent skill，用嚟把短規格畫成可互動嘅動畫圖。一個 HTML 檔可以喺瀏覽器懸停、撳，再匯出 SVG、PNG、GIF 或 MP4。圖表數字讀 CSV 或 JSON，唔使經過模型。支援 Claude Code、Codex 同 Cursor。MIT。唔會畀你新模型。",
   "Pinvou/pinvou-agent": "桌面 agent，用嚟喺 Windows、macOS 同 Linux 做檔案、知識庫同工作流。可以用本地 vLLM，或者任何 OpenAI 相容接口，key 係你自己嘅。語音模型要另下載。資料走唔走得出部機，視乎你開嘅模型。MIT。唔會畀你新模型。",
-  "wuyoscar/GPT-Image2-Skill": "兩個 agent skill 加命令列，用嚟喺 Claude Code 或 Codex 叫 GPT Image 2 或 2.5 出圖同改圖，附提示圖庫。要 Python 3.11 同你自己嘅 OpenAI key。MIT。唔會畀你新圖像模型。"
+  "wuyoscar/GPT-Image2-Skill": "兩個 agent skill 加命令列，用嚟喺 Claude Code 或 Codex 叫 GPT Image 2 或 2.5 出圖同改圖，附提示圖庫。要 Python 3.11 同你自己嘅 OpenAI key。MIT。唔會畀你新圖像模型。",
+  "MiniMax-AI/mcode-stack": "Skill 包，用嚟把 MiniMax Code 團隊日常用嘅工作流裝入 MiniMax Code、Claude Code 或 Codex。每份係 SKILL.md，唔係提示合集，裝喺你部機。模型仍然係你已登入嘅 agent。MIT。唔會畀你新模型。",
+  "feder-cr/invisible_playwright_mcp": "MCP，用嚟畀 Claude Code 或 Codex 喺你部機開 Firefox，撳頁同讀內容。用 uv 裝。專案想減少網站當佢係機器人嘅機會。MIT。呢個只係瀏覽器工具，唔係新模型。",
+  "redhat-et/ripwire": "本機命令列同可選 MCP，用嚟畀 coding agent 喺讀成個 repo 之前先搵到要睇嘅位。離線跑，冇 runtime 依賴。安裝亦會教 Claude Code、Codex 或 Cursor 幾時叫佢。Apache-2.0。唔會畀你新模型。",
+  "shijue-aid/aid-studio": "自建平台，用嚟喺你部伺服器做 AI 漫劇、短劇同漫畫：劇本、分鏡、圖、片同配音。文字、圖像、影片同語音都要你自己嘅模型 key。可以用 Docker 或 systemd。MIT。唔會畀你新影片模型。"
 }
