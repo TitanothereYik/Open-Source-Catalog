@@ -818,5 +818,9 @@
   "simonlin1212/Vibe-Research": "投研工作台，用嚟喺你部機睇 A 股、美股同港股嘅自選、持倉、復盤、回測同研報。作者話有 168 個數據端點。AI 要用你自己嘅 Claude Code、Codex 或相容 API，唔接入都可以瀏覽。要 Node.js 22.18 同 Python 3.11。MIT。唔落單，唔會畀你新模型。",
   "islandmed/SculptForge": "開源雕塑軟件，用嚟喺 Linux、macOS 同 Windows 雕塑，亦處理 Gaussian splat。內置 AI 預設用 Pollinations 嘅 GPT-OSS 20B，離線用本地 Ollama。圖生 3D 可改你自己嘅 ComfyUI 或本機模型。GPL-3.0。唔會畀你新模型。",
   "Tiger3807861189/J-Space-Cognition-Suite": "Agent skill 套件，用嚟喺推論時整理長任務嘅證據同檢查。要 Python 3.10 或更新，冇 pip 依賴。模型同工具由你嘅 host 提供，安裝本身唔會開 agent。Apache-2.0。唔會畀你新模型。",
-  "dream-num/univer-workspace": "開源 Office 工作區，用嚟喺同一個 runtime 編表格、文件、簡報同畫板。Agent 喺隔離 worktree 改完，要你審過先合併。要 Node.js 24 或更新，模型 key 係你自己嘅。可以本機或自建。Apache-2.0。唔會畀你新模型。"
+  "dream-num/univer-workspace": "開源 Office 工作區，用嚟喺同一個 runtime 編表格、文件、簡報同畫板。Agent 喺隔離 worktree 改完，要你審過先合併。要 Node.js 24 或更新，模型 key 係你自己嘅。可以本機或自建。Apache-2.0。唔會畀你新模型。",
+  "Leonxlnx/cinetic": "Agent skill，用嚟叫 coding agent 用 Remotion 或 HyperFrames 做短片。支援 Claude Code、Codex 同 Cursor。要 Node 22、ffmpeg 6、Python 3.11 同 Chromium。片喺你嘅機渲。MIT。唔會畀你新模型。",
+  "Aryanutkarsh/SeeCode": "Agent skill，用嚟把短規格畫成可互動嘅動畫圖。一個 HTML 檔可以喺瀏覽器懸停、撳，再匯出 SVG、PNG、GIF 或 MP4。圖表數字讀 CSV 或 JSON，唔使經過模型。支援 Claude Code、Codex 同 Cursor。MIT。唔會畀你新模型。",
+  "Pinvou/pinvou-agent": "桌面 agent，用嚟喺 Windows、macOS 同 Linux 做檔案、知識庫同工作流。可以用本地 vLLM，或者任何 OpenAI 相容接口，key 係你自己嘅。語音模型要另下載。資料走唔走得出部機，視乎你開嘅模型。MIT。唔會畀你新模型。",
+  "wuyoscar/GPT-Image2-Skill": "兩個 agent skill 加命令列，用嚟喺 Claude Code 或 Codex 叫 GPT Image 2 或 2.5 出圖同改圖，附提示圖庫。要 Python 3.11 同你自己嘅 OpenAI key。MIT。唔會畀你新圖像模型。"
 }
