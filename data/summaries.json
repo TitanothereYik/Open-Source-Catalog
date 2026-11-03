@@ -880,5 +880,11 @@
   "C4rohan/Lampline": "電話 agent 工作室，用嚟喺你部機寫同測試電話 agent。本地測試可以冇 API key，真模型要你自己嘅 key，真電話要線路。附 coding agent skill。v0.4.1。Apache-2.0。唔係粵語聲線，亦唔會畀你新模型。",
   "inclusionAI/Ming-3.0-tts": "多語言 TTS，用嚟喺本機克隆或設計你嘅聲音，語言包括粵語。有 0.5B 同 MoE 細版，權重要另外下載，建議用 NVIDIA GPU。粵語聲線相似度追唔上 CosyVoice2-Yue。MIT。唔會畀你免安裝 app。",
   "agentverse-os/AgentVerse-OS": "個人雲端桌面，用嚟喺一部 Ubuntu 22.04 伺服器跑你已有嘅 coding agent。要 Tailscale 先入到，alpha 0.2，而家得一個使用者。唔包含模型。Apache-2.0。唔會畀你新模型。",
-  "qiz029/dscode": "終端 coding agent，用嚟喺 macOS 14 或 glibc Linux 寫程式，session 之間可以交功課。唔支援 Windows。要你自己嘅模型帳戶。v0.7.54。MIT。唔會畀你新模型。"
+  "qiz029/dscode": "終端 coding agent，用嚟喺 macOS 14 或 glibc Linux 寫程式，session 之間可以交功課。唔支援 Windows。要你自己嘅模型帳戶。v0.7.54。MIT。唔會畀你新模型。",
+  "assafkip/claudemy": "Claude Code skill，用嚟喺你已有嘅 Claude 做約十二課、每課兩分鐘嘅語音課。要 Python 3 同 ffmpeg。自然聲要 ElevenLabs key，冇就用 macOS 內置聲。v0.3.2。MIT。唔會畀你新模型。",
+  "FireRedTeam/FireRedTTS3": "多語言語音克隆，用嚟喺本機用你嘅參考聲克隆。二十四種語言包括粵語，另有二十一款中文方言。權重要另外下載，要 GPU 先順。Apache-2.0。唔會畀你免安裝 app。",
+  "Tencent-Hunyuan/AuK": "1.5B 語音基礎模型，用嚟喺你部機做生成同編輯。要 Python 3.10，權重同 Qwen2.5-Omni 編碼器都要另外下載。程式同權重係 MIT。唔係粵語專用模型。唔會畀你免安裝嘅 app。",
+  "LodyAI/Lody": "團隊工作台，用嚟喺桌面、手機或網頁調度你已有嘅 coding agent。要登入，機器用 npx 連上。而家仲未做到完全本地。Apache-2.0。唔會畀你新模型。",
+  "kharmanskyi/open-steps": "一組 skill，用嚟喺你已有嘅 Claude Code、Codex、Cursor 或 Gemini CLI 用白話匯報進度同逐步指示。v0.4.8。MIT。唔包含模型。唔會畀你新模型。",
+  "pullboard-dev/pullboard": "協調板，用嚟喺你個 git repo 派工作畀你已有嘅 agent，另一個 agent 先核實先至合併。用 npx，v0.9.3。MIT。唔包含模型。唔會畀你新模型。"
 }
