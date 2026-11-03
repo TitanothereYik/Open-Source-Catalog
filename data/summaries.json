@@ -873,5 +873,6 @@
   "multimodal-art-projection/YuE": "音樂生成模型，用嚟喺你嘅歌詞同風格計劃出歌。YuE2 亦可以零樣本翻唱同改歌。要自己跑，顯存要求高。歌詞可以係中文。Apache-2.0。呢個係音樂，唔會畀你粵語語音合成。",
   "hexgrad/kokoro": "約 82M 嘅細 TTS，用嚟喺本機低成本出聲，適合 CPU。英文為主，其他語言要對返聲線。Apache-2.0。唔係粵語模型，要自己下載權重。唔會畀你克隆香港講者。",
   "OHF-Voice/piper1-gpl": "本機神經 TTS，用嚟喺 CPU 快速讀出你嘅文字。現用版本係 GPL-3.0。聲線要另外下載，espeak 負責音素，預設冇粵語。你要自己裝。唔會畀你克隆人聲。",
-  "ace-step/ACE-Step": "音樂基礎模型，用嚟喺你嘅文字條件生成音樂。Apache-2.0。要自己跑權重，出嚟係一段音樂檔，唔係人聲對白，亦唔包歌手庫。呢個係作曲向工具，唔會畀你粵語講故。"
+  "ace-step/ACE-Step": "音樂基礎模型，用嚟喺你嘅文字條件生成音樂。Apache-2.0。要自己跑權重，出嚟係一段音樂檔，唔係人聲對白，亦唔包歌手庫。呢個係作曲向工具，唔會畀你粵語講故。",
+  "Superior-Trade/trading-terminal": "自託管嘅 Hyperliquid 終端，用嚟喺圖上畫你嘅看法，再寫 Freqtrade 策略。自己跑要 Superior Trade API、OpenRouter key 同 Node 20.9。預覽圖唔包完整 TradingView。會落真單。Apache-2.0。唔會畀你新模型。"
 }

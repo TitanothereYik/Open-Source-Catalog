@@ -1,6 +1,6 @@
 {
   "title": "Open Source Catalog",
-  "updated_at": "2026-11-03T16:36:04+08:00",
+  "updated_at": "2026-11-03T17:37:25+08:00",
   "base_url": "https://titanothereyik.github.io/Open-Source-Catalog/",
   "projects": [
     {
@@ -24905,6 +24905,35 @@
       "paper_title": "",
       "paper_url": "",
       "added_at": "2026-11-03T16:36:04+08:00"
+    },
+    {
+      "id": "github:superior-trade/trading-terminal",
+      "type": "github",
+      "category": "crypto-trading",
+      "name": "trading-terminal",
+      "full_name": "Superior-Trade/trading-terminal",
+      "url": "https://github.com/Superior-Trade/trading-terminal",
+      "homepage": "https://terminal.superior.trade",
+      "description": "Self-hosted AI trading terminal for Hyperliquid: chart read in, validated Freqtrade/Nautilus-Trader strategy out, deployed live.",
+      "summary": "自託管嘅 Hyperliquid 終端，用嚟喺圖上畫你嘅看法，再寫 Freqtrade 策略。自己跑要 Superior Trade API、OpenRouter key 同 Node 20.9。預覽圖唔包完整 TradingView。會落真單。Apache-2.0。唔會畀你新模型。",
+      "summary_en": "A self-hosted Hyperliquid terminal that turns a drawing on your chart into a Freqtrade strategy. Your own copy still needs the Superior Trade API, an OpenRouter key, and Node 20.9. The preview chart does not include full TradingView. It can place real orders. Apache-2.0. This does not give you a new model.",
+      "summary_locked": true,
+      "stars": 1017,
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "topics": [
+        "ai-agent",
+        "freqtrade",
+        "hyperliquid",
+        "nautilus-trader",
+        "self-hosted",
+        "tradingview"
+      ],
+      "archived": false,
+      "pushed_at": "2026-10-30",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-11-03T17:37:25+08:00"
     }
   ],
   "papers": [
@@ -24980,30 +25009,7 @@
     }
   ],
   "last_new_ids": [
-    "github:sahir619/fable-method",
-    "github:croffasia/itsaplan",
-    "github:boyang-hu/website-rebuild-skill",
-    "github:l0ng-ai/tty7",
-    "github:aslp-lab/wenetspeech-yue",
-    "github:qwenaudio/sensevoice",
-    "github:qwenaudio/cosyvoice",
-    "github:rvc-boss/gpt-sovits",
-    "github:openbmb/voxcpm",
-    "github:indiejoseph/jyutvoice",
-    "github:openai/whisper",
-    "github:coqui-ai/tts",
-    "github:2noise/chattts",
-    "github:rvc-project/retrieval-based-voice-conversion-webui",
-    "github:myshell-ai/openvoice",
-    "github:systran/faster-whisper",
-    "github:facebookresearch/audiocraft",
-    "github:modelscope/funasr",
-    "github:neonbjb/tortoise-tts",
-    "github:swivid/f5-tts",
-    "github:multimodal-art-projection/yue",
-    "github:hexgrad/kokoro",
-    "github:ohf-voice/piper1-gpl",
-    "github:ace-step/ace-step"
+    "github:superior-trade/trading-terminal"
   ],
   "rate_limit": {
     "used": 4000,
