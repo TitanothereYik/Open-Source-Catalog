@@ -843,5 +843,7 @@
   "NVIDIA-NeMo/labs-OO-Agents": "Python 框架，用嚟喺 class 入面寫 AI agent。有省略號嘅方法交畀模型，模型要你自己嘅 API key。要 Python 3.12 或 3.13。原生 Windows 唔完整，生成程式要放喺沙盒。Apache-2.0。唔會畀你新模型。",
   "kgoedecke/doop": "多人設計畫布，用嚟喺瀏覽器同 AI agent 一齊改畫面。內置 MCP，可接 Claude Code、Codex、Cursor。自己架要用 Bun 同 Node，內置 agent 要你自己嘅模型帳戶。版本 0.12.0。AGPL-3.0。唔會畀你新模型。",
   "sahenjp/RustXNG": "本機元搜尋引擎，用嚟喺你部機幫 AI agent 搜網頁。以 SearXNG 做底，用 Rust 寫，可選拎頁面文字。搜尋字會送到你揀嘅上游引擎。預設只聽 127.0.0.1。有現成二進制，自己編譯要 Rust 1.88。版本 0.26.0。AGPL-3.0。唔會畀你新模型。",
-  "tourmind-com/Tourmind-Booking-Skills": "兩份 agent skill，用嚟喺你已有嘅 agent 搜酒店同機票，再經 TourMind 落單同付款。搜尋可以先唔用 Token，核實、訂房同付款要 TourMind 帳戶。唔包庫存，亦唔係離線訂票。MIT。唔會畀你新模型。"
+  "tourmind-com/Tourmind-Booking-Skills": "兩份 agent skill，用嚟喺你已有嘅 agent 搜酒店同機票，再經 TourMind 落單同付款。搜尋可以先唔用 Token，核實、訂房同付款要 TourMind 帳戶。唔包庫存，亦唔係離線訂票。MIT。唔會畀你新模型。",
+  "feimacode/open-design-agent-kit": "設計 skill 套件，用嚟喺你已有嘅 coding agent 出簡報、網頁同原型。支援 Copilot、Claude Code、Codex、Cursor。用 agent 自己嘅模型，唔使額外 API key，亦冇獨立程式。成品係 repo 檔案。版本 0.1.0。MIT。唔會畀你新模型。",
+  "AMAP-ML/LongHorizon-Harness": "執行循環，用嚟喺 Claude Code、Codex、OpenCode 或 DeepSeek Harness 上做長任務。每步用新上下文，核實過先至當進度。要 Python 3.10 同你已有嘅 agent。版本 0.1.8，Windows 仍有限制。MIT。唔會畀你新模型。"
 }
