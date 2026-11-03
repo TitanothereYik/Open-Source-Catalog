@@ -892,5 +892,11 @@
   "pgrundev/pgbot": "唯讀 Postgres 檢查工具，用嚟喺本機睇 14 至 18 嘅健康報告，agent 可以用 MCP 叫佢。beta，v0.9.0。Apache-2.0。唔包含模型。唔會畀你新 agent。",
   "coji/natural-japanese": "一組 skill，用嚟喺你已有嘅 coding agent 改工作用日文文件，唔會加原文冇嘅事實。v1.6.4。MIT。呢個係日文，唔係粵語，亦唔會畀你新模型。",
   "harry0703/MoneyPrinterTurbo": "短片生成器，用嚟喺你畀嘅主題自動出腳本、配音同成片。要你自己嘅 LLM 同素材 API key，另要 FFmpeg。自己跑。v1.3.9。MIT。唔包含影片模型。",
-  "debpalash/VoiceStudio": "本機嘅聲音工作室，用嚟喺你部機做克隆同配音。模型要另外下載，macOS 穩定版要 Apple 晶片，CPU 會慢啲。v0.5.7。AGPL-3.0。唔會畀你免下載嘅模型。"
+  "debpalash/VoiceStudio": "本機嘅聲音工作室，用嚟喺你部機做克隆同配音。模型要另外下載，macOS 穩定版要 Apple 晶片，CPU 會慢啲。v0.5.7。AGPL-3.0。唔會畀你免下載嘅模型。",
+  "oil-oil/beautify-github-readme": "一組 skill，用嚟喺你已有嘅 Claude Code 或 Codex 設計 repo 嘅 README，令安裝同界限易睇。佢唔包含模型。MIT。唔會畀你新模型。",
+  "alexgreensh/attention-span": "一組輸出風格，用嚟喺你已有嘅 Claude Code 改佢點樣同你講，唔改寫程式嘅能力。而家有三款風格。v0.12。AGPL-3.0。唔包含模型。唔會畀你新模型。",
+  "MichaelKinsy/PiG": "Go 寫嘅 Pi coding agent，用嚟喺終端跑你已有嘅模型。安裝好嘅二進制唔使 Node。v0.5.3 未穩定，Windows 係預覽。MIT。唔會畀你新模型。",
+  "CorentinJ/Real-Time-Voice-Cloning": "即時語音克隆工具箱，用嚟喺幾秒你嘅參考聲合成英文語音。預訓練權重要自己下載，GPU 先順。架構比較舊，唔係粵語模型。程式係 MIT。唔會畀你一個免安裝嘅 app。",
+  "babysor/MockingBird": "中文語音克隆工具箱，用嚟喺幾秒你嘅參考聲合成普通話。要 Python 3.7 同 GPU，權重另外用。維護者話而家唔再積極更新。MIT。唔係粵語，亦唔會畀你雲端服務。",
+  "haidrrrry/claude-remotion-skill": "一組 skill，用嚟喺你已有嘅 Claude 用 Remotion 寫動態圖形片。出嚟係可重渲嘅程式，唔係像素影片模型。要自己裝 Remotion。MIT。唔會畀你新模型。"
 }
