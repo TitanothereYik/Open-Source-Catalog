@@ -898,5 +898,11 @@
   "MichaelKinsy/PiG": "Go 寫嘅 Pi coding agent，用嚟喺終端跑你已有嘅模型。安裝好嘅二進制唔使 Node。v0.5.3 未穩定，Windows 係預覽。MIT。唔會畀你新模型。",
   "CorentinJ/Real-Time-Voice-Cloning": "即時語音克隆工具箱，用嚟喺幾秒你嘅參考聲合成英文語音。預訓練權重要自己下載，GPU 先順。架構比較舊，唔係粵語模型。程式係 MIT。唔會畀你一個免安裝嘅 app。",
   "babysor/MockingBird": "中文語音克隆工具箱，用嚟喺幾秒你嘅參考聲合成普通話。要 Python 3.7 同 GPU，權重另外用。維護者話而家唔再積極更新。MIT。唔係粵語，亦唔會畀你雲端服務。",
-  "haidrrrry/claude-remotion-skill": "一組 skill，用嚟喺你已有嘅 Claude 用 Remotion 寫動態圖形片。出嚟係可重渲嘅程式，唔係像素影片模型。要自己裝 Remotion。MIT。唔會畀你新模型。"
+  "haidrrrry/claude-remotion-skill": "一組 skill，用嚟喺你已有嘅 Claude 用 Remotion 寫動態圖形片。出嚟係可重渲嘅程式，唔係像素影片模型。要自己裝 Remotion。MIT。唔會畀你新模型。",
+  "andyhuo520/vibe-knowledge": "Claude Code skill，用嚟喺你已有嘅 Claude 將一個知識點做成有旁白嘅短片。配音要 MiMo key，另要 FFmpeg。質檢用 macOS Vision。v1.0.0。MIT。唔會畀你影片模型。",
+  "egoist/waku": "原生桌面，用嚟喺一部機睇你已有嘅 coding agent。要先裝並登入至少一個 CLI。macOS、Linux 同 Windows 都有。v0.1.20。GPL-3.0。唔包含模型。唔會畀你新模型。",
+  "Spielewoy/autoprompt-skill": "一組 skill，用嚟喺你已有嘅 coding agent 先審、再改、再核對。改完會再對一次。本身唔係新 agent。v2.1.0。MIT。唔包含模型。唔會畀你新模型。",
+  "kyky2347/ALTA": "研究用嘅多 agent 交易台，用嚟喺本機做查證同 Shadow 模擬。真單要你授權嘅券商 API。唔係投資建議，亦唔包含模型。v0.25.0。Apache-2.0。唔會畀你新模型。",
+  "DrewThomasson/ebook2audiobook": "電子書轉有聲書，用嚟喺你部機配章節同聲線。可以克隆聲音，CPU 或 GPU 都行。README 寫 1158 種語言，唔係粵語專用。v26.10.1。Apache-2.0。唔會畀你免下載嘅模型。",
+  "jianchang512/pyvideotrans": "影片翻譯工具，用嚟喺本機翻譯你嘅影片，再加字幕同配音。可揀本地模型或網上 API，克隆要另外接引擎。要 Python 3.10。v4.17。GPL-3.0。唔會畀你免設定嘅模型。"
 }
