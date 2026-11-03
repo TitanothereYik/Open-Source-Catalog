@@ -886,5 +886,11 @@
   "Tencent-Hunyuan/AuK": "1.5B 語音基礎模型，用嚟喺你部機做生成同編輯。要 Python 3.10，權重同 Qwen2.5-Omni 編碼器都要另外下載。程式同權重係 MIT。唔係粵語專用模型。唔會畀你免安裝嘅 app。",
   "LodyAI/Lody": "團隊工作台，用嚟喺桌面、手機或網頁調度你已有嘅 coding agent。要登入，機器用 npx 連上。而家仲未做到完全本地。Apache-2.0。唔會畀你新模型。",
   "kharmanskyi/open-steps": "一組 skill，用嚟喺你已有嘅 Claude Code、Codex、Cursor 或 Gemini CLI 用白話匯報進度同逐步指示。v0.4.8。MIT。唔包含模型。唔會畀你新模型。",
-  "pullboard-dev/pullboard": "協調板，用嚟喺你個 git repo 派工作畀你已有嘅 agent，另一個 agent 先核實先至合併。用 npx，v0.9.3。MIT。唔包含模型。唔會畀你新模型。"
+  "pullboard-dev/pullboard": "協調板，用嚟喺你個 git repo 派工作畀你已有嘅 agent，另一個 agent 先核實先至合併。用 npx，v0.9.3。MIT。唔包含模型。唔會畀你新模型。",
+  "edenfunf/reelmimic": "影片風格模仿，用嚟喺你部機跟住參考片做新片。要你已有嘅 Claude Code 或 Codex，另要 Node 22.18 同 Python 3.10。唔包含影片模型。MIT。唔會畀你新模型。",
+  "ShenSeanChen/waku-agent": "本機 agent，用嚟喺你部機行 loop、記憶同評測。記憶係一個 SQLite 檔。要你自己嘅模型 key。可開本機儀表板。v0.1.9。MIT。唔會畀你新模型。",
+  "pgrundev/pgbot": "唯讀 Postgres 檢查工具，用嚟喺本機睇 14 至 18 嘅健康報告，agent 可以用 MCP 叫佢。beta，v0.9.0。Apache-2.0。唔包含模型。唔會畀你新 agent。",
+  "coji/natural-japanese": "一組 skill，用嚟喺你已有嘅 coding agent 改工作用日文文件，唔會加原文冇嘅事實。v1.6.4。MIT。呢個係日文，唔係粵語，亦唔會畀你新模型。",
+  "harry0703/MoneyPrinterTurbo": "短片生成器，用嚟喺你畀嘅主題自動出腳本、配音同成片。要你自己嘅 LLM 同素材 API key，另要 FFmpeg。自己跑。v1.3.9。MIT。唔包含影片模型。",
+  "debpalash/VoiceStudio": "本機嘅聲音工作室，用嚟喺你部機做克隆同配音。模型要另外下載，macOS 穩定版要 Apple 晶片，CPU 會慢啲。v0.5.7。AGPL-3.0。唔會畀你免下載嘅模型。"
 }
