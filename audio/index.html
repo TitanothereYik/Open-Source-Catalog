@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<script>try{if(localStorage.getItem("osc-lang")==="en")document.documentElement.lang="en";}catch(e){}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0c0d11">
+<meta name="description" data-zh="Open Source Catalog：AI Agent、圖像、影片、Motion Graphics / After Effects、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。" data-en="Open Source Catalog: open-source projects and related papers for AI agents, images, video, motion graphics, VFX/CG/Blender, stock trading, and crypto trading." content="Open Source Catalog：AI Agent、圖像、影片、Motion Graphics / After Effects、VFX/CG/Blender、Stock Trading、Crypto Trading 嘅開源項目同相關論文。">
+<title data-zh="Audio · Open Source Catalog" data-en="Audio · Open Source Catalog">Audio · Open Source Catalog</title>
+<link rel="canonical" href="https://titanothereyik.github.io/Open-Source-Catalog/audio/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=Outfit:wght@400;520;650&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect fill='%230c0d11' width='64' height='64' rx='14'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23e4b15a' stroke-width='4'/%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #0c0d11;
+  --bg-raise: #15171e;
+  --line: rgba(244, 236, 224, 0.12);
+  --text: #f6f1e8;
+  --muted: #b7b0a4;
+  --faint: #8d867c;
+  --gold: #e4b15a;
+  --ink: #1c140c;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(228, 177, 90, 0.14), transparent 55%),
+    radial-gradient(900px 420px at 100% 0%, rgba(143, 208, 196, 0.08), transparent 50%),
+    var(--bg);
+  color: var(--text);
+  font-family: Outfit, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+a { color: inherit; }
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -40px;
+  background: var(--gold);
+  color: var(--ink);
+  padding: 8px 12px;
+  z-index: 5;
+}
+.skip:focus { top: 12px; }
+.lang-switch {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 6;
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(12, 13, 17, 0.94);
+  box-shadow: var(--shadow);
+}
+.lang-switch button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  padding: 8px 12px;
+  cursor: pointer;
+  min-width: 42px;
+}
+.lang-switch button + button { box-shadow: inset 1px 0 0 var(--line); }
+.lang-switch button[aria-pressed="true"] { background: var(--gold); color: var(--ink); font-weight: 650; }
+.t-en { display: none; }
+html[lang="en"] .t-zh { display: none; }
+html[lang="en"] .t-en { display: inline; }
+.wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+header.hero { padding: 36px 96px 18px 0; }
+.kicker {
+  margin: 0 0 8px;
+  color: var(--gold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+h1 {
+  margin: 0;
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 560;
+  font-size: clamp(40px, 6vw, 68px);
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+.lede { max-width: 680px; color: var(--muted); font-size: 18px; margin: 14px 0 0; }
+.stats { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.stat {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 14px;
+  min-width: 120px;
+}
+.stat b { display: block; font-family: Fraunces, Georgia, serif; font-size: 22px; font-weight: 560; }
+.stat span { color: var(--faint); font-size: 13px; }
+.stickybar {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  padding: 8px 96px 12px 0;
+  background: linear-gradient(var(--bg) 72%, rgba(12, 13, 17, 0.94) 88%, transparent);
+}
+nav.pages {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+nav.pages a {
+  text-decoration: none;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  background: rgba(21, 23, 30, 0.92);
+  border-radius: 999px;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  white-space: nowrap;
+}
+nav.pages a:hover { color: var(--text); border-color: var(--gold); }
+nav.pages a[aria-current="page"] {
+  background: var(--gold);
+  color: var(--ink);
+  border-color: var(--gold);
+}
+nav.pages .count { color: var(--faint); font-variant-numeric: tabular-nums; }
+nav.pages a[aria-current="page"] .count { color: var(--ink); }
+.search { padding: 0; }
+.toolbar { display: flex; flex-direction: column; gap: 8px; }
+.sort {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(21, 23, 30, 0.92);
+}
+.sort button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 15px;
+  min-width: 0;
+  padding: 12px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sort button + button { box-shadow: inset 1px 0 0 var(--line); }
+.sort button[aria-pressed="true"] { background: var(--gold); color: var(--ink); font-weight: 650; }
+@media (min-width: 760px) {
+  .toolbar { flex-direction: row; align-items: stretch; }
+  .toolbar .search { flex: 1; min-width: 0; }
+  .sort { display: inline-flex; flex: none; width: auto; max-width: none; }
+}
+.hub { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.hub[hidden], #results[hidden] { display: none !important; }
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 196px;
+  text-decoration: none;
+  background: rgba(21, 23, 30, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+}
+.tile:hover { border-color: var(--gold); }
+.tile-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.tile h2 {
+  margin: 0;
+  font-family: Fraunces, Georgia, serif;
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 560;
+  letter-spacing: -0.04em;
+}
+.tile .count { color: var(--gold); font-family: Fraunces, Georgia, serif; font-size: 28px; line-height: 1; }
+.tile p { margin: 0; color: var(--muted); }
+.tile .top { color: var(--text); }
+.tile .go { margin-top: auto; color: var(--gold); }
+.hero-sub { padding-top: 22px; }
+.hero-sub h1 { font-size: clamp(36px, 5vw, 56px); }
+.kicker a { text-decoration: none; }
+main.page { padding-bottom: 72px; }
+.search input {
+  width: 100%;
+  background: var(--bg-raise);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font: inherit;
+  outline: none;
+}
+.search input:focus { border-color: var(--gold); }
+.section { margin: 8px 0 36px; scroll-margin-top: 72px; }
+.section h2 {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 34px;
+  font-weight: 560;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+.section .blurb { color: var(--muted); margin: 6px 0 16px; }
+.grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.card {
+  background: rgba(21, 23, 30, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  box-shadow: var(--shadow);
+  min-width: 0;
+}
+.card header { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.rank { color: var(--faint); font-variant-numeric: tabular-nums; font-size: 13px; margin-right: 8px; }
+.card h3 { margin: 0; font-size: 18px; letter-spacing: -0.02em; }
+.card h3 a { text-decoration: none; }
+.card h3 a:hover { color: var(--gold); }
+.stars { color: var(--gold); font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 650; }
+.meta { color: var(--faint); font-size: 13px; margin: 6px 0 8px; overflow-wrap: anywhere; }
+.summary { margin: 0; color: #ebe4d8; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.links a, .badge {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.links a:hover { color: var(--text); border-color: var(--gold); }
+.badge.arch { color: #e7b8a4; }
+.topics { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.topics span { color: var(--faint); font-size: 12px; }
+.papers { margin-top: 16px; }
+.papers h3 { margin: 0 0 10px; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+#empty { display: none; color: var(--muted); padding: 12px 0 24px; }
+footer.site { color: var(--faint); font-size: 13px; padding: 8px 0 28px; }
+@media (min-width: 800px) {
+  .hub { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 980px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="lang-switch" role="group" data-zh-label="語言" data-en-label="Language" aria-label="語言">
+  <button type="button" data-lang="en">EN</button>
+  <button type="button" data-lang="zh-Hant" aria-pressed="true">中</button>
+</div>
+<a class="skip" href="#content"><span class="t-zh">跳到項目</span><span class="t-en">Skip to projects</span></a>
+<div class="wrap">
+  
+<header class="hero hero-sub">
+    <p class="kicker"><a href="../">Open Source Catalog</a></p>
+    <h1><span class="t-zh">Audio</span><span class="t-en">Audio</span></h1>
+    <p class="lede"><span class="t-zh">語音克隆、語音合成、語音識別同音樂生成，包括粵語聲音模型。</span><span class="t-en">Voice cloning, speech synthesis, speech recognition, and music generation, including Cantonese voice models.</span> <span class="t-zh">開源項目按 GitHub stars 由多至少。</span><span class="t-en">Sorted by GitHub stars, highest first.</span></p>
+    <div class="stats">
+      <div class="stat"><b>20</b><span><span class="t-zh">開源項目</span><span class="t-en">Projects</span></span></div>
+      <div class="stat"><b>0</b><span><span class="t-zh">相關論文</span><span class="t-en">Related papers</span></span></div>
+      <div class="stat"><b><span class="t-zh">2026年11月03日</span><span class="t-en">3 Nov 2026</span></b><span><span class="t-zh">16:36（香港時間）</span><span class="t-en">16:36 (Hong Kong)</span></span></div>
+    </div>
+  </header>
+
+  <div class="stickybar">
+    <nav class="pages" data-zh-label="分類" data-en-label="Categories" aria-label="分類"><a href="../"><span class="t-zh">目錄</span><span class="t-en">Catalog</span></a><a href="../gaussian-splatting/"><span class="t-zh">Gaussian Splatting</span><span class="t-en">Gaussian Splatting</span><span class="count">73</span></a><a href="../world-model/"><span class="t-zh">World Model</span><span class="t-en">World Model</span><span class="count">51</span></a><a href="../image-to-3d/"><span class="t-zh">Image to 3D</span><span class="t-en">Image to 3D</span><span class="count">57</span></a><a href="../ai-agent/"><span class="t-zh">AI Agent</span><span class="t-en">AI Agent</span><span class="count">201</span></a><a href="../image/"><span class="t-zh">圖像</span><span class="t-en">Image</span><span class="count">117</span></a><a href="../video/"><span class="t-zh">影片</span><span class="t-en">Video</span><span class="count">106</span></a><a href="./" aria-current="page"><span class="t-zh">Audio</span><span class="t-en">Audio</span><span class="count">20</span></a><a href="../motion-graphics/"><span class="t-zh">Motion Graphics / After Effects</span><span class="t-en">Motion Graphics / After Effects</span><span class="count">45</span></a><a href="../vfx-cg-blender/"><span class="t-zh">VFX / CG / Blender</span><span class="t-en">VFX / CG / Blender</span><span class="count">77</span></a><a href="../stock-trading/"><span class="t-zh">Stock Trading</span><span class="t-en">Stock Trading</span><span class="count">80</span></a><a href="../crypto-trading/"><span class="t-zh">Crypto Trading</span><span class="t-en">Crypto Trading</span><span class="count">48</span></a></nav>
+    <div class="toolbar">
+      <div class="sort" role="group" data-zh-label="排序" data-en-label="Sort" aria-label="排序">
+        <button type="button" data-sort="stars" aria-pressed="true"><span class="t-zh">星數</span><span class="t-en">Stars</span></button>
+        <button type="button" data-sort="pushed" aria-pressed="false" data-zh-label="按最後推送日期，由新到舊" data-en-label="Sort by last push, newest first"><span class="t-zh">最近推送</span><span class="t-en">Last push</span></button>
+      </div>
+      <form class="search" role="search" onsubmit="return false">
+        <label class="sr" for="q" style="position:absolute;left:-999px"><span class="t-zh">搜尋</span><span class="t-en">Search</span></label>
+        <input id="q" type="search" data-zh-placeholder="搜尋名稱、摘要、語言或主題" data-en-placeholder="Search name, summary, language, or topic" placeholder="搜尋名稱、摘要、語言或主題" autocomplete="off">
+      </form>
+    </div>
+  </div>
+  <main class="page" id="content">
+    <p id="empty"><span class="t-zh">沒有符合呢個搜尋嘅項目。</span><span class="t-en">No projects match this search.</span></p>
+    <section class="section" id="audio" data-section>
+  <div class="grid"><article class="card" id="p-openai-whisper" data-repo="openai/whisper" data-search="whisper openai/whisper 通用語音轉文字，用嚟喺本機將你嘅錄音變成文字。支援多種語言，粵語唔係專門目標，長錄音都要自己切。要自己下載權重，模型分幾種體積。mit。呢個係辨認，唔會畀你新聲音。 general speech-to-text that turns a recording into text on your machine. it supports many languages, and cantonese is not a dedicated target. you download the weights yourself. mit. this recognizes speech. it does not give you a new voice. robust speech recognition via large-scale weak supervision python ">
+  <header>
+    <h3><span class="rank">01</span><a href="https://github.com/openai/whisper">whisper</a></h3>
+    <div class="stars">★ 111,841</div>
+  </header>
+  <p class="meta">openai/whisper · Python · MIT · <time class="pushed" datetime="2026-09-01"><span class="t-zh">最近推送 2026-09-01</span><span class="t-en">Pushed 2026-09-01</span></time></p>
+  <p class="summary"><span class="t-zh">通用語音轉文字，用嚟喺本機將你嘅錄音變成文字。支援多種語言，粵語唔係專門目標，長錄音都要自己切。要自己下載權重，模型分幾種體積。MIT。呢個係辨認，唔會畀你新聲音。</span><span class="t-en">General speech-to-text that turns a recording into text on your machine. It supports many languages, and Cantonese is not a dedicated target. You download the weights yourself. MIT. This recognizes speech. It does not give you a new voice.</span></p>
+  <div class="links"><a href="https://github.com/openai/whisper">GitHub</a></div>
+  
+</article><article class="card" id="p-rvc-boss-gpt-sovits" data-repo="RVC-Boss/GPT-SoVITS" data-search="gpt-sovits rvc-boss/gpt-sovits 少量樣本語音克隆，用嚟喺本機用你自己嘅參考聲。約五秒可零樣本，約一分鐘可微調。語言表有粵語。要 gpu 先順，cpu 會好慢。底模要另外下載。mit。唔會畀你固定講者。 few-shot voice cloning that uses a reference clip of your own on your machine. about five seconds can do zero-shot, and about one minute can fine-tune. cantonese is in the language list. a gpu makes it practical. mit. this does not give you a fixed speaker. 1 min voice data can also be used to train a good tts model! (few shot voice cloning) python text-to-speech tts vits voice-clone voice-cloneai voice-cloning">
+  <header>
+    <h3><span class="rank">02</span><a href="https://github.com/RVC-Boss/GPT-SoVITS">GPT-SoVITS</a></h3>
+    <div class="stars">★ 64,675</div>
+  </header>
+  <p class="meta">RVC-Boss/GPT-SoVITS · Python · MIT · <time class="pushed" datetime="2026-10-31"><span class="t-zh">最近推送 2026-10-31</span><span class="t-en">Pushed 2026-10-31</span></time></p>
+  <p class="summary"><span class="t-zh">少量樣本語音克隆，用嚟喺本機用你自己嘅參考聲。約五秒可零樣本，約一分鐘可微調。語言表有粵語。要 GPU 先順，CPU 會好慢。底模要另外下載。MIT。唔會畀你固定講者。</span><span class="t-en">Few-shot voice cloning that uses a reference clip of your own on your machine. About five seconds can do zero-shot, and about one minute can fine-tune. Cantonese is in the language list. A GPU makes it practical. MIT. This does not give you a fixed speaker.</span></p>
+  <div class="links"><a href="https://github.com/RVC-Boss/GPT-SoVITS">GitHub</a></div>
+  <div class="topics"><span>#text-to-speech</span><span>#tts</span><span>#vits</span></div>
+</article><article class="card" id="p-coqui-ai-tts" data-repo="coqui-ai/TTS" data-search="tts coqui-ai/tts 語音合成工具箱，用嚟喺研究或產品訓練同推理你揀嘅 tts。有多種模型同聲線，權重同訓練數據都要自己準備好。mpl-2.0。唔係粵語專用，亦唔會自動畀你香港口音。 a speech-synthesis toolkit for training and running tts in research or a product. it includes several models and voices, and you choose the weights. mpl-2.0. it is not a cantonese specialist, and it does not automatically give you a hong kong accent. 🐸💬 - a deep learning toolkit for text-to-speech, battle-tested in research and production python deep-learning glow-tts hifigan melgan multi-speaker-tts python pytorch speaker-encoder">
+  <header>
+    <h3><span class="rank">03</span><a href="https://github.com/coqui-ai/TTS">TTS</a></h3>
+    <div class="stars">★ 46,180</div>
+  </header>
+  <p class="meta">coqui-ai/TTS · Python · MPL-2.0 · <time class="pushed" datetime="2024-08-16"><span class="t-zh">最近推送 2024-08-16</span><span class="t-en">Pushed 2024-08-16</span></time></p>
+  <p class="summary"><span class="t-zh">語音合成工具箱，用嚟喺研究或產品訓練同推理你揀嘅 TTS。有多種模型同聲線，權重同訓練數據都要自己準備好。MPL-2.0。唔係粵語專用，亦唔會自動畀你香港口音。</span><span class="t-en">A speech-synthesis toolkit for training and running TTS in research or a product. It includes several models and voices, and you choose the weights. MPL-2.0. It is not a Cantonese specialist, and it does not automatically give you a Hong Kong accent.</span></p>
+  <div class="links"><a href="https://github.com/coqui-ai/TTS">GitHub</a><a href="http://coqui.ai"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
+  <div class="topics"><span>#deep-learning</span><span>#glow-tts</span><span>#hifigan</span></div>
+</article><article class="card" id="p-openbmb-voxcpm" data-repo="OpenBMB/VoxCPM" data-search="voxcpm openbmb/voxcpm 本機 tts，用嚟喺短參考聲克隆你嘅音色，亦可以用文字描述設計新聲。voxcpm2 約 2b，輸出 48khz，中文方言包括粵語。要自己跑模型。apache-2.0。唔會畀你免安裝服務。 a local tts that clones a voice from a short reference clip, or designs a new voice from a text description. voxcpm2 is about 2b parameters, outputs 48 khz, and its chinese dialects include cantonese. you run the model yourself. apache-2.0. this does not give you a hosted service. voxcpm2: tokenizer-free tts for multilingual speech generation, creative voice design, and true-to-life cloning python audio deeplearning minicpm multilingual python pytorch speech speech-synthesis">
+  <header>
+    <h3><span class="rank">04</span><a href="https://github.com/OpenBMB/VoxCPM">VoxCPM</a></h3>
+    <div class="stars">★ 40,989</div>
+  </header>
+  <p class="meta">OpenBMB/VoxCPM · Python · Apache-2.0 · <time class="pushed" datetime="2026-10-08"><span class="t-zh">最近推送 2026-10-08</span><span class="t-en">Pushed 2026-10-08</span></time></p>
+  <p class="summary"><span class="t-zh">本機 TTS，用嚟喺短參考聲克隆你嘅音色，亦可以用文字描述設計新聲。VoxCPM2 約 2B，輸出 48kHz，中文方言包括粵語。要自己跑模型。Apache-2.0。唔會畀你免安裝服務。</span><span class="t-en">A local TTS that clones a voice from a short reference clip, or designs a new voice from a text description. VoxCPM2 is about 2B parameters, outputs 48 kHz, and its Chinese dialects include Cantonese. You run the model yourself. Apache-2.0. This does not give you a hosted service.</span></p>
+  <div class="links"><a href="https://github.com/OpenBMB/VoxCPM">GitHub</a><a href="https://voxcpm.com"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
+  <div class="topics"><span>#audio</span><span>#deeplearning</span><span>#minicpm</span></div>
+</article><article class="card" id="p-2noise-chattts" data-repo="2noise/ChatTTS" data-search="chattts 2noise/chattts 對話向語音合成，用嚟喺本機生成日常對白。程式係 agpl-3.0，放出嘅模型權重係 cc-by-nc，唔可以商用。唔係粵語模型，聲線亦係隨機。唔會畀你克隆指定人聲。 dialogue speech synthesis that generates everyday conversation on your machine. the code is agpl-3.0. the released model weights are cc-by-nc, so they are not for commercial use. it is not a cantonese model. this does not clone a named person. a generative speech model for daily dialogue. python agent chat chatgpt chattts chinese chinese-language english english-language">
+  <header>
+    <h3><span class="rank">05</span><a href="https://github.com/2noise/ChatTTS">ChatTTS</a></h3>
+    <div class="stars">★ 39,976</div>
+  </header>
+  <p class="meta">2noise/ChatTTS · Python · AGPL-3.0 · <time class="pushed" datetime="2026-04-11"><span class="t-zh">最近推送 2026-04-11</span><span class="t-en">Pushed 2026-04-11</span></time></p>
+  <p class="summary"><span class="t-zh">對話向語音合成，用嚟喺本機生成日常對白。程式係 AGPL-3.0，放出嘅模型權重係 CC-BY-NC，唔可以商用。唔係粵語模型，聲線亦係隨機。唔會畀你克隆指定人聲。</span><span class="t-en">Dialogue speech synthesis that generates everyday conversation on your machine. The code is AGPL-3.0. The released model weights are CC-BY-NC, so they are not for commercial use. It is not a Cantonese model. This does not clone a named person.</span></p>
+  <div class="links"><a href="https://github.com/2noise/ChatTTS">GitHub</a><a href="https://2noise.com"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
+  <div class="topics"><span>#agent</span><span>#chat</span><span>#chatgpt</span></div>
+</article><article class="card" id="p-rvc-project-retrieval-based-voice-conversion-webui" data-repo="RVC-Project/Retrieval-based-Voice-Conversion-WebUI" data-search="retrieval-based-voice-conversion-webui rvc-project/retrieval-based-voice-conversion-webui 變聲器，用嚟喺本機用約十分鐘乾淨人聲訓練你嘅音色，再轉唱或轉講。底模來自 vctk。建議先分開人聲再訓練。有網頁介面。mit。唔係粵語合成器，亦唔會畀你文字轉語音。 a voice converter that trains a timbre on your machine from about ten minutes of clean speech, then converts singing or speech. the base model comes from vctk. it has a web ui. mit. it is not a cantonese synthesizer, and it does not turn text into speech. easily train a good vc model with voice data &lt;= 10 mins! python audio-analysis change conversational-ai conversion converter retrieval-model retrieve-data rvc">
+  <header>
+    <h3><span class="rank">06</span><a href="https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI">Retrieval-based-Voice-Conversion-WebUI</a></h3>
+    <div class="stars">★ 39,027</div>
+  </header>
+  <p class="meta">RVC-Project/Retrieval-based-Voice-Conversion-WebUI · Python · MIT · <time class="pushed" datetime="2026-08-04"><span class="t-zh">最近推送 2026-08-04</span><span class="t-en">Pushed 2026-08-04</span></time></p>
+  <p class="summary"><span class="t-zh">變聲器，用嚟喺本機用約十分鐘乾淨人聲訓練你嘅音色，再轉唱或轉講。底模來自 VCTK。建議先分開人聲再訓練。有網頁介面。MIT。唔係粵語合成器，亦唔會畀你文字轉語音。</span><span class="t-en">A voice converter that trains a timbre on your machine from about ten minutes of clean speech, then converts singing or speech. The base model comes from VCTK. It has a web UI. MIT. It is not a Cantonese synthesizer, and it does not turn text into speech.</span></p>
+  <div class="links"><a href="https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI">GitHub</a></div>
+  <div class="topics"><span>#audio-analysis</span><span>#change</span><span>#conversational-ai</span></div>
+</article><article class="card" id="p-myshell-ai-openvoice" data-repo="myshell-ai/OpenVoice" data-search="openvoice myshell-ai/openvoice 即時音色克隆，用嚟喺短參考聲抽出你嘅音色，再配風格控制。v2 原生有中文，唔係專為粵語。參考聲三至十秒最穩妥。mit，可以商用。要自己跑。唔會畀你香港口音成品。 instant timbre cloning that takes a voice color from a short reference clip and adds style control. v2 includes chinese natively, and it is not built for cantonese. mit, including commercial use. you run it yourself. this does not ship a finished hong kong accent. instant voice cloning by mit and myshell. audio foundation model. python text-to-speech tts voice-clone zero-shot-tts">
+  <header>
+    <h3><span class="rank">07</span><a href="https://github.com/myshell-ai/OpenVoice">OpenVoice</a></h3>
+    <div class="stars">★ 38,129</div>
+  </header>
+  <p class="meta">myshell-ai/OpenVoice · Python · MIT · <time class="pushed" datetime="2025-04-20"><span class="t-zh">最近推送 2025-04-20</span><span class="t-en">Pushed 2025-04-20</span></time></p>
+  <p class="summary"><span class="t-zh">即時音色克隆，用嚟喺短參考聲抽出你嘅音色，再配風格控制。V2 原生有中文，唔係專為粵語。參考聲三至十秒最穩妥。MIT，可以商用。要自己跑。唔會畀你香港口音成品。</span><span class="t-en">Instant timbre cloning that takes a voice color from a short reference clip and adds style control. V2 includes Chinese natively, and it is not built for Cantonese. MIT, including commercial use. You run it yourself. This does not ship a finished Hong Kong accent.</span></p>
+  <div class="links"><a href="https://github.com/myshell-ai/OpenVoice">GitHub</a><a href="https://research.myshell.ai/open-voice"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
+  <div class="topics"><span>#text-to-speech</span><span>#tts</span><span>#voice-clone</span></div>
+</article><article class="card" id="p-systran-faster-whisper" data-repo="SYSTRAN/faster-whisper" data-search="faster-whisper systran/faster-whisper whisper 嘅更快實作，用嚟喺本機用 ctranslate2 做語音轉文字。速度快過原版，粵語仍然唔係專門目標，模型要自己落。量化可以行 cpu。mit。唔會畀你合成聲音。 a faster whisper implementation that transcribes speech on your machine with ctranslate2. it is quicker than the original, and cantonese is still not a dedicated target. mit. this does not synthesize a voice. faster whisper transcription with ctranslate2 python deep-learning inference openai quantization speech-recognition speech-to-text transformer whisper">
+  <header>
+    <h3><span class="rank">08</span><a href="https://github.com/SYSTRAN/faster-whisper">faster-whisper</a></h3>
+    <div class="stars">★ 26,433</div>
+  </header>
+  <p class="meta">SYSTRAN/faster-whisper · Python · MIT · <time class="pushed" datetime="2026-11-02"><span class="t-zh">最近推送 2026-11-02</span><span class="t-en">Pushed 2026-11-02</span></time></p>
+  <p class="summary"><span class="t-zh">Whisper 嘅更快實作，用嚟喺本機用 CTranslate2 做語音轉文字。速度快過原版，粵語仍然唔係專門目標，模型要自己落。量化可以行 CPU。MIT。唔會畀你合成聲音。</span><span class="t-en">A faster Whisper implementation that transcribes speech on your machine with CTranslate2. It is quicker than the original, and Cantonese is still not a dedicated target. MIT. This does not synthesize a voice.</span></p>
+  <div class="links"><a href="https://github.com/SYSTRAN/faster-whisper">GitHub</a></div>
+  <div class="topics"><span>#deep-learning</span><span>#inference</span><span>#openai</span></div>
+</article><article class="card" id="p-qwenaudio-cosyvoice" data-repo="QwenAudio/CosyVoice" data-search="cosyvoice qwenaudio/cosyvoice 多語言語音生成，用嚟喺你嘅參考聲做零樣本克隆。覆蓋多種中文方言，包括廣東話，亦可以跨語言。主線而家去到第三代。要自己下載權重。apache-2.0。唔會畀你一個固定香港講者。 multilingual speech generation that does zero-shot cloning from a reference clip. it covers many chinese dialects, including cantonese, and it can cross languages. you download the weights yourself. apache-2.0. this does not give you one fixed hong kong speaker. multi-lingual large voice generation model, providing inference, training and deployment full-stack ability. python audio-generation cantonese chatbot chatgpt chinese cosyvoice cross-lingual english">
+  <header>
+    <h3><span class="rank">09</span><a href="https://github.com/QwenAudio/CosyVoice">CosyVoice</a></h3>
+    <div class="stars">★ 24,257</div>
+  </header>
+  <p class="meta">QwenAudio/CosyVoice · Python · Apache-2.0 · <time class="pushed" datetime="2026-05-26"><span class="t-zh">最近推送 2026-05-26</span><span class="t-en">Pushed 2026-05-26</span></time></p>
+  <p class="summary"><span class="t-zh">多語言語音生成，用嚟喺你嘅參考聲做零樣本克隆。覆蓋多種中文方言，包括廣東話，亦可以跨語言。主線而家去到第三代。要自己下載權重。Apache-2.0。唔會畀你一個固定香港講者。</span><span class="t-en">Multilingual speech generation that does zero-shot cloning from a reference clip. It covers many Chinese dialects, including Cantonese, and it can cross languages. You download the weights yourself. Apache-2.0. This does not give you one fixed Hong Kong speaker.</span></p>
+  <div class="links"><a href="https://github.com/QwenAudio/CosyVoice">GitHub</a><a href="https://funaudiollm.github.io/cosyvoice3"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
+  <div class="topics"><span>#audio-generation</span><span>#cantonese</span><span>#chatbot</span></div>
+</article><article class="card" id="p-facebookresearch-audiocraft" data-repo="facebookresearch/audiocraft" data-search="audiocraft facebookresearch/audiocraft 音樂同音效生成庫，用嚟喺你嘅文字或旋律條件生成 musicgen 同 audiogen。程式係 mit，權重係 cc-by-nc，唔可以商用。唔係人聲克隆。唔會畀你粵語 tts。 a music and sound generation library that runs musicgen and audiogen from text or a melody. the code is mit. the weights are cc-by-nc, so they are not for commercial use. it is not voice cloning, and it does not give you cantonese tts. audiocraft is a library for audio processing and generation with deep learning. it features the state-of-the-art encodec audio compressor / tokenizer, along with musicgen, a simple and controllable music generation lm with textual and melodic conditioning. jupyter notebook ">
+  <header>
+    <h3><span class="rank">10</span><a href="https://github.com/facebookresearch/audiocraft">audiocraft</a></h3>
+    <div class="stars">★ 23,800</div>
+  </header>
+  <p class="meta">facebookresearch/audiocraft · Jupyter Notebook · MIT · <time class="pushed" datetime="2026-03-04"><span class="t-zh">最近推送 2026-03-04</span><span class="t-en">Pushed 2026-03-04</span></time></p>
+  <p class="summary"><span class="t-zh">音樂同音效生成庫，用嚟喺你嘅文字或旋律條件生成 MusicGen 同 AudioGen。程式係 MIT，權重係 CC-BY-NC，唔可以商用。唔係人聲克隆。唔會畀你粵語 TTS。</span><span class="t-en">A music and sound generation library that runs MusicGen and AudioGen from text or a melody. The code is MIT. The weights are CC-BY-NC, so they are not for commercial use. It is not voice cloning, and it does not give you Cantonese TTS.</span></p>
+  <div class="links"><a href="https://github.com/facebookresearch/audiocraft">GitHub</a></div>
+  
+</article><article class="card" id="p-modelscope-funasr" data-repo="modelscope/FunASR" data-search="funasr modelscope/funasr 語音辨認工具箱，用嚟喺本機處理你嘅錄音：串起 vad、asr、標點同講者分離，亦支援串流。mit。粵語要另揀模型，例如 sensevoice。呢個套件唔會自動畀你粵語聲線。 a speech-recognition toolkit that chains vad, asr, punctuation, and speaker diarization on your machine, including streaming. mit. cantonese needs a separate model such as sensevoice. this toolkit does not automatically give you a cantonese voice. open-source speech recognition toolkit for training, inference, streaming asr, vad, punctuation, speaker diarization pipelines, and openai-compatible/mcp serving. python asr audio chinese emotion-recognition funasr mcp-server multilingual-asr openai-compatible-api">
+  <header>
+    <h3><span class="rank">11</span><a href="https://github.com/modelscope/FunASR">FunASR</a></h3>
+    <div class="stars">★ 20,920</div>
+  </header>
+  <p class="meta">modelscope/FunASR · Python · MIT · <time class="pushed" datetime="2026-11-03"><span class="t-zh">最近推送 2026-11-03</span><span class="t-en">Pushed 2026-11-03</span></time></p>
+  <p class="summary"><span class="t-zh">語音辨認工具箱，用嚟喺本機處理你嘅錄音：串起 VAD、ASR、標點同講者分離，亦支援串流。MIT。粵語要另揀模型，例如 SenseVoice。呢個套件唔會自動畀你粵語聲線。</span><span class="t-en">A speech-recognition toolkit that chains VAD, ASR, punctuation, and speaker diarization on your machine, including streaming. MIT. Cantonese needs a separate model such as SenseVoice. This toolkit does not automatically give you a Cantonese voice.</span></p>
+  <div class="links"><a href="https://github.com/modelscope/FunASR">GitHub</a></div>
+  <div class="topics"><span>#asr</span><span>#audio</span><span>#chinese</span></div>
+</article><article class="card" id="p-swivid-f5-tts" data-repo="SWivid/F5-TTS" data-search="f5-tts swivid/f5-tts 流程匹配 tts，用嚟喺你嘅參考聲做零樣本語音合成。程式係 mit，預訓練權重係 cc-by-nc，唔可以商用。主要係中英，其他語言要自己試。唔會畀你商用權重。 a flow-matching tts that does zero-shot synthesis from a reference clip. the code is mit. the pretrained weights are cc-by-nc, so they are not for commercial use. it is mainly chinese and english, not a cantonese specialist. this does not give you commercial weights. official code for &quot;f5-tts: a fairytaler that fakes fluent and faithful speech with flow matching&quot; python ">
+  <header>
+    <h3><span class="rank">12</span><a href="https://github.com/SWivid/F5-TTS">F5-TTS</a></h3>
+    <div class="stars">★ 15,504</div>
+  </header>
+  <p class="meta">SWivid/F5-TTS · Python · MIT · <time class="pushed" datetime="2026-10-24"><span class="t-zh">最近推送 2026-10-24</span><span class="t-en">Pushed 2026-10-24</span></time></p>
+  <p class="summary"><span class="t-zh">流程匹配 TTS，用嚟喺你嘅參考聲做零樣本語音合成。程式係 MIT，預訓練權重係 CC-BY-NC，唔可以商用。主要係中英，其他語言要自己試。唔會畀你商用權重。</span><span class="t-en">A flow-matching TTS that does zero-shot synthesis from a reference clip. The code is MIT. The pretrained weights are CC-BY-NC, so they are not for commercial use. It is mainly Chinese and English, not a Cantonese specialist. This does not give you commercial weights.</span></p>
+  <div class="links"><a href="https://github.com/SWivid/F5-TTS">GitHub</a><a href="https://arxiv.org/abs/2410.06885"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
+  
+</article><article class="card" id="p-neonbjb-tortoise-tts" data-repo="neonbjb/tortoise-tts" data-search="tortoise-tts neonbjb/tortoise-tts 偏重音質嘅多聲線 tts，用嚟喺本機慢慢生成語音。apache-2.0。主要唔係粵語，亦唔係即時克隆，一段短句都可以好慢。要自己跑權重，你要自己等。唔會畀你香港口音。 a multi-voice tts that favors quality and generates speech slowly on your machine. apache-2.0. it is not mainly cantonese, and it is not real time. you run the weights yourself. this does not give you a hong kong accent. a multi-voice tts system trained with an emphasis on quality jupyter notebook ">
+  <header>
+    <h3><span class="rank">13</span><a href="https://github.com/neonbjb/tortoise-tts">tortoise-tts</a></h3>
+    <div class="stars">★ 14,892</div>
+  </header>
+  <p class="meta">neonbjb/tortoise-tts · Jupyter Notebook · Apache-2.0 · <time class="pushed" datetime="2024-11-20"><span class="t-zh">最近推送 2024-11-20</span><span class="t-en">Pushed 2024-11-20</span></time></p>
+  <p class="summary"><span class="t-zh">偏重音質嘅多聲線 TTS，用嚟喺本機慢慢生成語音。Apache-2.0。主要唔係粵語，亦唔係即時克隆，一段短句都可以好慢。要自己跑權重，你要自己等。唔會畀你香港口音。</span><span class="t-en">A multi-voice TTS that favors quality and generates speech slowly on your machine. Apache-2.0. It is not mainly Cantonese, and it is not real time. You run the weights yourself. This does not give you a Hong Kong accent.</span></p>
+  <div class="links"><a href="https://github.com/neonbjb/tortoise-tts">GitHub</a></div>
+  
+</article><article class="card" id="p-multimodal-art-projection-yue" data-repo="multimodal-art-projection/YuE" data-search="yue multimodal-art-projection/yue 音樂生成模型，用嚟喺你嘅歌詞同風格計劃出歌。yue2 亦可以零樣本翻唱同改歌。要自己跑，顯存要求高。歌詞可以係中文。apache-2.0。呢個係音樂，唔會畀你粵語語音合成。 a music model that plans a song from lyrics and style. yue2 can also do a zero-shot cover and edit a track. you run it yourself. apache-2.0. this is music. it does not give you cantonese speech synthesis. yue2: frontier music generation with symbolic planning, zero-shot covers, and agentic music editing. python ai audio-generation deep-learning foundation-models gpt huggingface llama llms">
+  <header>
+    <h3><span class="rank">14</span><a href="https://github.com/multimodal-art-projection/YuE">YuE</a></h3>
+    <div class="stars">★ 13,023</div>
+  </header>
+  <p class="meta">multimodal-art-projection/YuE · Python · Apache-2.0 · <time class="pushed" datetime="2026-11-01"><span class="t-zh">最近推送 2026-11-01</span><span class="t-en">Pushed 2026-11-01</span></time></p>
+  <p class="summary"><span class="t-zh">音樂生成模型，用嚟喺你嘅歌詞同風格計劃出歌。YuE2 亦可以零樣本翻唱同改歌。要自己跑，顯存要求高。歌詞可以係中文。Apache-2.0。呢個係音樂，唔會畀你粵語語音合成。</span><span class="t-en">A music model that plans a song from lyrics and style. YuE2 can also do a zero-shot cover and edit a track. You run it yourself. Apache-2.0. This is music. It does not give you Cantonese speech synthesis.</span></p>
+  <div class="links"><a href="https://github.com/multimodal-art-projection/YuE">GitHub</a><a href="https://map-yue2.github.io/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
+  <div class="topics"><span>#ai</span><span>#audio-generation</span><span>#deep-learning</span></div>
+</article><article class="card" id="p-hexgrad-kokoro" data-repo="hexgrad/kokoro" data-search="kokoro hexgrad/kokoro 約 82m 嘅細 tts，用嚟喺本機低成本出聲，適合 cpu。英文為主，其他語言要對返聲線。apache-2.0。唔係粵語模型，要自己下載權重。唔會畀你克隆香港講者。 a small tts of about 82m parameters for low-cost speech on your machine. apache-2.0. it is not a cantonese model, and you download the weights yourself. this does not clone a hong kong speaker. https://hf.co/hexgrad/kokoro-82m javascript ">
+  <header>
+    <h3><span class="rank">15</span><a href="https://github.com/hexgrad/kokoro">kokoro</a></h3>
+    <div class="stars">★ 9,884</div>
+  </header>
+  <p class="meta">hexgrad/kokoro · JavaScript · Apache-2.0 · <time class="pushed" datetime="2025-08-07"><span class="t-zh">最近推送 2025-08-07</span><span class="t-en">Pushed 2025-08-07</span></time></p>
+  <p class="summary"><span class="t-zh">約 82M 嘅細 TTS，用嚟喺本機低成本出聲，適合 CPU。英文為主，其他語言要對返聲線。Apache-2.0。唔係粵語模型，要自己下載權重。唔會畀你克隆香港講者。</span><span class="t-en">A small TTS of about 82M parameters for low-cost speech on your machine. Apache-2.0. It is not a Cantonese model, and you download the weights yourself. This does not clone a Hong Kong speaker.</span></p>
+  <div class="links"><a href="https://github.com/hexgrad/kokoro">GitHub</a></div>
+  
+</article><article class="card" id="p-qwenaudio-sensevoice" data-repo="QwenAudio/SenseVoice" data-search="sensevoice qwenaudio/sensevoice 語音理解模型，用嚟喺本機做你嘅語音轉文字、語種同情緒標記。sensevoicesmall 支援粵語、普通話、英日韓。情緒標籤只係聲學線索。mit。呢個係辨認，唔會畀你合成聲音。 a speech-understanding model that transcribes audio on your machine and marks language and emotion. sensevoicesmall supports cantonese, mandarin, english, japanese, and korean. mit. this recognizes speech. it does not synthesize a voice. open-source sensevoicesmall model for mandarin, cantonese, english, japanese, and korean asr, language id, emotion recognition, and audio event detection. c asr audio-analysis audio-event-detection cantonese cross-lingual emotion-detection funasr language-identification">
+  <header>
+    <h3><span class="rank">16</span><a href="https://github.com/QwenAudio/SenseVoice">SenseVoice</a></h3>
+    <div class="stars">★ 9,677</div>
+  </header>
+  <p class="meta">QwenAudio/SenseVoice · C · MIT · <time class="pushed" datetime="2026-09-30"><span class="t-zh">最近推送 2026-09-30</span><span class="t-en">Pushed 2026-09-30</span></time></p>
+  <p class="summary"><span class="t-zh">語音理解模型，用嚟喺本機做你嘅語音轉文字、語種同情緒標記。SenseVoiceSmall 支援粵語、普通話、英日韓。情緒標籤只係聲學線索。MIT。呢個係辨認，唔會畀你合成聲音。</span><span class="t-en">A speech-understanding model that transcribes audio on your machine and marks language and emotion. SenseVoiceSmall supports Cantonese, Mandarin, English, Japanese, and Korean. MIT. This recognizes speech. It does not synthesize a voice.</span></p>
+  <div class="links"><a href="https://github.com/QwenAudio/SenseVoice">GitHub</a><a href="https://huggingface.co/spaces/FunAudioLLM/SenseVoice"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
+  <div class="topics"><span>#asr</span><span>#audio-analysis</span><span>#audio-event-detection</span></div>
+</article><article class="card" id="p-ohf-voice-piper1-gpl" data-repo="OHF-Voice/piper1-gpl" data-search="piper1-gpl ohf-voice/piper1-gpl 本機神經 tts，用嚟喺 cpu 快速讀出你嘅文字。現用版本係 gpl-3.0。聲線要另外下載，espeak 負責音素，預設冇粵語。你要自己裝。唔會畀你克隆人聲。 a local neural tts that reads text quickly on a cpu. the current line is gpl-3.0. voices are downloaded separately, and cantonese is not a default voice. this does not clone a person. fast and local neural text-to-speech engine c++ ">
+  <header>
+    <h3><span class="rank">17</span><a href="https://github.com/OHF-Voice/piper1-gpl">piper1-gpl</a></h3>
+    <div class="stars">★ 6,141</div>
+  </header>
+  <p class="meta">OHF-Voice/piper1-gpl · C++ · GPL-3.0 · <time class="pushed" datetime="2026-11-03"><span class="t-zh">最近推送 2026-11-03</span><span class="t-en">Pushed 2026-11-03</span></time></p>
+  <p class="summary"><span class="t-zh">本機神經 TTS，用嚟喺 CPU 快速讀出你嘅文字。現用版本係 GPL-3.0。聲線要另外下載，espeak 負責音素，預設冇粵語。你要自己裝。唔會畀你克隆人聲。</span><span class="t-en">A local neural TTS that reads text quickly on a CPU. The current line is GPL-3.0. Voices are downloaded separately, and Cantonese is not a default voice. This does not clone a person.</span></p>
+  <div class="links"><a href="https://github.com/OHF-Voice/piper1-gpl">GitHub</a></div>
+  
+</article><article class="card" id="p-ace-step-ace-step" data-repo="ace-step/ACE-Step" data-search="ace-step ace-step/ace-step 音樂基礎模型，用嚟喺你嘅文字條件生成音樂。apache-2.0。要自己跑權重，出嚟係一段音樂檔，唔係人聲對白，亦唔包歌手庫。呢個係作曲向工具，唔會畀你粵語講故。 a music foundation model that generates music from a text condition. apache-2.0. you run the weights yourself. this is for composition. it does not tell a story in cantonese. ace-step: a step towards music generation foundation model python ">
+  <header>
+    <h3><span class="rank">18</span><a href="https://github.com/ace-step/ACE-Step">ACE-Step</a></h3>
+    <div class="stars">★ 5,023</div>
+  </header>
+  <p class="meta">ace-step/ACE-Step · Python · Apache-2.0 · <time class="pushed" datetime="2026-02-15"><span class="t-zh">最近推送 2026-02-15</span><span class="t-en">Pushed 2026-02-15</span></time></p>
+  <p class="summary"><span class="t-zh">音樂基礎模型，用嚟喺你嘅文字條件生成音樂。Apache-2.0。要自己跑權重，出嚟係一段音樂檔，唔係人聲對白，亦唔包歌手庫。呢個係作曲向工具，唔會畀你粵語講故。</span><span class="t-en">A music foundation model that generates music from a text condition. Apache-2.0. You run the weights yourself. This is for composition. It does not tell a story in Cantonese.</span></p>
+  <div class="links"><a href="https://github.com/ace-step/ACE-Step">GitHub</a><a href="https://ace-step.github.io/"><span class="t-zh">主頁</span><span class="t-en">Home</span></a></div>
+  
+</article><article class="card" id="p-aslp-lab-wenetspeech-yue" data-repo="ASLP-lab/WenetSpeech-Yue" data-search="wenetspeech-yue aslp-lab/wenetspeech-yue 大型粵語語料同模型，用嚟喺本機做粵語辨認同合成。約 21800 小時，附 cosyvoice2-yue 同 zoengjyutgaai 微調。要 python 3.10，權重另外下載。apache-2.0。唔會畀你免安裝嘅 app。 a large cantonese corpus and model set for recognition and synthesis on your machine. it is about 21,800 hours and includes cosyvoice2-yue plus the zoengjyutgaai fine-tune. it needs python 3.10, and the weights download separately. apache-2.0. this does not give you an install-free app. a large-scale cantonese speech corpus with multi-dimensional annotation python ">
+  <header>
+    <h3><span class="rank">19</span><a href="https://github.com/ASLP-lab/WenetSpeech-Yue">WenetSpeech-Yue</a></h3>
+    <div class="stars">★ 377</div>
+  </header>
+  <p class="meta">ASLP-lab/WenetSpeech-Yue · Python · Apache-2.0 · <time class="pushed" datetime="2026-06-06"><span class="t-zh">最近推送 2026-06-06</span><span class="t-en">Pushed 2026-06-06</span></time></p>
+  <p class="summary"><span class="t-zh">大型粵語語料同模型，用嚟喺本機做粵語辨認同合成。約 21800 小時，附 CosyVoice2-Yue 同 ZoengJyutGaai 微調。要 Python 3.10，權重另外下載。Apache-2.0。唔會畀你免安裝嘅 app。</span><span class="t-en">A large Cantonese corpus and model set for recognition and synthesis on your machine. It is about 21,800 hours and includes CosyVoice2-Yue plus the ZoengJyutGaai fine-tune. It needs Python 3.10, and the weights download separately. Apache-2.0. This does not give you an install-free app.</span></p>
+  <div class="links"><a href="https://github.com/ASLP-lab/WenetSpeech-Yue">GitHub</a></div>
+  
+</article><article class="card" id="p-indiejoseph-jyutvoice" data-repo="indiejoseph/JyutVoice" data-search="jyutvoice indiejoseph/jyutvoice 粵語 tts，用嚟喺你嘅參考聲做粵語、普通話或英文合成。以 cosyvoice2 解碼器做遷移，要 python 3.11 同另外下載權重。專案仲細。mit。唔會畀你雲端服務。 a cantonese tts that synthesizes cantonese, mandarin, or english from a reference clip. it transfers from a cosyvoice2 decoder. it needs python 3.11 and a separate weight download. the project is still small. mit. this does not give you a cloud service. nar tts for cantonese python ">
+  <header>
+    <h3><span class="rank">20</span><a href="https://github.com/indiejoseph/JyutVoice">JyutVoice</a></h3>
+    <div class="stars">★ 6</div>
+  </header>
+  <p class="meta">indiejoseph/JyutVoice · Python · MIT · <time class="pushed" datetime="2026-10-22"><span class="t-zh">最近推送 2026-10-22</span><span class="t-en">Pushed 2026-10-22</span></time></p>
+  <p class="summary"><span class="t-zh">粵語 TTS，用嚟喺你嘅參考聲做粵語、普通話或英文合成。以 CosyVoice2 解碼器做遷移，要 Python 3.11 同另外下載權重。專案仲細。MIT。唔會畀你雲端服務。</span><span class="t-en">A Cantonese TTS that synthesizes Cantonese, Mandarin, or English from a reference clip. It transfers from a CosyVoice2 decoder. It needs Python 3.11 and a separate weight download. The project is still small. MIT. This does not give you a cloud service.</span></p>
+  <div class="links"><a href="https://github.com/indiejoseph/JyutVoice">GitHub</a></div>
+  
+</article></div>
+  
+</section>
+  </main>
+  <footer class="site"><span class="t-zh">Open Source Catalog · 資料來自 GitHub 公開資料同 arXiv · 預設按 stars 排，可以改按最近推送 · 重複項目只保留一次 · 最近推送會喺你睇到嗰張卡時向 GitHub 更新</span><span class="t-en">Open Source Catalog · Data from public GitHub and arXiv · Stars by default, or sort by last push · Each repository is listed once · Last push updates from GitHub when the card is on screen</span></footer>
+</div>
+<script>
+(function () {
+  const input = document.querySelector("#q");
+  const hub = document.querySelector("#hub");
+  const results = document.querySelector("#results");
+  const cards = Array.from(document.querySelectorAll("#results [data-search], section [data-search]"));
+  const sections = Array.from(document.querySelectorAll("[data-section]"));
+  const empty = document.querySelector("#empty");
+  const sortButtons = Array.from(document.querySelectorAll(".sort button"));
+  const projectGrids = Array.from(document.querySelectorAll("#results > .grid, section.section > .grid"));
+  let sortMode = "stars";
+  projectGrids.forEach((grid) => {
+    Array.from(grid.querySelectorAll(":scope > article.card[data-repo]")).forEach((card, index) => {
+      card.dataset.order = String(index);
+      const rank = card.querySelector(".rank");
+      if (rank) card.dataset.rank = rank.textContent;
+    });
+  });
+  function pushedDay(card) {
+    const node = card.querySelector("time.pushed");
+    return node && node.dateTime ? node.dateTime : "";
+  }
+  function sortGrids() {
+    projectGrids.forEach((grid) => {
+      const children = Array.from(grid.children);
+      const projects = children.filter((card) => card.matches("article.card[data-repo]"));
+      const rest = children.filter((card) => !card.matches("article.card[data-repo]"));
+      projects.sort((a, b) => {
+        if (sortMode === "pushed") {
+          const dayA = pushedDay(a);
+          const dayB = pushedDay(b);
+          if (dayA !== dayB) return dayA < dayB ? 1 : -1;
+        }
+        return Number(a.dataset.order) - Number(b.dataset.order);
+      });
+      projects.forEach((card) => grid.appendChild(card));
+      rest.forEach((card) => grid.appendChild(card));
+    });
+  }
+  function paintRanks() {
+    projectGrids.forEach((grid) => {
+      let visible = 0;
+      Array.from(grid.querySelectorAll(":scope > article.card[data-repo]")).forEach((card) => {
+        const rank = card.querySelector(".rank");
+        if (!rank) return;
+        if (sortMode !== "pushed") {
+          rank.textContent = card.dataset.rank || rank.textContent;
+          return;
+        }
+        if (card.hidden) return;
+        visible += 1;
+        rank.textContent = String(visible).padStart(2, "0");
+      });
+    });
+  }
+  function apply() {
+    sortGrids();
+    const q = input.value.trim().toLowerCase();
+    const showHub = Boolean(hub && results && q.length === 0 && sortMode === "stars");
+    if (hub && results) {
+      hub.hidden = !showHub;
+      results.hidden = showHub;
+      if (showHub) {
+        empty.hidden = true;
+        empty.style.display = "none";
+        paintRanks();
+        refreshPushed();
+        return;
+      }
+    }
+    let shown = 0;
+    cards.forEach((card) => {
+      const ok = !q || card.dataset.search.includes(q);
+      card.hidden = !ok;
+      if (ok) shown += 1;
+    });
+    sections.forEach((section) => {
+      section.hidden = !Array.from(section.querySelectorAll("[data-search]")).some((card) => !card.hidden);
+    });
+    empty.hidden = shown !== 0;
+    empty.style.display = shown === 0 ? "block" : "none";
+    paintRanks();
+    refreshPushed();
+  }
+  const cacheKey = "osc-pushed-v1";
+  const pending = new Set();
+  const failed = new Set();
+  const queue = [];
+  let active = 0;
+  let blocked = false;
+  function readCache() {
+    try { return JSON.parse(localStorage.getItem(cacheKey) || "{}"); }
+    catch (error) { return {}; }
+  }
+  function writeCache(cache) {
+    try { localStorage.setItem(cacheKey, JSON.stringify(cache)); }
+    catch (error) {}
+  }
+  function hkDay(iso) {
+    const moment = new Date(iso);
+    if (Number.isNaN(moment.getTime())) return String(iso || "").slice(0, 10);
+    return new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Hong_Kong",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    }).format(moment);
+  }
+  function paint(name, day) {
+    document.querySelectorAll("article.card[data-repo]").forEach((card) => {
+      if (card.dataset.repo !== name) return;
+      const node = card.querySelector("time.pushed");
+      if (!node) return;
+      node.dateTime = day;
+      node.replaceChildren();
+      const zhLabel = document.createElement("span");
+      zhLabel.className = "t-zh";
+      zhLabel.textContent = "最近推送 " + day;
+      const enLabel = document.createElement("span");
+      enLabel.className = "t-en";
+      enLabel.textContent = "Pushed " + day;
+      node.append(zhLabel, enLabel);
+    });
+    if (sortMode === "pushed") {
+      sortGrids();
+      paintRanks();
+    }
+  }
+  function cachedDay(name) {
+    const hit = readCache()[name];
+    if (!hit || !hit.day || Date.now() - hit.at > 6 * 60 * 60 * 1000) return "";
+    return hit.day;
+  }
+  function pump() {
+    if (blocked) return;
+    while (active < 4 && queue.length) {
+      const name = queue.shift();
+      active += 1;
+      fetch("https://api.github.com/repos/" + name, {
+        headers: { Accept: "application/vnd.github+json" }
+      }).then((response) => {
+        if (response.status === 403 || response.status === 429) {
+          blocked = true;
+          queue.length = 0;
+          return null;
+        }
+        if (!response.ok) {
+          failed.add(name);
+          return null;
+        }
+        return response.json();
+      }).then((data) => {
+        if (!data || !data.pushed_at) return;
+        const day = hkDay(data.pushed_at);
+        const cache = readCache();
+        cache[name] = { day: day, at: Date.now() };
+        writeCache(cache);
+        paint(name, day);
+      }).catch(() => {
+        failed.add(name);
+      }).finally(() => {
+        active -= 1;
+        pending.delete(name);
+        pump();
+      });
+    }
+  }
+  function enqueue(name) {
+    if (!name || blocked || pending.has(name) || failed.has(name)) return;
+    const day = cachedDay(name);
+    if (day) {
+      paint(name, day);
+      return;
+    }
+    pending.add(name);
+    queue.push(name);
+    pump();
+  }
+  function refreshPushed() {
+    document.querySelectorAll("article.card[data-repo]").forEach((card) => {
+      if (card.hidden || card.closest("[hidden]")) return;
+      const rect = card.getBoundingClientRect();
+      if (rect.bottom < -240 || rect.top > window.innerHeight + 240) return;
+      enqueue(card.dataset.repo);
+    });
+  }
+  document.querySelectorAll("article.card[data-repo]").forEach((card) => {
+    const day = cachedDay(card.dataset.repo);
+    if (day) paint(card.dataset.repo, day);
+  });
+  let ticking = false;
+  function schedulePushed() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      ticking = false;
+      refreshPushed();
+    });
+  }
+  window.addEventListener("scroll", schedulePushed, { passive: true });
+  window.addEventListener("resize", schedulePushed);
+  function applyLang(lang) {
+    const next = lang === "en" ? "en" : "zh-Hant";
+    const english = next === "en";
+    document.documentElement.lang = next;
+    document.querySelectorAll(".lang-switch button").forEach((button) => {
+      button.setAttribute("aria-pressed", button.dataset.lang === next ? "true" : "false");
+    });
+    document.querySelectorAll("[data-zh-label]").forEach((node) => {
+      node.setAttribute("aria-label", english ? node.getAttribute("data-en-label") : node.getAttribute("data-zh-label"));
+    });
+    document.querySelectorAll("[data-zh-placeholder]").forEach((node) => {
+      node.placeholder = english ? node.getAttribute("data-en-placeholder") : node.getAttribute("data-zh-placeholder");
+    });
+    const title = document.querySelector("title");
+    if (title) title.textContent = english ? title.getAttribute("data-en") : title.getAttribute("data-zh");
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", english ? meta.getAttribute("data-en") : meta.getAttribute("data-zh"));
+    try { localStorage.setItem("osc-lang", next); }
+    catch (error) {}
+  }
+  document.querySelectorAll(".lang-switch button").forEach((button) => {
+    button.addEventListener("click", () => applyLang(button.dataset.lang));
+  });
+  applyLang(document.documentElement.lang);
+  input.addEventListener("input", apply);
+  input.addEventListener("search", apply);
+  sortButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      sortMode = button.dataset.sort || "stars";
+      sortButtons.forEach((item) => {
+        item.setAttribute("aria-pressed", item === button ? "true" : "false");
+      });
+      apply();
+    });
+  });
+  refreshPushed();
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "/" && document.activeElement !== input) {
+      event.preventDefault();
+      input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -81,6 +81,14 @@ CATEGORIES = [
         "blurb_en": "Video generation, editing, playback, transcoding, and processing.",
     },
     {
+        "id": "audio",
+        "dir": "audio",
+        "title": "Audio",
+        "title_en": "Audio",
+        "blurb": "語音克隆、語音合成、語音識別同音樂生成，包括粵語聲音模型。",
+        "blurb_en": "Voice cloning, speech synthesis, speech recognition, and music generation, including Cantonese voice models.",
+    },
+    {
         "id": "motion-graphics",
         "dir": "motion-graphics",
         "title": "Motion Graphics / After Effects",
@@ -148,6 +156,13 @@ QUERIES = {
         "topic:video-editing",
         "topic:ai-video",
     ],
+    "audio": [
+        "cantonese OR 粵語 OR \"yue tts\" OR \"cantonese tts\" OR \"cantonese asr\" stars:>40",
+        "topic:voice-cloning",
+        "topic:text-to-speech",
+        "topic:voice-conversion",
+        '"text to music" OR "music generation" OR "voice cloning" stars:>200',
+    ],
     "motion-graphics": [
         "topic:lottie",
         "topic:after-effects",
@@ -179,6 +194,7 @@ MIN_NEW = {
     "ai-agent": 5000,
     "image": 4000,
     "video": 3000,
+    "audio": 300,
     "motion-graphics": 800,
     "vfx-cg-blender": 2500,
     "stock-trading": 1500,
@@ -197,6 +213,7 @@ RECENT_FOCUS = {
     "ai-agent": '"ai agent" OR "coding agent" OR "agent skill" OR "claude skill"',
     "image": '"image generation" OR inpainting OR "stable diffusion"',
     "video": '"video generation" OR "text-to-video" OR "image-to-video" OR "ai video"',
+    "audio": 'cantonese OR 粵語 OR "voice cloning" OR "text-to-speech" OR "text to music"',
     "motion-graphics": '"motion graphics" OR "after effects" OR lottie OR bodymovin',
     "vfx-cg-blender": "blender OR renderer OR compositing",
     "stock-trading": '"stock trading" OR "quantitative finance" OR backtesting',
@@ -1589,7 +1606,7 @@ def email_html(catalog: dict, new_projects: list[dict], mode: str) -> str:
         </td></tr>
         <tr><td style="padding:8px 20px 8px;">{''.join(f'<table role="presentation" width="100%">{block}</table>' for block in blocks)}</td></tr>
         <tr><td align="center" style="padding:28px 24px 12px;">{button}</td></tr>
-        <tr><td style="padding:8px 28px 28px;color:#8d867c;font-size:12px;line-height:1.5;">分類次序：Gaussian Splatting、World Model、Image to 3D、AI Agent、圖像、影片、Motion Graphics / After Effects、VFX / CG / Blender、Stock Trading、Crypto Trading。開源項目按 stars 由多至少。已收錄項目唔會再加入。</td></tr>
+        <tr><td style="padding:8px 28px 28px;color:#8d867c;font-size:12px;line-height:1.5;">分類次序：Gaussian Splatting、World Model、Image to 3D、AI Agent、圖像、影片、Audio、Motion Graphics / After Effects、VFX / CG / Blender、Stock Trading、Crypto Trading。開源項目按 stars 由多至少。已收錄項目唔會再加入。</td></tr>
       </table>
     </td></tr>
   </table>
@@ -1741,6 +1758,22 @@ def relevant(category: str, repo: dict) -> bool:
         return any(key in blob for key in ("image", "diffusion", "photo", "vision", "ocr", "upscal"))
     if category == "video":
         return any(key in blob for key in ("video", "film", "ffmpeg", "movie", "editor"))
+    if category == "audio":
+        keys = (
+            "voice",
+            "speech",
+            "tts",
+            "asr",
+            "audio",
+            "music",
+            "singing",
+            "cantonese",
+            "whisper",
+            "vocal",
+            "粵語",
+            "粤语",
+        )
+        return any(key in blob for key in keys)
     if category == "motion-graphics":
         keys = (
             "after effects",

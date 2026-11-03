@@ -64,5 +64,8 @@
   "brayonpi/hexstellar",
   "amitshekhariitbhu/ai-system-design",
   "aoci-spec/aoci-code",
-  "undefined-ui/second-brain-os"
+  "undefined-ui/second-brain-os",
+  "johnsonhk88/qwen3-tts-hk-cantonese-finetune",
+  "fishaudio/fish-speech",
+  "index-tts/index-tts"
 ]
