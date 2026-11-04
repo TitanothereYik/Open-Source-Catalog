@@ -950,5 +950,8 @@
   "nexu-io/open-design": "本機設計工作台，用嚟喺你部機同已有嘅 AI agent 一齊做原型、網頁、簡報同片。有 macOS 同 Windows 安裝包，Linux 要自己編譯。模型用你自己嘅 API key。安全遙測開住。v0.27.0。Apache-2.0。唔會畀你模型。",
   "pbakaus/impeccable": "設計詞彙 skill，用嚟喺你已有嘅 coding agent 用指令改畫面同捉 AI 味。CLI 唔使 agent 都可以掃檔。掃網頁要 Chrome 或 Edge。cli-v4.8.0。Apache-2.0。出圖先至可以先生圖再寫碼。唔會畀你模型。",
   "espeak-ng/espeak-ng": "細小嘅文字轉語音，用嚟喺 Linux、Windows、Android 讀一百幾個語言同口音，包括粵語。用共振峰合成，聲線夾喺程式，唔似錄音咁自然。最新發行版 1.52.0。GPL-3.0。唔使下載大模型，亦唔會畀你神經網絡聲線。",
-  "argmaxinc/argmax-oss-swift": "本機 Swift SDK，用嚟喺 macOS 14 跑現成嘅 Whisper、Pyannote 同 Qwen-TTS。要 Xcode 16。Android 同即時分講者喺另一個 Pro SDK。v1.1.1。MIT。權重要另外下載。唔會畀你新模型。"
+  "argmaxinc/argmax-oss-swift": "本機 Swift SDK，用嚟喺 macOS 14 跑現成嘅 Whisper、Pyannote 同 Qwen-TTS。要 Xcode 16。Android 同即時分講者喺另一個 Pro SDK。v1.1.1。MIT。權重要另外下載。唔會畀你新模型。",
+  "OpenSparX/MasterAgent": "本機 C++ agent runtime，用嚟喺你部機先跑固定技能，再按需要叫你自己嘅模型。示範唔使模型、網絡或者車機。Qualcomm NPU 呢版未驗證。開源版係 0.4.0-alpha.3，唔係專有核心。Apache-2.0。唔會畀你模型。",
+  "Egonex-AI/Understand-Anything": "Agent skill，用嚟喺你已有嘅 coding agent 將程式庫畫成可搜尋嘅知識圖。結構靠 Tree-sitter，解釋靠 agent 嘅模型。睇圖嘅 viewer 只要 Node 18，唔使 API key。最新發行版 v2.9.0。MIT。唔會畀你新模型。",
+  "denizsafak/abogen": "有聲書工具，用嚟喺本機將 EPUB、PDF 同文字讀出聲，並出對齊字幕。用現成嘅 Kokoro-82M。中文係普通話，要另外裝 misaki。Mac 要 espeak-ng。Windows 嘅 AMD GPU 未支援。MIT。唔係粵語。唔會畀你新模型。"
 }
