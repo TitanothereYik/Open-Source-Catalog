@@ -960,5 +960,8 @@
   "blader/humanizer": "Agent skill，用嚟喺你已有嘅 coding agent 改 AI 腔，內容保持不變。基於維基百科嘅 AI 寫作特徵。README 寫偵測器仍然會標大部分輸出。v3.1.0。MIT。唔係過檢測工具，亦唔會畀你模型。",
   "ayghri/i-have-adhd": "Agent skill，用嚟喺你已有嘅 coding agent 先講答案，步驟編號，少埋收尾客套。README 寫唔使 ADHD 診斷。v0.4.1。MIT。唔係醫療工具，亦唔會畀你模型。",
   "liuzhao1225/YouDub-webui": "影片本地化桌面程式，用嚟喺本機識別、翻譯同逐句克隆原聲，再出字幕同配音片。語言目錄有英、中、日。用現成嘅模型，要另外安裝。v0.0.12。Apache-2.0。唔係粵語。唔會畀你新模型。",
-  "remsky/Kokoro-FastAPI": "Kokoro-82M 嘅 API 包裝，用嚟喺 Docker 開一個相容 OpenAI 嘅文字轉語音接口。語言有英、西、法、印地、意、日、葡同普通話。NVIDIA 有映像，AMD 係實驗。Apple Silicon 要直接跑，唔係映像。v0.9.2。Apache-2.0。唔係粵語。唔會畀你新模型。"
+  "remsky/Kokoro-FastAPI": "Kokoro-82M 嘅 API 包裝，用嚟喺 Docker 開一個相容 OpenAI 嘅文字轉語音接口。語言有英、西、法、印地、意、日、葡同普通話。NVIDIA 有映像，AMD 係實驗。Apple Silicon 要直接跑，唔係映像。v0.9.2。Apache-2.0。唔係粵語。唔會畀你新模型。",
+  "Generated-Computers/Locals": "Mac 本機推理伺服器，用嚟喺 Apple Silicon 同時跑你已有嘅 coding agent。預設 Qwen3.5-4B，約 2.8GB，一次只跑一個模型。單一請求同 mlx-lm 差唔多。3 倍只係多請求先至有。0.2.2。Apache-2.0。唔會畀你新 agent。",
+  "coreyhaines31/marketingskills": "一組 marketing skill，用嚟喺你已有嘅 coding agent 寫轉換、文案、SEO 同分析。支援 Claude Code、Codex、Cursor。v2.14.0。MIT。唔會自己投放廣告，亦唔會畀你模型。",
+  "ysharma3501/LuxTTS": "語音克隆模型，用嚟喺本機用一段參考聲讀文字。README 寫單 GPU 可以去到約 150 倍即時，1GB 顯示記憶體都裝到。權重喺 Hugging Face。CPU 同 Mac 都有路徑。Apache-2.0。README 冇列語言。唔會畀你免下載嘅模型。"
 }
