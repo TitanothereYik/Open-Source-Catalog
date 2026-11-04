@@ -26640,6 +26640,61 @@
       "paper_title": "",
       "paper_url": "",
       "added_at": "2026-11-04T15:14:34+08:00"
+    },
+    {
+      "id": "github:peterl1n/robustvideomatting",
+      "type": "github",
+      "category": "video",
+      "name": "RobustVideoMatting",
+      "full_name": "PeterL1n/RobustVideoMatting",
+      "url": "https://github.com/PeterL1n/RobustVideoMatting",
+      "homepage": "https://peterl1n.github.io/RobustVideoMatting/",
+      "description": "Robust Video Matting in PyTorch, TensorFlow, TensorFlow.js, ONNX, CoreML!",
+      "summary": "人像影片摳像模型，用嚟喺唔使綠幕嘅片出 alpha。用循環網絡記住時間。README 寫 1080 Ti 上 HD 張量約 104 FPS，轉片腳本會慢啲。有 MobileNetV3 同 ResNet50。v1.0.0。GPL-3.0。唔係通用物件摳像。唔會畀你免下載嘅模型。",
+      "summary_en": "A human video-matting model that makes an alpha from a video without a green screen. It uses a recurrent network to remember time. The README says about 104 FPS of HD tensor throughput on a GTX 1080 Ti, and the conversion script is slower. MobileNetV3 and ResNet50 are both available. v1.0.0. GPL-3.0. It is not a general-object matte. This does not give you a model without a download.",
+      "summary_locked": true,
+      "stars": 9584,
+      "language": "Python",
+      "license": "GPL-3.0",
+      "topics": [
+        "ai",
+        "computer-vision",
+        "deep-learning",
+        "machine-learning",
+        "matting"
+      ],
+      "archived": false,
+      "pushed_at": "2024-04-03",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-11-04T15:24:34+08:00"
+    },
+    {
+      "id": "github:peterl1n/backgroundmattingv2",
+      "type": "github",
+      "category": "video",
+      "name": "BackgroundMattingV2",
+      "full_name": "PeterL1n/BackgroundMattingV2",
+      "url": "https://github.com/PeterL1n/BackgroundMattingV2",
+      "homepage": "",
+      "description": "Real-Time High-Resolution Background Matting",
+      "summary": "高清背景摳像，用嚟喺你預先影低嘅空鏡同人物片出 alpha。要一張背景相，唔係綠幕。作者其後出咗 RVM，呢個係舊方法。README 寫 RTX 2080 Ti 上 HD 張量約 60 FPS，轉片腳本唔係即時。權重要另外下載。v1.0.0。MIT。唔會畀你免下載嘅模型。",
+      "summary_en": "High-resolution background matting that makes an alpha from a person video plus an empty-background photo you captured first. It needs that background photo, and it is not a green screen. The author later released RVM, and this is the older method. The README says about 60 FPS of HD tensor throughput on an RTX 2080 Ti, and the video conversion script is not real-time. Weights download separately. v1.0.0. MIT. This does not give you a model without a download.",
+      "summary_locked": true,
+      "stars": 7201,
+      "language": "Python",
+      "license": "MIT",
+      "topics": [
+        "computer-vision",
+        "machine-learning",
+        "matting",
+        "real-time"
+      ],
+      "archived": false,
+      "pushed_at": "2024-06-19",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-11-04T15:24:34+08:00"
     }
   ],
   "papers": [
@@ -26715,7 +26770,8 @@
     }
   ],
   "last_new_ids": [
-    "github:lightricks/ltx-2"
+    "github:peterl1n/robustvideomatting",
+    "github:peterl1n/backgroundmattingv2"
   ],
   "rate_limit": {
     "used": 4000,
