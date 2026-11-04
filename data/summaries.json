@@ -919,5 +919,9 @@
   "FengZhenfei/carrel": "自託管知識庫，用嚟喺你已有嘅 agent 查文件同圖片。答案由 agent 寫。要 Python 3.12 同 Docker，模型要你自己接。附搜尋 skill。v0.4.0。MIT。唔會畀你新模型。",
   "okf-memory/okf-agent-memory": "Go 寫嘅記憶庫，用嚟喺你已有嘅 coding agent 記住專案決定。資料留喺 git，唔使外部資料庫。附 MCP。v0.7.2。MIT。唔包含模型。唔會畀你新模型。",
   "ace-step/ACE-Step-1.5": "本地音樂模型 1.5，用嚟喺你部機由文字同歌詞出音樂。同舊 ACE-Step 係另一個倉庫。權重要另外下載。6GB 顯存可試 2B。v0.1.8。MIT。歌詞有五十幾種語言，唔係粵語專用。唔會畀你免下載嘅模型。",
-  "QwenLM/Qwen3-TTS": "語音系列，用嚟喺本機做聲線設計同 3 秒克隆。有 0.6B 同 1.7B，權重要另外下載。十種語言有中文同英語，聲線有北京話同四川話，唔係粵語。Apache-2.0。唔會畀你免下載嘅模型。"
+  "QwenLM/Qwen3-TTS": "語音系列，用嚟喺本機做聲線設計同 3 秒克隆。有 0.6B 同 1.7B，權重要另外下載。十種語言有中文同英語，聲線有北京話同四川話，唔係粵語。Apache-2.0。唔會畀你免下載嘅模型。",
+  "Ryder-Sun/Meldwork": "本地工作台，用嚟喺 Apple Silicon macOS 召集你已有嘅 agent 一齊做。寫入要你授權。預覽包未公證。V1.0.9。Apache-2.0。唔包含模型。唔會畀你新模型。",
+  "yc-duan/fastctx": "MCP 工具，用嚟喺你已有嘅 agent 跨你自己嘅機執行同記錄。桌面有 Windows、macOS 同 Linux，另有 Android 同 CLI。數據經你嘅 Hub。v0.2.6。Apache-2.0。唔會畀你新模型。",
+  "abus-aikorea/voice-pro": "本機語音介面，用嚟喺 Windows 配 NVIDIA 跑現成模型，做辨認、翻譯同克隆。Mac 同 Linux 未驗證。權重各自下載，Edge-TTS 要上網。v4.0.0。GPL-3.0。唔係粵語專用。唔會畀你免下載嘅模型。",
+  "PaddlePaddle/PaddleSpeech": "Paddle 語音工具箱，用嚟喺本機做辨認、合成同翻譯。有粵語合成例子，唔係成個工具箱都係粵語。模型要另外準備。r1.5.0。Apache-2.0。唔會畀你免設定嘅模型。"
 }
