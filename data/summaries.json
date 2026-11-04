@@ -953,5 +953,8 @@
   "argmaxinc/argmax-oss-swift": "本機 Swift SDK，用嚟喺 macOS 14 跑現成嘅 Whisper、Pyannote 同 Qwen-TTS。要 Xcode 16。Android 同即時分講者喺另一個 Pro SDK。v1.1.1。MIT。權重要另外下載。唔會畀你新模型。",
   "OpenSparX/MasterAgent": "本機 C++ agent runtime，用嚟喺你部機先跑固定技能，再按需要叫你自己嘅模型。示範唔使模型、網絡或者車機。Qualcomm NPU 呢版未驗證。開源版係 0.4.0-alpha.3，唔係專有核心。Apache-2.0。唔會畀你模型。",
   "Egonex-AI/Understand-Anything": "Agent skill，用嚟喺你已有嘅 coding agent 將程式庫畫成可搜尋嘅知識圖。結構靠 Tree-sitter，解釋靠 agent 嘅模型。睇圖嘅 viewer 只要 Node 18，唔使 API key。最新發行版 v2.9.0。MIT。唔會畀你新模型。",
-  "denizsafak/abogen": "有聲書工具，用嚟喺本機將 EPUB、PDF 同文字讀出聲，並出對齊字幕。用現成嘅 Kokoro-82M。中文係普通話，要另外裝 misaki。Mac 要 espeak-ng。Windows 嘅 AMD GPU 未支援。MIT。唔係粵語。唔會畀你新模型。"
+  "denizsafak/abogen": "有聲書工具，用嚟喺本機將 EPUB、PDF 同文字讀出聲，並出對齊字幕。用現成嘅 Kokoro-82M。中文係普通話，要另外裝 misaki。Mac 要 espeak-ng。Windows 嘅 AMD GPU 未支援。MIT。唔係粵語。唔會畀你新模型。",
+  "cathrynlavery/diagram-design": "Agent skill，用嚟喺你已有嘅 coding agent 畫 45 種圖，輸出一個 HTML 加 SVG 檔。支援 Claude Code、Codex、Cursor 等。唔出 Mermaid。MIT。唔會畀你繪圖模型。",
+  "dograh-hq/dograh": "語音 agent 平台，用嚟喺你部機用 Docker 自托管打電話同對話流程。預設有佢哋嘅 LLM、TTS、STT，亦可以換你自己嘅 key。電話要接 Twilio 呢類供應商。dograh-v1.51.0。BSD-2-Clause。唔會畀你新語音模型。",
+  "buxuku/SmartSub": "桌面字幕工具，用嚟喺本機轉寫、翻譯、配音同燒字幕。轉寫可以用 Whisper 或 FunASR，檔案唔使上傳。SenseVoice 引擎有粵語選項，唔係成個程式都係粵語。配音用現成嘅模型。v3.12.1。MIT。唔會畀你新模型。"
 }
