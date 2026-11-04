@@ -927,5 +927,10 @@
   "Station-Sciences/bot-crossing": "本機畫面，用嚟喺你部機睇 coding agent 嘅對話線，變成一隻隻機器人。只讀 harness 檔，唔寫返去。要 Node 22.13。MIT。作者話未必再維護。唔會畀你新模型。",
   "MaxHu-xuan/task-state-guard": "嵌入式 SQLite 對賬，用嚟喺重啟之後收斂卡住嘅 agent 任務。未知結果唔會猜成成功。可以先預覽再套用。v0.1.0。Apache-2.0。唔係隊列。唔會畀你新模型。",
   "rany2/edge-tts": "Python 模組，用嚟喺程式叫 Microsoft Edge 嘅網上語音。要上網，唔使裝 Edge。聲線跟微軟清單，唔係粵語模型。v7.3.1。主體 LGPL-3.0。唔會畀你本地模型。",
-  "open-mmlab/Amphion": "研究用工具箱，用嚟喺本機做語音、唱歌同聲音轉換。程式 MIT。Emilia 數據集係 CC BY-NC，權重要另外準備。v0.1.1-alpha。唔係粵語專用。唔會畀你免下載嘅模型。"
+  "open-mmlab/Amphion": "研究用工具箱，用嚟喺本機做語音、唱歌同聲音轉換。程式 MIT。Emilia 數據集係 CC BY-NC，權重要另外準備。v0.1.1-alpha。唔係粵語專用。唔會畀你免下載嘅模型。",
+  "notinferred/keypaste": "KeePass 相容嘅本地密碼庫，用嚟喺你批准之後先畀 agent 一個欄位。已發布嘅係 v0.3.0 CLI，桌面未有公開版本。保險庫唔使帳號。分享連結會經 keypaste.com。AGPL-3.0。唔會畀你新模型。",
+  "sodiumsun/agenttrail": "本機觀察畫面，用嚟喺你部機睇你已有嘅 coding agent 做緊咩。Kitchen 係實驗預覽，要 Node 20。佢唔會行 agent。MIT。唔包含模型。唔會畀你新模型。",
+  "Paritok-official/paritok-4b-v1": "壓縮中間層，用嚟喺你已有嘅 coding agent 同模型 API 之間縮短輸入。預設自己跑 4B，約 2.5GB，唔離開你部機。開咗佢哋 GPU 伺服器先會外送。Apache-2.0。唔會畀你新模型。",
+  "mozilla/TTS": "舊 Mozilla 文字轉語音庫，用嚟訓練同生成語音。README 寫超過 20 種語言，權重另外準備。最後推送喺 2023 年 11 月。MPL-2.0。同 Coqui TTS 唔係同一個倉庫。唔係粵語專用。唔會畀你免下載嘅模型。",
+  "espnet/espnet": "端到端語音工具箱，用嚟喺 PyTorch 做辨認、合成同翻譯。有現成模型可以下載，訓練要跟 recipe。部分 recipe 提到粵語，唔係一個現成粵語模型。v202611。Apache-2.0。唔會畀你免設定嘅模型。"
 }
