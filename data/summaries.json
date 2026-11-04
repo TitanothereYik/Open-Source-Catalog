@@ -940,5 +940,7 @@
   "vshulcz/deja-vu": "本機記憶索引，用嚟喺你已有嘅 coding agent 紀錄搵返舊 session。README 列出 43 個 harness。預設冇 LLM，搜尋留喺你部機。語義搜尋先至打去你自己設嘅端點。v0.23.5。MIT。唔會幫你跑 agent，亦唔會畀你新模型。",
   "yetone/kill-ai-slop": "Agent skill，用嚟掃描網頁專案入面常見嘅 AI 畫面同文案習慣，再解釋點解似機器出。網站目錄有 33 項，有英、中、日、韓。掃描器唔會改檔。Apache-2.0。唔係模型。要你已有嘅 agent 先會喺專案度動手改，唔會畀你新介面。",
   "voicepaw/so-vits-svc-fork": "唱歌變聲分叉，用嚟喺本機即時轉音色。模型跟 so-vits-svc 4.0，4.1 唔支援。安裝會自動下載預訓練權重。最新 tag v4.2.30。授權檔以 MIT 開頭，後面夾住 Apache-2.0。README 仍然寫已經停止維護。唔係文字轉語音。唔會畀你免下載嘅模型。",
-  "netease-youdao/EmotiVoice": "多音色文字轉語音，用嚟用一句情緒提示讀英文同中文。README 寫超過 2000 個聲。權重喺 ModelScope 另外下載。Docker 要 NVIDIA GPU。日文同韓文仲未做。Apache-2.0。唔係粵語。唔會畀你免下載嘅模型。"
+  "netease-youdao/EmotiVoice": "多音色文字轉語音，用嚟用一句情緒提示讀英文同中文。README 寫超過 2000 個聲。權重喺 ModelScope 另外下載。Docker 要 NVIDIA GPU。日文同韓文仲未做。Apache-2.0。唔係粵語。唔會畀你免下載嘅模型。",
+  "Neywa-Labs/mlx-audio": "Apple Silicon 上嘅語音工具箱，用嚟喺本機跑現成嘅文字轉語音、語音轉文字同語音對語音。要 M 系 Mac。模型例如 Kokoro、Qwen3-TTS、Whisper，權重要另外下載。有啲模型有中文，唔係粵語專用。v0.6.4。MIT。唔會畀你一個新模型。",
+  "jaywalnut310/vits": "VITS 論文嘅官方程式，用嚟由文字端到端生成語音。論文評測用 LJ Speech 單講者英文。另外有 VCTK 多講者訓練路徑。預訓練權重喺 Google Drive。最後推送喺 2023 年 12 月。MIT。唔係現成產品，亦唔係粵語。唔會畀你免下載嘅模型。"
 }
