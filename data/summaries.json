@@ -935,5 +935,10 @@
   "espnet/espnet": "端到端語音工具箱，用嚟喺 PyTorch 做辨認、合成同翻譯。有現成模型可以下載，訓練要跟 recipe。部分 recipe 提到粵語，唔係一個現成粵語模型。v202611。Apache-2.0。唔會畀你免設定嘅模型。",
   "Lightricks/LTX-2": "官方 LTX-2.5 套件入面嘅 AlphaGen pipeline，用嚟喺一條參考片同 IC-LoRA 做單段影片生成。22B 權重要另外下載。年收入一千萬美元或以上要另買商業授權。授權係 LTX-2.x Community License。唔係 OSI 開源。唔會畀你免下載嘅模型。",
   "PeterL1n/RobustVideoMatting": "人像影片摳像模型，用嚟喺唔使綠幕嘅片出 alpha。用循環網絡記住時間。README 寫 1080 Ti 上 HD 張量約 104 FPS，轉片腳本會慢啲。有 MobileNetV3 同 ResNet50。v1.0.0。GPL-3.0。唔係通用物件摳像。唔會畀你免下載嘅模型。",
-  "PeterL1n/BackgroundMattingV2": "高清背景摳像，用嚟喺你預先影低嘅空鏡同人物片出 alpha。要一張背景相，唔係綠幕。作者其後出咗 RVM，呢個係舊方法。README 寫 RTX 2080 Ti 上 HD 張量約 60 FPS，轉片腳本唔係即時。權重要另外下載。v1.0.0。MIT。唔會畀你免下載嘅模型。"
+  "PeterL1n/BackgroundMattingV2": "高清背景摳像，用嚟喺你預先影低嘅空鏡同人物片出 alpha。要一張背景相，唔係綠幕。作者其後出咗 RVM，呢個係舊方法。README 寫 RTX 2080 Ti 上 HD 張量約 60 FPS，轉片腳本唔係即時。權重要另外下載。v1.0.0。MIT。唔會畀你免下載嘅模型。",
+  "0xpili/simplified-technical-english": "Agent skill，用嚟叫你已有嘅 LLM 喺技術說明度寫簡化技術英文。檢查腳本只係 Python 3，捉唔到全部錯，亦唔證明符合官方規格。詞表來自 ASD-STE100 2017，版權係 ASD。技能文字同腳本係 MIT。唔係官方文件。唔會畀你模型。",
+  "vshulcz/deja-vu": "本機記憶索引，用嚟喺你已有嘅 coding agent 紀錄搵返舊 session。README 列出 43 個 harness。預設冇 LLM，搜尋留喺你部機。語義搜尋先至打去你自己設嘅端點。v0.23.5。MIT。唔會幫你跑 agent，亦唔會畀你新模型。",
+  "yetone/kill-ai-slop": "Agent skill，用嚟掃描網頁專案入面常見嘅 AI 畫面同文案習慣，再解釋點解似機器出。網站目錄有 33 項，有英、中、日、韓。掃描器唔會改檔。Apache-2.0。唔係模型。要你已有嘅 agent 先會喺專案度動手改，唔會畀你新介面。",
+  "voicepaw/so-vits-svc-fork": "唱歌變聲分叉，用嚟喺本機即時轉音色。模型跟 so-vits-svc 4.0，4.1 唔支援。安裝會自動下載預訓練權重。最新 tag v4.2.30。授權檔以 MIT 開頭，後面夾住 Apache-2.0。README 仍然寫已經停止維護。唔係文字轉語音。唔會畀你免下載嘅模型。",
+  "netease-youdao/EmotiVoice": "多音色文字轉語音，用嚟用一句情緒提示讀英文同中文。README 寫超過 2000 個聲。權重喺 ModelScope 另外下載。Docker 要 NVIDIA GPU。日文同韓文仲未做。Apache-2.0。唔係粵語。唔會畀你免下載嘅模型。"
 }
