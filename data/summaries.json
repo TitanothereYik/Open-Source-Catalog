@@ -914,5 +914,10 @@
   "petergyang/human-review": "一個 skill，用嚟喺瀏覽器改 HTML 同 Markdown，再一次過將意見交畀你已有嘅 coding agent。全部喺你部機，唔使帳號同 API key。v0.8.2。MIT。唔會畀你新模型。",
   "pyang5166/gbro-collage-broll": "一個 skill，用嚟喺你已有嘅 agent 將約 5 秒口播變成半調紙拼貼 B-roll。要過三個閘門。影片要 Gemini key，按量收費。預設 9:16、無聲。MIT。唔會畀你影片模型。",
   "k2-fsa/OmniVoice": "600 幾種語言嘅零樣本語音模型，用嚟喺 GPU 克隆聲線，清單有粵語。權重要另外下載。NVIDIA 或 Intel Arc。v0.2.1。Apache-2.0。唔係單一港式聲線。唔會畀你免下載嘅模型。",
-  "k2-fsa/sherpa-onnx": "離線語音工具，用嚟喺本機做辨認、合成同靜音偵測。模型要另外下載。部分辨認模型有粵語，唔係每一個都有。Android 到 Linux 都有。v2.0.1。Apache-2.0。唔使上網。唔會畀你預載嘅模型。"
+  "k2-fsa/sherpa-onnx": "離線語音工具，用嚟喺本機做辨認、合成同靜音偵測。模型要另外下載。部分辨認模型有粵語，唔係每一個都有。Android 到 Linux 都有。v2.0.1。Apache-2.0。唔使上網。唔會畀你預載嘅模型。",
+  "wquguru/shisei": "人偶姿勢參考庫，用嚟喺你已有嘅生圖工具對位。280 個姿勢、五個角度，圖 CC0，程式 Apache-2.0。有成人向系列，預設模糊。v0.4.1。唔係生圖模型。唔會畀你新模型。",
+  "FengZhenfei/carrel": "自託管知識庫，用嚟喺你已有嘅 agent 查文件同圖片。答案由 agent 寫。要 Python 3.12 同 Docker，模型要你自己接。附搜尋 skill。v0.4.0。MIT。唔會畀你新模型。",
+  "okf-memory/okf-agent-memory": "Go 寫嘅記憶庫，用嚟喺你已有嘅 coding agent 記住專案決定。資料留喺 git，唔使外部資料庫。附 MCP。v0.7.2。MIT。唔包含模型。唔會畀你新模型。",
+  "ace-step/ACE-Step-1.5": "本地音樂模型 1.5，用嚟喺你部機由文字同歌詞出音樂。同舊 ACE-Step 係另一個倉庫。權重要另外下載。6GB 顯存可試 2B。v0.1.8。MIT。歌詞有五十幾種語言，唔係粵語專用。唔會畀你免下載嘅模型。",
+  "QwenLM/Qwen3-TTS": "語音系列，用嚟喺本機做聲線設計同 3 秒克隆。有 0.6B 同 1.7B，權重要另外下載。十種語言有中文同英語，聲線有北京話同四川話，唔係粵語。Apache-2.0。唔會畀你免下載嘅模型。"
 }
