@@ -956,5 +956,9 @@
   "denizsafak/abogen": "有聲書工具，用嚟喺本機將 EPUB、PDF 同文字讀出聲，並出對齊字幕。用現成嘅 Kokoro-82M。中文係普通話，要另外裝 misaki。Mac 要 espeak-ng。Windows 嘅 AMD GPU 未支援。MIT。唔係粵語。唔會畀你新模型。",
   "cathrynlavery/diagram-design": "Agent skill，用嚟喺你已有嘅 coding agent 畫 45 種圖，輸出一個 HTML 加 SVG 檔。支援 Claude Code、Codex、Cursor 等。唔出 Mermaid。MIT。唔會畀你繪圖模型。",
   "dograh-hq/dograh": "語音 agent 平台，用嚟喺你部機用 Docker 自托管打電話同對話流程。預設有佢哋嘅 LLM、TTS、STT，亦可以換你自己嘅 key。電話要接 Twilio 呢類供應商。dograh-v1.51.0。BSD-2-Clause。唔會畀你新語音模型。",
-  "buxuku/SmartSub": "桌面字幕工具，用嚟喺本機轉寫、翻譯、配音同燒字幕。轉寫可以用 Whisper 或 FunASR，檔案唔使上傳。SenseVoice 引擎有粵語選項，唔係成個程式都係粵語。配音用現成嘅模型。v3.12.1。MIT。唔會畀你新模型。"
+  "buxuku/SmartSub": "桌面字幕工具，用嚟喺本機轉寫、翻譯、配音同燒字幕。轉寫可以用 Whisper 或 FunASR，檔案唔使上傳。SenseVoice 引擎有粵語選項，唔係成個程式都係粵語。配音用現成嘅模型。v3.12.1。MIT。唔會畀你新模型。",
+  "blader/humanizer": "Agent skill，用嚟喺你已有嘅 coding agent 改 AI 腔，內容保持不變。基於維基百科嘅 AI 寫作特徵。README 寫偵測器仍然會標大部分輸出。v3.1.0。MIT。唔係過檢測工具，亦唔會畀你模型。",
+  "ayghri/i-have-adhd": "Agent skill，用嚟喺你已有嘅 coding agent 先講答案，步驟編號，少埋收尾客套。README 寫唔使 ADHD 診斷。v0.4.1。MIT。唔係醫療工具，亦唔會畀你模型。",
+  "liuzhao1225/YouDub-webui": "影片本地化桌面程式，用嚟喺本機識別、翻譯同逐句克隆原聲，再出字幕同配音片。語言目錄有英、中、日。用現成嘅模型，要另外安裝。v0.0.12。Apache-2.0。唔係粵語。唔會畀你新模型。",
+  "remsky/Kokoro-FastAPI": "Kokoro-82M 嘅 API 包裝，用嚟喺 Docker 開一個相容 OpenAI 嘅文字轉語音接口。語言有英、西、法、印地、意、日、葡同普通話。NVIDIA 有映像，AMD 係實驗。Apple Silicon 要直接跑，唔係映像。v0.9.2。Apache-2.0。唔係粵語。唔會畀你新模型。"
 }
