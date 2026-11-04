@@ -945,5 +945,10 @@
   "jaywalnut310/vits": "VITS 論文嘅官方程式，用嚟由文字端到端生成語音。論文評測用 LJ Speech 單講者英文。另外有 VCTK 多講者訓練路徑。預訓練權重喺 Google Drive。最後推送喺 2023 年 12 月。MIT。唔係現成產品，亦唔係粵語。唔會畀你免下載嘅模型。",
   "addyosmani/agent-skills": "25 個工程 skill，用嚟喺你已有嘅 coding agent 跟規格、計劃、寫碼、測試同發佈。npx 可裝入 Claude Code、Cursor、Codex 等。只裝一個 skill 會缺共用 checklist。0.6.15。MIT。唔係模型，亦唔會畀你新 agent。",
   "Leonxlnx/taste-skill": "Agent skill，用嚟喺你已有嘅 coding agent 做網站同 app 畫面，而唔係通用落地頁。要 Node 22 同 Chrome、Edge 或 Chromium。搵圖要上網，圖來自公有領域或 CC。一次 30 至 45 分鐘。v2.1.5。MIT。唔使 API key。唔會畀你模型。",
-  "myshell-ai/MeloTTS": "多語文字轉語音庫，用嚟喺本機讀英文、西班牙文、法文、中文、日文同韓文。中文講者可以中英夾雜。README 寫 CPU 都夠即時。權重喺 Hugging Face。有網頁同 CLI。最後推送喺 2024 年 12 月。MIT。唔係粵語。唔會畀你免下載嘅模型。"
+  "myshell-ai/MeloTTS": "多語文字轉語音庫，用嚟喺本機讀英文、西班牙文、法文、中文、日文同韓文。中文講者可以中英夾雜。README 寫 CPU 都夠即時。權重喺 Hugging Face。有網頁同 CLI。最後推送喺 2024 年 12 月。MIT。唔係粵語。唔會畀你免下載嘅模型。",
+  "JuneYaooo/rea-video": "Agent skill，用嚟喺 Claude Code 或 Codex 逐鏡拆一條片，再寫復刻方案。要 ffmpeg 同 Python 3.10。想分得準同反推提示詞，要自己帶一個識睇片嘅模型同 API key。唔配都行。Apache-2.0。唔會畀你模型。",
+  "nexu-io/open-design": "本機設計工作台，用嚟喺你部機同已有嘅 AI agent 一齊做原型、網頁、簡報同片。有 macOS 同 Windows 安裝包，Linux 要自己編譯。模型用你自己嘅 API key。安全遙測開住。v0.27.0。Apache-2.0。唔會畀你模型。",
+  "pbakaus/impeccable": "設計詞彙 skill，用嚟喺你已有嘅 coding agent 用指令改畫面同捉 AI 味。CLI 唔使 agent 都可以掃檔。掃網頁要 Chrome 或 Edge。cli-v4.8.0。Apache-2.0。出圖先至可以先生圖再寫碼。唔會畀你模型。",
+  "espeak-ng/espeak-ng": "細小嘅文字轉語音，用嚟喺 Linux、Windows、Android 讀一百幾個語言同口音，包括粵語。用共振峰合成，聲線夾喺程式，唔似錄音咁自然。最新發行版 1.52.0。GPL-3.0。唔使下載大模型，亦唔會畀你神經網絡聲線。",
+  "argmaxinc/argmax-oss-swift": "本機 Swift SDK，用嚟喺 macOS 14 跑現成嘅 Whisper、Pyannote 同 Qwen-TTS。要 Xcode 16。Android 同即時分講者喺另一個 Pro SDK。v1.1.1。MIT。權重要另外下載。唔會畀你新模型。"
 }
