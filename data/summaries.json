@@ -942,5 +942,8 @@
   "voicepaw/so-vits-svc-fork": "唱歌變聲分叉，用嚟喺本機即時轉音色。模型跟 so-vits-svc 4.0，4.1 唔支援。安裝會自動下載預訓練權重。最新 tag v4.2.30。授權檔以 MIT 開頭，後面夾住 Apache-2.0。README 仍然寫已經停止維護。唔係文字轉語音。唔會畀你免下載嘅模型。",
   "netease-youdao/EmotiVoice": "多音色文字轉語音，用嚟用一句情緒提示讀英文同中文。README 寫超過 2000 個聲。權重喺 ModelScope 另外下載。Docker 要 NVIDIA GPU。日文同韓文仲未做。Apache-2.0。唔係粵語。唔會畀你免下載嘅模型。",
   "Neywa-Labs/mlx-audio": "Apple Silicon 上嘅語音工具箱，用嚟喺本機跑現成嘅文字轉語音、語音轉文字同語音對語音。要 M 系 Mac。模型例如 Kokoro、Qwen3-TTS、Whisper，權重要另外下載。有啲模型有中文，唔係粵語專用。v0.6.4。MIT。唔會畀你一個新模型。",
-  "jaywalnut310/vits": "VITS 論文嘅官方程式，用嚟由文字端到端生成語音。論文評測用 LJ Speech 單講者英文。另外有 VCTK 多講者訓練路徑。預訓練權重喺 Google Drive。最後推送喺 2023 年 12 月。MIT。唔係現成產品，亦唔係粵語。唔會畀你免下載嘅模型。"
+  "jaywalnut310/vits": "VITS 論文嘅官方程式，用嚟由文字端到端生成語音。論文評測用 LJ Speech 單講者英文。另外有 VCTK 多講者訓練路徑。預訓練權重喺 Google Drive。最後推送喺 2023 年 12 月。MIT。唔係現成產品，亦唔係粵語。唔會畀你免下載嘅模型。",
+  "addyosmani/agent-skills": "25 個工程 skill，用嚟喺你已有嘅 coding agent 跟規格、計劃、寫碼、測試同發佈。npx 可裝入 Claude Code、Cursor、Codex 等。只裝一個 skill 會缺共用 checklist。0.6.15。MIT。唔係模型，亦唔會畀你新 agent。",
+  "Leonxlnx/taste-skill": "Agent skill，用嚟喺你已有嘅 coding agent 做網站同 app 畫面，而唔係通用落地頁。要 Node 22 同 Chrome、Edge 或 Chromium。搵圖要上網，圖來自公有領域或 CC。一次 30 至 45 分鐘。v2.1.5。MIT。唔使 API key。唔會畀你模型。",
+  "myshell-ai/MeloTTS": "多語文字轉語音庫，用嚟喺本機讀英文、西班牙文、法文、中文、日文同韓文。中文講者可以中英夾雜。README 寫 CPU 都夠即時。權重喺 Hugging Face。有網頁同 CLI。最後推送喺 2024 年 12 月。MIT。唔係粵語。唔會畀你免下載嘅模型。"
 }
