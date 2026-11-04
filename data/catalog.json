@@ -26614,6 +26614,32 @@
       "paper_title": "",
       "paper_url": "",
       "added_at": "2026-11-04T14:37:23+08:00"
+    },
+    {
+      "id": "github:lightricks/ltx-2",
+      "type": "github",
+      "category": "video",
+      "name": "LTX-2",
+      "full_name": "Lightricks/LTX-2",
+      "url": "https://github.com/Lightricks/LTX-2",
+      "homepage": "https://ltx.io",
+      "description": "Official Python inference and LoRA trainer package for the LTX-2 audio–video generative model.",
+      "summary": "官方 LTX-2.5 套件入面嘅 AlphaGen pipeline，用嚟喺一條參考片同 IC-LoRA 做單段影片生成。22B 權重要另外下載。年收入一千萬美元或以上要另買商業授權。授權係 LTX-2.x Community License。唔係 OSI 開源。唔會畀你免下載嘅模型。",
+      "summary_en": "The AlphaGen pipeline inside the official LTX-2.5 package. It generates one stage from a reference video and an IC-LoRA. The 22B weights download separately. A company with annual revenue of 10 million US dollars or more needs a separate commercial license. The license is the LTX-2.x Community License, which is not an OSI open-source license. This does not give you a model without a download.",
+      "summary_locked": true,
+      "stars": 10072,
+      "language": "Python",
+      "license": "LTX-2.x Community",
+      "topics": [
+        "generative-ai",
+        "ltx",
+        "ltx-2"
+      ],
+      "archived": false,
+      "pushed_at": "2026-10-19",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-11-04T15:14:34+08:00"
     }
   ],
   "papers": [
@@ -26689,11 +26715,7 @@
     }
   ],
   "last_new_ids": [
-    "github:notinferred/keypaste",
-    "github:sodiumsun/agenttrail",
-    "github:paritok-official/paritok-4b-v1",
-    "github:mozilla/tts",
-    "github:espnet/espnet"
+    "github:lightricks/ltx-2"
   ],
   "rate_limit": {
     "used": 4000,
