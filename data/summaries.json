@@ -979,5 +979,10 @@
   "Yeachan-Heo/oh-my-claudecode": "Claude Code 嘅多代理編排插件，用嚟喺你已有嘅工作階段開團隊同技能。要你自己嘅登入或 API key。團隊 CLI 可以開 tmux worker。v5.7.30。MIT。唔會畀你模型。",
   "KoljaB/RealtimeTTS": "即時 TTS 程式庫，用嚟喺你部機接現成引擎。推薦 Qwen，第一次會下載模型。亦有系統聲同雲端引擎，雲端要你自己嘅 key。v0.8.10。MIT。唔係新模型，亦唔會畀你權重。",
   "0xShug0/audio.cpp": "純 C++ 音頻推理引擎，用嚟喺本機跑現成嘅模型，唔使 Python。README 寫 143 個模型家族。權重另下載，授權跟原模型，有啲唔畀商用。支援 NVIDIA、AMD、Apple 同 CPU。v0.9.4。程式係 Apache-2.0。唔會畀你模型。",
-  "ChatCut-Inc/agent-plugin": "剪片插件，用嚟喺你已有嘅 coding agent 改你自己嘅片段、加字幕同動態圖。要 ChatCut 帳戶。Desktop 係 macOS 13+、Windows 10+，Linux 裝唔到。重做影片要批核 credits。Apache-2.0。冇 release。唔包含剪片程式，亦唔會畀你模型。"
+  "ChatCut-Inc/agent-plugin": "剪片插件，用嚟喺你已有嘅 coding agent 改你自己嘅片段、加字幕同動態圖。要 ChatCut 帳戶。Desktop 係 macOS 13+、Windows 10+，Linux 裝唔到。重做影片要批核 credits。Apache-2.0。冇 release。唔包含剪片程式，亦唔會畀你模型。",
+  "CuboiLeo/SuperMimic-Reproduced": "獨立復現嘅世界模型，用嚟喺仿真跟 G1 動作。唔係官方，亦唔係真機。LAFAN1 係 CC BY-NC-ND，資料集冇附帶。檢查點係 e8-boneseed-100k。3.12、torch 2.14.1，喺 RTX 5090 試過。翻跟頭全部失敗。MIT。唔會畀你資料集。",
+  "JCodesMore/ai-website-cloner-template": "一個網站重做 skill，用嚟喺你已有嘅 coding agent 將網站做成 Next.js。要 Node.js 24+。支援 Claude Code、Codex、Cursor、OpenCode。v0.6.1。MIT。README 寫明唔可以用嚟釣魚或冒充。唔會畀你模型。",
+  "CopilotKit/CopilotKit": "Agent 前端套件，用嚟喺你已有嘅 agent 加聊天同生成介面。支援 React、Angular、Vue、React Native、Slack、Teams。v1.84.1。MIT。Intelligence 係另外產品。唔包含 agent，亦唔會畀你模型。",
+  "TensorSpeech/TensorFlowTTS": "TensorFlow 2 嘅 TTS 程式，用嚟喺本機讀中文、韓文、英文、法文同德文。建議 TensorFlow 2.6.0。最後 release 係 2021 v1.8，最後 push 係 2024-07。權重喺 Hugging Face。Apache-2.0。唔係廣東話，唔會畀你免下載嘅模型。",
+  "IAHispano/Applio": "語音轉換工具，用嚟喺本機改你有權用嘅聲。程式同 repo 入面嘅權重係 MIT，官方未改版仲有使用條款。3.7.1。README 話之後主要做安全修補。Gradio 介面。唔係新嘅基礎模型，亦唔會畀你新模型。"
 }
