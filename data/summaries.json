@@ -984,5 +984,9 @@
   "JCodesMore/ai-website-cloner-template": "一個網站重做 skill，用嚟喺你已有嘅 coding agent 將網站做成 Next.js。要 Node.js 24+。支援 Claude Code、Codex、Cursor、OpenCode。v0.6.1。MIT。README 寫明唔可以用嚟釣魚或冒充。唔會畀你模型。",
   "CopilotKit/CopilotKit": "Agent 前端套件，用嚟喺你已有嘅 agent 加聊天同生成介面。支援 React、Angular、Vue、React Native、Slack、Teams。v1.84.1。MIT。Intelligence 係另外產品。唔包含 agent，亦唔會畀你模型。",
   "TensorSpeech/TensorFlowTTS": "TensorFlow 2 嘅 TTS 程式，用嚟喺本機讀中文、韓文、英文、法文同德文。建議 TensorFlow 2.6.0。最後 release 係 2021 v1.8，最後 push 係 2024-07。權重喺 Hugging Face。Apache-2.0。唔係廣東話，唔會畀你免下載嘅模型。",
-  "IAHispano/Applio": "語音轉換工具，用嚟喺本機改你有權用嘅聲。程式同 repo 入面嘅權重係 MIT，官方未改版仲有使用條款。3.7.1。README 話之後主要做安全修補。Gradio 介面。唔係新嘅基礎模型，亦唔會畀你新模型。"
+  "IAHispano/Applio": "語音轉換工具，用嚟喺本機改你有權用嘅聲。程式同 repo 入面嘅權重係 MIT，官方未改版仲有使用條款。3.7.1。README 話之後主要做安全修補。Gradio 介面。唔係新嘅基礎模型，亦唔會畀你新模型。",
+  "ItzCrazyKns/Vane": "自託管嘅 AI 答題引擎，用嚟喺你部機搜尋並附出處。Docker 會包 SearxNG。模型要用 Ollama 或你自己嘅雲端 key。最新 release v1.12.2，最後 push 係 2026-09。MIT。唔會畀你模型。",
+  "can1357/oh-my-pi": "終端 coding agent，用嚟喺你部機改程式。要你自己嘅模型供應商，README 寫 60 多個。推薦用 Bun。核心有 Rust。v18.16.0。MIT。唔包含模型，亦唔會畀你模型。",
+  "riffusion/riffusion-hobby": "即時音樂生成程式，用嚟喺本機由文字出聲。程式係 MIT，權重係 CreativeML OpenRAIL-M，唔係 OSI。Python 3.9 或 3.10。即時要好快嘅 GPU，例子係 3090 或 A10G。CPU 好慢。項目話不再維護。最後 release v0.3.0。唔會畀你免下載嘅模型。",
+  "HeartMuLa/heartlib": "音樂生成模型，用嚟喺本機按歌詞同標籤出歌。推薦 3B 同 HeartCodec，7B 未出。權重喺 Hugging Face。單卡要用 lazy load。話幾乎所有語言，冇逐隻列出，亦冇寫明廣東話。程式同權重都係 Apache-2.0。冇 release。唔會畀你免下載嘅模型。"
 }
