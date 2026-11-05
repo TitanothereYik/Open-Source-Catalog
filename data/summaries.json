@@ -1003,5 +1003,9 @@
   "AutoArk/GPA": "一個語音模型，用嚟做語音辨識同文字轉語音。簡介話可以變聲，但 v1.5 嘅變聲路徑仍未做好。約 0.6B，中文同英文，唔係粵語。權重要另喺 Hugging Face 下載，程式同權重都係 Apache-2.0。冇 release，最後 push 係 2026-05。唔會畀你免下載嘅權重。",
   "mukul975/Anthropic-Cybersecurity-Skills": "一套 skill，用嚟喺你已有嘅 coding agent 做安全工作。唔係 Anthropic 官方。簡介寫 817 個 skill，徽章寫 818。要你自己嘅 agent。v1.3.0，最後 push 係 2026-08。Apache-2.0。README 話只可以測你有權嘅系統。唔會畀你模型。",
   "enhuiz/vall-e": "非官方 PyTorch 重現，用嚟喺研究環境跟論文砌 VALL-E。你要自己訓練，預訓練權重未有。只試過 Python 3.10.7。解碼用 EnCodec，佢係 CC-BY-NC，唔係 OSI。冇 release，最後 push 係 2023-05。程式 MIT。唔會畀你練好嘅模型。",
-  "KevinWang676/Bark-Voice-Cloning": "現成語音克隆介面，用嚟喺本機跑 Bark 同其他已有模型。唔係新模型。Bark 中文較弱，中文克隆另走 Sambert，唔係粵語。權重第一次先下載，各模型授權唔同。Python 3.10 或以上。冇 release，最後 push 係 2026-05。介面 MIT。唔會畀你免下載嘅權重。"
+  "KevinWang676/Bark-Voice-Cloning": "現成語音克隆介面，用嚟喺本機跑 Bark 同其他已有模型。唔係新模型。Bark 中文較弱，中文克隆另走 Sambert，唔係粵語。權重第一次先下載，各模型授權唔同。Python 3.10 或以上。冇 release，最後 push 係 2026-05。介面 MIT。唔會畀你免下載嘅權重。",
+  "iOfficeAI/AionUi": "桌面程式，用嚟喺你部機同時用內置 agent 同你已有嘅 CLI agent。模型要你自己嘅 API key，或者接 Ollama。macOS、Windows 同 Linux。最新 release v2.2.2，其後 push 到 2026-11。Apache-2.0。唔會畀你模型。",
+  "vxcontrol/pentagi": "自託管多智能體，用嚟喺你有權測試嘅系統做滲透測試。模型要你自己揀，可以係雲端或者 Ollama。工作喺隔離嘅 Docker 入面。v2.2.0，最後 push 係 2026-10。MIT。唔會畀你模型。",
+  "readbeyond/aeneas": "強制對齊工具，用嚟喺錄音同文字之間對時間，唔係語音合成模型。內部預設用 eSpeak，要另裝 FFmpeg。README 確認 38 種語言，名單冇中文同粵語。最新 release 係 2017 年嘅 v1.7.3，最後 push 係 2026-07。AGPL-3.0。唔會畀你語音模型。",
+  "PlayVoice/whisper-vits-svc": "唱歌變聲引擎，用嚟喺本機把歌聲轉做另一個音色。唔係文字轉語音，亦唔支援即時。README 話已經停止升級。權重要另下載。訓練至少 6GB 顯存。最新 release 係 HiFTNet，最後 push 係 2024-04。程式 MIT。唔會畀你免下載嘅權重。"
 }
