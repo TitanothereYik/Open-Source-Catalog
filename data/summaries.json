@@ -996,5 +996,9 @@
   "VoltAgent/awesome-agent-skills": "一個 skill 目錄，用嚟喺你已有嘅 coding agent 搵技能連結。GitHub 簡介寫 1000+，徽章寫 1497+，兩個數字唔一致。清單本身係 MIT，每項技能跟原作者授權，有啲上游未必開源。冇 release。唔會畀你模型。",
   "esengine/DeepSeek-Reasonix": "開源編程助手，用嚟喺你部機讀寫專案同跑指令。模型要你自己揀同付費，有 DeepSeek 嘅預設，但唔係 DeepSeek 官方產品。2.x 最新 release 係 v2.57.0，1.x 係另一條維護線。MIT。唔會畀你模型。",
   "lucidrains/musiclm-pytorch": "非官方 PyTorch 重現，用嚟喺研究環境跟論文砌 MusicLM。你要自己訓練，權重同 Google 模型都唔喺度，仲要另裝 audiolm-pytorch。仍有未完成項目。最後 release 0.2.8，push 停喺 2023-09。MIT。唔會畀你練好嘅模型。",
-  "elevenlabs/elevenlabs-python": "官方 Python SDK，用嚟喺你嘅程式呼叫 ElevenLabs 雲端語音。服務本身唔開源，要你自己嘅 API key，模型留喺佢哋部機。Python 3.8 或以上。最新 release 係 v2.76.0。SDK 係 MIT。唔會畀你本機模型。"
+  "elevenlabs/elevenlabs-python": "官方 Python SDK，用嚟喺你嘅程式呼叫 ElevenLabs 雲端語音。服務本身唔開源，要你自己嘅 API key，模型留喺佢哋部機。Python 3.8 或以上。最新 release 係 v2.76.0。SDK 係 MIT。唔會畀你本機模型。",
+  "andrew-babo/muse4ai": "本機 Windows 橋，用嚟喺你部機把已登入嘅 Muse 交畀 agent。非官方，同 Meta 無關，自動化未必符合條款。只打包 Windows，macOS 同 Linux 未測。Node.js 22+。徽章 v2.0.0-beta.32，冇 release。MIT。唔會畀你 Muse 或模型。",
+  "Donchitos/Claude-Code-Game-Studios": "一套 skill，用嚟喺你已有嘅 Claude Code 把對話變成遊戲工作室。徽章寫 49 個 agent、74 個 skill，簡介寫 72 個 skill。要你自己嘅 Claude Code、Python 3 同 Bash。v1.2.0。MIT。唔包含遊戲，亦唔會畀你模型。",
+  "pnnbao97/VieNeu-TTS": "越南語同英文嘅本機 TTS，用嚟喺你部機即時克隆聲音。預設係 v3 Turbo，48 kHz；完整 v3 仍未出。權重喺 Hugging Face，程式同權重都係 Apache-2.0。唔係粵語。最新 release 係 app-v0.18.22。macOS 安裝檔未有。唔會畀你免下載嘅權重。",
+  "AutoArk/GPA": "一個語音模型，用嚟做語音辨識同文字轉語音。簡介話可以變聲，但 v1.5 嘅變聲路徑仍未做好。約 0.6B，中文同英文，唔係粵語。權重要另喺 Hugging Face 下載，程式同權重都係 Apache-2.0。冇 release，最後 push 係 2026-05。唔會畀你免下載嘅權重。"
 }
