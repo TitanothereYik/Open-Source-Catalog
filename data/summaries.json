@@ -967,5 +967,9 @@
   "K-Dense-AI/scientific-agent-skills": "一組科研 skill，用嚟喺你已有嘅 coding agent 查資料庫同寫分析。README 寫 177 個，涵蓋生物、化學、醫學同數據。支援 Cursor、Claude Code、Codex 等。有啲資料庫要自己申請。v2.72.0。MIT。唔會幫你做實驗，亦唔會畀你模型。",
   "VoltAgent/awesome-openclaw-skills": "OpenClaw 嘅 skill 清單，用嚟喺你部機揀 ClawHub 上面嘅 skill。README 標題寫 5300+，徽章寫 5200，簡介寫 5400+，數字唔一致。清單寫明未逐個審核。MIT。呢個 repo 唔包含 skill 程式，亦唔會幫你跑 OpenClaw，唔會畀你模型。",
   "MoonInTheRiver/DiffSinger": "官方 PyTorch 唱歌同 TTS 程式，用嚟喺本機由歌詞或文字出聲。TTS 用 LJSpeech 英文，唱歌用 PopCS 同 OpenCpop。Python 3.8、torch 1.9.0。權重喺 2022 年 release。MIT。PopCS 冇寫語言。唔係廣東話，唔會畀你免下載嘅模型。",
-  "gradio-app/fastrtc": "Python 即時通訊庫，用嚟喺 WebRTC 或 WebSocket 串流你自己嘅音頻同視像函數。可選 VAD 同 TTS extra。語音例子要你自己嘅 API key。電話功能要 Hugging Face token。0.0.34。MIT。唔包含語音模型，亦唔會畀你模型。"
+  "gradio-app/fastrtc": "Python 即時通訊庫，用嚟喺 WebRTC 或 WebSocket 串流你自己嘅音頻同視像函數。可選 VAD 同 TTS extra。語音例子要你自己嘅 API key。電話功能要 Hugging Face token。0.0.34。MIT。唔包含語音模型，亦唔會畀你模型。",
+  "alibaba/open-code-review": "程式碼審查 CLI，用嚟喺你個 git diff 出逐行意見。要 Git 2.41 或以上，同你自己嘅模型端點同 API key。代理模式可以用 agent 自己嘅模型。v1.13.5。Apache-2.0。README 話精度高過一般 agent，但召回率較低。唔會畀你模型。",
+  "sickn33/agentic-awesome-skills": "一組可安裝嘅 skill，用嚟喺你已有嘅 coding agent 揀同預覽計劃。README 寫 2923+，GitHub 簡介寫 2884+，數字唔一致。支援 Claude Code、Codex、Cursor。v20.5.0。MIT。AAS Core 唔會幫你排名。唔會畀你模型。",
+  "OpenMOSS/MOSS-TTS-Nano": "0.1B 多語言 TTS，用嚟喺 CPU 做即時語音同參考聲克隆，48 kHz 立體聲。README 寫 20 種語言，表列 19 個，有中文同英文，冇廣東話。權重喺 Hugging Face。模型卡同 LICENSE 係 Apache-2.0。README 授權段仲寫未發布。唔會畀你免下載嘅模型。",
+  "collabora/WhisperLive": "近乎即時嘅 Whisper 轉錄伺服器，用嚟喺你部機跑現成模型。支援 faster-whisper、TensorRT 同 OpenVINO。模型要另外下載。v0.10.0。MIT。唔係新模型，亦唔會畀你權重。"
 }
