@@ -963,5 +963,9 @@
   "remsky/Kokoro-FastAPI": "Kokoro-82M 嘅 API 包裝，用嚟喺 Docker 開一個相容 OpenAI 嘅文字轉語音接口。語言有英、西、法、印地、意、日、葡同普通話。NVIDIA 有映像，AMD 係實驗。Apple Silicon 要直接跑，唔係映像。v0.9.2。Apache-2.0。唔係粵語。唔會畀你新模型。",
   "Generated-Computers/Locals": "Mac 本機推理伺服器，用嚟喺 Apple Silicon 同時跑你已有嘅 coding agent。預設 Qwen3.5-4B，約 2.8GB，一次只跑一個模型。單一請求同 mlx-lm 差唔多。3 倍只係多請求先至有。0.2.2。Apache-2.0。唔會畀你新 agent。",
   "coreyhaines31/marketingskills": "一組 marketing skill，用嚟喺你已有嘅 coding agent 寫轉換、文案、SEO 同分析。支援 Claude Code、Codex、Cursor。v2.14.0。MIT。唔會自己投放廣告，亦唔會畀你模型。",
-  "ysharma3501/LuxTTS": "語音克隆模型，用嚟喺本機用一段參考聲讀文字。README 寫單 GPU 可以去到約 150 倍即時，1GB 顯示記憶體都裝到。權重喺 Hugging Face。CPU 同 Mac 都有路徑。Apache-2.0。README 冇列語言。唔會畀你免下載嘅模型。"
+  "ysharma3501/LuxTTS": "語音克隆模型，用嚟喺本機用一段參考聲讀文字。README 寫單 GPU 可以去到約 150 倍即時，1GB 顯示記憶體都裝到。權重喺 Hugging Face。CPU 同 Mac 都有路徑。Apache-2.0。README 冇列語言。唔會畀你免下載嘅模型。",
+  "K-Dense-AI/scientific-agent-skills": "一組科研 skill，用嚟喺你已有嘅 coding agent 查資料庫同寫分析。README 寫 177 個，涵蓋生物、化學、醫學同數據。支援 Cursor、Claude Code、Codex 等。有啲資料庫要自己申請。v2.72.0。MIT。唔會幫你做實驗，亦唔會畀你模型。",
+  "VoltAgent/awesome-openclaw-skills": "OpenClaw 嘅 skill 清單，用嚟喺你部機揀 ClawHub 上面嘅 skill。README 標題寫 5300+，徽章寫 5200，簡介寫 5400+，數字唔一致。清單寫明未逐個審核。MIT。呢個 repo 唔包含 skill 程式，亦唔會幫你跑 OpenClaw，唔會畀你模型。",
+  "MoonInTheRiver/DiffSinger": "官方 PyTorch 唱歌同 TTS 程式，用嚟喺本機由歌詞或文字出聲。TTS 用 LJSpeech 英文，唱歌用 PopCS 同 OpenCpop。Python 3.8、torch 1.9.0。權重喺 2022 年 release。MIT。PopCS 冇寫語言。唔係廣東話，唔會畀你免下載嘅模型。",
+  "gradio-app/fastrtc": "Python 即時通訊庫，用嚟喺 WebRTC 或 WebSocket 串流你自己嘅音頻同視像函數。可選 VAD 同 TTS extra。語音例子要你自己嘅 API key。電話功能要 Hugging Face token。0.0.34。MIT。唔包含語音模型，亦唔會畀你模型。"
 }
