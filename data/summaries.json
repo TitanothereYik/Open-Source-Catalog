@@ -1024,5 +1024,9 @@
   "ComposioHQ/composio": "SDK，用嚟畀你已有嘅 agent 接應用工具。README 話 1000+ 工具，係宣稱。要你自己嘅 API key，工具喺佢哋雲端。Node 22 或以上，Python 3.11 或以上。最新 release 係 CLI beta 0.6.1-beta.534。MIT。唔會畀你模型。",
   "jackwener/OpenCLI": "命令列，用嚟喺你已登入嘅 Chrome 畀 agent 操作網站。要你自己嘅帳戶，網站條款仍然適用。附帶 skill，但產品係 CLI。npm 要 Node 20.18 或以上。最新 release v2.0.2（2026-10），其後有 push。Apache-2.0。唔會畀你模型。",
   "nateshmbhat/pyttsx3": "離線 Python 庫，用嚟喺你部機叫已有嘅系統語音。Windows 用 SAPI5，macOS 用系統聲，Linux 要 eSpeak。AVSpeech 仍然係實驗。冇廣東話保證。最新 release v2.99（2025-07），最後 push 係 2026-10。MPL-2.0。唔會畀你模型。",
-  "digitalsamba/claude-code-video-toolkit": "Claude Code 嘅影片技能包，用嚟喺你部機寫稿、配音同出片。要你已有嘅 Claude Code，同 Node 22 或以上。聲線同影片模型要你自己部署，README 嘅價錢係宣稱。最新 release v0.25.0（2026-11）。MIT。唔會畀你模型。"
+  "digitalsamba/claude-code-video-toolkit": "Claude Code 嘅影片技能包，用嚟喺你部機寫稿、配音同出片。要你已有嘅 Claude Code，同 Node 22 或以上。聲線同影片模型要你自己部署，README 嘅價錢係宣稱。最新 release v0.25.0（2026-11）。MIT。唔會畀你模型。",
+  "TencentCloud/TencentDB-Agent-Memory": "團隊記憶伺服器，用嚟喺你部機把對話、文件同程式變成可重用記憶。要你自己嘅 LLM，Node 要 22.16 或以上。會抽出 skill，但產品係記憶服務。MongoDB 後端係實驗。最新 release v2.0.3（2026-10），其後有 push。MIT。唔會畀你模型。",
+  "Infisical/infisical": "秘密同憑證平台，用嚟喺你部機管匙、證書同 agent 權限，亦可以用佢哋雲端。ee 目錄嘅企業功能要另外授權。最新 release v0.167.6（2026-11），其後有 push。主體係 MIT。唔係 agent，唔會畀你模型。",
+  "ddalcu/mlx-serve": "本機模型伺服器，用嚟喺 Apple Silicon 跑你下載嘅模型，亦有 Linux NVIDIA 版。Mac app 要 macOS 26.2。聊天、圖、片、音樂同語音都係功能。最新 release v26.11.2。MIT。唔會畀你模型。",
+  "jik876/hifi-gan": "聲碼器，用嚟喺你嘅電腦把 mel 頻譜變成波形，唔係完整 TTS。預訓練權重係英文 LJSpeech、VCTK 同通用模型，要另外下載，冇廣東話。冇 GitHub release，最後 push 係 2024-07。程式 MIT。唔會畀你現成聲。"
 }
