@@ -88,5 +88,7 @@
   "FurkanGozukara/Stable-Diffusion",
   "WeThinkIn/AIGC-Interview-Book",
   "MubertAI/Mubert-Text-to-Music",
-  "haoheliu/AudioLDM2"
+  "haoheliu/AudioLDM2",
+  "shinyobjectz/raea",
+  "6drf21e/ChatTTS_colab"
 ]

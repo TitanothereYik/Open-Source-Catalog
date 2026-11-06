@@ -1016,5 +1016,8 @@
   "riffusion/riffusion-app-hobby": "即時音樂網頁，用嚟喺本機接一個另裝嘅推理伺服器。README 話 GPU 要夠快先至即時，而且已經停止維護。Node.js 18 或以上。冇 release，最後 push 係 2024-07。介面 MIT。唔會畀你模型。",
   "googleworkspace/cli": "Workspace 命令列，用嚟喺你部機叫 Drive、Gmail 同日曆。要你自己嘅 Google 帳戶。開頭寫 40+ skill，技能一節寫 100+。最新 release v0.22.5（2026-03），其後 push 到 2026-11。Apache-2.0。唔會畀你模型。",
   "decolua/9router": "本機路由，用嚟喺你部機把已有嘅 coding agent 接到其他模型供應商。README 話可以慳 token 同無限用，但係宣稱；各供應商有自己限額同條款。最新 GitHub release 係 v0.5.35，package.json 寫 0.5.112。MIT。唔會畀你模型。",
-  "pndurette/gTTS": "非官方客戶端，用嚟喺你嘅程式叫 Google Translate 出語音。唔係 Google Cloud TTS，亦唔係本機模型。同 Google 無關，上游可以無通知改。Python 3.7 或以上。最新 release 係 v2.5.4，最後 push 係 2026-04。MIT。唔會畀你模型。"
+  "pndurette/gTTS": "非官方客戶端，用嚟喺你嘅程式叫 Google Translate 出語音。唔係 Google Cloud TTS，亦唔係本機模型。同 Google 無關，上游可以無通知改。Python 3.7 或以上。最新 release 係 v2.5.4，最後 push 係 2026-04。MIT。唔會畀你模型。",
+  "trycua/cua": "電腦操作工具，用嚟喺你部機畀已有嘅 agent 用沙盒同桌面。SDK、Driver 同 Lume 係 MIT。Spaces 同 Driver Bench 係 FSL-1.1，唔係 OSI，兩年後先變 MIT，唔可以做競爭託管。唔會畀你通用模型。最新 release v0.12.1（2026-11）。",
+  "nanocoai/nanoclaw": "訊息助手，用嚟喺容器跑你已有嘅 agent，再接 Telegram 等頻道。預設 Anthropic 嘅 Claude，要你自己嘅帳戶。頻道用 skill 加，產品係助手。要 Docker，Node 22.23 或以上。最新 release v2026.10.1-rc.2。MIT。唔會畀你模型。",
+  "marytts/marytts": "Java 嘅文字轉語音，用嚟喺你部機開伺服器出聲。語言模組有英、德、法、意、俄等，冇廣東話。例子聲線係美式英文，其他聲線要另外下載。最新 release 係 v5.2.1（2022），主線係 5.3-SNAPSHOT，最後 push 係 2025-01。LGPL-3.0。唔係雲端，唔會畀你新模型。"
 }
