@@ -29475,6 +29475,35 @@
       "paper_title": "",
       "paper_url": "",
       "added_at": "2026-11-06T16:36:35+08:00"
+    },
+    {
+      "id": "github:patch-gg/trompe",
+      "type": "github",
+      "category": "vfx-cg-blender",
+      "name": "trompe",
+      "full_name": "patch-gg/trompe",
+      "url": "https://github.com/patch-gg/trompe",
+      "homepage": "https://patch.gg",
+      "description": "Texture a whole game level from a gray blockout with image models: plan cameras, paint, project, bake. Real shadows, glTF out.",
+      "summary": "瀏覽器工具，用嚟喺灰模關卡上面投影貼圖，再匯出 glTF。規劃同烘焙喺你部機嘅 GPU，圖像模型喺 fal，要你自己嘅 key。適合寫實建築，唔適合風格化，亦唔係第一身腳下地面。關卡要自備 UV。未有本機模型。冇 GitHub release。Apache-2.0。唔會畀你模型。",
+      "summary_en": "A browser tool that projects textures onto a gray level and exports glTF. Planning and baking run on your machine's GPU. The image models run on fal, and you need your own key. It suits realistic buildings, not a stylized look, and not the ground at a first-person player's feet. The level must already have UVs. There is no local model yet, and there is no GitHub release. Apache-2.0. This does not give you a model.",
+      "summary_locked": true,
+      "stars": 200,
+      "language": "TypeScript",
+      "license": "Apache-2.0",
+      "topics": [
+        "gamedev",
+        "generative-ai",
+        "procedural",
+        "texturing",
+        "threejs",
+        "webgl"
+      ],
+      "archived": false,
+      "pushed_at": "2026-11-02",
+      "paper_title": "",
+      "paper_url": "",
+      "added_at": "2026-11-07T14:35:08+08:00"
     }
   ],
   "papers": [
@@ -29550,10 +29579,7 @@
     }
   ],
   "last_new_ids": [
-    "github:tencentcloud/tencentdb-agent-memory",
-    "github:infisical/infisical",
-    "github:ddalcu/mlx-serve",
-    "github:jik876/hifi-gan"
+    "github:patch-gg/trompe"
   ],
   "rate_limit": {
     "used": 4000,
