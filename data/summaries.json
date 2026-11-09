@@ -1043,5 +1043,7 @@
   "qianshuixia/shrimpreel": "付費影片網站模板，用嚟喺 Cloudflare 賣一張相變影片。影片要你自己嘅 fal.ai 或其他供應商，要 Google 登入同付款商。本地可以用 mock。冇 GitHub release。MIT。唔會畀你影片模型。",
   "vladimirrott/mojo-dllm": "擴散語言模型本機推理，用嚟喺 Linux x86-64 跑 LLaDA 同 Dream。要 Mojo 1.1、AVX2 同大約 6GB 記憶體。GPU 只係一部 RTX 3050 筆電嘅測試。權重要你自己下載。最新 release v0.1.0，其後有push。Apache-2.0。唔會畀你權重。",
   "AhmadHassan-BTed/B": "桌面同伴，用嚟喺你自己部 Windows 睇你個畫面同傾計。Linux 同 macOS 只係實驗。語言模型要 Groq 或你自己嘅 llama.cpp。最後 push 2026-07-07。冇 GitHub release。Python 3.10+。MIT。唔會畀你模型。",
-  "OpenMontageInc/OpenMontage": "開源嘅 agent 影片製作系統，用多條製作流程同工具產出影片。你交一個製作目標，系統會調用唔同步驟去組織素材同成片，而唔係只提供一個剪接時間線。適合想由目標驅動成片，而唔係自己逐段拖時間線。"
+  "OpenMontageInc/OpenMontage": "開源嘅 agent 影片製作系統，用多條製作流程同工具產出影片。你交一個製作目標，系統會調用唔同步驟去組織素材同成片，而唔係只提供一個剪接時間線。適合想由目標驅動成片，而唔係自己逐段拖時間線。",
+  "phone-harness/mcp": "MCP 接頭，用嚟喺你已有嘅 agent 操控雲端 iPhone 或 Android 模擬器，亦可按文件自己架。雲端要另外付費。要登入。冇 GitHub release。MIT。唔會畀你手機或模型。",
+  "Rayhane-mamah/Tacotron-2": "非官方 TensorFlow 實作，用嚟喺你部機訓練 Tacotron-2。預處理只支援 LJSpeech 嘅一類英文數據。預訓練權重未放上來。最後 push 2023-07-06。冇 GitHub release。要 Python 3 同 TensorFlow。MIT。唔會畀你廣東話聲。"
 }
