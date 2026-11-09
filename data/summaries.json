@@ -1049,5 +1049,8 @@
   "JosssphZhou/poki": "本機 iPhone agent，用嚟喺 Mac 或 Windows 畀已有嘅 agent 操作你部 iPhone。要 iOS 18、USB、Apple 帳號同迴環代理。免費簽名 7 日要續。最新 release ios-prealpha-latest，其後有push。AGPL-3.0。唔會畀你模型。",
   "opensec-git/Pi-Bolt": "Pi coding agent 嘅原生編譯，用嚟喺 Linux、macOS、Windows 或 Android Termux 跑，唔使 Node。速度數字係對住 Pi 1.4.0 嘅測試。要你自己嘅模型。最新 release bolt-v1.1.7。MIT。唔會畀你模型。",
   "lifeiteng/vall-e": "非官方 PyTorch 實作，用嚟喺一張 GPU 訓練 VALL-E。例子有英文同普通話，冇寫廣東話。作者話唔會提供訓練好嘅模型。最後 push 2025-09-10。最新 release v1.0，其後有push。Apache-2.0。唔會畀你聲線。",
-  "DigitalPhonetics/IMS-Toucan": "多語言 TTS 工具，用嚟喺你部機訓練或推理。語言表有粵語，質素未核實。推理可以唔用 GPU。Python 3.10。預訓練模型會另外下載。最新 release v3.1.2，其後有push。Apache-2.0。唔會畀你每種語言嘅聲。"
+  "DigitalPhonetics/IMS-Toucan": "多語言 TTS 工具，用嚟喺你部機訓練或推理。語言表有粵語，質素未核實。推理可以唔用 GPU。Python 3.10。預訓練模型會另外下載。最新 release v3.1.2，其後有push。Apache-2.0。唔會畀你每種語言嘅聲。",
+  "wangzhishou/OneBox": "Android agent 工具箱，用嚟喺你部手機叫已有嘅模型驅動 app 入面嘅工具。雲端要你自己嘅 key。機內要下載 Gemma 3 1B 或 Qwen3 0.6B，README 話只得 Play 同 FOSS。最新 release 1.5.6。Apache-2.0。唔會畀你模型。",
+  "fatchord/WaveRNN": "PyTorch 聲碼器同 TTS，用嚟喺你部機讀英文。README 寫要 Python 3.6 或以上同帶 CUDA 嘅 PyTorch 1。訓練例子係 LJSpeech。最後 push 2022-07-02。冇 GitHub release。MIT。唔會畀你廣東話聲。",
+  "travisvn/openai-edge-tts": "本機 API，用嚟喺你部機把文字交畀 Microsoft Edge 嘅網上朗讀，介面模仿 OpenAI。要上網。預設聲係英文。唔係 OpenAI、Azure 或 ElevenLabs。最新 release v2.0.0，其後有push。GPL-3.0。唔會畀你自己嘅模型。"
 }
