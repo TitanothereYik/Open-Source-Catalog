@@ -1030,5 +1030,12 @@
   "ddalcu/mlx-serve": "本機模型伺服器，用嚟喺 Apple Silicon 跑你下載嘅模型，亦有 Linux NVIDIA 版。Mac app 要 macOS 26.2。聊天、圖、片、音樂同語音都係功能。最新 release v26.11.2。MIT。唔會畀你模型。",
   "jik876/hifi-gan": "聲碼器，用嚟喺你嘅電腦把 mel 頻譜變成波形，唔係完整 TTS。預訓練權重係英文 LJSpeech、VCTK 同通用模型，要另外下載，冇廣東話。冇 GitHub release，最後 push 係 2024-07。程式 MIT。唔會畀你現成聲。",
   "patch-gg/trompe": "瀏覽器工具，用嚟喺灰模關卡上面投影貼圖，再匯出 glTF。規劃同烘焙喺你部機嘅 GPU，圖像模型喺 fal，要你自己嘅 key。適合寫實建築，唔適合風格化，亦唔係第一身腳下地面。關卡要自備 UV。未有本機模型。冇 GitHub release。Apache-2.0。唔會畀你模型。",
-  "amap-cvlab/ABot-Recon": "串流三維重建，用嚟喺你嘅影片幀估點雲同相對姿態。只用最近 12 幀，唔靠長程記憶。要 Linux、Python 3.10 或以上同 CUDA 12.1。權重 CC BY-NC，唔可以商用，要另外下載。程式 Apache-2.0。冇 GitHub release。唔會畀你商用授權。"
+  "amap-cvlab/ABot-Recon": "串流三維重建，用嚟喺你嘅影片幀估點雲同相對姿態。只用最近 12 幀，唔靠長程記憶。要 Linux、Python 3.10 或以上同 CUDA 12.1。權重 CC BY-NC，唔可以商用，要另外下載。程式 Apache-2.0。冇 GitHub release。唔會畀你商用授權。",
+  "DIYgod/pinky": "手機閘道，用嚟喺你部機畀已有嘅 agent 操作 iPhone 或 Android，高風險步驟要你批准。pre-alpha。要你自己嘅手機同 agent。最新 release v2026.1109.17。Apache-2.0。唔會畀你模型。",
+  "sarpstar/cinecode": "影片 skill，用嚟叫 Claude Code 或 Cursor 喺你部機用程式砌片。要 Node 22、Python 3.9、ffmpeg 同 Chrome。Windows 全程出片未試過。外來配音要你自己嘅 key。冇 GitHub release。MIT。唔會畀你模型。",
+  "janestreet/agent_skills": "Jane Street 嘅 skill 包，而家只有 socratic-tutor，用嚟喺你部機叫已有嘅 agent 一問一答教學。要你自己嘅模型。冇 GitHub release。MIT。唔會畀你模型。",
+  "zeekk0/OpenAmika": "Live2D 同伴，用嚟喺 Windows 同你傾計同記住你。程式 MIT。聲線同 Live2D 係個人使用授權，唔係 OSI。要你自己嘅 OpenRouter key 或 Ollama。Linux 未測。Python 3.11。最新 release v1.0.0，其後有push。唔會畀你語言模型。",
+  "win4r/video-director": "Claude Code skill，用嚟喺你嘅電腦用程式砌短片再檢查。README 推薦 Opus 5.5，其他 agent 都可以跟。要 ffmpeg 同 Python。冇 GitHub release。MIT。唔會畀你模型。",
+  "artcraft-android/procraft": "畫圖軟件，用嚟喺你嘅 Android 平板、Windows 同 Linux 畫畫，有壓感筆、圖層同三維上色。beta。要 Android 10 或以上。最新 release v0.0.5-beta。MIT 或 Apache-2.0。唔會畀你模型。",
+  "alexturkey/voxcpm2-turkce-ses-tasarimi": "本機聲線設計，用嚟喺 NVIDIA 顯卡描述把聲再朗讀。現成聲有土耳其話同普通話，冇廣東話。4GB 係 GTX 1050 Ti 嘅測試。程式同權重 README 話係 Apache-2.0。最新 release v0.3.2。唔會畀你廣東話聲。"
 }
