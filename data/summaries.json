@@ -1052,5 +1052,9 @@
   "DigitalPhonetics/IMS-Toucan": "多語言 TTS 工具，用嚟喺你部機訓練或推理。語言表有粵語，質素未核實。推理可以唔用 GPU。Python 3.10。預訓練模型會另外下載。最新 release v3.1.2，其後有push。Apache-2.0。唔會畀你每種語言嘅聲。",
   "wangzhishou/OneBox": "Android agent 工具箱，用嚟喺你部手機叫已有嘅模型驅動 app 入面嘅工具。雲端要你自己嘅 key。機內要下載 Gemma 3 1B 或 Qwen3 0.6B，README 話只得 Play 同 FOSS。最新 release 1.5.6。Apache-2.0。唔會畀你模型。",
   "fatchord/WaveRNN": "PyTorch 聲碼器同 TTS，用嚟喺你部機讀英文。README 寫要 Python 3.6 或以上同帶 CUDA 嘅 PyTorch 1。訓練例子係 LJSpeech。最後 push 2022-07-02。冇 GitHub release。MIT。唔會畀你廣東話聲。",
-  "travisvn/openai-edge-tts": "本機 API，用嚟喺你部機把文字交畀 Microsoft Edge 嘅網上朗讀，介面模仿 OpenAI。要上網。預設聲係英文。唔係 OpenAI、Azure 或 ElevenLabs。最新 release v2.0.0，其後有push。GPL-3.0。唔會畀你自己嘅模型。"
+  "travisvn/openai-edge-tts": "本機 API，用嚟喺你部機把文字交畀 Microsoft Edge 嘅網上朗讀，介面模仿 OpenAI。要上網。預設聲係英文。唔係 OpenAI、Azure 或 ElevenLabs。最新 release v2.0.0，其後有push。GPL-3.0。唔會畀你自己嘅模型。",
+  "alchaincyf/nuwa-skill": "技能，用嚟喺你部機叫已有嘅 agent 按一個名字做公開資料調研，再寫成思維方式。唔會變成嗰個人，亦唔會攞到佢私人資料。要你自己嘅模型。說明以中文為主。最新 release v1.1.0。MIT。唔會畀你模型。",
+  "kestra-io/kestra": "開源編排平台，用嚟喺你部機用 YAML 排工作流，可以串 AI 步驟。企業版功能唔喺呢份 Apache 嘅程式。要 Docker。最新 release v2.0.9，其後有push。Apache-2.0。唔會畀你模型。",
+  "fikrikarim/parlor": "研究預覽，用嚟喺 Mac Apple Silicon 或有 GPU 嘅 Linux 做本機語音同畫面。要 Python 3.12 同 llama.cpp。模型第一次行先下載。作者話唔追到 GPT-Live。最新 release v2.0.0，其後有push。Apache-2.0。唔會跟機畀你模型。",
+  "salu133445/musegan": "多軌音樂生成，用嚟喺你部機砌 bass、鼓、結他、鋼琴同弦樂短句。數據係 Lakh Pianoroll 嘅資料。預訓練模型要另外下載。最新實作可控性較低。最後 push 2024-06-07。冇 GitHub release。MIT。唔會跟庫畀你模型。"
 }
