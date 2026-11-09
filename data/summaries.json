@@ -1045,5 +1045,9 @@
   "AhmadHassan-BTed/B": "桌面同伴，用嚟喺你自己部 Windows 睇你個畫面同傾計。Linux 同 macOS 只係實驗。語言模型要 Groq 或你自己嘅 llama.cpp。最後 push 2026-07-07。冇 GitHub release。Python 3.10+。MIT。唔會畀你模型。",
   "OpenMontageInc/OpenMontage": "開源嘅 agent 影片製作系統，用多條製作流程同工具產出影片。你交一個製作目標，系統會調用唔同步驟去組織素材同成片，而唔係只提供一個剪接時間線。適合想由目標驅動成片，而唔係自己逐段拖時間線。",
   "phone-harness/mcp": "MCP 接頭，用嚟喺你已有嘅 agent 操控雲端 iPhone 或 Android 模擬器，亦可按文件自己架。雲端要另外付費。要登入。冇 GitHub release。MIT。唔會畀你手機或模型。",
-  "Rayhane-mamah/Tacotron-2": "非官方 TensorFlow 實作，用嚟喺你部機訓練 Tacotron-2。預處理只支援 LJSpeech 嘅一類英文數據。預訓練權重未放上來。最後 push 2023-07-06。冇 GitHub release。要 Python 3 同 TensorFlow。MIT。唔會畀你廣東話聲。"
+  "Rayhane-mamah/Tacotron-2": "非官方 TensorFlow 實作，用嚟喺你部機訓練 Tacotron-2。預處理只支援 LJSpeech 嘅一類英文數據。預訓練權重未放上來。最後 push 2023-07-06。冇 GitHub release。要 Python 3 同 TensorFlow。MIT。唔會畀你廣東話聲。",
+  "JosssphZhou/poki": "本機 iPhone agent，用嚟喺 Mac 或 Windows 畀已有嘅 agent 操作你部 iPhone。要 iOS 18、USB、Apple 帳號同迴環代理。免費簽名 7 日要續。最新 release ios-prealpha-latest，其後有push。AGPL-3.0。唔會畀你模型。",
+  "opensec-git/Pi-Bolt": "Pi coding agent 嘅原生編譯，用嚟喺 Linux、macOS、Windows 或 Android Termux 跑，唔使 Node。速度數字係對住 Pi 1.4.0 嘅測試。要你自己嘅模型。最新 release bolt-v1.1.7。MIT。唔會畀你模型。",
+  "lifeiteng/vall-e": "非官方 PyTorch 實作，用嚟喺一張 GPU 訓練 VALL-E。例子有英文同普通話，冇寫廣東話。作者話唔會提供訓練好嘅模型。最後 push 2025-09-10。最新 release v1.0，其後有push。Apache-2.0。唔會畀你聲線。",
+  "DigitalPhonetics/IMS-Toucan": "多語言 TTS 工具，用嚟喺你部機訓練或推理。語言表有粵語，質素未核實。推理可以唔用 GPU。Python 3.10。預訓練模型會另外下載。最新 release v3.1.2，其後有push。Apache-2.0。唔會畀你每種語言嘅聲。"
 }
