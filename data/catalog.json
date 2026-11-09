@@ -29504,6 +29504,32 @@
       "paper_title": "",
       "paper_url": "",
       "added_at": "2026-11-07T14:35:08+08:00"
+    },
+    {
+      "id": "github:amap-cvlab/abot-recon",
+      "type": "github",
+      "category": "image-to-3d",
+      "name": "ABot-Recon",
+      "full_name": "amap-cvlab/ABot-Recon",
+      "url": "https://github.com/amap-cvlab/ABot-Recon",
+      "homepage": "https://amap-cvlab.github.io/ABot-Recon-html/",
+      "description": "Streaming 3D reconstruction from only video input: Revisiting Local Context for Long-Horizon Streaming 3D Reconstruction",
+      "summary": "串流三維重建，用嚟喺你嘅影片幀估點雲同相對姿態。只用最近 12 幀，唔靠長程記憶。要 Linux、Python 3.10 或以上同 CUDA 12.1。權重 CC BY-NC，唔可以商用，要另外下載。程式 Apache-2.0。冇 GitHub release。唔會畀你商用授權。",
+      "summary_en": "Streaming 3D reconstruction that estimates a point cloud and a relative pose for frames of your video. It uses only the latest 12 frames and does not keep long-range memory. It needs Linux, Python 3.10 or newer, and CUDA 12.1. The weights are CC BY-NC, not for commercial use, and must be downloaded separately. The code is Apache-2.0. There is no GitHub release. This does not give you a commercial license.",
+      "summary_locked": true,
+      "stars": 1425,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "topics": [
+        "3d-reconstruction",
+        "abot-recon",
+        "slam"
+      ],
+      "archived": false,
+      "pushed_at": "2026-10-16",
+      "paper_title": "Revisiting Local Context for Long-Horizon Streaming 3D Reconstruction",
+      "paper_url": "https://arxiv.org/abs/2608.27529",
+      "added_at": "2026-11-09T11:19:10+08:00"
     }
   ],
   "papers": [
@@ -29579,7 +29605,7 @@
     }
   ],
   "last_new_ids": [
-    "github:patch-gg/trompe"
+    "github:amap-cvlab/abot-recon"
   ],
   "rate_limit": {
     "used": 4000,

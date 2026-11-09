@@ -1029,5 +1029,6 @@
   "Infisical/infisical": "秘密同憑證平台，用嚟喺你部機管匙、證書同 agent 權限，亦可以用佢哋雲端。ee 目錄嘅企業功能要另外授權。最新 release v0.167.6（2026-11），其後有 push。主體係 MIT。唔係 agent，唔會畀你模型。",
   "ddalcu/mlx-serve": "本機模型伺服器，用嚟喺 Apple Silicon 跑你下載嘅模型，亦有 Linux NVIDIA 版。Mac app 要 macOS 26.2。聊天、圖、片、音樂同語音都係功能。最新 release v26.11.2。MIT。唔會畀你模型。",
   "jik876/hifi-gan": "聲碼器，用嚟喺你嘅電腦把 mel 頻譜變成波形，唔係完整 TTS。預訓練權重係英文 LJSpeech、VCTK 同通用模型，要另外下載，冇廣東話。冇 GitHub release，最後 push 係 2024-07。程式 MIT。唔會畀你現成聲。",
-  "patch-gg/trompe": "瀏覽器工具，用嚟喺灰模關卡上面投影貼圖，再匯出 glTF。規劃同烘焙喺你部機嘅 GPU，圖像模型喺 fal，要你自己嘅 key。適合寫實建築，唔適合風格化，亦唔係第一身腳下地面。關卡要自備 UV。未有本機模型。冇 GitHub release。Apache-2.0。唔會畀你模型。"
+  "patch-gg/trompe": "瀏覽器工具，用嚟喺灰模關卡上面投影貼圖，再匯出 glTF。規劃同烘焙喺你部機嘅 GPU，圖像模型喺 fal，要你自己嘅 key。適合寫實建築，唔適合風格化，亦唔係第一身腳下地面。關卡要自備 UV。未有本機模型。冇 GitHub release。Apache-2.0。唔會畀你模型。",
+  "amap-cvlab/ABot-Recon": "串流三維重建，用嚟喺你嘅影片幀估點雲同相對姿態。只用最近 12 幀，唔靠長程記憶。要 Linux、Python 3.10 或以上同 CUDA 12.1。權重 CC BY-NC，唔可以商用，要另外下載。程式 Apache-2.0。冇 GitHub release。唔會畀你商用授權。"
 }
