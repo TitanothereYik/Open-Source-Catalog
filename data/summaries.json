@@ -1068,5 +1068,14 @@
   "alchaincyf/huashu-design": "設計 skill，用嚟喺 Claude Code、Codex、Cursor 等打一句，出網頁、App 原型、可改 PPT 同信息圖。宣傳片剪接用 huashu-motion。風格 README 一處寫 84、一處寫 92。要你自己嘅模型。最新 release v3.3.0。MIT。唔會畀你圖像模型。",
   "HiThink-Tech/Financial-API": "同花順官方嘅 A 股數據客戶端，用嚟喺 API、MCP、CLI 或 Python 查行情、財報同指數。要你自己嘅 API key。公開接口唔包括分鐘線、逐筆、港股同美股，亦唔係落單程式。最新 release v0.1.13，其後有push。MIT。唔會畀你交易訊號。",
   "Read-Aloud/read-aloud": "瀏覽器擴充，用嚟喺網頁把文字讀出聲。聲線可以用瀏覽器自帶，或者 Google、Amazon、IBM、Microsoft 嘅雲端聲，部分要另外付費。唔係新訓練嘅語音模型。最新 GitHub release 係 v1.54.1，其後有push。MIT。唔會跟機畀你廣東話聲線。",
-  "software-mansion/react-native-executorch": "React Native 嘅手機推理庫，用嚟喺部機跑已匯出嘅模型，包括視覺、語言模型、讀稿同語音轉文字。模型要另外下載。配 agent 嘅 skill 喺另一個倉庫。最新 release v0.11.1-libs，其後有push。MIT。唔會把權重打包喺 npm 入面畀你。"
+  "software-mansion/react-native-executorch": "React Native 嘅手機推理庫，用嚟喺部機跑已匯出嘅模型，包括視覺、語言模型、讀稿同語音轉文字。模型要另外下載。配 agent 嘅 skill 喺另一個倉庫。最新 release v0.11.1-libs，其後有push。MIT。唔會把權重打包喺 npm 入面畀你。",
+  "ConardLi/garden-skills": "六個 agent skill 嘅合集，用嚟喺 Claude Code、Cursor、Codex 做程式渲染短片、網頁影片同圖像提示。要你自己嘅模型。最新 release 係 motion-showreel-v0.2.0，其後有push。MIT。唔會畀你影片或圖像模型。",
+  "feiskyer/claude-code-settings": "Claude Code 嘅 skill 包，用嚟喺研究、GitHub 同圖像之間切。圖像只係其中 gpt-image 同 nanobanana 兩個 skill。要你自己嘅模型。冇 GitHub release，最近 push 係 2026-11-05。MIT。唔會畀你圖像模型。",
+  "YouMind-OpenLab/ai-image-prompts-skill": "圖像提示詞 skill，用嚟喺現成提示入面搵三條相近嘅。README 寫有過萬條。唔會自己出圖。要你自己嘅圖像模型。冇 GitHub release，最近 push 係 2026-11-10。MIT。唔會畀你模型。",
+  "artokun/comfyui-mcp": "本機 MCP，用嚟喺 ComfyUI 用文字改圖、出圖、出片同出聲。要 Node 22、一部 ComfyUI 同你自己嘅模型。README 寫 38 個工具、42 個 skill，簡介係另一組數字。最新 release v0.52.206，其後有push。MIT。唔會跟機畀你權重。",
+  "jnMetaCode/ai-shortfilm-prompts": "寫片提示詞嘅 skill，用嚟喺 Sora、Kling、Veo、Seedance 出可貼嘅鏡頭提示。README 寫 21 個類型。唔會渲染成片。引用嘅短片版權仍然係原作者。最新 release v0.4.0，其後有push。MIT。唔會畀你影片模型。",
+  "sunchaokun/PPT-Design-Skill": "簡報 skill，用嚟喺 OpenCode、Claude Code、Codex 出可改嘅 PPTX。圖同版面由現成 pptx-designer 砌。要你自己嘅模型。最新 GitHub release 係 1.3，README 徽章寫 1.5，其後有push。MIT。唔會畀你圖像模型。",
+  "rediumvex/ai-video-generator-claude": "十個寫片提示詞嘅 skill，用嚟喺 Higgsfield 嘅 Seedance 2.0 貼一段 15 到 25 行提示。唔會自己渲染成片。要你自己嘅 Higgsfield 帳號。冇 GitHub release，最近 push 係 2026-08-11。MIT。唔會畀你影片模型。",
+  "rehan-remade/universal-modder": "遊戲改裝 skill，用嚟喺你擁有嘅 PC 遊戲叫 agent 寫改裝、用 fal 出圖同聲，再剪展示片。要你自己嘅遊戲同 fal。冇 GitHub release，最近 push 係 2026-11-10。MIT。唔會畀你遊戲本體或影片模型。",
+  "LiamGvchi/gc-minimal-zine-poster": "Codex skill，用嚟喺一句主題出紙本質感嘅小誌海報，或者只出提示詞。出圖靠宿主已有嘅圖像功能。套件冇腳本同權重。最新 release v0.3.1。MIT。唔會跟機畀你模型。"
 }
