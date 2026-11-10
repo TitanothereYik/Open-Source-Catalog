@@ -1086,5 +1086,17 @@
   "kurbaitaev/ghost-editor": "口播剪片 skill，用嚟喺 Apple 晶片嘅 Mac 把長口播剪成短片。要大約 4GB，會裝 ffmpeg 同 Whisper。Linux 同 Intel Mac 未試過。最新 release v0.3.0。MIT。唔係生成模型，唔會畀你新片模型。",
   "Hao0321/ai-media-generator": "寫提示詞同代你撳網站嘅 skill，用嚟喺 Claude Code 或 Codex 去其他平台出圖、出片同音樂。要你自己嘅平台帳號。README 寫 Sora 2 已停。最新 release v2.2.0。MIT。唔會喺本機畀你模型。",
   "echris6/motion-video-kit": "商業宣傳片 skill，用嚟喺 Claude Code 砌程式動態同現成生成片段。參考嘅 28 條片只係連結，唔附片源。渲染建議用 HyperFrames。冇 GitHub release，最近 push 係 2026-10-15。MIT。唔會畀你影片模型。",
-  "actionow-ai/vvv": "可重用嘅影片模板 skill，用嚟喺 Claude Code、Codex 等換上你自己嘅相片同文字再渲染。範例人物係虛構。相片、音樂同字體要你有權用。最新 release v0.2.0。MIT。唔係生成模型，唔會畀你新片。"
+  "actionow-ai/vvv": "可重用嘅影片模板 skill，用嚟喺 Claude Code、Codex 等換上你自己嘅相片同文字再渲染。範例人物係虛構。相片、音樂同字體要你有權用。最新 release v0.2.0。MIT。唔係生成模型，唔會畀你新片。",
+  "gnipbao/minimax-h3-video-reverse-skill": "反推參考片嘅 skill，用嚟喺睇得明成片嘅 agent 寫出 MiniMax H3 嘅鏡頭提示。唔包含模型，亦唔會自己出片。冇 GitHub release，README 寫到 0.6.0，最近 push 係 2026-10-02。MIT。唔會畀你影片模型。",
+  "kangarooking/director-skills": "七個導演 skill，用嚟喺 Claude Code、Codex 整理分鏡、提示詞同製作流程。README 寫七個都可用。要你自己嘅影片模型。冇 GitHub release，最近 push 係 2026-10-20。MIT。唔會畀你模型。",
+  "AtlasCloudAI/awesome-seedance-2.5-prompts-skills": "Seedance 提示庫加 skill，用嚟喺 Atlas Cloud 改提示同出片。預設係 2.0，2.5 要供應商先開。要你自己嘅 API key。徽章寫過 150 條，簡介寫過 100 條。最新 release v1.0.0，其後有push。CC BY 4.0，轉載要註明出處。唔會畀你模型。",
+  "imlewc/video-to-subtitle-summary-skill": "字幕同摘要 skill，用嚟喺短片或本機檔抽出字幕再寫摘要。預設用本機 faster-whisper。抖音、小紅書、B 站下載要另外嘅解析服務。唔會生成新片。冇 GitHub release，最近 push 係 2026-10-28。MIT。唔會畀你影片模型。",
+  "feiskyer/codex-settings": "Codex 嘅設定同 skill 包，用嚟喺研究、瀏覽器同圖像之間切。圖像有 gpt-image、MiniMax 同預設 nanobanana，要你自己嘅 API key。冇 GitHub release，最近 push 係 2026-11-05。MIT。唔會畀你圖像模型。",
+  "calesthio/generative-media-skills": "媒體製作 skill 包，用嚟喺 Claude Code、Codex、Cursor 等做圖像、影片同聲音嘅檢查。README 寫逾 150 個。OpenMontage 連結係舊名。要你自己嘅模型。冇 GitHub release，最近 push 係 2026-07-14。MIT。唔會畀你生成模型。",
+  "Cassette-Editor/oh-my-cassette": "剪片 MCP 橋，用嚟喺 Claude Code、Codex 等叫 Cassette 嘅雲端服務剪片。工具喺佢哋嘅服務，唔係本機剪輯軟件。最新 release v0.6.0，其後有push。MIT。唔會畀你影片模型。",
+  "iamyoki/qwen-image-2.1-skill": "非官方提示詞 skill，用嚟喺 agent 按阿里官方規格改寫 Qwen-Image-2.1 嘅文生圖同改圖提示。唔包含個模型。冇 GitHub release，最近 push 係 2026-09-22。Apache-2.0。唔會畀你圖像模型。",
+  "shinpr/mcp-image": "圖像 MCP，用嚟喺 Codex、Cursor、Claude Code 叫 Gemini、OpenAI 或 Seedream 出圖同改圖。會先改寫提示。要你自己嘅 API key。最新 release v0.19.0。MIT。唔會跟機畀你模型。",
+  "joeseesun/qiaomu-codex-imagegen": "把 Codex 內置生圖接出嚟嘅 MCP、命令列同 skill，用嚟喺其他 agent 出圖。每次先畀至少四個風格。要你已經有 Codex 嘅生圖。最新 release v0.3.0。MIT。唔會另畀你模型。",
+  "mileson/chaojifeng-video-design": "視頻設計 skill，用嚟喺 agent 編主線、分鏡同聲畫，再交成片同可改工程。README 寫 59 套風格，樣片跟庫。渲染要宿主自己嘅工具，唔附通用渲染器。冇 GitHub release，最近 push 係 2026-11-06。MIT。唔會畀你影片模型。",
+  "liangdabiao/whiteboard-teacher-video": "圖文講解 skill，用嚟喺本機 Chrome 把講解稿畫成會動嘅畫面，再配 edge-tts。五套風格。零生圖 API。冇 GitHub release，最近 push 係 2026-11-08。MIT。唔係生成模型，唔會畀你圖像模型。"
 }
