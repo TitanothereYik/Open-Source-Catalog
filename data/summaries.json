@@ -1098,5 +1098,15 @@
   "shinpr/mcp-image": "圖像 MCP，用嚟喺 Codex、Cursor、Claude Code 叫 Gemini、OpenAI 或 Seedream 出圖同改圖。會先改寫提示。要你自己嘅 API key。最新 release v0.19.0。MIT。唔會跟機畀你模型。",
   "joeseesun/qiaomu-codex-imagegen": "把 Codex 內置生圖接出嚟嘅 MCP、命令列同 skill，用嚟喺其他 agent 出圖。每次先畀至少四個風格。要你已經有 Codex 嘅生圖。最新 release v0.3.0。MIT。唔會另畀你模型。",
   "mileson/chaojifeng-video-design": "視頻設計 skill，用嚟喺 agent 編主線、分鏡同聲畫，再交成片同可改工程。README 寫 59 套風格，樣片跟庫。渲染要宿主自己嘅工具，唔附通用渲染器。冇 GitHub release，最近 push 係 2026-11-06。MIT。唔會畀你影片模型。",
-  "liangdabiao/whiteboard-teacher-video": "圖文講解 skill，用嚟喺本機 Chrome 把講解稿畫成會動嘅畫面，再配 edge-tts。五套風格。零生圖 API。冇 GitHub release，最近 push 係 2026-11-08。MIT。唔係生成模型，唔會畀你圖像模型。"
+  "liangdabiao/whiteboard-teacher-video": "圖文講解 skill，用嚟喺本機 Chrome 把講解稿畫成會動嘅畫面，再配 edge-tts。五套風格。零生圖 API。冇 GitHub release，最近 push 係 2026-11-08。MIT。唔係生成模型，唔會畀你圖像模型。",
+  "Rylaispirit/cinematic-video-prompt-skill": "鏡頭詞彙 skill，用嚟喺 Claude 寫精準嘅影片同圖像提示。README 寫有 700 個以上詞，附越南文解釋。唔會自己出片。冇 GitHub release，最近 push 係 2026-09-27。MIT。唔會畀你影片模型。",
+  "DojoCodingLabs/remotion-superpowers": "十五個 Remotion skill，用嚟喺 Claude Code、Codex 等砌片，可以叫配音、音樂、素材圖同生成片段。要你自己嘅 API key，同另外裝 Remotion。最新 release v2.3.0，其後有push。MIT。唔會跟機畀你模型。",
+  "Alisa0808/vibe-creating-skill": "改寫文字變影片提示嘅 skill，用嚟喺 Claude Code、Codex 等把粗糙想法收成模型睇得明嘅提示。可以經 Atlas Cloud 出片，但呢度唔包含模型。冇 GitHub release，最近 push 係 2026-06-17。MIT。唔會畀你影片模型。",
+  "Liamrjohnston/remotion-motion-graphics-skill": "四個 Remotion 嘅 skill，用嚟喺 Claude Code、Codex、Cursor 砌動態圖形片。畫面由程式渲染。要另外裝 Remotion。冇 GitHub release，最近 push 係 2026-07-24。MIT。唔會畀你影片模型。",
+  "CyberJ0605/cinematic-video-prompt-engineer-skill": "劇情變鏡頭提示嘅 skill，用嚟喺 agent 出可貼去 Seedance、Kling 等嘅提示，亦可以先出參考圖提示。唔會自己渲染。README 徽章寫 v1.9.4，冇 GitHub release，最近 push 係 2026-11-02。MIT。唔會畀你影片模型。",
+  "actionow-ai/c2c_img": "Claude Code 嘅出圖 skill，用嚟喺已登入嘅 Codex 呼叫內置生圖同改圖。唔使 OpenAI API key。要同時有 Claude Code 同 Codex。冇 GitHub release，最近 push 係 2026-09-30。MIT。唔會另畀你模型。",
+  "hassancs91/claude-image-generation": "圖像 skill 包，用嚟喺 Claude 用程式畫圖、Three.js 出一幀，或者叫 Cloudflare 嘅 Flux。只有第三級要你自己嘅 key。亦可以砌有旁白嘅 HTML 故事書。冇 GitHub release，最近 push 係 2026-08-18。MIT。唔會跟機畀你擴散模型。",
+  "moonlin1213/muted-zine-poster-v01": "低飽和紙感海報 skill，用嚟喺 Claude Code、Codex 出留白多、舊紙質感嘅圖。出圖靠宿主已有嘅圖像功能。冇 GitHub release，最近 push 係 2026-07-22。MIT。唔會跟機畀你模型。",
+  "MaxiDonkey/DelphiGenAI": "Delphi 嘅 OpenAI 客戶端，用嚟喺程式呼叫對話、視覺、語音同 gpt-image 出圖。要你自己嘅 API key 同 Delphi。最新 release GenAIv2.0.0。MIT。唔會畀你模型。",
+  "adunext/adu-motion-video": "口播同講解嘅動畫模板 skill，用嚟喺 Codex、Claude Code 換上你嘅稿再出 MP4 同可改工程。README 寫六類風格。新版喺 MotionGit，唔全喺呢個 release。最新 release v3.14.1-rc.1，其後有push。MIT。唔係生成模型，唔會畀你影片模型。"
 }
