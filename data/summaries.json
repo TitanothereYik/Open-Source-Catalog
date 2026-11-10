@@ -1128,5 +1128,14 @@
   "wanshuiyin/ALIGN-Agentic-Loop-Image-GeneratioN": "用程式畫圖嘅 skill，用嚟喺 Claude Code、Codex 寫 p5.js，再靠另一個模型睇像素改稿。唔用擴散模型。影片路徑都係程式渲染。冇 GitHub release，最近 push 係 2026-10-17。MIT。唔會畀你圖像模型。",
   "hec-ovi/text-to-3D-skill": "文字變 GLB 嘅 skill，用嚟喺 AMD Strix Halo 用 FLUX.2 出圖，再經 TRELLIS.2 建網格。權重唔喺倉庫，TRELLIS 約 20GB。人型先至綁骨。0.4.2。冇 GitHub release，最近 push 係 2026-07-28。MIT。唔會跟機畀你權重。",
   "LunarXuan/image-prompt-reverse": "Codex 嘅反推提示 skill，用嚟喺參考圖寫出可貼去生圖工具嘅提示。預設有中英正向稿同十幾個負面詞。唔會自己出圖。冇 GitHub release，最近 push 係 2026-09-06。GPL-3.0。唔會畀你圖像模型。",
-  "Anionex/agent-vision-toolkit": "畀純文字 agent 睇圖嘅工具同 skill，用嚟喺 Codex、Claude Code 做問圖、長截圖文字同介面還原。要你自己嘅多模態 API。Python 3.11。最新 release v0.2.0，其後有push。MIT。唔會自己畫圖，亦唔會畀你模型。"
+  "Anionex/agent-vision-toolkit": "畀純文字 agent 睇圖嘅工具同 skill，用嚟喺 Codex、Claude Code 做問圖、長截圖文字同介面還原。要你自己嘅多模態 API。Python 3.11。最新 release v0.2.0，其後有push。MIT。唔會自己畫圖，亦唔會畀你模型。",
+  "kobingogo/motion-sticker-pack": "角色動態貼圖嘅 skill，用嚟喺 Codex 把一張圖做成循環透明 WebP、GIF 同 PNG。要先確認靜圖。付費路線先叫 Grok、Kling 等。冇影片能力就只出提示詞。最新 release v0.2.0，其後有push。MIT。唔會跟機畀你模型。",
+  "kevinbadi/open-edits": "口播剪片 skill，用嚟喺 Claude Code 用 Python 逐幀畫動畫同字幕。要你自己嘅口播、Python 3.9 同 FFmpeg。Whisper 用 small.en。冇 GitHub release，最近 push 係 2026-10-02。MIT。唔係生成模型，唔會畀你影片模型。",
+  "alchaincyf/seedance-skill": "白模控制運鏡嘅 skill，用嚟喺 agent 用同一份 scene.json 渲白模同寫提示。要 Node 18、FFmpeg 同 HyperFrames。成片要你自己嘅 Seedance。冇 GitHub release，最近 push 係 2026-10-13。MIT。唔會畀你影片模型。",
+  "liyupi/ai-desktop-outfit-video": "桌面換裝提示 skill，用嚟喺 Cursor、Claude Code 先問你六條問題，再寫一條 30 秒固定機位提示。可以抄去即夢，或者用你自己嘅火山方舟 key。唔會自己剪片。冇 GitHub release，最近 push 係 2026-09-20。MIT。唔會畀你模型。",
+  "illodev/drawn-by-code": "用程式畫動畫嘅 skill，用嚟喺 Claude 逐幀畫 canvas，再交 Chromium 同 FFmpeg 出 MP4。要 Node 20。唔用影片生成模型。冇 GitHub release，最近 push 係 2026-11-10。MIT。唔會畀你模型。",
+  "JKc66/custom-icons-skill": "自訂圖示 skill，用嚟喺 Codex 等出一套 SVG 同透明 PNG。描線要 Python、Pillow 同 Potrace。出圖靠宿主已有嘅圖像功能。最新 release v1.0.0。MIT。唔會跟機畀你模型。",
+  "haremank/nsfw-prompt": "成人圖像提示 skill，用嚟喺 agent 把要求編成提示。README 寫明未成年、真實私人同非自願暴力會拒絕。唔會自己出圖。要你自己嘅模型。最新 release v1.0.0，其後有push。MIT。唔會畀你圖像模型。",
+  "Goblinmine/homelab-diagram": "家居網絡圖腳本，用嚟喺 YAML 畫一張 SVG 同 PNG。版面座標係為作者嗰個網絡手寫，換你嘅網絡要改程式。要 Python、rsvg-convert 同字型。冇 GitHub release，最近 push 係 2026-11-07。MIT。唔係生成模型，唔會畀你圖像模型。",
+  "BloopAI/vibe-kanban": "編碼 agent 嘅看板，用嚟喺本機開工作區，叫 Claude Code、Codex 等做分支同改碼，再喺介面審 diff。要你自己已登入嘅 agent。README 寫明準備停止。最新 release v0.1.44，其後有push。Apache-2.0。唔係影片工具，唔會畀你模型。"
 }
