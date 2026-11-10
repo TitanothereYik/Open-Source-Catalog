@@ -1148,5 +1148,14 @@
   "Rinne414/lora-training-skill": "LoRA 訓練 skill，用嚟喺 agent 先檢查你嘅圖，再叫另外下載嘅 SD-Trainer 開訓。以 Anima 為主，亦寫到 SDXL、Flux。要你自己嘅 GPU 同底模。冇 GitHub release，最近 push 係 2026-10-26。MIT。唔會跟機畀你權重。",
   "fengyunzaidushi/sub2api-4k-image-generator-ts": "4K 出圖 skill，用嚟喺 Codex 經你自己架好嘅 sub2api 接口生圖。要 SUB2API key。可以收串流同排查 Cloudflare 524。冇 GitHub release，最近 push 係 2026-07-03。MIT。唔會畀你圖像模型。",
   "converge-ai-labs/agent-foundation": "自託管 agent 運行時，用嚟喺你自己嘅機器跑長任務，中斷後可以續跑。要 Python 3.13、Docker、Postgres、Redis。模型要你自己嘅 key。最新 release a13n-harness-v0.31.0，其後有push。Apache-2.0。唔係影片工具，唔會畀你模型。",
-  "OthmanAdi/planning-with-files": "編碼 agent 嘅規劃 skill，用嚟喺每次回合把 task_plan、findings、progress 寫落磁碟。/clear 之後仍然讀得返。README 寫支援 60 個以上 agent。最新 release v3.28.1，其後有push。MIT。唔係影片工具，唔會畀你模型。"
+  "OthmanAdi/planning-with-files": "編碼 agent 嘅規劃 skill，用嚟喺每次回合把 task_plan、findings、progress 寫落磁碟。/clear 之後仍然讀得返。README 寫支援 60 個以上 agent。最新 release v3.28.1，其後有push。MIT。唔係影片工具，唔會畀你模型。",
+  "vargHQ/skills": "73 個影片 skill，用嚟喺 Claude Code、Codex 出廣告片、字幕同 FFmpeg 剪輯。生成要你自己嘅 varg key。本機剪片唔使 key。最新 release v2.15.0，其後有push。MIT。唔會跟機畀你模型。",
+  "Rea1Felix/H3-colab-studio": "MiniMax H3 嘅 Colab skill，用嚟喺 agent 寫多鏡提示，再交 Google Colab 嘅 ComfyUI 出片。要你自己嘅 G4 同權重。本機只用 FFmpeg 接片。冇 GitHub release，最近 push 係 2026-11-06。MIT。唔會畀你模型。",
+  "AgriciDaniel/lipnardo": "HeyGen 虛擬人 skill，用嚟喺 Claude Code 批量出對嘴片。要你自己嘅 API key，README 寫最低充 5 美元。Python 3.8。冇 GitHub release，最近 push 係 2026-04-18。MIT。唔會畀你虛擬人模型。",
+  "whystrohm/shotkit": "五個分鏡嘅 skill，用嚟喺 Claude Code 把簡報收成可貼去十個生成器嘅提示。README 寫明唔接生成器 API，亦唔渲染成片。最新 release v3.1.0，其後有push。Apache-2.0。唔會畀你模型。",
+  "Co-Messi/supercut": "實拍網頁嘅 CLI，用嚟喺本機用 Playwright 影你個 app，再砌成有音樂嘅 MP4。要 Node 20、FFmpeg 同你自己嘅 LLM key。最新 release v0.1.0，其後有push。MIT。唔係生成模型，唔會畀你影片模型。",
+  "AceDataCloud/Skills": "AceData 嘅 skill 包，用嚟喺 Codex、Claude Code 經佢哋接口叫 Suno、Seedance 同圖像。要你自己嘅 Ace key。唔係模型商出嘅。最新 release v2026.1109.318001。Apache-2.0。唔會畀你模型。",
+  "sacredvoid/skillkit": "混合嘅 skill 包，用嚟喺 Claude Code 本機跑 Stable Diffusion 同 Whisper。權重要你自己下載。亦有搵圖同做簡報。冇 GitHub release，最近 push 係 2026-03-18。MIT。唔會跟機畀你權重。",
+  "beatra-ai/ai-logo-maker-skill": "標誌 skill，用嚟喺 Claude Code、Cursor 把品牌名收成幾個方向。出圖要你自己嘅 Beatra 帳戶同點數。Python 3.10。最新 release v0.2.9，其後有push。MIT-0。唔會畀你模型。",
+  "phuryn/pm-skills": "產品經理嘅 skill 包，用嚟喺 Claude Code 行發現、策略同寫 PRD。README 寫有 72 個 skill。唔包含模型。最新 release v2.3.0。MIT。唔係影片工具，唔會畀你模型。"
 }
