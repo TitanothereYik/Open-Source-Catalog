@@ -1060,5 +1060,8 @@
   "Vibha-Ramprakash/claude-video-effects": "影片 skill，用嚟喺 Claude Code 幫你嘅口播片加效果。要 ffmpeg 同 Python。完整工作室唔喺呢個庫。冇 GitHub release。MIT。唔會畀你模型。",
   "chroma-core/chroma": "向量搜尋資料庫，用嚟喺你部機存放同搜尋嵌入。要你自己嘅資料同嵌入模型。雲端版要另外付費。GitHub release 標籤叫 latest（2025-04-01），其後有push。Apache-2.0。唔會畀你模型。",
   "techjarves/Portable-Local-Studio": "本機工作室，用嚟喺 Windows、Linux 或 macOS 跑圖、GGUF 聊天、Whisper 同 Kokoro。權重要你自己下載，面板可以下一隻細嘅 Qwen2.5 Coder。冇 GitHub release。最後 push 2026-11-05。MIT。唔會跟機畀你大模型。",
-  "RHVoice/RHVoice": "統計參數語音合成，用嚟喺你嘅電腦讀俄文、英文同烏克蘭文等，冇廣東話。聲線冇錄音拼接咁自然。最新 release 1.18.5，其後有push。GPL-2.0。唔會畀你廣東話聲。"
+  "RHVoice/RHVoice": "統計參數語音合成，用嚟喺你嘅電腦讀俄文、英文同烏克蘭文等，冇廣東話。聲線冇錄音拼接咁自然。最新 release 1.18.5，其後有push。GPL-2.0。唔會畀你廣東話聲。",
+  "alibaba/page-agent": "網頁入面嘅 GUI agent，用嚟喺你嘅網頁用文字操控介面。要你自己嘅語言模型。唔使截圖。跨頁要另外裝擴充。最新 release v1.12.4，其後有push。MIT。唔會畀你模型。",
+  "alirezarezvani/claude-skills": "skill 包，用嚟喺 Claude Code、Codex、Cursor 等叫已有嘅 agent 做工程同市場等工作。README 寫有 411 個 skill。要你自己嘅模型。最新 release v2.14.9。MIT。唔會畀你模型。",
+  "High-Logic/Genie-TTS": "ONNX 推理引擎，用嚟喺 CPU 跑 GPT-SoVITS V2 或 V2ProPlus。要 Python 3.10。第一次行會下載大約 391MB 資源。聲線要你自己嘅模型。語言寫咗日文、英文、中文同韓文，冇寫廣東話。最新 release v2.0.2，其後有push。MIT。唔會跟機畀你聲線。"
 }
