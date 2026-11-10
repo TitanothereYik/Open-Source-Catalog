@@ -206,6 +206,49 @@ MIN_NEW = {
 FAST_RISE_DAYS = 120
 FAST_RISE_MIN_STARS = 400
 FAST_RISE_PER_DAY = 12
+# Until 00:24 HKT on 12 Nov 2026 (36 hours from the 12:24 HKT request),
+# discovery prefers agent skills about video generation and image generation.
+SKILL_FOCUS_UNTIL = datetime(2026, 11, 11, 16, 24, tzinfo=timezone.utc)
+SKILL_FOCUS_MIN_STARS = 10
+SKILL_FOCUS_QUERIES = [
+    ("video", '"skill" ("text-to-video" OR "image-to-video" OR "video generation")'),
+    ("image", '"skill" ("text-to-image" OR "image generation" OR "stable diffusion" OR flux)'),
+    ("video", "topic:agent-skills video"),
+    ("image", "topic:agent-skills image"),
+    ("video", "topic:claude-skills video"),
+    ("image", "topic:claude-skills image"),
+    ("video", 'skill (wan OR hunyuanvideo OR cogvideo OR ltx) video'),
+    ("image", 'skill (flux OR sdxl OR "qwen-image" OR inpainting) image'),
+]
+VIDEO_SKILL_KEYS = (
+    "video generation",
+    "text-to-video",
+    "text to video",
+    "image-to-video",
+    "image to video",
+    "video gen",
+    "t2v",
+    "i2v",
+    "ai video",
+    "hunyuanvideo",
+    "cogvideo",
+    "ltx-video",
+    "wan2",
+    "wan 2",
+)
+IMAGE_SKILL_KEYS = (
+    "image generation",
+    "text-to-image",
+    "text to image",
+    "image gen",
+    "stable diffusion",
+    "sdxl",
+    "flux",
+    "inpainting",
+    "qwen-image",
+    "text2image",
+    "txt2img",
+)
 RECENT_FOCUS = {
     "gaussian-splatting": "gaussian splatting OR 3dgs OR gaussian-splatting",
     "world-model": '"world model" OR "world models"',
@@ -1891,6 +1934,37 @@ def refresh_stars(catalog: dict) -> int:
     return changed
 
 
+def skill_focus_active() -> bool:
+    return datetime.now(timezone.utc) < SKILL_FOCUS_UNTIL
+
+
+def looks_like_skill(repo: dict) -> bool:
+    name = (repo.get("name") or "").lower()
+    topics = {topic.lower() for topic in (repo.get("topics") or [])}
+    blob = text_blob(repo).lower()
+    if "skill" in name:
+        return True
+    if topics & {"agent-skills", "claude-skills", "claude-skill", "skills"}:
+        return True
+    return any(part in blob for part in ("agent skill", "claude skill", "skill.md", "coding skill"))
+
+
+def media_skill_category(repo: dict) -> str | None:
+    """Video or image when this repo is a generation skill during the focus window."""
+    if not skill_focus_active() or not looks_like_skill(repo):
+        return None
+    blob = text_blob(repo).lower()
+    video = any(key in blob for key in VIDEO_SKILL_KEYS)
+    image = any(key in blob for key in IMAGE_SKILL_KEYS)
+    if video and image:
+        return "video" if blob.count("video") >= blob.count("image") else "image"
+    if video:
+        return "video"
+    if image:
+        return "image"
+    return None
+
+
 def discover_new(catalog: dict) -> tuple[list[dict], list[str]]:
     existing = {project["full_name"].lower() for project in catalog["projects"]}
     denylist = {name.lower() for name in load_json(DATA / "denylist.json", [])}
@@ -1898,14 +1972,22 @@ def discover_new(catalog: dict) -> tuple[list[dict], list[str]]:
     pool: list[str] = []
     seen_pool = set(FETCHED)
     announced: set[str] = set()
+    skill_announced: set[str] = set()
+    focus = skill_focus_active()
+    if focus:
+        print("skill focus: video and image generation skills until 2026-11-12 00:24 HKT", flush=True)
     cutoff = (datetime.now(timezone.utc) - timedelta(days=FAST_RISE_DAYS)).date().isoformat()
+    by_id = {category["id"]: category for category in CATEGORIES}
+    skill_queries = [(by_id[category_id], query) for category_id, query in SKILL_FOCUS_QUERIES] if focus else []
     recent = [
         (category, f"{RECENT_FOCUS[category['id']]} created:>={cutoff} stars:>={FAST_RISE_MIN_STARS}")
         for category in CATEGORIES
     ]
     regular = [(category, query) for category in CATEGORIES for query in QUERIES[category["id"]]]
-    queries = recent + regular
-    page_cap = {id(query): (2 if (category, query) in recent else 10) for category, query in queries}
+    queries = skill_queries + recent + regular
+    recent_ids = {id(query) for _, query in recent}
+    skill_ids = {id(query) for _, query in skill_queries}
+    page_cap = {id(query): (3 if id(query) in skill_ids else 2 if id(query) in recent_ids else 10) for _, query in queries}
     more_pages = {id(query): True for _, query in queries}
 
     def remember(full_name: str) -> None:
@@ -1921,15 +2003,26 @@ def discover_new(catalog: dict) -> tuple[list[dict], list[str]]:
             remember(full_name)
         if not key or key in existing or key in denylist:
             return
+        media = media_skill_category(repo)
+        if media:
+            category_id = media
         threshold = MIN_NEW[category_id]
         if len(catalog["projects"]) < 200:
             threshold = max(200, threshold // 4)
         stars = int(repo.get("stargazers_count") or 0)
         rising = fast_riser(repo)
-        if stars < threshold and not rising:
+        if media:
+            if stars < SKILL_FOCUS_MIN_STARS and not rising:
+                return
+            if repo.get("fork") or repo.get("archived") or not (repo.get("description") or "").strip() or blocked(repo):
+                return
+        elif stars < threshold and not rising:
             return
-        if not relevant(category_id, repo):
+        elif not relevant(category_id, repo):
             return
+        if media and key not in skill_announced:
+            skill_announced.add(key)
+            print(f"skill focus {category_id} {full_name} {stars} stars", flush=True)
         if rising and key not in announced:
             announced.add(key)
             age_days = repo_age_days(repo) or 0
@@ -1968,49 +2061,64 @@ def discover_new(catalog: dict) -> tuple[list[dict], list[str]]:
         drain()
         if core_quota_met() or not progressed:
             break
-    def rise_key(item: tuple[str, dict]) -> tuple[int, float, int]:
+    def rise_key(item: tuple[str, dict]) -> tuple[int, int, float, int]:
         repo = item[1]
         stars = int(repo.get("stargazers_count") or 0)
+        skill = 1 if media_skill_category(repo) else 0
         if fast_riser(repo):
             age_days = repo_age_days(repo) or 1
-            return (1, stars / age_days, stars)
-        return (0, 0, stars)
+            return (skill, 1, stars / age_days, stars)
+        return (skill, 0, 0.0, stars)
 
     ranked = sorted(found.values(), key=rise_key, reverse=True)
     per_category: dict[str, int] = {category["id"]: 0 for category in CATEGORIES}
     per_fast: dict[str, int] = {category["id"]: 0 for category in CATEGORIES}
+    per_skill: dict[str, int] = {category["id"]: 0 for category in CATEGORIES}
     chosen = []
     young_catalog = len(catalog["projects"]) < 200
-    normal_limit = 24 if young_catalog else 8
+    normal_limit = 24 if young_catalog else (4 if focus else 8)
     normal_per = 8 if young_catalog else 2
     fast_limit = 8
     fast_per = 3
-    total_limit = 14 if not young_catalog else 24
+    skill_limit = 10 if focus else 0
+    skill_per = 6
+    total_limit = 12 if focus and not young_catalog else (14 if not young_catalog else 24)
     added_at = iso_hk()
     fast_count = 0
     normal_count = 0
+    skill_count = 0
     for category_id, repo in ranked:
         if len(chosen) >= total_limit:
             break
+        media = media_skill_category(repo)
+        if media:
+            category_id = media
         rising = fast_riser(repo)
         stars = int(repo.get("stargazers_count") or 0)
         threshold = MIN_NEW[category_id]
+        take_skill = bool(media) and stars >= SKILL_FOCUS_MIN_STARS and skill_count < skill_limit and per_skill[category_id] < skill_per
         take_fast = rising and fast_count < fast_limit and per_fast[category_id] < fast_per
         take_normal = stars >= threshold and normal_count < normal_limit and per_category[category_id] < normal_per
-        if not take_fast and not take_normal:
+        if not take_skill and not take_fast and not take_normal:
             continue
-        rising = take_fast
+        rising = take_fast and not take_skill
         summary = (repo.get("description") or "").strip()
         project = project_from_repo(repo, category_id, summary, False, added_at)
         chosen.append(project)
         per_category[category_id] += 1
         existing.add(project["full_name"].lower())
-        if rising:
+        if take_skill:
+            skill_count += 1
+            per_skill[category_id] += 1
+        elif rising:
             fast_count += 1
             per_fast[category_id] += 1
         else:
             normal_count += 1
-    print(f"chosen {len(chosen)} new repos, {fast_count} fast risers", flush=True)
+    print(
+        f"chosen {len(chosen)} new repos, {fast_count} fast risers, {skill_count} video/image skills",
+        flush=True,
+    )
     return chosen, list(seen_pool)
 
 
