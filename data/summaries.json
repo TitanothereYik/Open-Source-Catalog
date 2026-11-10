@@ -1108,5 +1108,16 @@
   "hassancs91/claude-image-generation": "圖像 skill 包，用嚟喺 Claude 用程式畫圖、Three.js 出一幀，或者叫 Cloudflare 嘅 Flux。只有第三級要你自己嘅 key。亦可以砌有旁白嘅 HTML 故事書。冇 GitHub release，最近 push 係 2026-08-18。MIT。唔會跟機畀你擴散模型。",
   "moonlin1213/muted-zine-poster-v01": "低飽和紙感海報 skill，用嚟喺 Claude Code、Codex 出留白多、舊紙質感嘅圖。出圖靠宿主已有嘅圖像功能。冇 GitHub release，最近 push 係 2026-07-22。MIT。唔會跟機畀你模型。",
   "MaxiDonkey/DelphiGenAI": "Delphi 嘅 OpenAI 客戶端，用嚟喺程式呼叫對話、視覺、語音同 gpt-image 出圖。要你自己嘅 API key 同 Delphi。最新 release GenAIv2.0.0。MIT。唔會畀你模型。",
-  "adunext/adu-motion-video": "口播同講解嘅動畫模板 skill，用嚟喺 Codex、Claude Code 換上你嘅稿再出 MP4 同可改工程。README 寫六類風格。新版喺 MotionGit，唔全喺呢個 release。最新 release v3.14.1-rc.1，其後有push。MIT。唔係生成模型，唔會畀你影片模型。"
+  "adunext/adu-motion-video": "口播同講解嘅動畫模板 skill，用嚟喺 Codex、Claude Code 換上你嘅稿再出 MP4 同可改工程。README 寫六類風格。新版喺 MotionGit，唔全喺呢個 release。最新 release v3.14.1-rc.1，其後有push。MIT。唔係生成模型，唔會畀你影片模型。",
+  "notivn/AIEVv2": "自託管嘅剪片台，用嚟喺瀏覽器叫 Claude 砌 Remotion 片，可以出卡拉 OK 字幕。圖像同網上配音要你自己嘅 Gemini key。離線聲係越南話，要另外裝。最新 release v2.0.2，其後有push。MIT。唔會跟機畀你影片模型。",
+  "zhanghaonan777/Seedance2-skill": "Seedance 創意 skill，用嚟喺 Cursor、OpenClaw 等寫過四關審核嘅提示，再用火山方舟 API 出片。要你自己嘅 ARK key。README 寫有 100 個以上鏡頭詞。冇 GitHub release，最近 push 係 2026-02-21。MIT。唔會畀你模型。",
+  "black-forest-labs/skills": "Black Forest Labs 官方 skill，用嚟喺 Claude Code、Codex 寫 FLUX 圖像同影片提示，再呼叫佢哋嘅 API。要你自己嘅 key。唔包含權重。冇 GitHub release，最近 push 係 2026-09-09。MIT。唔會跟機畀你模型。",
+  "woodfantasy/Seedance-ShotDesign-Skills": "Seedance 2.5 分鏡 skill，用嚟喺 Claude、Codex、Cursor 把主意收成可複製嘅提示。README 徽章寫 3.1.0。唔會自己出片。冇 GitHub release，最近 push 係 2026-08-19。MIT-0。唔會畀你影片模型。",
+  "ZeroLu/Ultimate-AI-Media-Generator-Skill": "圖像同影片 skill，用嚟喺 Codex、Claude Code 經 CyberBara 叫 Nano Banana、Sora、Seedance、Kling。要你自己嘅 API key，交返嘅係網址。冇 GitHub release，最近 push 係 2026-09-08。MIT。唔會畀你模型。",
+  "zhouwei713/fpv-immersive-video-prompting": "FPV 路線提示嘅 skill，用嚟喺 Claude、Codex、Cursor 先定鏡頭點行，再寫 Seedance、Kling 等提示。可以出參考圖提示。唔會自己出片。冇 GitHub release，最近 push 係 2026-06-10。MIT。唔會畀你影片模型。",
+  "guinacio/claude-image-gen": "Claude 出圖 skill 同 MCP，用嚟喺 Gemini 或 OpenAI 嘅 gpt-image 生圖並存落磁碟。至少要一把你自己嘅 API key。Node 20 先至手動裝。最新 release 1.3.0。MIT。唔會畀你模型。",
+  "ericblue/visual-explainer-skill": "講解圖 skill，用嚟喺 Claude Code 把筆記畫成白板、資訊圖或心智圖。出圖靠 OpenAI 或 Gemini，要你自己嘅 key。冇 GitHub release，最近 push 係 2026-04-03。MIT。唔會跟機畀你模型。",
+  "Syh1906/openai-compatible-imagegen": "相容 OpenAI 嘅出圖 skill，用嚟喺 Codex、Claude Code 生圖、改圖同做批次。可以改用已登入嘅 ChatGPT 路線。要 Python 3.12。最新 release v1.7.0。MIT。唔會畀你模型。",
+  "Moessif/code-video-showcase": "用程式砌卡點展示片嘅 skill，用嚟喺 agent 逐幀畫 HTML 同 Three.js，再用 Python 合成 120 BPM 配樂。要 Node 20、FFmpeg 同 Playwright。倉庫冇成片。最新 release v1.1.0，其後有push。MIT。唔會畀你生成模型。",
+  "since2006/shell-rs": "原生 SSH 客戶端，用嚟喺 macOS、Windows、Linux 管主機、終端、SFTP 同轉發。介面用 GPUI 畫。密碼只放系統鑰匙圈。附帶嘅指令畀 agent 喺已存主機執行，但睇唔到密碼。最新 release v0.1.18，其後有push。GPL-3.0。唔係影片工具。"
 }
