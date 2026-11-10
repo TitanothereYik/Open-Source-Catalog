@@ -1119,5 +1119,14 @@
   "ericblue/visual-explainer-skill": "講解圖 skill，用嚟喺 Claude Code 把筆記畫成白板、資訊圖或心智圖。出圖靠 OpenAI 或 Gemini，要你自己嘅 key。冇 GitHub release，最近 push 係 2026-04-03。MIT。唔會跟機畀你模型。",
   "Syh1906/openai-compatible-imagegen": "相容 OpenAI 嘅出圖 skill，用嚟喺 Codex、Claude Code 生圖、改圖同做批次。可以改用已登入嘅 ChatGPT 路線。要 Python 3.12。最新 release v1.7.0。MIT。唔會畀你模型。",
   "Moessif/code-video-showcase": "用程式砌卡點展示片嘅 skill，用嚟喺 agent 逐幀畫 HTML 同 Three.js，再用 Python 合成 120 BPM 配樂。要 Node 20、FFmpeg 同 Playwright。倉庫冇成片。最新 release v1.1.0，其後有push。MIT。唔會畀你生成模型。",
-  "since2006/shell-rs": "原生 SSH 客戶端，用嚟喺 macOS、Windows、Linux 管主機、終端、SFTP 同轉發。介面用 GPUI 畫。密碼只放系統鑰匙圈。附帶嘅指令畀 agent 喺已存主機執行，但睇唔到密碼。最新 release v0.1.18，其後有push。GPL-3.0。唔係影片工具。"
+  "since2006/shell-rs": "原生 SSH 客戶端，用嚟喺 macOS、Windows、Linux 管主機、終端、SFTP 同轉發。介面用 GPUI 畫。密碼只放系統鑰匙圈。附帶嘅指令畀 agent 喺已存主機執行，但睇唔到密碼。最新 release v0.1.18，其後有push。GPL-3.0。唔係影片工具。",
+  "xixihhhh/ai-short-drama-skill": "短劇導演嘅 skill，用嚟喺 Codex、Claude Code 串起劇本、分鏡、配音同質檢。模型要你自己接，例如 Wan 或 Seedance。徽章寫 v0.6.0，最新 release v0.3.3，其後有push。MIT。唔會跟機畀你影片模型。",
+  "useapi/google-flow-api": "第三方 Google Flow skill，用嚟喺 Node 或 Python 叫 Veo、Omni 同圖像。要你自己嘅 useapi token 同 Flow 帳戶。唔係 Google 官方。冇 GitHub release，最近 push 係 2026-11-07。MIT。唔會畀你模型。",
+  "HeyChengC/bighead-collage": "大頭拼貼 skill，用嚟喺 agent 用文案出 9:16。預設 edge-tts。圖靠已登入嘅 Codex 或你自己嘅圖像 API。要 Python 3.10、Node 18 同 FFmpeg。冇 GitHub release，最近 push 係 2026-10-28。MIT。唔會跟機畀你模型。",
+  "EvoLinkAI/gpt-image-2-gen-skill": "出圖 skill，用嚟喺 Claude Code、OpenClaw 經 EvoLink 叫 gpt-image-2。要你自己嘅 EVOLINK key。呢度唔係 OpenAI 官方接口。冇 GitHub release，最近 push 係 2026-06-24。MIT。唔會畀你模型。",
+  "yizhiyanhua-ai/zimage-skill": "Claude Code 出圖 skill，用嚟喺自然語言叫魔搭嘅 Z-Image-Turbo。要你自己嘅 ModelScope key。圖存落磁碟。冇 GitHub release，最近 push 係 2026-01-22。MIT。唔會跟機畀你權重。",
+  "wanshuiyin/ALIGN-Agentic-Loop-Image-GeneratioN": "用程式畫圖嘅 skill，用嚟喺 Claude Code、Codex 寫 p5.js，再靠另一個模型睇像素改稿。唔用擴散模型。影片路徑都係程式渲染。冇 GitHub release，最近 push 係 2026-10-17。MIT。唔會畀你圖像模型。",
+  "hec-ovi/text-to-3D-skill": "文字變 GLB 嘅 skill，用嚟喺 AMD Strix Halo 用 FLUX.2 出圖，再經 TRELLIS.2 建網格。權重唔喺倉庫，TRELLIS 約 20GB。人型先至綁骨。0.4.2。冇 GitHub release，最近 push 係 2026-07-28。MIT。唔會跟機畀你權重。",
+  "LunarXuan/image-prompt-reverse": "Codex 嘅反推提示 skill，用嚟喺參考圖寫出可貼去生圖工具嘅提示。預設有中英正向稿同十幾個負面詞。唔會自己出圖。冇 GitHub release，最近 push 係 2026-09-06。GPL-3.0。唔會畀你圖像模型。",
+  "Anionex/agent-vision-toolkit": "畀純文字 agent 睇圖嘅工具同 skill，用嚟喺 Codex、Claude Code 做問圖、長截圖文字同介面還原。要你自己嘅多模態 API。Python 3.11。最新 release v0.2.0，其後有push。MIT。唔會自己畫圖，亦唔會畀你模型。"
 }
