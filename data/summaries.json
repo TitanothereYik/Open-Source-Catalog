@@ -1077,5 +1077,14 @@
   "sunchaokun/PPT-Design-Skill": "簡報 skill，用嚟喺 OpenCode、Claude Code、Codex 出可改嘅 PPTX。圖同版面由現成 pptx-designer 砌。要你自己嘅模型。最新 GitHub release 係 1.3，README 徽章寫 1.5，其後有push。MIT。唔會畀你圖像模型。",
   "rediumvex/ai-video-generator-claude": "十個寫片提示詞嘅 skill，用嚟喺 Higgsfield 嘅 Seedance 2.0 貼一段 15 到 25 行提示。唔會自己渲染成片。要你自己嘅 Higgsfield 帳號。冇 GitHub release，最近 push 係 2026-08-11。MIT。唔會畀你影片模型。",
   "rehan-remade/universal-modder": "遊戲改裝 skill，用嚟喺你擁有嘅 PC 遊戲叫 agent 寫改裝、用 fal 出圖同聲，再剪展示片。要你自己嘅遊戲同 fal。冇 GitHub release，最近 push 係 2026-11-10。MIT。唔會畀你遊戲本體或影片模型。",
-  "LiamGvchi/gc-minimal-zine-poster": "Codex skill，用嚟喺一句主題出紙本質感嘅小誌海報，或者只出提示詞。出圖靠宿主已有嘅圖像功能。套件冇腳本同權重。最新 release v0.3.1。MIT。唔會跟機畀你模型。"
+  "LiamGvchi/gc-minimal-zine-poster": "Codex skill，用嚟喺一句主題出紙本質感嘅小誌海報，或者只出提示詞。出圖靠宿主已有嘅圖像功能。套件冇腳本同權重。最新 release v0.3.1。MIT。唔會跟機畀你模型。",
+  "Yacey/agnes-ai-generation-skill": "Agnes 官方 API 嘅 skill，用嚟喺 Codex、Claude Code 等叫佢出圖同出片。要你自己嘅 API key。預設只回網址，唔自動下載。最新 release v0.1.0，其後有push。MIT。唔會跟機畀你模型。",
+  "HuangYuChuh/ComfyUI_Skills_OpenClaw": "把你已有嘅 ComfyUI 流程包成 skill，用嚟喺 OpenClaw、Codex、Claude Code 用指令行去跑。要 Python 3.10 同你自己嘅 ComfyUI、模型。最新 release v0.1.0，其後有push。MIT。唔會跟機畀你權重。",
+  "kingbootoshi/nano-banana-2-skill": "Gemini 出圖嘅命令列同 Claude skill，用嚟喺你嘅 API key 出圖，透明底要裝 FFmpeg。預設模型 README 寫 Gemini 3.1 Flash Image。要 Bun。冇 GitHub release，最近 push 係 2026-10-31。MIT。唔會畀你模型。",
+  "Mr-funny/hbg-classical-poem-silk-video": "古詩短片 skill，用嚟喺 Codex 內置出圖加 Docker 入面嘅 Gemini 圖生片，做成直幅國畫片。要你自己嘅 Codex 同 Docker。最新 release v0.1.0。MIT。唔會跟機畀你影片模型。",
+  "modelstudioai/cli": "阿里雲百煉官方命令列，用嚟喺 agent 叫佢出圖、出片同語音。要 Node 18.17 同你自己嘅 API key。部分功能只限中國站帳號。最新 release v2.8.4，其後有push。Apache-2.0。唔會畀你模型。",
+  "kurbaitaev/ghost-editor": "口播剪片 skill，用嚟喺 Apple 晶片嘅 Mac 把長口播剪成短片。要大約 4GB，會裝 ffmpeg 同 Whisper。Linux 同 Intel Mac 未試過。最新 release v0.3.0。MIT。唔係生成模型，唔會畀你新片模型。",
+  "Hao0321/ai-media-generator": "寫提示詞同代你撳網站嘅 skill，用嚟喺 Claude Code 或 Codex 去其他平台出圖、出片同音樂。要你自己嘅平台帳號。README 寫 Sora 2 已停。最新 release v2.2.0。MIT。唔會喺本機畀你模型。",
+  "echris6/motion-video-kit": "商業宣傳片 skill，用嚟喺 Claude Code 砌程式動態同現成生成片段。參考嘅 28 條片只係連結，唔附片源。渲染建議用 HyperFrames。冇 GitHub release，最近 push 係 2026-10-15。MIT。唔會畀你影片模型。",
+  "actionow-ai/vvv": "可重用嘅影片模板 skill，用嚟喺 Claude Code、Codex 等換上你自己嘅相片同文字再渲染。範例人物係虛構。相片、音樂同字體要你有權用。最新 release v0.2.0。MIT。唔係生成模型，唔會畀你新片。"
 }
