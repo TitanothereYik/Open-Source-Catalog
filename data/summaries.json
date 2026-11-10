@@ -1137,5 +1137,16 @@
   "JKc66/custom-icons-skill": "自訂圖示 skill，用嚟喺 Codex 等出一套 SVG 同透明 PNG。描線要 Python、Pillow 同 Potrace。出圖靠宿主已有嘅圖像功能。最新 release v1.0.0。MIT。唔會跟機畀你模型。",
   "haremank/nsfw-prompt": "成人圖像提示 skill，用嚟喺 agent 把要求編成提示。README 寫明未成年、真實私人同非自願暴力會拒絕。唔會自己出圖。要你自己嘅模型。最新 release v1.0.0，其後有push。MIT。唔會畀你圖像模型。",
   "Goblinmine/homelab-diagram": "家居網絡圖腳本，用嚟喺 YAML 畫一張 SVG 同 PNG。版面座標係為作者嗰個網絡手寫，換你嘅網絡要改程式。要 Python、rsvg-convert 同字型。冇 GitHub release，最近 push 係 2026-11-07。MIT。唔係生成模型，唔會畀你圖像模型。",
-  "BloopAI/vibe-kanban": "編碼 agent 嘅看板，用嚟喺本機開工作區，叫 Claude Code、Codex 等做分支同改碼，再喺介面審 diff。要你自己已登入嘅 agent。README 寫明準備停止。最新 release v0.1.44，其後有push。Apache-2.0。唔係影片工具，唔會畀你模型。"
+  "BloopAI/vibe-kanban": "編碼 agent 嘅看板，用嚟喺本機開工作區，叫 Claude Code、Codex 等做分支同改碼，再喺介面審 diff。要你自己已登入嘅 agent。README 寫明準備停止。最新 release v0.1.44，其後有push。Apache-2.0。唔係影片工具，唔會畀你模型。",
+  "Lum1104/video-to-skill": "片變 skill，用嚟喺 Claude Code、Codex 把課程片做成可考問嘅 skill。要 Python 3.11 至 3.13 同 FFmpeg。課程版權仍然係原作者。冇 GitHub release，最近 push 係 2026-10-30。MIT。唔會自己出片，亦唔會畀你模型。",
+  "dean9703111/auto-edit-workspace": "口播剪片嘅工作區，用嚟喺 agent 叫程式剪 NG、上字幕同出 MP4。轉檔喺你部電腦。要 Node 22 同 HyperFrames。徽章寫 macOS、Windows。冇 GitHub release，最近 push 係 2026-11-10。MIT。唔係生成模型，唔會畀你影片模型。",
+  "perso-ai/perso-dubbing-plugin": "配音 skill，用嚟喺 Claude Code、Codex 叫 Perso 幫片配音同對嘴。燒字幕同剪時段喺本機 FFmpeg，唔使帳戶。配音要你自己嘅 API key 同點數。Node 18。冇 GitHub release，最近 push 係 2026-11-02。MIT。唔會畀你配音模型。",
+  "SamurAIGPT/Generative-Media-Skills": "圖像同影片 skill，用嚟喺 Claude Code、Cursor 經 muapi.ai 出圖、出片同出聲。要你自己嘅 MUAPI key。冇 GitHub release，最近 push 係 2026-09-29。MIT。唔會跟機畀你模型。",
+  "GoldLegendW80/llm-video-maker": "提示變 MP4 嘅 skill，用嚟喺 Claude Code、Codex 用 HyperFrames 砌片。配音係本機 Kokoro，約 80MB。要 Node 22、FFmpeg 同 Chrome。最新 release v1.0.0，其後有push。MIT。唔係生成影片模型，唔會畀你影片模型。",
+  "novoads/agent-skills": "廣告片 skill，用嚟喺 Claude Code、Cursor 先報價再出圖同出片。要你自己嘅 Novoads key，README 寫方案由每月 15 美元起。最新 release v1.0.0，其後有push。MIT。唔會跟機畀你模型。",
+  "civitai/civitai-gen-skill": "Civitai 出圖 skill，用嚟喺 Node 18 交工作流、輪詢再下載。預設圖像係 Flux。要你自己嘅 API key，用 buzz 計費。最新 release v1.0.5。MIT。唔會畀你模型。",
+  "Rinne414/lora-training-skill": "LoRA 訓練 skill，用嚟喺 agent 先檢查你嘅圖，再叫另外下載嘅 SD-Trainer 開訓。以 Anima 為主，亦寫到 SDXL、Flux。要你自己嘅 GPU 同底模。冇 GitHub release，最近 push 係 2026-10-26。MIT。唔會跟機畀你權重。",
+  "fengyunzaidushi/sub2api-4k-image-generator-ts": "4K 出圖 skill，用嚟喺 Codex 經你自己架好嘅 sub2api 接口生圖。要 SUB2API key。可以收串流同排查 Cloudflare 524。冇 GitHub release，最近 push 係 2026-07-03。MIT。唔會畀你圖像模型。",
+  "converge-ai-labs/agent-foundation": "自託管 agent 運行時，用嚟喺你自己嘅機器跑長任務，中斷後可以續跑。要 Python 3.13、Docker、Postgres、Redis。模型要你自己嘅 key。最新 release a13n-harness-v0.31.0，其後有push。Apache-2.0。唔係影片工具，唔會畀你模型。",
+  "OthmanAdi/planning-with-files": "編碼 agent 嘅規劃 skill，用嚟喺每次回合把 task_plan、findings、progress 寫落磁碟。/clear 之後仍然讀得返。README 寫支援 60 個以上 agent。最新 release v3.28.1，其後有push。MIT。唔係影片工具，唔會畀你模型。"
 }
