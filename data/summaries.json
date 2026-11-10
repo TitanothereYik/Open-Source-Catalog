@@ -1056,5 +1056,9 @@
   "alchaincyf/nuwa-skill": "技能，用嚟喺你部機叫已有嘅 agent 按一個名字做公開資料調研，再寫成思維方式。唔會變成嗰個人，亦唔會攞到佢私人資料。要你自己嘅模型。說明以中文為主。最新 release v1.1.0。MIT。唔會畀你模型。",
   "kestra-io/kestra": "開源編排平台，用嚟喺你部機用 YAML 排工作流，可以串 AI 步驟。企業版功能唔喺呢份 Apache 嘅程式。要 Docker。最新 release v2.0.9，其後有push。Apache-2.0。唔會畀你模型。",
   "fikrikarim/parlor": "研究預覽，用嚟喺 Mac Apple Silicon 或有 GPU 嘅 Linux 做本機語音同畫面。要 Python 3.12 同 llama.cpp。模型第一次行先下載。作者話唔追到 GPT-Live。最新 release v2.0.0，其後有push。Apache-2.0。唔會跟機畀你模型。",
-  "salu133445/musegan": "多軌音樂生成，用嚟喺你部機砌 bass、鼓、結他、鋼琴同弦樂短句。數據係 Lakh Pianoroll 嘅資料。預訓練模型要另外下載。最新實作可控性較低。最後 push 2024-06-07。冇 GitHub release。MIT。唔會跟庫畀你模型。"
+  "salu133445/musegan": "多軌音樂生成，用嚟喺你部機砌 bass、鼓、結他、鋼琴同弦樂短句。數據係 Lakh Pianoroll 嘅資料。預訓練模型要另外下載。最新實作可控性較低。最後 push 2024-06-07。冇 GitHub release。MIT。唔會跟庫畀你模型。",
+  "Vibha-Ramprakash/claude-video-effects": "影片 skill，用嚟喺 Claude Code 幫你嘅口播片加效果。要 ffmpeg 同 Python。完整工作室唔喺呢個庫。冇 GitHub release。MIT。唔會畀你模型。",
+  "chroma-core/chroma": "向量搜尋資料庫，用嚟喺你部機存放同搜尋嵌入。要你自己嘅資料同嵌入模型。雲端版要另外付費。GitHub release 標籤叫 latest（2025-04-01），其後有push。Apache-2.0。唔會畀你模型。",
+  "techjarves/Portable-Local-Studio": "本機工作室，用嚟喺 Windows、Linux 或 macOS 跑圖、GGUF 聊天、Whisper 同 Kokoro。權重要你自己下載，面板可以下一隻細嘅 Qwen2.5 Coder。冇 GitHub release。最後 push 2026-11-05。MIT。唔會跟機畀你大模型。",
+  "RHVoice/RHVoice": "統計參數語音合成，用嚟喺你嘅電腦讀俄文、英文同烏克蘭文等，冇廣東話。聲線冇錄音拼接咁自然。最新 release 1.18.5，其後有push。GPL-2.0。唔會畀你廣東話聲。"
 }
