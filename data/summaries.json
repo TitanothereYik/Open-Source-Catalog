@@ -1192,5 +1192,7 @@
   "threerocks/article2media": "文章變圖文同口播嘅 skill，用嚟喺 Claude Code、Codex 出小紅書卡同豎片。配音用本機 VoxCPM2，字幕用 Whisper。要 Node 22 同 Chrome。最新 release v2.2.0，其後有push。MIT。唔會畀你影片模型。",
   "weibo-job/guagua-animation-skills": "九個無對白動畫 skill，用嚟喺 Codex 寫角色、分鏡同提示。倉庫話未做完端到端實測。出圖出片要你自己嘅工具，可能收費。冇工具就只出文字。冇 GitHub release，最近 push 係 2026-11-04。MIT。唔會畀你模型。",
   "lhlGitHub/threejs-architecture-effects": "Three.js 建築 skill，用嚟喺 Codex、Claude Code、Cursor 砌可轉嘅立體古建。程序生成，唔使 API key，亦唔係影片模型。要 Node。冇 GitHub release，最近 push 係 2026-09-22。MIT。唔會畀你模型。",
-  "mkiol/dsnote": "Linux 嘅離線筆記 app，用嚟喺本機做語音轉文字、朗讀同翻譯。安裝包唔包含模型，要喺 app 入面下載。最新 release b4.9.1-1，其後有push。MPL-2.0。唔會跟機畀你權重。"
+  "mkiol/dsnote": "Linux 嘅離線筆記 app，用嚟喺本機做語音轉文字、朗讀同翻譯。安裝包唔包含模型，要喺 app 入面下載。最新 release b4.9.1-1，其後有push。MPL-2.0。唔會跟機畀你權重。",
+  "met4citizen/TalkingHead": "瀏覽器入面嘅 3D 對嘴 class，用嚟喺 Three.js 跟住語音郁個虛擬人。要你自己嘅模型同 TTS key。唔係生成影片。最新 release v1.8.2，其後有push。MIT。唔會畀你語音模型。",
+  "waybarrios/vllm-mlx": "Apple Silicon 嘅推理伺服器，用嚟喺 Mac 跑你自己下載嘅文字、圖像、影片同語音模型。Python 3.10。最新 release v0.6.0，其後有push。Apache-2.0。唔會跟機畀你權重。"
 }

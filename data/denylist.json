@@ -135,5 +135,7 @@
   "NirDiamant/GenAI_Agents",
   "feizc/FluxMusic",
   "nocobase/nocobase",
-  "NVlabs/GRAIL"
+  "NVlabs/GRAIL",
+  "kubai087/kubai-icons",
+  "dolthub/dolt"
 ]
