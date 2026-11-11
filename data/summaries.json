@@ -1203,5 +1203,9 @@
   "MiniMax-AI/MiniMax-MCP": "MiniMax MCP 用嚟喺 Claude 或 Cursor 叫雲端做語音、圖像同影片。要你自己嘅 API key，會收費。Python 3.10。冇 GitHub release，套件寫 0.0.19，push 係 2026-11-10。MIT。唔會喺本機跑模型，亦唔會畀你權重。",
   "citrolabs/ego-lite": "ego lite 係 macOS 同 Windows 嘅瀏覽器，用嚟喺獨立 Space 畀 agent 用你本機嘅登入做網頁操作。會裝 ego-browser skill。Linux 未有。最新 release v2.2.0，其後有push。MIT。唔會畀你模型。",
   "Aratako/Irodori-TTS": "Irodori 係日文嘅 TTS，用嚟喺本機用 emoji 控制語氣。裝咗 SilentCipher 會加水印。權重係 Hugging Face v4.1-Small，唔喺 repo。Python 3.10。冇 GitHub release，push 係 2026-11-09。MIT。唔會畀你權重。",
-  "Enemyx-net/VibeVoice-ComfyUI": "呢個係 ComfyUI 節點，用嚟喺工作流跑 Microsoft VibeVoice 嘅單人同多人語音。由 v1.6.0 起權重要自己下載。Python 3.8。最新 release v1.8.1，其後有push到 2026-02-18。MIT。唔會跟機畀你模型。"
+  "Enemyx-net/VibeVoice-ComfyUI": "呢個係 ComfyUI 節點，用嚟喺工作流跑 Microsoft VibeVoice 嘅單人同多人語音。由 v1.6.0 起權重要自己下載。Python 3.8。最新 release v1.8.1，其後有push到 2026-02-18。MIT。唔會跟機畀你模型。",
+  "google/adk-python": "Google 嘅 ADK 係 Python 框架，用嚟喺程式入面砌、評估同部署 agent。偏向 Gemini，模型要你自己接。Python 3.11。最新 release v2.14.0，其後有push。Apache-2.0。唔會畀你模型。",
+  "KKKKhazix/khazix-skills": "六個 agent skill，用嚟喺 Claude Code 或 Codex 定目標、清磁碟、查 AI 日報、對齊文件、寫研究 PDF 同卡茲克文風。要有工具嘅 agent，純聊天做唔到。最新 release v1.2.1，其後有push。MIT。唔會畀你模型。",
+  "devnen/Chatterbox-TTS-Server": "Chatterbox 伺服器，用嚟喺本機嘅 Web UI 同 OpenAI 相容 API 做語音同克隆。權重要下載 Resemble 模型，唔喺 repo。Python 3.10，支援 CUDA、ROCm、MPS。最新 release v2.0.0，其後有push。MIT。唔會跟機畀你權重。",
+  "WSTxda/SwitchAI": "SwitchAI 係 Android app，用嚟喺手機切換已安裝嘅 AI 助手。唔包含助手本身，亦唔會生成語音。API 26。最新 release 4.2，冇其後 push。GPL-3.0。唔會畀你模型。"
 }
