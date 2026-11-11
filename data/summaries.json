@@ -1185,7 +1185,7 @@
   "pascalorg/editor": "瀏覽器入面嘅建築編輯器，用嚟喺本機用 MCP 畀 agent 改樓宇模型。本機模式唔使帳戶。托管先至要登入。唔係生成模型。最新 release 係 CLI 1.1.0，其後有push。MIT。唔會畀你模型。",
   "Agentchengfeng/chengfeng-videocut-skills": "剪片嘅 skill 插件，用嚟喺 Codex 叫工作台剪口播同字幕。呢個倉庫唔包含剪輯器。公開 Runtime 仲係 v0.4.11，新工作台要 0.5.9，所以新命令會停低。Node 18。最新 release v0.10.11，其後有push。Apache-2.0。唔會畀你模型。",
   "SharpAI/DeepCamera": "本機鏡頭 skill 平台，用嚟喺你自己接駁嘅攝影機做畫面分析。要你自己下載 Qwen 或其他模型。唔會生成影片。最新 release v2026.3，其後有push。MIT。唔會跟機畀你權重。",
-  "nexu-io/html-anything": "用 HTML 整片嘅 agent，用嚟喺本機重做參考片再渲染 MP4。出圖、出片同音樂要你自己嘅 key。Node 22.18。冇 GitHub release，最近 push 係 2026-11-11。Apache-2.0。唔會畀你模型。",
+  "nexu-io/openmotion": "用 HTML 整片嘅 agent，用嚟喺本機重做參考片再渲染 MP4。出圖、出片同音樂要你自己嘅 key。Node 22.18。冇 GitHub release，最近 push 係 2026-11-11。Apache-2.0。唔會畀你模型。",
   "NVIDIA/SkillSpector": "Agent skill 嘅安全掃描器，用嚟喺安裝前睇注入同外洩。靜態掃描唔使模型。語義檢查先至要你自己嘅 key。Python 3.12。最新 release v2.13.4，其後有push。Apache-2.0。唔會畀你模型。",
   "ModelTC/LightX2V": "圖像同影片嘅推理框架，用嚟喺你部 GPU 跑現成 T2V、I2V。權重要你自己去 Hugging Face 下載。最新 release 0.6.1，其後有push。Apache-2.0。唔會跟機畀你模型。",
   "Agents365-ai/video-podcast-maker": "主題變 4K 片嘅 skill，用嚟喺 agent 用 Remotion 渲染。Edge 語音唔使 key，AI 素材要你自己嘅 key。Python 3.8、Node 18、FFmpeg。最新 release v5.2.1，其後有push。README 寫 v5.3.0。MIT。唔會畀你模型。",
@@ -1194,5 +1194,8 @@
   "lhlGitHub/threejs-architecture-effects": "Three.js 建築 skill，用嚟喺 Codex、Claude Code、Cursor 砌可轉嘅立體古建。程序生成，唔使 API key，亦唔係影片模型。要 Node。冇 GitHub release，最近 push 係 2026-09-22。MIT。唔會畀你模型。",
   "mkiol/dsnote": "Linux 嘅離線筆記 app，用嚟喺本機做語音轉文字、朗讀同翻譯。安裝包唔包含模型，要喺 app 入面下載。最新 release b4.9.1-1，其後有push。MPL-2.0。唔會跟機畀你權重。",
   "met4citizen/TalkingHead": "瀏覽器入面嘅 3D 對嘴 class，用嚟喺 Three.js 跟住語音郁個虛擬人。要你自己嘅模型同 TTS key。唔係生成影片。最新 release v1.8.2，其後有push。MIT。唔會畀你語音模型。",
-  "waybarrios/vllm-mlx": "Apple Silicon 嘅推理伺服器，用嚟喺 Mac 跑你自己下載嘅文字、圖像、影片同語音模型。Python 3.10。最新 release v0.6.0，其後有push。Apache-2.0。唔會跟機畀你權重。"
+  "waybarrios/vllm-mlx": "Apple Silicon 嘅推理伺服器，用嚟喺 Mac 跑你自己下載嘅文字、圖像、影片同語音模型。Python 3.10。最新 release v0.6.0，其後有push。Apache-2.0。唔會跟機畀你權重。",
+  "flohoeller/affectui": "affectUI 係 React 19 嘅元件庫，用嚟喺 app 顯示 agent 嘅工具呼叫同審批。Pro 元件唔喺呢個 repo。冇 GitHub release，最近 push 係 2026-11-10。MIT。唔會跑 agent，只係畀你畫面。",
+  "slopus/happy": "Happy 呢個 repo 係手機 app、原版 CLI 同中繼，用嚟喺你部機調度已有嘅 Claude、Codex 同 Grok 訂閱。GitHub release 係 CLI v1.2.5，套件寫 1.2.6，其後有push。MIT。唔係 skill，亦唔會畀你模型。",
+  "kan-bayashi/ParallelWaveGAN": "非官方嘅 PyTorch 聲碼器，用嚟喺 mel 頻譜合成波形，包埋 HiFi-GAN。權重要另下載，資料集牌照要自己核。GitHub release v0.6.1 同 PyPI 一樣，其後有push。Python 3.8。MIT。唔係由文字出聲，亦唔會畀你完整語音模型。"
 }

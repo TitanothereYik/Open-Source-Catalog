@@ -137,5 +137,6 @@
   "nocobase/nocobase",
   "NVlabs/GRAIL",
   "kubai087/kubai-icons",
-  "dolthub/dolt"
+  "dolthub/dolt",
+  "alan-ai/alan-sdk-ionic"
 ]
