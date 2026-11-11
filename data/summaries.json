@@ -1184,5 +1184,9 @@
   "activepieces/activepieces": "工作流平台，用嚟喺本機串接 AI agent 同 MCP。社群程式碼係 MIT。packages/ee 係另一份付費授權，唔係 MIT。要你自己嘅模型 key。最新 release 0.93.0，其後有push。唔會畀你模型。",
   "pascalorg/editor": "瀏覽器入面嘅建築編輯器，用嚟喺本機用 MCP 畀 agent 改樓宇模型。本機模式唔使帳戶。托管先至要登入。唔係生成模型。最新 release 係 CLI 1.1.0，其後有push。MIT。唔會畀你模型。",
   "Agentchengfeng/chengfeng-videocut-skills": "剪片嘅 skill 插件，用嚟喺 Codex 叫工作台剪口播同字幕。呢個倉庫唔包含剪輯器。公開 Runtime 仲係 v0.4.11，新工作台要 0.5.9，所以新命令會停低。Node 18。最新 release v0.10.11，其後有push。Apache-2.0。唔會畀你模型。",
-  "SharpAI/DeepCamera": "本機鏡頭 skill 平台，用嚟喺你自己接駁嘅攝影機做畫面分析。要你自己下載 Qwen 或其他模型。唔會生成影片。最新 release v2026.3，其後有push。MIT。唔會跟機畀你權重。"
+  "SharpAI/DeepCamera": "本機鏡頭 skill 平台，用嚟喺你自己接駁嘅攝影機做畫面分析。要你自己下載 Qwen 或其他模型。唔會生成影片。最新 release v2026.3，其後有push。MIT。唔會跟機畀你權重。",
+  "nexu-io/html-anything": "用 HTML 整片嘅 agent，用嚟喺本機重做參考片再渲染 MP4。出圖、出片同音樂要你自己嘅 key。Node 22.18。冇 GitHub release，最近 push 係 2026-11-11。Apache-2.0。唔會畀你模型。",
+  "NVIDIA/SkillSpector": "Agent skill 嘅安全掃描器，用嚟喺安裝前睇注入同外洩。靜態掃描唔使模型。語義檢查先至要你自己嘅 key。Python 3.12。最新 release v2.13.4，其後有push。Apache-2.0。唔會畀你模型。",
+  "ModelTC/LightX2V": "圖像同影片嘅推理框架，用嚟喺你部 GPU 跑現成 T2V、I2V。權重要你自己去 Hugging Face 下載。最新 release 0.6.1，其後有push。Apache-2.0。唔會跟機畀你模型。",
+  "Agents365-ai/video-podcast-maker": "主題變 4K 片嘅 skill，用嚟喺 agent 用 Remotion 渲染。Edge 語音唔使 key，AI 素材要你自己嘅 key。Python 3.8、Node 18、FFmpeg。最新 release v5.2.1，其後有push。README 寫 v5.3.0。MIT。唔會畀你模型。"
 }
