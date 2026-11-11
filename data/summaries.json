@@ -1197,5 +1197,8 @@
   "waybarrios/vllm-mlx": "Apple Silicon 嘅推理伺服器，用嚟喺 Mac 跑你自己下載嘅文字、圖像、影片同語音模型。Python 3.10。最新 release v0.6.0，其後有push。Apache-2.0。唔會跟機畀你權重。",
   "flohoeller/affectui": "affectUI 係 React 19 嘅元件庫，用嚟喺 app 顯示 agent 嘅工具呼叫同審批。Pro 元件唔喺呢個 repo。冇 GitHub release，最近 push 係 2026-11-10。MIT。唔會跑 agent，只係畀你畫面。",
   "slopus/happy": "Happy 呢個 repo 係手機 app、原版 CLI 同中繼，用嚟喺你部機調度已有嘅 Claude、Codex 同 Grok 訂閱。GitHub release 係 CLI v1.2.5，套件寫 1.2.6，其後有push。MIT。唔係 skill，亦唔會畀你模型。",
-  "kan-bayashi/ParallelWaveGAN": "非官方嘅 PyTorch 聲碼器，用嚟喺 mel 頻譜合成波形，包埋 HiFi-GAN。權重要另下載，資料集牌照要自己核。GitHub release v0.6.1 同 PyPI 一樣，其後有push。Python 3.8。MIT。唔係由文字出聲，亦唔會畀你完整語音模型。"
+  "kan-bayashi/ParallelWaveGAN": "非官方嘅 PyTorch 聲碼器，用嚟喺 mel 頻譜合成波形，包埋 HiFi-GAN。權重要另下載，資料集牌照要自己核。GitHub release v0.6.1 同 PyPI 一樣，其後有push。Python 3.8。MIT。唔係由文字出聲，亦唔會畀你完整語音模型。",
+  "NVIDIA/NemoClaw": "NemoClaw 係 Apache-2.0 嘅沙盒，用嚟喺 OpenShell 跑 OpenClaw、Hermes 或 Deep Agents。要 DGX 或 WSL，推理自己揀。Node 22.19。冇 GitHub release，push 係 2026-11-12。alpha。唔會畀你模型。",
+  "ekwek1/soprano": "Soprano 係本機嘅 TTS，用嚟喺 CPU 或 GPU 出 32kHz 語音。80M 權重唔喺 repo，要由 Hugging Face 下載。Python 3.10。冇 GitHub release，套件寫 0.2.0，push 係 2026-01-16。Apache-2.0。唔會畀你權重。",
+  "MiniMax-AI/MiniMax-MCP": "MiniMax MCP 用嚟喺 Claude 或 Cursor 叫雲端做語音、圖像同影片。要你自己嘅 API key，會收費。Python 3.10。冇 GitHub release，套件寫 0.0.19，push 係 2026-11-10。MIT。唔會喺本機跑模型，亦唔會畀你權重。"
 }

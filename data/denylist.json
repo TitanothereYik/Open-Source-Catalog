@@ -138,5 +138,6 @@
   "NVlabs/GRAIL",
   "kubai087/kubai-icons",
   "dolthub/dolt",
-  "alan-ai/alan-sdk-ionic"
+  "alan-ai/alan-sdk-ionic",
+  "walkinglabs/learn-harness-engineering"
 ]
