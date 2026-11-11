@@ -1200,5 +1200,8 @@
   "kan-bayashi/ParallelWaveGAN": "非官方嘅 PyTorch 聲碼器，用嚟喺 mel 頻譜合成波形，包埋 HiFi-GAN。權重要另下載，資料集牌照要自己核。GitHub release v0.6.1 同 PyPI 一樣，其後有push。Python 3.8。MIT。唔係由文字出聲，亦唔會畀你完整語音模型。",
   "NVIDIA/NemoClaw": "NemoClaw 係 Apache-2.0 嘅沙盒，用嚟喺 OpenShell 跑 OpenClaw、Hermes 或 Deep Agents。要 DGX 或 WSL，推理自己揀。Node 22.19。冇 GitHub release，push 係 2026-11-12。alpha。唔會畀你模型。",
   "ekwek1/soprano": "Soprano 係本機嘅 TTS，用嚟喺 CPU 或 GPU 出 32kHz 語音。80M 權重唔喺 repo，要由 Hugging Face 下載。Python 3.10。冇 GitHub release，套件寫 0.2.0，push 係 2026-01-16。Apache-2.0。唔會畀你權重。",
-  "MiniMax-AI/MiniMax-MCP": "MiniMax MCP 用嚟喺 Claude 或 Cursor 叫雲端做語音、圖像同影片。要你自己嘅 API key，會收費。Python 3.10。冇 GitHub release，套件寫 0.0.19，push 係 2026-11-10。MIT。唔會喺本機跑模型，亦唔會畀你權重。"
+  "MiniMax-AI/MiniMax-MCP": "MiniMax MCP 用嚟喺 Claude 或 Cursor 叫雲端做語音、圖像同影片。要你自己嘅 API key，會收費。Python 3.10。冇 GitHub release，套件寫 0.0.19，push 係 2026-11-10。MIT。唔會喺本機跑模型，亦唔會畀你權重。",
+  "citrolabs/ego-lite": "ego lite 係 macOS 同 Windows 嘅瀏覽器，用嚟喺獨立 Space 畀 agent 用你本機嘅登入做網頁操作。會裝 ego-browser skill。Linux 未有。最新 release v2.2.0，其後有push。MIT。唔會畀你模型。",
+  "Aratako/Irodori-TTS": "Irodori 係日文嘅 TTS，用嚟喺本機用 emoji 控制語氣。裝咗 SilentCipher 會加水印。權重係 Hugging Face v4.1-Small，唔喺 repo。Python 3.10。冇 GitHub release，push 係 2026-11-09。MIT。唔會畀你權重。",
+  "Enemyx-net/VibeVoice-ComfyUI": "呢個係 ComfyUI 節點，用嚟喺工作流跑 Microsoft VibeVoice 嘅單人同多人語音。由 v1.6.0 起權重要自己下載。Python 3.8。最新 release v1.8.1，其後有push到 2026-02-18。MIT。唔會跟機畀你模型。"
 }
