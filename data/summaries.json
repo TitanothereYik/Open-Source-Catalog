@@ -1157,5 +1157,15 @@
   "AceDataCloud/Skills": "AceData 嘅 skill 包，用嚟喺 Codex、Claude Code 經佢哋接口叫 Suno、Seedance 同圖像。要你自己嘅 Ace key。唔係模型商出嘅。最新 release v2026.1109.318001。Apache-2.0。唔會畀你模型。",
   "sacredvoid/skillkit": "混合嘅 skill 包，用嚟喺 Claude Code 本機跑 Stable Diffusion 同 Whisper。權重要你自己下載。亦有搵圖同做簡報。冇 GitHub release，最近 push 係 2026-03-18。MIT。唔會跟機畀你權重。",
   "beatra-ai/ai-logo-maker-skill": "標誌 skill，用嚟喺 Claude Code、Cursor 把品牌名收成幾個方向。出圖要你自己嘅 Beatra 帳戶同點數。Python 3.10。最新 release v0.2.9，其後有push。MIT-0。唔會畀你模型。",
-  "phuryn/pm-skills": "產品經理嘅 skill 包，用嚟喺 Claude Code 行發現、策略同寫 PRD。README 寫有 72 個 skill。唔包含模型。最新 release v2.3.0。MIT。唔係影片工具，唔會畀你模型。"
+  "phuryn/pm-skills": "產品經理嘅 skill 包，用嚟喺 Claude Code 行發現、策略同寫 PRD。README 寫有 72 個 skill。唔包含模型。最新 release v2.3.0。MIT。唔係影片工具，唔會畀你模型。",
+  "igorls/comfyui-h3-editor": "ComfyUI 入面嘅 H3 時間線剪輯器，用嚟喺你自己嘅 GPU 寫鏡頭、渲染同埋剪片。套件唔會下載權重，要 ComfyUI 0.43 或更新。亦有 agent skill。最新 release v0.2.0。GPL-3.0。唔會畀你模型。",
+  "dsauce/stickman-kino": "火柴人嘅影片 skill，用嚟喺 coding agent 寫場面，再喺本機用程式畫每一格。冇影片模型。語音用本機 Kokoro，音樂係程序生成。要 Node 18。最新 release v1.0.0，其後有push。MIT。唔會畀你影片模型。",
+  "PUSHINGSQUARES/pushing-creation": "電影提示 skill，用嚟喺 Claude Code 寫風格包同分鏡。要出圖先至放你自己嘅供應商 key 入 Keychain。冇 key 就只出 markdown。冇 GitHub release，最近 push 係 2026-05-12。MIT。唔會畀你模型。",
+  "magichourhq/skills": "Magic Hour 嘅 skill 包，用嚟喺 Codex、Claude Code 做圖生影片、換臉同生圖。要你自己嘅帳戶同點數。技能免費裝。冇 GitHub release，最近 push 係 2026-11-01。MIT。唔會畀你模型。",
+  "pixelab-ch/higgsfield-skills": "15 個 Higgsfield skill，用嚟喺 Claude 寫圖像同影片提示。冇 MCP 都可以寫提示。要生成先至用你自己嘅 Higgsfield 帳戶同點數。冇 GitHub release，最近 push 係 2026-05-25。MIT。唔會畀你模型。",
+  "Jakedismo/visual-explainer-extension": "Gemini CLI 擴充，用嚟喺終端輸出砌成 HTML 圖解，並用 Gemini 生圖。要你自己嘅 Gemini。唔係通用生圖模型。冇 GitHub release，最近 push 係 2026-03-05。MIT。唔會畀你模型。",
+  "expo/exact": "跨平台嘅 UI 框架，用嚟喺網頁、macOS、iOS 同 Linux 跑同一個 app。coding agent 可以喺本機建、跑同測試。要 Xcode、Rust、Bun、Chrome。冇 GitHub release，最近 push 係 2026-11-11。MIT。唔係生圖工具，唔會畀你模型。",
+  "Fosowl/agenticSeek": "本機 agent，用嚟喺你部機瀏覽同寫程式。要 Python 3.10、Docker，同你自己嘅 Ollama 模型，例如 Deepseek 14B。雲端 key 先至可選。語音仲未做好。冇 GitHub release，最近 push 係 2026-10-22。GPL-3.0。唔會畀你模型。",
+  "ningzimu/codex-ppt-skill": "PPT skill，用嚟喺 Codex 把文章收成逐頁圖片，再喺本機砌成 pptx。頁面係圖，唔可以直接改字。要用 Codex 內置生圖或者你自己嘅 API key。最新 release v0.6.0，其後有push。MIT。唔會畀你模型。",
+  "ThioJoe/Auto-Synced-Translated-Dubs": "字幕配音工具，用嚟喺本機按字幕時間把片配成另一種語言。要你自己嘅 Google 或 DeepL 翻譯 key，同 Azure 或 Google 語音 key。Python 3.9 同 FFmpeg。最新 release v0.21.0，其後有push。AGPL-3.0。唔會畀你語音模型。"
 }
