@@ -1172,5 +1172,9 @@
   "yikart/AiToEarn": "內容變現 agent，用嚟喺 Claude Code 叫 Grok、Veo、Seedance 同 Nano Banana 出片出圖，再發去社交平台。要你自己嘅 AiToEarn key 同帳戶。Node 20.18。最新 release v2.5.0，其後有push。MIT。唔會畀你模型。",
   "agentskills/agentskills": "Agent Skills 嘅規格同說明，用嚟喺各家 agent 用同一個 SKILL.md 格式。呢個倉庫係標準，唔係技能包，亦唔包含模型。冇 GitHub release，最近 push 係 2026-11-04。Apache-2.0。唔會畀你模型。",
   "liustack/modlens": "文字模型嘅視覺外掛，用嚟喺 DeepSeek、GLM 讀你貼上嘅圖，交返 OCR 同版面 JSON。要你自己嘅 Gemini 或其他 key。唔會生圖。最新 release v3.27.3，其後有push。MIT。唔會畀你視覺模型。",
-  "sgl-project/sglang-omni": "語音同多模態模型嘅伺服 runtime，用嚟喺本機或 GPU 跑現成 ASR、TTS。權重要你自己下載。最新 GitHub release 係 Voxt v2.0.3，其後有push。Apache-2.0。唔會畀你模型。"
+  "sgl-project/sglang-omni": "語音同多模態模型嘅伺服 runtime，用嚟喺本機或 GPU 跑現成 ASR、TTS。權重要你自己下載。最新 GitHub release 係 Voxt v2.0.3，其後有push。Apache-2.0。唔會畀你模型。",
+  "webadderallorg/Recordly": "螢幕錄影同剪輯嘅桌面 app，用嚟喺 macOS 14、Windows 10 同 Linux 整 demo 片。自動 zoom 同游標修飾。唔係生成模型。最新 release v1.4.0，其後有push。AGPL-3.0。唔會畀你影片模型。",
+  "titanwings/distilly": "人物側寫 skill，用嚟喺 Claude Code 把你提供嘅訊息同文件收成 Person Profile。唔會複製本人。Python 3.9。最新 release v0.01，其後有push。MIT。唔會畀你模型。",
+  "dapr/dapr": "分散式嘅 runtime，用嚟喺雲端同邊緣跑應用同 agent 工作流。唔係影片工具，亦唔包含模型。最新 release v1.19.1，其後有push。Apache-2.0。唔會畀你模型。",
+  "kangarooking/cangjie-skill": "蒸餾 skill，用嚟喺 Claude Code 把書、字幕同播客文字收成可呼叫嘅 skill。唔會下載或生成影片。Python 3.10。最新 release v2.5.0，其後有push。MIT。唔會畀你模型。"
 }
