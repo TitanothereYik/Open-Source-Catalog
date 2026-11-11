@@ -1167,5 +1167,10 @@
   "expo/exact": "跨平台嘅 UI 框架，用嚟喺網頁、macOS、iOS 同 Linux 跑同一個 app。coding agent 可以喺本機建、跑同測試。要 Xcode、Rust、Bun、Chrome。冇 GitHub release，最近 push 係 2026-11-11。MIT。唔係生圖工具，唔會畀你模型。",
   "Fosowl/agenticSeek": "本機 agent，用嚟喺你部機瀏覽同寫程式。要 Python 3.10、Docker，同你自己嘅 Ollama 模型，例如 Deepseek 14B。雲端 key 先至可選。語音仲未做好。冇 GitHub release，最近 push 係 2026-10-22。GPL-3.0。唔會畀你模型。",
   "ningzimu/codex-ppt-skill": "PPT skill，用嚟喺 Codex 把文章收成逐頁圖片，再喺本機砌成 pptx。頁面係圖，唔可以直接改字。要用 Codex 內置生圖或者你自己嘅 API key。最新 release v0.6.0，其後有push。MIT。唔會畀你模型。",
-  "ThioJoe/Auto-Synced-Translated-Dubs": "字幕配音工具，用嚟喺本機按字幕時間把片配成另一種語言。要你自己嘅 Google 或 DeepL 翻譯 key，同 Azure 或 Google 語音 key。Python 3.9 同 FFmpeg。最新 release v0.21.0，其後有push。AGPL-3.0。唔會畀你語音模型。"
+  "ThioJoe/Auto-Synced-Translated-Dubs": "字幕配音工具，用嚟喺本機按字幕時間把片配成另一種語言。要你自己嘅 Google 或 DeepL 翻譯 key，同 Azure 或 Google 語音 key。Python 3.9 同 FFmpeg。最新 release v0.21.0，其後有push。AGPL-3.0。唔會畀你語音模型。",
+  "Fagan1024/smart-video-editor": "睇片先剪嘅 skill，用嚟喺 Claude Code 抽幀，交畀個 agent 自己嘅視覺模型評分，再用 FFmpeg 出片。字體同 BGM 唔喺倉庫。冇 GitHub release，最近 push 係 2026-07-26。MIT。唔會畀你影片模型。",
+  "yikart/AiToEarn": "內容變現 agent，用嚟喺 Claude Code 叫 Grok、Veo、Seedance 同 Nano Banana 出片出圖，再發去社交平台。要你自己嘅 AiToEarn key 同帳戶。Node 20.18。最新 release v2.5.0，其後有push。MIT。唔會畀你模型。",
+  "agentskills/agentskills": "Agent Skills 嘅規格同說明，用嚟喺各家 agent 用同一個 SKILL.md 格式。呢個倉庫係標準，唔係技能包，亦唔包含模型。冇 GitHub release，最近 push 係 2026-11-04。Apache-2.0。唔會畀你模型。",
+  "liustack/modlens": "文字模型嘅視覺外掛，用嚟喺 DeepSeek、GLM 讀你貼上嘅圖，交返 OCR 同版面 JSON。要你自己嘅 Gemini 或其他 key。唔會生圖。最新 release v3.27.3，其後有push。MIT。唔會畀你視覺模型。",
+  "sgl-project/sglang-omni": "語音同多模態模型嘅伺服 runtime，用嚟喺本機或 GPU 跑現成 ASR、TTS。權重要你自己下載。最新 GitHub release 係 Voxt v2.0.3，其後有push。Apache-2.0。唔會畀你模型。"
 }
