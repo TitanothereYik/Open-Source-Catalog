@@ -1188,5 +1188,9 @@
   "nexu-io/html-anything": "用 HTML 整片嘅 agent，用嚟喺本機重做參考片再渲染 MP4。出圖、出片同音樂要你自己嘅 key。Node 22.18。冇 GitHub release，最近 push 係 2026-11-11。Apache-2.0。唔會畀你模型。",
   "NVIDIA/SkillSpector": "Agent skill 嘅安全掃描器，用嚟喺安裝前睇注入同外洩。靜態掃描唔使模型。語義檢查先至要你自己嘅 key。Python 3.12。最新 release v2.13.4，其後有push。Apache-2.0。唔會畀你模型。",
   "ModelTC/LightX2V": "圖像同影片嘅推理框架，用嚟喺你部 GPU 跑現成 T2V、I2V。權重要你自己去 Hugging Face 下載。最新 release 0.6.1，其後有push。Apache-2.0。唔會跟機畀你模型。",
-  "Agents365-ai/video-podcast-maker": "主題變 4K 片嘅 skill，用嚟喺 agent 用 Remotion 渲染。Edge 語音唔使 key，AI 素材要你自己嘅 key。Python 3.8、Node 18、FFmpeg。最新 release v5.2.1，其後有push。README 寫 v5.3.0。MIT。唔會畀你模型。"
+  "Agents365-ai/video-podcast-maker": "主題變 4K 片嘅 skill，用嚟喺 agent 用 Remotion 渲染。Edge 語音唔使 key，AI 素材要你自己嘅 key。Python 3.8、Node 18、FFmpeg。最新 release v5.2.1，其後有push。README 寫 v5.3.0。MIT。唔會畀你模型。",
+  "threerocks/article2media": "文章變圖文同口播嘅 skill，用嚟喺 Claude Code、Codex 出小紅書卡同豎片。配音用本機 VoxCPM2，字幕用 Whisper。要 Node 22 同 Chrome。最新 release v2.2.0，其後有push。MIT。唔會畀你影片模型。",
+  "weibo-job/guagua-animation-skills": "九個無對白動畫 skill，用嚟喺 Codex 寫角色、分鏡同提示。倉庫話未做完端到端實測。出圖出片要你自己嘅工具，可能收費。冇工具就只出文字。冇 GitHub release，最近 push 係 2026-11-04。MIT。唔會畀你模型。",
+  "lhlGitHub/threejs-architecture-effects": "Three.js 建築 skill，用嚟喺 Codex、Claude Code、Cursor 砌可轉嘅立體古建。程序生成，唔使 API key，亦唔係影片模型。要 Node。冇 GitHub release，最近 push 係 2026-09-22。MIT。唔會畀你模型。",
+  "mkiol/dsnote": "Linux 嘅離線筆記 app，用嚟喺本機做語音轉文字、朗讀同翻譯。安裝包唔包含模型，要喺 app 入面下載。最新 release b4.9.1-1，其後有push。MPL-2.0。唔會跟機畀你權重。"
 }
