@@ -1237,5 +1237,9 @@
   "Capsize-Games/airunner": "AI Runner 而家係 headless 嘅服務，用嚟喺本機跑圖像、LLM 同語音。Qt 桌面版已停。Python 3.13。部分 extra（包括 TTS）PyPI 裝唔到。模型唔喺 repo。release v6.1.11（2026-11-10）。唔會跟機畀你模型。",
   "microsoft/SkillOpt": "SkillOpt 係 Microsoft 嘅技能訓練器，用嚟喺凍結 LLM 上改一份 best_skill.md。Python 3.10。要你自己嘅模型 API。部署時唔再叫模型。release v0.2.0（2026-07-02），push 係 2026-11-11。唔會跟機畀你現成技能。",
   "xerj-org/xerj": "XERJ 係 Rust 嘅搜尋引擎，用嚟喺本機做 BM25 同 agent 記憶。預設唔開 Query-1 模型，要加 --with-model。訓練資料未公開。release v1.0.0-rc.101（2026-11-06），push 係 2026-11-12。唔會跟機畀你 LLM。",
-  "ictnlp/StreamSpeech": "StreamSpeech 係法、西、德譯英嘅語音翻譯模型，用嚟喺本機做串流 ASR 同語音翻譯。Python 3.10、PyTorch 2.0.1。權重喺 Hugging Face。冇 GitHub release，push 係 2025-06-29。唔會跟機畀你權重。"
+  "ictnlp/StreamSpeech": "StreamSpeech 係法、西、德譯英嘅語音翻譯模型，用嚟喺本機做串流 ASR 同語音翻譯。Python 3.10、PyTorch 2.0.1。權重喺 Hugging Face。冇 GitHub release，push 係 2025-06-29。唔會跟機畀你權重。",
+  "Seagey/couch-tv": "couch-tv 係 Google TV 嘅自家主畫面同電話遙控，用嚟喺本機取代廣告主頁。Python 3.11。Claude 預設唔開，要你自己登入 Claude Code。release v0.12（2026-11-09），push 係 2026-11-12。唔會跟機畀你模型。",
+  "windmill-labs/windmill": "Windmill 係自託管嘅流程平台，用嚟喺本機砌 script 同 agent。Docker。源碼唔開 enterprise 係 AGPL。官方社群版包非開源功能，轉售要商業授權。release v1.870.0（2026-11-12），push 係 2026-11-13。唔會跟機畀你模型。",
+  "ciddwd/overlay-translator": "屏譯係 Android 嘅螢幕翻譯，用嚟喺遊戲同漫畫上面蓋譯文。Android 8。語音字幕要 Android 10，模型要另外下載。release v0.4.8（2026-10-25），push 係 2026-10-30。唔會跟機畀你模型。",
+  "soniqo/speech-swift": "Speech Swift 係 Apple Silicon 嘅語音庫，用嚟喺 Mac、iPhone 做語音。macOS 15、iOS 18。權重喺 Hugging Face，有模型唔准商用。release v0.0.29（2026-10-25），push 係 2026-11-11。唔會跟機畀你權重。"
 }
