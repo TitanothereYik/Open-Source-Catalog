@@ -1,6 +1,6 @@
 {
   "title": "Open Source Catalog",
-  "updated_at": "2026-11-12T08:38:34+08:00",
+  "updated_at": "2026-11-12T09:04:26+08:00",
   "base_url": "https://titanothereyik.github.io/Open-Source-Catalog/",
   "projects": [
     {
@@ -34814,6 +34814,28 @@
       "paper_title": "",
       "paper_url": "",
       "added_at": "2026-11-12T08:38:34+08:00"
+    },
+    {
+      "id": "github:zju3dv/splatanything",
+      "type": "github",
+      "category": "gaussian-splatting",
+      "name": "SplatAnything",
+      "full_name": "zju3dv/SplatAnything",
+      "url": "https://github.com/zju3dv/SplatAnything",
+      "homepage": "https://zju3dv.github.io/SplatAnything/",
+      "description": "SplatAnything: Gaussian Spacing Normalization for Feed-Forward 3DGS across Arbitrary Scenes",
+      "summary": "SplatAnything 係前饋式嘅 3D Gaussian，用嚟喺相片砌物件、室內、街景同航拍。Python 3.10、PyTorch 2.4、CUDA。權重唔喺 repo。冇 GitHub release，push 係 2026-11-10。個人研究免登記，機構項目要先登記。唔會跟機畀你權重。",
+      "summary_en": "SplatAnything is a feed-forward 3D Gaussian model that rebuilds objects, indoor rooms, streets, and aerial scenes from photos. Python 3.10, PyTorch 2.4, and CUDA. The weights are not in the repo. There is no GitHub release, and the latest push was on 2026-11-10. Personal research needs no registration. An organization must register before a project use. This does not ship the weights with the install.",
+      "summary_locked": true,
+      "stars": 178,
+      "language": "Python",
+      "license": "PRL-1.0",
+      "topics": [],
+      "archived": false,
+      "pushed_at": "2026-11-10",
+      "paper_title": "SplatAnything: Gaussian Spacing Normalization for Feed-Forward 3DGS across Arbitrary Scenes",
+      "paper_url": "https://arxiv.org/html/2611.08264",
+      "added_at": "2026-11-12T09:04:26+08:00"
     }
   ],
   "papers": [
@@ -34889,9 +34911,7 @@
     }
   ],
   "last_new_ids": [
-    "github:gufo-org/gufo",
-    "github:arahim3/mlx-tune",
-    "github:morettt/my-neuro"
+    "github:zju3dv/splatanything"
   ],
   "rate_limit": {
     "used": 4000,

@@ -1210,5 +1210,6 @@
   "WSTxda/SwitchAI": "SwitchAI 係 Android app，用嚟喺手機切換已安裝嘅 AI 助手。唔包含助手本身，亦唔會生成語音。API 26。最新 release 4.2，冇其後 push。GPL-3.0。唔會畀你模型。",
   "gufo-org/gufo": "Gufo 係 AMD Strix Halo 嘅推理引擎，用嚟喺 Linux 或 Windows 跑文字、語音、圖像同影片。程式係 MIT，權重要自己下載，有啲模型唔准商用。最新 release v0.34.0，其後有push。唔會跟機畀你權重。",
   "ARahim3/mlx-tune": "mlx-tune 係 Apple Silicon 嘅微調庫，用嚟喺 Mac 做 SFT、DPO、視覺、TTS 同 OCR。底模要你自己準備。Python 3.9。最新 release v0.6.0，冇其後 push。Apache-2.0。唔會畀你權重。",
-  "morettt/my-neuro": "my-neuro 係本機嘅桌面角色工作台，用嚟喺你部機做 Live2D、語音同記憶。預設 TTS 係 GPT-SoVITS，模型要你自己準備。最新 release v6.8.2，其後有push。MIT。唔會跟機畀你角色同權重。"
+  "morettt/my-neuro": "my-neuro 係本機嘅桌面角色工作台，用嚟喺你部機做 Live2D、語音同記憶。預設 TTS 係 GPT-SoVITS，模型要你自己準備。最新 release v6.8.2，其後有push。MIT。唔會跟機畀你角色同權重。",
+  "zju3dv/SplatAnything": "SplatAnything 係前饋式嘅 3D Gaussian，用嚟喺相片砌物件、室內、街景同航拍。Python 3.10、PyTorch 2.4、CUDA。權重唔喺 repo。冇 GitHub release，push 係 2026-11-10。個人研究免登記，機構項目要先登記。唔會跟機畀你權重。"
 }
