@@ -140,5 +140,7 @@
   "dolthub/dolt",
   "alan-ai/alan-sdk-ionic",
   "walkinglabs/learn-harness-engineering",
-  "docmost/docmost"
+  "docmost/docmost",
+  "neuregex/freefield",
+  "composio-community/open-dot"
 ]

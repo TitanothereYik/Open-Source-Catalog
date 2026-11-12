@@ -1207,5 +1207,8 @@
   "google/adk-python": "Google 嘅 ADK 係 Python 框架，用嚟喺程式入面砌、評估同部署 agent。偏向 Gemini，模型要你自己接。Python 3.11。最新 release v2.14.0，其後有push。Apache-2.0。唔會畀你模型。",
   "KKKKhazix/khazix-skills": "六個 agent skill，用嚟喺 Claude Code 或 Codex 定目標、清磁碟、查 AI 日報、對齊文件、寫研究 PDF 同卡茲克文風。要有工具嘅 agent，純聊天做唔到。最新 release v1.2.1，其後有push。MIT。唔會畀你模型。",
   "devnen/Chatterbox-TTS-Server": "Chatterbox 伺服器，用嚟喺本機嘅 Web UI 同 OpenAI 相容 API 做語音同克隆。權重要下載 Resemble 模型，唔喺 repo。Python 3.10，支援 CUDA、ROCm、MPS。最新 release v2.0.0，其後有push。MIT。唔會跟機畀你權重。",
-  "WSTxda/SwitchAI": "SwitchAI 係 Android app，用嚟喺手機切換已安裝嘅 AI 助手。唔包含助手本身，亦唔會生成語音。API 26。最新 release 4.2，冇其後 push。GPL-3.0。唔會畀你模型。"
+  "WSTxda/SwitchAI": "SwitchAI 係 Android app，用嚟喺手機切換已安裝嘅 AI 助手。唔包含助手本身，亦唔會生成語音。API 26。最新 release 4.2，冇其後 push。GPL-3.0。唔會畀你模型。",
+  "gufo-org/gufo": "Gufo 係 AMD Strix Halo 嘅推理引擎，用嚟喺 Linux 或 Windows 跑文字、語音、圖像同影片。程式係 MIT，權重要自己下載，有啲模型唔准商用。最新 release v0.34.0，其後有push。唔會跟機畀你權重。",
+  "ARahim3/mlx-tune": "mlx-tune 係 Apple Silicon 嘅微調庫，用嚟喺 Mac 做 SFT、DPO、視覺、TTS 同 OCR。底模要你自己準備。Python 3.9。最新 release v0.6.0，冇其後 push。Apache-2.0。唔會畀你權重。",
+  "morettt/my-neuro": "my-neuro 係本機嘅桌面角色工作台，用嚟喺你部機做 Live2D、語音同記憶。預設 TTS 係 GPT-SoVITS，模型要你自己準備。最新 release v6.8.2，其後有push。MIT。唔會跟機畀你角色同權重。"
 }
