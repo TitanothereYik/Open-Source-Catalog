@@ -1226,5 +1226,9 @@
   "1jehuang/jcode": "jcode 係 Rust 寫嘅 coding agent，用嚟喺 macOS 同 Linux 同時跑多個 agent。要用 curl 安裝。要你自己接 Claude 或 OpenAI。release v0.99.1（2026-10-22），push 係 2026-11-12。唔會跟機畀你模型。",
   "DragonComputer/Dragonfire": "Dragonfire 係 Ubuntu 嘅語音助手，用嚟喺本機聽英文指令再用 Festival 讀出答案。Python 3。DeepSpeech 模型要另外下載。release v1.1.1（2019-12-18），push 係 2022-11-22。唔會跟機畀你個模型。",
   "shivammehta25/Matcha-TTS": "Matcha-TTS 係 ICASSP 2024 嘅英文語音模型，用嚟喺本機快速合成。Python 3.10、PyTorch 2.0。權重唔喺 repo，CLI 會自動下載。release v0.0.7（2024-08-09），push 係 2026-11-03。唔會跟機畀你權重。",
-  "HammerGPT/Hyper-Alpha-Arena": "Hyper-Alpha-Arena 係加密合約交易台，用嚟喺 Hyperliquid 同幣安期貨叫你自己嘅 LLM 落單。Docker。托管登入已關閉。要你自己嘅 API key。冇 GitHub release，push 係 2026-11-03。唔會跟機畀你模型或資金。"
+  "HammerGPT/Hyper-Alpha-Arena": "Hyper-Alpha-Arena 係加密合約交易台，用嚟喺 Hyperliquid 同幣安期貨叫你自己嘅 LLM 落單。Docker。托管登入已關閉。要你自己嘅 API key。冇 GitHub release，push 係 2026-11-03。唔會跟機畀你模型或資金。",
+  "teng-lin/notebooklm-py": "notebooklm-py 係非官方嘅技能，用嚟喺 Claude Code 叫 Gemini Notebook。Python 3.10。要 Google 登入，接口可以改。release v0.8.6（2026-10-29），push 係 2026-11-09。唔會喺本機畀你模型。",
+  "nesquena/hermes-webui": "hermes-webui 係 Hermes Agent 嘅瀏覽器介面，用嚟喺 Linux、macOS 或 WSL2 開現有 agent。Python。入面冇 Hermes 同模型。release v0.52.544（2026-10-25），push 係 2026-11-12。唔會跟機畀你模型。",
+  "Henry-23/VideoChat": "VideoChat 係即時嘅數字人，用嚟喺本機對住鏡頭對話。Ubuntu 22.04、Python 3.10、CUDA 12.2。級聯約 8GB 顯存。權重唔喺 GitHub repo。冇 GitHub release，push 係 2025-12-18。唔會跟機畀你權重。",
+  "jishengpeng/WavTokenizer": "WavTokenizer 係 ICLR 2025 嘅聲學 codec，用嚟喺本機把語音同音樂壓成每秒 40 或 75 個 token。Python 3.9。權重喺 Hugging Face。冇 GitHub release，push 係 2025-03-02。唔會跟機畀你權重。"
 }
