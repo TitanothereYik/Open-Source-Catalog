@@ -1230,5 +1230,9 @@
   "teng-lin/notebooklm-py": "notebooklm-py 係非官方嘅技能，用嚟喺 Claude Code 叫 Gemini Notebook。Python 3.10。要 Google 登入，接口可以改。release v0.8.6（2026-10-29），push 係 2026-11-09。唔會喺本機畀你模型。",
   "nesquena/hermes-webui": "hermes-webui 係 Hermes Agent 嘅瀏覽器介面，用嚟喺 Linux、macOS 或 WSL2 開現有 agent。Python。入面冇 Hermes 同模型。release v0.52.544（2026-10-25），push 係 2026-11-12。唔會跟機畀你模型。",
   "Henry-23/VideoChat": "VideoChat 係即時嘅數字人，用嚟喺本機對住鏡頭對話。Ubuntu 22.04、Python 3.10、CUDA 12.2。級聯約 8GB 顯存。權重唔喺 GitHub repo。冇 GitHub release，push 係 2025-12-18。唔會跟機畀你權重。",
-  "jishengpeng/WavTokenizer": "WavTokenizer 係 ICLR 2025 嘅聲學 codec，用嚟喺本機把語音同音樂壓成每秒 40 或 75 個 token。Python 3.9。權重喺 Hugging Face。冇 GitHub release，push 係 2025-03-02。唔會跟機畀你權重。"
+  "jishengpeng/WavTokenizer": "WavTokenizer 係 ICLR 2025 嘅聲學 codec，用嚟喺本機把語音同音樂壓成每秒 40 或 75 個 token。Python 3.9。權重喺 Hugging Face。冇 GitHub release，push 係 2025-03-02。唔會跟機畀你權重。",
+  "agentes-chat/agentes-chat": "agentes-chat 係自架嘅團隊聊天，用嚟喺 Linux 讓人同 AI agent 一齊傾。Docker 加 Postgres。要你自己嘅模型 key。AGPL-3.0。release desktop-v0.8.2（2026-11-12），push 係 2026-11-12。唔會跟機畀你模型。",
+  "browser-use/browser-harness": "browser-harness 而家係 browser-use 嘅引擎，用嚟喺 Claude Code、Codex 或 Cursor 開你已登入嘅 Chrome。要 remote debugging。release v0.1.13，push 係 2026-11-12。唔會跟機畀你模型。",
+  "CSTR-Edinburgh/merlin": "Merlin 係愛丁堡嘅舊神經網絡語音合成工具，用嚟喺 UNIX 訓練聲線。要 Festival 同 vocoder。Python 2.7 至 3.6、Theano。冇 GitHub release，push 係 2020-03-03。唔會跟機畀你現成聲線。",
+  "Capsize-Games/airunner": "AI Runner 而家係 headless 嘅服務，用嚟喺本機跑圖像、LLM 同語音。Qt 桌面版已停。Python 3.13。部分 extra（包括 TTS）PyPI 裝唔到。模型唔喺 repo。release v6.1.11（2026-11-10）。唔會跟機畀你模型。"
 }
