@@ -1066,7 +1066,6 @@
   "High-Logic/Genie-TTS": "ONNX 推理引擎，用嚟喺 CPU 跑 GPT-SoVITS V2 或 V2ProPlus。要 Python 3.10。第一次行會下載大約 391MB 資源。聲線要你自己嘅模型。語言寫咗日文、英文、中文同韓文，冇寫廣東話。最新 release v2.0.2，其後有push。MIT。唔會跟機畀你聲線。",
   "QwenLM/qwen-code": "終端同編輯器入面嘅編程 agent，用嚟喺你嘅專案改程式。要 Node 22，或者用佢哋嘅安裝程式。模型要自己接 Qwen 訂閱、其他 API 或者本機。最新 release v0.27.1，其後有push。Apache-2.0。唔會跟機畀你模型。",
   "alchaincyf/huashu-design": "設計 skill，用嚟喺 Claude Code、Codex、Cursor 等打一句，出網頁、App 原型、可改 PPT 同信息圖。宣傳片剪接用 huashu-motion。風格 README 一處寫 84、一處寫 92。要你自己嘅模型。最新 release v3.3.0。MIT。唔會畀你圖像模型。",
-  "HiThink-Tech/Financial-API": "同花順官方嘅 A 股數據客戶端，用嚟喺 API、MCP、CLI 或 Python 查行情、財報同指數。要你自己嘅 API key。公開接口唔包括分鐘線、逐筆、港股同美股，亦唔係落單程式。最新 release v0.1.13，其後有push。MIT。唔會畀你交易訊號。",
   "Read-Aloud/read-aloud": "瀏覽器擴充，用嚟喺網頁把文字讀出聲。聲線可以用瀏覽器自帶，或者 Google、Amazon、IBM、Microsoft 嘅雲端聲，部分要另外付費。唔係新訓練嘅語音模型。最新 GitHub release 係 v1.54.1，其後有push。MIT。唔會跟機畀你廣東話聲線。",
   "software-mansion/react-native-executorch": "React Native 嘅手機推理庫，用嚟喺部機跑已匯出嘅模型，包括視覺、語言模型、讀稿同語音轉文字。模型要另外下載。配 agent 嘅 skill 喺另一個倉庫。最新 release v0.11.1-libs，其後有push。MIT。唔會把權重打包喺 npm 入面畀你。",
   "ConardLi/garden-skills": "六個 agent skill 嘅合集，用嚟喺 Claude Code、Cursor、Codex 做程式渲染短片、網頁影片同圖像提示。要你自己嘅模型。最新 release 係 motion-showreel-v0.2.0，其後有push。MIT。唔會畀你影片或圖像模型。",
@@ -1215,5 +1214,9 @@
   "emilkowalski/skills": "emilkowalski/skills 係畀 coding agent 用嘅動畫技能，用嚟喺 Claude Code、Codex 同 Cursor 揀 easing。18 個 SKILL.md。npx 安裝。冇 GitHub release，push 係 2026-11-12。唔會自己出圖或影片。",
   "vercel-labs/agent-desktop": "agent-desktop 係 Vercel 嘅電腦操作 CLI，用嚟喺 macOS 13、Windows 10 同 Ubuntu 24.04 讀無障礙樹，再按 ref 操作。要輔助使用權限。release v1.2.0（2026-11-05），push 係 2026-11-11。唔會跟機畀你模型。",
   "edwko/OuteTTS": "OuteTTS 係 Python 3.10 介面，用嚟喺本機跑 OuteAI 嘅文字轉語音。預設 llama.cpp，得一隻英文聲，可以用 wav 做 speaker。權重唔喺 repo。release 0.4.2（2025-05-19），push 係 2026-03-23。唔會跟機畀你權重。",
-  "voice-cloning-app/Voice-Cloning-App": "Voice Cloning App 用重寫過嘅 Tacotron2，用嚟喺本機訓練同合成人聲，開 localhost:5000。文件寫 Python 3.6。CPU 版唔可以本地訓練。release v1.1.1（2022-02-07），push 係 2024-12-02。唔會跟機畀你現成聲線。"
+  "voice-cloning-app/Voice-Cloning-App": "Voice Cloning App 用重寫過嘅 Tacotron2，用嚟喺本機訓練同合成人聲，開 localhost:5000。文件寫 Python 3.6。CPU 版唔可以本地訓練。release v1.1.1（2022-02-07），push 係 2024-12-02。唔會跟機畀你現成聲線。",
+  "Hithink-Tech-Org/Financial-API": "同花順官方嘅 A 股數據客戶端，用嚟喺 API、MCP、CLI 或 Python 查行情、財報同指數。要你自己嘅 API key。公開接口唔包括分鐘線、逐筆、港股同美股，亦唔係落單程式。最新 release v0.1.13，其後有push。MIT。唔會畀你交易訊號。",
+  "jnMetaCode/agency-agents-zh": "agency-agents-zh 係 agency-agents 嘅中文角色庫，用嚟喺 Claude Code、Cursor 裝 328 個角色。67 個係中國原創。install.sh。release v1.2.6（2026-06-16），push 係 2026-11-11。唔會跟機畀你模型。",
+  "R3gm/SoniTranslate": "SoniTranslate 係 Gradio 嘅本機配音介面，用嚟翻譯影片聲軌。Python 3.10、CUDA 11.8。要 HF token 同 pyannote 牌照。模型唔喺 repo。release 0.5.0（2024-05-18），push 係 2026-08-29。唔會跟機畀你模型。",
+  "OpenMOSS/MOSS-TTSD": "MOSS-TTSD 係 OpenMOSS 嘅多人對話語音模型，用嚟喺本機由對白稿合成最多 5 個講者。Python 3.12。權重喺 Hugging Face，8B，要參考錄音。冇 GitHub release，push 係 2026-09-06。唔會跟機畀你權重。"
 }
