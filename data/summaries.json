@@ -1246,5 +1246,10 @@
   "RightNow-AI/openfang": "OpenFang 係 Rust 嘅 agent 系統，用嚟喺本機跑排程 Hand。未到 1.0。要你自己嘅模型 API。release v0.6.9（2026-05-13），push 係 2026-07-02。唔會跟機畀你模型。",
   "diodiogod/TTS-Audio-Suite": "TTS Audio Suite 係 ComfyUI 嘅節點，用嚟喺本機叫多個 TTS 引擎。權重要另下載，F5、Higgs v3 同 VibeVoice 唔准商用。release v5.6.0（2026-07-25），push 係 2026-11-12。唔會跟機畀你權重。",
   "ElectricAlexis/NotaGen": "NotaGen 係古典樂譜嘅生成模型，用嚟喺本機按時期、作曲家同樂器出 ABC。Python 3.10、PyTorch 2.3。權重喺 Hugging Face。冇 GitHub release，push 係 2025-04-21。唔會跟機畀你權重。",
-  "maosika-ai/reshot": "ReShot 係本機嘅控制片，用嚟喺參考片抽出深度、骨架同線稿。Python 3.10、PyTorch 2.1。權重要另下載。唔生成成片，Seedance 同 MiniMax 要你自己有。release v0.5.0（2026-09-14），push 係 2026-09-29。唔會跟機畀你模型。"
+  "maosika-ai/reshot": "ReShot 係本機嘅控制片，用嚟喺參考片抽出深度、骨架同線稿。Python 3.10、PyTorch 2.1。權重要另下載。唔生成成片，Seedance 同 MiniMax 要你自己有。release v0.5.0（2026-09-14），push 係 2026-09-29。唔會跟機畀你模型。",
+  "ythx-101/live-panel-skill": "live-panel 係 agent 嘅技能，用嚟喺本機將一份 JSON 砌成會動嘅架構圖。Python 3.8、Chrome、ffmpeg。Windows 要 WSL。冇 GitHub release，push 係 2026-11-13。唔會跟機畀你模型。",
+  "rowboatlabs/rowboat": "Rowboat 係 agent 嘅群組聊天，用嚟喺本機一齊做嘢。自託管 Harbor 要 Postgres。要你自己嘅 agent。release v1.0.9（2026-11-11），push 係 2026-11-13。唔會跟機畀你模型。",
+  "Canner/WrenAI": "WrenAI 係 GenBI 嘅語義層，用嚟喺你嘅資料庫出受管 SQL。程式碼係 Apache-2.0，商標唔包。要你自己嘅 agent。release wren-v0.18.0（2026-11-10），push 係 2026-11-10。唔會跟機畀你 LLM。",
+  "gitmylo/audio-webui": "Audio WebUI 係本機嘅 Gradio，用嚟喺瀏覽器跑 Bark、Whisper 等。Python 3.10。權重要另下載。release Installers（2023-06-24），push 係 2025-05-20。唔會跟機畀你權重。",
+  "hgneng/ekho": "Ekho 係中文嘅語音合成，用嚟喺本機讀出文字。GPL-2.0。聲線檔唔喺 repo，要另外下載。release v9.0（2023-08-08），push 係 2026-10-30。唔會跟機畀你聲線。"
 }
