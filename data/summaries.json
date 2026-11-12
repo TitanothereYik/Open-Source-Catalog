@@ -1211,5 +1211,9 @@
   "gufo-org/gufo": "Gufo 係 AMD Strix Halo 嘅推理引擎，用嚟喺 Linux 或 Windows 跑文字、語音、圖像同影片。程式係 MIT，權重要自己下載，有啲模型唔准商用。最新 release v0.34.0，其後有push。唔會跟機畀你權重。",
   "ARahim3/mlx-tune": "mlx-tune 係 Apple Silicon 嘅微調庫，用嚟喺 Mac 做 SFT、DPO、視覺、TTS 同 OCR。底模要你自己準備。Python 3.9。最新 release v0.6.0，冇其後 push。Apache-2.0。唔會畀你權重。",
   "morettt/my-neuro": "my-neuro 係本機嘅桌面角色工作台，用嚟喺你部機做 Live2D、語音同記憶。預設 TTS 係 GPT-SoVITS，模型要你自己準備。最新 release v6.8.2，其後有push。MIT。唔會跟機畀你角色同權重。",
-  "zju3dv/SplatAnything": "SplatAnything 係前饋式嘅 3D Gaussian，用嚟喺相片砌物件、室內、街景同航拍。Python 3.10、PyTorch 2.4、CUDA。權重唔喺 repo。冇 GitHub release，push 係 2026-11-10。個人研究免登記，機構項目要先登記。唔會跟機畀你權重。"
+  "zju3dv/SplatAnything": "SplatAnything 係前饋式嘅 3D Gaussian，用嚟喺相片砌物件、室內、街景同航拍。Python 3.10、PyTorch 2.4、CUDA。權重唔喺 repo。冇 GitHub release，push 係 2026-11-10。個人研究免登記，機構項目要先登記。唔會跟機畀你權重。",
+  "emilkowalski/skills": "emilkowalski/skills 係畀 coding agent 用嘅動畫技能，用嚟喺 Claude Code、Codex 同 Cursor 揀 easing。18 個 SKILL.md。npx 安裝。冇 GitHub release，push 係 2026-11-12。唔會自己出圖或影片。",
+  "vercel-labs/agent-desktop": "agent-desktop 係 Vercel 嘅電腦操作 CLI，用嚟喺 macOS 13、Windows 10 同 Ubuntu 24.04 讀無障礙樹，再按 ref 操作。要輔助使用權限。release v1.2.0（2026-11-05），push 係 2026-11-11。唔會跟機畀你模型。",
+  "edwko/OuteTTS": "OuteTTS 係 Python 3.10 介面，用嚟喺本機跑 OuteAI 嘅文字轉語音。預設 llama.cpp，得一隻英文聲，可以用 wav 做 speaker。權重唔喺 repo。release 0.4.2（2025-05-19），push 係 2026-03-23。唔會跟機畀你權重。",
+  "voice-cloning-app/Voice-Cloning-App": "Voice Cloning App 用重寫過嘅 Tacotron2，用嚟喺本機訓練同合成人聲，開 localhost:5000。文件寫 Python 3.6。CPU 版唔可以本地訓練。release v1.1.1（2022-02-07），push 係 2024-12-02。唔會跟機畀你現成聲線。"
 }
