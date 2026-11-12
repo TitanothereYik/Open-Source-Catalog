@@ -1241,5 +1241,10 @@
   "Seagey/couch-tv": "couch-tv 係 Google TV 嘅自家主畫面同電話遙控，用嚟喺本機取代廣告主頁。Python 3.11。Claude 預設唔開，要你自己登入 Claude Code。release v0.12（2026-11-09），push 係 2026-11-12。唔會跟機畀你模型。",
   "windmill-labs/windmill": "Windmill 係自託管嘅流程平台，用嚟喺本機砌 script 同 agent。Docker。源碼唔開 enterprise 係 AGPL。官方社群版包非開源功能，轉售要商業授權。release v1.870.0（2026-11-12），push 係 2026-11-13。唔會跟機畀你模型。",
   "ciddwd/overlay-translator": "屏譯係 Android 嘅螢幕翻譯，用嚟喺遊戲同漫畫上面蓋譯文。Android 8。語音字幕要 Android 10，模型要另外下載。release v0.4.8（2026-10-25），push 係 2026-10-30。唔會跟機畀你模型。",
-  "soniqo/speech-swift": "Speech Swift 係 Apple Silicon 嘅語音庫，用嚟喺 Mac、iPhone 做語音。macOS 15、iOS 18。權重喺 Hugging Face，有模型唔准商用。release v0.0.29（2026-10-25），push 係 2026-11-11。唔會跟機畀你權重。"
+  "soniqo/speech-swift": "Speech Swift 係 Apple Silicon 嘅語音庫，用嚟喺 Mac、iPhone 做語音。macOS 15、iOS 18。權重喺 Hugging Face，有模型唔准商用。release v0.0.29（2026-10-25），push 係 2026-11-11。唔會跟機畀你權重。",
+  "emcie-co/parlant": "Parlant 係客服 agent 嘅引擎，用嚟喺你自己嘅程式跟規則傾偈。Python 3.10。要你自己嘅模型 API。release v4.0.4（2026-11-09），push 係 2026-11-13。唔會跟機畀你模型。",
+  "RightNow-AI/openfang": "OpenFang 係 Rust 嘅 agent 系統，用嚟喺本機跑排程 Hand。未到 1.0。要你自己嘅模型 API。release v0.6.9（2026-05-13），push 係 2026-07-02。唔會跟機畀你模型。",
+  "diodiogod/TTS-Audio-Suite": "TTS Audio Suite 係 ComfyUI 嘅節點，用嚟喺本機叫多個 TTS 引擎。權重要另下載，F5、Higgs v3 同 VibeVoice 唔准商用。release v5.6.0（2026-07-25），push 係 2026-11-12。唔會跟機畀你權重。",
+  "ElectricAlexis/NotaGen": "NotaGen 係古典樂譜嘅生成模型，用嚟喺本機按時期、作曲家同樂器出 ABC。Python 3.10、PyTorch 2.3。權重喺 Hugging Face。冇 GitHub release，push 係 2025-04-21。唔會跟機畀你權重。",
+  "maosika-ai/reshot": "ReShot 係本機嘅控制片，用嚟喺參考片抽出深度、骨架同線稿。Python 3.10、PyTorch 2.1。權重要另下載。唔生成成片，Seedance 同 MiniMax 要你自己有。release v0.5.0（2026-09-14），push 係 2026-09-29。唔會跟機畀你模型。"
 }
