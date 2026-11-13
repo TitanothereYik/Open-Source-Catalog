@@ -1266,5 +1266,8 @@
   "auspicious3000/autovc": "AutoVC 係零樣本嘅聲線轉換，用嚟喺本機改說話人。Python 3、PyTorch 0.4.1。預訓練模型喺 IBM Box。冇 GitHub release，push 係 2024-10-23。唔會跟機畀你權重。",
   "cft0808/edict": "Edict 係多 Agent 編排，用嚟喺 OpenClaw 上面跑十二個角色。Python 3.10。Docker 示範係模擬數據。真跑要你自己嘅 LLM。冇 GitHub release，push 係 2026-09-28。唔會跟機畀你模型。",
   "triggerdotdev/trigger.dev": "Trigger.dev 係耐跑任務平台，用嚟喺 TypeScript 跑 AI 流程。可以自託管，亦可以用佢哋嘅雲。release v4.8.5（2026-11-12），push 係 2026-11-12。唔會跟機畀你模型。",
-  "PatterAI/Patter": "Patter 係語音 SDK，用嚟喺電話上面跑你嘅 Agent。Python 同 TypeScript。要你自己嘅 LLM、語音同電訊帳號。release v0.7.0（2026-07-01），push 係 2026-11-04。唔會跟機畀你模型。"
+  "PatterAI/Patter": "Patter 係語音 SDK，用嚟喺電話上面跑你嘅 Agent。Python 同 TypeScript。要你自己嘅 LLM、語音同電訊帳號。release v0.7.0（2026-07-01），push 係 2026-11-04。唔會跟機畀你模型。",
+  "browser-use/web-ui": "Browser Use WebUI 係本機介面，用嚟喺 Gradio 操作 browser-use。Python 3.11、Playwright。要你自己嘅 LLM 金鑰。release v3.0.0（2025-08-31），push 係 2026-09-25。唔會跟機畀你模型。",
+  "dreammis/social-auto-upload": "social-auto-upload 係多平台發佈工具，用嚟喺抖音、B 站、YouTube 等上載你已有嘅片。18 個技能。要你自己登入。Python 3.10。release v1.0.0-skills.2（2026-10-23）。唔會幫你造片，亦唔會跟機畀你模型。",
+  "gexgd0419/NaturalVoiceSAPIAdapter": "NaturalVoice 係 Windows 嘅 SAPI 5 轉接，用嚟喺舊程式讀出 Narrator、Edge 或 Azure 聲線。聲線唔喺 repo。Azure 要金鑰。系統更新可能失效。release v0.2.11（2026-10-27）。唔會跟機畀你聲線。"
 }

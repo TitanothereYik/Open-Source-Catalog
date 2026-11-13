@@ -152,5 +152,6 @@
   "bawangxx/XZVoice",
   "alan-ai/alan-sdk-cordova",
   "kubesphere/kubesphere",
-  "Edresson/YourTTS"
+  "Edresson/YourTTS",
+  "Azure-Samples/Cognitive-Speech-TTS"
 ]
