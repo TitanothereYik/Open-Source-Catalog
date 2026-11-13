@@ -1260,5 +1260,8 @@
   "nari-labs/dia2": "Dia2 係串流對話嘅英文 TTS，用嚟喺本機邊收字邊出聲。最長兩分鐘。權重喺 Hugging Face。聲線唔穩定，要前綴音。冇 GitHub release，push 係 2025-11-29。唔會跟機畀你權重。",
   "opensandbox-group/OpenSandbox": "OpenSandbox 係 agent 嘅沙盒，用嚟喺你部機隔離跑指令同檔案。本機要 Docker，Python 3.10。Kubernetes 先用到 Firecracker。release release-1.2.1（2026-11-13），push 同日。唔會跟機畀你模型。",
   "ag-ui-protocol/ag-ui": "AG-UI 係 agent 同介面嘅事件協議，用嚟喺前端接住 agent。npx 起專案。要你自己嘅 agent。release release/2026-11-12，push 係 2026-11-13。唔會跟機畀你模型。",
-  "WhiskeyCoder/Qwen3-Audiobook-Converter": "Qwen3 Audiobook 係本機嘅轉換器，用嚟喺書轉英文有聲書。要你自己開住 Qwen3-TTS（127.0.0.1:7860）。Python 3.8、ffmpeg。預設 Ryan、1.7B。冇 GitHub release，push 係 2026-04-07。唔會跟機畀你模型。"
+  "WhiskeyCoder/Qwen3-Audiobook-Converter": "Qwen3 Audiobook 係本機嘅轉換器，用嚟喺書轉英文有聲書。要你自己開住 Qwen3-TTS（127.0.0.1:7860）。Python 3.8、ffmpeg。預設 Ryan、1.7B。冇 GitHub release，push 係 2026-04-07。唔會跟機畀你模型。",
+  "xbtlin/ai-berkshire": "AI Berkshire 係價值投資嘅研究技能，用嚟喺 Claude Code 或 Codex 出研究報告。22 個技能。唔落單、唔代持資金。release v1.0.0（2026-04-07），push 係 2026-11-12。唔會跟機畀你模型。",
+  "Finrandojin/alexandria-audiobook": "Alexandria 係多聲有聲書工具，用嚟喺本機讀出書。內置 Qwen3-TTS，權重要另下載。劇本要你自己嘅 LLM。Apple Silicon 只可以 CPU。release v1.5（2026-03-03），push 係 2026-08-02。唔會跟機畀你權重。",
+  "auspicious3000/autovc": "AutoVC 係零樣本嘅聲線轉換，用嚟喺本機改說話人。Python 3、PyTorch 0.4.1。預訓練模型喺 IBM Box。冇 GitHub release，push 係 2024-10-23。唔會跟機畀你權重。"
 }
