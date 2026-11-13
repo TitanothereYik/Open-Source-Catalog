@@ -157,5 +157,8 @@
   "budtmo/docker-android",
   "MarvNC/yomitan-dictionaries",
   "corsairdev/corsair",
-  "Vonage/vonage-php-sdk-core"
+  "Vonage/vonage-php-sdk-core",
+  "NanmiCoder/cc-haha",
+  "n8n-io/self-hosted-ai-starter-kit",
+  "EDDiscovery/EDDiscovery"
 ]
