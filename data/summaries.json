@@ -1257,5 +1257,8 @@
   "rudrankriyam/Foundation-Models-Framework-Lab": "Foundation Lab 係 Apple 嘅模型工作台，用嚟喺 iOS 26 同 macOS 26 試提示同工具。要 Apple Silicon 同開 Apple Intelligence。模擬器唔跑到真模型。release 1.3.0（2026-11-07），push 同日。唔會跟機畀你模型。",
   "pgrundev/pgx": "PGX 係 coding agent 嘅技能同輕量 Postgres，用嚟喺本機開用完即棄嘅資料庫。Rust、AGPL-3.0。Mac 同 Linux，唔使 Docker。唔擺正式資料。release v0.1.3（2026-11-10），push 係 2026-11-13。唔會跟機畀你模型。",
   "leon-ai/leon": "Leon 係個人助理，用嚟喺本機用技能同工具做嘢。Node 24、pnpm。2.0 仲係 develop 預覽，文件未齊。要你自己嘅模型。冇穩定 GitHub release，push 係 2026-11-12。唔會跟機畀你模型。",
-  "nari-labs/dia2": "Dia2 係串流對話嘅英文 TTS，用嚟喺本機邊收字邊出聲。最長兩分鐘。權重喺 Hugging Face。聲線唔穩定，要前綴音。冇 GitHub release，push 係 2025-11-29。唔會跟機畀你權重。"
+  "nari-labs/dia2": "Dia2 係串流對話嘅英文 TTS，用嚟喺本機邊收字邊出聲。最長兩分鐘。權重喺 Hugging Face。聲線唔穩定，要前綴音。冇 GitHub release，push 係 2025-11-29。唔會跟機畀你權重。",
+  "opensandbox-group/OpenSandbox": "OpenSandbox 係 agent 嘅沙盒，用嚟喺你部機隔離跑指令同檔案。本機要 Docker，Python 3.10。Kubernetes 先用到 Firecracker。release release-1.2.1（2026-11-13），push 同日。唔會跟機畀你模型。",
+  "ag-ui-protocol/ag-ui": "AG-UI 係 agent 同介面嘅事件協議，用嚟喺前端接住 agent。npx 起專案。要你自己嘅 agent。release release/2026-11-12，push 係 2026-11-13。唔會跟機畀你模型。",
+  "WhiskeyCoder/Qwen3-Audiobook-Converter": "Qwen3 Audiobook 係本機嘅轉換器，用嚟喺書轉英文有聲書。要你自己開住 Qwen3-TTS（127.0.0.1:7860）。Python 3.8、ffmpeg。預設 Ryan、1.7B。冇 GitHub release，push 係 2026-04-07。唔會跟機畀你模型。"
 }
