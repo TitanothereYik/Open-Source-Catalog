@@ -1273,5 +1273,9 @@
   "Cygnux-Labs/Tracekit": "Tracekit 係 Agent 嘅飛行紀錄，用嚟喺工具呼叫之前做政策閘。Python 3.9。套件名係 tracekit-ai。release v1.6.0（2026-11-09），push 係 2026-11-13。唔會跟機畀你模型。",
   "AgriciDaniel/claude-obsidian": "claude-obsidian 係筆記技能，用嚟喺 Obsidian 整理你嘅 Markdown。15 個技能、3 個 Agent。要 Claude Code 同 Python 3.11。release v3.0.1（2026-10-22），push 係 2026-10-26。唔會跟機畀你模型。",
   "stepfun-ai/Step-Audio-EditX": "Step-Audio-EditX 係 3B 語音編輯，用嚟喺本機改情緒同讀字。支援粵語。NVIDIA GPU，12GB 只係底線。程式嘅授權係 Apache-2.0。冇 GitHub release，push 係 2026-04-09。權重要另下載，唔會跟機畀你。",
-  "gabrielmittag/NISQA": "NISQA 係語音質素評分，用嚟喺本機估通話同合成聲嘅自然度。程式係 MIT。權重跟機，但係 CC BY-NC-SA，商業用唔得。冇 GitHub release，push 係 2024-12-01。評分唔會造聲，亦唔會畀你新模型。"
+  "gabrielmittag/NISQA": "NISQA 係語音質素評分，用嚟喺本機估通話同合成聲嘅自然度。程式係 MIT。權重跟機，但係 CC BY-NC-SA，商業用唔得。冇 GitHub release，push 係 2024-12-01。評分唔會造聲，亦唔會畀你新模型。",
+  "ParadevAI/Paradev": "Paradev 係桌面程式，用嚟喺 macOS 並行跑你已有嘅 coding agent。Linux 係實驗版，Windows 未有。唔代你叫模型。release desktop-v2.0.8（2026-11-10），push 係 2026-11-13。唔會跟機畀你模型。",
+  "alibaba/zvec": "Zvec 係進程內嘅向量資料庫，用嚟喺本機做相似度搜尋。Python 3.10。你要自己計向量。release v0.8.1（2026-11-06），push 係 2026-11-13。唔係 Agent，亦唔會跟機畀你嵌入模型。",
+  "samuel-vitorino/sopro": "Sopro 係 120M 嘅語音合成，用嚟喺 CPU 或瀏覽器克隆聲線。英、葡、法、德。要 5 至 20 秒參考聲。冇 GitHub release，push 係 2026-09-01。權重要另下載，唔會跟機畀你。",
+  "MartinDelophy/ai-video-editor": "Timeline Studio 係瀏覽器剪片工具，用嚟喺本機改你嘅時間線。1 個技能，畀 coding agent 用。模型要另下載，授權唔一定係 MIT。release v1.0.12（2026-11-09），push 係 2026-11-13。唔會跟機畀你權重。"
 }
