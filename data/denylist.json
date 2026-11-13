@@ -160,5 +160,7 @@
   "Vonage/vonage-php-sdk-core",
   "NanmiCoder/cc-haha",
   "n8n-io/self-hosted-ai-starter-kit",
-  "EDDiscovery/EDDiscovery"
+  "EDDiscovery/EDDiscovery",
+  "DevedevT/FFmpeg-GUI-Editor-Windows",
+  "sipeter/CloneTTS"
 ]
