@@ -155,5 +155,7 @@
   "Edresson/YourTTS",
   "Azure-Samples/Cognitive-Speech-TTS",
   "budtmo/docker-android",
-  "MarvNC/yomitan-dictionaries"
+  "MarvNC/yomitan-dictionaries",
+  "corsairdev/corsair",
+  "Vonage/vonage-php-sdk-core"
 ]
