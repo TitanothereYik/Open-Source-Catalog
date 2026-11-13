@@ -153,5 +153,7 @@
   "alan-ai/alan-sdk-cordova",
   "kubesphere/kubesphere",
   "Edresson/YourTTS",
-  "Azure-Samples/Cognitive-Speech-TTS"
+  "Azure-Samples/Cognitive-Speech-TTS",
+  "budtmo/docker-android",
+  "MarvNC/yomitan-dictionaries"
 ]
