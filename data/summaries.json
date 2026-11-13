@@ -1285,5 +1285,7 @@
   "lmnt-com/diffwave": "DiffWave 係神經聲碼器，用嚟喺本機由你嘅頻譜圖生成波形。唔會由文字讀出。要 NVIDIA GPU。預訓練模型係 LJSpeech，要另下載。冇 GitHub release，push 係 2024-03-26。唔會跟機畀你權重。",
   "e2b-dev/E2B": "E2B 係 Agent 嘅雲端沙盒，用嚟喺隔離環境跑程式。Python 同 JavaScript。預設要佢哋嘅 API 金鑰。可以自託管。release 2.64.0（2026-11-14），push 係 2026-11-14。唔會跟機畀你模型。",
   "microsoft/agent-framework": "Microsoft Agent Framework 係 Agent 框架，用嚟喺 Python 同 .NET 編排流程。2 個技能。要你自己嘅模型。release python-1.26.0（2026-11-13），push 係 2026-11-14。唔會跟機畀你模型。",
-  "PABannier/bark.cpp": "bark.cpp 係 C++ 嘅語音合成，用嚟喺本機跑 Suno Bark。權重要另下載。CPU、Metal 或 CUDA。release v1.0.0（2024-10-12），push 係 2024-11-16。唔會跟機畀你權重。"
+  "PABannier/bark.cpp": "bark.cpp 係 C++ 嘅語音合成，用嚟喺本機跑 Suno Bark。權重要另下載。CPU、Metal 或 CUDA。release v1.0.0（2024-10-12），push 係 2024-11-16。唔會跟機畀你權重。",
+  "EricJujianZou/rederive": "rederive 係程式學習技能，用嚟喺 coding agent 度逼你推出自己嘅設計。要 git、bash、Python 3。唔會直接解釋。冇 GitHub release，push 係 2026-10-26。唔會跟機畀你模型。",
+  "Neywa-Labs/mlx-audio-swift": "MLX Audio Swift 係 Apple Silicon 嘅語音 SDK，用嚟喺 Mac 或 iPhone 跑現成模型。macOS 14、iOS 17。release v0.1.9（2026-11-10），push 係 2026-11-13。模型要另下載，授權唔一定係 MIT，唔會跟機畀你。"
 }

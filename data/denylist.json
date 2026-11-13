@@ -162,5 +162,7 @@
   "n8n-io/self-hosted-ai-starter-kit",
   "EDDiscovery/EDDiscovery",
   "DevedevT/FFmpeg-GUI-Editor-Windows",
-  "sipeter/CloneTTS"
+  "sipeter/CloneTTS",
+  "NevaMind-AI/memU",
+  "netease-youdao/Confucius4-TTS"
 ]
