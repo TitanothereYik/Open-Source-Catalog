@@ -1312,5 +1312,8 @@
   "calclavia/DeepJ": "DeepJ 係研究模型，用嚟喺本機按作曲家風格生成你嘅 MIDI。要 Python 3.5 同自己嘅數據集。冇 GitHub release，push 係 2018-10-01。唔會跟機畀你權重。",
   "tw93/Kami": "Kami 係排版 skill，用嚟喺你已有嘅 agent 出 PDF、PNG 同可編輯簡報。九套模板。release V1.20.0（2026-10-29），push 係 2026-11-10。唔會跟機畀你模型。",
   "MemTensor/MemOS": "MemOS 係記憶層，用嚟喺你已有嘅 agent 記住同搵返上下文。有本機插件同雲端。要你自己嘅模型。release v2.0.36（2026-11-09），push 係 2026-11-11。唔會跟機畀你模型。",
-  "mmpneo/curses": "Curses 係字幕程式，用嚟喺 OBS、VRChat、Twitch 同 Discord 顯示你講嘅字。Azure 同 Deepgram 要付費。release v0.0.19（2024-06-18），push 同日。唔會跟機畀你模型。"
+  "mmpneo/curses": "Curses 係字幕程式，用嚟喺 OBS、VRChat、Twitch 同 Discord 顯示你講嘅字。Azure 同 Deepgram 要付費。release v0.0.19（2024-06-18），push 同日。唔會跟機畀你模型。",
+  "Jeffallan/claude-skills": "Claude Skills 係 Claude Code 插件，用嚟喺你已有嘅 Claude 按語言同框架寫程式。67 個 skill。release v0.4.20（2026-10-16），push 係 2026-11-11。唔會跟機畀你模型。",
+  "OlaWod/FreeVC": "FreeVC 係變聲模型，用嚟喺本機用一段聲線轉你嘅錄音，唔使文字稿。要 CUDA。權重同 WavLM 要另外下載。冇 GitHub release，push 係 2025-01-20。唔會跟機畀你權重。",
+  "jaywalnut310/glow-tts": "Glow-TTS 係研究模型，用嚟喺本機由文字合成你嘅語音。要 Python 3.6 同自己嘅 LJ Speech。權重要另外下載。冇 GitHub release，push 係 2022-07-12。唔會跟機畀你權重。"
 }
