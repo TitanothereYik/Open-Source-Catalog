@@ -1309,5 +1309,8 @@
   "dlutton/flutter_tts": "flutter_tts 係 Flutter 套件，用嚟喺 iOS、Android、網頁、macOS 同 Windows 讀出你嘅字。聲線係系統自帶。pub 版 4.2.5，push 係 2026-01-06。冇 GitHub release。唔會跟機畀你模型。",
   "helloianneo/ian-xiaohei-illustrations": "小黑配圖係 Codex skill，用嚟喺你已有嘅 agent 為中文文章畫 16:9 白底手繪圖。要 Codex 先出到圖。release v1.0.0（2026-05-27），push 係 2026-10-27。唔會跟機畀你模型。",
   "simular-ai/Agent-S": "Agent S 係電腦操作 agent，用嚟喺 macOS、Windows 或 Linux 睇你嘅螢幕再點擊。要你自己嘅模型。tag v0.3.2（2025-12-16），push 係 2026-11-14。唔會跟機畀你模型。",
-  "calclavia/DeepJ": "DeepJ 係研究模型，用嚟喺本機按作曲家風格生成你嘅 MIDI。要 Python 3.5 同自己嘅數據集。冇 GitHub release，push 係 2018-10-01。唔會跟機畀你權重。"
+  "calclavia/DeepJ": "DeepJ 係研究模型，用嚟喺本機按作曲家風格生成你嘅 MIDI。要 Python 3.5 同自己嘅數據集。冇 GitHub release，push 係 2018-10-01。唔會跟機畀你權重。",
+  "tw93/Kami": "Kami 係排版 skill，用嚟喺你已有嘅 agent 出 PDF、PNG 同可編輯簡報。九套模板。release V1.20.0（2026-10-29），push 係 2026-11-10。唔會跟機畀你模型。",
+  "MemTensor/MemOS": "MemOS 係記憶層，用嚟喺你已有嘅 agent 記住同搵返上下文。有本機插件同雲端。要你自己嘅模型。release v2.0.36（2026-11-09），push 係 2026-11-11。唔會跟機畀你模型。",
+  "mmpneo/curses": "Curses 係字幕程式，用嚟喺 OBS、VRChat、Twitch 同 Discord 顯示你講嘅字。Azure 同 Deepgram 要付費。release v0.0.19（2024-06-18），push 同日。唔會跟機畀你模型。"
 }
