@@ -1317,5 +1317,10 @@
   "OlaWod/FreeVC": "FreeVC 係變聲模型，用嚟喺本機用一段聲線轉你嘅錄音，唔使文字稿。要 CUDA。權重同 WavLM 要另外下載。冇 GitHub release，push 係 2025-01-20。唔會跟機畀你權重。",
   "jaywalnut310/glow-tts": "Glow-TTS 係研究模型，用嚟喺本機由文字合成你嘅語音。要 Python 3.6 同自己嘅 LJ Speech。權重要另外下載。冇 GitHub release，push 係 2022-07-12。唔會跟機畀你權重。",
   "Ampixa/sanoTTS": "sanoTTS 係細聲線模型，用嚟喺瀏覽器或者 ESP32 讀出你嘅字。聲線第一次用先下載。中文聲線而家只喺瀏覽器。release voices-v2（2026-09-04），push 係 2026-11-15。唔會跟機畀你聲線。",
-  "FelippeChemello/podcast-maker": "Podcast Maker 係影片程式，用嚟喺本機將電子報砌成你嘅 YouTube 片。要 Chrome、ffmpeg 同另外嘅生圖服務。說明話已轉去新 repo。push 係 2026-01-11。唔會跟機畀你模型。"
+  "FelippeChemello/podcast-maker": "Podcast Maker 係影片程式，用嚟喺本機將電子報砌成你嘅 YouTube 片。要 Chrome、ffmpeg 同另外嘅生圖服務。說明話已轉去新 repo。push 係 2026-01-11。唔會跟機畀你模型。",
+  "codepawl/crucible": "Crucible 係 3D 引擎，用嚟喺你已有嘅 agent 砌場景同出圖。67.js 嘅新名。要 Node 20.19。release v0.20.0（2026-11-14），push 係 2026-11-15。唔會跟機畀你模型。",
+  "obsidianmd/obsidian-skills": "Obsidian Skills 係官方 skill，用嚟喺你已有嘅 agent 操作 Obsidian 筆記同 Canvas。要 Obsidian。release 1.1.0（2026-11-11），push 係 2026-11-12。唔會跟機畀你模型。",
+  "presenton/presenton": "Presenton 係簡報程式，用嚟喺你部機由提示生成可編輯 PPTX。要你自己嘅模型或者 API 金鑰。release v0.9.12-beta（2026-10-26），push 係 2026-11-06。唔會跟機畀你模型。",
+  "gitmylo/bark-voice-cloning-HuBERT-quantizer": "Bark Quantizer 係變聲附加，用嚟喺 Bark 克隆你嘅聲線。要 Python 3.10。HuBERT 同權重要另外下載。冇 GitHub release，push 係 2023-09-13。唔會跟機畀你權重。",
+  "lucidrains/voicebox-pytorch": "Voicebox PyTorch 係非官方實作，用嚟喺本機訓練 Meta 嘅語音模型。作者建議改用 E2 TTS。要自己嘅 HuBERT。release 0.5.0（2024-01-31），push 係 2024-10-02。唔會跟機畀你權重。"
 }
