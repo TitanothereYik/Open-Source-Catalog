@@ -1290,5 +1290,9 @@
   "Neywa-Labs/mlx-audio-swift": "MLX Audio Swift 係 Apple Silicon 嘅語音 SDK，用嚟喺 Mac 或 iPhone 跑現成模型。macOS 14、iOS 17。release v0.1.9（2026-11-10），push 係 2026-11-13。模型要另下載，授權唔一定係 MIT，唔會跟機畀你。",
   "OrchestratorInc/agent-orchestrator": "Orchestrator.inc 係桌面程式，用嚟喺本機同時跑你已有嘅 coding agent。macOS、Windows、Linux。雲端模式代碼唔喺你部機。release v0.15.0（2026-11-14），push 係 2026-11-14。唔會跟機畀你模型。",
   "paulilaaso/lue": "Lue 係終端讀書類，用嚟喺終端讀出你嘅 EPUB 同 PDF。預設 Edge TTS 要上網。離線可以用 Kokoro，權重要另下載。release v0.5.0（2026-07-08），push 係 2026-07-16。唔會跟機畀你權重。",
-  "VRCWizard/TTS-Voice-Wizard": "TTS Voice Wizard 係 Windows 語音工具，用嚟喺 VRChat 顯示你講嘅字。Windows 10 或 11。雲端聲線同 Deepgram 要付費。release v1.8.0.2（2026-08-20），push 係 2026-10-12。唔會跟機畀你模型。"
+  "VRCWizard/TTS-Voice-Wizard": "TTS Voice Wizard 係 Windows 語音工具，用嚟喺 VRChat 顯示你講嘅字。Windows 10 或 11。雲端聲線同 Deepgram 要付費。release v1.8.0.2（2026-08-20），push 係 2026-10-12。唔會跟機畀你模型。",
+  "ersinkoc/AI-Video-Factory": "AI Video Factory 係影片廠，用嚟喺本機由題目整成你嘅 YouTube 片。要 Node 24、FFmpeg，同 Claude 登入或金鑰。配音同片段要付費。release v0.6.0（2026-11-13），push 係 2026-11-13。唔會跟機畀你模型。",
+  "INSANE0777/Awwwards-mcp": "Awwwards MCP 係伺服器，用嚟喺 coding agent 搜尋得獎網站嘅設計同截圖。要上網。錄影要 Playwright。唔使 API 金鑰。release v1.19.0（2026-11-11），push 係 2026-11-12。唔會跟機畀你模型。",
+  "fathah/hermes-desktop": "Hermes Desktop 係桌面程式，用嚟喺本機安裝同傾偈你嘅 Hermes Agent。Windows、macOS、Linux。模型要自己接供應商。release v0.7.8（2026-11-12），push 係 2026-11-12。入面冇 Hermes。唔會跟機畀你模型。",
+  "lobehub/lobe-tts": "Lobe TTS 係語音庫，用嚟喺伺服器或瀏覽器讀出你嘅字，同埋聽寫。Edge 聲線要上網。OpenAI 同 Microsoft Speech 要金鑰。release v6.1.0（2026-11-12），push 係 2026-11-12。唔會跟機畀你模型。"
 }
