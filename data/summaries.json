@@ -1306,5 +1306,8 @@
   "eduardolat/kokoro-web": "Kokoro Web 係瀏覽器語音頁，用嚟喺網頁或自託管 Docker 讀出你嘅字。權重係 Kokoro-82M，要另下載。release v0.1.3（2025-03-16），push 係 2025-03-16。唔會跟機畀你權重。",
   "neuml/txtai": "txtai 係 Python 框架，用嚟喺本機做語義搜尋同編排你嘅語言模型流程。要 Python 3.11。模型要另下載。release v9.14.0（2026-10-06），push 係 2026-11-13。唔會跟機畀你模型。",
   "InsForge/InsForge": "InsForge 係後端平台，用嚟喺你嘅 coding agent 開資料庫、登入同儲存。自託管要 Docker。雲端先有 CLI skills。release v2.3.5（2026-10-23），push 係 2026-11-09。唔會跟機畀你模型。",
-  "dlutton/flutter_tts": "flutter_tts 係 Flutter 套件，用嚟喺 iOS、Android、網頁、macOS 同 Windows 讀出你嘅字。聲線係系統自帶。pub 版 4.2.5，push 係 2026-01-06。冇 GitHub release。唔會跟機畀你模型。"
+  "dlutton/flutter_tts": "flutter_tts 係 Flutter 套件，用嚟喺 iOS、Android、網頁、macOS 同 Windows 讀出你嘅字。聲線係系統自帶。pub 版 4.2.5，push 係 2026-01-06。冇 GitHub release。唔會跟機畀你模型。",
+  "helloianneo/ian-xiaohei-illustrations": "小黑配圖係 Codex skill，用嚟喺你已有嘅 agent 為中文文章畫 16:9 白底手繪圖。要 Codex 先出到圖。release v1.0.0（2026-05-27），push 係 2026-10-27。唔會跟機畀你模型。",
+  "simular-ai/Agent-S": "Agent S 係電腦操作 agent，用嚟喺 macOS、Windows 或 Linux 睇你嘅螢幕再點擊。要你自己嘅模型。tag v0.3.2（2025-12-16），push 係 2026-11-14。唔會跟機畀你模型。",
+  "calclavia/DeepJ": "DeepJ 係研究模型，用嚟喺本機按作曲家風格生成你嘅 MIDI。要 Python 3.5 同自己嘅數據集。冇 GitHub release，push 係 2018-10-01。唔會跟機畀你權重。"
 }
