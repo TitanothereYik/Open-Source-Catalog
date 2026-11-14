@@ -1297,5 +1297,7 @@
   "lobehub/lobe-tts": "Lobe TTS 係語音庫，用嚟喺伺服器或瀏覽器讀出你嘅字，同埋聽寫。Edge 聲線要上網。OpenAI 同 Microsoft Speech 要金鑰。release v6.1.0（2026-11-12），push 係 2026-11-12。唔會跟機畀你模型。",
   "Orchestra-Research/AI-Research-SKILLs": "AI Research Skills 係技能庫，用嚟喺你已有嘅 coding agent 做研究同訓練。98 個技能，要 Node 安裝。唔包含模型。release v1.7.2（2026-06-16），push 係 2026-10-11。唔會跟機畀你模型。",
   "lsdefine/GenericAgent": "GenericAgent 係自主 agent，用嚟喺本機控制瀏覽器、終端同滑鼠。要 Python 3.11 或 3.12，同你自己嘅模型金鑰。release v0.2.1（2026-10-19），push 係 2026-11-06。唔會跟機畀你模型。",
-  "mezbaul-h/june": "june 係本機語音聊天程式，用嚟喺你部機用 Ollama 傾偈，再用 Whisper 同 Coqui 聽同讀你嘅聲。權重要另下載。release v0.0.1（2024-08-08），push 係 2024-08-12。唔會跟機畀你模型。"
+  "mezbaul-h/june": "june 係本機語音聊天程式，用嚟喺你部機用 Ollama 傾偈，再用 Whisper 同 Coqui 聽同讀你嘅聲。權重要另下載。release v0.0.1（2024-08-08），push 係 2024-08-12。唔會跟機畀你模型。",
+  "browseros-ai/BrowserOS": "BrowserOS 係本機瀏覽器，用嚟喺你已有嘅 agent 操作登入咗嘅網頁。macOS、Windows、Linux x64。用量統計可關。release 2026-11-13，push 係 2026-11-14。唔會跟機畀你模型。",
+  "nanobrowser/nanobrowser": "Nanobrowser 係 Chrome 同 Edge 擴充，用嚟喺你自己嘅瀏覽器做網頁工作。要你自己嘅模型或本機 Ollama。提交同付款會先問你。release v0.3.0（2026-10-15），push 係 2026-11-10。唔會跟機畀你模型。"
 }
