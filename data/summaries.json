@@ -1322,5 +1322,7 @@
   "obsidianmd/obsidian-skills": "Obsidian Skills 係官方 skill，用嚟喺你已有嘅 agent 操作 Obsidian 筆記同 Canvas。要 Obsidian。release 1.1.0（2026-11-11），push 係 2026-11-12。唔會跟機畀你模型。",
   "presenton/presenton": "Presenton 係簡報程式，用嚟喺你部機由提示生成可編輯 PPTX。要你自己嘅模型或者 API 金鑰。release v0.9.12-beta（2026-10-26），push 係 2026-11-06。唔會跟機畀你模型。",
   "gitmylo/bark-voice-cloning-HuBERT-quantizer": "Bark Quantizer 係變聲附加，用嚟喺 Bark 克隆你嘅聲線。要 Python 3.10。HuBERT 同權重要另外下載。冇 GitHub release，push 係 2023-09-13。唔會跟機畀你權重。",
-  "lucidrains/voicebox-pytorch": "Voicebox PyTorch 係非官方實作，用嚟喺本機訓練 Meta 嘅語音模型。作者建議改用 E2 TTS。要自己嘅 HuBERT。release 0.5.0（2024-01-31），push 係 2024-10-02。唔會跟機畀你權重。"
+  "lucidrains/voicebox-pytorch": "Voicebox PyTorch 係非官方實作，用嚟喺本機訓練 Meta 嘅語音模型。作者建議改用 E2 TTS。要自己嘅 HuBERT。release 0.5.0（2024-01-31），push 係 2024-10-02。唔會跟機畀你權重。",
+  "cocoindex-io/cocoindex": "CocoIndex 係增量索引引擎，用嚟喺你已有嘅 agent 保持代碼同文件上下文新鮮。要 Python 3.10。release v1.2.0（2026-11-09），push 係 2026-11-14。唔會跟機畀你模型。",
+  "travisvn/chatterbox-tts-api": "Chatterbox API 係本機介面，用嚟喺你部機用 Chatterbox 克隆你嘅聲線，介面相容 OpenAI。要 CUDA。多語言版而家唔穩。冇 GitHub release，push 係 2025-12-23。唔會跟機畀你模型。"
 }
