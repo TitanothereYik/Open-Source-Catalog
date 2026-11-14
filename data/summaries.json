@@ -1299,5 +1299,9 @@
   "lsdefine/GenericAgent": "GenericAgent 係自主 agent，用嚟喺本機控制瀏覽器、終端同滑鼠。要 Python 3.11 或 3.12，同你自己嘅模型金鑰。release v0.2.1（2026-10-19），push 係 2026-11-06。唔會跟機畀你模型。",
   "mezbaul-h/june": "june 係本機語音聊天程式，用嚟喺你部機用 Ollama 傾偈，再用 Whisper 同 Coqui 聽同讀你嘅聲。權重要另下載。release v0.0.1（2024-08-08），push 係 2024-08-12。唔會跟機畀你模型。",
   "browseros-ai/BrowserOS": "BrowserOS 係本機瀏覽器，用嚟喺你已有嘅 agent 操作登入咗嘅網頁。macOS、Windows、Linux x64。用量統計可關。release 2026-11-13，push 係 2026-11-14。唔會跟機畀你模型。",
-  "nanobrowser/nanobrowser": "Nanobrowser 係 Chrome 同 Edge 擴充，用嚟喺你自己嘅瀏覽器做網頁工作。要你自己嘅模型或本機 Ollama。提交同付款會先問你。release v0.3.0（2026-10-15），push 係 2026-11-10。唔會跟機畀你模型。"
+  "nanobrowser/nanobrowser": "Nanobrowser 係 Chrome 同 Edge 擴充，用嚟喺你自己嘅瀏覽器做網頁工作。要你自己嘅模型或本機 Ollama。提交同付款會先問你。release v0.3.0（2026-10-15），push 係 2026-11-10。唔會跟機畀你模型。",
+  "codepawl/67.js": "67.js 係 JavaScript 立體引擎，用嚟喺你已有嘅 coding agent 經 MCP 搭場景同出圖。要 Node 20.19。1.0 前介面會變。release v0.19.0（2026-11-12），push 係 2026-11-14。唔會跟機畀你模型。",
+  "XiaomiMiMo/MiMo-Code": "MiMo Code 係終端編程助手，用嚟喺本機讀寫代碼同跑命令。要你自己嘅模型供應商或小米登入。macOS、Linux、Windows。release v0.1.17（2026-11-13），push 係 2026-11-13。唔會跟機畀你模型。",
+  "cboard-org/cboard": "Cboard 係瀏覽器溝通板，用嚟喺網頁撳符號，再由瀏覽器讀出你嘅句子。聲線係瀏覽器自帶。release 1.42.5（2026-09-20），push 係 2026-11-11。唔會跟機畀你語音模型。",
+  "eduardolat/kokoro-web": "Kokoro Web 係瀏覽器語音頁，用嚟喺網頁或自託管 Docker 讀出你嘅字。權重係 Kokoro-82M，要另下載。release v0.1.3（2025-03-16），push 係 2025-03-16。唔會跟機畀你權重。"
 }
