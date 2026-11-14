@@ -1294,5 +1294,8 @@
   "ersinkoc/AI-Video-Factory": "AI Video Factory 係影片廠，用嚟喺本機由題目整成你嘅 YouTube 片。要 Node 24、FFmpeg，同 Claude 登入或金鑰。配音同片段要付費。release v0.6.0（2026-11-13），push 係 2026-11-13。唔會跟機畀你模型。",
   "INSANE0777/Awwwards-mcp": "Awwwards MCP 係伺服器，用嚟喺 coding agent 搜尋得獎網站嘅設計同截圖。要上網。錄影要 Playwright。唔使 API 金鑰。release v1.19.0（2026-11-11），push 係 2026-11-12。唔會跟機畀你模型。",
   "fathah/hermes-desktop": "Hermes Desktop 係桌面程式，用嚟喺本機安裝同傾偈你嘅 Hermes Agent。Windows、macOS、Linux。模型要自己接供應商。release v0.7.8（2026-11-12），push 係 2026-11-12。入面冇 Hermes。唔會跟機畀你模型。",
-  "lobehub/lobe-tts": "Lobe TTS 係語音庫，用嚟喺伺服器或瀏覽器讀出你嘅字，同埋聽寫。Edge 聲線要上網。OpenAI 同 Microsoft Speech 要金鑰。release v6.1.0（2026-11-12），push 係 2026-11-12。唔會跟機畀你模型。"
+  "lobehub/lobe-tts": "Lobe TTS 係語音庫，用嚟喺伺服器或瀏覽器讀出你嘅字，同埋聽寫。Edge 聲線要上網。OpenAI 同 Microsoft Speech 要金鑰。release v6.1.0（2026-11-12），push 係 2026-11-12。唔會跟機畀你模型。",
+  "Orchestra-Research/AI-Research-SKILLs": "AI Research Skills 係技能庫，用嚟喺你已有嘅 coding agent 做研究同訓練。98 個技能，要 Node 安裝。唔包含模型。release v1.7.2（2026-06-16），push 係 2026-10-11。唔會跟機畀你模型。",
+  "lsdefine/GenericAgent": "GenericAgent 係自主 agent，用嚟喺本機控制瀏覽器、終端同滑鼠。要 Python 3.11 或 3.12，同你自己嘅模型金鑰。release v0.2.1（2026-10-19），push 係 2026-11-06。唔會跟機畀你模型。",
+  "mezbaul-h/june": "june 係本機語音聊天程式，用嚟喺你部機用 Ollama 傾偈，再用 Whisper 同 Coqui 聽同讀你嘅聲。權重要另下載。release v0.0.1（2024-08-08），push 係 2024-08-12。唔會跟機畀你模型。"
 }
