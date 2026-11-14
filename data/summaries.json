@@ -1315,5 +1315,7 @@
   "mmpneo/curses": "Curses 係字幕程式，用嚟喺 OBS、VRChat、Twitch 同 Discord 顯示你講嘅字。Azure 同 Deepgram 要付費。release v0.0.19（2024-06-18），push 同日。唔會跟機畀你模型。",
   "Jeffallan/claude-skills": "Claude Skills 係 Claude Code 插件，用嚟喺你已有嘅 Claude 按語言同框架寫程式。67 個 skill。release v0.4.20（2026-10-16），push 係 2026-11-11。唔會跟機畀你模型。",
   "OlaWod/FreeVC": "FreeVC 係變聲模型，用嚟喺本機用一段聲線轉你嘅錄音，唔使文字稿。要 CUDA。權重同 WavLM 要另外下載。冇 GitHub release，push 係 2025-01-20。唔會跟機畀你權重。",
-  "jaywalnut310/glow-tts": "Glow-TTS 係研究模型，用嚟喺本機由文字合成你嘅語音。要 Python 3.6 同自己嘅 LJ Speech。權重要另外下載。冇 GitHub release，push 係 2022-07-12。唔會跟機畀你權重。"
+  "jaywalnut310/glow-tts": "Glow-TTS 係研究模型，用嚟喺本機由文字合成你嘅語音。要 Python 3.6 同自己嘅 LJ Speech。權重要另外下載。冇 GitHub release，push 係 2022-07-12。唔會跟機畀你權重。",
+  "Ampixa/sanoTTS": "sanoTTS 係細聲線模型，用嚟喺瀏覽器或者 ESP32 讀出你嘅字。聲線第一次用先下載。中文聲線而家只喺瀏覽器。release voices-v2（2026-09-04），push 係 2026-11-15。唔會跟機畀你聲線。",
+  "FelippeChemello/podcast-maker": "Podcast Maker 係影片程式，用嚟喺本機將電子報砌成你嘅 YouTube 片。要 Chrome、ffmpeg 同另外嘅生圖服務。說明話已轉去新 repo。push 係 2026-01-11。唔會跟機畀你模型。"
 }
