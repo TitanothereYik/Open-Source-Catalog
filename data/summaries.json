@@ -1337,5 +1337,8 @@
   "marcoppasini/musika": "Musika 係音樂模型，用嚟喺本機無限生成你嘅波形音樂。要 Python 3.9。有 Nvidia 先要 CUDA 11.2。權重第一次用先下載。冇 GitHub release，push 係 2022-10-28。唔會跟機畀你權重。",
   "spinabot/brigade": "Brigade 係本機 agent 班底，用嚟喺你部機跑你嘅一組 agent 同 60 個 skill。金鑰留喺本機。可以用 Claude 或 ChatGPT 訂閱。release brigade-v1.39.2（2026-11-04），push 係 2026-11-13。唔會跟機畀你模型。",
   "Narcooo/inkos": "InkOS 係故事 agent，用嚟喺本機寫長篇、劇本同翻譯。要你自己嘅模型。網頁版係另外嘅服務。release v1.8.0（2026-08-17），push 係 2026-10-24。唔會跟機畀你模型。",
-  "DenisovAV/flutter_edge_ai": "Flutter Edge AI 係手機同電腦套件，用嚟喺裝置上跑你嘅 Gemma 或其他模型，亦可以做語音。模型要另外下載，或者用系統自帶。release native-v0.19.1-b（2026-11-13），push 係 2026-11-15。唔會跟機畀你模型。"
+  "DenisovAV/flutter_edge_ai": "Flutter Edge AI 係手機同電腦套件，用嚟喺裝置上跑你嘅 Gemma 或其他模型，亦可以做語音。模型要另外下載，或者用系統自帶。release native-v0.19.1-b（2026-11-13），push 係 2026-11-15。唔會跟機畀你模型。",
+  "phuryn/product-engineering": "Product Engineering 係 45 個 skill，用嚟喺你已有嘅 coding agent 決定做咩、寫程式同覆核。要 Claude Code、Codex 或同類工具。release v1.12.0（2026-11-14），push 係 2026-11-15。唔會跟機畀你模型。",
+  "aden-hive/hive": "Hive 係多 agent 運行環境，用嚟喺你部機由一個女王 agent 派工作畀工人。要 Python 3.11 同你自己嘅模型。release v1.0.14（2026-11-02），push 係 2026-11-08。唔會跟機畀你模型。",
+  "mira-wm/mira": "MIRA 係世界模型，用嚟喺一張 Nvidia GPU 按四位玩家嘅操作生成 Rocket League 畫面。要 pixi。權重要另外準備。release v1.0（2026-07-05），push 係 2026-09-16。唔會跟機畀你權重。"
 }
