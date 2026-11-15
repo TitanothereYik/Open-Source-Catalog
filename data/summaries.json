@@ -1340,5 +1340,8 @@
   "DenisovAV/flutter_edge_ai": "Flutter Edge AI 係手機同電腦套件，用嚟喺裝置上跑你嘅 Gemma 或其他模型，亦可以做語音。模型要另外下載，或者用系統自帶。release native-v0.19.1-b（2026-11-13），push 係 2026-11-15。唔會跟機畀你模型。",
   "phuryn/product-engineering": "Product Engineering 係 45 個 skill，用嚟喺你已有嘅 coding agent 決定做咩、寫程式同覆核。要 Claude Code、Codex 或同類工具。release v1.12.0（2026-11-14），push 係 2026-11-15。唔會跟機畀你模型。",
   "aden-hive/hive": "Hive 係多 agent 運行環境，用嚟喺你部機由一個女王 agent 派工作畀工人。要 Python 3.11 同你自己嘅模型。release v1.0.14（2026-11-02），push 係 2026-11-08。唔會跟機畀你模型。",
-  "mira-wm/mira": "MIRA 係世界模型，用嚟喺一張 Nvidia GPU 按四位玩家嘅操作生成 Rocket League 畫面。要 pixi。權重要另外準備。release v1.0（2026-07-05），push 係 2026-09-16。唔會跟機畀你權重。"
+  "mira-wm/mira": "MIRA 係世界模型，用嚟喺一張 Nvidia GPU 按四位玩家嘅操作生成 Rocket League 畫面。要 pixi。權重要另外準備。release v1.0（2026-07-05），push 係 2026-09-16。唔會跟機畀你權重。",
+  "tigerless-labs/autoharness": "AutoHarness 係 Claude Code 插件，用嚟喺你已有嘅 Claude 由真實工作學 skill，只改佢自己寫嘅。要 Python 3.11，支援 Linux 同 macOS。plugin 版本 0.5.3，push 係 2026-11-12。唔會跟機畀你模型。",
+  "lucasnewman/f5-tts-mlx": "F5-TTS MLX 係 Apple 實作，用嚟喺 Mac 由文字同你嘅聲線樣本出語音。要 Apple 晶片。權重第一次用先下載。release 0.2.6（2025-03-19），push 同日。唔會跟機畀你權重。",
+  "lukaszliniewicz/Pandrator": "Pandrator 係有聲書同配音程式，用嚟喺 Windows 或 Linux 將 PDF 同影片轉成你嘅聲音。用本機模型，要另外下載。release v.0.14.4（2026-11-13），push 係 2026-11-15。唔會跟機畀你模型。"
 }
