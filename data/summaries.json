@@ -1343,5 +1343,9 @@
   "mira-wm/mira": "MIRA 係世界模型，用嚟喺一張 Nvidia GPU 按四位玩家嘅操作生成 Rocket League 畫面。要 pixi。權重要另外準備。release v1.0（2026-07-05），push 係 2026-09-16。唔會跟機畀你權重。",
   "tigerless-labs/autoharness": "AutoHarness 係 Claude Code 插件，用嚟喺你已有嘅 Claude 由真實工作學 skill，只改佢自己寫嘅。要 Python 3.11，支援 Linux 同 macOS。plugin 版本 0.5.3，push 係 2026-11-12。唔會跟機畀你模型。",
   "lucasnewman/f5-tts-mlx": "F5-TTS MLX 係 Apple 實作，用嚟喺 Mac 由文字同你嘅聲線樣本出語音。要 Apple 晶片。權重第一次用先下載。release 0.2.6（2025-03-19），push 同日。唔會跟機畀你權重。",
-  "lukaszliniewicz/Pandrator": "Pandrator 係有聲書同配音程式，用嚟喺 Windows 或 Linux 將 PDF 同影片轉成你嘅聲音。用本機模型，要另外下載。release v.0.14.4（2026-11-13），push 係 2026-11-15。唔會跟機畀你模型。"
+  "lukaszliniewicz/Pandrator": "Pandrator 係有聲書同配音程式，用嚟喺 Windows 或 Linux 將 PDF 同影片轉成你嘅聲音。用本機模型，要另外下載。release v.0.14.4（2026-11-13），push 係 2026-11-15。唔會跟機畀你模型。",
+  "AgriciDaniel/claude-ads": "Claude Ads 係 Claude Code skill，用嚟喺你已有嘅 Claude 讀廣告帳戶匯出，寫審計同草稿。要你自己嘅資料。佢唔會自己改帳戶。release v2.1.0（2026-10-16），push 係 2026-11-02。唔會跟機畀你模型。",
+  "VoltAgent/voltagent": "VoltAgent 係 TypeScript agent 框架，用嚟喺你自己嘅程式接記憶、工具同模型供應商。要 Node。模型要另外接。npm 套件 core 2.11.1（2026-11-04），push 係 2026-11-06。唔會跟機畀你模型。",
+  "daniilrobnikov/vits2": "VITS2 呢個係非官方訓練程式，用嚟喺你自己嘅語音資料練單階段文字轉語音。要 Python 3.11。作者未放出預訓練權重，VITS2 改動都未做完。最後 push 係 2023-09-12。唔會跟機畀你模型。",
+  "PlayVoice/lora-svc": "LoRA-SVC 係唱歌聲線轉換，用嚟喺你自己嘅短音檔微調 Whisper 同 BigVGAN。LoRA 喺呢個 repo 未做完。預訓練檔要另外下載。release v_final（2023-06-12），push 係 2023-11-03。唔會跟機畀你成品模型。"
 }
