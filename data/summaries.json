@@ -1351,5 +1351,8 @@
   "alchaincyf/zhangxuefeng-skill": "張雪峰 skill 係人設技能，用嚟喺你已有嘅 coding agent 用佢嗰套思路睇高考同職業。要 Claude Code、Codex 或 Cursor。冇 release，push 係 2026-10-13。唔會跟機畀你模型，亦唔係本人。",
   "Agents365-ai/drawio-skill": "drawio-skill 係圖表技能，用嚟喺你已有嘅 coding agent 將文字同程式碼寫成可改嘅 draw.io 圖。要 Claude Code、Cursor 或 Codex。release v3.4.4（2026-11-06），push 係 2026-11-10。唔會跟機畀你模型。",
   "ivcylc/OpenMusic": "OpenMusic 係 QA-MDT 嘅文字生成音樂，用嚟喺本機由文字出音樂。要 Python 3.10。權重喺 Hugging Face，要另外下載。冇 release，push 係 2025-06-26。唔會跟機畀你權重。",
-  "liuzhao1225/YouDub": "YouDub 係舊版影片配音程式，用嚟喺你部機將外語片嘅聲換成中文。作者叫人改用 YouDub-webui。模型要另外準備。最後 push 係 2024-05-14。唔會跟機畀你模型。"
+  "liuzhao1225/YouDub": "YouDub 係舊版影片配音程式，用嚟喺你部機將外語片嘅聲換成中文。作者叫人改用 YouDub-webui。模型要另外準備。最後 push 係 2024-05-14。唔會跟機畀你模型。",
+  "chuspeeism/dashi-ppt-skill": "Dashi PPT 係簡報技能，用嚟喺你已有嘅 coding agent 整可離線改嘅 HTML 簡報，再匯出 PPTX。要 Claude Code 或 Codex。版本 0.4.14，push 係 2026-11-06。唔會跟機畀你模型。",
+  "sigoden/aichat": "AIChat 係命令列工具，用嚟喺終端同你自己接嘅模型傾計、做 RAG 同 agent。要你自己嘅 API 或 Ollama。release v0.30.0（2025-07-06），push 係 2026-02-23。唔會跟機畀你模型。",
+  "wildminder/ComfyUI-VibeVoice": "ComfyUI-VibeVoice 係節點，用嚟喺 ComfyUI 出多人長對話語音。要已裝嘅 ComfyUI。權重第一次用先下載。release v2.12.3（2026-10-26），push 同日。唔會跟機畀你權重。"
 }
