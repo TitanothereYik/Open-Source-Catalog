@@ -1328,5 +1328,8 @@
   "Dodaios/ste80-humanizer": "STE80 係寫作 skill，用嚟喺你已有嘅 agent 將文字改到易讀，唔係用嚟過偵測。要你自己嘅模型。冇 GitHub release，push 係 2026-11-14。唔會跟機畀你模型。",
   "simpsoka/zigzag": "ZigZag 係刺繡程式，用嚟喺 Mac 或 Windows 將你嘅 SVG 轉成機繡圖。agent 可以經 MCP 改圖。release v0.1.4（2026-11-14），push 係 2026-11-15。唔會跟機畀你模型。",
   "auspicious3000/SpeechSplit": "SpeechSplit 係研究模型，用嚟喺本機拆開你嘅語音內容、音色、節奏同音高。要 Python 3.6。權重同聲碼器要另外下載。冇 GitHub release，push 係 2024-10-23。唔會跟機畀你權重。",
-  "FranckyB/Voice-Clone-Studio": "Voice Clone Studio 係網頁介面，用嚟喺本機用 Qwen3-TTS 同 VibeVoice 克隆你嘅聲線。要你另外下載模型。release v1.12.5（2026-04-08），push 係 2026-05-18。唔會跟機畀你權重。"
+  "FranckyB/Voice-Clone-Studio": "Voice Clone Studio 係網頁介面，用嚟喺本機用 Qwen3-TTS 同 VibeVoice 克隆你嘅聲線。要你另外下載模型。release v1.12.5（2026-04-08），push 係 2026-05-18。唔會跟機畀你權重。",
+  "0sec-labs/0security": "0security 係保安 agent，用嚟喺你有權檢查嘅程式搵漏洞同建議修補。要你自己嘅模型。release v0.29.0（2026-11-15），push 同日。唔會跟機畀你模型。",
+  "cobusgreyling/loop-engineering": "Loop Engineering 係模式庫同 CLI，用嚟喺你已有嘅 coding agent 設計重複工作循環。要 Claude、Codex 或同類工具。release v1.6.0（2026-07-20），push 係 2026-11-15。唔會跟機畀你模型。",
+  "soobinseo/Transformer-TTS": "Transformer-TTS 係研究實作，用嚟喺本機由文字合成你嘅語音。要 Python 3 同 PyTorch 0.4。權重要另外下載。冇 GitHub release，push 係 2023-11-08。唔會跟機畀你權重。"
 }
