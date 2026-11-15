@@ -1359,5 +1359,8 @@
   "zhouxiaoka/autoclip": "AutoClip 係桌面剪片程式，用嚟喺你部電腦將長片嘅精華剪成短片、字幕同封面。雲端模型按量收費。release v1.5.8（2026-11-02），push 係 2026-11-16。唔會跟機畀你模型。",
   "astrid-runtime/astrid": "Astrid 係用戶空間運行環境，用嚟喺 macOS 或 Linux 把程式放進有權限邊界嘅沙盒。而家唔係可開機系統。要 Rust。release v2026.10.1（2026-10-15），push 係 2026-11-16。唔會跟機畀你模型或 agent。",
   "Companion-Inc/feynman": "Feynman 係研究 agent，用嚟喺終端讀論文同做文獻回顧，亦有畀 Codex 用嘅 skill。要 Node 22.22 同你自己嘅模型。release v0.5.70（2026-11-14），push 係 2026-11-15。唔會跟機畀你模型。",
-  "tornikegomareli/Talkify": "Talkify 係 macOS 聽寫程式，用嚟喺本機把你講嘅話打成文字。要 macOS 26 同 Apple 晶片。用蘋果本機語音，唔使下載權重。release v1.0.0（2026-10-17），push 同日。唔會跟機畀你獨立模型。"
+  "tornikegomareli/Talkify": "Talkify 係 macOS 聽寫程式，用嚟喺本機把你講嘅話打成文字。要 macOS 26 同 Apple 晶片。用蘋果本機語音，唔使下載權重。release v1.0.0（2026-10-17），push 同日。唔會跟機畀你獨立模型。",
+  "droidrun/mobilerun": "Mobilerun 係手機 agent，用嚟喺你自己嘅 Android 或 iOS 用自然語言操作畫面。要 Python 3.11 至 3.13 同你自己嘅模型。release v0.7.4（2026-10-27），push 係 2026-11-14。唔會跟機畀你模型。",
+  "richardr1126/openreader": "OpenReader 係讀稿程式，用嚟喺桌面跟住文件嘅文字朗讀。本機可以用 Kokoro，唔使 key。雲端語音要你自己接。release v5.4.1（2026-10-30），push 係 2026-11-15。唔會跟機畀你全部模型。",
+  "petermg/Chatterbox-TTS-Extended": "Chatterbox Extended 係長文轉語音，用嚟喺本機將你自己嘅文字檔讀成有聲書。要 Python 3.10 同 FFmpeg。權重要另外下載。冇 release，push 係 2025-08-23。唔會跟機畀你權重。"
 }
