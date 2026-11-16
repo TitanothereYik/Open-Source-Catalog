@@ -1362,5 +1362,6 @@
   "tornikegomareli/Talkify": "Talkify 係 macOS 聽寫程式，用嚟喺本機把你講嘅話打成文字。要 macOS 26 同 Apple 晶片。用蘋果本機語音，唔使下載權重。release v1.0.0（2026-10-17），push 同日。唔會跟機畀你獨立模型。",
   "droidrun/mobilerun": "Mobilerun 係手機 agent，用嚟喺你自己嘅 Android 或 iOS 用自然語言操作畫面。要 Python 3.11 至 3.13 同你自己嘅模型。release v0.7.4（2026-10-27），push 係 2026-11-14。唔會跟機畀你模型。",
   "richardr1126/openreader": "OpenReader 係讀稿程式，用嚟喺桌面跟住文件嘅文字朗讀。本機可以用 Kokoro，唔使 key。雲端語音要你自己接。release v5.4.1（2026-10-30），push 係 2026-11-15。唔會跟機畀你全部模型。",
-  "petermg/Chatterbox-TTS-Extended": "Chatterbox Extended 係長文轉語音，用嚟喺本機將你自己嘅文字檔讀成有聲書。要 Python 3.10 同 FFmpeg。權重要另外下載。冇 release，push 係 2025-08-23。唔會跟機畀你權重。"
+  "petermg/Chatterbox-TTS-Extended": "Chatterbox Extended 係長文轉語音，用嚟喺本機將你自己嘅文字檔讀成有聲書。要 Python 3.10 同 FFmpeg。權重要另外下載。冇 release，push 係 2025-08-23。唔會跟機畀你權重。",
+  "PunithVT/ai-avatar-system": "AvatarAI 係自建數位人，用嚟喺你部機用你自己嘅相同十秒聲線出對嘴影片。要 Python 3.11。MuseTalk 權重約 9GB 要另外下載。最後 push 係 2026-11-13。唔會跟機畀你模型。"
 }
