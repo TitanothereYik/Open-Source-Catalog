@@ -1371,5 +1371,7 @@
   "Keys-Wasserman/Imagination-Studio-by-keys-Wasserman": "Imagination Studio 係本地電影工作室，用嚟喺 Mac、Windows Arm 或 NVIDIA Linux 出圖、片同聲。模型要另外下載，而且要符合該模型嘅牌照。release studio-1.2.2（2026-11-16），push 同日。唔會跟機畀你模型。",
   "frankbria/ralph-claude-code": "Ralph 係 Claude Code 循環，用嚟喺你已有嘅 Claude 反覆改專案，直到佢自己停。要 Claude Code 同你自己嘅用量。版本 0.11.5，push 係 2026-11-14。唔會跟機畀你模型。",
   "ashbuilds/payload-ai": "Payload AI 係 Payload CMS 插件，用嚟喺你個網站稿件生成文字、圖同語音。要你自己嘅 API。release 4.2.0（2026-11-07），push 係 2026-11-13。唔會跟機畀你模型。",
-  "zhvng/open-musiclm": "Open MusicLM 係非官方文字生成音樂，用嚟喺本機練一個近似 Google MusicLM 嘅模型。要 PyTorch。CLAP 等權重要另外下載。release 0.2.5（2023-04-22），push 係 2023-06-04。唔會跟機畀你現成模型。"
+  "zhvng/open-musiclm": "Open MusicLM 係非官方文字生成音樂，用嚟喺本機練一個近似 Google MusicLM 嘅模型。要 PyTorch。CLAP 等權重要另外下載。release 0.2.5（2023-04-22），push 係 2023-06-04。唔會跟機畀你現成模型。",
+  "n4ze3m/tiny-voca": "tiny-voca 係只有 450 萬參數嘅英文語音模型，用嚟喺 CPU 或瀏覽器讀兩個美國口音。權重約 18MB，要另外下載。冇 release，push 係 2026-11-16。唔會跟機畀你權重。",
+  "SWE-agent/mini-swe-agent": "mini-swe-agent 係約一百行嘅 coding agent，用嚟喺終端修 GitHub 問題。要 Python 同你自己嘅模型。release v2.4.6（2026-07-23），push 係 2026-11-10。唔會跟機畀你模型。"
 }
