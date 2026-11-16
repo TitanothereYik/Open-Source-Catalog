@@ -1203,7 +1203,7 @@ def render_document(catalog: dict, active: str | None) -> str:
     if active is None:
         hero = f"""
 <header class="hero">
-    <p class="kicker">{bi("每兩小時更新", "Updated every 2 hours")}</p>
+    <p class="kicker">{bi("每六小時更新", "Updated every 6 hours")}</p>
     <h1>Open Source Catalog</h1>
     <p class="lede">{bi("十個分類各自一頁。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。", "Ten categories, each on its own page. Projects are sorted by stars, highest first. A repository is listed only once.")}</p>
     <div class="stats">
