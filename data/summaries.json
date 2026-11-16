@@ -1367,5 +1367,9 @@
   "herdrdev/herdr-core": "herdr-core 係終端層，用嚟喺你離開之後仍然保持 coding agent 嘅終端。支援 Linux、macOS 同 Windows。版本 0.1.21（2026-11-12），push 係 2026-11-16。唔會跟機畀你模型。",
   "cloudflare/moltworker": "Moltworker 係實驗部署，用嚟喺 Cloudflare 沙盒跑你已有嘅 OpenClaw。要付費 Workers 計劃同你自己嘅模型 key。冇 release，push 係 2026-05-09。唔會跟機畀你模型。",
   "jackaduma/CycleGAN-VC2": "CycleGAN-VC2 係聲線轉換訓練程式，用嚟喺你自己嘅語音資料練非平行轉換。要 PyTorch。最後 push 係 2023-06-10。冇 release。唔會跟機畀你現成模型。",
-  "Saganaki22/ComfyUI-OmniVoice-TTS": "OmniVoice 係 ComfyUI 節點，用嚟喺 ComfyUI 做多語零樣本聲線克隆。要已裝嘅 ComfyUI。權重第一次用先下載。release v0.4.7（2026-06-11），push 同日。唔會跟機畀你權重。"
+  "Saganaki22/ComfyUI-OmniVoice-TTS": "OmniVoice 係 ComfyUI 節點，用嚟喺 ComfyUI 做多語零樣本聲線克隆。要已裝嘅 ComfyUI。權重第一次用先下載。release v0.4.7（2026-06-11），push 同日。唔會跟機畀你權重。",
+  "Keys-Wasserman/Imagination-Studio-by-keys-Wasserman": "Imagination Studio 係本地電影工作室，用嚟喺 Mac、Windows Arm 或 NVIDIA Linux 出圖、片同聲。模型要另外下載，而且要符合該模型嘅牌照。release studio-1.2.2（2026-11-16），push 同日。唔會跟機畀你模型。",
+  "frankbria/ralph-claude-code": "Ralph 係 Claude Code 循環，用嚟喺你已有嘅 Claude 反覆改專案，直到佢自己停。要 Claude Code 同你自己嘅用量。版本 0.11.5，push 係 2026-11-14。唔會跟機畀你模型。",
+  "ashbuilds/payload-ai": "Payload AI 係 Payload CMS 插件，用嚟喺你個網站稿件生成文字、圖同語音。要你自己嘅 API。release 4.2.0（2026-11-07），push 係 2026-11-13。唔會跟機畀你模型。",
+  "zhvng/open-musiclm": "Open MusicLM 係非官方文字生成音樂，用嚟喺本機練一個近似 Google MusicLM 嘅模型。要 PyTorch。CLAP 等權重要另外下載。release 0.2.5（2023-04-22），push 係 2023-06-04。唔會跟機畀你現成模型。"
 }
