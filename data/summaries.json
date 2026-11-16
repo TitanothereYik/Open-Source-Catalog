@@ -1363,5 +1363,9 @@
   "droidrun/mobilerun": "Mobilerun 係手機 agent，用嚟喺你自己嘅 Android 或 iOS 用自然語言操作畫面。要 Python 3.11 至 3.13 同你自己嘅模型。release v0.7.4（2026-10-27），push 係 2026-11-14。唔會跟機畀你模型。",
   "richardr1126/openreader": "OpenReader 係讀稿程式，用嚟喺桌面跟住文件嘅文字朗讀。本機可以用 Kokoro，唔使 key。雲端語音要你自己接。release v5.4.1（2026-10-30），push 係 2026-11-15。唔會跟機畀你全部模型。",
   "petermg/Chatterbox-TTS-Extended": "Chatterbox Extended 係長文轉語音，用嚟喺本機將你自己嘅文字檔讀成有聲書。要 Python 3.10 同 FFmpeg。權重要另外下載。冇 release，push 係 2025-08-23。唔會跟機畀你權重。",
-  "PunithVT/ai-avatar-system": "AvatarAI 係自建數位人，用嚟喺你部機用你自己嘅相同十秒聲線出對嘴影片。要 Python 3.11。MuseTalk 權重約 9GB 要另外下載。最後 push 係 2026-11-13。唔會跟機畀你模型。"
+  "PunithVT/ai-avatar-system": "AvatarAI 係自建數位人，用嚟喺你部機用你自己嘅相同十秒聲線出對嘴影片。要 Python 3.11。MuseTalk 權重約 9GB 要另外下載。最後 push 係 2026-11-13。唔會跟機畀你模型。",
+  "herdrdev/herdr-core": "herdr-core 係終端層，用嚟喺你離開之後仍然保持 coding agent 嘅終端。支援 Linux、macOS 同 Windows。版本 0.1.21（2026-11-12），push 係 2026-11-16。唔會跟機畀你模型。",
+  "cloudflare/moltworker": "Moltworker 係實驗部署，用嚟喺 Cloudflare 沙盒跑你已有嘅 OpenClaw。要付費 Workers 計劃同你自己嘅模型 key。冇 release，push 係 2026-05-09。唔會跟機畀你模型。",
+  "jackaduma/CycleGAN-VC2": "CycleGAN-VC2 係聲線轉換訓練程式，用嚟喺你自己嘅語音資料練非平行轉換。要 PyTorch。最後 push 係 2023-06-10。冇 release。唔會跟機畀你現成模型。",
+  "Saganaki22/ComfyUI-OmniVoice-TTS": "OmniVoice 係 ComfyUI 節點，用嚟喺 ComfyUI 做多語零樣本聲線克隆。要已裝嘅 ComfyUI。權重第一次用先下載。release v0.4.7（2026-06-11），push 同日。唔會跟機畀你權重。"
 }
