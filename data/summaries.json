@@ -1376,5 +1376,9 @@
   "SWE-agent/mini-swe-agent": "mini-swe-agent 係約一百行嘅 coding agent，用嚟喺終端修 GitHub 問題。要 Python 同你自己嘅模型。release v2.4.6（2026-07-23），push 係 2026-11-10。唔會跟機畀你模型。",
   "ntegrals/openbrowser": "Open Browser 係瀏覽器 agent，用嚟喺 Playwright 按你嘅指示自己撳同抽資料。要 Bun 同你自己嘅模型 key。冇 release，push 係 2026-04-02。唔會跟機畀你模型。",
   "isaiahbjork/orpheus-tts-local": "Orpheus Local 係本地朗讀程式，用嚟喺 LM Studio 跑 Orpheus 3B。要 Python 同你自己下載嘅 GGUF。冇 release，push 係 2025-03-20。唔會跟機畀你權重。",
-  "FlashLabs-AI-Corp/FlashLabs-Chroma": "Chroma 係 4B 即時語音對話模型，用嚟喺本機用你自己嘅聲線同人傾計。只係英文。權重喺 Hugging Face，要另外下載。冇 release，push 係 2026-09-04。唔會跟機畀你權重。"
+  "FlashLabs-AI-Corp/FlashLabs-Chroma": "Chroma 係 4B 即時語音對話模型，用嚟喺本機用你自己嘅聲線同人傾計。只係英文。權重喺 Hugging Face，要另外下載。冇 release，push 係 2026-09-04。唔會跟機畀你權重。",
+  "HarnessMD/munder-difflin": "Munder Difflin 係本機辦公室，用嚟喺你部電腦協調 Claude Code、Codex 呢類已有 CLI。要你自己嘅訂閱。最新 release 係 v0.5.5。唔會跟機畀你模型。",
+  "Orkas-AI/Orkas": "Orkas 係桌面 agent 團隊，用嚟喺 macOS 或 Windows 拆目標畀 16 個專員同你已有嘅 CLI。內置模型要用佢哋 credits。最新 release 係 v2026.11.4。唔會跟機畀你權重。",
+  "alibaba/unified-audio": "QuarkAudio 係阿里嘅統一音訊框架，用嚟喺本機做語音修復、分離、轉聲同編碼。權重喺 Hugging Face，要另外下載。冇 release，push 係 2026-07-07。唔會跟機畀你權重。",
+  "Scenema/scenema-audio": "Scenema Audio 係本地配音程式，用嚟喺 NVIDIA 顯示卡按你嘅聲線提示朗讀同克隆。要 Docker 同 HF token，權重大約 38GB 要另載。冇 release，push 係 2026-07-07。唔會跟機畀你權重。"
 }
