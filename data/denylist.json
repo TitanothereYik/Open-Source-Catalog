@@ -212,5 +212,8 @@
   "unicity-sphere/sphere",
   "billwuhao/ComfyUI_IndexTTS",
   "anbeime/skill",
-  "RustXNG/RustXNG"
+  "RustXNG/RustXNG",
+  "MiniMax-AI/MiniMax-H3-Image",
+  "FailproofAI/failproofai",
+  "EDCD/EDDI"
 ]
