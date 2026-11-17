@@ -1395,5 +1395,8 @@
   "n8n-io/nod": "Nod 係本機個人 agent，用嚟喺 Mac 或 Windows 做網頁同日常工作，做之前會先問你。要你自己嘅模型。最新 release 係 v0.8.3。唔會跟機畀你模型。",
   "JeffWang987/DriveDreamer": "DriveDreamer 係駕駛世界模型，用嚟喺真實路況生成駕駛影片同預測之後嘅狀態。研究碼，要 nuScenes。權重唔喺 repo。冇 release，push 係 2024-11-29。唔會跟機畀你權重。",
   "HAKORADev/VODER": "VODER 係本機語音工具箱，用嚟喺你部機做朗讀、轉聲、音樂同轉錄。要你自己嘅模型，另外下載。標記 2026-08-20，push 係 2026-10-02。AGPL-3.0。唔會跟機畀你權重。",
-  "wildminder/ComfyUI-VoxCPM": "ComfyUI-VoxCPM 係 ComfyUI 節點，用嚟喺圖入面跑現成 VoxCPM 做朗讀同克隆。要你自己嘅 ComfyUI，權重要另載。最新 release 係 v2.4.1。唔會跟機畀你權重。"
+  "wildminder/ComfyUI-VoxCPM": "ComfyUI-VoxCPM 係 ComfyUI 節點，用嚟喺圖入面跑現成 VoxCPM 做朗讀同克隆。要你自己嘅 ComfyUI，權重要另載。最新 release 係 v2.4.1。唔會跟機畀你權重。",
+  "sybil-solutions/inference-optimisation-skill": "inference-optimisation 係 coding agent 技能，用嚟喺本機逐步調快 LLM 推理。要你自己嘅模型同伺服器。冇 release，push 係 2026-11-16。唔會跟機畀你模型。",
+  "zandy700/supply-chain-shock-map": "Ultimater 係股票研究台，用嚟喺新聞同持倉入面睇標普公司。只係研究，唔會落盤。要 Node 22 同你自己嘅行情 key。本機包係 2026-11-13。唔會跟機畀你券商帳戶。",
+  "yl4579/StarGANv2-VC": "StarGANv2-VC 係語音轉換研究碼，用嚟喺你自己嘅語料訓練多講者轉聲。要 VCTK，權重要自己練。冇 release，push 係 2025-01-14。唔會跟機畀你權重。"
 }

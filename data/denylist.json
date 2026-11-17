@@ -218,5 +218,7 @@
   "EDCD/EDDI",
   "homarr-labs/dashboard-icons",
   "bshall/knn-vc",
-  "liyupi/codefather"
+  "liyupi/codefather",
+  "lollipopkit/flutter_server_box",
+  "liusongxiang/StarGAN-Voice-Conversion"
 ]
