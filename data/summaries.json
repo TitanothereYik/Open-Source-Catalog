@@ -1385,5 +1385,9 @@
   "MervinPraison/PraisonAI": "PraisonAI 係 Python agent 框架，用嚟喺你部機跑多個 agent。離線要 Ollama 同你自己嘅模型。雲端就要你嘅 API key。最新 release 係 v4.7.25。唔會跟機畀你模型。",
   "p0p4k/vits2_pytorch": "VITS2 PyTorch 係非官方訓練程式，用嚟喺你自己嘅語音資料練單階段文字轉語音。要 Python 3.10 同 PyTorch。權重唔喺 repo，要另外下載。冇 release，push 係 2024-03-28。唔會跟機畀你模型。",
   "Gentleman-Programming/gentle-ai": "Gentle-AI 係設定工具，用嚟喺你已有嘅 Claude Code、Cursor、Codex 加記憶同技能。要你自己裝呢啲 agent。最新 release 係 v4.5.0。唔會跟機畀你模型。",
-  "jaketae/storyteller": "StoryTeller 係本地故事片程式，用嚟喺你嘅一句開頭寫情節、畫圖同朗讀。預設 GPT-2、Stable Diffusion 2 同 Glow-TTS，權重要另載。Python 3.9 至 3.10。release v0.0.4。唔會跟機畀你權重。"
+  "jaketae/storyteller": "StoryTeller 係本地故事片程式，用嚟喺你嘅一句開頭寫情節、畫圖同朗讀。預設 GPT-2、Stable Diffusion 2 同 Glow-TTS，權重要另載。Python 3.9 至 3.10。release v0.0.4。唔會跟機畀你權重。",
+  "strands-agents/harness-sdk": "Strands 係 agent SDK，用嚟喺 Python 或 TypeScript 砌你嘅 harness。模型同 key 要你自己帶，支援 Bedrock、Anthropic、OpenAI、Gemini。最新 release 係 python/v1.65.0。唔會跟機畀你模型。",
+  "gamedev-skills/awesome-gamedev-agent-skills": "Game Dev Skills 係技能包，用嚟喺你已有嘅 coding agent 寫 Godot、Unity、Unreal 等遊戲。有 79 個 skill 同 router。要你自己裝引擎。最新 release 係 v2.0.0。唔會跟機畀你模型。",
+  "salu133445/muspy": "MusPy 係符號音樂工具，用嚟喺 Python 讀 MIDI、整理資料同評分。佢唔會自己作曲。要你自己嘅模型。最新 release 係 v0.5.0，push 係 2026-03-11。唔會跟機畀你模型。",
+  "leimao/Voice-Converter-CycleGAN": "呢個 CycleGAN 聲線轉換係訓練程式，用嚟喺你自己嘅語音練非平行轉換。要 TensorFlow 1.8 同 VCC2016 資料。冇 release，push 係 2023-06-29。唔會跟機畀你模型。"
 }
