@@ -1391,5 +1391,9 @@
   "salu133445/muspy": "MusPy 係符號音樂工具，用嚟喺 Python 讀 MIDI、整理資料同評分。佢唔會自己作曲。要你自己嘅模型。最新 release 係 v0.5.0，push 係 2026-03-11。唔會跟機畀你模型。",
   "leimao/Voice-Converter-CycleGAN": "呢個 CycleGAN 聲線轉換係訓練程式，用嚟喺你自己嘅語音練非平行轉換。要 TensorFlow 1.8 同 VCC2016 資料。冇 release，push 係 2023-06-29。唔會跟機畀你模型。",
   "anomalyco/browse": "Browse 係 MCP 同 Chromium 擴充，用嚟喺你部瀏覽器畀 agent 開分頁、撳同截圖。支援 Chrome 系瀏覽器。要你自己嘅登入。最新 release 係 v0.1.0。唔會跟機畀你模型。",
-  "heardlabs/heard": "Heard 係 macOS 語音層，用嚟喺 Claude Code 或 Codex 做完之後讀出進度。本機用 Kokoro，約 350MB 要另載。雲端聲線要你嘅 key。最新 release 係 v2.0.16。唔會跟機畀你權重。"
+  "heardlabs/heard": "Heard 係 macOS 語音層，用嚟喺 Claude Code 或 Codex 做完之後讀出進度。本機用 Kokoro，約 350MB 要另載。雲端聲線要你嘅 key。最新 release 係 v2.0.16。唔會跟機畀你權重。",
+  "n8n-io/nod": "Nod 係本機個人 agent，用嚟喺 Mac 或 Windows 做網頁同日常工作，做之前會先問你。要你自己嘅模型。最新 release 係 v0.8.3。唔會跟機畀你模型。",
+  "JeffWang987/DriveDreamer": "DriveDreamer 係駕駛世界模型，用嚟喺真實路況生成駕駛影片同預測之後嘅狀態。研究碼，要 nuScenes。權重唔喺 repo。冇 release，push 係 2024-11-29。唔會跟機畀你權重。",
+  "HAKORADev/VODER": "VODER 係本機語音工具箱，用嚟喺你部機做朗讀、轉聲、音樂同轉錄。要你自己嘅模型，另外下載。標記 2026-08-20，push 係 2026-10-02。AGPL-3.0。唔會跟機畀你權重。",
+  "wildminder/ComfyUI-VoxCPM": "ComfyUI-VoxCPM 係 ComfyUI 節點，用嚟喺圖入面跑現成 VoxCPM 做朗讀同克隆。要你自己嘅 ComfyUI，權重要另載。最新 release 係 v2.4.1。唔會跟機畀你權重。"
 }
