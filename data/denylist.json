@@ -215,5 +215,7 @@
   "RustXNG/RustXNG",
   "MiniMax-AI/MiniMax-H3-Image",
   "FailproofAI/failproofai",
-  "EDCD/EDDI"
+  "EDCD/EDDI",
+  "homarr-labs/dashboard-icons",
+  "bshall/knn-vc"
 ]

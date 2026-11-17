@@ -1389,5 +1389,7 @@
   "strands-agents/harness-sdk": "Strands 係 agent SDK，用嚟喺 Python 或 TypeScript 砌你嘅 harness。模型同 key 要你自己帶，支援 Bedrock、Anthropic、OpenAI、Gemini。最新 release 係 python/v1.65.0。唔會跟機畀你模型。",
   "gamedev-skills/awesome-gamedev-agent-skills": "Game Dev Skills 係技能包，用嚟喺你已有嘅 coding agent 寫 Godot、Unity、Unreal 等遊戲。有 79 個 skill 同 router。要你自己裝引擎。最新 release 係 v2.0.0。唔會跟機畀你模型。",
   "salu133445/muspy": "MusPy 係符號音樂工具，用嚟喺 Python 讀 MIDI、整理資料同評分。佢唔會自己作曲。要你自己嘅模型。最新 release 係 v0.5.0，push 係 2026-03-11。唔會跟機畀你模型。",
-  "leimao/Voice-Converter-CycleGAN": "呢個 CycleGAN 聲線轉換係訓練程式，用嚟喺你自己嘅語音練非平行轉換。要 TensorFlow 1.8 同 VCC2016 資料。冇 release，push 係 2023-06-29。唔會跟機畀你模型。"
+  "leimao/Voice-Converter-CycleGAN": "呢個 CycleGAN 聲線轉換係訓練程式，用嚟喺你自己嘅語音練非平行轉換。要 TensorFlow 1.8 同 VCC2016 資料。冇 release，push 係 2023-06-29。唔會跟機畀你模型。",
+  "anomalyco/browse": "Browse 係 MCP 同 Chromium 擴充，用嚟喺你部瀏覽器畀 agent 開分頁、撳同截圖。支援 Chrome 系瀏覽器。要你自己嘅登入。最新 release 係 v0.1.0。唔會跟機畀你模型。",
+  "heardlabs/heard": "Heard 係 macOS 語音層，用嚟喺 Claude Code 或 Codex 做完之後讀出進度。本機用 Kokoro，約 350MB 要另載。雲端聲線要你嘅 key。最新 release 係 v2.0.16。唔會跟機畀你權重。"
 }
