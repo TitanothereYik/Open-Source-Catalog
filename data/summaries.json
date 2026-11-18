@@ -1401,5 +1401,8 @@
   "yl4579/StarGANv2-VC": "StarGANv2-VC 係語音轉換研究碼，用嚟喺你自己嘅語料訓練多講者轉聲。要 VCTK，權重要自己練。冇 release，push 係 2025-01-14。唔會跟機畀你權重。",
   "Moh4696/cinematic-skill": "Cinematic Skill 係 coding agent 技能，用嚟喺 Skia 畫旁白短片。要你自己嘅 agent 同 ffmpeg。畫面唔係生成模型。冇 release，push 係 2026-11-09。唔會跟機畀你模型。",
   "pixel-agents-hq/pixel-agents": "Pixel Agents 係本機辦公室畫面，用嚟喺 VS Code 或瀏覽器睇同開 Claude Code。要你自己嘅 Claude Code。最新 release 係 v1.6.0。唔會跟機畀你模型。",
-  "lucidrains/e2-tts-pytorch": "E2-TTS 係 PyTorch 朗讀研究碼，用嚟喺你自己嘅錄音訓練零樣本轉讀。最新 release 係 2.2.2，push 係 2025-12-20。權重要自己練。唔會跟機畀你權重。"
+  "lucidrains/e2-tts-pytorch": "E2-TTS 係 PyTorch 朗讀研究碼，用嚟喺你自己嘅錄音訓練零樣本轉讀。最新 release 係 2.2.2，push 係 2025-12-20。權重要自己練。唔會跟機畀你權重。",
+  "Zaneris/passenger": "Passenger 係 C# 同 .NET 嘅 IDE，用嚟喺 Windows、Mac、Linux 除錯同分析。coding agent 可以經 MCP 驅動佢。最新 release 係 v0.4.0。唔會跟機畀你模型。",
+  "mvschwarz/openrig": "OpenRig 係 agent 編排工具，用嚟喺 Claude Code 同 Codex 之間組持久團隊。要你自己嘅帳號同 Node 22。最新 release 係 v0.7.18。唔會跟機畀你模型。",
+  "toverainc/willow-inference-server": "Willow Inference Server 係本機語音伺服器，用嚟喺你部機做語音轉文字、朗讀同 LLM。要你自己嘅 GPU 或 CPU，模型另載。冇 release，push 係 2026-02-12。唔會跟機畀你權重。"
 }

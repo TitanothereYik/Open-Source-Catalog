@@ -221,5 +221,6 @@
   "liyupi/codefather",
   "lollipopkit/flutter_server_box",
   "liusongxiang/StarGAN-Voice-Conversion",
-  "r9y9/gantts"
+  "r9y9/gantts",
+  "thinhlpg/vixtts-demo"
 ]
