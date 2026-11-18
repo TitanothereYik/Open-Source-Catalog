@@ -226,5 +226,8 @@
   "eclipse-theia/theia",
   "RayVentura/ShortGPT",
   "YeJe-cpu/talk-to-fengge",
-  "kxxt/aspeak"
+  "kxxt/aspeak",
+  "firerpa/lamda",
+  "Aivis-Project/AivisSpeech",
+  "receptron/mulmocast-cli"
 ]

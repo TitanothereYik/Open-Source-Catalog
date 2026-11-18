@@ -1405,5 +1405,7 @@
   "Zaneris/passenger": "Passenger 係 C# 同 .NET 嘅 IDE，用嚟喺 Windows、Mac、Linux 除錯同分析。coding agent 可以經 MCP 驅動佢。最新 release 係 v0.4.0。唔會跟機畀你模型。",
   "mvschwarz/openrig": "OpenRig 係 agent 編排工具，用嚟喺 Claude Code 同 Codex 之間組持久團隊。要你自己嘅帳號同 Node 22。最新 release 係 v0.7.18。唔會跟機畀你模型。",
   "toverainc/willow-inference-server": "Willow Inference Server 係本機語音伺服器，用嚟喺你部機做語音轉文字、朗讀同 LLM。要你自己嘅 GPU 或 CPU，模型另載。冇 release，push 係 2026-02-12。唔會跟機畀你權重。",
-  "erkamyaman/rust-anything": "rust-anything 係 coding agent 技能，用嚟喺原程式錄低行為，再逐步改寫做 Rust 並對返。要你自己嘅 agent 同原本程式。最新 release 係 v1.5.1。唔會跟機畀你模型。"
+  "erkamyaman/rust-anything": "rust-anything 係 coding agent 技能，用嚟喺原程式錄低行為，再逐步改寫做 Rust 並對返。要你自己嘅 agent 同原本程式。最新 release 係 v1.5.1。唔會跟機畀你模型。",
+  "siliconjungle/shapeshift-labs-ink-studio": "Ink Studio 係 JavaScript 工具，用嚟喺像素風 Gaussian splat 做你自己嘅雕塑、動畫同模擬。要 Node 18。冇 release，push 係 2026-11-18。唔會跟機畀你模型。",
+  "AIPentest/CyberStrikeAI": "CyberStrikeAI 係網絡安全 agent，用嚟喺你授權嘅系統做可審計測試。要你自己嘅模型。最新 release 係 v1.8.0，push 係 2026-11-18。唔會跟機畀你模型。"
 }
