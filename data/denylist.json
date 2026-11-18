@@ -222,5 +222,9 @@
   "lollipopkit/flutter_server_box",
   "liusongxiang/StarGAN-Voice-Conversion",
   "r9y9/gantts",
-  "thinhlpg/vixtts-demo"
+  "thinhlpg/vixtts-demo",
+  "eclipse-theia/theia",
+  "RayVentura/ShortGPT",
+  "YeJe-cpu/talk-to-fengge",
+  "kxxt/aspeak"
 ]
