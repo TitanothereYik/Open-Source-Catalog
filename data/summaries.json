@@ -1398,5 +1398,8 @@
   "wildminder/ComfyUI-VoxCPM": "ComfyUI-VoxCPM 係 ComfyUI 節點，用嚟喺圖入面跑現成 VoxCPM 做朗讀同克隆。要你自己嘅 ComfyUI，權重要另載。最新 release 係 v2.4.1。唔會跟機畀你權重。",
   "sybil-solutions/inference-optimisation-skill": "inference-optimisation 係 coding agent 技能，用嚟喺本機逐步調快 LLM 推理。要你自己嘅模型同伺服器。冇 release，push 係 2026-11-16。唔會跟機畀你模型。",
   "zandy700/supply-chain-shock-map": "Ultimater 係股票研究台，用嚟喺新聞同持倉入面睇標普公司。只係研究，唔會落盤。要 Node 22 同你自己嘅行情 key。本機包係 2026-11-13。唔會跟機畀你券商帳戶。",
-  "yl4579/StarGANv2-VC": "StarGANv2-VC 係語音轉換研究碼，用嚟喺你自己嘅語料訓練多講者轉聲。要 VCTK，權重要自己練。冇 release，push 係 2025-01-14。唔會跟機畀你權重。"
+  "yl4579/StarGANv2-VC": "StarGANv2-VC 係語音轉換研究碼，用嚟喺你自己嘅語料訓練多講者轉聲。要 VCTK，權重要自己練。冇 release，push 係 2025-01-14。唔會跟機畀你權重。",
+  "Moh4696/cinematic-skill": "Cinematic Skill 係 coding agent 技能，用嚟喺 Skia 畫旁白短片。要你自己嘅 agent 同 ffmpeg。畫面唔係生成模型。冇 release，push 係 2026-11-09。唔會跟機畀你模型。",
+  "pixel-agents-hq/pixel-agents": "Pixel Agents 係本機辦公室畫面，用嚟喺 VS Code 或瀏覽器睇同開 Claude Code。要你自己嘅 Claude Code。最新 release 係 v1.6.0。唔會跟機畀你模型。",
+  "lucidrains/e2-tts-pytorch": "E2-TTS 係 PyTorch 朗讀研究碼，用嚟喺你自己嘅錄音訓練零樣本轉讀。最新 release 係 2.2.2，push 係 2025-12-20。權重要自己練。唔會跟機畀你權重。"
 }
