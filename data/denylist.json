@@ -229,5 +229,6 @@
   "kxxt/aspeak",
   "firerpa/lamda",
   "Aivis-Project/AivisSpeech",
-  "receptron/mulmocast-cli"
+  "receptron/mulmocast-cli",
+  "deepgram/deepgram-python-sdk"
 ]

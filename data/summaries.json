@@ -1407,5 +1407,8 @@
   "toverainc/willow-inference-server": "Willow Inference Server 係本機語音伺服器，用嚟喺你部機做語音轉文字、朗讀同 LLM。要你自己嘅 GPU 或 CPU，模型另載。冇 release，push 係 2026-02-12。唔會跟機畀你權重。",
   "erkamyaman/rust-anything": "rust-anything 係 coding agent 技能，用嚟喺原程式錄低行為，再逐步改寫做 Rust 並對返。要你自己嘅 agent 同原本程式。最新 release 係 v1.5.1。唔會跟機畀你模型。",
   "siliconjungle/shapeshift-labs-ink-studio": "Ink Studio 係 JavaScript 工具，用嚟喺像素風 Gaussian splat 做你自己嘅雕塑、動畫同模擬。要 Node 18。冇 release，push 係 2026-11-18。唔會跟機畀你模型。",
-  "AIPentest/CyberStrikeAI": "CyberStrikeAI 係網絡安全 agent，用嚟喺你授權嘅系統做可審計測試。要你自己嘅模型。最新 release 係 v1.8.0，push 係 2026-11-18。唔會跟機畀你模型。"
+  "AIPentest/CyberStrikeAI": "CyberStrikeAI 係網絡安全 agent，用嚟喺你授權嘅系統做可審計測試。要你自己嘅模型。最新 release 係 v1.8.0，push 係 2026-11-18。唔會跟機畀你模型。",
+  "SakanaAI/AI-Scientist-v3": "Agentic Scientist 係研究編排工具，用嚟喺 Claude、Codex 或 Cursor 做實驗。要你自己嘅 API key 同 Docker。冇 release，push 係 2026-11-18。唔會跟機畀你模型。",
+  "Continuum-AI-Corp/OrcaReplay": "OrcaReplay 係 agent 重播工具，用嚟喺本機錄低一次運行再原樣重播。改模型先要你自己嘅 key。要 Node 20。冇 release，push 係 2026-10-01。唔會跟機畀你模型。",
+  "nyosegawa/speech.cpp": "speech.cpp 係本機語音程式，用嚟喺 CPU、Metal 或 Vulkan 跑現成 TTS 同 ASR。要你另外下載嘅 GGUF。最新 release 係 v0.11.0。唔會跟機畀你權重。"
 }
