@@ -232,5 +232,8 @@
   "receptron/mulmocast-cli",
   "deepgram/deepgram-python-sdk",
   "dectalk/dectalk",
-  "Yuan-ManX/audio-development-tools"
+  "Yuan-ManX/audio-development-tools",
+  "apekshik/anyscene",
+  "RanggaCasper/MostWanted-Android",
+  "double22a/speech_dataset"
 ]
