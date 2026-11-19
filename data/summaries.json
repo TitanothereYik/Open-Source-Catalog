@@ -1410,5 +1410,7 @@
   "AIPentest/CyberStrikeAI": "CyberStrikeAI 係網絡安全 agent，用嚟喺你授權嘅系統做可審計測試。要你自己嘅模型。最新 release 係 v1.8.0，push 係 2026-11-18。唔會跟機畀你模型。",
   "SakanaAI/AI-Scientist-v3": "Agentic Scientist 係研究編排工具，用嚟喺 Claude、Codex 或 Cursor 做實驗。要你自己嘅 API key 同 Docker。冇 release，push 係 2026-11-18。唔會跟機畀你模型。",
   "Continuum-AI-Corp/OrcaReplay": "OrcaReplay 係 agent 重播工具，用嚟喺本機錄低一次運行再原樣重播。改模型先要你自己嘅 key。要 Node 20。冇 release，push 係 2026-10-01。唔會跟機畀你模型。",
-  "nyosegawa/speech.cpp": "speech.cpp 係本機語音程式，用嚟喺 CPU、Metal 或 Vulkan 跑現成 TTS 同 ASR。要你另外下載嘅 GGUF。最新 release 係 v0.11.0。唔會跟機畀你權重。"
+  "nyosegawa/speech.cpp": "speech.cpp 係本機語音程式，用嚟喺 CPU、Metal 或 Vulkan 跑現成 TTS 同 ASR。要你另外下載嘅 GGUF。最新 release 係 v0.11.0。唔會跟機畀你權重。",
+  "EvoMap/evolver": "Evolver 係 agent 演進引擎，用嚟喺 git repo 記錄同審核 agent 嘅改動。要你自己嘅 agent 同 Node 18。最新 release 係 v2.0.52。唔會跟機畀你模型。",
+  "zenstory-ai/oh-story-claudecode": "Oh Story 係 14 個網文技能，用嚟喺 Claude Code 或 Codex 寫長篇同短篇。用你自己嘅 agent 模型。最新 release 係 v0.10.5。唔會跟機畀你模型。"
 }

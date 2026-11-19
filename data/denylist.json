@@ -230,5 +230,7 @@
   "firerpa/lamda",
   "Aivis-Project/AivisSpeech",
   "receptron/mulmocast-cli",
-  "deepgram/deepgram-python-sdk"
+  "deepgram/deepgram-python-sdk",
+  "dectalk/dectalk",
+  "Yuan-ManX/audio-development-tools"
 ]
