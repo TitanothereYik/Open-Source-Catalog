@@ -1421,5 +1421,9 @@
   "yl4579/StyleTTS": "StyleTTS 係第一代朗讀研究碼，用嚟喺參考聲線訓練自然語調。同目錄嘅 StyleTTS2 唔同。要 LJSpeech，權重要自己練。冇 release，push 係 2025-01-14。唔會跟機畀你權重。",
   "boringmarketer/boring-marketing-skills": "呢包係 32 個營銷技能，用嚟喺 Claude Code、Codex 或 Cursor 寫你嘅定位、文案同 SEO。你要自己帶 agent。冇 release，push 係 2026-11-18。唔會跟機畀你模型。",
   "pgrundev/pgboxdb": "PGBoxDB 係輕量 Postgres，用嚟喺同一 runtime 開好多隔離嘅資料庫，畀 AI agent 用。要 Mac 或 Linux。最新 release 係 v0.1.3。授權係 AGPL-3.0。唔會跟機畀你模型。",
-  "Agions/dramaxis": "Dramaxis 係本地優先嘅影視解說程式，用嚟喺桌面編多 agent 旁白同剪映草稿。雲端模型要自己帶 key，或者用 Ollama。最新 release 係 v1.2.0。唔會跟機畀你模型。"
+  "Agions/dramaxis": "Dramaxis 係本地優先嘅影視解說程式，用嚟喺桌面編多 agent 旁白同剪映草稿。雲端模型要自己帶 key，或者用 Ollama。最新 release 係 v1.2.0。唔會跟機畀你模型。",
+  "Forward-Future/scarlet": "Scarlet 係開源影片剪輯器，用嚟喺 Mac、Windows 或 Linux 剪你嘅片。分析喺本機做。你要自己帶 Claude Code 或 Codex。最新 release 係 v0.1.317。唔會跟機畀你影片模型。",
+  "cookieY/Yearning": "Yearning 係資料庫變更平台，用嚟喺 SQL 提交前檢查你嘅變更。預設會遮敏感字再叫雲端模型，亦可以用 Ollama。最新 release 係 v4.0.0-rc.5。授權係 AGPL-3.0。唔會跟機畀你模型。",
+  "automazeio/ccpm": "CCPM 係專案管理技能，用嚟喺 coding agent 度把你嘅需求拆成 GitHub issue 再並行做。要 git 同 gh。冇 release，push 係 2026-11-04。唔會跟機畀你模型。",
+  "SamKhoze/ComfyUI-DeepFuze": "DeepFuze 係 ComfyUI 對口型節點，用嚟喺舊版介面做換臉同口型。README 話唔支援最新版。你嘅權重要另外下載，對白先至要 OpenAI key。冇 release，push 係 2025-08-15。唔會跟機畀你權重。"
 }
