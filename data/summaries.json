@@ -1430,5 +1430,9 @@
   "felipebasurto/unslop-ui": "unslop-ui 係介面技能，用嚟喺 coding agent 度刪走你嘅 AI 腔文案。預設只改可見文字。你要自己叫佢先會改。最新 release 係 v0.6.0。唔會跟機畀你模型。",
   "kingcharleslzy-ai/DSH-Spicy": "DSH-Spicy 係 DeepSeek Harness 插件，用嚟喺你部機做成人向嘅圖像同短片。要另外下載權重。最新 release 係 v3.1.3。唔會跟機畀你模型。",
   "rocketride-org/rocketride-server": "RocketRide 係 agent 運行時，用嚟喺你部機或者自己嘅伺服器跑 agent。可以裝 IDE 插件。最新 release 係 server-v3.6.0-prerelease。授權係 MIT。唔會跟機畀你模型。",
-  "sanjay3290/ai-skills": "ai-skills 係 24 個技能，用嚟喺 Claude Code、Cursor 或 Codex 做你嘅資料庫同研究。有啲技能要自己帶 API key。最新 release 係 v1.2.0。唔會跟機畀你模型。"
+  "sanjay3290/ai-skills": "ai-skills 係 24 個技能，用嚟喺 Claude Code、Cursor 或 Codex 做你嘅資料庫同研究。有啲技能要自己帶 API key。最新 release 係 v1.2.0。唔會跟機畀你模型。",
+  "atuizz/posewear": "PoseWear 係試穿參考站，用嚟喺瀏覽器揀姿勢同服裝，再叫你嘅圖像 API 出圖。要自己帶 OpenAI、Gemini 或豆包 key。最新 release 係 v1.0.0。唔會跟機畀你模型。",
+  "tonhowtf/omniget": "OmniGet 係本地 MCP，用嚟喺你部機畀 Claude Code、Codex 或 Cursor 用你已經登入嘅帳戶。下載都留喺本機。支援 Windows、macOS 同 Linux。最新 release 係 v1.0.1。授權係 GPL-3.0。唔會跟機畀你模型。",
+  "MiroMindAI/MiroThinker": "MiroThinker 係研究 agent 嘅程式碼，用嚟喺複雜資料搜集同預測。權重喺 Hugging Face，有 30B 同 235B。冇 release，push 係 2026-07-06。授權係 Apache-2.0。唔會跟機畀你權重。",
+  "Sallyn0225/eidolon-sc": "eidolon-sc 係閃耀色彩角色嘅自托管對話程式，用嚟喺 Docker 做語音同文字聊天。要自己帶 key。最新 release 係 v0.5.3。授權係 AGPL-3.0。唔會跟機畀你語音模型。"
 }
