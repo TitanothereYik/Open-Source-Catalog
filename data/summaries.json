@@ -1441,5 +1441,7 @@
   "benjiyaya/HeartMuLa_ComfyUI": "HeartMuLa ComfyUI 係音樂節點，用嚟喺 ComfyUI 跑 HeartMuLa。模型係目錄入面嘅 heartlib，權重要另外下載。冇 release，push 係 2026-03-24。唔會跟機畀你權重。",
   "plastic-labs/honcho": "Honcho 係 agent 記憶庫，用嚟喺你部機記低人、群組同項目嘅變化。可以自托管。你要自己帶 agent。最新 release 係 v3.6.1。授權係 AGPL-3.0。唔會跟機畀你模型。",
   "xixu-me/xget": "Xget 係下載加速器，用嚟喺你自己嘅伺服器加快程式碼、模型同套件。可以放上 Cloudflare 或者 Docker。冇 release，push 係 2026-11-05。授權係 AGPL-3.0。唔會跟機畀你模型。",
-  "kigner/audio.cpp-webui": "audio.cpp WebUI 係 C++ 推理介面，用嚟喺本機做語音合成、識別、轉聲同音樂。模型同目錄入面嘅引擎分開，權重要另外下載。最新 release 係 v0.7.6。授權係 Apache-2.0。唔會跟機畀你權重。"
+  "kigner/audio.cpp-webui": "audio.cpp WebUI 係 C++ 推理介面，用嚟喺本機做語音合成、識別、轉聲同音樂。模型同目錄入面嘅引擎分開，權重要另外下載。最新 release 係 v0.7.6。授權係 Apache-2.0。唔會跟機畀你權重。",
+  "Jane-xiaoer/paper-collage-ad-codex": "paper-collage-ad-codex 係剪紙廣告技能，用嚟喺 Codex 做你嘅拼貼動畫同配音。要 ffmpeg 同 Node。聲線用本地 IndexTTS-2，權重要另外準備。冇 release，push 係 2026-08-01。唔會跟機畀你模型。",
+  "jacksonllee/pycantonese": "PyCantonese 係粵語嘅語言學程式庫，用嚟喺 Python 做粵拼同詞性標註。佢唔係語音模型。最新 release 係 v5.0.0，push 係 2026-05-26。授權係 MIT。唔會跟機畀你聲線。"
 }

@@ -249,5 +249,7 @@
   "elevenlabs/elevenlabs-js",
   "nateherkai/herk-edit-kit",
   "fumiama/Retrieval-based-Voice-Conversion-WebUI",
-  "phildougherty/sesame_csm_openai"
+  "phildougherty/sesame_csm_openai",
+  "vastsa/PI-Desktop",
+  "deanpeters/Product-Manager-Skills"
 ]
