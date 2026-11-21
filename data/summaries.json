@@ -1434,5 +1434,6 @@
   "atuizz/posewear": "PoseWear 係試穿參考站，用嚟喺瀏覽器揀姿勢同服裝，再叫你嘅圖像 API 出圖。要自己帶 OpenAI、Gemini 或豆包 key。最新 release 係 v1.0.0。唔會跟機畀你模型。",
   "tonhowtf/omniget": "OmniGet 係本地 MCP，用嚟喺你部機畀 Claude Code、Codex 或 Cursor 用你已經登入嘅帳戶。下載都留喺本機。支援 Windows、macOS 同 Linux。最新 release 係 v1.0.1。授權係 GPL-3.0。唔會跟機畀你模型。",
   "MiroMindAI/MiroThinker": "MiroThinker 係研究 agent 嘅程式碼，用嚟喺複雜資料搜集同預測。權重喺 Hugging Face，有 30B 同 235B。冇 release，push 係 2026-07-06。授權係 Apache-2.0。唔會跟機畀你權重。",
-  "Sallyn0225/eidolon-sc": "eidolon-sc 係閃耀色彩角色嘅自托管對話程式，用嚟喺 Docker 做語音同文字聊天。要自己帶 key。最新 release 係 v0.5.3。授權係 AGPL-3.0。唔會跟機畀你語音模型。"
+  "Sallyn0225/eidolon-sc": "eidolon-sc 係閃耀色彩角色嘅自托管對話程式，用嚟喺 Docker 做語音同文字聊天。要自己帶 key。最新 release 係 v0.5.3。授權係 AGPL-3.0。唔會跟機畀你語音模型。",
+  "modelscope/FunCodec": "FunCodec 係語音編碼嘅研究工具，用嚟喺本機訓練同跑量化模型，亦可以做合成同音樂。預訓練權重要另外下載。冇 release，push 係 2024-01-25。授權係 MIT。唔會跟機畀你權重。"
 }
