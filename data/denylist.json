@@ -248,5 +248,6 @@
   "trailofbits/skills",
   "elevenlabs/elevenlabs-js",
   "nateherkai/herk-edit-kit",
-  "fumiama/Retrieval-based-Voice-Conversion-WebUI"
+  "fumiama/Retrieval-based-Voice-Conversion-WebUI",
+  "phildougherty/sesame_csm_openai"
 ]
