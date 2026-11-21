@@ -246,5 +246,7 @@
   "echogarden-project/echogarden",
   "YaoApp/yao",
   "trailofbits/skills",
-  "elevenlabs/elevenlabs-js"
+  "elevenlabs/elevenlabs-js",
+  "nateherkai/herk-edit-kit",
+  "fumiama/Retrieval-based-Voice-Conversion-WebUI"
 ]

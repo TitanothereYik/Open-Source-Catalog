@@ -1435,5 +1435,8 @@
   "tonhowtf/omniget": "OmniGet 係本地 MCP，用嚟喺你部機畀 Claude Code、Codex 或 Cursor 用你已經登入嘅帳戶。下載都留喺本機。支援 Windows、macOS 同 Linux。最新 release 係 v1.0.1。授權係 GPL-3.0。唔會跟機畀你模型。",
   "MiroMindAI/MiroThinker": "MiroThinker 係研究 agent 嘅程式碼，用嚟喺複雜資料搜集同預測。權重喺 Hugging Face，有 30B 同 235B。冇 release，push 係 2026-07-06。授權係 Apache-2.0。唔會跟機畀你權重。",
   "Sallyn0225/eidolon-sc": "eidolon-sc 係閃耀色彩角色嘅自托管對話程式，用嚟喺 Docker 做語音同文字聊天。要自己帶 key。最新 release 係 v0.5.3。授權係 AGPL-3.0。唔會跟機畀你語音模型。",
-  "modelscope/FunCodec": "FunCodec 係語音編碼嘅研究工具，用嚟喺本機訓練同跑量化模型，亦可以做合成同音樂。預訓練權重要另外下載。冇 release，push 係 2024-01-25。授權係 MIT。唔會跟機畀你權重。"
+  "modelscope/FunCodec": "FunCodec 係語音編碼嘅研究工具，用嚟喺本機訓練同跑量化模型，亦可以做合成同音樂。預訓練權重要另外下載。冇 release，push 係 2024-01-25。授權係 MIT。唔會跟機畀你權重。",
+  "gosom/google-maps-scraper": "Google Maps Scraper 係地圖擷取程式，用嚟喺你部機抽出公開地點嘅名稱、電話同電郵。最新 release 係 v1.19.0。push 係 2026-11-15。授權係 MIT。唔會跟機畀你模型。",
+  "GetStream/Agents": "GetStream Agents 係 Go 後端，用嚟喺你部機砌文字、語音同影片 agent。模型可以係雲端或者你自己嘅。最新 release 係 sdk-js-v0.5.0。授權係 Apache-2.0。唔會跟機畀你模型。",
+  "benjiyaya/HeartMuLa_ComfyUI": "HeartMuLa ComfyUI 係音樂節點，用嚟喺 ComfyUI 跑 HeartMuLa。模型係目錄入面嘅 heartlib，權重要另外下載。冇 release，push 係 2026-03-24。唔會跟機畀你權重。"
 }
