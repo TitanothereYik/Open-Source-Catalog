@@ -1450,5 +1450,9 @@
   "katipally/openlive": "OpenLive 係本機語音層，用嚟喺你部機做偵測、識別同朗讀，再交畀你嘅 coding agent。要自己帶模型。最新 release 係 v0.4.1。授權係 Apache-2.0。唔會跟機畀你大模型。",
   "mankidev/antialgorithm": "antialgorithm 係 coding agent 嘅創作 skill，用嚟喺起名、文案同海報避開第一個最普通嘅選擇。要你已有嘅模型。最新 release 係 v1.0.0。授權係 MIT。唔會跟機畀你模型。",
   "jazzenchen/agent-hud-open": "Agent HUD 係本機面板，用嚟喺你部機睇 coding agent 嘅額度同用量。Linux 仲係預覽。最新 release 係 v0.6.11。授權係 Apache-2.0。唔會跟機畀你模型。",
-  "bshall/hubert": "HuBERT 係語音內容編碼器，用嚟喺本機抽出你嘅語音單位。聲學模型同聲碼器唔喺呢度。權重要另外下載。最新 release 係 v0.2，push 係 2024-10-01。授權係 MIT。唔會跟機畀你權重。"
+  "bshall/hubert": "HuBERT 係語音內容編碼器，用嚟喺本機抽出你嘅語音單位。聲學模型同聲碼器唔喺呢度。權重要另外下載。最新 release 係 v0.2，push 係 2024-10-01。授權係 MIT。唔會跟機畀你權重。",
+  "EL4CTEO/fast-anything": "fast-anything 係 coding agent 嘅加速 skill，用嚟喺你部機搵慢函數，再改寫做 Rust。要你已有嘅 agent。最新 release 係 v0.6.1。授權係 MIT。唔會跟機畀你模型。",
+  "Upsonic/Upsonic": "Upsonic 係 Python agent 框架，用嚟喺你部機起你嘅自主 agent。模型要自己帶，例子用 Claude。最新 release 係 v0.77.3。授權係 MIT。唔會跟機畀你模型。",
+  "mazzzystar/randomCNN-voice-transfer": "randomCNN 係語音風格轉移，用嚟喺一張 GPU 用兩段你嘅聲做轉移。唔使大數據集，每次都要再訓練。冇 release，push 係 2025-02-19。授權係 MIT。唔會跟機畀你現成模型。",
+  "r9y9/nnmnkwii": "nnmnkwii 係語音合成程式庫，用嚟喺本機試作你嘅合成系統。佢唔係現成聲線模型，數據要自己帶。最新 release 係 v0.1.3，push 係 2024-06-29。授權係 MIT。唔會跟機畀你權重。"
 }
