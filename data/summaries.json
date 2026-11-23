@@ -1464,5 +1464,7 @@
   "DrewThomasson/VoxNovel": "VoxNovel 係有聲書工具，用嚟喺本機按角色分開你嘅對白。引文配對只支援英文。預設用 XTTS，權重要另外下載。release 係 1.5，push 係 2025-06-09。授權係 MIT。唔會跟機畀你權重。",
   "xerrors/Yuxi": "Yuxi 係可私有部署嘅知識 agent 平台，用嚟喺你部機做檢索、圖譜同多 agent。模型要自己帶。最新 release 係 v0.8.0，push 係 2026-11-20。授權係 MIT。唔會跟機畀你模型。",
   "ChatLab/ChatLab": "ChatLab 係本機聊天記錄分析，用嚟喺你部機問你嘅對話。而家支援 WhatsApp、QQ、Telegram 等。模型要自己帶。最新 release 係 v0.37.8。授權係 AGPL-3.0。唔會跟機畀你模型。",
-  "shengshu-ai/Motus2": "Motus2 係機械手世界模型，用嚟喺研究碼做感知同動作。同已收錄嘅 Motus 係另一個 repo。權重喺 Hugging Face。冇 release，push 係 2026-11-22。授權係 Apache-2.0。唔會跟機畀你權重。"
+  "shengshu-ai/Motus2": "Motus2 係機械手世界模型，用嚟喺研究碼做感知同動作。同已收錄嘅 Motus 係另一個 repo。權重喺 Hugging Face。冇 release，push 係 2026-11-22。授權係 Apache-2.0。唔會跟機畀你權重。",
+  "tw93/Waza": "Waza 係 coding agent 嘅工程習慣 skill，用嚟喺 Claude Code、Codex 同 Cursor 跑。要你已有嘅 agent。最新 release 係 v3.42.0。授權係 MIT。唔會跟機畀你模型。",
+  "steipete/agent-scripts": "agent-scripts 係共享 skill 同小工具，用嚟喺你已有嘅 coding agent 重用工作流程。最新 release 係 0.12.0，push 係 2026-11-21。授權係 MIT。唔會跟機畀你模型。"
 }
