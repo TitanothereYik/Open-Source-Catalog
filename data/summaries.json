@@ -1470,5 +1470,7 @@
   "mdiri-ai/SoduWork": "SoduWork 係可自托管嘅多 agent 引擎，用嚟喺你部機編排幾個 harness。模型要自己帶。最新 release 係 v1.13.19。授權係 MIT。唔會跟機畀你模型。",
   "XinaTian/MROffice": "MR Office 係瀏覽器文件編輯器，用嚟喺你部機改你嘅 Word、Excel 同簡報。Copilot 要自己帶模型。最新 release 係 v0.1.8。授權係 AGPL-3.0。唔會跟機畀你模型。",
   "pierridotite/mobile-agent-testers": "mobile-agent-testers 係手機測試組，用嚟喺模擬器並行跑你嘅 Claude Code。要你已有嘅 agent。最新 release 係 v0.1.0。授權係 MIT。唔會跟機畀你模型。",
-  "staryone/motlab": "motlab 係影片即程式碼，用嚟喺本機 Canvas 出片，再交畀你嘅 coding agent。唔係影片模型。最新 release 係 v0.4.1。授權係 MIT 同 Apache-2.0。唔會跟機畀你模型。"
+  "staryone/motlab": "motlab 係影片即程式碼，用嚟喺本機 Canvas 出片，再交畀你嘅 coding agent。唔係影片模型。最新 release 係 v0.4.1。授權係 MIT 同 Apache-2.0。唔會跟機畀你模型。",
+  "danielwh2/sprite-stacking": "sprite-stacking 係像素 skill，用嚟喺你已有嘅 coding agent 將四個視角砌成可轉嘅假立體。要 Python 3。冇 release，push 係 2026-11-24。授權係 MIT。唔會跟機畀你模型。",
+  "guaardvark/guaardvark": "Guaardvark 係自托管工作室，用嚟喺你部機嘅 GPU 做對話、代理同出圖出聲。模型要自己帶。最新 release 係 v3.7.0。授權係 MIT。唔會跟機畀你模型。"
 }
