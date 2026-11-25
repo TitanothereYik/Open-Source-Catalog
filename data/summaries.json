@@ -1475,5 +1475,10 @@
   "guaardvark/guaardvark": "Guaardvark 係自托管工作室，用嚟喺你部機嘅 GPU 做對話、代理同出圖出聲。模型要自己帶。最新 release 係 v3.7.0。授權係 MIT。唔會跟機畀你模型。",
   "ai-timon/timon": "Timon 係本機 agent 工作台，用嚟喺你部機調度你已經訂閱嘅 coding agent。要你自己嘅帳戶。最新 release 係 v0.1.11。授權係 AGPL-3.0。唔會跟機畀你模型。",
   "CapriChooms/CapriCore": "Capri 係 Windows 桌面同伴，用嚟喺你部機傾計，聲線可選。內置現成 Qwen，亦可用你帶嚟嘅 GGUF 或者 API。最新 release 係 v1.3.0-experimental.1。授權係 GPL-3.0。唔會額外畀你新模型。",
-  "Wendison/VQMIVC": "VQMIVC 係一次聲線轉換嘅研究程式，用嚟喺你部機用一句參考聲做任意轉換。權重要另外下載。最後 push 係 2022-04-27。授權係 MIT。唔會跟機畀你練好嘅模型。"
+  "Wendison/VQMIVC": "VQMIVC 係一次聲線轉換嘅研究程式，用嚟喺你部機用一句參考聲做任意轉換。權重要另外下載。最後 push 係 2022-04-27。授權係 MIT。唔會跟機畀你練好嘅模型。",
+  "ScrapeCreators/social-media-research-skills": "呢套係社交研究 skill，用嚟喺你已有嘅 coding agent 查帖文、留言同廣告。要 ScrapeCreators 嘅 API key。冇 release，push 係 2026-08-26。授權係 MIT。唔會跟機畀你模型。",
+  "gepa-ai/gepa": "GEPA 係提示同程式優化器，用嚟喺你部機靠你接上嘅語言模型反覆改 prompt。要你自己嘅模型。最新 release 係 v0.1.4。授權係 MIT。唔會跟機畀你模型。",
+  "Forget-C/Jellyfish": "Jellyfish 係短劇工作台，用嚟喺瀏覽器拆場景同出分鏡。出圖要用你自己接嘅模型。最新 release 係 v1.0.0。授權係 Apache-2.0。唔會跟機畀你模型。",
+  "sobranie2406/modureader": "Modu Reader 係跨平台閱讀器，用嚟喺你部機讀書。本地閱讀唔使帳戶，朗讀同 AI 係可選，要用你自己接嘅服務。最新 release 係 v1.3.11。授權係 GPL-3.0。唔會跟機畀你模型。",
+  "deterministic-algorithms-lab/Cross-Lingual-Voice-Cloning": "呢個係跨語聲線克隆嘅研究程式，用嚟喺你部機用 Tacotron 2 練聲。數據要自己準備。冇 release，最後 push 係 2023-03-25。授權係 BSD-3-Clause。唔會跟機畀你練好嘅模型。"
 }
