@@ -1472,5 +1472,8 @@
   "pierridotite/mobile-agent-testers": "mobile-agent-testers 係手機測試組，用嚟喺模擬器並行跑你嘅 Claude Code。要你已有嘅 agent。最新 release 係 v0.1.0。授權係 MIT。唔會跟機畀你模型。",
   "staryone/motlab": "motlab 係影片即程式碼，用嚟喺本機 Canvas 出片，再交畀你嘅 coding agent。唔係影片模型。最新 release 係 v0.4.1。授權係 MIT 同 Apache-2.0。唔會跟機畀你模型。",
   "danielwh2/sprite-stacking": "sprite-stacking 係像素 skill，用嚟喺你已有嘅 coding agent 將四個視角砌成可轉嘅假立體。要 Python 3。冇 release，push 係 2026-11-24。授權係 MIT。唔會跟機畀你模型。",
-  "guaardvark/guaardvark": "Guaardvark 係自托管工作室，用嚟喺你部機嘅 GPU 做對話、代理同出圖出聲。模型要自己帶。最新 release 係 v3.7.0。授權係 MIT。唔會跟機畀你模型。"
+  "guaardvark/guaardvark": "Guaardvark 係自托管工作室，用嚟喺你部機嘅 GPU 做對話、代理同出圖出聲。模型要自己帶。最新 release 係 v3.7.0。授權係 MIT。唔會跟機畀你模型。",
+  "ai-timon/timon": "Timon 係本機 agent 工作台，用嚟喺你部機調度你已經訂閱嘅 coding agent。要你自己嘅帳戶。最新 release 係 v0.1.11。授權係 AGPL-3.0。唔會跟機畀你模型。",
+  "CapriChooms/CapriCore": "Capri 係 Windows 桌面同伴，用嚟喺你部機傾計，聲線可選。內置現成 Qwen，亦可用你帶嚟嘅 GGUF 或者 API。最新 release 係 v1.3.0-experimental.1。授權係 GPL-3.0。唔會額外畀你新模型。",
+  "Wendison/VQMIVC": "VQMIVC 係一次聲線轉換嘅研究程式，用嚟喺你部機用一句參考聲做任意轉換。權重要另外下載。最後 push 係 2022-04-27。授權係 MIT。唔會跟機畀你練好嘅模型。"
 }
