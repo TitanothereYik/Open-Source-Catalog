@@ -1482,5 +1482,8 @@
   "sobranie2406/modureader": "Modu Reader 係跨平台閱讀器，用嚟喺你部機讀書。本地閱讀唔使帳戶，朗讀同 AI 係可選，要用你自己接嘅服務。最新 release 係 v1.3.11。授權係 GPL-3.0。唔會跟機畀你模型。",
   "deterministic-algorithms-lab/Cross-Lingual-Voice-Cloning": "呢個係跨語聲線克隆嘅研究程式，用嚟喺你部機用 Tacotron 2 練聲。數據要自己準備。冇 release，最後 push 係 2023-03-25。授權係 BSD-3-Clause。唔會跟機畀你練好嘅模型。",
   "TIGER-AI-Lab/WebsiteBench": "WebsiteBench 係網站重建基準，用嚟喺你已有嘅 agent 試吓可唔可以靠瀏覽器抄返一個網站。任務要另外下載。冇 release，push 係 2026-11-17。授權係 Apache-2.0。唔會跟機畀你模型。",
-  "devnen/Dia-TTS-Server": "Dia-TTS-Server 係本機語音伺服器，用嚟喺你部機跑現成嘅 Dia 模型，可以克隆聲線。權重要另外下載。最新 release 係 v1.4.0。授權係 MIT。唔會跟機畀你模型。"
+  "devnen/Dia-TTS-Server": "Dia-TTS-Server 係本機語音伺服器，用嚟喺你部機跑現成嘅 Dia 模型，可以克隆聲線。權重要另外下載。最新 release 係 v1.4.0。授權係 MIT。唔會跟機畀你模型。",
+  "mutonby/openshorts": "OpenShorts 係短片剪輯器，用嚟喺你部機將長片剪成直向短片。要 Docker 同你自己下載嘅模型。配音可以接 ElevenLabs。冇 release，push 係 2026-11-25。授權係 MIT。唔會跟機畀你模型。",
+  "Zipstack/unstract": "Unstract 係文件抽取平台，用嚟喺你接上嘅語言模型把 PDF 轉成結構化資料。要你自己嘅模型帳戶。最新 release 係 v0.204.0。授權係 AGPL-3.0。唔會跟機畀你模型。",
+  "liusongxiang/ppg-vc": "PPG-VC 係一次聲線轉換嘅研究程式，用嚟喺你部機做 any-to-many 轉換。權重要另外下載。冇 release，最後 push 係 2022-07-22。授權係 Apache-2.0。唔會跟機畀你練好嘅模型。"
 }
