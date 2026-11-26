@@ -120,6 +120,14 @@ CATEGORIES = [
         "blurb": "加密貨幣交易所 API、交易機械人同回測工具。",
         "blurb_en": "Cryptocurrency exchange APIs, trading bots, and backtesting tools.",
     },
+    {
+        "id": "polymarket",
+        "dir": "polymarket",
+        "title": "Polymarket",
+        "title_en": "Polymarket",
+        "blurb": "Polymarket 嘅交易 skill、自動落單、做市、套利、回測同研究數據。",
+        "blurb_en": "Polymarket trading skills, automated orders, market making, arbitrage, backtests, and research data.",
+    },
 ]
 
 QUERIES = {
@@ -185,6 +193,11 @@ QUERIES = {
         "topic:cryptocurrency-trading",
         "freqtrade OR hummingbot OR ccxt in:name stars:>80",
     ],
+    "polymarket": [
+        "polymarket stars:>40",
+        "topic:polymarket",
+        '"polymarket" (bot OR skill OR trading OR agent)',
+    ],
 }
 
 MIN_NEW = {
@@ -199,6 +212,7 @@ MIN_NEW = {
     "vfx-cg-blender": 2500,
     "stock-trading": 1500,
     "crypto-trading": 1200,
+    "polymarket": 300,
 }
 
 # Young repos can enter below MIN_NEW when stars are climbing quickly.
@@ -261,6 +275,7 @@ RECENT_FOCUS = {
     "vfx-cg-blender": "blender OR renderer OR compositing",
     "stock-trading": '"stock trading" OR "quantitative finance" OR backtesting',
     "crypto-trading": '"crypto trading" OR "trading bot" OR cryptocurrency',
+    "polymarket": "polymarket",
 }
 
 PAPER_LINKS = {
@@ -1205,7 +1220,7 @@ def render_document(catalog: dict, active: str | None) -> str:
 <header class="hero">
     <p class="kicker">{bi("每六小時更新", "Updated every 6 hours")}</p>
     <h1>Open Source Catalog</h1>
-    <p class="lede">{bi("十個分類各自一頁。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。", "Ten categories, each on its own page. Projects are sorted by stars, highest first. A repository is listed only once.")}</p>
+    <p class="lede">{bi("十二個分類各自一頁。開源項目按 stars 由多至少排，已收錄嘅項目唔會重複加入。", "Twelve categories, each on its own page. Projects are sorted by stars, highest first. A repository is listed only once.")}</p>
     <div class="stats">
       <div class="stat"><b>{project_count}</b><span>{bi("開源項目", "Projects")}</span></div>
       <div class="stat"><b>{paper_count}</b><span>{bi("未另列 repo 嘅論文", "Papers without their own repo")}</span></div>
@@ -1838,6 +1853,13 @@ def relevant(category: str, repo: dict) -> bool:
         return any(key in blob for key in ("trad", "quant", "stock", "backtest", "portfolio", "finance", "market"))
     if category == "crypto-trading":
         return any(key in blob for key in ("trad", "exchange", "bot", "backtest", "freqtrade", "ccxt", "arbitrage"))
+    if category == "polymarket":
+        name = (repo.get("name") or "").lower()
+        if any(part in name for part in ("awesome", "course", "tutorial", "clone")):
+            return False
+        if any(part in blob for part in ("curated list", "awesome list", "trading bot course")):
+            return False
+        return "polymarket" in blob
     return False
 
 
