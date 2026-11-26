@@ -1536,5 +1536,8 @@
   "evan-kolberg/prediction-market-backtesting": "呢個係預測市場回測器，用嚟喺 NautilusTrader 重播 Polymarket 嘅策略。佢唔落真單。冇 release，push 係 2026-05-16。授權係 MIT 同 LGPL-3.0。唔會跟機畀你模型。",
   "wzzheng/OccWorld": "OccWorld 係自動駕駛嘅世界模型，用嚟喺你部機預測下一個三維佔用格。權重要自己練。冇 release，push 係 2024-04-12。授權係 Apache-2.0。唔會跟機畀你練好嘅模型。",
   "notepower2k1/CapCap": "CapCap 係 Windows 配音程式，用嚟喺你部機做字幕、翻譯同配音。要用你自己帶嘅模型。最新 release 係 LocalUIV910。授權係 Apache-2.0。唔會跟機畀你模型。",
-  "isaiahbjork/csm-voice-cloning": "呢個係聲線克隆程式，用嚟喺你部機跑現成嘅 Sesame CSM-1B。作者話效果有限。權重要另外下載。冇 release，push 係 2025-03-15。授權係 Apache-2.0。唔會跟機畀你模型。"
+  "isaiahbjork/csm-voice-cloning": "呢個係聲線克隆程式，用嚟喺你部機跑現成嘅 Sesame CSM-1B。作者話效果有限。權重要另外下載。冇 release，push 係 2025-03-15。授權係 Apache-2.0。唔會跟機畀你模型。",
+  "yetone/magpie": "Magpie 係訂閱轉接器，用嚟喺你已有嘅 coding agent 共用你付費嘅模型計劃。一個用完會轉下一個。最新 release 係 v0.1.4898。授權係 MIT。唔會跟機畀你模型。",
+  "petergyang/video-explainer": "video-explainer 係短片 skill，用嚟喺你已有嘅 agent 把題目做成約一分鐘嘅解說片。要你自己嘅 agent。冇 release，push 係 2026-11-25。授權係 MIT。唔會跟機畀你模型。",
+  "komako-workshop/digital-oracle": "Digital Oracle 係宏觀 skill，用嚟喺你已有嘅 agent 從 Polymarket 等數據估概率。佢唔落單。冇 release，push 係 2026-07-26。授權係 MIT。唔會跟機畀你模型。"
 }
