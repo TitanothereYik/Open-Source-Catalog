@@ -1529,5 +1529,12 @@
   "Synpath-ai/synpath": "Synpath 係統一 API，用嚟喺同一套 Python 介面交易 Polymarket 同 Kalshi。要你自己嘅帳戶。最新 release 係 v0.11.0。授權係 MIT。唔會跟機畀你模型。",
   "nativ3ai/hermes-geopolitical-market-sim": "呢個係 Hermes skill，用嚟喺 agent 入面做地緣模擬同睇 Polymarket。要你已有嘅 agent。最新 release 係 v0.2.1。授權係 AGPL-3.0。唔會跟機畀你模型。",
   "berlinbra/polymarket-mcp": "呢個係 Polymarket MCP，用嚟喺 agent 查 Polymarket API。要你自己嘅 key。冇 release，push 係 2025-06-06。授權係 MIT。唔會跟機畀你模型。",
-  "dennisyang1986/polymarket-proxy": "呢個係本機交易台，用嚟喺 DeepSeek Harness 入面睇倉同雷達 Polymarket。要你自己嘅帳戶。冇 release，push 係 2026-11-18。授權係 MIT。唔會跟機畀你模型。"
+  "dennisyang1986/polymarket-proxy": "呢個係本機交易台，用嚟喺 DeepSeek Harness 入面睇倉同雷達 Polymarket。要你自己嘅帳戶。冇 release，push 係 2026-11-18。授權係 MIT。唔會跟機畀你模型。",
+  "erkamyaman/safe-anything": "safe-anything 係本機掃描器，用嚟喺你自己嘅專案搵常見漏洞同外洩。要你指向自己嘅程式。最新 release 係 v1.1.0。授權係 MIT。唔會跟機畀你模型。",
+  "xikhar/papercraft": "papercraft 係風格 skill，用嚟喺你已有嘅 coding agent 搭彈出紙雕遊戲同動畫。要你自己嘅 agent。冇 release，push 係 2026-11-21。授權係 MIT。唔會跟機畀你模型。",
+  "lixiaoxiao9888-create/manju-laoli-skill": "漫劇老李係短劇 skill，用嚟喺你已有嘅 agent 把一句需求寫成可投餵嘅提示。圖同影片模型要自己帶。已發布 release 係 v6.9.8，push 係 2026-11-26。授權係 MIT。唔會跟機畀你模型。",
+  "evan-kolberg/prediction-market-backtesting": "呢個係預測市場回測器，用嚟喺 NautilusTrader 重播 Polymarket 嘅策略。佢唔落真單。冇 release，push 係 2026-05-16。授權係 MIT 同 LGPL-3.0。唔會跟機畀你模型。",
+  "wzzheng/OccWorld": "OccWorld 係自動駕駛嘅世界模型，用嚟喺你部機預測下一個三維佔用格。權重要自己練。冇 release，push 係 2024-04-12。授權係 Apache-2.0。唔會跟機畀你練好嘅模型。",
+  "notepower2k1/CapCap": "CapCap 係 Windows 配音程式，用嚟喺你部機做字幕、翻譯同配音。要用你自己帶嘅模型。最新 release 係 LocalUIV910。授權係 Apache-2.0。唔會跟機畀你模型。",
+  "isaiahbjork/csm-voice-cloning": "呢個係聲線克隆程式，用嚟喺你部機跑現成嘅 Sesame CSM-1B。作者話效果有限。權重要另外下載。冇 release，push 係 2025-03-15。授權係 Apache-2.0。唔會跟機畀你模型。"
 }
