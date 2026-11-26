@@ -1488,5 +1488,9 @@
   "liusongxiang/ppg-vc": "PPG-VC 係一次聲線轉換嘅研究程式，用嚟喺你部機做 any-to-many 轉換。權重要另外下載。冇 release，最後 push 係 2022-07-22。授權係 Apache-2.0。唔會跟機畀你練好嘅模型。",
   "tangency-labs/fieldcraft": "FieldCraft 係本機工程模擬器，用嚟喺你部機做結構、熱同流體計算。桌面、命令列同 agent 都行。最新 release 係 2026-11-25 嘅 nightly。授權係 Apache-2.0 同 MIT。唔會跟機畀你模型。",
   "Renakoni/Voicebox": "Voicebox 係 Android 離線語音程式，用嚟喺你部手機跑現成嘅語音同克隆模型。唔使雲端。最新 release 係 qwen3-runtime-v3。授權係 AGPL-3.0。唔會跟機畀你新模型。",
-  "megaease/easevoice-trainer": "EaseVoice Trainer 係聲線訓練後端，用嚟喺你部機用你自己嘅錄音練聲。思路來自 GPT-SoVITS，但唔係個 fork。冇 release，push 係 2025-04-23。授權係 Apache-2.0。唔會跟機畀你練好嘅聲線。"
+  "megaease/easevoice-trainer": "EaseVoice Trainer 係聲線訓練後端，用嚟喺你部機用你自己嘅錄音練聲。思路來自 GPT-SoVITS，但唔係個 fork。冇 release，push 係 2025-04-23。授權係 Apache-2.0。唔會跟機畀你練好嘅聲線。",
+  "htdt/godogen": "Godogen 係遊戲 skill，用嚟喺你已有嘅 coding agent 搭遊戲、預告同互動立體。引擎要另外揀。冇 release，push 係 2026-11-21。授權係 MIT。唔會跟機畀你模型。",
+  "ethanplusai/sellbird": "Sellbird 係本機開發信工具，用嚟喺你已有嘅 Claude 或 ChatGPT 計劃寫冷郵件。預設要你批准先寄出。最新 release 係 v0.5.0。授權係 AGPL-3.0。唔會跟機畀你模型。",
+  "JackismyShephard/ultimate-rvc": "Ultimate RVC 係翻唱同語音程式，用嚟喺你部機用現成嘅 RVC 模型轉聲。模型要自己帶。冇 release，push 係 2026-10-11。授權係 MIT。唔會跟機畀你新模型。",
+  "timoncool/speech-studio": "Speech Studio 係離線語音工作室，用嚟喺你部機做朗讀、克隆同轉寫。模型要另外下載，各自有自己嘅授權。最新 release 係 v0.5.1。程式授權係 MIT。唔會跟機畀你模型。"
 }
