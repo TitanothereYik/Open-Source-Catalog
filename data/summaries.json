@@ -1569,5 +1569,11 @@
   "NickNaskida/polymarket-insider-bot": "polymarket-insider-bot 係錢包監察，用嚟喺 Polymarket 標出可疑嘅大額成交。佢唔落單。冇 release，push 係 2026-01-04。授權係 MIT。唔會跟機畀你模型。",
   "ozgureyilmaz/polymarket-mcp": "polymarket-mcp 係 MCP，用嚟喺 agent 查同操作 Polymarket。要你自己嘅 key。最新 release 係 v0.2.0。授權係 MIT。唔會跟機畀你模型。",
   "randomness11/probablyprofit": "probablyprofit 係交易框架，用嚟喺 Polymarket 試你寫嘅策略。要你自己嘅帳戶。最新 release 係 v1.0.1。授權係 MIT。唔會跟機畀你模型。",
-  "JamesANZ/prediction-market-mcp": "prediction-market-mcp 係數據 MCP，用嚟喺 agent 讀 Polymarket 嘅盤口，亦讀 PredictIt 同 Kalshi。佢唔落單。冇 release，push 係 2026-10-15。授權係 MIT。唔會跟機畀你模型。"
+  "JamesANZ/prediction-market-mcp": "prediction-market-mcp 係數據 MCP，用嚟喺 agent 讀 Polymarket 嘅盤口，亦讀 PredictIt 同 Kalshi。佢唔落單。冇 release，push 係 2026-10-15。授權係 MIT。唔會跟機畀你模型。",
+  "nexu-io/opengame": "OpenGame 係遊戲工作室，用嚟喺你已有嘅 coding agent 改同發佈小遊戲。要你自己嘅 agent。冇 release，push 係 2026-11-26。授權係 Apache-2.0。唔會跟機畀你模型。",
+  "ThreatDefence/agentic-attack-detections": "呢套係偵測規則，用嚟喺你嘅 SIEM 搵已知 agent 攻擊框架嘅痕跡。要你自己嘅日誌。最新 release 係 v2.11.1。授權係 MIT。唔會跟機畀你攻擊工具。",
+  "SimonSchubert/omalauncher": "Omalauncher 係 Android 主畫面，用嚟喺你部手機用已有嘅 AI agent 整 app 同小工具。唔使 root。最新 release 係 v1.12.0。授權係 MIT。唔會跟機畀你模型。",
+  "sstklen/trump-code": "TRUMP CODE 係訊號研究，用嚟喺推文同美股之間搵規律。命中率係作者自己講嘅數字。最新 release 係 v2.8.0。授權係 MIT。唔會喺 Polymarket 落單，亦唔會跟機畀你模型。",
+  "Conchylicultor/MusicGenerator": "MusicGenerator 係音樂實驗，用嚟喺舊版 TensorFlow 試唔同嘅生成模型。要你自己練。冇 release，push 係 2017-04-01。授權係 Apache-2.0。唔會跟機畀你練好嘅模型。",
+  "VoxDance-Lab/VoxMel": "VoxMel 係零樣本語音嘅研究程式，用嚟喺你部機用一句參考聲合成語音。權重要另外下載。冇 release，push 係 2026-11-21。授權係 Apache-2.0。唔會跟機畀你模型。"
 }
