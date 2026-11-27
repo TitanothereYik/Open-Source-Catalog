@@ -1608,5 +1608,8 @@
   "navin-prasath-s/polymarket-playground": "polymarket-playground 係模擬盤，用嚟喺 agent 試 Polymarket 嘅策略而唔使真金。冇 release，push 係 2025-08-14。授權係 MIT。唔會跟機畀你模型。",
   "sueun-dev/polymarket-alpha-lab": "polymarket-alpha-lab 係研究筆記，用嚟喺你部機睇 Polymarket 嘅舊價差同文獻。佢唔落單。冇 release，push 係 2026-11-02。授權係 MIT。唔會跟機畀你模型。",
   "YichengYang-Ethan/prediction-market-pricing": "prediction-market-pricing 係定價研究，用嚟喺歷史合約拆 Polymarket 一類市場嘅風險溢價。佢唔落單。冇 release，push 係 2026-09-10。授權係 MIT。唔會跟機畀你模型。",
-  "ShiyuCheng2018/polily": "polily 係監察 agent，用嚟喺你部機盯 Polymarket 盤口。要你自己嘅設定。最新 release 係 v0.13.0。授權係 MIT。唔會跟機畀你模型。"
+  "ShiyuCheng2018/polily": "polily 係監察 agent，用嚟喺你部機盯 Polymarket 盤口。要你自己嘅設定。最新 release 係 v0.13.0。授權係 MIT。唔會跟機畀你模型。",
+  "SonicloudTech/mouse-mcp": "uMouse MCP 係硬件滑鼠伺服器，用嚟喺 Windows 由你已有嘅 agent 控制相容滑鼠。要你自己嘅裝置。最新 release 係 v0.1.1。授權係 MIT。唔會跟機畀你模型。",
+  "tradoor-terminal/tradoor": "Tradoor 係瀏覽器交易終端，用嚟喺網頁睇加密貨幣嘅盤口同做模擬盤。要你自己接交易所。最新 release 係 v0.9.1。授權係 AGPL-3.0。唔會跟機畀你模型。",
+  "OctagonAI/kalshi-trading-bot-cli": "Kalshi CLI 係交易命令列，用嚟喺 Kalshi 估概率同落單。要你自己嘅 Kalshi 帳戶。最新 release 係 v2.3.3。授權係 MIT。唔會跟機畀你模型。"
 }
