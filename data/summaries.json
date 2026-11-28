@@ -1619,5 +1619,8 @@
   "open-net-worth-ai/open-net-worth": "Open Net Worth 係本機理財 agent，用嚟喺你部機管預算同投資，亦可以落單。要你自己嘅帳戶。最新 release 係 0.1.69。授權係 AGPL-3.0。唔會跟機畀你模型。",
   "alchaincyf/darwin-skill": "darwin-skill 係技能進化系統，用嚟喺 Claude Code 評估、改同測試你已有嘅 skill。要你自己嘅 agent。最新 release 係 v3.0.2。授權係 MIT。唔會跟機畀你模型。",
   "timoncool/dub-studio": "Dub Studio 係離線配音工作室，用嚟喺你部機做聲線克隆、翻譯同字幕。模型要另外下載，各自有自己嘅授權。最新 release 係 v4.6.1。程式授權係 MIT。唔會跟機畀你模型。",
-  "EveningStudy/asmr-dubber": "asmr-dubber 係配音程式，用嚟喺你部機把日文、英文或中文嘅片配成中文或英文。可以克隆聲線。最新 release 係 v3.0.2。授權係 MIT。唔會跟機畀你模型。"
+  "EveningStudy/asmr-dubber": "asmr-dubber 係配音程式，用嚟喺你部機把日文、英文或中文嘅片配成中文或英文。可以克隆聲線。最新 release 係 v3.0.2。授權係 MIT。唔會跟機畀你模型。",
+  "beautifulrem/tower": "Tower 係編程 agent 監督台，用嚟喺你部機跟住目標睇多個 agent。要你已有嘅 agent。冇 release，push 係 2026-11-27。授權係 MIT。唔會跟機畀你模型。",
+  "infobyte/faraday": "Faraday 係漏洞管理平台，用嚟喺你部機整理掃描結果同協作。要你自己帶嘅掃描。最新 release 係 v5.26.0。授權係 GPL-3.0。唔會跟機畀你攻擊工具。",
+  "Aratako/T5Gemma-TTS": "T5Gemma-TTS 係多語語音嘅研究程式，用嚟喺你部機克隆聲線同控制時長。權重要另外下載。冇 release，push 係 2026-11-04。授權係 MIT。唔會跟機畀你模型。"
 }
