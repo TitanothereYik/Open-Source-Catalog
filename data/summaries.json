@@ -1622,5 +1622,7 @@
   "EveningStudy/asmr-dubber": "asmr-dubber 係配音程式，用嚟喺你部機把日文、英文或中文嘅片配成中文或英文。可以克隆聲線。最新 release 係 v3.0.2。授權係 MIT。唔會跟機畀你模型。",
   "beautifulrem/tower": "Tower 係編程 agent 監督台，用嚟喺你部機跟住目標睇多個 agent。要你已有嘅 agent。冇 release，push 係 2026-11-27。授權係 MIT。唔會跟機畀你模型。",
   "infobyte/faraday": "Faraday 係漏洞管理平台，用嚟喺你部機整理掃描結果同協作。要你自己帶嘅掃描。最新 release 係 v5.26.0。授權係 GPL-3.0。唔會跟機畀你攻擊工具。",
-  "Aratako/T5Gemma-TTS": "T5Gemma-TTS 係多語語音嘅研究程式，用嚟喺你部機克隆聲線同控制時長。權重要另外下載。冇 release，push 係 2026-11-04。授權係 MIT。唔會跟機畀你模型。"
+  "Aratako/T5Gemma-TTS": "T5Gemma-TTS 係多語語音嘅研究程式，用嚟喺你部機克隆聲線同控制時長。權重要另外下載。冇 release，push 係 2026-11-04。授權係 MIT。唔會跟機畀你模型。",
+  "everyinfra/seo-skills": "seo-skills 係 SEO skill，用嚟喺你已有嘅 coding agent 做多語搜尋同頁面檢查。要你自己嘅 agent。最新 release 係 v0.48.2。授權係 Apache-2.0。唔會跟機畀你模型。",
+  "Zyphra/ZONOS3-Mini": "ZONOS3-Mini 係細形嘅語音程式，用嚟喺你部機做零樣本聲線克隆。權重喺 Hugging Face，要另外下載。冇 release，push 係 2026-11-19。授權係 MIT。唔會跟機畀你模型。"
 }
